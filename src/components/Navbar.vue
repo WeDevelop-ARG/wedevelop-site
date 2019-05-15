@@ -61,6 +61,7 @@ export default {
     color: #fff;
     font-size: 18px;
     font-weight: 300;
+    letter-spacing: 1.45px;
     text-decoration: none;
   }
 </style>
