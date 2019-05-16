@@ -3,6 +3,7 @@
     <Header />
     <Introduction />
     <Team />
+    <Services />
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import Header from './components/Header.vue'
 import Introduction from './components/Introduction.vue'
 import Team from './components/Team.vue'
+import Services from './components/Services.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
     Introduction,
-    Team
+    Team,
+    Services
   }
 }
 </script>
@@ -61,5 +64,9 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
+  }
+
+  .highlight-paragraph {
+    color: #272A40;
   }
 </style>

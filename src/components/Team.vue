@@ -115,8 +115,4 @@ export default {
     margin: 0;
     list-style-type: none;
   }
-
-  .highlight-paragraph {
-    color: #272A40;
-  }
 </style>
