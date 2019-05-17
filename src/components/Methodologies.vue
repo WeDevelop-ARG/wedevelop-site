@@ -47,6 +47,7 @@ export default {
   .content {
     display: flex;
     flex-direction: column;
+    padding-right: 10em;
   }
 
   .highlight {
