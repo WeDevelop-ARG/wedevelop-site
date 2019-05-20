@@ -97,9 +97,22 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 10.5em 10em 0 10em;
+    position: relative;
+    top: 11em;
+    margin: 0 10em -1em 10em;
     padding: 8em 0;
     background-color: #F7F9FC;
+  }
+  
+  .contact:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 70px solid #eee;
+    border-left: 70px solid #272822; /*Set to background color, not transparent!*/
   }
 
   .content {
