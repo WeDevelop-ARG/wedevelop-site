@@ -7,10 +7,10 @@
         <h3>info@wedevelop.me</h3>
         <p>Buenos Aires - Argentina</p>
       </div>
-      <form class="contact-form">
-        <input name="name" type="text" placeholder="Name">
-        <input name="email" type="text" placeholder="Email">
-        <textarea name="message" placeholder="Your message"></textarea>
+      <form class="contact-form" v-on:submit="sendEmail">
+        <input name="name" type="text" placeholder="Name" v-model="contact.name">
+        <input name="email" type="text" placeholder="Email" v-model="contact.email">
+        <textarea name="message" placeholder="Your message" v-model="contact.message"></textarea>
         <button type="submit">Submit</button>
       </form>
     </div>
@@ -19,8 +19,56 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'Contact'
+  name: 'Contact',
+  data () {
+    return {
+      contact : {
+        name: '',
+        email: '',
+        message: ''
+      }
+    }
+  },
+  methods: {
+    sendEmail: function(e) {
+      e.preventDefault()
+      const { email, name, message } = this.contact
+      const data = {
+        "personalizations": [
+          {
+            "to": [
+              {
+                "email": email,
+                "name": name
+              }
+            ],
+            "subject": "New message from WeDevelop site"
+          }
+        ],
+        "from": {
+          "email": "noreply@wedevelop.com",
+          "name": "WeDevelop Site"
+        },
+        "reply_to": {
+          "email": email,
+          "name": name
+        },
+        "content": {
+          "type": "text/plain",
+          "value": message
+        }
+      }
+      const config = {
+        headers: {
+          'authorization': 'Bearer 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',
+        }
+      }
+      axios.post('https://api.sendgrid.com/v3/mail/send', data, config)
+    }
+  }
 }
 </script>
 
@@ -91,6 +139,7 @@ export default {
     color: #fff;
     border: none;
     background-color: #A7AFC3;
+    cursor: pointer;
   }
 
   .contact {

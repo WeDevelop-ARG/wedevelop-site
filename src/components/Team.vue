@@ -105,7 +105,9 @@ export default {
   }
 
   .team {
-    margin-top: 16.2em;
+    margin-top: 10em;
+    padding: 8em 0;
+    background-color: #F7F9FC;
   }
 
   .member-list {

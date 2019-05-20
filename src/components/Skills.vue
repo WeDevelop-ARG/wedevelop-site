@@ -75,7 +75,9 @@ export default {
   }
 
   .skills {
-    margin-top: 16.2em;
+    margin-top: 9em;
+    background-color: #F7F9FC;
+    padding: 7.5em 0 2.5em 0;
   }
 
   .skill-list {
