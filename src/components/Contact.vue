@@ -66,13 +66,13 @@ export default {
     background-color: transparent;
   }
 
-  input:focus, 
-  textarea:focus, 
+  input:focus,
+  textarea:focus,
   button:focus {
     outline: none;
   }
 
-  input::placeholder, 
+  input::placeholder,
   textarea::placeholder {
     text-transform: uppercase;
     color: #A7AFC3;
@@ -87,7 +87,7 @@ export default {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.36px;  
+    letter-spacing: 0.36px;
     color: #fff;
     border: none;
     background-color: #A7AFC3;
@@ -103,7 +103,7 @@ export default {
     padding: 8em 0;
     background-color: #F7F9FC;
   }
-  
+
   .contact:before {
     content: "";
     position: absolute;
