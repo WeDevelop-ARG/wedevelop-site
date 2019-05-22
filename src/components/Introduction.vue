@@ -53,8 +53,4 @@ export default {
   .highlight {
     color: #8224E3;
   }
-
-  .highlight-paragraph {
-    color: #272A40;
-  }
 </style>
