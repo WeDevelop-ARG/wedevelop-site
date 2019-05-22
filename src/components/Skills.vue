@@ -33,7 +33,7 @@ export default {
           name: 'Python',
           photo: require('../assets/img/python.svg')
         },
-                {
+        {
           id: 4,
           name: 'Amazon Web Services',
           photo: require('../assets/img/aws.svg')
@@ -57,7 +57,7 @@ export default {
           id: 8,
           name: 'MongoDB',
           photo: require('../assets/img/mongodb.svg')
-        },
+        }
       ]
     }
   }

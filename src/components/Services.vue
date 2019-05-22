@@ -35,7 +35,7 @@ export default {
           name: 'Outsourcing',
           description: 'We provide <span class="highlight-paragraph">the human resources you need</span>, either an entire and independent team or specific professionals for your projects.',
           photo: require('../assets/img/u.svg')
-        },
+        }
       ]
     }
   }
