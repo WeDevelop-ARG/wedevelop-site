@@ -14,9 +14,9 @@
       </div>
       <div class="col">
         <h4>Services</h4>
-        <a href="#web">Web Development</a>
-        <a href="#consulting">Consulting Services</a>
-        <a href="#outsourcing">Outsourcing</a>
+        <a href="#services">Web Development</a>
+        <a href="#services">Consulting Services</a>
+        <a href="#services">Outsourcing</a>
       </div>
       <div class="col col-last">
         <a href="#how"><h4>How we work</h4></a>

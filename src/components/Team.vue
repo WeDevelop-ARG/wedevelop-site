@@ -1,10 +1,10 @@
 <template>
-  <div class="team">
+  <div class="team" id="team">
     <h2>Our Team</h2>
     <ul class="member-list">
       <Member v-for="member in members" v-bind:key="member.id" v-bind:member="member" />
     </ul>
-    <h3>Want to join us?</h3>
+    <h3 id="join">Want to join us?</h3>
     <p>We love to meet new people and have their ideas come alive in the projects we work.<br>If you share our <span class="highlight-paragraph">passion of working creatively and professionally</span>, please email us your resume or LinkedIn profile to</p>
     <h4>jobs@wedevelop.me</h4>
   </div>
