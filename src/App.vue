@@ -6,6 +6,7 @@
     <Services />
     <Methodologies />
     <Skills />
+    <Clients />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Team from './components/Team'
 import Services from './components/Services'
 import Methodologies from  './components/Methodologies'
 import Skills from './components/Skills'
+import Clients from './components/Clients'
 
 export default {
   name: 'app',
@@ -25,7 +27,8 @@ export default {
     Team,
     Services,
     Methodologies,
-    Skills
+    Skills,
+    Clients
   }
 }
 </script>
