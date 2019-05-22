@@ -25,7 +25,7 @@ export default {
   name: 'Contact',
   data () {
     return {
-      contact : {
+      contact: {
         name: '',
         email: '',
         message: ''
@@ -33,7 +33,7 @@ export default {
     }
   },
   methods: {
-    sendEmail: function(e) {
+    sendEmail: function (e) {
       e.preventDefault()
       const { email, name, message } = this.contact
       const data = {
@@ -41,7 +41,7 @@ export default {
           {
             'to': [
               {
-                'email': 'info@wedevelop.me',
+                'email': 'info@wedevelop.me'
               }
             ],
             'subject': 'New message from WeDevelop site'
@@ -60,7 +60,7 @@ export default {
       }
       const config = {
         headers: {
-          'authorization': 'Bearer ' + process.env.VUE_APP_SENDGRID_API_KEY,
+          'authorization': 'Bearer ' + process.env.VUE_APP_SENDGRID_API_KEY
         }
       }
       axios.post('https://api.sendgrid.com/v3/mail/send', data, config)
