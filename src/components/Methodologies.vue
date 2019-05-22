@@ -1,5 +1,5 @@
 <template>
-  <div class="methodologies">
+  <div class="methodologies" id="how">
     <div class="content">
       <h2>We use agile methodologies</h2>
       <p>We understand the meaning of “Agile”, and we love it. SCRUM sets the way and we set the pace by generating <span class="highlight-paragraph">small and efficient iterations.</span></p>

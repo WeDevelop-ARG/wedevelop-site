@@ -8,6 +8,7 @@
     <Skills />
     <Clients />
     <Contact />
+    <Footer />
   </div>
 </template>
 
@@ -16,10 +17,11 @@ import Header from './components/Header'
 import Introduction from './components/Introduction'
 import Team from './components/Team'
 import Services from './components/Services'
-import Methodologies from  './components/Methodologies'
+import Methodologies from './components/Methodologies'
 import Skills from './components/Skills'
 import Clients from './components/Clients'
-import Contact  from './components/Contact'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 export default {
   name: 'app',
@@ -31,7 +33,8 @@ export default {
     Methodologies,
     Skills,
     Clients,
-    Contact
+    Contact,
+    Footer
   }
 }
 </script>

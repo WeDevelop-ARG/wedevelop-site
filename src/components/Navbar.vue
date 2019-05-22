@@ -5,22 +5,22 @@
     </a>
     <ul class="nav-link-list">
       <li>
-        <a href="#" class="nav-link">About us</a>
+        <a href="#who" class="nav-link">About us</a>
       </li>
       <li>
-        <a href="#" class="nav-link">Services</a>
+        <a href="#services" class="nav-link">Services</a>
       </li>
       <li>
-        <a href="#" class="nav-link">How we work</a>
+        <a href="#how" class="nav-link">How we work</a>
       </li>
       <li>
-        <a href="#" class="nav-link">Technologies</a>
+        <a href="#tech" class="nav-link">Technologies</a>
       </li>
       <li>
-        <a href="#" class="nav-link">Reviews</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
       </li>
       <li>
-        <a href="#" class="nav-link">Contact</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </li>
     </ul>
   </nav>

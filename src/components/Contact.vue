@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div class="contact" id="contact">
     <h2>Let’s get in touch</h2>
     <div class="content">
       <div class="contact-info">
@@ -111,13 +111,13 @@ export default {
     background-color: transparent;
   }
 
-  input:focus, 
-  textarea:focus, 
+  input:focus,
+  textarea:focus,
   button:focus {
     outline: none;
   }
 
-  input::placeholder, 
+  input::placeholder,
   textarea::placeholder {
     text-transform: uppercase;
     color: #A7AFC3;
@@ -132,7 +132,7 @@ export default {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.36px;  
+    letter-spacing: 0.36px;
     color: #fff;
     border: none;
     background-color: #A7AFC3;
@@ -143,9 +143,22 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 10.5em 10em 0 10em;
+    position: relative;
+    top: 11em;
+    margin: 0 10em -1em 10em;
     padding: 8em 0;
     background-color: #F7F9FC;
+  }
+
+  .contact:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 70px solid #eee;
+    border-left: 70px solid #272822; /*Set to background color, not transparent!*/
   }
 
   .content {

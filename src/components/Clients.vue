@@ -1,5 +1,5 @@
 <template>
-  <div class="clients">
+  <div class="clients" id="reviews">
     <div class="content">
       <h2>Where work happens</h2>
       <p>We’ve worked on a <span class="highlight-paragraph">variety of projects with a wide range of clients</span>, each one with a unique problem set and perspective. We continually improve our process and do our best work in strong partnerships with them.</p>

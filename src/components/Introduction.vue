@@ -1,5 +1,5 @@
 <template>
-  <div class="introduction">
+  <div class="introduction" id="who">
     <div class="content">
       <h2>We are <span class="highlight">Friendly and Professional</span> people</h2>
       <p>WeDevelop is a SDaaS company born in Argentina focused on <span class="highlight-paragraph">high-quality and long-term solutions.</span></p>

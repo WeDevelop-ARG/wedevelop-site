@@ -1,5 +1,5 @@
 <template>
-  <div class="skills">
+  <div class="skills" id="tech">
     <h2>We have all the skills you need</h2>
     <ul class="skill-list">
       <Skill v-for="skill in skills" v-bind:key="skill.id" v-bind:skill="skill" />
@@ -33,7 +33,7 @@ export default {
           name: 'Python',
           photo: require('../assets/img/python.svg')
         },
-                {
+        {
           id: 4,
           name: 'Amazon Web Services',
           photo: require('../assets/img/aws.svg')
@@ -57,7 +57,7 @@ export default {
           id: 8,
           name: 'MongoDB',
           photo: require('../assets/img/mongodb.svg')
-        },
+        }
       ]
     }
   }

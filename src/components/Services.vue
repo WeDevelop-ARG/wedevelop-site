@@ -1,5 +1,5 @@
 <template>
-  <div class="services">
+  <div class="services" id="services">
     <h2>What we do</h2>
     <ul class="service-list">
       <Service v-for="service in services" v-bind:key="service.id" v-bind:service="service" />
@@ -35,7 +35,7 @@ export default {
           name: 'Outsourcing',
           description: 'We provide <span class="highlight-paragraph">the human resources you need</span>, either an entire and independent team or specific professionals for your projects.',
           photo: require('../assets/img/u.svg')
-        },
+        }
       ]
     }
   }
