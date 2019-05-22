@@ -4,6 +4,7 @@
     <Introduction />
     <Team />
     <Services />
+    <Methodologies />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from './components/Header.vue'
 import Introduction from './components/Introduction.vue'
 import Team from './components/Team.vue'
 import Services from './components/Services.vue'
+import Methodologies from  './components/Methodologies.vue'
 
 export default {
   name: 'app',
@@ -19,7 +21,8 @@ export default {
     Header,
     Introduction,
     Team,
-    Services
+    Services,
+    Methodologies
   }
 }
 </script>
