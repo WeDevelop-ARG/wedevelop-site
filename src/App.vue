@@ -2,18 +2,21 @@
   <div id="app">
     <Header />
     <Introduction />
+    <Team />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import Introduction from './components/Introduction.vue'
+import Team from './components/Team.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Introduction
+    Introduction,
+    Team
   }
 }
 </script>
