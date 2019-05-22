@@ -37,33 +37,30 @@ export default {
       e.preventDefault()
       const { email, name, message } = this.contact
       const data = {
-        "personalizations": [
+        'personalizations': [
           {
-            "to": [
+            'to': [
               {
-                "email": email,
-                "name": name
+                'email': 'info@wedevelop.me',
               }
             ],
-            "subject": "New message from WeDevelop site"
+            'subject': 'New message from WeDevelop site'
           }
         ],
-        "from": {
-          "email": "noreply@wedevelop.com",
-          "name": "WeDevelop Site"
+        'from': {
+          'email': email,
+          'name': name
         },
-        "reply_to": {
-          "email": email,
-          "name": name
-        },
-        "content": {
-          "type": "text/plain",
-          "value": message
-        }
+        'content': [
+          {
+            'type': 'text/plain',
+            'value': message
+          }
+        ]
       }
       const config = {
         headers: {
-          'authorization': 'Bearer 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',
+          'authorization': 'Bearer ' + process.env.VUE_APP_API_KEY,
         }
       }
       axios.post('https://api.sendgrid.com/v3/mail/send', data, config)
