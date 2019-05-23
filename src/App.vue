@@ -1,28 +1,87 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <Introduction />
+    <Team />
+    <Services />
+    <Methodologies />
+    <Skills />
+    <Clients />
+    <Contact />
+    <Footer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header'
+import Introduction from './components/Introduction'
+import Team from './components/Team'
+import Services from './components/Services'
+import Methodologies from './components/Methodologies'
+import Skills from './components/Skills'
+import Clients from './components/Clients'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Header,
+    Introduction,
+    Team,
+    Services,
+    Methodologies,
+    Skills,
+    Clients,
+    Contact,
+    Footer
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @font-face {
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato-Light.ttf')  format('truetype');
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato-Regular.ttf')  format('truetype');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato-Medium.ttf')  format('truetype');
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato-Bold.ttf')  format('truetype');
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato-Black.ttf')  format('truetype');
+    font-weight: 900;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #app {
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+  }
+
+  .highlight-paragraph {
+    color: #272A40;
+  }
 </style>
