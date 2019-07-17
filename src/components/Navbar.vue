@@ -59,8 +59,7 @@ export default {
   .nav-link {
     margin: 0 2.5em 0 0;
     color: #fff;
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 16px;
     letter-spacing: 1.45px;
     text-decoration: none;
   }
