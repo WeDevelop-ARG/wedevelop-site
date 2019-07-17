@@ -71,6 +71,7 @@ export default {
   .filled-navbar {
     padding: 1.2em .6em 1em .6em;
     background-color: #272A40;
+    z-index: 1;
   }
 
   .nav-brand {
