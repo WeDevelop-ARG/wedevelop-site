@@ -174,7 +174,7 @@ export default {
     border-bottom: 125px solid #272A40;
     border-left: 140px solid transparent;
   }
-  
+
   .content {
     display: flex;
     flex-direction: row;

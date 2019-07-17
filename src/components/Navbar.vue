@@ -1,5 +1,5 @@
 <template>
-  <nav 
+  <nav
     class="navbar"
     :class="{'filled-navbar': fillNavbar}"
   >
@@ -32,7 +32,7 @@
 <script>
 export default {
   name: 'Navbar',
-  data() {
+  data () {
     return {
       fillNavbar: false
     }
@@ -47,10 +47,6 @@ export default {
     onScroll () {
       // Get the current scroll position
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
-      // Because of momentum scrolling on mobiles, we shouldn't continue if it is less than zero
-      if (currentScrollPosition < 0) {
-        return
-      }
       // Here we determine whether we need to fill or hide the navbar
       this.fillNavbar = currentScrollPosition > 10
     }
