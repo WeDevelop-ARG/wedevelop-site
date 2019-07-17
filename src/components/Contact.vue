@@ -150,17 +150,31 @@ export default {
     background-color: #F7F9FC;
   }
 
-  .contact:before {
+  /* Cutted corners */
+  .contact:before,
+  .contact:after {
     content: "";
     position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 0px;
-    height: 0px;
-    border-bottom: 70px solid #eee;
-    border-left: 70px solid #272822; /*Set to background color, not transparent!*/
+    width: 0;
+    height: 0;
   }
 
+  /* Top left cutted corner */
+  .contact:before {
+    top: 0;
+    left: 0;
+    border-bottom: 195px solid transparent;
+    border-left: 195px solid #fff;
+  }
+
+  /* Bottom right cutted corner */
+  .contact:after {
+    bottom: 0;
+    right: -1px;
+    border-bottom: 125px solid #272A40;
+    border-left: 140px solid transparent;
+  }
+  
   .content {
     display: flex;
     flex-direction: row;
