@@ -3,7 +3,7 @@
     <img :src="member.photo" :alt="member.name" />
     <h5>{{ member.name }}</h5>
     <p class="position">{{ member.position }}</p>
-    <a 
+    <a
       :href="member.linkedin"
       @mouseover="linkedinIcon = require('../assets/img/linkedin-hover.svg')"
       @mouseleave="linkedinIcon = require('../assets/img/linkedin.svg')"
