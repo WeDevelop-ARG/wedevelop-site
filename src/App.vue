@@ -84,4 +84,34 @@ export default {
   .highlight-paragraph {
     color: #272A40;
   }
+
+  .alt-section {
+    position: relative;
+    background-color: #F7F9FC;
+  }
+
+  /* Cutted corners */
+  .alt-section:before,
+  .alt-section:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  /* Top left cutted corner */
+  .alt-section:before {
+    top: 0;
+    left: 0;
+    border-bottom: 210px solid transparent;
+    border-left: 240px solid #fff;
+  }
+
+  /* Bottom right cutted corner */
+  .alt-section:after {
+    bottom: 0;
+    right: -1px;
+    border-bottom: 125px solid #fff;
+    border-left: 170px solid transparent;
+  }
 </style>

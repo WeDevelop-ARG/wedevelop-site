@@ -1,5 +1,5 @@
 <template>
-  <div class="team" id="team">
+  <div class="team alt-section" id="team">
     <h2>Our Team</h2>
     <ul class="member-list">
       <Member v-for="member in members" v-bind:key="member.id" v-bind:member="member" />
@@ -107,7 +107,6 @@ export default {
   .team {
     margin-top: 10em;
     padding: 8em 0;
-    background-color: #F7F9FC;
   }
 
   .member-list {
