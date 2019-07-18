@@ -17,12 +17,14 @@ export default {
 
 <style scoped>
   h3 {
-    margin: 1em 0 1.9em 0;
+    margin: 1em 0 .8em 0;
+    padding-bottom: 1em;
     color: #272A40;
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 0.6px;
     line-height: 40px;
+    border-bottom: 1px solid #F0F1F5;
   }
 
   img {
