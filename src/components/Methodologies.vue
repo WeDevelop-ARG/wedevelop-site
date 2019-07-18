@@ -23,7 +23,7 @@ export default {
     font-weight: 900;
     letter-spacing: 0.8px;
     text-align: left;
-    line-height: 60px;
+    line-height: 48px;
   }
 
   p {

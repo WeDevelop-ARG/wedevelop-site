@@ -2,8 +2,8 @@
   <header class="header">
     <Navbar />
     <h1>We create, we innovate, we develop.</h1>
-    <a href="#" class="action-button">Start a project with us</a>
-    <a href="#" class="down-button">
+    <a href="#contact" class="action-button">Start a project with us</a>
+    <a href="#who" class="down-button">
       <i class="fal fa-chevron-down"></i>
     </a>
   </header>

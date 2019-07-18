@@ -1,5 +1,5 @@
 <template>
-  <div class="contact" id="contact">
+  <div class="contact alt-section alt-section--contact" id="contact">
     <h2>Let’s get in touch</h2>
     <div class="content">
       <div class="contact-info">
@@ -143,22 +143,21 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
-    position: relative;
     top: 11em;
     margin: 0 10em -1em 10em;
     padding: 8em 0;
-    background-color: #F7F9FC;
   }
 
-  .contact:before {
-    content: "";
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 0px;
-    height: 0px;
-    border-bottom: 70px solid #eee;
-    border-left: 70px solid #272822; /*Set to background color, not transparent!*/
+  /* Top left Contact cutted corner */
+  .alt-section--contact:before {
+    border-bottom: 195px solid transparent;
+    border-left: 195px solid #fff;
+  }
+
+  /* Bottom right Contact cutted corner */
+  .alt-section--contact:after {
+    border-bottom: 125px solid #272A40;
+    border-left: 140px solid transparent;
   }
 
   .content {

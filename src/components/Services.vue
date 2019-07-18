@@ -53,7 +53,7 @@ export default {
   }
 
   .services {
-    margin-top: 16.2em;
+    margin-top: 8.5em;
   }
 
   .service-list {

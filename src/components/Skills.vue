@@ -1,5 +1,5 @@
 <template>
-  <div class="skills" id="tech">
+  <div class="skills alt-section" id="tech">
     <h2>We have all the skills you need</h2>
     <ul class="skill-list">
       <Skill v-for="skill in skills" v-bind:key="skill.id" v-bind:skill="skill" />
@@ -76,7 +76,6 @@ export default {
 
   .skills {
     margin-top: 9em;
-    background-color: #F7F9FC;
     padding: 7.5em 0 2.5em 0;
   }
 
