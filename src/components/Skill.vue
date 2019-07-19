@@ -18,11 +18,11 @@ export default {
   .skill {
     width: 25%;
     margin-bottom: 6em;
-    transition: filter 0.3s linear;
+    transition: filter 0.2s ease-in-out;
   }
 
   .skill:hover {
-    filter: brightness(0) saturate(100%) invert(88%) sepia(56%) saturate(1435%) hue-rotate(56deg) brightness(96%) contrast(77%); 
+    filter: brightness(0) saturate(100%) invert(88%) sepia(56%) saturate(1435%) hue-rotate(56deg) brightness(96%) contrast(77%);
   }
 
   img {
