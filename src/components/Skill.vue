@@ -20,6 +20,10 @@ export default {
     margin-bottom: 6em;
   }
 
+  .skill:hover {
+    filter: brightness(0) saturate(100%) invert(88%) sepia(56%) saturate(1435%) hue-rotate(56deg) brightness(96%) contrast(77%); 
+  }
+
   img {
     margin-bottom: 2.2em;
     height: 95px;
