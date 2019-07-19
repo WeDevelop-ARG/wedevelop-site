@@ -49,7 +49,7 @@ export default {
     width: 38px;
     height: 38px;
     background-image: url(../assets/img/linkedin.svg);
-    transition: background-image 0.2s ease-in-out ;
+    transition: background-image 0.2s ease-in-out;
   }
 
   .linkedin-icon:hover {

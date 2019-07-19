@@ -18,6 +18,7 @@ export default {
   .skill {
     width: 25%;
     margin-bottom: 6em;
+    transition: filter 0.3s linear;
   }
 
   .skill:hover {
