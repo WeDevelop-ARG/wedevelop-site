@@ -1,24 +1,24 @@
 <template>
   <div class="footer">
-    <div class="additional-info">
+    <div class="col">
       <a href="#"><img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop"></a>
       <p>© 2019. All rights reserved.</p>
-      <a href="#"><img src="../assets/img/clutch-reviews.svg" alt="WeDevelop"></a>
+      <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-darkbg="1" data-clutchcompany-id="810049"></div>
     </div>
     <div class="nav">
-      <div class="col">
+      <div class="col nav-col">
         <h4>About us</h4>
         <a href="#who">Who we are</a>
         <a href="#team">Our Team</a>
         <a href="#join">Join Us</a>
       </div>
-      <div class="col">
+      <div class="col nav-col">
         <h4>Services</h4>
         <a href="#services">Web Development</a>
         <a href="#services">Consulting Services</a>
         <a href="#services">Outsourcing</a>
       </div>
-      <div class="col col-last">
+      <div class="col nav-col nav-col-last">
         <a href="#how"><h4>How we work</h4></a>
         <a href="#tech"><h4>Technologies</h4></a>
         <a href="#reviews"><h4>Reviews</h4></a>
@@ -29,9 +29,15 @@
 </template>
 
 <script>
-export default {
-  name: 'Contact'
-}
+  export default {
+    name: 'Contact',
+    mounted() {
+      let clutchScript = document.createElement('script')
+      clutchScript.setAttribute('src', 'https://widget.clutch.co/static/js/widget.js')
+      clutchScript.async = true
+      document.head.appendChild(clutchScript)
+    }
+  }
 </script>
 
 <style scoped>
@@ -54,7 +60,7 @@ export default {
   }
 
   p {
-    margin: 1em 0 2.5em 0;
+    margin: 0 0 3em 0;
     color: #A7AFC3;
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -62,6 +68,7 @@ export default {
 
   .footer {
     display: flex;
+    justify-content: space-between;
     padding: 22.5em 10.5em 9.5em 10.5em;
     background-color: #272A40;
   }
@@ -74,26 +81,26 @@ export default {
     padding: 0 7em;
   }
 
-  .additional-info {
-    margin-right: 15em;
-  }
-
   .nav {
     display: flex;
+  }
+
+  .nav-col {
+    margin-right: 10em;
   }
 
   .col {
     display: flex;
     flex-direction: column;
     width: max-content;
-    margin-right: 10em;
+    text-align: left;
   }
 
-  .col-last {
+  .nav-col-last {
     margin-right: 0;
   }
 
-  .col-last a {
+  .nav-col-last a {
     margin-bottom: 0;
   }
 </style>
