@@ -3,12 +3,9 @@
     <img :src="member.photo" :alt="member.name" />
     <h5>{{ member.name }}</h5>
     <p class="position">{{ member.position }}</p>
-    <a
-      :href="member.linkedin"
-      @mouseover="linkedinIcon = require('../assets/img/linkedin-hover.svg')"
-      @mouseleave="linkedinIcon = require('../assets/img/linkedin.svg')"
-    >
-      <img :src="linkedinIcon" :alt="member.name + ' linkedin'">
+    <a :href="member.linkedin">
+      <div class="linkedin-icon">
+      </div>
     </a>
   </li>
 </template>
@@ -18,12 +15,6 @@ export default {
   name: 'Member',
   props: {
     member: Object
-  },
-  data () {
-    return {
-      isHoveredOn: false,
-      linkedinIcon: require('../assets/img/linkedin.svg')
-    }
   }
 }
 </script>
@@ -39,6 +30,9 @@ export default {
   }
 
   .member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 33%;
     margin-bottom: 4.5em;
   }
@@ -49,5 +43,16 @@ export default {
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.5px;
+  }
+
+  .linkedin-icon {
+    width: 38px;
+    height: 38px;
+    background-image: url(../assets/img/linkedin.svg);
+    transition: background-image 0.2s ease-in-out ;
+  }
+
+  .linkedin-icon:hover {
+    background-image: url(../assets/img/linkedin-hover.svg)
   }
 </style>
