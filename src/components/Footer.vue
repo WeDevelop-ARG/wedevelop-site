@@ -29,15 +29,15 @@
 </template>
 
 <script>
-  export default {
-    name: 'Contact',
-    mounted() {
-      let clutchScript = document.createElement('script')
-      clutchScript.setAttribute('src', 'https://widget.clutch.co/static/js/widget.js')
-      clutchScript.async = true
-      document.head.appendChild(clutchScript)
-    }
+export default {
+  name: 'Contact',
+  mounted () {
+    let clutchScript = document.createElement('script')
+    clutchScript.setAttribute('src', 'https://widget.clutch.co/static/js/widget.js')
+    clutchScript.async = true
+    document.head.appendChild(clutchScript)
   }
+}
 </script>
 
 <style scoped>
