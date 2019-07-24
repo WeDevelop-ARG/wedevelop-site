@@ -49,7 +49,7 @@ export default {
     }
   },
   computed: {
-    checkDisabled: function() {
+    checkDisabled: function () {
       const { email, name, message } = this.contact
       return name === '' || email === '' || message === ''
     }
@@ -164,7 +164,7 @@ export default {
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease-in-out; 
+    transition: all 0.2s ease-in-out;
   }
 
   input:focus + label,
