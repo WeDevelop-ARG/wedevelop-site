@@ -89,7 +89,7 @@ export default {
   }
 
   .nav-col {
-    margin-right: 10em;
+    margin-right: 8em;
   }
 
   @media (max-width: 1200px) {
