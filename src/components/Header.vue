@@ -2,8 +2,8 @@
   <header class="header">
     <Navbar />
     <h1>We create, we innovate, we develop.</h1>
-    <a href="#contact" class="action-button">Start a project with us</a>
-    <a href="#who" class="down-button">
+    <a href="#contact" class="action-button" v-smooth-scroll="{ offset: -50 }">Start a project with us</a>
+    <a href="#who" class="down-button" v-smooth-scroll="{ offset: -100 }">
       <i class="fal fa-chevron-down"></i>
     </a>
   </header>
@@ -26,6 +26,12 @@ export default {
     font-size: 60px;
     font-weight: 900;
     color: #fff;
+  }
+
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 50px;
+    }
   }
 
   .header {

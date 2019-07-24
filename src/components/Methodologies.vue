@@ -50,6 +50,24 @@ export default {
     padding-right: 10em;
   }
 
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 30px;
+    }
+
+    img {
+      width: 250px;
+    }
+
+    .methodologies {
+      padding: 0 12em 0 8em;
+    }
+
+    .content {
+      padding-right: 5em;
+    }
+  }
+
   .highlight {
     color: #8224E3;
   }

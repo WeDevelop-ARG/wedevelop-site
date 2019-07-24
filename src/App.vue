@@ -13,6 +13,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import vueSmoothScroll from 'vue2-smooth-scroll'
+
 import Header from './components/Header'
 import Introduction from './components/Introduction'
 import Team from './components/Team'
@@ -22,6 +25,8 @@ import Skills from './components/Skills'
 import Clients from './components/Clients'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+
+Vue.use(vueSmoothScroll)
 
 export default {
   name: 'app',

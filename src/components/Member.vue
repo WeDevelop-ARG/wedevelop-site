@@ -1,14 +1,10 @@
 <template>
   <li class="member">
-    <img :src="member.photo" :alt="member.name" />
+    <img :src="member.photo" class="member-photo" :alt="member.name" />
     <h5>{{ member.name }}</h5>
     <p class="position">{{ member.position }}</p>
-    <a
-      :href="member.linkedin"
-      @mouseover="linkedinIcon = require('../assets/img/linkedin-hover.svg')"
-      @mouseleave="linkedinIcon = require('../assets/img/linkedin.svg')"
-    >
-      <img :src="linkedinIcon" :alt="member.name + ' linkedin'">
+    <a :href="member.linkedin">
+      <img class="linkedin-icon" src="../assets/img/linkedin.svg">
     </a>
   </li>
 </template>
@@ -18,12 +14,6 @@ export default {
   name: 'Member',
   props: {
     member: Object
-  },
-  data () {
-    return {
-      isHoveredOn: false,
-      linkedinIcon: require('../assets/img/linkedin.svg')
-    }
   }
 }
 </script>
@@ -39,8 +29,16 @@ export default {
   }
 
   .member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 33%;
     margin-bottom: 4.5em;
+  }
+
+  .member-photo {
+    width: 152px;
+    border-radius: 50%;
   }
 
   .position {
@@ -49,5 +47,28 @@ export default {
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 1200px) {
+    h5 {
+      font-size: 18px;
+    }
+
+    .position {
+      font-size: 15px;
+    }
+
+    .member-photo {
+      width: 120px;
+    }
+  }
+
+  .linkedin-icon {
+    filter: grayscale(1);
+    transition: filter 0.3s ease-in-out;
+  }
+
+  .linkedin-icon:hover {
+    filter: grayscale(0);
   }
 </style>
