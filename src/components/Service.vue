@@ -38,6 +38,27 @@ export default {
     text-align: left;
   }
 
+  @media (max-width: 1400px) {
+    .service {
+      padding: 0 2em;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    h3 {
+      font-size: 25px;
+      padding-bottom: .5em;
+    }
+
+    img {
+      height: 30px;
+    }
+
+    .service {
+      padding: 1.5em;
+    }
+  }
+
   .description {
     margin: 0;
     color: #A7AFC3;

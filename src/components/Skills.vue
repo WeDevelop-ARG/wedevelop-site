@@ -86,4 +86,14 @@ export default {
     margin: 0;
     list-style-type: none;
   }
+
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 40px;
+    }
+
+    .skill-list {
+      padding: 0 4em;
+    }
+  }
 </style>

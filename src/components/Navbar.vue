@@ -74,6 +74,12 @@ export default {
     margin-left: 3.1em;
   }
 
+  @media (max-width: 1200px) {
+    .nav-brand {
+      margin-left: 1em;
+    }
+  }
+
   .nav-brand img {
     width: 200px;
   }

@@ -49,6 +49,20 @@ export default {
     letter-spacing: 0.5px;
   }
 
+  @media (max-width: 1200px) {
+    h5 {
+      font-size: 18px;
+    }
+
+    .position {
+      font-size: 15px;
+    }
+
+    .member-photo {
+      width: 120px;
+    }
+  }
+
   .linkedin-icon {
     filter: grayscale(1);
     transition: filter 0.3s ease-in-out;

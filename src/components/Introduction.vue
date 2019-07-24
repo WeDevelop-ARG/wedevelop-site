@@ -20,7 +20,7 @@ export default {
   h2 {
     margin: 0 0 .8em 0;
     color: #272A40;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 900;
     letter-spacing: 1px;
     text-align: left;
@@ -38,11 +38,24 @@ export default {
     line-height: 34px;
   }
 
+  @media (max-width: 1200px) {
+    img {
+      width: 400px;
+    }
+  }
+
   .introduction {
     display: flex;
     align-items: center;
     margin-top: 8em;
     padding: 0 10.5em 0 9.5em;
+  }
+
+  @media (max-width: 1200px) {
+    .introduction {
+      align-items: flex-start;
+      padding: 0 8.5em 0 7.5em;
+    }
   }
 
   .content {

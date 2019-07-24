@@ -28,6 +28,12 @@ export default {
     color: #fff;
   }
 
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 50px;
+    }
+  }
+
   .header {
     display: flex;
     flex-direction: column;

@@ -221,6 +221,24 @@ export default {
     padding: 0 7em;
   }
 
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 40px;
+    }
+
+    img {
+      width: 100px;
+    }
+
+    .contact {
+      margin: 0 6em -1em 6em;
+    }
+
+    .content {
+      padding: 0 5em;
+    }
+  }
+
   .contact-info {
     width: 45%;
     text-align: left;

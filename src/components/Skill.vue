@@ -34,6 +34,12 @@ export default {
     height: 95px;
   }
 
+  @media (max-width: 1200px) {
+    img {
+      height: 75px;
+    }
+  }
+
   p {
     margin: 0;
     color: #A7AFC3;

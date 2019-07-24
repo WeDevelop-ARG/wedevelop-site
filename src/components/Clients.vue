@@ -140,6 +140,21 @@ export default {
     width: 95px;
   }
 
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 40px;
+    }
+
+    .clients {
+      padding: 0 6em;
+    }
+
+    .clutch-badge {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
   .action-button {
     width: 70%;
     padding: 1em 0;

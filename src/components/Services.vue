@@ -63,4 +63,14 @@ export default {
     margin: 0;
     list-style-type: none;
   }
+
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 40px;
+    }
+
+    .service-list {
+      padding: 0 2em;
+    }
+  }
 </style>

@@ -89,6 +89,28 @@ export default {
     margin-right: 10em;
   }
 
+  @media (max-width: 1200px) {
+    a {
+      font-size: 14px;
+    }
+
+    h4 {
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0 0 2em 0;
+    }
+
+    .footer {
+      padding: 20em 6em 7em 6em;
+    }
+
+    .nav-col {
+      margin-right: 5em;
+    }
+  }
+
   .col {
     display: flex;
     flex-direction: column;

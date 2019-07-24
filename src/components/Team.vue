@@ -116,6 +116,24 @@ export default {
     text-align: center;
   }
 
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 40px;
+    }
+
+    h3 {
+      font-size: 25px;
+    }
+
+    h4 {
+      font-size: 20px;
+    }
+
+    p {
+      padding: 0 2em;
+    }
+  }
+
   .team {
     margin-top: 10em;
     padding: 8em 0;
