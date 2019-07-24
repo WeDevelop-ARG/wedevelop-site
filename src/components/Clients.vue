@@ -14,6 +14,7 @@
         :control-btn="false"
         :indicators="false"
         :autoplay="false"
+        animation="fade"
         v-model="sliderIndex"
       >
         <SliderItem v-for="(review, i) in reviews" v-bind:key="i" :style="sliderItemStyles">

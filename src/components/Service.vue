@@ -34,7 +34,7 @@ export default {
   .service {
     width: 33%;
     margin-bottom: 4.5em;
-    padding: 0 2.5em;
+    padding: 0 3em;
     text-align: left;
   }
 

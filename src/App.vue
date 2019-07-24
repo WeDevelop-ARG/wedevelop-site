@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :scrollDuration="this.scrollDuration" />
     <Introduction />
     <Team />
     <Services />
@@ -8,7 +8,7 @@
     <Skills />
     <Clients />
     <Contact />
-    <Footer />
+    <Footer :scrollDuration="this.scrollDuration" />
   </div>
 </template>
 
@@ -40,6 +40,11 @@ export default {
     Clients,
     Contact,
     Footer
+  },
+  data () {
+    return {
+      scrollDuration: 2000
+    }
   }
 }
 </script>
