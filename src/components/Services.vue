@@ -59,18 +59,20 @@ export default {
   .service-list {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 8em;
+    padding: 0 7em;
     margin: 0;
     list-style-type: none;
+  }
+
+  @media (max-width: 1400px) {
+    .service-list {
+      padding: 0 5em;
+    }
   }
 
   @media (max-width: 1200px) {
     h2 {
       font-size: 40px;
-    }
-
-    .service-list {
-      padding: 0 2em;
     }
   }
 </style>
