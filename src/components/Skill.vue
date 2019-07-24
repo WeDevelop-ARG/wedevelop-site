@@ -1,6 +1,6 @@
 <template>
   <li class="skill">
-    <img :src="skill.photo" :alt="skill.name" />
+    <img class="skill-logo" :src="skill.photo" :alt="skill.name" />
     <p>{{ skill.name }}</p>
   </li>
 </template>
@@ -18,11 +18,15 @@ export default {
   .skill {
     width: 25%;
     margin-bottom: 6em;
-    transition: filter 0.2s ease-in-out;
   }
 
-  .skill:hover {
-    filter: brightness(0) saturate(100%) invert(88%) sepia(56%) saturate(1435%) hue-rotate(56deg) brightness(96%) contrast(77%);
+  .skill-logo {
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(1);
+  }
+
+  .skill:hover .skill-logo {
+    filter: grayscale(0);
   }
 
   img {
@@ -36,5 +40,10 @@ export default {
     font-size: 18px;
     letter-spacing: 0.6px;
     line-height: 35px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .skill:hover p {
+    color: #45DA60;
   }
 </style>
