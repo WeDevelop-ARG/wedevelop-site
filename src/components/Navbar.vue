@@ -3,27 +3,27 @@
     class="navbar"
     :class="{'filled-navbar': fillNavbar}"
   >
-    <a href="#app" class="nav-brand" v-smooth-scroll>
+    <a href="#app" class="nav-brand" v-smooth-scroll="{ duration: scrollDuration }">
       <img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop">
     </a>
     <ul class="nav-link-list">
       <li>
-        <a href="#who" class="nav-link" v-smooth-scroll="{ offset: -100 }">About us</a>
+        <a href="#who" class="nav-link" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">About us</a>
       </li>
       <li>
-        <a href="#services" class="nav-link" v-smooth-scroll="{ offset: -100 }">Services</a>
+        <a href="#services" class="nav-link" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Services</a>
       </li>
       <li>
-        <a href="#how" class="nav-link" v-smooth-scroll="{ offset: -100 }">How we work</a>
+        <a href="#how" class="nav-link" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">How we work</a>
       </li>
       <li>
-        <a href="#tech" class="nav-link" v-smooth-scroll="{ offset: -50 }">Technologies</a>
+        <a href="#tech" class="nav-link" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }">Technologies</a>
       </li>
       <li>
-        <a href="#reviews" class="nav-link" v-smooth-scroll="{ offset: -100 }">Reviews</a>
+        <a href="#reviews" class="nav-link" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Reviews</a>
       </li>
       <li>
-        <a href="#contact" class="nav-link" v-smooth-scroll="{ offset: -50 }">Contact</a>
+        <a href="#contact" class="nav-link" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }">Contact</a>
       </li>
     </ul>
   </nav>
@@ -32,6 +32,9 @@
 <script>
 export default {
   name: 'Navbar',
+  props: {
+    scrollDuration: Number
+  },
   data () {
     return {
       fillNavbar: false

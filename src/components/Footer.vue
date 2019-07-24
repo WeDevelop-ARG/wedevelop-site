@@ -1,28 +1,28 @@
 <template>
   <div class="footer">
     <div class="col">
-      <a href="#app" v-smooth-scroll><img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop"></a>
+      <a href="#app" v-smooth-scroll="{ duration: scrollDuration }"><img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop"></a>
       <p>© 2019. All rights reserved.</p>
       <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-darkbg="1" data-clutchcompany-id="810049"></div>
     </div>
     <div class="nav">
       <div class="col nav-col">
         <h4>About us</h4>
-        <a href="#who" v-smooth-scroll="{ offset: -100 }">Who we are</a>
-        <a href="#team" v-smooth-scroll="{ offset: -50 }">Our Team</a>
-        <a href="#join" v-smooth-scroll="{ offset: -150 }">Join Us</a>
+        <a href="#who" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Who we are</a>
+        <a href="#team" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }">Our Team</a>
+        <a href="#join" v-smooth-scroll="{ duration: scrollDuration, offset: -150 }">Join Us</a>
       </div>
       <div class="col nav-col">
         <h4>Services</h4>
-        <a href="#services" v-smooth-scroll="{ offset: -100 }">Web Development</a>
-        <a href="#services" v-smooth-scroll="{ offset: -100 }">Consulting Services</a>
-        <a href="#services" v-smooth-scroll="{ offset: -100 }">Outsourcing</a>
+        <a href="#services" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Web Development</a>
+        <a href="#services" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Consulting Services</a>
+        <a href="#services" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Outsourcing</a>
       </div>
       <div class="col nav-col nav-col-last">
-        <a href="#how" v-smooth-scroll="{ offset: -100 }"><h4>How we work</h4></a>
-        <a href="#tech" v-smooth-scroll="{ offset: -50 }"><h4>Technologies</h4></a>
-        <a href="#reviews" v-smooth-scroll="{ offset: -100 }"><h4>Reviews</h4></a>
-        <a href="#contact" v-smooth-scroll="{ offset: -50 }"><h4>Contact</h4></a>
+        <a href="#how" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }"><h4>How we work</h4></a>
+        <a href="#tech" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }"><h4>Technologies</h4></a>
+        <a href="#reviews" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }"><h4>Reviews</h4></a>
+        <a href="#contact" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }"><h4>Contact</h4></a>
       </div>
     </div>
   </div>
@@ -31,6 +31,9 @@
 <script>
 export default {
   name: 'Contact',
+  props: {
+    scrollDuration: Number
+  },
   mounted () {
     let clutchScript = document.createElement('script')
     clutchScript.setAttribute('src', 'https://widget.clutch.co/static/js/widget.js')
