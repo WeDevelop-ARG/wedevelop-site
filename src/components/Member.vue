@@ -4,8 +4,7 @@
     <h5>{{ member.name }}</h5>
     <p class="position">{{ member.position }}</p>
     <a :href="member.linkedin">
-      <div class="linkedin-icon">
-      </div>
+      <img class="linkedin-icon" src="../assets/img/linkedin.svg">
     </a>
   </li>
 </template>
@@ -51,13 +50,11 @@ export default {
   }
 
   .linkedin-icon {
-    width: 38px;
-    height: 38px;
-    background-image: url(../assets/img/linkedin.svg);
-    transition: background-image 0.2s ease-in-out;
+    filter: grayscale(1);
+    transition: filter 0.3s ease-in-out;
   }
 
   .linkedin-icon:hover {
-    background-image: url(../assets/img/linkedin-hover.svg)
+    filter: grayscale(0);
   }
 </style>
