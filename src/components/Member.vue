@@ -1,6 +1,6 @@
 <template>
   <li class="member">
-    <img :src="member.photo" :alt="member.name" />
+    <img :src="member.photo" class="member-photo" :alt="member.name" />
     <h5>{{ member.name }}</h5>
     <p class="position">{{ member.position }}</p>
     <a :href="member.linkedin">
@@ -35,6 +35,11 @@ export default {
     align-items: center;
     width: 33%;
     margin-bottom: 4.5em;
+  }
+
+  .member-photo {
+    width: 152px;
+    border-radius: 50%;
   }
 
   .position {
