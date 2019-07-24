@@ -35,7 +35,7 @@ export default {
         },
         {
           name: 'Serguey Shevtsov',
-          position: 'Full Stack Developer',
+          position: 'DevOps Engineer & Full Stack Developer',
           photo: require('../assets/img/Sergio-Shevtsov.svg'),
           linkedin: 'https://www.linkedin.com/in/serguey-shevtsov'
         },
@@ -47,7 +47,7 @@ export default {
         },
         {
           name: 'Agostina Giordano',
-          position: 'UX UI Designer',
+          position: 'UX/UI Designer & Project Manager',
           photo: require('../assets/img/Agostina-Giordano.svg'),
           linkedin: 'https://www.linkedin.com/in/agosgio/'
         },
