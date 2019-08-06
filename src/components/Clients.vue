@@ -72,9 +72,6 @@ export default {
         }
       ],
       sliderItemStyles: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
         zIndex: 0
       }
     }
@@ -132,6 +129,12 @@ export default {
     width: 50%;
   }
 
+  .slider-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .testimonies {
     padding-left: 4em;
   }
@@ -139,21 +142,6 @@ export default {
   .clutch-badge {
     height: 95px;
     width: 95px;
-  }
-
-  @media (max-width: 1200px) {
-    h2 {
-      font-size: 40px;
-    }
-
-    .clients {
-      padding: 0 6em;
-    }
-
-    .clutch-badge {
-      width: 75px;
-      height: 75px;
-    }
   }
 
   .action-button {
@@ -215,5 +203,97 @@ export default {
   .client-logo-active {
     filter: grayscale(0);
     cursor: initial;
+  }
+
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 40px;
+    }
+
+    .clients {
+      padding: 0 6em;
+    }
+
+    .clutch-badge {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h2 {
+      padding-right: 0;
+      margin: 0 0 1em 0;
+      text-align: center;
+      font-size: 30px;
+      line-height: 0.6px;
+    }
+
+    h5 {
+      margin: 1.6em 0 .5em 0;
+      font-size: 20px;
+      letter-spacing: 0.4px;
+    }
+
+    p {
+      padding-right: 0;
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: 0.56px;
+      line-height: 28px;
+    }
+
+    .clients {
+      flex-direction: column;
+      margin-top: 5em;
+      padding: 0 1.5em;
+    }
+
+    .content {
+      align-items: center;
+      width: 100%;
+    }
+
+    .action-button {
+      width: 74%;
+      font-size: 14px;
+    }
+
+    .testimonies {
+      margin-top: 6em;
+      padding-left: 0;
+    }
+
+    .clutch-badge {
+      width: 95px;
+      height: 95px;
+    }
+
+    .slider {
+      height: 250px!important;
+    }
+    .slider-item {
+      align-items: center;
+    }
+
+    .position {
+      font-size: 14px;
+    }
+
+    .testimony {
+      font-size: 16px;
+      letter-spacing: 0.56px;
+      line-height: 28px;
+      margin-bottom: 0;
+    }
+
+    .read-more {
+      display: none;
+      margin: 0;
+    }
+
+    .client-logo-section {
+      padding-top: 2em;
+    }
   }
 </style>

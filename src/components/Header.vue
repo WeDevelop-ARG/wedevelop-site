@@ -28,13 +28,9 @@ export default {
     margin: 6em 0 1.1em 0;
     font-size: 60px;
     font-weight: 900;
+    letter-spacing: 0.76px;
+    line-height: 46px;
     color: #fff;
-  }
-
-  @media (max-width: 1200px) {
-    h1 {
-      font-size: 50px;
-    }
   }
 
   .header {
@@ -60,5 +56,39 @@ export default {
     margin-bottom: 2.5em;
     color: #fff;
     font-size: 40px;
+  }
+
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 38px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h1 {
+      margin: 5.4em 0 2.8em 0;
+    }
+
+    .header {
+      background: url('../assets/img/mobile-header-background.png') no-repeat center center;
+      background-size: cover;
+    }
+
+    .action-button {
+      margin-bottom: 4em;
+      padding: 1.1em 1.7em;
+      font-size: 14px;
+    }
+
+    .down-button {
+      margin-bottom: 2.3em;
+      font-size: 30px;
+    }
   }
 </style>

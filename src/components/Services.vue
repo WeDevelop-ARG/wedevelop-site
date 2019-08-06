@@ -75,4 +75,21 @@ export default {
       font-size: 40px;
     }
   }
+
+  @media (max-width: 576px) {
+    h2 {
+      margin: 0 0 2.7em 0;
+      font-size: 30px;
+      letter-spacing: 0.6px
+    }
+
+    .services {
+      margin-top: 5em;
+    }
+
+    .service-list {
+      flex-direction: column;
+      padding: 0 1.6em;
+    }
+  }
 </style>

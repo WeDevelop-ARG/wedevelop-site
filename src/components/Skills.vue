@@ -89,11 +89,31 @@ export default {
 
   @media (max-width: 1200px) {
     h2 {
+      padding: 0 1.2em;
       font-size: 40px;
+      letter-spacing: 0.6px;
+      line-height: 36px;
     }
 
     .skill-list {
       padding: 0 4em;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 30px;
+    }
+
+    .skills {
+      margin-top: 5.8em;
+      padding: 3.5em 0 4.8em 0;
+    }
+
+    .skill-list {
+      padding: 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
     }
   }
 </style>
