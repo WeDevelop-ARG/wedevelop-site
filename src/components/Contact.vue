@@ -249,4 +249,65 @@ export default {
     flex-direction: column;
     width: 55%;
   }
+
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 30px;
+      letter-spacing: 0.6px;
+    }
+
+    h3 {
+      margin-top: .5em;
+      font-size: 18px;
+      letter-spacing: 0.63px;
+    }
+
+    img {
+      width: 72px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 0.49px;
+    }
+
+    label {
+      font-size: 12px;
+      letter-spacing: 0.34px;
+    }
+
+    .contact {
+      top: 0;
+      margin: 5.6em 0 0 0;
+      padding: 3.5em 0 3.8em 0;
+    }
+
+    .content {
+      flex-direction: column;
+      padding: 0 1.5em;
+    }
+
+    .contact-info {
+      width: 100%;
+      margin-top: 6.2em;
+      order: 2;
+      text-align: center;
+    }
+
+    .contact-form {
+      width: 100%;
+      order: 1;
+      align-items: center;
+    }
+
+    .input-group {
+      width: 100%;
+    }
+
+    .submit-button {
+      width: 74%;
+      font-size: 14px;
+    }
+  }
 </style>

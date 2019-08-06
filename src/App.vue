@@ -124,4 +124,11 @@ export default {
     border-bottom: 125px solid #fff;
     border-left: 170px solid transparent;
   }
+
+  @media (max-width: 576px) {
+    .alt-section:after,
+    .alt-section:before {
+      display: none;
+    }
+  }
 </style>

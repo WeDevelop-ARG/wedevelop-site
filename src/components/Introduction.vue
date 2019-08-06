@@ -38,24 +38,11 @@ export default {
     line-height: 34px;
   }
 
-  @media (max-width: 1200px) {
-    img {
-      width: 400px;
-    }
-  }
-
   .introduction {
     display: flex;
     align-items: center;
     margin-top: 8em;
     padding: 0 10.5em 0 9.5em;
-  }
-
-  @media (max-width: 1200px) {
-    .introduction {
-      align-items: flex-start;
-      padding: 0 8.5em 0 7.5em;
-    }
   }
 
   .content {
@@ -65,5 +52,51 @@ export default {
 
   .highlight {
     color: #8224E3;
+  }
+
+  @media (max-width: 1200px) {
+    .introduction {
+      align-items: flex-start;
+      padding: 0 8.5em 0 7.5em;
+    }
+
+    img {
+      width: 400px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    img {
+      order: 1;
+      width: 290px;
+      margin-bottom: 2.2em;
+    }
+
+    h2 {
+      margin: 0 0 1em 0;
+      font-size: 30px;
+      letter-spacing: 0.6px;
+      text-align: center;
+      line-height: 36px;
+    }
+
+    p {
+      margin-bottom: 1.5em;
+      padding-right: 0;
+      font-size: 16px;
+      letter-spacing: 0.56px;
+      text-align: center;
+      line-height: 28px;
+    }
+
+    .introduction {
+      flex-direction: column;
+      margin-top: 3.2em;
+      padding: 0 1.5em;
+    }
+
+    .content {
+      order: 2;
+    }
   }
 </style>

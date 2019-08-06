@@ -146,4 +146,34 @@ export default {
     margin: 0;
     list-style-type: none;
   }
+
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 30px;
+    }
+
+    h3 {
+      margin: 2.5em 0 1em 0;
+    }
+
+    h4 {
+      margin: 1em 0 0 0;
+    }
+
+    .team {
+      margin-top: 3.5em;
+      padding: 3.8em 0;
+    }
+
+    .member-list {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    p {
+      padding: 0 1.4em;
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
 </style>

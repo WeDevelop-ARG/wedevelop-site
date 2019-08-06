@@ -49,6 +49,15 @@ export default {
     letter-spacing: 0.5px;
   }
 
+  .linkedin-icon {
+    filter: grayscale(1);
+    transition: filter 0.3s ease-in-out;
+  }
+
+  .linkedin-icon:hover {
+    filter: grayscale(0);
+  }
+
   @media (max-width: 1200px) {
     h5 {
       font-size: 18px;
@@ -63,12 +72,23 @@ export default {
     }
   }
 
-  .linkedin-icon {
-    filter: grayscale(1);
-    transition: filter 0.3s ease-in-out;
-  }
+  @media (max-width: 576px) {
+    .member {
+      width: auto;
+      flex: 0 0 auto;
+      margin: 0 2.5em 1em 1.5em;
+    }
 
-  .linkedin-icon:hover {
-    filter: grayscale(0);
+    .member:last-child {
+      padding-right: 1.5em;
+    }
+
+    .member-photo {
+      width: 100px;
+    }
+
+    .position {
+      font-size: 14px;
+    }
   }
 </style>

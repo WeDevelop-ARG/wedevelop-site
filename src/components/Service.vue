@@ -38,6 +38,14 @@ export default {
     text-align: left;
   }
 
+  .description {
+    margin: 0;
+    color: #A7AFC3;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+    line-height: 35px;
+  }
+
   @media (max-width: 1400px) {
     .service {
       padding: 0 2em;
@@ -59,11 +67,23 @@ export default {
     }
   }
 
-  .description {
-    margin: 0;
-    color: #A7AFC3;
-    font-size: 18px;
-    letter-spacing: 0.6px;
-    line-height: 35px;
+  @media (max-width: 576px) {
+    h3 {
+      margin: 1em 0;
+      padding-bottom: 1em;
+      font-size: 22px;
+      letter-spacing: 0.44px;
+    }
+
+    .service {
+      width: auto;
+      padding: 0;
+      text-align: center;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 28px;
+    }
   }
 </style>

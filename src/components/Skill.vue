@@ -52,4 +52,20 @@ export default {
   .skill:hover p {
     color: #45DA60;
   }
+
+  @media (max-width: 576px) {
+    img {
+      margin-bottom: 1.2em;
+    }
+
+    .skill {
+      width: auto;
+      margin: 0 2em 1em 2em;
+      flex: 0 0 auto;
+    }
+
+    .skill:last-child {
+      padding-right: 2em;
+    }
+  }
 </style>

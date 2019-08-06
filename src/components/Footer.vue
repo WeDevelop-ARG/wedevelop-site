@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="col">
+    <div class="col copyright-col">
       <a href="#app" v-smooth-scroll="{ duration: scrollDuration }"><img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop"></a>
       <p>© 2019. All rights reserved.</p>
       <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-darkbg="1" data-clutchcompany-id="810049"></div>
@@ -127,5 +127,41 @@ export default {
 
   .nav-col-last a {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 576px) {
+    h4 {
+      font-size: 16px;
+      letter-spacing: 1.27px;
+    }
+
+    a {
+      letter-spacing: 1.45px;
+    }
+
+    p {
+      font-size: 12px;
+      letter-spacing: 0.42px;
+    }
+
+    .copyright-col {
+      order: 2;
+    }
+
+    .nav {
+      order: 1;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer {
+      padding: 4em 1.5em;
+      flex-direction: column;
+    }
+
+    .nav-col {
+      margin-right: 0;
+      margin-bottom: 2.5em;
+    }
   }
 </style>

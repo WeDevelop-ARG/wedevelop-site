@@ -50,6 +50,10 @@ export default {
     padding-right: 10em;
   }
 
+  .highlight {
+    color: #8224E3;
+  }
+
   @media (max-width: 1200px) {
     h2 {
       font-size: 30px;
@@ -68,7 +72,33 @@ export default {
     }
   }
 
-  .highlight {
-    color: #8224E3;
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 24px;
+      letter-spacing: 0.48px;
+      text-align: center;
+    }
+
+    p {
+      padding: 0;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.56px;
+      text-align: center;
+    }
+
+    img {
+      margin-top: 2.4em;
+    }
+
+    .methodologies {
+      margin-top: 1.4em;
+      flex-direction: column;
+      padding: 0 1.5em;
+    }
+
+    .content {
+      padding: 0;
+    }
   }
 </style>
