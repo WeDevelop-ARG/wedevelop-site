@@ -120,7 +120,7 @@ export default {
   /* Bottom right cutted corner */
   .alt-section:after {
     bottom: 0;
-    right: -1px;
+    right: 0;
     border-bottom: 125px solid #fff;
     border-left: 170px solid transparent;
   }
