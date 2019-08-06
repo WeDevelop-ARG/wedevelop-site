@@ -74,9 +74,9 @@ export default {
 
   @media (max-width: 576px) {
     .member {
-      width: auto;
+      width: 50%;
       flex: 0 0 auto;
-      margin: 0 2.5em 1em 1.5em;
+      margin: 0 1.2em 1em 1.2em;
     }
 
     .member:last-child {
