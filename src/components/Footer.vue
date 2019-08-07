@@ -1,9 +1,18 @@
 <template>
   <div class="footer">
     <div class="col copyright-col">
-      <a href="#app" v-smooth-scroll="{ duration: scrollDuration }"><img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop"></a>
-      <p>© 2019. All rights reserved.</p>
-      <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="50" data-darkbg="1" data-clutchcompany-id="810049"></div>
+      <div>
+        <a href="#app" v-smooth-scroll="{ duration: scrollDuration }"><img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop"></a>
+        <p>© 2019. All rights reserved.</p>
+      </div>
+      <div
+        class="clutch-widget"
+        data-url="https://widget.clutch.co"
+        :data-widget-type="windowWidth <= 576 ? 1 : 2"
+        data-height="50"
+        data-darkbg="1"
+        data-clutchcompany-id="810049"
+      ></div>
     </div>
     <div class="nav">
       <div class="col nav-col">
@@ -24,6 +33,17 @@
         <a href="#reviews" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }"><h4>Reviews</h4></a>
         <a href="#contact" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }"><h4>Contact</h4></a>
       </div>
+      <div class="nav-mobile">
+        <a href="#who" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">
+          <h4>About us</h4>
+        </a>
+        <a href="#join" v-smooth-scroll="{ duration: scrollDuration, offset: -150 }">
+          <h4>Join us</h4>
+        </a>
+        <a href="#contact" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }">
+          <h4>Contact</h4>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +51,11 @@
 <script>
 export default {
   name: 'Contact',
+  data () {
+    return {
+      windowWidth: 0
+    }
+  },
   props: {
     scrollDuration: Number
   },
@@ -39,6 +64,7 @@ export default {
     clutchScript.setAttribute('src', 'https://widget.clutch.co/static/js/widget.js')
     clutchScript.async = true
     document.head.appendChild(clutchScript)
+    this.windowWidth = window.innerWidth
   }
 }
 </script>
@@ -92,6 +118,10 @@ export default {
     margin-right: 8em;
   }
 
+  .nav-mobile {
+    display: none;
+  }
+
   @media (max-width: 1200px) {
     a {
       font-size: 14px;
@@ -132,7 +162,6 @@ export default {
   @media (max-width: 576px) {
     h4 {
       font-size: 16px;
-      letter-spacing: 1.27px;
     }
 
     a {
@@ -144,24 +173,44 @@ export default {
       letter-spacing: 0.42px;
     }
 
+    img {
+      width: 125px;
+    }
+
     .copyright-col {
+      width: 100%;
       order: 2;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 1em;
     }
 
     .nav {
       order: 1;
       flex-wrap: wrap;
       justify-content: space-between;
+      padding: 0 1em;
     }
 
     .footer {
-      padding: 4em 1.5em;
+      padding: 4.4em 1.5em;
       flex-direction: column;
     }
 
     .nav-col {
-      margin-right: 0;
-      margin-bottom: 2.5em;
+      display: none;
+    }
+
+    .nav-mobile {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: .5em;
+    }
+
+    .clutch-widget {
+      width: 130px;
     }
   }
 </style>
