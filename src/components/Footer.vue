@@ -183,14 +183,12 @@ export default {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding-left: 1em;
     }
 
     .nav {
       order: 1;
       flex-wrap: wrap;
       justify-content: space-between;
-      padding: 0 1em;
     }
 
     .footer {
