@@ -71,14 +71,16 @@ export default {
     },
 
     onToggle () {
-      this.toggleMenu = !this.toggleMenu
+      if (window.innerWidth <= 576) {
+        this.toggleMenu = !this.toggleMenu
 
-      if (this.toggleMenu) {
-        document.documentElement.style.overflow = 'hidden'
-        document.body.scroll = 'no'
-      } else {
-        document.documentElement.style.overflow = 'scroll'
-        document.body.scroll = 'yes'
+        if (this.toggleMenu) {
+          document.documentElement.style.overflow = 'hidden'
+          document.body.scroll = 'no'
+        } else {
+          document.documentElement.style.overflow = 'scroll'
+          document.body.scroll = 'yes'
+        }
       }
     }
   }
@@ -99,6 +101,7 @@ export default {
     display: none;
     font-size: 30px;
     color: #fff;
+    cursor: pointer;
   }
 
   .filled-navbar {
