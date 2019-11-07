@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <Header :scrollDuration="this.scrollDuration" />
+    <Methodologies />
+    <Skills />
     <Introduction />
     <Team />
     <Services />
-    <Methodologies />
-    <Skills />
     <Clients />
     <Contact />
     <Footer :scrollDuration="this.scrollDuration" />
