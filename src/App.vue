@@ -9,12 +9,14 @@
     <Clients />
     <Contact />
     <Footer :scrollDuration="this.scrollDuration" />
+    <cookie-law buttonClass="cookie-button" ></cookie-law>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import vueSmoothScroll from 'vue2-smooth-scroll'
+import CookieLaw from 'vue-cookie-law'
 
 import Header from './components/Header'
 import Introduction from './components/Introduction'
@@ -39,7 +41,8 @@ export default {
     Skills,
     Clients,
     Contact,
-    Footer
+    Footer,
+    CookieLaw
   },
   data () {
     return {
@@ -123,6 +126,18 @@ export default {
     right: 0;
     border-bottom: 125px solid #fff;
     border-left: 170px solid transparent;
+  }
+
+  .Cookie.Cookie--base {
+    justify-content: flex-start;
+  }
+
+  .cookie-button {
+    background-color: #45DA60;
+    padding: 8px 25px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
   }
 
   @media (max-width: 576px) {
