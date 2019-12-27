@@ -9,12 +9,18 @@
     <Clients />
     <Contact />
     <Footer :scrollDuration="this.scrollDuration" />
+    <cookie-law
+      buttonClass="cookie-button"
+      message="This website stores cookies on your computer. These cookies are used to collect information about how you interact with our website and allow us to remember you. We use this information in order to improve and customize your browsing experience and for analytics and metrics about our visitors both on this website and other media."
+    >
+    </cookie-law>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import vueSmoothScroll from 'vue2-smooth-scroll'
+import CookieLaw from 'vue-cookie-law'
 
 import Header from './components/Header'
 import Introduction from './components/Introduction'
@@ -39,7 +45,8 @@ export default {
     Skills,
     Clients,
     Contact,
-    Footer
+    Footer,
+    CookieLaw
   },
   data () {
     return {
@@ -125,10 +132,36 @@ export default {
     border-left: 170px solid transparent;
   }
 
+  .cookie-button {
+    background-color: #45DA60;
+    padding: 8px 25px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .drift-widget-welcome-expanded-online,
+  .drift-widget-welcome-away {
+    bottom: 100px!important;
+  }
+
+  .Cookie__content {
+    width: 90%;
+  }
+
   @media (max-width: 576px) {
     .alt-section:after,
     .alt-section:before {
       display: none;
+    }
+
+    .Cookie__content {
+      width: 100%;
+    }
+
+    .drift-widget-welcome-expanded-online,
+    .drift-widget-welcome-away {
+      bottom: 0!important;
     }
   }
 </style>
