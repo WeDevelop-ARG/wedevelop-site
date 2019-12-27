@@ -13,8 +13,8 @@
       <div slot-scope="props" class="cookie">
         <p class="message">This website stores cookies on your computer. These cookies are used to collect information about how you interact with our website and allow us to remember you. We use this information in order to improve and customize your browsing experience and for analytics and metrics about our visitors both on this website and other media.</p>
         <div class="buttons">
-          <button class="cookie-button" @click="props.accept">I accept</button>
-          <button class="cookie-button" @click="props.close">I decline</button>
+          <button class="cookie-button" @click="props.accept">Accept</button>
+          <button class="cookie-button" @click="props.close">Decline</button>
         </div>
       </div>
     </cookie-law>
