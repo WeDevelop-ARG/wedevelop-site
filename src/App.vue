@@ -140,6 +140,15 @@ export default {
     cursor: pointer;
   }
 
+  .drift-widget-welcome-expanded-online,
+  .drift-widget-welcome-away {
+    bottom: 100px!important;
+  }
+
+  .Cookie__content {
+    width: 90%;
+  }
+
   @media (max-width: 576px) {
     .alt-section:after,
     .alt-section:before {
