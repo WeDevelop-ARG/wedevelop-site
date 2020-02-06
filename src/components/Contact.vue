@@ -80,12 +80,10 @@ export default {
           }
         ]
       }
-      const config = {
-        headers: {
-          'authorization': 'Bearer ' + process.env.VUE_APP_SENDGRID_API_KEY
-        }
-      }
-      axios.post('https://api.sendgrid.com/v3/mail/send', data, config)
+
+      const mailerUrl = process.env.MAILER_URL || 'http://localhost:3000/send'
+
+      axios.post(mailerUrl, data)
     }
   }
 }
