@@ -81,7 +81,7 @@ export default {
         ]
       }
 
-      const mailerUrl = process.env.MAILER_URL || 'http://localhost:3000/send'
+      const mailerUrl = process.env.VUE_APP_MAILER_URL || 'http://localhost:3000/send'
 
       axios.post(mailerUrl, data)
     }
