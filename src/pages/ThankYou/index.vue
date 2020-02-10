@@ -3,7 +3,7 @@
     <div class="thank-you-message alt-section alt-section--thankyou">
       <h1 class="title">Thanks for reaching out!</h1>
       <p class="text">Someone from our team will get back to you soon.</p>
-      <img class="image" src="../../assets/img/thank-you-drawing.jpg" />
+      <img class="image" src="../../assets/img/thank-you-drawing.svg" />
       <p class="text highlighted-text highlighted-text--mobile">Forgot to say something important?</p>
       <p class="text text--mobile">
         Send us a <span class="highlighted-text--purple">new message</span> or write us at
