@@ -2,7 +2,12 @@
   <div class="footer">
     <div class="col copyright-col">
       <div>
-        <a href="#app" v-smooth-scroll="{ duration: scrollDuration }"><img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop"></a>
+        <router-link
+          to="/#app"
+          v-smooth-scroll="{ duration: scrollDuration }"
+        >
+          <img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop">
+        </router-link>
         <p>© 2019. All rights reserved.</p>
       </div>
       <div
@@ -17,32 +22,91 @@
     <div class="nav">
       <div class="col nav-col">
         <h4>About us</h4>
-        <a href="#who" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Who we are</a>
-        <a href="#team" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }">Our Team</a>
-        <a href="#join" v-smooth-scroll="{ duration: scrollDuration, offset: -150 }">Join Us</a>
+        <router-link
+          to="/#who"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 300 : -100 }"
+        >
+          Who we are
+        </router-link>
+        <router-link
+          to="/#team"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 750 : -50 }"
+        >
+          Our Team
+        </router-link>
+        <router-link
+          to="/#join"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 1050 : -150 }"
+        >
+          Join Us
+        </router-link>
       </div>
       <div class="col nav-col">
         <h4>Services</h4>
-        <a href="#services" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Web Development</a>
-        <a href="#services" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Consulting Services</a>
-        <a href="#services" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">Outsourcing</a>
+        <router-link
+          to="/#services"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 1000 : -100 }"
+        >
+          Web Development
+        </router-link>
+        <router-link
+          to="/#services"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 1000 : -100 }"
+        >
+          Consulting Services
+        </router-link>
+        <router-link
+          to="/#services"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 1000 : -100 }"
+        >
+          Outsourcing
+        </router-link>
       </div>
       <div class="col nav-col nav-col-last">
-        <a href="#how" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }"><h4>How we work</h4></a>
-        <a href="#tech" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }"><h4>Technologies</h4></a>
-        <a href="#reviews" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }"><h4>Reviews</h4></a>
-        <a href="#contact" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }"><h4>Contact</h4></a>
+        <router-link
+          to="/#how"
+          v-smooth-scroll="{ duration: scrollDuration, offset: -100 }"
+        >
+          <h4>How we work</h4>
+        </router-link>
+        <router-link
+          to="/#tech"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 450 : -50 }"
+        >
+          <h4>Technologies</h4>
+        </router-link>
+        <router-link
+          to="/#reviews"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 1000 : -100 }"
+        >
+          <h4>Reviews</h4>
+        </router-link>
+        <router-link
+          to="/#contact"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 1250 : -50 }"
+        >
+          <h4>Contact</h4>
+        </router-link>
       </div>
       <div class="nav-mobile">
-        <a href="#who" v-smooth-scroll="{ duration: scrollDuration, offset: -100 }">
+        <router-link
+          to="/#who"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 300 : -100 }"
+        >
           <h4>About us</h4>
-        </a>
-        <a href="#join" v-smooth-scroll="{ duration: scrollDuration, offset: -150 }">
+        </router-link>
+        <router-link
+          to="/#join"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 750 : -150 }"
+        >
           <h4>Join us</h4>
-        </a>
-        <a href="#contact" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }">
+        </router-link>
+        <router-link
+          to="/#contact"
+          v-smooth-scroll="{ duration: scrollDuration, offset: isNotHome ? 850 : -50 }"
+        >
           <h4>Contact</h4>
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
@@ -57,7 +121,8 @@ export default {
     }
   },
   props: {
-    scrollDuration: Number
+    scrollDuration: Number,
+    isNotHome: Boolean
   },
   mounted () {
     let clutchScript = document.createElement('script')
@@ -89,15 +154,17 @@ export default {
   }
 
   p {
-    margin: 0 0 3em 0;
+    margin: 0 0 38px 0;
     color: #A7AFC3;
     font-size: 14px;
     letter-spacing: 0.5px;
+    line-height: 34px;
   }
 
   .footer {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     padding: 22.5em 10.5em 9.5em 10.5em;
     background-color: #272A40;
   }
