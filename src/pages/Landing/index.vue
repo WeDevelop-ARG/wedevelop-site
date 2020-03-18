@@ -1,11 +1,12 @@
 <template>
   <div>
     <Header :scrollDuration="scrollDuration" />
+    <Testimony />
+    <Services />
     <Methodologies />
     <Skills />
     <Introduction />
     <Team />
-    <Services />
     <Clients />
     <Contact />
     <Footer :scrollDuration="scrollDuration" />
@@ -25,6 +26,7 @@
 import CookieLaw from 'vue-cookie-law'
 
 import Header from '../../components/Header'
+import Testimony from '../../components/Testimony'
 import Introduction from '../../components/Introduction'
 import Team from '../../components/Team'
 import Services from '../../components/Services'
@@ -38,6 +40,7 @@ export default {
   name: 'app',
   components: {
     Header,
+    Testimony,
     Introduction,
     Team,
     Services,
