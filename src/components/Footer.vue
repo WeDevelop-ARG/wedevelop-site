@@ -87,6 +87,9 @@
         >
           <h4>Contact</h4>
         </router-link>
+        <router-link to="/privacy-policy">
+          <h4>Privacy Policy</h4>
+        </router-link>
       </div>
       <div class="nav-mobile">
         <router-link
