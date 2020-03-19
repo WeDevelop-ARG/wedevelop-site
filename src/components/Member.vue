@@ -1,12 +1,18 @@
 <template>
-  <li class="member">
-    <img :src="member.photo" class="member-photo" :alt="member.name" />
-    <h5>{{ member.name }}</h5>
-    <p class="position">{{ member.position }}</p>
-    <a :href="member.linkedin">
-      <img class="linkedin-icon" src="../assets/img/linkedin.svg">
-    </a>
-  </li>
+<a :href="member.linkedin">
+  <div class="member">
+    <img :src="member.photo" class="photo" :alt="member.name" />
+    <div class="data">
+      <div class="name-postion-container">
+        <div class="name">{{ member.name }}</div>
+        <div class="position">{{ member.position }}</div>
+      </div>
+       <div v-if="member.linkedin" class='linkedin-badge'>
+         <span class="linkedin-text">in</span>
+       </div>
+    </div>
+  </div>
+  </a>
 </template>
 
 <script>
@@ -19,76 +25,92 @@ export default {
 </script>
 
 <style scoped>
-  h5 {
-    margin: 1.3em 0 .4em 0;
-    color: #272A40;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29px;
-    letter-spacing: 1.2px;
-  }
+.member {
+  position: relative;
+  height: 429px;
+  width: 332px;
+  display: flex;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12);
+  transition: all 0.3s ease-in-out;
+}
 
-  .member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 33%;
-    margin-bottom: 4.5em;
-  }
+.member:hover{
+  transform: scale(1.25, 1.25);
+}
 
-  .member-photo {
-    width: 152px;
-    border-radius: 50%;
-  }
+.photo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
-  .position {
-    margin: 0 0 .6em 0;
-    color: #A7AFC3;
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 0.5px;
-  }
+.data {
+  display: flex;
+  position: absolute;
+  align-self: flex-end;
+  height: 97px;
+  width: 100%;
+  background-color: #FFFFFF;
+}
 
-  .linkedin-icon {
-    filter: grayscale(1);
-    transition: filter 0.3s ease-in-out;
-  }
+.name-postion-container {
+  display: flex;
+  width: calc(320px - 2em);
+  flex-direction: column;
+  flex-grow: 2;
+  align-self: center;
+  padding: 0 0 0 2em;
+}
 
-  .linkedin-icon:hover {
-    filter: grayscale(0);
-  }
+.name {
+  color: #272A40;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 24px;
+  text-align: left;
+}
 
-  @media (max-width: 1200px) {
-    h5 {
-      font-size: 18px;
-    }
+.position {
+  color: #A7AFC3;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  line-height: 17px;
+  text-align: left;
+  margin: 7px 0 0 0;
+}
 
-    .position {
-      font-size: 15px;
-    }
+.linkedin-text {
+  position: absolute;
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  top: 35%;
+}
 
-    .member-photo {
-      width: 120px;
-    }
-  }
+.linkedin-badge {
+  position: relative;
+  height: auto;
+  width: 30px;
+  background-color: #8224E3;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
 
-  @media (max-width: 576px) {
-    .member {
-      width: 50%;
-      flex: 0 0 auto;
-      margin: 0 1.2em 1em 1.2em;
-    }
+.member:hover  .linkedin-badge {
+  opacity: 1;
+  width: 78px;
+  margin-right: 0px;
+}
 
-    .member:last-child {
-      padding-right: 1.5em;
-    }
-
-    .member-photo {
-      width: 100px;
-    }
-
-    .position {
-      font-size: 14px;
-    }
-  }
+.linkedin-badge:before {
+ content: "";
+ display: block;
+ position: absolute;
+ left: 0;
+ right: 100%;
+ border-top: 97px solid #FFFFFF;
+ border-right: 38px solid transparent;
+}
 </style>
