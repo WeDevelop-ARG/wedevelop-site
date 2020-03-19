@@ -1,9 +1,13 @@
 <template>
   <div class="team alt-section" id="team">
     <h2>Our Team</h2>
-    <ul class="member-list">
-      <Member v-for="(member, i) in members" v-bind:key="i" v-bind:member="member" />
-    </ul>
+    <swiper class="carousel" :options="swiperOption">
+      <swiper-slide  v-for="(member, i) in members" v-bind:key="i">
+        <Member v-bind:member="member" />
+      </swiper-slide>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
+    </swiper>
     <h3 id="join">Want to join us?</h3>
     <p>We love to meet new people and have their ideas come alive in the projects we work.<br>If you share our <span class="highlight-paragraph">passion of working creatively and professionally</span>, please email us your resume or LinkedIn profile to</p>
     <h4>jobs@wedevelop.me</h4>
@@ -11,71 +15,33 @@
 </template>
 
 <script>
+import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import Member from './Member.vue'
+import { getMemberList } from '../mixins/members/getMemberList'
 
 export default {
   name: 'Team',
   components: {
-    Member
+    Member,
+    swiper,
+    swiperSlide
   },
   data: function () {
     return {
-      members: [
-        {
-          name: 'Mauricio Pautasso',
-          position: 'Co-Founder & CEO',
-          photo: require('../assets/img/Mauricio-Pautasso.svg'),
-          linkedin: 'https://www.linkedin.com/in/mauriciopautasso'
+      members: getMemberList(),
+      swiperOption: {
+        slidesPerView: 'auto',
+        allowTouchMove: false,
+        lazy: {
+          loadPrevNext: true,
+          loadPrevNextAmount: 6
         },
-        {
-          name: 'Abel Osorio',
-          position: 'Co-Founder & CTO',
-          photo: require('../assets/img/Abel-Osorio.svg'),
-          linkedin: 'https://www.linkedin.com/in/abelosorio89'
-        },
-        {
-          name: 'Serguey Shevtsov',
-          position: 'DevOps Engineer & Full Stack Developer',
-          photo: require('../assets/img/Sergio-Shevtsov.svg'),
-          linkedin: 'https://www.linkedin.com/in/serguey-shevtsov'
-        },
-        {
-          name: 'Armando Graterol',
-          position: 'Frontend Developer',
-          photo: require('../assets/img/Armando-Graterol.svg'),
-          linkedin: 'https://www.linkedin.com/in/armandograterol/'
-        },
-        {
-          name: 'Agostina Giordano',
-          position: 'UX/UI Designer & Project Manager',
-          photo: require('../assets/img/Agostina-Giordano.svg'),
-          linkedin: 'https://www.linkedin.com/in/agosgio/'
-        },
-        {
-          name: 'Ramiro Demasi',
-          position: 'Full Stack Developer',
-          photo: require('../assets/img/Ramiro-Demasi.svg'),
-          linkedin: 'https://www.linkedin.com/in/ramiro-demasi-8013b256'
-        },
-        {
-          name: 'Nahuel Dallacamina',
-          position: 'Full Stack Developer',
-          photo: require('../assets/img/Nahuel-Dallacamina.png'),
-          linkedin: 'https://www.linkedin.com/in/nahuel-dallacamina-ortea-539588170'
-        },
-        {
-          name: 'Matías Nuñez',
-          position: 'Business Analyst',
-          photo: require('../assets/img/Matias-Nuñez.png'),
-          linkedin: 'https://www.linkedin.com/in/matias-nuñez-3b4225178'
-        },
-        {
-          name: 'Agustín Osorio',
-          position: 'Full Stack Developer',
-          photo: require('../assets/img/Agustin-Osorio.png'),
-          linkedin: 'https://www.linkedin.com/in/agustin-osorio'
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
         }
-      ]
+      }
     }
   }
 }
@@ -116,6 +82,41 @@ export default {
     text-align: center;
   }
 
+  .carousel{
+    position: relative;
+    padding-bottom: 120px;
+    margin-left: 73px;
+    z-index: 0;
+  }
+
+   .swiper-button-prev {
+    position: absolute;
+    left: 0;
+    margin-top: 62px;
+    margin-left: 50px;
+    top: 75%;
+    outline:none;
+    filter: brightness(0);
+  }
+
+  .swiper-button-next {
+    position: absolute;
+    margin-top: 62px;
+    right: 0;
+    margin-right: 157px;
+    top: 75%;
+    outline:none;
+    filter: brightness(0);
+  }
+
+  .swiper-slide {
+    width: 416px;
+    height: 535px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   @media (max-width: 1200px) {
     h2 {
       font-size: 40px;
@@ -141,10 +142,28 @@ export default {
 
   .member-list {
     display: flex;
-    flex-wrap: wrap;
+    overflow: scroll;
     padding: 0;
     margin: 0;
     list-style-type: none;
+  }
+
+  @media (max-width: 768px) {
+  .swiper-slide {
+        justify-content: flex-start;
+      }
+
+  .carousel {
+      margin-left: auto;
+    }
+
+  .swiper-button-prev {
+    margin-left: 30px;
+  }
+
+  .swiper-button-next {
+      margin-right: 30px;
+    }
   }
 
   @media (max-width: 576px) {
