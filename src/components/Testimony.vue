@@ -7,7 +7,7 @@
       <div class='quoter-info'>General Manager - COPA Soccer Training Center</div>
     </div>
     <div class='video'>
-      <iframe src="https://player.vimeo.com/video/381534821" :width="getVideoWidth()" :height="getVideoHeight()" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <iframe src="https://player.vimeo.com/video/407326920" :width="getVideoWidth()" :height="getVideoHeight()" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
   </div>
 </template>
