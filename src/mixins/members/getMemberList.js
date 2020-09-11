@@ -1,5 +1,4 @@
 import RicardoPetrazzini from '../../assets/data/members/Ricardo-Petrazzini'
-import MauricioPautasso from '../../assets/data/members/Mauricio-Pautasso'
 import AbelOsorio from '../../assets/data/members/Abel-Osorio'
 import JuanPetrazzini from '../../assets/data/members/Juan-Petrazzini'
 import RoqueCuello from '../../assets/data/members/Roque-Cuello'
@@ -15,7 +14,6 @@ import NaylaNostrala from '../../assets/data/members/Nayla-Nostrala'
 export const getMemberList = () => {
   const memberList = [
     RicardoPetrazzini,
-    MauricioPautasso,
     AbelOsorio,
     JuanPetrazzini,
     RoqueCuello,
