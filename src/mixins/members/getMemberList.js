@@ -9,7 +9,6 @@ import AgostinaGiordano from '../../assets/data/members/Agostina-Giordano'
 import MatiasNuñez from '../../assets/data/members/Matias-Nuñez'
 import ArmandoGraterol from '../../assets/data/members/Armando-Graterol'
 import SergioShevtsov from '../../assets/data/members/Sergio-Shevtsov'
-import NaylaNostrala from '../../assets/data/members/Nayla-Nostrala'
 
 export const getMemberList = () => {
   const memberList = [
@@ -23,8 +22,7 @@ export const getMemberList = () => {
     AgostinaGiordano,
     MatiasNuñez,
     ArmandoGraterol,
-    SergioShevtsov,
-    NaylaNostrala
+    SergioShevtsov
   ]
 
   return memberList
