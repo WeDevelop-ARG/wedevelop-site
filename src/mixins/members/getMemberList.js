@@ -5,9 +5,7 @@ import RoqueCuello from '../../assets/data/members/Roque-Cuello'
 import NahuelDallacamina from '../../assets/data/members/Nahuel-Dallacamina'
 import MauroPucheta from '../../assets/data/members/Mauro-Pucheta'
 import PatricioGesualdi from '../../assets/data/members/Patricio-Gesualdi'
-import AgostinaGiordano from '../../assets/data/members/Agostina-Giordano'
 import MatiasNuñez from '../../assets/data/members/Matias-Nuñez'
-import ArmandoGraterol from '../../assets/data/members/Armando-Graterol'
 import SergioShevtsov from '../../assets/data/members/Sergio-Shevtsov'
 
 export const getMemberList = () => {
@@ -19,9 +17,7 @@ export const getMemberList = () => {
     NahuelDallacamina,
     MauroPucheta,
     PatricioGesualdi,
-    AgostinaGiordano,
     MatiasNuñez,
-    ArmandoGraterol,
     SergioShevtsov
   ]
 
