@@ -4,7 +4,6 @@ import JuanPetrazzini from '../../assets/data/members/Juan-Petrazzini'
 import RoqueCuello from '../../assets/data/members/Roque-Cuello'
 import NahuelDallacamina from '../../assets/data/members/Nahuel-Dallacamina'
 import MauroPucheta from '../../assets/data/members/Mauro-Pucheta'
-import PatricioGesualdi from '../../assets/data/members/Patricio-Gesualdi'
 import MatiasNuñez from '../../assets/data/members/Matias-Nuñez'
 import SergioShevtsov from '../../assets/data/members/Sergio-Shevtsov'
 
@@ -16,7 +15,6 @@ export const getMemberList = () => {
     RoqueCuello,
     NahuelDallacamina,
     MauroPucheta,
-    PatricioGesualdi,
     MatiasNuñez,
     SergioShevtsov
   ]
