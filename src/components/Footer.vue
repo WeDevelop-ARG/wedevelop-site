@@ -8,7 +8,7 @@
         >
           <img src="../assets/img/wedevelop-logo.svg" alt="WeDevelop">
         </router-link>
-        <p>© 2019. All rights reserved.</p>
+        <p>© 2019, 2020, 2021. WeDevelop LLC. All rights reserved.</p>
       </div>
       <div
         class="clutch-widget"
