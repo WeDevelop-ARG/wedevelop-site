@@ -37,7 +37,7 @@
         <a href="#contact" class="nav-link" v-smooth-scroll="{ duration: scrollDuration, offset: -75 }">Contact</a>
       </li>
       <li v-on:click="onToggle">
-        <a href="#contact" class="start-project" v-smooth-scroll="{ duration: scrollDuration, offset: -75 }">Start a project with us</a>
+        <a href="#contact" class="start-project" v-smooth-scroll="{ duration: scrollDuration, offset: -75 }">Leave us a message</a>
       </li>
       <span class="separator bottom-separator"></span>
     </ul>
