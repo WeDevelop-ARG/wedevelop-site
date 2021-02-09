@@ -1,8 +1,7 @@
 <template>
   <header class="header">
     <Navbar :scrollDuration="scrollDuration" />
-    <h1>Your digital transformation team</h1>
-    <span class="team-description">Your creative, intelligent, independent, extended development team when you need sophisticated digital transformation</span>
+    <h1>A human-centered company that gets things done efficiently.</h1>
     <div class="action-container">
       <div class="button-action-container">
         <a href="#contact" class="action-button" v-smooth-scroll="{ duration: scrollDuration, offset: -50 }">Start a project with us</a>
