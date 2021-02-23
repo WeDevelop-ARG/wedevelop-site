@@ -4,10 +4,13 @@ import reportWebVitals from './reportWebVitals'
 
 import './styles/global.scss'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+const root = document.getElementById('root')
+
+if (root.hasChildNodes()) {
+  ReactDOM.hydrate(<App />, root)
+} else {
+  ReactDOM.render(<App />, root)
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
