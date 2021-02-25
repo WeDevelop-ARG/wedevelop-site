@@ -24,6 +24,7 @@
     <meta name="twitter:description" content="A human-centered company that gets things done efficiently.">
     <!-- meta name="twitter:image" content="" -->
 
+    <% if (process.env.NODE_ENV === 'production') { %>
     <!-- Google AdSense -->
     <script data-ad-client="ca-pub-2484816458414432" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -35,10 +36,12 @@
       })(window,document,'script','dataLayer','GTM-53CPLS8');
     </script>
     <!-- End Google Tag Manager -->
+    <% } %>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <% if (process.env.NODE_ENV === 'production') { %>
     <script type='text/javascript'>
       _linkedin_partner_id = '1446394'
       window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []
@@ -64,5 +67,6 @@
       </iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <% } %>
   </body>
 </html>
