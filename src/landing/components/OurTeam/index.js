@@ -1,10 +1,9 @@
-import Logo from 'main_app/components/Logo'
-import Download from 'assets/landing/download.svg'
+import SVGIcon from 'main_app/components/SVGIcon'
 
 function OurTeam () {
   return (
     <section>
-      <Logo rocketOnly />
+      <SVGIcon name='logo' variant='rocket' />
       <h2>Our Team</h2>
       <p>
         We are friendly group of people with professionalism and good vibes.
@@ -24,7 +23,7 @@ function OurTeam () {
         <a href='mailto:jobs@wedevelop.me'>jobs@wedevelop.me</a>
       </p>
       <a href='#WIP'>
-        <img src={Download} alt='' />
+        <SVGIcon name='landing/download' />
         Download our Service Brochure
       </a>
     </section>

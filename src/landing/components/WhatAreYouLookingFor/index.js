@@ -1,9 +1,4 @@
-import All from 'assets/landing/all.svg'
-import Design from 'assets/landing/design.svg'
-import DevTeam from 'assets/landing/dev_team.svg'
-import Scale from 'assets/landing/scale.svg'
-import Validate from 'assets/landing/validate.svg'
-import FilledHexagon from 'assets/landing/filled_hexagon.svg'
+import SVGIcon from 'main_app/components/SVGIcon'
 
 function WhatAreYouLookingFor () {
   return (
@@ -16,35 +11,35 @@ function WhatAreYouLookingFor () {
         <li>
           <button type='button'>
             Validate an idea
-            <img src={Validate} alt='' />
+            <SVGIcon name='offerings/validate' />
           </button>
         </li>
         <li>
           <button type='button'>
             Design / create a product
-            <img src={Design} alt='' />
+            <SVGIcon name='offerings/design' />
           </button>
         </li>
         <li>
           <button type='button'>
             Partner up with a dev team
-            <img src={DevTeam} alt='' />
+            <SVGIcon name='offerings/dev_team' />
           </button>
         </li>
         <li>
           <button type='button'>
             Scale / change a product
-            <img src={Scale} alt='' />
+            <SVGIcon name='offerings/scale' />
           </button>
         </li>
         <li>
           <button type='button'>
             Show me all your offerings
-            <img src={All} alt='' />
+            <SVGIcon name='offerings/all' />
           </button>
         </li>
       </ul>
-      <img src={FilledHexagon} alt='' />
+      <SVGIcon name='landing/filled_hexagon' />
     </section>
   )
 }

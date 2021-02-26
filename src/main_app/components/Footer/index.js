@@ -1,11 +1,4 @@
-import Logo from '../Logo'
-
-import LinkedIn from 'assets/footer/linked_in.svg'
-import Facebook from 'assets/footer/facebook.svg'
-import Instagram from 'assets/footer/instagram.svg'
-import Email from 'assets/footer/email.svg'
-import Location from 'assets/footer/location.svg'
-import Phone from 'assets/footer/phone.svg'
+import SVGIcon from '../SVGIcon'
 
 function Footer () {
   return (
@@ -13,29 +6,29 @@ function Footer () {
       <ul>
         <li>
           <a href='https://www.linkedin.com/company/wedevelop-arg' target='_blank' rel='noreferrer'>
-            <img src={LinkedIn} alt={'WeDevelop\'s LinkedIn'} />
+            <SVGIcon name='footer/linked_in' title={'WeDevelop\'s LinkedIn'} />
           </a>
         </li>
         <li>
           <a href='https://facebook.com/WeDevelop-101618141565362' target='_blank' rel='noreferrer'>
-            <img src={Facebook} alt={'WeDevelop\'s Facebook'} />
+            <SVGIcon name='footer/facebook' title={'WeDevelop\'s Facebook'} />
           </a>
         </li>
         <li>
           <a href='https://www.instagram.com/wedevelop.me' target='_blank' rel='noreferrer'>
-            <img src={Instagram} alt={'WeDevelop\'s Instagram'} />
+            <SVGIcon name='footer/instagram' title={'WeDevelop\'s Instagram'} />
           </a>
         </li>
       </ul>
       <ul>
         <li>
           <a href='mailto:info@wedevelop.me'>
-            <img src={Email} alt='' />
+            <SVGIcon name='footer/email' />
             info@wedevelop.me
           </a>
         </li>
         <li>
-          <img src={Location} alt='' />
+          <SVGIcon name='footer/location' />
           <address>
             WeDevelop LLC
             <br />
@@ -43,13 +36,13 @@ function Footer () {
           </address>
         </li>
         <li>
-          <img src={Phone} alt='' />
+          <SVGIcon name='footer/phone' />
           <a href='tel:+19254486165'>
             +1 (925) 448-6165
           </a>
         </li>
       </ul>
-      <Logo />
+      <SVGIcon name='logo' />
       <div>
         © 2021 WeDevelop LLC. All rights reserved.
       </div>

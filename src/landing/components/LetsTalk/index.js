@@ -1,10 +1,10 @@
-import HexagonOutline from 'assets/landing/hexagon_outline.svg'
+import SVGIcon from 'main_app/components/SVGIcon'
 
 function LetsTalk () {
   return (
     <section>
       <div>
-        <img src={HexagonOutline} alt='' />
+        <SVGIcon name='landing/hexagon_outline' />
         <h2>Let’s talk</h2>
       </div>
       <form>
