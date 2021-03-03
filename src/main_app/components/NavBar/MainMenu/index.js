@@ -41,7 +41,7 @@ function MainMenu ({ isOpen, className }) {
       {lookingForOpen && (
         <>
           <li>
-            <SVGIcon name='offerings/validate' />
+            <SVGIcon name='offerings/validate' className={classes.validateIdeaLogo} />
             <a href='#vai'>Validate an idea</a>
           </li>
           <li>
