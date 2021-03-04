@@ -1,0 +1,33 @@
+@import '/src/styles/theme.scss';
+
+.titleBorder {
+  border-left: 6px solid $primaryColor;
+}
+
+.listContainer {
+  list-style-type: none;
+}
+
+.cardButton {
+  border-color: rgba($color: #000000, $alpha: 0.10);
+  border-radius: 10px;
+  background-color: transparent;
+  border-width: thin;
+}
+
+.cardIcon {
+  --primaryColor: #2426E3;
+  --secondaryColor: #363636;
+}
+
+.container {
+  position: relative; 
+}
+
+.hexagon {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  transform: translate(30%, -30%);
+  clip-path: inset(0 30% 0 0);
+}

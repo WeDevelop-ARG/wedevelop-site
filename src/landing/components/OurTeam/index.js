@@ -1,8 +1,9 @@
 import SVGIcon from 'main_app/components/SVGIcon'
+import classes from './styles.module.scss'
 
 function OurTeam () {
   return (
-    <section>
+    <section className={classes.teamContainer}>
       <SVGIcon name='logo' variant='rocket' />
       <h2>Our Team</h2>
       <p>
@@ -11,7 +12,7 @@ function OurTeam () {
       <p>
         We want everyone to feel that <b>working with us is like working with friends.</b>
       </p>
-      <h3>#PeopleFirst</h3>
+      <h3 className={classes.titleStyles}>#PeopleFirst</h3>
       <p>
         We’re a people-first company.
         <br />

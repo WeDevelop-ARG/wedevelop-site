@@ -1,0 +1,15 @@
+@import '/src/styles/theme.scss';
+
+.containerStyle {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+}
+
+.iconStyles {
+  --primaryColor: #FFFFFF;
+}
+
+.logoStyle {
+  --primaryColor: #FFFFFF;
+  --secondaryColor: #8224E3
+}

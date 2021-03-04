@@ -1,0 +1,10 @@
+@import '/src/styles/theme.scss';
+
+.teamContainer {
+  background-color: $backgroundColor;
+}
+
+.titleStyles {
+  background-color: $brandingColor;
+  color: $secondaryColor;
+}
