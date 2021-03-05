@@ -1,5 +1,21 @@
 @import '/src/styles/theme.scss';
 
+.title {
+  position: relative;
+  display: block;
+  width: fit-content;
+  padding: 120px 75px;
+  padding-left: 0;
+
+  & > .icon {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+}
+
 .optionStyles {
   background-color: red;
   border-color: red;

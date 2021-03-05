@@ -4,7 +4,7 @@ import classes from './styles.module.scss'
 function OurTeam () {
   return (
     <section className={classes.teamContainer}>
-      <SVGIcon name='logo' variant='rocket' />
+      <SVGIcon name='logo' variant='rocket' className={classes.rocket} />
       <h2>Our Team</h2>
       <p>
         We are friendly group of people with professionalism and good vibes.

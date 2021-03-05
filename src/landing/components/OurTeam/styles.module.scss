@@ -2,6 +2,13 @@
 
 .teamContainer {
   background-color: $backgroundColor;
+  padding-top: 100px;
+}
+
+.rocket {
+  margin-left: 10px;
+  width: 40px;
+  --secondaryColor: #{$brandingColor};
 }
 
 .titleStyles {
