@@ -4,10 +4,10 @@ import classes from './styles.module.scss'
 function LetsTalk () {
   return (
     <section>
-      <div>
-        <SVGIcon name='landing/hexagon_outline' />
-        <h2>Let’s talk</h2>
-      </div>
+      <h2 className={classes.title}>
+        Let’s talk
+        <SVGIcon name='landing/hexagon_outline' className={classes.icon} />
+      </h2>
       <form>
         <label>
           I am
