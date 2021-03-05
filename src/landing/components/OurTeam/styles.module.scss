@@ -1,10 +1,28 @@
 @import '/src/styles/theme.scss';
 
+$containerPadding: 10px;
+
 .teamContainer {
   background-color: $backgroundColor;
+  padding: $containerPadding;
 }
 
 .titleStyles {
+  position: relative;
+  padding: 5px 12px;
+  padding-left: 0;
+  display: block;
+  width: fit-content;
   background-color: $brandingColor;
   color: $secondaryColor;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: $containerPadding;
+    left: -$containerPadding;
+    top: 0;
+    height: 100%;
+    background-color: $brandingColor;
+  }
 }
