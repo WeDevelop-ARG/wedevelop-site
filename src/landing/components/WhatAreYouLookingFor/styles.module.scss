@@ -21,13 +21,21 @@
 }
 
 .container {
-  position: relative; 
+  position: relative;
+  z-index: 0;
 }
 
-.hexagon {
+.hexagonContainer {
   position: absolute;
   top: 100%;
   right: 0;
-  transform: translate(30%, -30%);
-  clip-path: inset(0 30% 0 0);
+  width: 235px;
+  height: 276px;
+  transform: translateY(-172px);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.hexagon {
+  height: 100%;
 }
