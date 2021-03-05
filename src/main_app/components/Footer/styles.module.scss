@@ -3,14 +3,64 @@
 .containerStyle {
   background-color: $primaryColor;
   color: $secondaryColor;
-  padding: var(--rootContentPadding);
+  padding: 50px var(--rootContentPadding);
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin: 0 auto;
+  }
+
+  & > * + * {
+    margin-top: 60px;
+  }
+}
+
+.socialNetworks {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  & > li + li {
+    margin-left: 15px;
+  }
+}
+
+.contact {
+  list-style-type: none;
+  padding: 0;
+
+  & > li + li {
+    padding-top: 15px;
+  }
+}
+
+.contactContentContainer {
+  display: flex;
+  align-items: center;
 }
 
 .iconStyles {
-  --primaryColor: #FFFFFF;
+  --primaryColor: #{$secondaryColor};
+  width: 20px;
+  margin-right: 10px;
+}
+
+.contactContent {
+  display: inline-block;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .logoStyle {
-  --primaryColor: #FFFFFF;
-  --secondaryColor: #8224E3
+  --primaryColor: #{$secondaryColor};
+  --secondaryColor: #{$brandingColor};
+  width: 132px;
+}
+
+.copyright {
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
 }
