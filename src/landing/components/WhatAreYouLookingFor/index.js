@@ -12,35 +12,37 @@ function WhatAreYouLookingFor () {
         <li>
           <button type='button' className={classes.cardButton}>
             Validate an idea
-            <SVGIcon name='offerings/validate' className={classes.cardIcon}/>
+            <SVGIcon name='offerings/validate' className={classes.cardIcon} />
           </button>
         </li>
         <li>
           <button type='button' className={classes.cardButton}>
             Design / create a product
-            <SVGIcon name='offerings/design' className={classes.cardIcon}/>
+            <SVGIcon name='offerings/design' className={classes.cardIcon} />
           </button>
         </li>
         <li>
           <button type='button' className={classes.cardButton}>
             Partner up with a dev team
-            <SVGIcon name='offerings/dev_team' className={classes.cardIcon}/>
+            <SVGIcon name='offerings/dev_team' className={classes.cardIcon} />
           </button>
         </li>
         <li>
           <button type='button' className={classes.cardButton}>
             Scale / change a product
-            <SVGIcon name='offerings/scale' className={classes.cardIcon}/>
+            <SVGIcon name='offerings/scale' className={classes.cardIcon} />
           </button>
         </li>
         <li>
           <button type='button' className={classes.cardButton}>
             Show me all your offerings
-            <SVGIcon name='offerings/all' className={classes.cardIcon}/>
+            <SVGIcon name='offerings/all' className={classes.cardIcon} />
           </button>
         </li>
       </ul>
-      <SVGIcon name='landing/filled_hexagon' className={classes.hexagon}/>
+      <div className={classes.hexagonContainer}>
+        <SVGIcon name='landing/filled_hexagon' className={classes.hexagon} />
+      </div>
     </section>
   )
 }
