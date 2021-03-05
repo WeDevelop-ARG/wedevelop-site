@@ -3,6 +3,7 @@
 .containerStyle {
   background-color: $primaryColor;
   color: $secondaryColor;
+  padding: var(--rootContentPadding);
 }
 
 .iconStyles {

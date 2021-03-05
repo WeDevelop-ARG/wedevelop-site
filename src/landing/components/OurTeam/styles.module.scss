@@ -1,10 +1,7 @@
 @import '/src/styles/theme.scss';
 
-$containerPadding: 10px;
-
 .teamContainer {
   background-color: $backgroundColor;
-  padding: $containerPadding;
 }
 
 .titleStyles {
@@ -19,8 +16,8 @@ $containerPadding: 10px;
   &::before {
     content: '';
     position: absolute;
-    width: $containerPadding;
-    left: -$containerPadding;
+    width: var(--rootContentPadding);
+    left: calc(-1 * var(--rootContentPadding));
     top: 0;
     height: 100%;
     background-color: $brandingColor;
