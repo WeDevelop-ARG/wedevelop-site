@@ -9,7 +9,7 @@ function LetsTalk () {
         <SVGIcon name='landing/hexagon_outline' className={classes.icon} />
       </h2>
       <form>
-        <label>
+        <label className={classes.label}>
           I am
           <select name='i_am' className={classes.selectStyles}>
             <option>a Startup</option>
@@ -17,7 +17,7 @@ function LetsTalk () {
             <option>an Individual</option>
           </select>
         </label>
-        <label>
+        <label className={classes.label}>
           looking to
           <select name='looking_to' className={classes.selectStyles}>
             <option>validate an idea</option>
