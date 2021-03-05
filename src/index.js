@@ -1,10 +1,15 @@
 import ReactDOM from 'react-dom'
+
+import classes from './styles/root.module.scss'
+
 import App from './main_app'
 import reportWebVitals from './reportWebVitals'
 
 import './styles/global.scss'
 
 const root = document.getElementById('root')
+
+root.classList.add(classes.root)
 
 if (root.hasChildNodes()) {
   ReactDOM.hydrate(<App />, root)

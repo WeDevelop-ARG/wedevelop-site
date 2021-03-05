@@ -17,7 +17,19 @@ function NavBar () {
   useEffect(() => {
     if (menuOpen) document.body.classList.add(classes.bodyMenuOpen)
     else document.body.classList.remove(classes.bodyMenuOpen)
+
+    return () => {
+      document.body.classList.remove(classes.bodyMenuOpen)
+    }
   }, [menuOpen])
+
+  useEffect(() => {
+    document.getElementById('root')?.classList.add(classes.rootWithNavBar)
+
+    return () => {
+      document.getElementById('root')?.classList.remove(classes.rootWithNavBar)
+    }
+  }, [])
 
   return (
     <header className={classnames(classes.header, { [classes.menuOpen]: menuOpen })}>
