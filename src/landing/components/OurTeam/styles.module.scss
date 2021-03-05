@@ -5,6 +5,21 @@
 }
 
 .titleStyles {
+  position: relative;
+  padding: 5px 12px;
+  padding-left: 0;
+  display: block;
+  width: fit-content;
   background-color: $brandingColor;
   color: $secondaryColor;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: var(--rootContentPadding);
+    left: calc(-1 * var(--rootContentPadding));
+    top: 0;
+    height: 100%;
+    background-color: $brandingColor;
+  }
 }

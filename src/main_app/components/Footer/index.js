@@ -7,29 +7,29 @@ function Footer () {
       <ul>
         <li>
           <a href='https://www.linkedin.com/company/wedevelop-arg' target='_blank' rel='noreferrer'>
-            <SVGIcon name='footer/linked_in' title={'WeDevelop\'s LinkedIn'} className={classes.iconStyles}/>
+            <SVGIcon name='footer/linked_in' title={'WeDevelop\'s LinkedIn'} className={classes.iconStyles} />
           </a>
         </li>
         <li>
           <a href='https://facebook.com/WeDevelop-101618141565362' target='_blank' rel='noreferrer'>
-            <SVGIcon name='footer/facebook' title={'WeDevelop\'s Facebook'} className={classes.iconStyles}/>
+            <SVGIcon name='footer/facebook' title={'WeDevelop\'s Facebook'} className={classes.iconStyles} />
           </a>
         </li>
         <li>
           <a href='https://www.instagram.com/wedevelop.me' target='_blank' rel='noreferrer'>
-            <SVGIcon name='footer/instagram' title={'WeDevelop\'s Instagram'} className={classes.iconStyles}/>
+            <SVGIcon name='footer/instagram' title={'WeDevelop\'s Instagram'} className={classes.iconStyles} />
           </a>
         </li>
       </ul>
       <ul>
         <li>
           <a href='mailto:info@wedevelop.me'>
-            <SVGIcon name='footer/email' className={classes.iconStyles}/>
+            <SVGIcon name='footer/email' className={classes.iconStyles} />
             info@wedevelop.me
           </a>
         </li>
         <li>
-          <SVGIcon name='footer/location' className={classes.iconStyles}/>
+          <SVGIcon name='footer/location' className={classes.iconStyles} />
           <address>
             WeDevelop LLC
             <br />
