@@ -3,4 +3,5 @@
 .headerContainer {
   color: $secondaryColor;
   background-color: $primaryColor;
+  padding-top: var(--rootContentExtraPaddingTop);
 }
