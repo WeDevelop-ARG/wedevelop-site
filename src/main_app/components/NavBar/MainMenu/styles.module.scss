@@ -24,10 +24,20 @@
   }
 }
 
-.chevronLogo {
+%chevronLogo {
   --primaryColor: #{$secondaryColor};
   width: 7px;
   height: 12px;
+}
+
+.chevronLeft {
+  @extend %chevronLogo;
+  margin-right: 19px;
+  transform: rotate(180deg);
+}
+
+.chevronRight {
+  @extend %chevronLogo;
   margin-left: 19px;
 }
 

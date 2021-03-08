@@ -36,9 +36,15 @@
   }
 }
 
+%contactLinksColor {
+  color: $secondaryColor;
+}
+
+
 .contactContentContainer {
   display: flex;
   align-items: center;
+  @extend %contactLinksColor;
 }
 
 .iconStyles {
@@ -51,6 +57,7 @@
   display: inline-block;
   flex-grow: 1;
   text-align: center;
+  @extend %contactLinksColor;
 }
 
 .logoStyle {

@@ -25,9 +25,9 @@ function MainMenu ({ isOpen, className }) {
     <ul className={classnames(classes.menu, className)}>
       <li>
         <a href='#waylf' onClick={toggleLookingFor}>
-          {lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronLogo}/>}
+          {lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronLeft}/>}
           What are you looking for?
-          {!lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronLogo}/>}
+          {!lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronRight }/>}
         </a>
       </li>
       {!lookingForOpen && (

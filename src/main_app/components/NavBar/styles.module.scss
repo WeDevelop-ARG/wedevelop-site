@@ -44,6 +44,10 @@
   overflow: hidden;
 }
 
+%menuToggleIcon {
+  --primaryColor: #{$secondaryColor};
+}
+
 .menuToggle {
   align-self: flex-end;
 
@@ -60,17 +64,18 @@
   }
 
   & > .open {
+    @extend %menuToggleIcon;
     width: 27px;
     height: 18px;
-    --primaryColor: #{$secondaryColor};
   }
 
   & > .close {
+    @extend %menuToggleIcon;
     width: 15px;
     height: 15px;
-    --primaryColor: #{$secondaryColor};
   }
 }
+
 
 .menu {
   position: fixed;

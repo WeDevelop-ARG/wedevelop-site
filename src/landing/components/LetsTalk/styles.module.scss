@@ -40,3 +40,7 @@
   color: $secondaryColor;
   border-radius: 4px;
 }
+
+.icon {
+  --primaryColor: #{$brandingColor};
+}
