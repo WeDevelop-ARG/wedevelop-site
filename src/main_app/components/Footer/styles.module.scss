@@ -42,9 +42,9 @@
 
 
 .contactContentContainer {
+  @extend %contactLinksColor;
   display: flex;
   align-items: center;
-  @extend %contactLinksColor;
 }
 
 .iconStyles {
@@ -54,10 +54,10 @@
 }
 
 .contactContent {
+  @extend %contactLinksColor;
   display: inline-block;
   flex-grow: 1;
   text-align: center;
-  @extend %contactLinksColor;
 }
 
 .logoStyle {
