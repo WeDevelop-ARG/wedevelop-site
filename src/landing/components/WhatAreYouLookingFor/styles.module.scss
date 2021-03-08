@@ -1,11 +1,15 @@
 @import '/src/styles/theme.scss';
+@import '/src/styles/auto_grid.scss';
 
 .titleBorder {
   border-left: 6px solid $primaryColor;
 }
 
 .listContainer {
+  @include auto-grid($column-width: 140px);
+  justify-content: space-between;
   list-style-type: none;
+  padding: 0;
 }
 
 .cardButton {
@@ -13,10 +17,17 @@
   border-radius: 10px;
   background-color: transparent;
   border-width: thin;
-  display: block;
-  width: fit-content;
   color: $textColor;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  width: 140px;
+  height: 165px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $secondaryColor;
 }
 
 .cardIcon {
