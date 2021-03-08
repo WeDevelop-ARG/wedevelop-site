@@ -24,22 +24,28 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: $backgroundColor;
+    background-color: $textColor;
   }
 }
 
 .logo {
-  --primaryColor: #FFFFFF;
-  --secondaryColor: #7035AC;
+  --primaryColor: #{$secondaryColor};
+  --secondaryColor: #{$brandingColor};
+
 
   &.menuOpen {
-    --primaryColor: #7035AC;
-    --secondaryColor: #FFFFFF;
+    --primaryColor: #{$brandingColor};
+    --secondaryColor: #{$secondaryColor};
+
   }
 }
 
 .bodyMenuOpen {
   overflow: hidden;
+}
+
+%menuToggleIcon {
+  --primaryColor: #{$secondaryColor};
 }
 
 .menuToggle {
@@ -58,15 +64,18 @@
   }
 
   & > .open {
+    @extend %menuToggleIcon;
     width: 27px;
     height: 18px;
   }
 
   & > .close {
+    @extend %menuToggleIcon;
     width: 15px;
     height: 15px;
   }
 }
+
 
 .menu {
   position: fixed;

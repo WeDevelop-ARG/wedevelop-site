@@ -80,3 +80,7 @@
     color: $secondaryColor;
   }
 }
+
+.icon {
+  --primaryColor: #{$brandingColor};
+}
