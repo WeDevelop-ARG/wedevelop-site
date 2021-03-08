@@ -1,4 +1,9 @@
+import classnames from 'classnames'
+
 import SVGIcon from 'main_app/components/SVGIcon'
+import Select from './Select'
+import Textarea from './Textarea'
+
 import classes from './styles.module.scss'
 
 function LetsTalk () {
@@ -8,29 +13,39 @@ function LetsTalk () {
         Let’s talk
         <SVGIcon name='landing/hexagon_outline' className={classes.icon} />
       </h2>
-      <form>
+      <form className={classes.form}>
         <label className={classes.label}>
-          I am
-          <select name='i_am' className={classes.selectStyles}>
+          I am{' '}
+          <Select
+            name='i_am'
+            className={classes.selectStyles}
+          >
             <option>a Startup</option>
             <option>a Company</option>
             <option>an Individual</option>
-          </select>
+          </Select>
         </label>
         <label className={classes.label}>
-          looking to
-          <select name='looking_to' className={classes.selectStyles}>
+          looking to{' '}
+          <Select
+            name='looking_to'
+            className={classes.selectStyles}
+          >
             <option>validate an idea</option>
             <option>design / validate an idea</option>
             <option>partner up with a dev team</option>
             <option>scale / change a product</option>
             <option>talk to a representative</option>
-          </select>
+          </Select>
         </label>
         <input type='text' name='name' placeholder='Name' className={classes.formStyles} />
         <input type='email' name='email' placeholder='Email' className={classes.formStyles} />
-        <textarea name='message' placeholder='Your message' maxLength='120' className={classes.formStyles} />
-        <div aria-label='0 characters out of 120'>0 / 120</div>
+        <Textarea
+          name='message'
+          placeholder='Your message'
+          maxLength='120'
+          className={classnames(classes.formStyles, classes.textarea)}
+        />
         <button type='submit' className={classes.buttonStyles}>Send Message</button>
       </form>
     </section>
