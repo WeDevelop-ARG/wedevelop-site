@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import classes from './styles.module.scss'
 
-function Select ({ children, className, onChange, ...props }) {
+function Select ({ children, className, onChange, value, ...props }) {
   const selectRef = useRef()
   const sizeRef = useRef()
   const handleResize = useCallback(() => {
@@ -19,7 +19,7 @@ function Select ({ children, className, onChange, ...props }) {
 
   useEffect(() => {
     handleResize()
-  }, [handleResize])
+  }, [handleResize, value])
 
   return (
     <>
@@ -27,6 +27,8 @@ function Select ({ children, className, onChange, ...props }) {
         ref={selectRef}
         onChange={handleChange}
         className={className}
+        value={value}
+        {...props}
       >
         {children}
       </select>
