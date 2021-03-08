@@ -24,17 +24,19 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: $backgroundColor;
+    background-color: $textColor;
   }
 }
 
 .logo {
-  --primaryColor: #FFFFFF;
-  --secondaryColor: #7035AC;
+  --primaryColor: #{$secondaryColor};
+  --secondaryColor: #{$brandingColor};
+
 
   &.menuOpen {
-    --primaryColor: #7035AC;
-    --secondaryColor: #FFFFFF;
+    --primaryColor: #{$brandingColor};
+    --secondaryColor: #{$secondaryColor};
+
   }
 }
 
@@ -60,11 +62,13 @@
   & > .open {
     width: 27px;
     height: 18px;
+    --primaryColor: #{$secondaryColor};
   }
 
   & > .close {
     width: 15px;
     height: 15px;
+    --primaryColor: #{$secondaryColor};
   }
 }
 

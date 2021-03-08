@@ -16,8 +16,8 @@
 }
 
 .cardIcon {
-  --primaryColor: #2426E3;
-  --secondaryColor: #363636;
+  --primaryColor: #{$primaryColor}; 
+  --secondaryColor: #{$textColor};
 }
 
 .container {
