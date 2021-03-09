@@ -4,7 +4,7 @@ import classes from './styles.module.scss'
 function WhatAreYouLookingFor () {
   return (
     <section className={classes.container}>
-      <h2 className={classes.titleBorder}>What are you looking for?</h2>
+      <h2>What are you looking for?</h2>
       <p>
         We are a Digital Product Development company born in Argentina focused on high-quality and long-term solutions.
       </p>

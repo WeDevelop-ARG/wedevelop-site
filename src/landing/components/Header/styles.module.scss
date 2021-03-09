@@ -11,7 +11,13 @@
 
 .clutchReviews {
  font-style: italic;
- display: flex;
- align-items: flex-start;
- margin: 29px 0 6px 0;
+ margin: 29px 0 10px 0;
+}
+
+.clutchReviews::before {
+  content: '"';
+}
+
+.clutchReviews::after {
+  content: '"';
 }

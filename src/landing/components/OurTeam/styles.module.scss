@@ -30,3 +30,20 @@
     background-color: $brandingColor;
   }
 }
+
+.buttonDowload {
+  display: block;
+  margin-top: 32px;
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  padding: 13px 0px 13px 25px;
+  border-radius: 4px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.iconDowload {
+  --primaryColor: #{$secondaryColor};
+  margin-right: 18px;
+}
