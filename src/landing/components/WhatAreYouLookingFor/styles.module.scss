@@ -1,10 +1,6 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/auto_grid.scss';
 
-.titleBorder {
-  border-left: 6px solid $primaryColor;
-}
-
 .listContainer {
   @include auto-grid($column-width: 140px);
 
