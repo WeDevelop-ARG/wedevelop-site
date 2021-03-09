@@ -3,7 +3,13 @@ import classnames from 'classnames'
 
 let script
 
-function ClutchWidget ({ className }) {
+function ClutchWidget ({ className, variant = 'light' }) {
+  const extraProps = {}
+
+  if (variant === 'light') {
+    extraProps['data-darkbg'] = true
+  }
+
   useEffect(() => {
     if (script) {
       window.CLUTCHCO.Init()
@@ -23,6 +29,7 @@ function ClutchWidget ({ className }) {
       data-widget-type='2'
       data-height='50'
       data-clutchcompany-id='810049'
+      {...extraProps}
     />
   )
 }
