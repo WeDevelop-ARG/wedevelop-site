@@ -1,5 +1,6 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/auto_grid.scss';
+@import '/src/styles/media_queries.scss';
 
 .listContainer {
   @include auto-grid($column-width: 140px);
@@ -7,6 +8,10 @@
   justify-content: space-around;
   list-style-type: none;
   padding: 0;
+
+  @include for-tablet-up {
+    justify-content: flex-start;
+  }
 }
 
 .cardButton {
