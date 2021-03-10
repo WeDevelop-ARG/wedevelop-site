@@ -25,9 +25,9 @@ function MainMenu ({ isOpen, className }) {
     <ul className={classnames(classes.menu, className)}>
       <li>
         <a href='#waylf' onClick={toggleLookingFor}>
-          {lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronLeft}/>}
+          {lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronLeft} />}
           What are you looking for?
-          {!lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronRight }/>}
+          {!lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronRight} />}
         </a>
       </li>
       {!lookingForOpen && (
@@ -45,19 +45,19 @@ function MainMenu ({ isOpen, className }) {
             <a href='#vai'>Validate an idea</a>
           </li>
           <li className={classes.listAlign}>
-            <SVGIcon name='offerings/design' className={classes.menuIcon}/>
+            <SVGIcon name='offerings/design' className={classes.menuIcon} />
             <a href='#dcap'>Design / create a product</a>
           </li>
           <li className={classes.listAlign}>
-            <SVGIcon name='offerings/dev_team' className={classes.menuIcon}/>
+            <SVGIcon name='offerings/dev_team' className={classes.menuIcon} />
             <a href='#puqadt'>Partner up with a dev team</a>
           </li>
           <li className={classes.listAlign}>
-            <SVGIcon name='offerings/scale' className={classes.menuIcon}/>
+            <SVGIcon name='offerings/scale' className={classes.menuIcon} />
             <a href='#scap'>Scale / change a product</a>
           </li>
           <li className={classes.listAlign}>
-            <SVGIcon name='offerings/all' className={classes.menuIcon}/>
+            <SVGIcon name='offerings/all' className={classes.menuIcon} />
             <a href='#smayo'>Show me all your offerings</a>
           </li>
         </>
