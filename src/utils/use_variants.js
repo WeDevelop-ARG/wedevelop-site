@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import classnames from 'classnames'
+import { uniq } from 'lodash'
 
 function useVariants (classes, variants, { prefix = '' } = {}) {
   return useMemo(() => {
@@ -21,4 +22,21 @@ function useVariants (classes, variants, { prefix = '' } = {}) {
   }, [classes, variants.toString()])
 }
 
-export default useVariants
+function combineVariants (...variants) {
+  let result = []
+
+  for (let variant of variants) {
+    if (!Array.isArray(variant)) {
+      variant = [variant]
+    }
+
+    result = result.concat(variant)
+  }
+
+  return uniq(result)
+}
+
+export {
+  useVariants as default,
+  combineVariants
+}

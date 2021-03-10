@@ -2,6 +2,8 @@ import { useRef, useEffect, useMemo, useState } from 'react'
 import classnames from 'classnames'
 import { isEmpty } from 'lodash'
 
+import { ENVIRONMENT } from 'main_app/constants'
+
 import classes from './styles.module.scss'
 
 const assetsSVG = {}
@@ -49,7 +51,7 @@ function SVGIcon ({ name, title, description, className, variant = 'full', ...pr
   }, [src, variant])
 
   if (!src) {
-    if (process.env.NODE_ENV !== 'production') {
+    if (ENVIRONMENT !== 'production') {
       console.error('SVG Icon not found:', name)
     }
 

@@ -5,9 +5,13 @@ import classes from './styles.module.scss'
 function Textarea ({ onChange, maxLength, ...props }) {
   const [length, setLength] = useState(0)
   const handleChange = useCallback((e, ...args) => {
+    if (Number.isInteger(Number(maxLength))) {
+      e.target.value = e.target.value.substr(0, Number(maxLength))
+    }
+
     setLength(e.target.value.length)
     onChange?.(e, ...args)
-  }, [onChange])
+  }, [onChange, maxLength])
 
   return (
     <>
