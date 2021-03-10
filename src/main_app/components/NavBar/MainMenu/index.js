@@ -1,11 +1,15 @@
 import { useCallback, useEffect, useState } from 'react'
 import classnames from 'classnames'
+import { HashLink } from 'react-router-hash-link'
 
-import SVGIcon from '../../SVGIcon'
+import Button from 'main_app/components/Button'
+import SVGIcon from 'main_app/components/SVGIcon'
+
+import LookingForLink from './LookingForLink'
 
 import classes from './styles.module.scss'
 
-function MainMenu ({ isOpen, className }) {
+function MainMenu ({ isOpen, onRequestClose, className }) {
   const [lookingForOpen, setLookingForOpen] = useState(false)
   const toggleLookingFor = useCallback((e) => {
     e.preventDefault()
@@ -24,41 +28,90 @@ function MainMenu ({ isOpen, className }) {
   return (
     <ul className={classnames(classes.menu, className)}>
       <li>
-        <a href='#waylf' onClick={toggleLookingFor}>
-          {lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronLeft} />}
+        <Button
+          variant='link'
+          onClick={toggleLookingFor}
+          className={classes.buttonLink}
+          iconLeft={lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronLeft} />}
+          iconRight={!lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronRight} />}
+        >
           What are you looking for?
-          {!lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronRight} />}
-        </a>
+        </Button>
       </li>
       {!lookingForOpen && (
         <>
-          <li><a href='#au'>About us</a></li>
-          <li><a href='#p'>Portfolio</a></li>
-          <li><a href='#b'>Blog</a></li>
-          <li><a href='#lt' className={classes.buttonTalk}>Let's talk</a></li>
+          <li>
+            <Button
+              as={HashLink}
+              variant='link'
+              to='/#our_team'
+              smooth
+              onClick={onRequestClose}
+            >
+              About us
+            </Button>
+          </li>
+          <li><a href='https://blog.wedevelop.me'>Blog</a></li>
+          <li>
+            <Button
+              as={HashLink}
+              variant='link'
+              to='/#lets_talk'
+              smooth
+              className={classes.buttonTalk}
+              onClick={onRequestClose}
+            >
+              Let's talk
+            </Button>
+          </li>
         </>
       )}
       {lookingForOpen && (
         <>
-          <li className={classes.listAlign}>
-            <SVGIcon name='offerings/validate' className={classes.menuIcon} />
-            <a href='#vai'>Validate an idea</a>
+          <li>
+            <LookingForLink
+              icon='validate'
+              lookingTo='validate_idea'
+              onClick={onRequestClose}
+            >
+              Validate an idea
+            </LookingForLink>
           </li>
-          <li className={classes.listAlign}>
-            <SVGIcon name='offerings/design' className={classes.menuIcon} />
-            <a href='#dcap'>Design / create a product</a>
+          <li>
+            <LookingForLink
+              icon='design'
+              lookingTo='create_product'
+              onClick={onRequestClose}
+            >
+              Design / create a product
+            </LookingForLink>
           </li>
-          <li className={classes.listAlign}>
-            <SVGIcon name='offerings/dev_team' className={classes.menuIcon} />
-            <a href='#puqadt'>Partner up with a dev team</a>
+          <li>
+            <LookingForLink
+              icon='dev_team'
+              lookingTo='partner_up'
+              onClick={onRequestClose}
+            >
+              Partner up with a dev team
+            </LookingForLink>
           </li>
-          <li className={classes.listAlign}>
-            <SVGIcon name='offerings/scale' className={classes.menuIcon} />
-            <a href='#scap'>Scale / change a product</a>
+          <li>
+            <LookingForLink
+              icon='scale'
+              lookingTo='change_product'
+              onClick={onRequestClose}
+            >
+              Scale / change a product
+            </LookingForLink>
           </li>
-          <li className={classes.listAlign}>
-            <SVGIcon name='offerings/all' className={classes.menuIcon} />
-            <a href='#smayo'>Show me all your offerings</a>
+          <li>
+            <LookingForLink
+              icon='all'
+              lookingTo='talk_to_representative'
+              onClick={onRequestClose}
+            >
+              Show me all your offerings
+            </LookingForLink>
           </li>
         </>
       )}
