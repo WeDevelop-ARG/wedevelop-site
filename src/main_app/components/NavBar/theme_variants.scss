@@ -1,0 +1,42 @@
+@import '/src/styles/theme.scss';
+
+%logoLight {
+  --primaryColor: #{$secondaryColor};
+  --secondaryColor: #{$brandingColor};
+}
+
+%logoDark {
+  --primaryColor: #{$brandingColor};
+  --secondaryColor: #{$secondaryColor};
+}
+
+%menuToggleIconLight {
+  --primaryColor: #{$secondaryColor};
+}
+
+%menuToggleIconDark {
+  --primaryColor: #{$textColor};
+}
+
+.header, .variant_light, .variant_transparent {
+  .logo { @extend %logoLight; }
+  .menuToggle .open { @extend %menuToggleIconLight; }
+}
+
+.variant_solid.variant_light {
+  background-color: rgba($color: $primaryColor, $alpha: .9);
+
+  // Elements behind a backdrop-filter get clipped, so we need
+  // to remove the filter when the menu is open. We also need
+  // to disable the transition so that the property is removed
+  // immediately.
+  transition: backdrop-filter 0ms !important;
+  &:not(.menuOpen) {
+    backdrop-filter: blur(3px);
+  }
+}
+
+.header.menuOpen {
+  .logo { @extend %logoDark; }
+  .menuToggle .close { @extend %menuToggleIconLight; }
+}

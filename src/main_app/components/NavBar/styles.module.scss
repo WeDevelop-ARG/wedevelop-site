@@ -1,4 +1,9 @@
 @import '/src/styles/theme.scss';
+@import './theme_variants.scss';
+
+.bodyMenuOpen {
+  overflow: hidden;
+}
 
 .rootWithNavBar {
   --rootContentExtraPaddingTop: 70px;
@@ -9,12 +14,17 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px 30px;
-  padding-bottom: 0;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
+  transition: all 150ms linear;
+
+  &.atTop, &.menuOpen {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
 
   &.menuOpen::before {
     content: "";
@@ -26,26 +36,6 @@
     right: 0;
     background-color: $textColor;
   }
-}
-
-.logo {
-  --primaryColor: #{$secondaryColor};
-  --secondaryColor: #{$brandingColor};
-
-
-  &.menuOpen {
-    --primaryColor: #{$brandingColor};
-    --secondaryColor: #{$secondaryColor};
-
-  }
-}
-
-.bodyMenuOpen {
-  overflow: hidden;
-}
-
-%menuToggleIcon {
-  --primaryColor: #{$secondaryColor};
 }
 
 .menuToggle {
@@ -63,19 +53,16 @@
     margin: auto;
   }
 
-  & > .open {
-    @extend %menuToggleIcon;
+ .open {
     width: 27px;
     height: 18px;
   }
 
-  & > .close {
-    @extend %menuToggleIcon;
+  .close {
     width: 15px;
     height: 15px;
   }
 }
-
 
 .menu {
   position: fixed;

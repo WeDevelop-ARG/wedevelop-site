@@ -1,42 +1,45 @@
-import { useCallback, useEffect, useState } from 'react'
+import { forwardRef, useCallback, useState } from 'react'
 import classnames from 'classnames'
+
+import useOverlappingObserver from 'utils/use_overlapping_observer'
+import useElementClass from 'utils/use_element_class'
+import useVariants from 'utils/use_variants'
 
 import SVGIcon from '../SVGIcon'
 
 import MainMenu from './MainMenu'
 
 import classes from './styles.module.scss'
+import useCombinedRefs from 'utils/use_combined_refs'
 
-function NavBar () {
+function NavBar ({ variant }, ref) {
   // TODO: add accessibility https://react-spectrum.adobe.com/react-aria/useMenuTrigger.html
   const [menuOpen, setMenuOpen] = useState(false)
+  const [atTop, observerRef] = useOverlappingObserver({
+    root: document.body,
+    ignoreHeight: true
+  })
+  const containerRef = useCombinedRefs(ref, observerRef)
+  const variantClassNames = useVariants(classes, variant, { prefix: 'variant_' })
   const toggleMenu = useCallback(() => {
     setMenuOpen(v => !v)
   }, [])
 
-  useEffect(() => {
-    if (menuOpen) document.body.classList.add(classes.bodyMenuOpen)
-    else document.body.classList.remove(classes.bodyMenuOpen)
-
-    return () => {
-      document.body.classList.remove(classes.bodyMenuOpen)
-    }
-  }, [menuOpen])
-
-  useEffect(() => {
-    document.getElementById('root')?.classList.add(classes.rootWithNavBar)
-
-    return () => {
-      document.getElementById('root')?.classList.remove(classes.rootWithNavBar)
-    }
-  }, [])
+  useElementClass(document.getElementById('root'), classes.rootWithNavBar)
+  useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
 
   return (
-    <header className={classnames(classes.header, { [classes.menuOpen]: menuOpen })}>
+    <header
+      ref={containerRef}
+      className={classnames(classes.header, variantClassNames, {
+        [classes.menuOpen]: menuOpen,
+        [classes.atTop]: atTop
+      })}
+    >
       <SVGIcon
         name='logo'
         variant='hexagon'
-        className={classnames(classes.logo, { [classes.menuOpen]: menuOpen })}
+        className={classes.logo}
       />
       <nav>
         <button
@@ -53,4 +56,4 @@ function NavBar () {
   )
 }
 
-export default NavBar
+export default forwardRef(NavBar)

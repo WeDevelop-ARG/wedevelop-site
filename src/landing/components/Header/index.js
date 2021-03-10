@@ -1,9 +1,10 @@
 import ClutchWidget from 'main_app/components/ClutchWidget'
+import { forwardRef } from 'react'
 import classes from './styles.module.scss'
 
-function Header () {
+function Header (props, ref) {
   return (
-    <section className={classes.headerContainer}>
+    <section ref={ref} className={classes.headerContainer}>
       <h1>A human-centered company that gets things done <u>efficiently</u>.</h1>
       <blockquote className={classes.clutchReviews}>
         WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.
@@ -13,4 +14,4 @@ function Header () {
   )
 }
 
-export default Header
+export default forwardRef(Header)
