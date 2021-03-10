@@ -1,0 +1,8 @@
+@mixin baseLink {
+  text-decoration: none;
+  color: #5868E4;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

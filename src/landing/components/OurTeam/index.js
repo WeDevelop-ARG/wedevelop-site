@@ -1,3 +1,4 @@
+import Button from 'main_app/components/Button'
 import SVGIcon from 'main_app/components/SVGIcon'
 import classes from './styles.module.scss'
 
@@ -23,15 +24,19 @@ function OurTeam () {
         {' '}
         <a href='mailto:jobs@wedevelop.me'>jobs@wedevelop.me</a>
       </p>
-      <a
+      <Button
+        as='a'
+        variant='primary'
+        iconLeft={
+          <SVGIcon name='landing/download' className={classes.iconDowload} />
+        }
         href='/storage/WeDevelop-Brochure.pdf?alt=media'
         target='_blank'
         rel='noreferrer noopener'
         className={classes.buttonDowload}
       >
-        <SVGIcon name='landing/download' className={classes.iconDowload} />
         Download our Service Brochure
-      </a>
+      </Button>
     </section>
   )
 }

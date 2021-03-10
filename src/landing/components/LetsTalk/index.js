@@ -3,6 +3,8 @@ import { Formik, Form, Field } from 'formik'
 import { useLocation } from 'react-router-dom'
 
 import SVGIcon from 'main_app/components/SVGIcon'
+import Button from 'main_app/components/Button'
+
 import Select from './Select'
 import Textarea from './Textarea'
 import SetFormikValue from './SetFormikValue'
@@ -65,7 +67,13 @@ function LetsTalk () {
             maxLength='120'
             className={classnames(classes.formStyles, classes.textarea)}
           />
-          <button type='submit' className={classes.buttonStyles}>Send Message</button>
+          <Button
+            type='submit'
+            variant='primary'
+            className={classes.buttonStyles}
+          >
+            Send Message
+          </Button>
         </Form>
       </Formik>
     </section>
