@@ -23,8 +23,13 @@ function OurTeam () {
         {' '}
         <a href='mailto:jobs@wedevelop.me'>jobs@wedevelop.me</a>
       </p>
-      <a href='#WIP' className={classes.buttonDowload}>
-        <SVGIcon name='landing/download' className={classes.iconDowload}/>
+      <a
+        href='/storage/WeDevelop-Brochure.pdf?alt=media'
+        target='_blank'
+        rel='noreferrer noopener'
+        className={classes.buttonDowload}
+      >
+        <SVGIcon name='landing/download' className={classes.iconDowload} />
         Download our Service Brochure
       </a>
     </section>
