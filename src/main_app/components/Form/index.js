@@ -3,6 +3,7 @@ import { Formik, Form as FormikForm } from 'formik'
 
 function Form ({
   onSubmit,
+  resetOnSuccessfulSubmit,
   initialValues,
   validationSchema,
   children,
@@ -11,10 +12,12 @@ function Form ({
   const handleSubmit = useCallback(async (values, actions) => {
     try {
       await onSubmit?.(values)
+
+      if (resetOnSuccessfulSubmit) actions.resetForm()
     } finally {
       actions.setSubmitting(false)
     }
-  }, [onSubmit])
+  }, [onSubmit, resetOnSuccessfulSubmit])
 
   return (
     <Formik

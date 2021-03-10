@@ -22,7 +22,7 @@ const schema = Yup.object({
 }).required()
 
 function ContactForm ({ initialValues, ...props }) {
-  const handleSubmit = useCallback((values) => {
+  const handleSubmit = useCallback(async (values) => {
     const message = `
       I am ${values.iAm}, looking to ${values.lookingTo.replace(/_/g, ' ')}
 
@@ -31,7 +31,7 @@ function ContactForm ({ initialValues, ...props }) {
 
     const data = {
       personalizations: [{
-        to: [{ email: 'nahuel@wedevelop.me' }],
+        to: [{ email: 'info@wedevelop.me' }],
         subject: 'New message from WeDevelop site'
       }],
       from: {
@@ -44,18 +44,18 @@ function ContactForm ({ initialValues, ...props }) {
       }]
     }
 
-    axios.post(MAILER_URL, data)
-      .then(() => {
-        window.alert('Message sent successfully')
-      })
-      .catch(() => {
-        window.alert('An error occurred while sending your message.\n\nPlease contact us at info@wedevelop.me')
-      })
+    try {
+      await axios.post(MAILER_URL, data)
+      window.alert('Message sent successfully')
+    } catch (_) {
+      window.alert('An error occurred while sending your message.\n\nPlease contact us at info@wedevelop.me')
+    }
   }, [])
 
   return (
     <Form
       onSubmit={handleSubmit}
+      resetOnSuccessfulSubmit
       initialValues={{
         ...defaultInitialValues,
         ...initialValues
