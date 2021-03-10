@@ -14,12 +14,16 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 10px 30px;
+  padding: 10px var(--rootContentHorizontalPadding);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  transition: all 150ms linear;
+  transition:
+    all 150ms linear,
+    padding-left 0ms,
+    padding-right 0ms
+  ;
 
   &.atTop, &.menuOpen {
     padding-top: 20px;

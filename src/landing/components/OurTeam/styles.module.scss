@@ -41,8 +41,8 @@
   &::before {
     content: '';
     position: absolute;
-    width: var(--rootContentPadding);
-    left: calc(-1 * var(--rootContentPadding));
+    width: var(--rootContentHorizontalPadding);
+    left: calc(-1 * var(--rootContentHorizontalPadding));
     top: 0;
     height: 100%;
     background-color: $brandingColor;
