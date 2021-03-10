@@ -20,3 +20,6 @@ jobs:
           projectId: wedevelop-site
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+          REACT_APP_MAILER_URL: https://mailer.wedevelop.me/send
+          REACT_APP_BASE_URL: https://wedevelop-site.web.app
+          REACT_APP_ENVIRONMENT: testing

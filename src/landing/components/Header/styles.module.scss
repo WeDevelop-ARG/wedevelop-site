@@ -12,6 +12,7 @@
 .clutchReviews {
  font-style: italic;
  margin: 29px 0 10px 0;
+ max-width: min(250px, 70%);
 }
 
 .clutchReviews::before {
