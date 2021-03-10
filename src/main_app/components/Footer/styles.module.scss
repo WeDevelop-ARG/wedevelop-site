@@ -3,7 +3,7 @@
 .containerStyle {
   background-color: $primaryColor;
   color: $secondaryColor;
-  padding: 50px var(--rootContentPadding);
+  padding: 50px var(--rootContentHorizontalPadding);
   display: flex;
   flex-direction: column;
 

@@ -4,7 +4,7 @@
   color: $secondaryColor;
   background-color: $primaryColor;
   padding-top: calc(
-    var(--rootContentPadding) +
+    var(--rootContentMinPadding) +
     var(--rootContentExtraPaddingTop)
   );
 }
