@@ -4,13 +4,17 @@ import { HashLink } from 'react-router-hash-link'
 
 import Button from 'main_app/components/Button'
 import SVGIcon from 'main_app/components/SVGIcon'
+import useMediaQuery from 'utils/use_media_query'
 
 import LookingForLink from './LookingForLink'
+
+import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
 
 function MainMenu ({ isOpen, onRequestClose, className }) {
   const [lookingForOpen, setLookingForOpen] = useState(false)
+  const isDesktopUp = useMediaQuery(forDesktopUp)
   const toggleLookingFor = useCallback((e) => {
     e.preventDefault()
     e.stopPropagation()
@@ -31,14 +35,14 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
         <Button
           variant='link'
           onClick={toggleLookingFor}
-          className={classes.buttonLink}
+          className={classes.whatAreYouLookingFor}
           iconLeft={lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronLeft} />}
           iconRight={!lookingForOpen && <SVGIcon name='nav_bar/chevron_right' className={classes.chevronRight} />}
         >
           What are you looking for?
         </Button>
       </li>
-      {!lookingForOpen && (
+      {(!lookingForOpen || isDesktopUp) && (
         <>
           <li>
             <Button
@@ -61,12 +65,13 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
               className={classes.buttonTalk}
               onClick={onRequestClose}
             >
-              Let's talk
+              {isDesktopUp && 'Contact us'}
+              {!isDesktopUp && 'Let\'s talk'}
             </Button>
           </li>
         </>
       )}
-      {lookingForOpen && (
+      {lookingForOpen && !isDesktopUp && (
         <>
           <li>
             <LookingForLink

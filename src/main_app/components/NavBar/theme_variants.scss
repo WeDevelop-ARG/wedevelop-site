@@ -30,7 +30,6 @@
   // to remove the filter when the menu is open. We also need
   // to disable the transition so that the property is removed
   // immediately.
-  transition: backdrop-filter 0ms !important;
   &:not(.menuOpen) {
     backdrop-filter: blur(3px);
   }
