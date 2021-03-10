@@ -1,17 +1,20 @@
-import { forwardRef, useCallback, useState } from 'react'
+import { forwardRef, useCallback, useMemo, useState } from 'react'
 import classnames from 'classnames'
+import { HashLink } from 'react-router-hash-link'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import useElementClass from 'utils/use_element_class'
 import useVariants from 'utils/use_variants'
+import useCombinedRefs from 'utils/use_combined_refs'
+import useMediaQuery from 'utils/use_media_query'
+
+import { forTabletUp } from 'styles/media_queries'
 
 import SVGIcon from '../SVGIcon'
 
 import MainMenu from './MainMenu'
 
 import classes from './styles.module.scss'
-import useCombinedRefs from 'utils/use_combined_refs'
-import { HashLink } from 'react-router-hash-link'
 
 function NavBar ({ variant }, ref) {
   // TODO: add accessibility https://react-spectrum.adobe.com/react-aria/useMenuTrigger.html
@@ -28,6 +31,13 @@ function NavBar ({ variant }, ref) {
   const closeMenu = useCallback(() => {
     setMenuOpen(false)
   }, [])
+  const isTabletUp = useMediaQuery(forTabletUp)
+  const logoVariant = useMemo(() => {
+    if (isTabletUp) return 'full'
+    else return 'hexagon'
+  }, [isTabletUp])
+
+  console.log({ isTabletUp })
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
@@ -46,7 +56,7 @@ function NavBar ({ variant }, ref) {
       >
         <SVGIcon
           name='logo'
-          variant='hexagon'
+          variant={logoVariant}
           className={classes.logo}
         />
       </HashLink>
