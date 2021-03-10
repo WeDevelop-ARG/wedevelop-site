@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Landing from '../landing'
+import Landing from 'landing'
+import NotFound from 'not_found'
 
 function Routes () {
   return (
@@ -7,6 +8,9 @@ function Routes () {
       <Switch>
         <Route exact path='/'>
           <Landing />
+        </Route>
+        <Route path='/'>
+          <NotFound />
         </Route>
       </Switch>
     </Router>
