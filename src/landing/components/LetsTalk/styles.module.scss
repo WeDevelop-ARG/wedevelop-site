@@ -1,4 +1,15 @@
 @import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.container {
+  
+  @include for-desktop-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+}
 
 .title {
   position: relative;
@@ -20,6 +31,10 @@
   & > .formStyles + .formStyles {
     margin-top: 16px;
   }
+  @include for-desktop-up {
+    max-width: 823px;
+    margin: 0 auto;
+  }
 }
 
 .label {
@@ -35,7 +50,7 @@
 
 .selectStyles {
   background-color: transparent;
-  color: $textColor;
+  color: $primaryColor;
   border: none;
   cursor: pointer;
   margin-left: -.2em;

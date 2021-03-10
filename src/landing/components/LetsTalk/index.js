@@ -16,7 +16,7 @@ function LetsTalk () {
   const lookingToValue = location.state?.letsTalkForm?.lookingTo
 
   return (
-    <section>
+    <section className={classes.container}>
       <h2 id='lets_talk' className={classes.title}>
         Let’s talk
         <SVGIcon name='landing/hexagon_outline' className={classes.icon} />
