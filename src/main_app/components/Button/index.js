@@ -41,7 +41,11 @@ function Button ({
 const variants = PropTypes.oneOf(['primary', 'disabled', 'link'])
 
 Button.propTypes = {
-  as: PropTypes.string,
+  as: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.func.isRequired,
+    PropTypes.object.isRequired
+  ]),
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   type: PropTypes.string,

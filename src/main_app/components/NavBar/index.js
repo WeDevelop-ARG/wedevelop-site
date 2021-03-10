@@ -11,6 +11,7 @@ import MainMenu from './MainMenu'
 
 import classes from './styles.module.scss'
 import useCombinedRefs from 'utils/use_combined_refs'
+import { HashLink } from 'react-router-hash-link'
 
 function NavBar ({ variant }, ref) {
   // TODO: add accessibility https://react-spectrum.adobe.com/react-aria/useMenuTrigger.html
@@ -24,6 +25,9 @@ function NavBar ({ variant }, ref) {
   const toggleMenu = useCallback(() => {
     setMenuOpen(v => !v)
   }, [])
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false)
+  }, [])
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
@@ -36,11 +40,16 @@ function NavBar ({ variant }, ref) {
         [classes.atTop]: atTop
       })}
     >
-      <SVGIcon
-        name='logo'
-        variant='hexagon'
-        className={classes.logo}
-      />
+      <HashLink
+        to={{ path: '/', hash: '#top' }}
+        smooth
+      >
+        <SVGIcon
+          name='logo'
+          variant='hexagon'
+          className={classes.logo}
+        />
+      </HashLink>
       <nav>
         <button
           type='button'
@@ -50,7 +59,11 @@ function NavBar ({ variant }, ref) {
           {menuOpen && <SVGIcon name='nav_bar/close_x' className={classes.close} />}
           {!menuOpen && <SVGIcon name='nav_bar/hamburguer_menu' className={classes.open} />}
         </button>
-        <MainMenu isOpen={menuOpen} className={classes.menu} />
+        <MainMenu
+          isOpen={menuOpen}
+          onRequestClose={closeMenu}
+          className={classes.menu}
+        />
       </nav>
     </header>
   )

@@ -4,13 +4,13 @@
   padding: 63px 30px 0;
   list-style-type: none;
   margin: 0;
-  
+
 
   & > li + li {
     margin-top: 33px;
   }
 
-  & > li > a {
+  & > li > * {
     font-weight: 500;
     text-decoration: none;
     font-size: 20px;
@@ -32,18 +32,11 @@
 
 .chevronLeft {
   @extend %chevronLogo;
-  margin-right: 19px;
   transform: rotate(180deg);
 }
 
 .chevronRight {
   @extend %chevronLogo;
-  margin-left: 19px;
-}
-
-.listAlign {
-  display: flex;
-  align-items: center;
 }
 
 .menuIcon {
@@ -51,10 +44,12 @@
   --secondaryColor: #{$secondaryColor};
   width: 23px;
   height: 20px;
-  margin-right: 11px;
-  margin-left: 4px;
 }
 
+.buttonLink {
+  color: inherit;
+  font-size: inherit;
+}
 
 .buttonTalk {
   display: block;
