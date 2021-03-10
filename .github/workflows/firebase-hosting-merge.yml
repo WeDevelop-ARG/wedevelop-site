@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci && npm run build
+      - run: cp .testing_env .env.production && npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -20,6 +20,3 @@ jobs:
           projectId: wedevelop-site
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
-          REACT_APP_MAILER_URL: https://mailer.wedevelop.me/send
-          REACT_APP_BASE_URL: https://wedevelop-site.web.app
-          REACT_APP_ENVIRONMENT: testing
