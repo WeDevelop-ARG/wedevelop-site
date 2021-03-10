@@ -8,7 +8,7 @@ import useVariants from 'utils/use_variants'
 import useCombinedRefs from 'utils/use_combined_refs'
 import useMediaQuery from 'utils/use_media_query'
 
-import { forTabletUp } from 'styles/media_queries'
+import { forDesktopUp, forTabletUp } from 'styles/media_queries'
 
 import SVGIcon from '../SVGIcon'
 
@@ -32,12 +32,11 @@ function NavBar ({ variant }, ref) {
     setMenuOpen(false)
   }, [])
   const isTabletUp = useMediaQuery(forTabletUp)
+  const isDesktopUp = useMediaQuery(forDesktopUp)
   const logoVariant = useMemo(() => {
     if (isTabletUp) return 'full'
     else return 'hexagon'
   }, [isTabletUp])
-
-  console.log({ isTabletUp })
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
@@ -70,7 +69,7 @@ function NavBar ({ variant }, ref) {
           {!menuOpen && <SVGIcon name='nav_bar/hamburguer_menu' className={classes.open} />}
         </button>
         <MainMenu
-          isOpen={menuOpen}
+          isOpen={isDesktopUp || menuOpen}
           onRequestClose={closeMenu}
           className={classes.menu}
         />

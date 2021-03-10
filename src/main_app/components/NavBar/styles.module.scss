@@ -1,3 +1,4 @@
+@import '/src/styles/media_queries.scss';
 @import '/src/styles/theme.scss';
 @import './theme_variants.scss';
 
@@ -21,6 +22,7 @@
   z-index: 10;
   transition:
     all 150ms linear,
+    backdrop-filter 0ms,
     padding-left 0ms,
     padding-right 0ms
   ;
@@ -44,7 +46,6 @@
 
 .menuToggle {
   align-self: flex-end;
-
   background: none;
   border: 0;
   padding: 7px 10px;
@@ -52,6 +53,10 @@
   height: 32px;
   display: flex;
   cursor: pointer;
+
+  @include for-desktop-up {
+    display: none;
+  }
 
   & > * {
     margin: auto;
@@ -76,4 +81,8 @@
   bottom: 10px;
   overflow: auto;
   margin: 0;
+
+  @include for-desktop-up {
+    position: static;
+  }
 }
