@@ -22,10 +22,11 @@
 .clutchReviews {
  font-style: italic;
  margin: 29px 0 10px 0;
- max-width: 420px;
+ max-width: min(250px, 70%);
 
  @include for-tablet-up {
   font-size: 18px;
+  max-width: 420px;
 }
 }
 
