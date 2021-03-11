@@ -1,4 +1,5 @@
 @import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
 
 .headerContainer {
   color: $secondaryColor;
@@ -9,10 +10,23 @@
   );
 }
 
+.title {
+  font-size: 30px;
+
+  @include for-desktop-up {
+    font-size: 48px;
+    width: 800px;
+  }
+}
+
 .clutchReviews {
  font-style: italic;
  margin: 29px 0 10px 0;
- max-width: min(250px, 70%);
+ max-width: 420px;
+
+ @include for-tablet-up {
+  font-size: 18px;
+}
 }
 
 .clutchReviews::before {
