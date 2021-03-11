@@ -19,10 +19,12 @@ function LetsTalkFormLink ({ lookingTo, ...props }) {
 function WhatAreYouLookingFor () {
   return (
     <section className={classes.container}>
-      <h2>What are you looking for?</h2>
-      <p>
-        We are a Digital Product Development company born in Argentina focused on high-quality and long-term solutions.
-      </p>
+      <div className={classes.titleContainer}>
+        <h2 className={classes.title}>What are you looking for?</h2>
+        <p className={classes.titleText}>
+          We are a Digital Product Development company born in Argentina focused on high-quality and long-term solutions.
+        </p>
+      </div>
       <ul className={classes.listContainer}>
         <li>
           <LetsTalkFormLink lookingTo='validate_idea' className={classes.cardButton}>
