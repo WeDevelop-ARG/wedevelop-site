@@ -62,20 +62,22 @@ function LetsTalk () {
             <option value='talk_to_representative'>talk to a representative</option>
           </Field>
         </label>
-        <Field
-          as={InputWithError}
-          type='text'
-          name='name'
-          placeholder='Name'
-          className={classes.inputStyles}
-        />
-        <Field
-          as={InputWithError}
-          type='email'
-          name='email'
-          placeholder='Email'
-          className={classes.inputStyles}
-        />
+        <div className={classes.inputsContainer}>
+          <Field
+            as={InputWithError}
+            type='text'
+            name='name'
+            placeholder='Name'
+            className={classes.inputStyles}
+          />
+          <Field
+            as={InputWithError}
+            type='email'
+            name='email'
+            placeholder='Email'
+            className={classes.inputStyles}
+          />
+        </div>
         <Field
           as={TextAreaWithError}
           name='message'
@@ -83,12 +85,14 @@ function LetsTalk () {
           maxLength='120'
           className={classnames(classes.inputStyles, classes.textarea)}
         />
-        <SubmitButton
-          variant='primary'
-          className={classes.buttonStyles}
-        >
-          Send Message
-        </SubmitButton>
+        <div className={classes.buttonContainer}>
+          <SubmitButton
+            variant='primary'
+            className={classes.buttonStyles}
+          >
+            Send Message
+          </SubmitButton>
+        </div>
       </ContactForm>
     </section>
   )
