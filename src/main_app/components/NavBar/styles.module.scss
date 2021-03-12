@@ -44,6 +44,10 @@
   }
 }
 
+.logoLink:focus {
+  outline: auto;
+}
+
 .menuToggle {
   align-self: flex-end;
   background: none;

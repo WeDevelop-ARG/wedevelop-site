@@ -6,49 +6,105 @@ import { ENVIRONMENT } from 'main_app/constants'
 
 import classes from './styles.module.scss'
 
-const assetsSVG = {}
+const assetsSVG = new Map()
+const sizeCache = new Map()
 ;(() => {
   const r = require.context('assets', true, /\.svg$/)
-  r.keys().forEach((key) => (assetsSVG[key] = r(key).default))
+  r.keys().forEach((key) => (assetsSVG.set(key, r(key).default)))
 })()
 let uniqueIconId = 0
+
+function getSVGBBoxSize (href) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+  const use = document.createElementNS('http://www.w3.org/2000/svg', 'use')
+
+  use.setAttribute('href', href)
+  svg.setAttribute('aria-hidden', 'true')
+  svg.setAttribute('width', '0')
+  svg.setAttribute('height', '0')
+  svg.appendChild(use)
+  svg.style.position = 'absolute'
+  svg.style.top = '-99999px'
+  svg.style.left = '-99999px'
+  svg.style.visibility = 'hidden'
+
+  return new Promise((resolve, reject) => {
+    let timeout = null
+    const handleLoad = () => {
+      clearTimeout(timeout)
+      resolve(getSVGElementSize(svg))
+    }
+    const handleError = () => {
+      clearTimeout(timeout)
+      reject(new Error('Could not load SVG'))
+    }
+
+    if (getSVGElementSize(svg)) {
+      handleLoad()
+
+      return undefined
+    }
+
+    document.body.appendChild(svg)
+    svg.addEventListener('load', handleLoad)
+    svg.addEventListener('error', handleError)
+    timeout = setTimeout(() => {
+      svg.removeEventListener('load', handleLoad)
+      svg.removeEventListener('error', handleError)
+      handleError()
+    }, 10000)
+  }).finally(() => {
+    document.body.removeChild(svg)
+  })
+}
+
+function getSVGElementSize (svg) {
+  const bbox = svg.getBBox()
+  const width = bbox.x + bbox.width + bbox.x
+  const height = bbox.y + bbox.height + bbox.y
+
+  if (width && height) return { width, height }
+}
 
 function SVGIcon ({ name, title, description, className, variant = 'full', ...props }) {
   const [uniqueId] = useState(() => uniqueIconId++)
   const svgRef = useRef()
-  const src = useMemo(() => assetsSVG[`./${name}.svg`], [name])
+  const src = useMemo(() => assetsSVG.get(`./${name}.svg`), [name])
+  const href = `${src}#${variant}`
+  const [sizeFromCache, setSizeFromCache] = useState(() => sizeCache.get(href))
 
   useEffect(() => {
-    const svg = svgRef.current
-
-    if (!svg) return undefined
-
-    let animationFrame = null
-    const startMillis = Date.now()
-    const setDimensions = (v) => {
-      const bbox = svg.getBBox()
-      const width = bbox.x + bbox.width + bbox.x
-      const height = bbox.y + bbox.height + bbox.y
-      const elapsedMillis = Date.now() - startMillis
-
-      if (!width && !height && elapsedMillis < 2000) {
-        animationFrame = window.requestAnimationFrame(setDimensions)
-      }
-
-      svg.setAttribute('width', width)
-      svg.setAttribute('height', height)
-      svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
+    if (!svgRef.current) return undefined
+    if (sizeFromCache?.width && sizeFromCache?.height) {
+      return undefined
     }
 
-    setDimensions()
-    svg.addEventListener('load', setDimensions)
-    animationFrame = window.requestAnimationFrame(setDimensions)
+    let sizesPromise = sizeFromCache
+    let cleanUpExecuted = false
+
+    if (!sizesPromise) {
+      sizesPromise = getSVGBBoxSize(href)
+      sizeCache.set(href, sizesPromise)
+    }
+
+    sizesPromise.then(({ width, height }) => {
+      sizeCache.set(href, { width, height })
+      setSizeFromCache({ width, height })
+
+      if (cleanUpExecuted) return undefined
+
+      svgRef.current.setAttribute('width', width)
+      svgRef.current.setAttribute('height', height)
+      svgRef.current.setAttribute('viewBox', `0 0 ${width} ${height}`)
+    }).catch((err) => {
+      sizeCache.set(href, undefined)
+      console.error(err)
+    })
 
     return () => {
-      svg.removeEventListener('load', setDimensions)
-      window.cancelAnimationFrame(animationFrame)
+      cleanUpExecuted = true
     }
-  }, [src, variant])
+  }, [href, sizeFromCache])
 
   if (!src) {
     if (ENVIRONMENT !== 'production') {
@@ -72,8 +128,8 @@ function SVGIcon ({ name, title, description, className, variant = 'full', ...pr
       xmlns='http://www.w3.org/2000/svg'
       ref={svgRef}
       className={classnames(classes.default, className)}
-      width='0'
-      height='0'
+      width={sizeFromCache?.width ?? '0'}
+      height={sizeFromCache?.height ?? '0'}
       role={role}
       aria-labelledby={isEmpty(labelledBy) ? undefined : labelledBy}
       {...props}
@@ -88,7 +144,7 @@ function SVGIcon ({ name, title, description, className, variant = 'full', ...pr
           {description}
         </desc>
       )}
-      <use href={`${src}#${variant}`} />
+      <use href={href} />
     </svg>
   )
 }
