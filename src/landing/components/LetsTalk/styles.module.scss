@@ -28,11 +28,18 @@
 }
 
 .form {
-  & > .inputStyles + .inputStyles {
-    margin-top: 16px;
-  }
+  @include for-phone-only{
+    .inputStyles + .inputStyles {
+      margin-top: 16px;
+    }
+  }  
+  @include for-tablet-up{
+    .inputStyles + .inputStyles {
+      margin-left: 16px;
+    }
+  }  
   @include for-desktop-up {
-    max-width: 823px;
+    width: min(100%, 823px);
     margin: 0 auto;
   }
 }
@@ -88,6 +95,7 @@
   resize: none;
   height: 200px;
   font-family: inherit;
+  margin-top: 16px;
 }
 
 .buttonStyles {
@@ -97,4 +105,12 @@
 
 .icon {
   --primaryColor: #{$brandingColor};
+}
+
+.inputsContainer {
+
+  @include for-tablet-up{
+    display: flex;
+    flex-direction: row;
+  }
 }
