@@ -51,6 +51,7 @@ function NavBar ({ variant }, ref) {
     >
       <HashLink
         to={{ path: '/', hash: '#top' }}
+        className={classes.logoLink}
         smooth
       >
         <SVGIcon
