@@ -9,12 +9,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 44px;
   }
 }
 
-.teamFlexItem{
+.flexItems {
   @include for-desktop-up {
     flex-basis: 49%;
+  }
+}
+
+.rigthContainer {
+  @extend .flexItems;
+
+  @include for-desktop-up {
+    padding-top: 66px;
+  }
+}
+
+.mainTitle {
+  @include for-desktop-up {
+    font-size: 48px;
   }
 }
 
@@ -64,6 +79,7 @@
   @include for-desktop-up {
     display: flex;
     margin: auto;
+    margin-top: 50px;
   }
 }
 
