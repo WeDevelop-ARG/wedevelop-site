@@ -114,3 +114,12 @@
     flex-direction: row;
   }
 }
+
+.buttonContainer {
+
+  @include for-desktop-up{
+    display: flex;
+    margin-left: auto;
+    width: 316px;
+  }
+}

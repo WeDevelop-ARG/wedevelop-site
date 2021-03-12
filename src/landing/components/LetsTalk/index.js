@@ -85,12 +85,14 @@ function LetsTalk () {
           maxLength='120'
           className={classnames(classes.inputStyles, classes.textarea)}
         />
-        <SubmitButton
-          variant='primary'
-          className={classes.buttonStyles}
-        >
-          Send Message
-        </SubmitButton>
+        <div className={classes.buttonContainer}>
+          <SubmitButton
+            variant='primary'
+            className={classes.buttonStyles}
+          >
+            Send Message
+          </SubmitButton>
+        </div>
       </ContactForm>
     </section>
   )
