@@ -123,13 +123,17 @@ function SVGIcon ({ name, title, description, className, variant = 'full', ...pr
   if (!isEmpty(title)) labelledBy += titleId + ' '
   if (!isEmpty(description)) labelledBy += descriptionId
 
+  const width = sizeFromCache?.width ?? '0'
+  const height = sizeFromCache?.height ?? '0'
+
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       ref={svgRef}
       className={classnames(classes.default, className)}
-      width={sizeFromCache?.width ?? '0'}
-      height={sizeFromCache?.height ?? '0'}
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
       role={role}
       aria-labelledby={isEmpty(labelledBy) ? undefined : labelledBy}
       {...props}
