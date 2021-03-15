@@ -48,6 +48,15 @@
   outline: auto;
 }
 
+.logo {
+  width: 51px;
+  height: auto;
+
+  @include for-tablet-up {
+    width: 192px;
+  }
+}
+
 .menuToggle {
   align-self: flex-end;
   background: none;

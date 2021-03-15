@@ -32,25 +32,25 @@ function getSVGBBoxSize (href) {
     let timeout = null
     const handleLoad = () => {
       clearTimeout(timeout)
-      resolve(getSVGElementSize(svg))
+      resolve(getSVGElementSize(use))
     }
     const handleError = () => {
       clearTimeout(timeout)
       reject(new Error('Could not load SVG'))
     }
 
-    if (getSVGElementSize(svg)) {
+    if (getSVGElementSize(use)) {
       handleLoad()
 
       return undefined
     }
 
     document.body.appendChild(svg)
-    svg.addEventListener('load', handleLoad)
-    svg.addEventListener('error', handleError)
+    use.addEventListener('load', handleLoad)
+    use.addEventListener('error', handleError)
     timeout = setTimeout(() => {
-      svg.removeEventListener('load', handleLoad)
-      svg.removeEventListener('error', handleError)
+      use.removeEventListener('load', handleLoad)
+      use.removeEventListener('error', handleError)
       handleError()
     }, 10000)
   }).finally(() => {
@@ -71,15 +71,25 @@ function SVGIcon ({ name, title, description, className, variant = 'full', ...pr
   const svgRef = useRef()
   const src = useMemo(() => assetsSVG.get(`./${name}.svg`), [name])
   const href = `${src}#${variant}`
-  const [sizeFromCache, setSizeFromCache] = useState(() => sizeCache.get(href))
+  let [sizeFromCache, setSizeFromCache] = useState(() => sizeCache.get(href))
+
+  if (sizeFromCache?.href !== href) sizeFromCache = null
 
   useEffect(() => {
     if (!svgRef.current) return undefined
-    if (sizeFromCache?.width && sizeFromCache?.height) {
-      return undefined
-    }
 
     let sizesPromise = sizeFromCache
+
+    if (
+      sizeFromCache?.width &&
+      sizeFromCache?.height &&
+      sizeFromCache?.href === href
+    ) {
+      return undefined
+    } else {
+      sizesPromise = null
+    }
+
     let cleanUpExecuted = false
 
     if (!sizesPromise) {
@@ -88,11 +98,11 @@ function SVGIcon ({ name, title, description, className, variant = 'full', ...pr
     }
 
     sizesPromise.then(({ width, height }) => {
-      sizeCache.set(href, { width, height })
-      setSizeFromCache({ width, height })
+      sizeCache.set(href, { width, height, href })
 
       if (cleanUpExecuted) return undefined
 
+      setSizeFromCache({ width, height, href })
       svgRef.current.setAttribute('width', width)
       svgRef.current.setAttribute('height', height)
       svgRef.current.setAttribute('viewBox', `0 0 ${width} ${height}`)
