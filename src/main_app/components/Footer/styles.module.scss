@@ -2,7 +2,7 @@
 @import '/src/styles/media_queries.scss';
 
 .containerStyle {
-  background-color: $primaryColor;
+  background-color: $textColor;
   color: $secondaryColor;
   padding: 50px var(--rootContentHorizontalPadding);
   display: flex;
