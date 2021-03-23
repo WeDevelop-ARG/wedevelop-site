@@ -4,7 +4,7 @@
 .containerStyle {
   background-color: $textColor;
   color: $secondaryColor;
-  padding: 50px var(--rootContentHorizontalPadding);
+  padding: 25px var(--rootContentHorizontalPadding);
   display: flex;
   flex-direction: column;
 
@@ -76,14 +76,14 @@
 
 .logoStyle {
   --primaryColor: #{$secondaryColor};
-  --secondaryColor: #{$brandingColor};
+  --secondaryColor: #{$textColor};
   height: 25px;
 
   @include for-desktop-up {
     flex-basis: 100%; 
     margin-left: auto; 
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 10px;
   }
 }
 
