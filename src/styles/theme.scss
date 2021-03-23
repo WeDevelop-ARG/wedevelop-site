@@ -6,3 +6,13 @@ $backgroundColor: #F7F9FC;
 $buttonBackground: #15579E;
 $focusedButtonBackground: $buttonBackground;
 $disabledButtonBackground: #A7AFC3;
+
+
+$textButtonSecondary: #15579E;
+$backgroundButton: #E8EEF5;
+$error: #B00020;
+$textButtonPrimary: #FFFFFF;
+
+$primaryGradient: #4776E6;
+$secondaryGradient: #8E54E9;
+$mainGradient: linear-gradient(90deg, $primaryGradient 0%, $secondaryGradient 100%);
