@@ -44,17 +44,6 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
       </li>
       {(!lookingForOpen || isDesktopUp) && (
         <>
-          <li>
-            <Button
-              as={HashLink}
-              variant='link'
-              to='/#our_team'
-              smooth
-              onClick={onRequestClose}
-            >
-              About us
-            </Button>
-          </li>
           <li><a href='https://blog.wedevelop.me'>Blog</a></li>
           <li>
             <Button
@@ -66,7 +55,7 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
               onClick={onRequestClose}
             >
               {isDesktopUp && 'Contact us'}
-              {!isDesktopUp && 'Let\'s talk'}
+              {!isDesktopUp && 'Contact us'}
             </Button>
           </li>
         </>

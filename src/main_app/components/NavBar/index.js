@@ -70,7 +70,7 @@ function NavBar ({ variant }, ref) {
           {!menuOpen && <SVGIcon name='nav_bar/hamburguer_menu' className={classes.open} />}
         </button>
         <MainMenu
-          isOpen={isDesktopUp || menuOpen}
+          isOpen={isDesktopUp || isTabletUp || menuOpen}
           onRequestClose={closeMenu}
           className={classes.menu}
         />
