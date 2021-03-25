@@ -1,0 +1,88 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.teamContainer {
+  background-color: $backgroundColor;
+  padding-top: 100px;
+
+  @include for-desktop-up {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 44px;
+  }
+}
+
+.flexItems {
+  @include for-desktop-up {
+    flex-basis: 49%;
+  }
+}
+
+.rigthContainer {
+  @extend .flexItems;
+
+  @include for-desktop-up {
+    padding-top: 66px;
+  }
+}
+
+.mainTitle {
+  @include for-desktop-up {
+    font-size: 48px;
+  }
+}
+
+.rocket {
+  margin-left: 10px;
+  width: 40px;
+  height: auto;
+  --secondaryColor: #{$brandingColor};
+}
+
+.titleStyles {
+  position: relative;
+  padding: 5px 12px;
+  padding-left: 0;
+  display: block;
+  width: fit-content;
+  background-color: $brandingColor;
+  color: $secondaryColor;
+
+  @include for-desktop-up {
+    padding-left: 12px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: var(--rootContentHorizontalPadding);
+    left: calc(-1 * var(--rootContentHorizontalPadding));
+    top: 0;
+    height: 100%;
+    background-color: $brandingColor;
+
+    @include for-desktop-up {
+      display: none;
+    }
+  }
+}
+
+.buttonDowload {
+  margin-top: 32px;
+  width: 100%;
+
+  @include for-tablet-up {
+    max-width: 320px;
+  }
+
+  @include for-desktop-up {
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+  }
+}
+
+.iconDowload {
+  --primaryColor: #{$secondaryColor};
+}
