@@ -71,6 +71,10 @@
     display: none;
   }
 
+  @include for-tablet-up {
+    display: none;
+  }
+
   & > * {
     margin: auto;
   }
@@ -96,6 +100,10 @@
   margin: 0;
 
   @include for-desktop-up {
+    position: static;
+  }
+
+  @include for-tablet-up {
     position: static;
   }
 }

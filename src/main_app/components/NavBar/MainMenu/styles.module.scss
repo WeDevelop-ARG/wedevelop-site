@@ -12,10 +12,21 @@
     align-items: center;
   }
 
+  @include for-tablet-up {
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
   & > li + li {
     margin-top: 33px;
 
     @include for-desktop-up {
+      margin: 0;
+      margin-left: 40px;
+    }
+
+    @include for-tablet-up {
       margin: 0;
       margin-left: 40px;
     }
@@ -29,6 +40,12 @@
     color: $secondaryColor;
 
     @include for-desktop-up {
+      font-weight: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    @include for-tablet-up {
       font-weight: inherit;
       font-size: inherit;
       line-height: inherit;
@@ -71,6 +88,10 @@
   @extend .buttonLink;
 
   @include for-desktop-up {
+    display: none;
+  }
+
+  @include for-tablet-up {
     display: none;
   }
 }
