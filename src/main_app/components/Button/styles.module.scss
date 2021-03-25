@@ -45,14 +45,19 @@
 
 .variant_primary {
   @extend %buttonFocus;
-  background-color: $buttonBackground;
+  background-image: $mainGradient;
   color: $secondaryColor;
 }
 
 .variant_disabled {
   @extend %buttonFocus;
+  background-image: none;
   background-color: $disabledButtonBackground;
   color: $secondaryColor;
+
+  &.variant_secondary {
+    background: $secondaryDisabledButtonBackground;
+  }
 }
 
 .button:not(.variant_link):disabled {
