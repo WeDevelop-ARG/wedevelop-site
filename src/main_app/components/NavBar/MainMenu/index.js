@@ -15,7 +15,7 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
 
   return (
     <ul className={classnames(classes.menu, className)}>
-      <li><a href='https://blog.wedevelop.me'>Blog</a></li>
+      <li><a href='https://blog.wedevelop.me' target='_blank'>Blog</a></li>
       <li>
         <Button
           as={HashLink}
