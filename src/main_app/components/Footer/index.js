@@ -1,3 +1,4 @@
+import Logo from '../Logo'
 import SVGIcon from '../SVGIcon'
 import classes from './styles.module.scss'
 
@@ -45,7 +46,7 @@ function Footer () {
           </a>
         </li>
       </ul>
-      <SVGIcon name='logo' className={classes.logoStyle} />
+      <Logo className={classes.logoStyle} />
       <div className={classes.copyright}>
         © 2021 WeDevelop LLC. All rights reserved.
       </div>

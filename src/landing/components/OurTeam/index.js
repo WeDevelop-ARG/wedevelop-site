@@ -6,7 +6,6 @@ function OurTeam () {
   return (
     <section id='our_team' className={classes.teamContainer}>
       <div className={classes.flexItems}>
-        <SVGIcon name='logo' variant='rocket' className={classes.rocket} />
         <h2 className={classes.mainTitle}>Our Team</h2>
         <p>
           We are friendly group of people with professionalism and good vibes.

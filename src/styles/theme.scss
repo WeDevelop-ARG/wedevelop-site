@@ -8,7 +8,12 @@ $focusedButtonBackground: $buttonBackground;
 $disabledButtonBackground: #A7AFC3;
 
 
-$textButtonSecondary: #15579E;
+$secondaryButtonBackgroundColor: rgba(21, 87, 158, 0.1);
+$secondaryButtonTextColor: #15579E;
+
+$secondaryButtonDarkBackgroundColor: rgba(247, 249, 252, 0.1);
+$secondaryButtonDarkTextColor: $backgroundColor;
+
 $backgroundButton: #E8EEF5;
 $error: #B00020;
 $textButtonPrimary: #FFFFFF;

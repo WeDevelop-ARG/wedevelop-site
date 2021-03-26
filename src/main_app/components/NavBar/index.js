@@ -13,6 +13,7 @@ import { forDesktopUp, forTabletUp } from 'styles/media_queries'
 import SVGIcon from '../SVGIcon'
 
 import MainMenu from './MainMenu'
+import Logo from '../Logo'
 
 import classes from './styles.module.scss'
 
@@ -54,12 +55,17 @@ function NavBar ({ variant }, ref) {
         className={classes.logoLink}
         smooth
       >
-        <SVGIcon
-          name='logo'
+        <Logo
           variant={logoVariant}
           className={classes.logo}
         />
       </HashLink>
+      <svg width='0' height='0' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+        <linearGradient id='NavBarLogoGradient'>
+          <stop offset='0%' className={classes.logoGradientStop0} />
+          <stop offset='100%' className={classes.logoGradientStop100} />
+        </linearGradient>
+      </svg>
       <nav>
         <button
           type='button'

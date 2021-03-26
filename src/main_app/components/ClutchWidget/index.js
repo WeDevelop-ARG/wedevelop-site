@@ -27,7 +27,8 @@ function ClutchWidget ({ className, variant = 'light' }) {
       className={classnames('clutch-widget', className)}
       data-url='https://widget.clutch.co'
       data-widget-type='2'
-      data-height='50'
+      data-height='45'
+      style={{ width: '192px', height: '45px' }}
       data-clutchcompany-id='810049'
       {...extraProps}
     />

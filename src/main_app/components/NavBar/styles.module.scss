@@ -32,6 +32,10 @@
     padding-bottom: 0;
   }
 
+  &.menuOpen {
+    --textColor: #{$secondaryColor};
+  }
+
   &.menuOpen::before {
     content: "";
     position: fixed;
@@ -99,11 +103,8 @@
   overflow: auto;
   margin: 0;
 
-  @include for-desktop-up {
-    position: static;
-  }
-
   @include for-tablet-up {
+    overflow: visible;
     position: static;
   }
 }

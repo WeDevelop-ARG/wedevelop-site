@@ -9,6 +9,7 @@ import classes from './styles.module.scss'
 function Button ({
   as: ButtonComponent = 'button',
   variant = 'primary',
+  isAnchor,
   type,
   className,
   children,
@@ -21,7 +22,11 @@ function Button ({
   className = classnames(
     classes.button,
     useVariants(classes, variant, { prefix: 'variant_' }),
-    useVariants(classes, ButtonComponent.toString(), { prefix: 'as_' }),
+    useVariants(
+      classes,
+      isAnchor ? 'a' : ButtonComponent.toString(),
+      { prefix: 'as_' }
+    ),
     className
   )
 
@@ -46,6 +51,7 @@ Button.propTypes = {
     PropTypes.func.isRequired,
     PropTypes.object.isRequired
   ]),
+  isAnchor: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   type: PropTypes.string,
