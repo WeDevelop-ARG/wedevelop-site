@@ -88,6 +88,14 @@
   border-top: 2px solid $backgroundColor;
   padding-top: 40px;
   margin-top: 20px;
+
+  @include for-desktop-up {
+    display: none;
+  }
+
+  @include for-tablet-up {
+    display: none;
+  }
 }
 
 .blogText {
