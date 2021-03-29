@@ -2,9 +2,9 @@ import { useMemo } from 'react'
 
 import NavBar from 'main_app/components/NavBar'
 
-import classes from './styles.module.scss'
-
 import Header from './components/Header'
+import Article from 'main_app/components/Article'
+
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 
 function Landing () {
@@ -21,9 +21,9 @@ function Landing () {
   return (
     <>
       <NavBar ref={navBarRef} variant={navBarVariant} />
-      <article className={classes.article}>
+      <Article>
         <Header ref={headerRef} />
-      </article>
+      </Article>
     </>
   )
 }

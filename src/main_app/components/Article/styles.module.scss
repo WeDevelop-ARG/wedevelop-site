@@ -1,0 +1,13 @@
+.article > * {
+  padding:
+    var(--rootContentMinPadding)
+    var(--rootContentHorizontalPadding)
+  ;
+}
+
+.article > *:first-child {
+  padding-top: calc(
+    var(--rootContentMinPadding) +
+    var(--rootContentExtraPaddingTop)
+  );
+}

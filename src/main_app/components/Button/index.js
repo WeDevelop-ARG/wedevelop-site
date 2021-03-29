@@ -43,7 +43,13 @@ function Button ({
   )
 }
 
-const variants = PropTypes.oneOf(['primary', 'disabled', 'link'])
+const variants = PropTypes.oneOf([
+  'primary',
+  'disabled',
+  'secondary',
+  'dark',
+  'link'
+])
 
 Button.propTypes = {
   as: PropTypes.oneOfType([

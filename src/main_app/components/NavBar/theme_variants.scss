@@ -43,8 +43,8 @@
   }
 }
 
-.variant_solid.variant_dark {
-  background-color: rgba($color: $secondaryColor, $alpha: .9);
+.variant_solid.variant_dark-bg {
+  background-color: rgba($color: $primaryColor, $alpha: .9);
 }
 
 .variant_light {
@@ -53,8 +53,8 @@
   .menuToggle .open { @extend %menuToggleIconLight; }
 }
 
-.variant_solid.variant_light {
-  background-color: rgba($color: $primaryColor, $alpha: .9);
+.variant_solid.variant_light-bg {
+  background-color: rgba($color: $secondaryColor, $alpha: .9);
 }
 
 .header.menuOpen {

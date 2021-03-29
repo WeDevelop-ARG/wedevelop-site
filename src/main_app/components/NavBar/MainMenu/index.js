@@ -21,7 +21,7 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
         <Button
           as={HashLink}
           isAnchor
-          variant={['secondary', isPhone ? 'dark' : '']}
+          variant={['secondary', ...(isPhone ? ['dark'] : [])]}
           to='/#lets_talk'
           smooth
           className={classes.buttonTalk}
