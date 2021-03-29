@@ -15,7 +15,7 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
 
   return (
     <ul className={classnames(classes.menu, className)}>
-      <li className={classnames(classes.blogText)}><a href='https://blog.wedevelop.me' target='_blank'>Blog</a></li>
+      <li className={classnames(classes.blogText)}><a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>Blog</a></li>
       <li className={classnames(classes.textList)}>Let's talk and work together</li>
       <li>
         <Button
