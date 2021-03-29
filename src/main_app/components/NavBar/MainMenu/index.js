@@ -11,10 +11,8 @@ import classes from './styles.module.scss'
 function MainMenu ({ isOpen, onRequestClose, className }) {
   const isPhone = useMediaQuery(forPhoneOnly)
 
-  if (!isOpen) return null
-
   return (
-    <ul className={classnames(classes.menu, className)}>
+    <ul className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li className={classnames(classes.blogText)}><a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>Blog</a></li>
       <li className={classnames(classes.textList)}>Let's talk and work together</li>
       <li>

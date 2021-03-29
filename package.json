@@ -29,7 +29,9 @@
     "deploy": "firebase deploy --only hosting"
   },
   "reactSnap": {
-    "skipThirdPartyRequests": true
+    "skipThirdPartyRequests": true,
+    "http2PushManifest": true,
+    "include": ["/privacy-policy"]
   },
   "eslintConfig": {
     "extends": [
