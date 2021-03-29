@@ -6,7 +6,7 @@ import Footer from 'main_app/components/Footer'
 import classes from './styles.module.scss'
 
 import Header from './components/Header'
-import LetsTalk from './components/LetsTalk'
+import ContactForm from 'contact_us/components/ContactForm'
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 
 function Landing () {
@@ -25,7 +25,7 @@ function Landing () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <article className={classes.article}>
         <Header ref={headerRef} />
-        <LetsTalk />
+        <ContactForm />
       </article>
       <Footer />
     </>

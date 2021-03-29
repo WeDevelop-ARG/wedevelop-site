@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Landing from 'landing'
 import NotFound from 'not_found'
+import ContactUs from 'contact_us'
+import PrivacyPolicy from 'privacy_policy'
 
 function Routes () {
   return (
@@ -11,6 +13,12 @@ function Routes () {
         </Route>
         <Route path='/'>
           <NotFound />
+        </Route>
+        <Route path='/contact-us'>
+          <ContactUs />
+        </Route>
+        <Route path='/privacy-policy'>
+          <PrivacyPolicy />
         </Route>
       </Switch>
     </Router>
