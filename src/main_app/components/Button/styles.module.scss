@@ -12,9 +12,8 @@
   border-radius: 4px;
   font-weight: 600;
   padding: 10px 15px;
-  font-size: inherit;
   transition: all ease-in-out 150ms;
-  font-size: inherit;
+  font-size: 14px;
 
   & > *:first-child {
     margin-left: auto;
@@ -38,21 +37,44 @@
   outline: none;
 
   &:hover, &:focus {
-    background-color: $focusedButtonBackground;
     border-color: $textColor;
+
+    &.variant_dark {
+      border-color: $backgroundColor;
+    }
   }
 }
 
 .variant_primary {
   @extend %buttonFocus;
-  background-color: $buttonBackground;
+  background-image: $mainGradient;
   color: $secondaryColor;
+
+  &:hover, &:focus {
+    background-image: $mainGradient;
+  }
+}
+
+.variant_secondary {
+  @extend %buttonFocus;
+  background-color: $secondaryButtonBackgroundColor;
+  color: $secondaryButtonTextColor;
+
+  &.variant_dark {
+    background-color: $secondaryButtonDarkBackgroundColor;
+    color: $secondaryButtonDarkTextColor;
+  }
 }
 
 .variant_disabled {
   @extend %buttonFocus;
+  background-image: none;
   background-color: $disabledButtonBackground;
   color: $secondaryColor;
+
+  &.variant_secondary {
+    background: $secondaryDisabledButtonBackground;
+  }
 }
 
 .button:not(.variant_link):disabled {

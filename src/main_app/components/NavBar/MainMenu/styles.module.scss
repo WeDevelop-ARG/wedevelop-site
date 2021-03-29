@@ -5,12 +5,7 @@
   padding: 63px 30px 0;
   list-style-type: none;
   margin: 0;
-
-  @include for-desktop-up {
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
+  text-align: center;
 
   @include for-tablet-up {
     padding: 0;
@@ -21,29 +16,18 @@
   & > li + li {
     margin-top: 33px;
 
-    @include for-desktop-up {
-      margin: 0;
-      margin-left: 40px;
-    }
-
     @include for-tablet-up {
       margin: 0;
       margin-left: 40px;
     }
   }
 
-  & > li > * {
+  & > li > *:not(.buttonTalk) {
     font-weight: 500;
     font-size: 20px;
     line-height: 23px;
     outline: none;
-    color: $secondaryColor;
-
-    @include for-desktop-up {
-      font-weight: inherit;
-      font-size: inherit;
-      line-height: inherit;
-    }
+    color: var(--textColor);
 
     @include for-tablet-up {
       font-weight: inherit;
@@ -96,10 +80,24 @@
   }
 }
 
-.buttonTalk {
-  display: block;
-  border: $secondaryColor 1px solid;
-  text-align: center;
-  border-radius: 4px;
-  padding: 10px 15px;
+.textList {
+  color: $secondaryColor;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-top: 2px solid $backgroundColor;
+  padding-top: 40px;
+  margin-top: 20px;
+
+  @include for-desktop-up {
+    display: none;
+  }
+
+  @include for-tablet-up {
+    display: none;
+  }
+}
+
+.blogText {
+  font-weight: 500;
 }
