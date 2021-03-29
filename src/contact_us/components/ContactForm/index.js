@@ -2,7 +2,6 @@ import classnames from 'classnames'
 import { useLocation } from 'react-router-dom'
 import { Field } from 'formik'
 
-import SVGIcon from 'main_app/components/SVGIcon'
 import SubmitButton from 'main_app/components/SubmitButton'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
@@ -29,7 +28,6 @@ function LetsTalk () {
     <section className={classes.container}>
       <h2 id='lets_talk' className={classes.title}>
         Let’s talk
-        <SVGIcon name='landing/hexagon_outline' className={classes.icon} />
       </h2>
       <ContactForm
         initialValues={{ lookingTo }}

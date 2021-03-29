@@ -58,7 +58,7 @@ function NavBar ({ variant }, ref) {
       })}
     >
       <HashLink
-        to={{ path: '/', hash: '#top' }}
+        to='/#top'
         className={classes.logoLink}
         smooth
       >

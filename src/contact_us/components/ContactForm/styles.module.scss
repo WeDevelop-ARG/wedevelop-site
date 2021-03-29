@@ -2,12 +2,10 @@
 @import '/src/styles/media_queries.scss';
 
 .container {
-  
   @include for-desktop-up {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
   }
 }
 
@@ -15,16 +13,8 @@
   position: relative;
   display: block;
   width: fit-content;
-  padding: 120px 75px;
-  padding-left: 0;
-
-  & > .icon {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    height: 100%;
-  }
+  margin-top: 30px;
+  margin-bottom: 70px;
 }
 
 .form {
@@ -32,12 +22,12 @@
     .inputStyles + .inputStyles {
       margin-top: 16px;
     }
-  }  
+  }
   @include for-tablet-up{
     .inputStyles + .inputStyles {
       margin-left: 16px;
     }
-  }  
+  }
   @include for-desktop-up {
     width: min(100%, 823px);
     margin: 0 auto;
