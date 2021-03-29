@@ -71,19 +71,21 @@
     <% } %>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
-    window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#f7f9fc",
-          "text": "#363636"
-        },
-        "button": {
-          "background": "#4776e6",
-          "text": "#ffffff"
-        }
-      },
-      "theme": "edgeless"
-    });
+      if (window.cookieconsent) {
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#f7f9fc",
+              "text": "#363636"
+            },
+            "button": {
+              "background": "#4776e6",
+              "text": "#ffffff"
+            }
+          },
+          "theme": "edgeless"
+        });
+      }
     </script>
   </body>
 </html>
