@@ -11,14 +11,14 @@ function Routes () {
         <Route exact path='/'>
           <Landing />
         </Route>
-        <Route path='/'>
-          <NotFound />
-        </Route>
         <Route path='/contact-us'>
           <ContactUs />
         </Route>
         <Route path='/privacy-policy'>
           <PrivacyPolicy />
+        </Route>
+        <Route path='/'>
+          <NotFound />
         </Route>
       </Switch>
     </Router>
