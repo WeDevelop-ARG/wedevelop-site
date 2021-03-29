@@ -7,7 +7,9 @@ function ContactUs () {
   return (
     <>
       <NavBar />
-      <ContactForm />
+      <article>
+        <ContactForm />
+      </article>
       <Footer />
     </>
   )
