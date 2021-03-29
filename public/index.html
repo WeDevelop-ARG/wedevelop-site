@@ -37,6 +37,7 @@
     </script>
     <!-- End Google Tag Manager -->
     <% } %>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -68,5 +69,21 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <% } %>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#f7f9fc",
+          "text": "#363636"
+        },
+        "button": {
+          "background": "#4776e6",
+          "text": "#ffffff"
+        }
+      },
+      "theme": "edgeless"
+    });
+    </script>
   </body>
 </html>
