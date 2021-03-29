@@ -1,13 +1,18 @@
 import { useMemo } from 'react'
 import classnames from 'classnames'
-import { uniq } from 'lodash'
+import { isFunction, uniq } from 'lodash'
 
-function useVariants (classes, variants, { prefix = '' } = {}) {
+function useVariants (classes, variants = '', { prefix = '', defaults = {} } = {}) {
+  if (!Array.isArray(variants)) {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    variants = variants.split(' ')
+  }
+
   return useMemo(() => {
-    if (!Array.isArray(variants)) {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      variants = [variants]
-    }
+    Object.entries(defaults).forEach(([key, shouldAdd]) => {
+      if (isFunction(shouldAdd)) shouldAdd = shouldAdd(variants)
+      if (shouldAdd) variants.push(key)
+    })
 
     const variantClasses = {}
 

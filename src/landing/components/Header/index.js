@@ -8,7 +8,7 @@ function Header (props, ref) {
       <div className={classes.content}>
         <h1 className={classes.title}>
           <div className={classes.firstLine}>A human-centered company that</div>
-          <div classname={classes.secondLine}>Gets things done</div>
+          <div className={classes.secondLine}>Gets things done</div>
           <div className={classes.thirdLine}>efficiently.</div>
         </h1>
         <p className={classes.text}>

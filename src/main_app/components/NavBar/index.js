@@ -25,7 +25,14 @@ function NavBar ({ variant }, ref) {
     ignoreHeight: true
   })
   const containerRef = useCombinedRefs(ref, observerRef)
-  const variantClassNames = useVariants(classes, variant, { prefix: 'variant_' })
+  const variantClassNames = useVariants(classes, variant, {
+    prefix: 'variant_',
+    defaults: {
+      solid: variants => !variants.includes('transparent'),
+      dark: variants => !variants.includes('light'),
+      'light-bg': variants => !variants.includes('dark-bg')
+    }
+  })
   const toggleMenu = useCallback(() => {
     setMenuOpen(v => !v)
   }, [])
