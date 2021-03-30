@@ -1,5 +1,7 @@
+import { IS_STATIC_RENDERER } from 'main_app/constants'
 import { useState, useEffect, useMemo } from 'react'
 import { area, intersect, intersection } from 'rectangles'
+import useComponentDidMount from './use_component_did_mount'
 
 function useOverlappingObserver ({
   root: initialRoot,
@@ -7,6 +9,7 @@ function useOverlappingObserver ({
   isRootRequired = false,
   ignoreHeight = false
 }) {
+  const didMount = useComponentDidMount()
   const [isOverlapping, setIsOverlapping] = useState(false)
   const [target, targetRef] = useState()
   const [root, rootRef] = useState(() => {
@@ -24,6 +27,8 @@ function useOverlappingObserver ({
   }, [isOverlapping, targetRef, rootRef])
 
   useEffect(() => {
+    if (IS_STATIC_RENDERER || !didMount) return undefined
+
     const calculateOverlap = () => {
       const targetRect = getRectangleCoordinates(target?.getBoundingClientRect(), { ignoreHeight })
       const rootRect = getRectangleCoordinates(root.getBoundingClientRect(), { ignoreHeight })
@@ -50,7 +55,7 @@ function useOverlappingObserver ({
         { passive: true }
       )
     }
-  }, [target, root, threshold, ignoreHeight])
+  }, [target, root, threshold, ignoreHeight, didMount])
 
   return result
 }

@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react'
 
+import { IS_STATIC_RENDERER } from 'main_app/constants'
+
+import useComponentDidMount from './use_component_did_mount'
+
 function useMediaQuery (mediaQuery) {
-  const [matches, setMatches] = useState()
+  const didMount = useComponentDidMount()
+  const [matches, setMatches] = useState(false)
 
   useEffect(() => {
+    if (IS_STATIC_RENDERER || !didMount) return undefined
+
     const match = window.matchMedia(mediaQuery)
     const listener = ({ matches }) => setMatches(matches)
 
@@ -11,7 +18,7 @@ function useMediaQuery (mediaQuery) {
     match.addListener(listener)
 
     return () => match.removeListener(listener)
-  }, [mediaQuery])
+  }, [mediaQuery, didMount])
 
   return matches
 }
