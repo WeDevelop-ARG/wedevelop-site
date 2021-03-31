@@ -11,7 +11,7 @@ function Routes () {
         <Route exact path='/'>
           <Landing />
         </Route>
-        <Route path='/contact-us'>
+        <Route path='/contact'>
           <ContactUs />
         </Route>
         <Route path='/privacy-policy'>
