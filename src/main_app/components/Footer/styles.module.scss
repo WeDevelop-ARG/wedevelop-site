@@ -17,8 +17,8 @@
   }
 
   @include for-desktop-up {
-    justify-content: space-between; 
-    flex-wrap: wrap; 
+    justify-content: space-between;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
 
@@ -80,8 +80,8 @@
   height: 25px;
 
   @include for-desktop-up {
-    flex-basis: 100%; 
-    margin-left: auto; 
+    flex-basis: 100%;
+    margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
   }
@@ -93,10 +93,17 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  @include for-desktop-up {
+    flex-basis: 100%;
+  }
+}
+
+.privacyPolicy {
+  margin: 15px auto 0;
+  color: $secondaryColor;
 }
 
 .listsContainer {
-
   @include for-desktop-up {
     display: flex;
     flex-direction: row;

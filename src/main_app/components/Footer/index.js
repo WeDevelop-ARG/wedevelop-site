@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Logo from '../Logo'
 import SVGIcon from '../SVGIcon'
 import classes from './styles.module.scss'
@@ -50,6 +51,9 @@ function Footer () {
       <div className={classes.copyright}>
         © 2021 WeDevelop LLC. All rights reserved.
       </div>
+      <Link to='/privacy-policy' className={classes.privacyPolicy}>
+        Privacy Policy
+      </Link>
     </footer>
   )
 }
