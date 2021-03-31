@@ -20,7 +20,7 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
           as={HashLink}
           isAnchor
           variant={['secondary', ...(isPhone ? ['dark'] : [])]}
-          to='/contact-us#top'
+          to='/contact'
           smooth
           className={classes.buttonTalk}
           onClick={onRequestClose}
