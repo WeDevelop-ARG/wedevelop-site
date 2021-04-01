@@ -31,7 +31,9 @@
   "reactSnap": {
     "skipThirdPartyRequests": true,
     "http2PushManifest": true,
-    "include": ["/privacy-policy"]
+    "include": [
+      "/privacy-policy"
+    ]
   },
   "eslintConfig": {
     "extends": [
