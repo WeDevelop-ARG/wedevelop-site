@@ -18,7 +18,7 @@ function ContactUs () {
             <CalendlyEventListener onEventScheduled={console.log}>
               <InlineWidget url='https://calendly.com/abel-osorio/30min?back=0' />
             </CalendlyEventListener>
-            <span>or email us at</span><a href=''><span>info@wedevelop.me</span></a>
+            <p>or email us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>
           </section>
         </Article>
         <Footer />
