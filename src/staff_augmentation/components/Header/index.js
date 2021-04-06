@@ -1,5 +1,4 @@
 import ClutchWidget from 'main_app/components/ClutchWidget'
-import classes from './styles.module.scss'
 
 function Header () {
   return (

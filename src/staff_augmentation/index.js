@@ -11,12 +11,12 @@ function StaffAugmentation () {
   return (
     <>
       <NavBar />
-        <Article>
-          <Header />
-          <OurServices />
-          <WhyStaffAugmentation />
-          <QuotesCarrousel />
-        </Article>
+      <Article>
+        <Header />
+        <OurServices />
+        <WhyStaffAugmentation />
+        <QuotesCarrousel />
+      </Article>
       <Footer />
     </>
   )

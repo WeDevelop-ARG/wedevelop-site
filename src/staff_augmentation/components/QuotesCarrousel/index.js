@@ -1,5 +1,3 @@
-import classes from './styles.module.scss'
-
 function QuotesCarrousel () {
   return (
     <section>
