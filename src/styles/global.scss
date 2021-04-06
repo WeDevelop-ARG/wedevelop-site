@@ -84,17 +84,3 @@ p {
 p > b {
   font-weight: bold;
 }
-
-.calendly-inline-widget {
-  height: 842px !important;
-  position: relative;
-  min-width: 320px;
-
-  @include for-tablet-up {
-    height: 916px !important;
-  }
-
-  @include for-desktop-up {
-    height: 646px;
-  }
-}
