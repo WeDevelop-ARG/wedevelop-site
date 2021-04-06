@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Landing from 'landing'
 import NotFound from 'not_found'
+import StaffAugmentation from 'staff_augmentation'
 import ContactUs from 'contact_us'
 import PrivacyPolicy from 'privacy_policy'
 
@@ -10,6 +11,9 @@ function Routes () {
       <Switch>
         <Route exact path='/'>
           <Landing />
+        </Route>
+        <Route path='/staff-augmentation'>
+          <StaffAugmentation />
         </Route>
         <Route path='/contact'>
           <ContactUs />
