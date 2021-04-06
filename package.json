@@ -33,7 +33,8 @@
     "skipThirdPartyRequests": true,
     "http2PushManifest": true,
     "include": [
-      "/privacy-policy"
+      "/privacy-policy",
+      "/staff-augmentation"
     ]
   },
   "eslintConfig": {
