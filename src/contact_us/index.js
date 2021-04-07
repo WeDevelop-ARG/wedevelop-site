@@ -25,7 +25,10 @@ function ContactUs () {
             <p className={classes.subheadingText}>GET IN TOUCH</p>
             <h1 className={classes.titleText}>Schedule a call with us</h1>
             <CalendlyEventListener onEventScheduled={console.log}>
-              <InlineWidget url='https://calendly.com/abel-osorio/30min?back=0' styles={{ position: 'relative', minWidth: '320px', height }} />
+              <InlineWidget
+                url='https://calendly.com/wedevelop/meet-us'
+                styles={{ position: 'relative', minWidth: '320px', height }}
+              />
             </CalendlyEventListener>
             <p>or email us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>
           </section>
