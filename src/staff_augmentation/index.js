@@ -1,11 +1,9 @@
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
+import CalendlyWidget from 'main_app/components/CalendlyWidget'
 import Footer from 'main_app/components/Footer'
 
 import Header from './components/Header'
-import OurServices from './components/OurServices'
-import WhyStaffAugmentation from './components/WhyStaffAugmentation'
-import QuotesCarrousel from './components/QuotesCarrousel'
 
 function StaffAugmentation () {
   return (
@@ -13,9 +11,9 @@ function StaffAugmentation () {
       <NavBar />
       <Article>
         <Header />
-        <OurServices />
-        <WhyStaffAugmentation />
-        <QuotesCarrousel />
+        <section>
+          <CalendlyWidget />
+        </section>
       </Article>
       <Footer />
     </>
