@@ -1,0 +1,46 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.headerWrapper {
+  margin-top: 20px;
+}
+
+.subheadingText {
+  font-weight: bold;
+  letter-spacing: 3px;
+  background: $primaryGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.titleText {
+  font-size: 72px;
+  letter-spacing: 1.2px;
+  margin: 40px auto;
+}
+
+.highlightedText {
+  background: $mainGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rocket {
+  width: 287px;
+  height: auto;
+  position: relative;
+  left: 820px;
+  bottom: 75px;
+}
+
+.scrollDown {
+  display: flex;
+}
+
+.arrow {
+  width: 26px;
+  transform: rotate(90deg);
+  margin: 0 auto;
+}
