@@ -13,6 +13,7 @@ function ContactUs () {
         <Article className={classes.fillHeight}>
           <section>
             <p className={classes.subheadingText}>GET IN TOUCH</p>
+            <h1 className={classes.titleText}>Schedule a call with us</h1>
             <CalendlyWidget />
           </section>
         </Article>

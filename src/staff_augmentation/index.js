@@ -15,6 +15,7 @@ function StaffAugmentation () {
         <Header />
         <div className={classes.wrapper}>
           <section className={classes.fillHeight}>
+            <h1 className={classes.titleText}>Schedule a call with us</h1>
             <CalendlyWidget />
           </section>
         </div>

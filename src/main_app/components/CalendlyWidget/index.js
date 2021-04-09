@@ -3,8 +3,6 @@ import { CalendlyEventListener, InlineWidget } from 'react-calendly'
 
 import useMediaQuery from 'utils/use_media_query'
 
-import classes from './styles.module.scss'
-
 function CalendlyWidget () {
   const isTablet = useMediaQuery('screen and (min-width: 725px)')
   const isDesktop = useMediaQuery('screen and (min-width: 1250px)')
@@ -15,7 +13,6 @@ function CalendlyWidget () {
   }, [isTablet, isDesktop])
   return (
     <>
-      <h1 className={classes.titleText}>Schedule a call with us</h1>
       <CalendlyEventListener onEventScheduled={console.log}>
         <InlineWidget
           url='https://calendly.com/wedevelop/meet-us'
