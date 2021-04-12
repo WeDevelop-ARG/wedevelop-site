@@ -1,8 +1,17 @@
 @import "/src/styles/theme.scss";
 @import "/src/styles/media_queries.scss";
 
-.headerWrapper {
-  margin-top: 20px;
+.headerContainer {
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+
+.content {
+  position: relative;
+  margin: auto;
+  padding-bottom: 287px;
+  text-align: center;
 }
 
 .subheadingText {
@@ -18,7 +27,6 @@
 .titleText {
   font-size: 72px;
   letter-spacing: 1.2px;
-  margin: 40px auto;
 }
 
 .highlightedText {
@@ -27,20 +35,31 @@
   -webkit-text-fill-color: transparent;
 }
 
+.clutchWidget {
+  position: relative;
+  left: calc(50% + 5px);
+  transform: translateX(-50%);
+}
+
 .rocket {
   width: 287px;
   height: auto;
-  position: relative;
-  left: 820px;
-  bottom: 75px;
+  position: absolute;
+  left: calc(50% + 5px);
+  transform: translateX(-50%);
+  margin: -15px auto;
+  z-index: -1;
 }
 
 .scrollDown {
-  display: flex;
+  width: 26px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% + 5px);
+  transform: translateX(-50%);
 }
 
-.arrow {
-  width: 26px;
+.chevron {
   transform: rotate(90deg);
-  margin: 0 auto;
 }

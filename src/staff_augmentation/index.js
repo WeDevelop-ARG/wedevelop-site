@@ -13,12 +13,12 @@ function StaffAugmentation () {
       <NavBar />
       <Article>
         <Header />
-        <div className={classes.wrapper}>
-          <section className={classes.fillHeight}>
+        <section id="contact" className={classes.wrapper}>
+          <div className={classes.fillHeight}>
             <h1 className={classes.titleText}>Schedule a call with us</h1>
             <CalendlyWidget />
-          </section>
-        </div>
+          </div>
+        </section>
       </Article>
       <Footer />
     </>
