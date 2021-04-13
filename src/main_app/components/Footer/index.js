@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import Logo from '../Logo'
 import SVGIcon from '../SVGIcon'
 import classes from './styles.module.scss'
@@ -51,9 +51,9 @@ function Footer () {
       <div className={classes.copyright}>
         © 2021 WeDevelop LLC. All rights reserved.
       </div>
-      <Link to='/privacy-policy' className={classes.privacyPolicy}>
+      <HashLink to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
         Privacy Policy
-      </Link>
+      </HashLink>
     </footer>
   )
 }

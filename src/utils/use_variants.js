@@ -3,7 +3,9 @@ import classnames from 'classnames'
 import { isFunction, uniq } from 'lodash'
 
 function useVariants (classes, variants = '', { prefix = '', defaults = {} } = {}) {
-  if (!Array.isArray(variants)) {
+  if (Array.isArray(variants)) {
+    variants = [...variants]
+  } else {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     variants = variants.split(' ')
   }

@@ -8,7 +8,7 @@ function useCombinedRefs (...refs) {
       else if (ref) ref.current = element
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, refs)
 }
 
 export default useCombinedRefs
