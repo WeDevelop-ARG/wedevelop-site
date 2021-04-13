@@ -1,0 +1,114 @@
+@import '/src/styles/media_queries.scss';
+@import '/src/styles/theme.scss';
+@import './theme_variants.scss';
+
+.bodyMenuOpen {
+  overflow: hidden;
+}
+
+.rootWithNavBar {
+  --rootContentExtraPaddingTop: 70px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px var(--rootContentHorizontalPadding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  transition:
+    all 150ms linear,
+    backdrop-filter 0ms,
+    padding-left 0ms,
+    padding-right 0ms
+  ;
+
+  &.hidden {
+    display: none;
+  }
+
+  &.atTop, &.menuOpen {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+
+  &.menuOpen {
+    --textColor: #{$secondaryColor};
+  }
+
+  &.menuOpen::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $textColor;
+  }
+}
+
+.logoLink:focus {
+  outline: auto;
+}
+
+.logo {
+  width: 51px;
+  height: auto;
+
+  @include for-tablet-up {
+    width: 192px;
+  }
+}
+
+.menuToggle {
+  align-self: flex-end;
+  background: none;
+  border: 0;
+  padding: 7px 10px;
+  width: 47px;
+  height: 32px;
+  display: flex;
+  cursor: pointer;
+
+  @include for-desktop-up {
+    display: none;
+  }
+
+  @include for-tablet-up {
+    display: none;
+  }
+
+  & > * {
+    margin: auto;
+  }
+
+ .open {
+    width: 27px;
+    height: 18px;
+  }
+
+  .close {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 63px;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  overflow: auto;
+  margin: 0;
+
+  @include for-tablet-up {
+    overflow: visible;
+    position: static;
+  }
+}

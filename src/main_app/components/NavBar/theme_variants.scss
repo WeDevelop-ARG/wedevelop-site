@@ -1,0 +1,63 @@
+@import '/src/styles/theme.scss';
+
+%logoLight {
+  --primaryColor: #{$secondaryColor};
+  --secondaryColor: #{$brandingColor};
+}
+
+%logoDark {
+  --primaryColor: url(#NavBarLogoGradient);
+  --secondaryColor: #{$secondaryColor};
+  --textColor: #{$textColor};
+}
+
+%menuToggleIconLight {
+  --primaryColor: #{$secondaryColor};
+}
+
+%menuToggleIconDark {
+  --primaryColor: #{$textColor};
+}
+
+.logoGradientStop0 {
+  stop-color: $primaryGradient;
+}
+
+.logoGradientStop100 {
+  stop-color: $secondaryGradient;
+}
+
+.header, .variant_transparent, .variant_dark {
+  --textColor: #{$textColor};
+  .logo { @extend %logoDark; }
+  .menuToggle .open { @extend %menuToggleIconDark; }
+}
+
+.variant_solid {
+  // Elements behind a backdrop-filter get clipped, so we need
+  // to remove the filter when the menu is open. We also need
+  // to disable the transition so that the property is removed
+  // immediately.
+  &:not(.menuOpen) {
+    backdrop-filter: blur(3px);
+  }
+}
+
+.variant_solid.variant_dark-bg {
+  background-color: rgba($color: $primaryColor, $alpha: .9);
+}
+
+.variant_light {
+  --textColor: #{$secondaryColor};
+  .logo { @extend %logoLight; }
+  .menuToggle .open { @extend %menuToggleIconLight; }
+}
+
+.variant_solid.variant_light-bg {
+  background-color: rgba($color: $secondaryColor, $alpha: .9);
+}
+
+.header.menuOpen {
+  .logo { @extend %logoDark; }
+  .menuToggle .close { @extend %menuToggleIconLight; }
+}

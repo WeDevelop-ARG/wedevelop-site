@@ -1,0 +1,19 @@
+@import './media_queries.scss';
+
+.root {
+  --rootContentExtraPaddingTop: 0;
+  --rootContentMinPadding: 30px;
+  --pageContentMaxWidth: 100%;
+
+  @include for-desktop-up {
+    --pageContentMaxWidth: min(80vw, 1200px);
+  }
+
+  --rootContentHorizontalPadding: max(
+    var(--rootContentMinPadding),
+    calc(
+      (100% - var(--pageContentMaxWidth))
+      / 2
+    )
+  );
+}

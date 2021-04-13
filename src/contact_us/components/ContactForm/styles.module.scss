@@ -1,0 +1,115 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.container {
+  @include for-desktop-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.title {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+.form {
+  @include for-phone-only{
+    .inputStyles + .inputStyles {
+      margin-top: 16px;
+    }
+  }
+  @include for-tablet-up{
+    .inputStyles + .inputStyles {
+      margin-left: 16px;
+    }
+  }
+  @include for-desktop-up {
+    width: min(100%, 823px);
+    margin: 0 auto;
+  }
+}
+
+.label {
+  display: block;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.label, .selectStyles {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.selectStyles {
+  background-color: transparent;
+  color: $primaryColor;
+  border: none;
+  cursor: pointer;
+  margin-left: -.2em;
+
+  & > option {
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
+
+.inputStyles {
+  border: rgba($color: #000000, $alpha: 0.12) 1px solid;
+  border-radius: 4px;
+  padding: 16px;
+  width: 100%;
+  font-size: inherit;
+  transition: all ease-in-out 150ms;
+  outline: none;
+
+  &:focus {
+    border-color: rgba($color: #000000, $alpha: 1.0);
+    border-width: 1px;
+  }
+
+  &::placeholder {
+    color: rgba($color: #000000, $alpha: 0.6);
+  }
+}
+
+.fieldWithError {
+  border-color: #F00;
+}
+
+.textarea {
+  resize: none;
+  height: 200px;
+  font-family: inherit;
+  margin-top: 16px;
+}
+
+.buttonStyles {
+  margin-top: 42px;
+  width: 100%;
+}
+
+.icon {
+  --primaryColor: #{$brandingColor};
+}
+
+.inputsContainer {
+
+  @include for-tablet-up{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.buttonContainer {
+
+  @include for-desktop-up{
+    display: flex;
+    margin-left: auto;
+    width: 316px;
+  }
+}

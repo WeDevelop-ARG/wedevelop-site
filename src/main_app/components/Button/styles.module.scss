@@ -1,0 +1,112 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/base_link.scss';
+
+.button {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 4px;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: all ease-in-out 150ms;
+  font-size: 14px;
+
+  & > *:first-child {
+    margin-left: auto;
+  }
+
+  & > *:last-child {
+    margin-right: auto;
+  }
+
+  &:disabled, &[disabled] {
+    cursor: default !important;
+    pointer-events: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+%buttonFocus {
+  outline: none;
+
+  &:hover, &:focus {
+    border-color: $textColor;
+
+    &.variant_dark {
+      border-color: $backgroundColor;
+    }
+  }
+}
+
+.variant_primary {
+  @extend %buttonFocus;
+  background-image: $mainGradient;
+  color: $secondaryColor;
+
+  &:hover, &:focus {
+    background-image: $mainGradient;
+  }
+}
+
+.variant_secondary {
+  @extend %buttonFocus;
+  background-color: $secondaryButtonBackgroundColor;
+  color: $secondaryButtonTextColor;
+
+  &.variant_dark {
+    background-color: $secondaryButtonDarkBackgroundColor;
+    color: $secondaryButtonDarkTextColor;
+  }
+}
+
+.variant_disabled {
+  @extend %buttonFocus;
+  background-image: none;
+  background-color: $disabledButtonBackground;
+  color: $secondaryColor;
+
+  &.variant_secondary {
+    background: $secondaryDisabledButtonBackground;
+  }
+}
+
+.button:not(.variant_link):disabled {
+  @extend .variant_disabled;
+}
+
+.variant_link {
+  @include baseLink;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  font-weight: inherit;
+  text-align: left;
+}
+
+.iconLeft, .iconRight {
+  display: flex;
+  align-items: center;
+}
+
+.iconLeft {
+  margin-right: 10px;
+}
+
+.iconRight {
+  margin-left: 10px;
+}
+
+.as_a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

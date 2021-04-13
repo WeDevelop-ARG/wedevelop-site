@@ -1,0 +1,24 @@
+$primaryColor: #2426E3;
+$secondaryColor: #FFFFFF;
+$brandingColor: #8224E3;
+$textColor: #363636;
+$backgroundColor: #F7F9FC;
+$buttonBackground: #15579E;
+$focusedButtonBackground: $buttonBackground;
+$disabledButtonBackground: #A7AFC3;
+
+
+$secondaryButtonBackgroundColor: rgba(21, 87, 158, 0.1);
+$secondaryButtonTextColor: #15579E;
+
+$secondaryButtonDarkBackgroundColor: rgba(247, 249, 252, 0.1);
+$secondaryButtonDarkTextColor: $backgroundColor;
+
+$backgroundButton: #E8EEF5;
+$error: #B00020;
+$textButtonPrimary: #FFFFFF;
+$secondaryDisabledButtonBackground: rgba(167, 175, 195, 0.1);
+
+$primaryGradient: #4776E6;
+$secondaryGradient: #8E54E9;
+$mainGradient: linear-gradient(90deg, $primaryGradient 0%, $secondaryGradient 100%);
