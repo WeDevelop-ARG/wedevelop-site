@@ -29,13 +29,21 @@ function getSVGBBoxSize (href) {
   svg.style.visibility = 'hidden'
 
   return new Promise((resolve, reject) => {
-    let timeout = null
+    let errorTimeout = null
+    let loadInterval = null
+    let settled = false
     const handleLoad = () => {
-      clearTimeout(timeout)
+      clearTimeout(errorTimeout)
+      clearInterval(loadInterval)
+      if (settled) return undefined
+      settled = true
       resolve(getSVGElementSize(use))
     }
     const handleError = () => {
-      clearTimeout(timeout)
+      clearTimeout(errorTimeout)
+      clearInterval(loadInterval)
+      if (settled) return undefined
+      settled = true
       reject(new Error('Could not load SVG'))
     }
 
@@ -45,10 +53,13 @@ function getSVGBBoxSize (href) {
       return undefined
     }
 
-    document.body.appendChild(svg)
     use.addEventListener('load', handleLoad)
     use.addEventListener('error', handleError)
-    timeout = setTimeout(() => {
+    document.body.appendChild(svg)
+    loadInterval = setInterval(() => {
+      if (getSVGElementSize(use)) handleLoad()
+    }, 250)
+    errorTimeout = setTimeout(() => {
       use.removeEventListener('load', handleLoad)
       use.removeEventListener('error', handleError)
       handleError()
