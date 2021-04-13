@@ -1,0 +1,131 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.headerContainer {
+  padding-top: calc(
+    var(--rootContentMinPadding) +
+    var(--rootContentExtraPaddingTop)
+  );
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.decorationWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: $backgroundColor;
+
+  min-height: 500px;
+
+  @media screen and (min-width: 450px) and (max-width: 500px) {
+    min-height: 600px;
+  }
+
+  @media screen and (min-width: 500px) and (max-width: 600px) {
+    min-height: 675px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 700px) {
+    min-height: 750px;
+  }
+
+  @include for-tablet-up {
+    min-height: 500px;
+  }
+
+  @include for-desktop-up {
+    min-height: 600px;
+  }
+}
+
+.decorationContainer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: -4px;
+
+  --cloudsWidth: 257.86vw;
+  --cloudsLeftOffset: -125vw;
+
+  @include for-tablet-up {
+    --cloudsWidth: 116vw;
+    --cloudsLeftOffset: -10.19vw;
+  }
+
+  @include for-desktop-up {
+    --cloudsWidth: 100vw;
+    --cloudsLeftOffset: 0px;
+  }
+}
+
+.clouds {
+  margin-left: var(--cloudsLeftOffset);
+  width: var(--cloudsWidth);
+  height: auto;
+}
+
+.content {
+  margin: auto;
+  transform: translateY(-60px);
+  position: relative;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 900;
+
+  .firstLine {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .thirdLine {
+    background: linear-gradient(90deg, $primaryGradient 0%, $secondaryGradient 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @include for-tablet-up {
+    font-size: 42px;
+    .firstLine { font-size: 20px; }
+  }
+
+  @include for-desktop-up {
+    font-size: 72px;
+    .firstLine { font-size: 28px; }
+  }
+}
+
+.text {
+  display: none;
+  margin-top: 16px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 28px;
+
+  @include for-tablet-up {
+    display: block;
+    max-width: 380px;
+  }
+
+  @include for-desktop-up {
+    max-width: 580px;
+  }
+
+  @media screen and (max-height: 500px) {
+    display: none;
+  }
+}
+
+.clutchWidget {
+  position: relative;
+  left: calc(50% + 5px);
+  transform: translateX(-50%);
+}

@@ -1,0 +1,113 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.containerStyle {
+  background-color: $textColor;
+  color: $secondaryColor;
+  padding: 25px var(--rootContentHorizontalPadding);
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin: 0 auto;
+  }
+
+  & > * + * {
+    margin-top: 60px;
+  }
+
+  @include for-desktop-up {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+
+    & > * {
+      margin: 0;
+    }
+  }
+}
+
+.socialNetworks {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  li + li {
+    margin-left: 15px;
+  }
+
+}
+
+.contact {
+  list-style-type: none;
+  padding: 0;
+
+  & > li + li {
+    padding-top: 15px;
+  }
+}
+
+%contactLinksColor {
+  color: $secondaryColor;
+}
+
+
+.contactContentContainer {
+  @extend %contactLinksColor;
+  display: flex;
+  align-items: center;
+}
+
+.iconStyles {
+  --primaryColor: #{$secondaryColor};
+  width: 20px;
+  margin-right: 10px;
+}
+
+.contactContent {
+  @extend %contactLinksColor;
+  display: inline-block;
+  flex-grow: 1;
+  text-align: center;
+  font-style: normal;
+}
+
+.logoStyle {
+  --primaryColor: #{$secondaryColor};
+  --secondaryColor: #{$textColor};
+  height: 25px;
+
+  @include for-desktop-up {
+    flex-basis: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+}
+
+.copyright {
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  @include for-desktop-up {
+    flex-basis: 100%;
+  }
+}
+
+.privacyPolicy {
+  margin: 15px auto 0;
+  color: $secondaryColor;
+}
+
+.listsContainer {
+  @include for-desktop-up {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+  }
+}
