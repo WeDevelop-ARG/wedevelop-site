@@ -1,3 +1,8 @@
+import sadFaceEmoji from 'assets/staff_augmentation/sad_face_emoji.png'
+import normalProcess from 'assets/staff_augmentation/normal_process.png'
+import rocketEmoji from 'assets/staff_augmentation/rocket_emoji.png'
+import withWedevelop from 'assets/staff_augmentation/with_wedevelop.png'
+
 function OurServices () {
   return (
     <section>
@@ -10,12 +15,12 @@ function OurServices () {
       </div>
       <div>
         <figure>
-          <figcaption>Normal process</figcaption>
-          <img src='https://placehold.co/475x512' alt='' />
+          <figcaption>Normal process <span><img src={sadFaceEmoji} alt='' /></span></figcaption>
+          <img src={normalProcess} alt='' />
         </figure>
         <figure>
-          <figcaption>With WeDevelop</figcaption>
-          <img src='https://placehold.co/475x512' alt='' />
+          <figcaption>With WeDevelop <span><img src={rocketEmoji} alt='' /></span></figcaption>
+          <img src={withWedevelop} alt='' />
         </figure>
       </div>
     </section>
