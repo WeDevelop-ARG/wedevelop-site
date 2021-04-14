@@ -7,9 +7,9 @@ function CalendlyWidget () {
   const isTablet = useMediaQuery('screen and (min-width: 725px)')
   const isDesktop = useMediaQuery('screen and (min-width: 1250px)')
   const height = useMemo(() => {
-    if (isTablet) return '916px'
-    else if (isDesktop) return '646px'
-    else return '842px'
+    if (isDesktop) return '646px'
+    else if (isTablet) return '1087px'
+    else return '1069px'
   }, [isTablet, isDesktop])
   return (
     <>
