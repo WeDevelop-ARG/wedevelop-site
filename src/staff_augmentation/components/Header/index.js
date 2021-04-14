@@ -1,3 +1,5 @@
+import { HashLink } from 'react-router-hash-link'
+
 import ClutchWidget from 'main_app/components/ClutchWidget'
 import SVGIcon from 'main_app/components/SVGIcon'
 
@@ -9,10 +11,9 @@ function Header () {
       <div className={classes.content}>
         <p className={classes.subheadingText}>IT staff augmentation</p>
         <h1 className={classes.titleText}>
-          <div>The extra talent needed</div>
-          <div>to Boost <span className={classes.highlightedText}>Your Projects</span></div>
+          <div>The extra talent needed to Boost <span className={classes.highlightedText}>Your Projects</span></div>
         </h1>
-        <ClutchWidget variant='dark' className={classes.clutchWidget} />
+        <ClutchWidget variant='dark' />
         <svg className={classes.rocket} width="287" height="279" viewBox="0 0 287 279" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M58.5794 195.064C78.7997 176.646 80.4376 188.422 89.3358 196.683C98.2339 204.945 111.023 206.564 90.8025 224.982C70.5822 243.401 16.1116 263.383 16.1116 263.383C16.1116 263.383 38.3591 213.483 58.5794 195.064Z" fill="url(#paint0_linear)"/>
           <path opacity="0.1" d="M70.0472 199.239C79.9842 190.718 80.5089 196.286 84.5362 200.257C88.5634 204.227 94.5682 205.097 84.6312 213.618C74.6943 222.14 48.5512 231.116 48.5512 231.116C48.5512 231.116 60.1102 207.761 70.0472 199.239Z" fill="black"/>
@@ -47,10 +48,10 @@ function Header () {
             </linearGradient>
           </defs>
         </svg>
-        <a href="#contact" className={classes.scrollDown}>
-          <SVGIcon name='nav_bar/chevron_right' className={classes.chevron} />
-        </a>
       </div>
+      <HashLink to="#contact" smooth className={classes.scrollDown}>
+        <SVGIcon name='nav_bar/chevron_right' className={classes.chevron} />
+      </HashLink>
     </section>
   )
 }

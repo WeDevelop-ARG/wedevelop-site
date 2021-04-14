@@ -3,15 +3,26 @@
 
 .headerContainer {
   height: 100vh;
-  position: relative;
   display: flex;
+  flex-direction: column;
 }
 
 .content {
   position: relative;
   margin: auto;
-  padding-bottom: 287px;
-  text-align: center;
+  
+  @include for-phone-only {
+    padding-top: 140px;
+  }
+
+  @include for-tablet-up {
+    padding-top: 185px;
+  }
+  
+  @include for-desktop-up {
+    padding-top: initial;
+    padding-bottom: 279px;
+  }
 }
 
 .subheadingText {
@@ -20,12 +31,15 @@
   background: $primaryGradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 22px;
   text-transform: uppercase;
+  font-size: 14px;
+
+  @include for-tablet-up {
+    font-size: 22px;
+  }
 }
 
 .titleText {
-  font-size: 72px;
   letter-spacing: 1.2px;
 }
 
@@ -35,29 +49,27 @@
   -webkit-text-fill-color: transparent;
 }
 
-.clutchWidget {
-  position: relative;
-  left: calc(50% + 5px);
-  transform: translateX(-50%);
-}
-
 .rocket {
-  width: 287px;
+  width: 144px;
   height: auto;
   position: absolute;
-  left: calc(50% + 5px);
-  transform: translateX(-50%);
-  margin: -15px auto;
-  z-index: -1;
+  top: 0;
+
+  @include for-tablet-up {
+    width: 190px;
+  }
+
+  @include for-desktop-up {
+    width: 287px;
+    top: auto;
+    right: 0;
+    margin-top: -50px;
+  }
 }
 
 .scrollDown {
-  width: 26px;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 0;
-  left: calc(50% + 5px);
-  transform: translateX(-50%);
+  display: flex;
+  margin: auto;
 }
 
 .chevron {
