@@ -2,10 +2,12 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Routes from './routes'
 
-import { setPageTitleSuffix } from 'utils/use_page_title'
+import { setPageTitlePrefix } from 'utils/marketing/use_page_metadata'
+import { setupGlobalDeveloperHints } from 'utils/marketing/developer_hints'
 import { NavBar, NavBarContextProvider } from './components/NavBar'
 
-setPageTitleSuffix(' - WeDevelop')
+setupGlobalDeveloperHints()
+setPageTitlePrefix('WeDevelop - ')
 
 function MainApp () {
   return (

@@ -23,8 +23,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "NODE_ENV=production react-scripts build",
-    "postbuild": "react-snap && rimraf ./build/storage",
+    "prebuild": "rimraf build",
+    "build": "NODE_ENV=production react-scripts build && react-snap && rimraf ./build/storage",
+    "postbuild": "npm run add-http2-push-headers && dotenv -e .env.production npm run build-sitemap",
+    "add-http2-push-headers": "ncp firebase.json firebase.json.backup && node ./add_http2_push_headers.js",
+    "build-sitemap": "react-snap-sitemap --base-url=$REACT_APP_BASE_URL/",
+    "build-testing": "ncp .testing_env .env.production && npm run build",
+    "build-production": "ncp .production_env .env.production && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "firebase deploy --only hosting"
@@ -56,8 +61,11 @@
     ]
   },
   "devDependencies": {
+    "@fudohq/react-snap-sitemap": "^0.1.5",
+    "dotenv-cli": "^4.0.0",
     "firebase-tools": "^9.5.0",
     "import-glob-loader": "^1.1.0",
+    "ncp": "^2.0.0",
     "react-snap": "^1.23.0",
     "rimraf": "^3.0.2",
     "sass": "^1.32.8",

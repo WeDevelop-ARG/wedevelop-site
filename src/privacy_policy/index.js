@@ -2,7 +2,14 @@ import NavBar from 'main_app/components/NavBar'
 import Footer from 'main_app/components/Footer'
 import Article from 'main_app/components/Article'
 
+import usePageMetadata from 'utils/marketing/use_page_metadata'
+
 function PrivacyPolicy () {
+  usePageMetadata({
+    title: 'Privacy Policy',
+    description: 'Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service.'
+  })
+
   return (
     <>
       <NavBar />

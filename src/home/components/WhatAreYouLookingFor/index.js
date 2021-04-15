@@ -58,7 +58,7 @@ function WhatAreYouLookingFor () {
         </li>
       </ul>
       <div className={classes.hexagonContainer}>
-        <SVGIcon name='landing/filled_hexagon' className={classes.hexagon} />
+        <SVGIcon name='home/filled_hexagon' className={classes.hexagon} />
       </div>
     </section>
   )

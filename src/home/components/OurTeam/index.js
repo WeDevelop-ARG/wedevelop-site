@@ -31,7 +31,7 @@ function OurTeam () {
         as='a'
         variant='primary'
         iconLeft={
-          <SVGIcon name='landing/download' className={classes.iconDowload} />
+          <SVGIcon name='home/download' className={classes.iconDowload} />
         }
         href='/storage/WeDevelop-Brochure.pdf?alt=media'
         target='_blank'
