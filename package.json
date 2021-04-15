@@ -24,8 +24,9 @@
   "scripts": {
     "start": "react-scripts start",
     "prebuild": "rimraf build",
-    "build": "NODE_ENV=production react-scripts build",
-    "postbuild": "react-snap && rimraf ./build/storage && dotenv -e .env.production npm run build-sitemap",
+    "build": "NODE_ENV=production react-scripts build && react-snap && rimraf ./build/storage",
+    "postbuild": "npm run add-http2-push-headers && dotenv -e .env.production npm run build-sitemap",
+    "add-http2-push-headers": "ncp firebase.json firebase.json.backup && node ./add_http2_push_headers.js",
     "build-sitemap": "react-snap-sitemap --base-url=$REACT_APP_BASE_URL/",
     "build-testing": "ncp .testing_env .env.production && npm run build",
     "build-production": "ncp .production_env .env.production && npm run build",
