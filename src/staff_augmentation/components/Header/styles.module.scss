@@ -1,0 +1,106 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.headerContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  @include for-phone-only {
+    padding-top: 140px;
+
+    @media screen and (max-height: 450px) {
+      padding-top: initial;
+    }
+  }
+
+  @include for-tablet-up {
+    padding-top: 185px;
+
+    @media screen and (max-height: 550px) {
+      padding-top: initial;
+    }
+  }
+
+  @include for-desktop-up {
+    padding-top: initial;
+    padding-bottom: 279px;
+
+    @media screen and (max-height: 790px) {
+      padding-bottom: initial;
+    }
+  }
+}
+
+.subheadingText {
+  font-weight: bold;
+  letter-spacing: 3px;
+  background: $primaryGradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-size: 14px;
+
+  @include for-tablet-up {
+    font-size: 22px;
+  }
+}
+
+.titleText {
+  letter-spacing: 1.2px;
+}
+
+.highlightedText {
+  background: $mainGradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rocket {
+  width: 144px;
+  height: auto;
+  position: absolute;
+  top: 0;
+
+  @include for-phone-only {
+    @media screen and (max-height: 450px) {
+      display: none;
+    }
+  }
+
+  @include for-tablet-up {
+    width: 190px;
+
+    @media screen and (max-height: 550px) {
+      display: none;
+    }
+  }
+
+  @include for-desktop-up {
+    width: 287px;
+    top: auto;
+    right: 0;
+    margin-top: -50px;
+
+    @media screen and (max-height: 790px) {
+      display: none;
+    }
+  }
+}
+
+.scrollDown {
+  margin: 0 auto;
+  padding: 10px 15px;
+}
+
+.chevron {
+  transform: rotate(90deg);
+}
