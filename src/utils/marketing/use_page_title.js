@@ -1,12 +1,10 @@
 import { useEffect } from 'react'
 
-let pageTitleSuffix = ''
-
 function usePageTitle (title) {
   useEffect(() => {
     const previousTitle = document.title
 
-    document.title = `${title}${pageTitleSuffix}`
+    document.title = title
 
     return () => {
       document.title = previousTitle
@@ -14,11 +12,6 @@ function usePageTitle (title) {
   }, [title])
 }
 
-function setPageTitleSuffix (suffix) {
-  pageTitleSuffix = suffix
-}
-
 export {
-  usePageTitle as default,
-  setPageTitleSuffix
+  usePageTitle as default
 }

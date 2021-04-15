@@ -6,8 +6,13 @@ import Header from './components/Header'
 import Article from 'main_app/components/Article'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
+import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 function Landing () {
+  usePageMetadata({
+    title: 'A Human-Centered Company that Gets Things Done',
+    description: 'We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
+  })
   const [isNavBarOverHeader, navBarRef, headerRef] = useOverlappingObserver({
     root: document.body,
     ignoreHeight: true

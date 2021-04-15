@@ -1,7 +1,10 @@
-import usePageTitle from 'utils/use_page_title'
+import usePageMedatada from 'utils/marketing/use_page_metadata'
 
 function NotFound () {
-  usePageTitle('404 Not Found')
+  usePageMedatada({
+    title: '404 Not Found',
+    description: 'The page you\'re looking for was not found.'
+  })
 
   return (
     <>
