@@ -1,9 +1,10 @@
-import { useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import { CalendlyEventListener, InlineWidget } from 'react-calendly'
+import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import useMediaQuery from 'utils/use_media_query'
 
-function CalendlyWidget () {
+function CalendlyWidget ({ sourcePage }) {
   const isTablet = useMediaQuery('screen and (min-width: 725px)')
   const isDesktop = useMediaQuery('screen and (min-width: 1250px)')
   const height = useMemo(() => {
@@ -11,11 +12,29 @@ function CalendlyWidget () {
     else if (isTablet) return '1087px'
     else return '1069px'
   }, [isTablet, isDesktop])
+  const utmValues = useMemo(() => {
+    if (!sourcePage) return {}
+
+    return {
+      utm_source: 'wedevelop',
+      utm_medium: 'website',
+      utm_campaign: sourcePage
+    }
+  }, [sourcePage])
+  const handleScheduledEvent = useCallback((e) => {
+    logAnalyticsEvent({
+      event: 'generate_lead',
+      eventAction: 'schedule_meeting',
+      eventLabel: 'calendly',
+      ...utmValues
+    })
+  }, [utmValues])
+
   return (
     <>
-      <CalendlyEventListener onEventScheduled={console.log}>
+      <CalendlyEventListener onEventScheduled={handleScheduledEvent}>
         <InlineWidget
-          url='https://calendly.com/wedevelop/meet-us'
+          url='https://calendly.com/nahuel-wedevelop/30min'
           styles={{ position: 'relative', minWidth: '320px', height }}
         />
       </CalendlyEventListener>
