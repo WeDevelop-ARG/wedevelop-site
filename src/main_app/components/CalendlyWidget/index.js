@@ -34,7 +34,7 @@ function CalendlyWidget ({ sourcePage }) {
     <>
       <CalendlyEventListener onEventScheduled={handleScheduledEvent}>
         <InlineWidget
-          url='https://calendly.com/nahuel-wedevelop/30min'
+          url='https://calendly.com/wedevelop/meet-us'
           styles={{ position: 'relative', minWidth: '320px', height }}
         />
       </CalendlyEventListener>
