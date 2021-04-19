@@ -1,7 +1,4 @@
-import { HashLink } from 'react-router-hash-link'
-
 import ClutchWidget from 'main_app/components/ClutchWidget'
-import SVGIcon from 'main_app/components/SVGIcon'
 
 import classes from './styles.module.scss'
 
@@ -9,9 +6,9 @@ function Header () {
   return (
     <section id='headerSection' className={classes.headerContainer}>
       <div className={classes.content}>
-        <p className={classes.subheadingText}>IT staff augmentation</p>
         <h1 className={classes.titleText}>
-          The extra talent needed to Boost <span className={classes.highlightedText}>Your Projects</span>
+          <div>Grow your staff <span className={classes.highlightedText}>in a week.</span></div>
+          <div>And continue to do so.</div>
         </h1>
         <ClutchWidget variant='dark' />
         <svg className={classes.rocket} width='287' height='279' viewBox='0 0 287 279' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -49,9 +46,6 @@ function Header () {
           </defs>
         </svg>
       </div>
-      <HashLink to='#contact' smooth className={classes.scrollDown}>
-        <SVGIcon name='nav_bar/chevron_right' className={classes.chevron} />
-      </HashLink>
     </section>
   )
 }

@@ -6,6 +6,7 @@ import Footer from 'main_app/components/Footer'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
+import GetFreeQuote from './components/GetFreeQuote'
 
 import classes from './styles.module.scss'
 
@@ -20,6 +21,7 @@ function StaffAugmentation () {
       <NavBar />
       <Article>
         <Header />
+        <GetFreeQuote />
         <section id='contact' className={classes.wrapper}>
           <div className={classes.fillHeight}>
             <h1 className={classes.titleText}>Schedule a call with us</h1>

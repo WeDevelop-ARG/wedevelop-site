@@ -1,0 +1,55 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.getFreeQuoteSection {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 1207px;
+  border-radius: 0px 0px 52px 52px;
+  margin: auto;
+  background: $secondaryColor;
+}
+
+.sectionHeader {
+  margin: auto;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.titleText {
+  font-size: 40px;
+  background: $mainGradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.subheadingText {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.textContainer {
+  width: 563px;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 1.2px;
+
+  > p {
+    > span {
+      font-weight: 700;
+    }
+  }
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 563px;
+}
