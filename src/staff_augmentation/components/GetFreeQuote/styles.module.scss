@@ -5,26 +5,50 @@
   display: flex;
   flex-direction: column;
   padding: 50px;
-  width: 1207px;
+  width: 100%;
   border-radius: 0px 0px 52px 52px;
   margin: auto;
   background: $secondaryColor;
+
+  @include for-tablet-up {
+    width: 648px;
+  }
+
+  @include for-desktop-up {
+    width: 1207px;
+  }
 }
 
 .sectionHeader {
   margin: auto;
-  margin-bottom: 100px;
+  margin-bottom: 25px;
   text-align: center;
+
+  @include for-tablet-up {
+    margin-bottom: 45px;
+  }
+
+  @include for-desktop-up {
+    margin-bottom: 100px;
+  }
 }
 
 .titleText {
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 700;
   background: $mainGradient;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
+
+  @include for-tablet-up {
+    font-size: 32px;
+  }
+
+  @include for-desktop-up {
+    font-size: 40px;
+  }
 }
 
 .subheadingText {
@@ -34,11 +58,22 @@
 
 .wrapper {
   display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 160px;
+
+  @include for-tablet-up {
+    padding-bottom: 110px;
+  }
+
+  @include for-desktop-up {
+    flex-direction: row;
+    padding-bottom: 0;
+  }
 }
 
 .textContainer {
-  width: 563px;
-  font-size: 20px;
+  width: 100%;
   line-height: 30px;
   letter-spacing: 1.2px;
 
@@ -47,10 +82,47 @@
       font-weight: 700;
     }
   }
+
+  > p:first-of-type {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  > p:last-of-type {
+    position: absolute;
+    bottom: 0;
+  }
+
+  @include for-tablet-up {
+    width: 563px;
+
+    > p {
+      font-size: 20px !important;
+    }
+
+    > p:first-of-type {
+      margin-bottom: 38px;
+    }
+  }
+
+  @include for-desktop-up {
+    > p:first-of-type {
+      margin-bottom: 30px;
+    }
+
+    > p:last-of-type {
+      position: inherit;
+      bottom: auto;
+    }
+  }
 }
 
 .formContainer {
   display: flex;
   flex-direction: column;
-  width: 563px;
+  width: 100%;
+
+  @include for-desktop-up {
+    width: 563px;
+  }
 }

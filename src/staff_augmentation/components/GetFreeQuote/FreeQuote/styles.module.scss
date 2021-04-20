@@ -20,12 +20,16 @@
 .label {
   display: block;
   width: 100%;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
 
   &:last-of-type {
     margin-top: 44px;
+  }
+
+  @include for-tablet-up {
+    font-size: 22px;
   }
 }
 
@@ -56,20 +60,29 @@
 
 .textarea {
   resize: none;
-  height: 129px;
+  height: 180px;
   font-family: inherit;
   margin-top: 16px;
+
+  @include for-desktop-up {
+    height: 129px;
+  }
 }
 
 .buttonStyles {
-  margin-top: 42px;
+  margin-top: 25px;
   width: 100%;
+
+  @include for-desktop-up {
+    margin-top: 42px;
+  }
 }
 
 .buttonContainer {
+  display: flex;
+  width: 100%;
 
   @include for-desktop-up{
-    display: flex;
     width: 334px;
   }
 }
