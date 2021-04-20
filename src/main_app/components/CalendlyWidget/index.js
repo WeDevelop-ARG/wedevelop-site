@@ -16,24 +16,24 @@ function CalendlyWidget ({ sourcePage }) {
     if (!sourcePage) return {}
 
     return {
-      utm_source: 'wedevelop',
-      utm_medium: 'website',
-      utm_campaign: sourcePage
+      utmSource: (new URL(window.location.href)).hostname,
+      utmMedium: 'calendly_widget',
+      utmCampaign: sourcePage
     }
   }, [sourcePage])
   const handleScheduledEvent = useCallback((e) => {
     logAnalyticsEvent({
-      event: 'generate_lead',
-      eventAction: 'schedule_meeting',
-      eventLabel: 'calendly',
-      ...utmValues
+      event: 'contact',
+      contactType: 'calendly',
+      contactSource: sourcePage
     })
-  }, [utmValues])
+  }, [sourcePage])
 
   return (
     <>
       <CalendlyEventListener onEventScheduled={handleScheduledEvent}>
         <InlineWidget
+          utm={utmValues}
           url='https://calendly.com/wedevelop/meet-us'
           styles={{ position: 'relative', minWidth: '320px', height }}
         />

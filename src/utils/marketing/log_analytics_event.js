@@ -1,9 +1,6 @@
 export function logAnalyticsEvent ({
   event,
-  eventAction,
-  eventValue,
-  eventLabel,
-  ...otherParams
+  ...eventParams
 } = {}, timeoutMS = 1500) {
   return new Promise((resolve, reject) => {
     let resolved = false
@@ -16,10 +13,7 @@ export function logAnalyticsEvent ({
 
     window.dataLayer?.push({
       event,
-      eventAction,
-      eventValue,
-      eventLabel,
-      ...otherParams,
+      ...eventParams,
       eventCallback: resolvePromise
     })
     setTimeout(resolvePromise, timeoutMS)
