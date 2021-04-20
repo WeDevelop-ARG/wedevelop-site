@@ -2,10 +2,10 @@ import classnames from 'classnames'
 import { Field } from 'formik'
 
 import SubmitButton from 'main_app/components/SubmitButton'
+import Textarea from 'main_app/components/Textarea'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import QuotesForm from './QuotesForm'
-import Textarea from './Textarea'
 
 import classes from './styles.module.scss'
 

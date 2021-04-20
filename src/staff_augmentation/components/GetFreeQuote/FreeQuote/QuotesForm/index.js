@@ -13,12 +13,14 @@ const schema = Yup.object({
 function QuotesForm ({ initialValues, ...props }) {
   const handleSubmit = useCallback(async (values) => {
     const message = `
+      New message received from Free Quote form, Staff Augmentation landing page:
+
       ${values.message}
     `
 
     const data = {
       personalizations: [{
-        to: [{ email: 'info@wedevelop.me' }],
+        to: [{ email: 'hiram.gonzalez@wedevelop.me' }],
         subject: 'New message from WeDevelop site'
       }],
       from: {
