@@ -3,12 +3,13 @@ import { CalendlyEventListener, InlineWidget } from 'react-calendly'
 import axios from 'axios'
 
 import useMediaQuery from 'utils/use_media_query'
+import { PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL } from 'main_app/constants'
 
 function CalendlyWidget () {
   const handleScheduledEvent = useCallback(async ({ data }) => {
     const calendlyInviteeURI = data.payload.invitee.uri
     try {
-      await axios.post('http://localhost:5001/wedevelop-site/us-central1/processCalendlyEventInvitee', { calendlyInviteeURI })
+      await axios.post(PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL, { calendlyInviteeURI })
     } catch (err) {
       console.error(err)
     }
