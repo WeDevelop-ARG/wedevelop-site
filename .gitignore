@@ -20,6 +20,7 @@
 .backup
 .firebase
 .env
+.runtimeconfig.json
 
 npm-debug.log*
 yarn-debug.log*
