@@ -20,7 +20,7 @@ function QuotesForm ({ initialValues, ...props }) {
 
     const data = {
       personalizations: [{
-        to: [{ email: 'hiram.gonzalez@wedevelop.me' }],
+        to: [{ email: 'info@wedevelop.me' }],
         subject: 'New message from WeDevelop site'
       }],
       from: {

@@ -11,11 +11,11 @@
   background: $secondaryColor;
 
   @include for-tablet-up {
-    width: 648px;
+    min-width: 648px;
   }
 
   @include for-desktop-up {
-    width: 1207px;
+    min-width: 1024px;
   }
 }
 
@@ -57,23 +57,26 @@
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+  grid-auto-rows: min-content;
+  column-gap: 20px;
+  row-gap: 20px;
+
   position: relative;
   padding-bottom: 160px;
 
   @include for-tablet-up {
+    grid-template-columns: repeat(auto-fit, minmax(452px, 1fr));
     padding-bottom: 110px;
   }
 
   @include for-desktop-up {
-    flex-direction: row;
     padding-bottom: 0;
   }
 }
 
 .textContainer {
-  width: 100%;
   line-height: 30px;
   letter-spacing: 1.2px;
 
@@ -94,8 +97,6 @@
   }
 
   @include for-tablet-up {
-    width: 563px;
-
     > p {
       font-size: 20px !important;
     }
@@ -114,15 +115,5 @@
       position: inherit;
       bottom: auto;
     }
-  }
-}
-
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  @include for-desktop-up {
-    width: 563px;
   }
 }
