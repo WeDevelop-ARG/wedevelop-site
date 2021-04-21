@@ -23,7 +23,7 @@ function CalendlyWidget ({ sourcePage }) {
       utmCampaign: sourcePage
     }
   }, [sourcePage])
-  const handleScheduledEvent = useCallback((e) => {
+  const handleScheduledEvent = useCallback(async (e) => {
     const calendlyInviteeURI = e.data.payload.invitee.uri
     logAnalyticsEvent({
       event: 'contact',
