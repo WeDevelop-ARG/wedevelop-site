@@ -1,5 +1,6 @@
 import Form from 'main_app/components/Form'
 import { useCallback } from 'react'
+import { isFunction } from 'lodash'
 import * as Yup from 'yup'
 import axios from 'axios'
 
@@ -10,7 +11,7 @@ const schema = Yup.object({
   message: Yup.string().max(200).required()
 }).required()
 
-function QuotesForm ({ initialValues, ...props }) {
+function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
   const handleSubmit = useCallback(async (values) => {
     const message = `
       New message received from Free Quote form, Staff Augmentation landing page:
@@ -34,11 +35,11 @@ function QuotesForm ({ initialValues, ...props }) {
 
     try {
       await axios.post(MAILER_URL, data)
-      window.alert('Message sent successfully')
+      if (isFunction(onSubmitFinished)) onSubmitFinished()
     } catch (_) {
       window.alert('An error occurred while sending your message.\n\nPlease contact us at info@wedevelop.me')
     }
-  }, [])
+  }, [onSubmitFinished])
 
   return (
     <Form
