@@ -3,10 +3,10 @@ import { useLocation } from 'react-router-dom'
 import { Field } from 'formik'
 
 import SubmitButton from 'main_app/components/SubmitButton'
+import Textarea from 'main_app/components/Textarea'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import Select from './Select'
-import Textarea from './Textarea'
 import SetFormikValue from './SetFormikValue'
 
 import classes from './styles.module.scss'

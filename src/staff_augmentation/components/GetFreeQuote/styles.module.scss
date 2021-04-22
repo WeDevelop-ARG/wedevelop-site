@@ -1,0 +1,120 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px var(--rootContentHorizontalPadding) 100px;
+  margin: 0 calc(-1 * var(--rootContentHorizontalPadding));
+  border-radius: 0px 0px 52px 52px;
+  background: $secondaryColor;
+
+  @include for-tablet-up {
+    margin: 0;
+    padding: 30px 80px 65px;
+  }
+
+  @include for-desktop-up {
+    padding: 30px 50px 100px;
+    margin: 0 -50px;
+  }
+}
+
+.sectionHeader {
+  margin: auto;
+  margin-bottom: 25px;
+  text-align: center;
+
+  @include for-tablet-up {
+    margin-bottom: 45px;
+  }
+
+  @include for-desktop-up {
+    margin-bottom: 100px;
+  }
+}
+
+.titleText {
+  font-size: 24px;
+  font-weight: 700;
+  background: $mainGradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+
+  @include for-tablet-up {
+    font-size: 32px;
+  }
+
+  @include for-desktop-up {
+    font-size: 40px;
+  }
+}
+
+.subheadingText {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+  grid-auto-rows: min-content;
+  column-gap: 20px;
+  row-gap: 20px;
+
+  position: relative;
+  padding-bottom: 160px;
+
+  @include for-tablet-up {
+    grid-template-columns: repeat(auto-fit, minmax(452px, 1fr));
+    padding-bottom: 110px;
+  }
+
+  @include for-desktop-up {
+    padding-bottom: 0;
+  }
+}
+
+.textContainer {
+  line-height: 30px;
+  letter-spacing: 1.2px;
+
+  > p {
+    > span {
+      font-weight: 700;
+    }
+  }
+
+  > p:first-of-type {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  > p:last-of-type {
+    position: absolute;
+    bottom: 0;
+  }
+
+  @include for-tablet-up {
+    > p {
+      font-size: 20px !important;
+    }
+
+    > p:first-of-type {
+      margin-bottom: 38px;
+    }
+  }
+
+  @include for-desktop-up {
+    > p:first-of-type {
+      margin-bottom: 30px;
+    }
+
+    > p:last-of-type {
+      position: inherit;
+      bottom: auto;
+    }
+  }
+}
