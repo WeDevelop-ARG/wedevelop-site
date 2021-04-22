@@ -33,7 +33,7 @@ function QuotesForm ({ initialValues, ...props }) {
     }
 
     try {
-      await axios.post(MAILER_URL, data)
+      await axios.post(MAILER_URL, { data })
       window.alert('Message sent successfully')
     } catch (_) {
       window.alert('An error occurred while sending your message.\n\nPlease contact us at info@wedevelop.me')
