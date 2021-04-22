@@ -1,21 +1,22 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-.getFreeQuoteSection {
+.sectionContainer {
   display: flex;
   flex-direction: column;
-  padding: 50px;
-  width: 100%;
+  padding: 20px var(--rootContentHorizontalPadding) 100px;
+  margin: 0 calc(-1 * var(--rootContentHorizontalPadding));
   border-radius: 0px 0px 52px 52px;
-  margin: auto;
   background: $secondaryColor;
 
   @include for-tablet-up {
-    min-width: 648px;
+    margin: 0;
+    padding: 30px 80px 65px;
   }
 
   @include for-desktop-up {
-    min-width: 1024px;
+    padding: 30px 50px 100px;
+    margin: 0 -50px;
   }
 }
 

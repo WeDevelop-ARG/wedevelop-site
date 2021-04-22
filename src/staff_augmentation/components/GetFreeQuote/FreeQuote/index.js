@@ -9,7 +9,7 @@ import QuotesForm from './QuotesForm'
 
 import classes from './styles.module.scss'
 
-function FreeQuote () {
+function FreeQuote ({ className }) {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
     classes.fieldWithError
@@ -22,12 +22,12 @@ function FreeQuote () {
     email: '',
     message: ''
   }
-  const messageExample = `I need a Senior Ruby on Rails Developer, with experience in AWS and Elastic Search. He or she has to be a really good problem-solver and a key team player.`
+  const messageExample = 'I need a Senior Ruby on Rails Developer, with experience in AWS and Elastic Search. He or she has to be a really good problem-solver and a key team player.'
 
   return (
     <QuotesForm
       initialValues={initialValues}
-      className={classes.form}
+      className={classnames(classes.form, { [className]: className })}
     >
       <label className={classes.label}>
         Email
