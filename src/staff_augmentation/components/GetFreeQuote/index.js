@@ -6,7 +6,7 @@ import classes from './styles.module.scss'
 
 function GetFreeQuote () {
   return (
-    <section className={classes.getFreeQuoteSection}>
+    <section id='get-free-quote' className={classes.getFreeQuoteSection}>
       <div className={classes.sectionContainer}>
         <div className={classes.sectionHeader}>
           <h3 className={classes.titleText}>Get a free quote</h3>
