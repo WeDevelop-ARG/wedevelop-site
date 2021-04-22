@@ -40,7 +40,7 @@ function FreeQuote ({ className }) {
         />
       </label>
       <label className={classes.label}>
-        What are you lookin for?
+        What are you looking for?
         <Field
           as={TextAreaWithError}
           name='message'
