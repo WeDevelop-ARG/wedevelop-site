@@ -1,6 +1,4 @@
-import SVGIcon from 'main_app/components/SVGIcon'
-
-function WhyStaffAugmentation () {
+function HowItWorks () {
   return (
     <section>
       <div>
@@ -13,19 +11,19 @@ function WhyStaffAugmentation () {
       <div>
         <figure>
           <div>
-            <SVGIcon name='staff_augmentation/team_brief' />
+            
           </div>
           <figcaption>Dedicated Team Brief. Reduce liability and grow your business.</figcaption>
         </figure>
         <figure>
           <div>
-            <SVGIcon name='staff_augmentation/candidate_screening' />
+            
           </div>
           <figcaption>Candidate Screening. Streamline your workflow and scale.</figcaption>
         </figure>
         <figure>
           <div>
-            <SVGIcon name='staff_augmentation/growing_business' />
+            
           </div>
           <figcaption>Focus on Growing the Business. Streamline your workflow and scale.</figcaption>
         </figure>
@@ -34,4 +32,4 @@ function WhyStaffAugmentation () {
   )
 }
 
-export default WhyStaffAugmentation
+export default HowItWorks

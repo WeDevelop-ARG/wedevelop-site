@@ -43,7 +43,7 @@ function CalendlyWidget ({ sourcePage }) {
         <InlineWidget
           utm={utmValues}
           url='https://calendly.com/wedevelop/meet-us'
-          styles={{ position: 'relative', minWidth: '320px', height }}
+          styles={{ position: 'relative', minWidth: '280px', height }}
         />
       </CalendlyEventListener>
       <p>or email us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>
