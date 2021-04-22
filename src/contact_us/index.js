@@ -21,7 +21,7 @@ function ContactUs () {
           <section>
             <p className={classes.subheadingText}>GET IN TOUCH</p>
             <h1 className={classes.titleText}>Schedule a call with us</h1>
-            <CalendlyWidget />
+            <CalendlyWidget sourcePage='contact' />
           </section>
         </Article>
         <Footer />

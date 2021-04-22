@@ -1,20 +1,20 @@
-name: Deploy to Production environment
+name: Deploy to Staging environment
 'on':
   push:
     branches:
-      - master
+      - release/**
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci && npm run build-production
+      - run: npm ci && npm run build-staging
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEDEVELOP_SITE }}'
           channelId: live
           projectId: wedevelop-site
-          target: production
+          target: staging
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
