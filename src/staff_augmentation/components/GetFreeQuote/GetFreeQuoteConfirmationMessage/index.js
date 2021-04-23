@@ -5,9 +5,9 @@ import classes from './styles.module.scss'
 function GetFreeQuoteConfirmationMessage () {
   return (
     <>
-      <figure className={classes.confirmationBadge}>
+      <div className={classes.confirmationBadge}>
         <SVGIcon name='staff_augmentation/check_sign' className={classes.checkSign} />
-      </figure>
+      </div>
       <div className={classes.messageSent}>
         <h2>Message sent</h2>
         <p>Thanks for contacting us! We'll get back to you as soon as possible! :)</p>
