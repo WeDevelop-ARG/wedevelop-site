@@ -1,6 +1,4 @@
-function getMailchimpTags ({
-  tracking: { utm_campaign: source }
-}) {
+function getMailchimpTags (source) {
   switch (source) {
     case 'staff-augmentation': return ['LANDING_STAFF_AUG']
     case 'contact': return ['WEB_WEDEV']

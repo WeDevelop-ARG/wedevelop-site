@@ -46,7 +46,7 @@ async function handlePostRequest (req, res) {
   await addTagsToMailchimpSubscriber({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriberId: subscriber.id,
-    tags: getMailchimpTags(invitee)
+    tags: getMailchimpTags(invitee.tracking.utm_campaign)
   })
 
   res.status(200).end()
