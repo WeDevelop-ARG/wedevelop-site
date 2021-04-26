@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 import * as Yup from 'yup'
 import axios from 'axios'
 
-import { MAILER_URL } from 'main_app/constants'
+import { MAILER_URL, PROCESS_STAFF_AUGMENTATION_FORM_SUBMIT } from 'main_app/constants'
 
 const schema = Yup.object({
   email: Yup.string().email().required(),
@@ -34,6 +34,7 @@ function QuotesForm ({ initialValues, ...props }) {
 
     try {
       await axios.post(MAILER_URL, data)
+      await axios.post(PROCESS_STAFF_AUGMENTATION_FORM_SUBMIT, { data })
       window.alert('Message sent successfully')
     } catch (_) {
       window.alert('An error occurred while sending your message.\n\nPlease contact us at info@wedevelop.me')
