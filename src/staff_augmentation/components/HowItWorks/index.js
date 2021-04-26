@@ -2,31 +2,30 @@ function HowItWorks () {
   return (
     <section>
       <div>
-        <p>Why staff augmentation</p>
+        <p>How it works</p>
         <h2>
-          <div>The extra talent needed to</div>
-          <div>Boost Your Projects</div>
+          <div>We make it <span>simple</span> for you</div>
         </h2>
       </div>
       <div>
-        <figure>
+        <div>
           <div>
-            
+            <p>1</p>
           </div>
-          <figcaption>Dedicated Team Brief. Reduce liability and grow your business.</figcaption>
-        </figure>
-        <figure>
+          <p><span>Team Brief.</span> Let us know what exactly do you need.</p>
+        </div>
+        <div>
           <div>
-            
+            <p>2</p>
           </div>
-          <figcaption>Candidate Screening. Streamline your workflow and scale.</figcaption>
-        </figure>
-        <figure>
+          <p><span>Evaluate Options.</span> We’ll present you candidates at no time. You’ll see.</p>
+        </div>
+        <div>
           <div>
-            
+            <p>3</p>
           </div>
-          <figcaption>Focus on Growing the Business. Streamline your workflow and scale.</figcaption>
-        </figure>
+          <p><span>Hire and Grow.</span> Choose the one you like best and grow your team.</p>
+        </div>
       </div>
     </section>
   )
