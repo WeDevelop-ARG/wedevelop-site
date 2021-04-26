@@ -1,0 +1,10 @@
+{
+  "calendly": {
+    "access_token": ""
+  },
+  "mailchimp": {
+    "api_key": "",
+    "server": "",
+    "default_list_id": ""
+  }
+}
