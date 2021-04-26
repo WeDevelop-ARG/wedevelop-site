@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        if: startsWith(github.head_ref, 'feature/') == false
       - run: npm ci && npm run build-testing
+        if: startsWith(github.head_ref, 'feature/') == false
       - uses: FirebaseExtended/action-hosting-deploy@v0
         if: startsWith(github.head_ref, 'feature/') == false
         with:
