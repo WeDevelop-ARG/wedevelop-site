@@ -9,7 +9,7 @@ import QuotesForm from './QuotesForm'
 
 import classes from './styles.module.scss'
 
-function FreeQuote ({ className }) {
+function FreeQuote ({ className, onSubmitFinished }) {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
     classes.fieldWithError
@@ -27,6 +27,7 @@ function FreeQuote ({ className }) {
   return (
     <QuotesForm
       initialValues={initialValues}
+      onSubmitFinished={onSubmitFinished}
       className={classnames(classes.form, { [className]: className })}
     >
       <label className={classes.label}>

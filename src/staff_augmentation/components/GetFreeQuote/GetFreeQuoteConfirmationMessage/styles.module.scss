@@ -1,0 +1,84 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.confirmationBadge {
+  display: flex;
+  background: rgba($color: #00966D, $alpha: 0.1);
+  border-radius: 50%;
+  width: 188px;
+  height: 188px;
+  margin: auto;
+  margin-top: 99px;
+
+  @include for-tablet-up {
+    width: 212px;
+    height: 212px;
+    margin-top: 97px;
+  }
+
+  @include for-desktop-up {
+    width: 252px;
+    height: 252px;
+    margin-top: 115px;
+  }
+}
+
+.checkSign {
+  width: 91px;
+  height: auto;
+  margin: auto;
+
+  @include for-tablet-up {
+    width: 103px;
+  }
+
+  @include for-desktop-up {
+    width: 123px;
+  }
+}
+
+.messageSent {
+  text-align: center;
+  letter-spacing: 1.1px;
+  margin: auto;
+  margin-top: 101px;
+
+  > h2 {
+    font-size: 32px;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+
+    @include for-tablet-up {
+      font-size: 42px;
+      margin-top: 25px;
+    }
+
+    @include for-desktop-up {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+  }
+
+  @include for-tablet-up {
+    margin-top: 45px;
+  }
+
+  @include for-desktop-up {
+    margin-top: 32px;
+  }
+}
+
+.addSomething {
+  text-align: center;
+  letter-spacing: 1.1px;
+  margin: auto;
+  margin-top: 124px;
+
+  @include for-tablet-up {
+    margin-top: 82px;
+  }
+
+  @include for-desktop-up {
+    margin-top: 116px;
+  }
+}
