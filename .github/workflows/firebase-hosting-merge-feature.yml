@@ -15,5 +15,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEDEVELOP_SITE }}'
           projectId: wedevelop-site
           target: testing
+          channelId: '${{GITHUB_REF#refs/heads/}}'
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
