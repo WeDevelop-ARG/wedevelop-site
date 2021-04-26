@@ -3,6 +3,7 @@ import { useCallback } from 'react'
 import { isFunction } from 'lodash'
 import * as Yup from 'yup'
 import axios from 'axios'
+import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import {
   CONTACT_FORM_DESTINATION_EMAIL,
@@ -47,6 +48,11 @@ function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
 
     try {
       await axios.post(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, values)
+      logAnalyticsEvent({
+        event: 'contact',
+        contactType: 'free-quote-form',
+        source: 'staff-augmentation'
+      })
     } catch (err) {
       console.error(err)
     }
