@@ -4,7 +4,7 @@ import { isFunction } from 'lodash'
 import * as Yup from 'yup'
 import axios from 'axios'
 
-import { MAILER_URL } from 'main_app/constants'
+import { MAILER_URL, STAFF_AUGMENTATION_FORM_PROCESSOR_URL } from 'main_app/constants'
 
 const schema = Yup.object({
   email: Yup.string().email().required(),
@@ -36,6 +36,7 @@ function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
     try {
       await axios.post(MAILER_URL, data)
       if (isFunction(onSubmitFinished)) onSubmitFinished()
+      await axios.post(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, { data })
     } catch (_) {
       window.alert('An error occurred while sending your message.\n\nPlease contact us at info@wedevelop.me')
     }
