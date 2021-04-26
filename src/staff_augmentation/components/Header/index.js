@@ -7,7 +7,7 @@ function Header () {
     <section id='headerSection' className={classes.headerContainer}>
       <div className={classes.content}>
         <h1 className={classes.titleText}>
-          <div>Grow your staff <span className={classes.highlightedText}>in a week.</span></div>
+          <div>Grow your staff <span className={classes.highlightedText}>in 48 hs.</span></div>
           <div>And continue to do so.</div>
         </h1>
         <ClutchWidget variant='dark' />

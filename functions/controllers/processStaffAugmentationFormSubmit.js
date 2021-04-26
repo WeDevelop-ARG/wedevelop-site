@@ -25,13 +25,12 @@ function handleOptionsRequest (req, res) {
 }
 
 async function handlePostRequest (req, res) {
-  const { email } = req.body.data.email
   const subscriber = await addSubscriberToMailchimp({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriber: {
       firstName: '',
       lastName: '',
-      email: email
+      email: req.body.email
     }
   })
 
