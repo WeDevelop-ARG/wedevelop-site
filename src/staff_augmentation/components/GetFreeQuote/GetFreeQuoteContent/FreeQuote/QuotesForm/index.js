@@ -3,6 +3,7 @@ import { useCallback } from 'react'
 import { isFunction } from 'lodash'
 import * as Yup from 'yup'
 import axios from 'axios'
+import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import { MAILER_URL, STAFF_AUGMENTATION_FORM_PROCESSOR_URL } from 'main_app/constants'
 
@@ -37,6 +38,11 @@ function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
       await axios.post(MAILER_URL, data)
       if (isFunction(onSubmitFinished)) onSubmitFinished()
       await axios.post(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, { data })
+      logAnalyticsEvent({
+        event: 'contact',
+        contactType: 'free-quote-form',
+        source: 'staff-augmentation'
+      })
     } catch (_) {
       window.alert('An error occurred while sending your message.\n\nPlease contact us at info@wedevelop.me')
     }
