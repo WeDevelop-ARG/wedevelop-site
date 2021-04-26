@@ -2,5 +2,6 @@ REACT_APP_MAILER_URL=https://mailer.wedevelop.me/send
 REACT_APP_BASE_URL=https://testing.wedevelop.me
 REACT_APP_ENVIRONMENT=testing
 REACT_APP_CALENDLY_EVENT_PROCESSOR_URL=https://us-central1-wedevelop-site.cloudfunctions.net/processCalendlyEventInvitee
+REACT_APP_STAFF_AUGMENTATION_FORM_PROCESSOR_URL=https://us-central1-wedevelop-site.cloudfunctions.net/processStaffAugmentationFormSubmit
 REACT_APP_CONTACT_FORM_DESTINATION_EMAIL=nahuel@wedevelop.me
 REACT_APP_CALENDLY_DEFAULT_EVENT_URL=https://calendly.com/nahuel-wedevelop/30min

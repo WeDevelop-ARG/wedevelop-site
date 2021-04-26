@@ -4,13 +4,13 @@ const { getMailchimpTags } = require('../services/getMailchimpTags')
 
 const { MAILCHIMP_DEFAULT_LIST_ID } = require('../constants')
 
-module.exports = exports = function handleRequest (req, res) {
+module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
 
   try {
     switch (req.method) {
-      case 'OPTIONS': return handleOptionsRequest(req, res)
-      case 'POST': return handlePostRequest(req, res)
+      case 'OPTIONS': return await handleOptionsRequest(req, res)
+      case 'POST': return await handlePostRequest(req, res)
       default: res.status(405).end()
     }
   } catch (err) {

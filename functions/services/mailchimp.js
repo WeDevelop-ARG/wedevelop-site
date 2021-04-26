@@ -1,4 +1,5 @@
 const mailchimp = require('@mailchimp/mailchimp_marketing')
+const md5 = require('md5')
 
 const { MAILCHIMP_API_KEY, MAILCHIMP_SERVER } = require('../constants')
 
@@ -8,12 +9,14 @@ mailchimp.setConfig({
 })
 
 function addSubscriberToMailchimp ({ listId, subscriber }) {
-  return mailchimp.lists.addListMember(listId, {
+  const subscriberHash = md5(subscriber.email.toLowerCase())
+
+  return mailchimp.lists.setListMember(listId, subscriberHash, {
     email_address: subscriber.email,
-    status: 'subscribed',
+    status_if_new: 'subscribed',
     merge_fields: {
-      FNAME: subscriber.firstName,
-      LNAME: subscriber.lastName
+      FNAME: subscriber.firstName || '',
+      LNAME: subscriber.lastName || ''
     }
   })
 }

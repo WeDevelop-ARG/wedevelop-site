@@ -1,7 +1,6 @@
 name: Deploy to PR Testing environment
 'on':
-  pull_request:
-    branches-ignore: feature/**
+  pull_request
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
