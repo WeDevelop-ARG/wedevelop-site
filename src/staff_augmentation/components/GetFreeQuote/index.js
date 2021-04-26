@@ -11,7 +11,7 @@ function GetFreeQuote () {
     setIsSubmitted(true)
   }, [])
   return (
-    <section>
+    <section id='get-free-quote'>
       <div className={classes.sectionContainer}>
         {!isSubmitted && <GetFreeQuoteContent onSubmitFinished={handleSubmitFinished} />}
         {isSubmitted && <GetFreeQuoteConfirmationMessage />}
