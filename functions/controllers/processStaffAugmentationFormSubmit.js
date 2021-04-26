@@ -27,11 +27,7 @@ function handleOptionsRequest (req, res) {
 async function handlePostRequest (req, res) {
   const subscriber = await addSubscriberToMailchimp({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
-    subscriber: {
-      firstName: '',
-      lastName: '',
-      email: req.body.email
-    }
+    subscriber: { email: req.body.email }
   })
 
   await addTagsToMailchimpSubscriber({

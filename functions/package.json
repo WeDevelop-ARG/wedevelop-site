@@ -17,7 +17,8 @@
     "@mailchimp/mailchimp_marketing": "^3.0.38",
     "axios": "^0.21.1",
     "firebase-admin": "^9.2.0",
-    "firebase-functions": "^3.11.0"
+    "firebase-functions": "^3.11.0",
+    "md5": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "^7.6.0",
