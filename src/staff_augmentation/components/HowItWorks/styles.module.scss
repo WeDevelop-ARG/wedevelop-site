@@ -71,7 +71,7 @@
 .arrowContainer::before {
   @include for-desktop-up {
     content: '';
-    height: 6px;
+    height: 4px;
     left: 0;
     background: rgba($color: #FFFFFF, $alpha: 1.0);
   }
@@ -83,21 +83,19 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    height: 6px;
+    height: 4px;
     left: calc(50% + 25px + 30px);
     right: 0;
     background: rgba($color: #FFFFFF, $alpha: 1.0);
   }
 }
 
-.arrowTip {
-  @include for-desktop-up { 
-    width: 19px;
-    height: 19px;
-    border-right: 6px rgba($color: #FFFFFF, $alpha: 1.0) solid;
-    border-bottom: 6px rgba($color: #FFFFFF, $alpha: 1.0) solid;
-    transform: translateY(-50%) rotate(-45deg) !important;
-  }
+.contentColumn.withLeftOpacity > .arrowContainer::before  {
+  background: rgba($color: #6792C0, $alpha: 1.0);
+}
+
+.contentColumn.withRightOpacity > .arrowContainer::after {
+  background: rgba($color: #6792C0, $alpha: 1.0);
 }
 
 .arrowTip, .arrowContainer::before {
@@ -109,15 +107,25 @@
   }
 }
 
-.arrowTip:last-of-type {
-  right: calc(0%);
+.arrowTip {
+  @include for-desktop-up { 
+    width: 19px;
+    height: 19px;
+    border-right: 4px rgba($color: #FFFFFF, $alpha: 1.0) solid;
+    border-bottom: 4px rgba($color: #FFFFFF, $alpha: 1.0) solid;
+    transform: translateY(-50%) rotate(-45deg);
+  }
 }
 
-.contentColumn:first-of-type > .arrowContainer::before,
-.contentColumn:first-of-type > .arrowContainer > .arrowTip,
-.contentColumn:last-of-type > .arrowContainer::after
-.contentColumn:last-of-type > .arrowContainer > .arrowTip:last-of-type  {
-  opacity: .35;
+.arrowTip:last-of-type {
+  right: 0;
+}
+
+.arrowTip.withLightColor {
+  @include for-desktop-up {
+    border-right: 4px rgba($color: #6792C0, $alpha: 1.0) solid;
+    border-bottom: 4px rgba($color: #6792C0, $alpha: 1.0) solid;
+  }
 }
 
 .transparentArrow {
@@ -162,17 +170,15 @@
 
 .numericBadge {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 77px;
   height: 77px;
   border-radius: 50%;
   margin: auto;
   background: rgba($color: #FFFFFF, $alpha: 0.1);
-
-  > p {
-    font-size: 36px;
-    font-weight: 600;
-    margin: auto;
-  }
+  font-size: 36px;
+  font-weight: 600;
 }
 
 .highlightedText {

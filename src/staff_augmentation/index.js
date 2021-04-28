@@ -38,7 +38,7 @@ function StaffAugmentation () {
         <HowItWorks />
         <section id='contact' className={classes.wrapper}>
           <div className={classes.fillHeight}>
-            <h1 className={classes.titleText}>or schedule a call with us</h1>
+            <h1 className={classes.titleText}>Schedule a call with us</h1>
             <CalendlyWidget sourcePage='staff-augmentation' />
           </div>
         </section>
