@@ -13,7 +13,8 @@ import {
 
 const schema = Yup.object({
   email: Yup.string().email().required(),
-  message: Yup.string().max(200).required()
+  message: Yup.string().max(200).required(),
+  recaptchaToken: Yup.string().required()
 }).required()
 
 function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
