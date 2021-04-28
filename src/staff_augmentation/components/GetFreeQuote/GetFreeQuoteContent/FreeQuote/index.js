@@ -3,6 +3,7 @@ import { Field } from 'formik'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
+import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import QuotesForm from './QuotesForm'
@@ -20,7 +21,8 @@ function FreeQuote ({ className, onSubmitFinished }) {
   )
   const initialValues = {
     email: '',
-    message: ''
+    message: '',
+    recaptchaToken: ''
   }
   const messageExample = 'I need a Senior Ruby on Rails Developer, with experience in AWS and Elastic Search. He or she has to be a really good problem-solver and a key team player.'
 
@@ -50,6 +52,7 @@ function FreeQuote ({ className, onSubmitFinished }) {
           className={classnames(classes.inputStyles, classes.textarea)}
         />
       </label>
+      <ReCAPTCHAField name='recaptchaToken' />
       <div className={classes.buttonContainer}>
         <SubmitButton
           variant='primary'
