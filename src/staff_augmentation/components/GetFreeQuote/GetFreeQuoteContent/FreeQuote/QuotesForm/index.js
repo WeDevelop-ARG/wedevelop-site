@@ -65,9 +65,7 @@ function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
     <Form
       onSubmit={handleSubmit}
       resetOnSuccessfulSubmit
-      initialValues={{
-        initialValues
-      }}
+      initialValues={initialValues}
       validationSchema={schema}
       {...props}
     />
