@@ -5,3 +5,4 @@ REACT_APP_CALENDLY_EVENT_PROCESSOR_URL=https://us-central1-wedevelop-site.cloudf
 REACT_APP_STAFF_AUGMENTATION_FORM_PROCESSOR_URL=https://us-central1-wedevelop-site.cloudfunctions.net/processStaffAugmentationFormSubmit
 REACT_APP_CONTACT_FORM_DESTINATION_EMAIL=nahuel@wedevelop.me
 REACT_APP_CALENDLY_DEFAULT_EVENT_URL=https://calendly.com/nahuel-wedevelop/30min
+REACT_APP_RECAPTCHA_SITE_KEY=6LdH2rsaAAAAAH-Pxhg1-guADKkRLA5EMR-FEEku
