@@ -6,5 +6,6 @@
     "api_key": "",
     "server": "",
     "default_list_id": ""
-  }
+  },
+  "recaptcha": { "secret_key": "" }
 }
