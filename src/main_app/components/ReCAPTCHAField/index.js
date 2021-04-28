@@ -6,12 +6,14 @@ function ReCAPTCHAField ({ name, className }) {
   const containerRef = useRef()
   const widgetIdRef = useRef()
   const { setFieldValue, setTouched, values } = useFormikContext()
+  const field = values[name]
   useEffect(() => {
-    if (!values[name] && widgetIdRef.current) {
+    if (!field && widgetIdRef.current) {
       window.grecaptcha?.reset(widgetIdRef.current)
     }
-  }, [name, values[name]])
+  }, [name, field])
   useEffect(() => {
+    const containerRefCurrent = containerRef.current
     widgetIdRef.current = window.grecaptcha?.render(containerRef.current, {
       sitekey: RECAPTCHA_SITE_KEY,
       callback: token => {
@@ -24,9 +26,9 @@ function ReCAPTCHAField ({ name, className }) {
     return () => {
       window.grecaptcha?.reset(widgetIdRef.current)
       widgetIdRef.current = null
-      while (containerRef.current.firstChild) {
-        containerRef.current.removeChild(
-          containerRef.current.firstChild
+      while (containerRefCurrent.firstChild) {
+        containerRefCurrent.removeChild(
+          containerRefCurrent.firstChild
         )
       }
     }
