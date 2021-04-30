@@ -5,10 +5,6 @@ const { isReCAPTCHATokenValid } = require('../services/recaptcha')
 const { MAILCHIMP_DEFAULT_LIST_ID } = require('../constants')
 
 module.exports = exports = async function handleRequest (req, res) {
-  if (!await isReCAPTCHATokenValid(req.body.recaptchaToken)) {
-    return res.status(403).end()
-  }
-
   res.set('Access-Control-Allow-Origin', '*')
   try {
     switch (req.method) {
@@ -41,5 +37,9 @@ async function handlePostRequest (req, res) {
     tags: getMailchimpTags('staff-augmentation')
   })
 
-  res.status(200).end()
+  if (!await isReCAPTCHATokenValid(req.body.recaptchaToken)) {
+    return res.status(403).end()
+  } else {
+    return res.status(200).end()
+  }
 }
