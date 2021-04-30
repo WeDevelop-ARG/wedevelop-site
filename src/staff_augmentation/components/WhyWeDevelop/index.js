@@ -24,7 +24,7 @@ function WhyWeDevelop () {
             <p>Are tired of <span className={classes.highlightedText}>Spending too much time on interviews.</span></p>
           </li>
         </ul>
-        <SVGIcon name='staff_augmentation/insert_idea' className={classes.insertIdea} />
+        <SVGIcon name='staff_augmentation/insert_idea' className={classes.insertIdea} aria-hidden='true' />
       </div>
     </section>
   )
