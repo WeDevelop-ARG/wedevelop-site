@@ -59,7 +59,7 @@
   }
 
   @include for-desktop-up {
-    margin-top: 75px;
+    margin-top: 70px;
     margin-right: 124px;
     margin-bottom: 0px;
   }
@@ -67,6 +67,10 @@
 
 .listItem {
   display: flex;
+
+  > svg {
+    flex-shrink: 0;
+  }
 
   > p {
     margin: auto 0;
@@ -102,6 +106,7 @@
   display: none;
   height: auto;
   margin: 0 auto;
+  flex-shrink: 0;
 
   @include for-tablet-up {
     display: block;
