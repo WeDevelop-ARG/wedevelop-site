@@ -26,6 +26,10 @@ function handleOptionsRequest (req, res) {
 }
 
 async function handlePostRequest (req, res) {
+  if (!await isReCAPTCHATokenValid(req.body.recaptchaToken)) {
+    return res.status(403).end()
+  }
+
   const subscriber = await addSubscriberToMailchimp({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriber: { email: req.body.email }
@@ -37,9 +41,5 @@ async function handlePostRequest (req, res) {
     tags: getMailchimpTags('staff-augmentation')
   })
 
-  if (!await isReCAPTCHATokenValid(req.body.recaptchaToken)) {
-    return res.status(403).end()
-  } else {
-    return res.status(200).end()
-  }
+  return res.status(200).end()
 }
