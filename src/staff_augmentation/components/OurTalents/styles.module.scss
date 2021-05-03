@@ -42,11 +42,13 @@
 }
 
 .sectionContent {
-  display: flex;
-  flex-flow: column wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100%);
+  grid-gap: 30px;
 
   @include for-desktop-up {
-    flex-direction: row;
+    grid-template-columns: repeat(auto-fill, 338px);
+    justify-content: center;
   }
 }
 
@@ -62,6 +64,7 @@
   }
 
   &:not(:last-of-type) {
+    padding-top: 45px;
     margin-bottom: 45px;
   }
 
@@ -75,7 +78,8 @@
   }
 
   @include for-desktop-up {
-    margin: auto;
+    width: 338px;
+    margin: 0 auto;
 
     &:not(:last-of-type) {
       margin-bottom: 0;
