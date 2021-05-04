@@ -1,4 +1,3 @@
-export const MAILER_URL = process.env.REACT_APP_MAILER_URL || 'http://localhost:3000/send'
 export const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT || 'development'
 export const BASE_URL = process.env.REACT_APP_BASE_URL
 export const PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL = (

@@ -1,6 +1,7 @@
 const { addSubscriberToMailchimp, addTagsToMailchimpSubscriber } = require('../services/mailchimp')
 const { getMailchimpTags } = require('../services/getMailchimpTags')
 const { isReCAPTCHATokenValid } = require('../services/recaptcha')
+const { sendEmail } = require('../services/sendEmail')
 
 const { MAILCHIMP_DEFAULT_LIST_ID } = require('../constants')
 
@@ -29,6 +30,8 @@ async function handlePostRequest (req, res) {
   if (!await isReCAPTCHATokenValid(req.body.recaptchaToken)) {
     return res.status(403).end()
   }
+
+  await sendEmail(req.body.data)
 
   const subscriber = await addSubscriberToMailchimp({
     listId: MAILCHIMP_DEFAULT_LIST_ID,

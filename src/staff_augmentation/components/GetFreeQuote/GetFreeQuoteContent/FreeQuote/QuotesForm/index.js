@@ -7,7 +7,6 @@ import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import {
   CONTACT_FORM_DESTINATION_EMAIL,
-  MAILER_URL,
   STAFF_AUGMENTATION_FORM_PROCESSOR_URL
 } from 'main_app/constants'
 
@@ -40,15 +39,7 @@ function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
     }
 
     try {
-      await axios.post(MAILER_URL, data)
-    } catch (_) {
-      window.alert('An error occurred while sending your message.\n\nPlease contact us at info@wedevelop.me')
-
-      return undefined
-    }
-
-    try {
-      await axios.post(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, values)
+      await axios.post(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, values, data)
       logAnalyticsEvent({
         event: 'contact',
         contactType: 'free-quote-form',

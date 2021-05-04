@@ -8,4 +8,6 @@ exports.MAILCHIMP_API_KEY = config.mailchimp.api_key
 exports.MAILCHIMP_SERVER = config.mailchimp.server
 exports.MAILCHIMP_DEFAULT_LIST_ID = config.mailchimp.default_list_id
 
+exports.SENDGRID_API_KEY = config.sendgrid.api_key
+
 exports.RECAPTCHA_SECRET_KEY = config.recaptcha.secret_key
