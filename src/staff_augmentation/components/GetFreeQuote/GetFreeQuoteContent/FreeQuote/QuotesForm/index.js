@@ -12,6 +12,7 @@ import {
 } from 'main_app/constants'
 
 const schema = Yup.object({
+  name: Yup.string().required(),
   email: Yup.string().email().required(),
   message: Yup.string().max(200).required()
 }).required()

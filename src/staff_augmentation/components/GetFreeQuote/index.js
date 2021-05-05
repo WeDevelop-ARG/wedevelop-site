@@ -11,12 +11,13 @@ function GetFreeQuote () {
     setIsSubmitted(true)
   }, [])
   return (
-    <section id='get-free-quote'>
-      <div className={classes.sectionContainer}>
-        {!isSubmitted && <GetFreeQuoteContent onSubmitFinished={handleSubmitFinished} />}
-        {isSubmitted && <GetFreeQuoteConfirmationMessage />}
-      </div>
-    </section>
+    <div id='get-free-quote' className={classes.sectionContainer}>
+      <h3 className={classes.formTitle}>
+        Efficient IT Staffing <span className={classes.gradientText}>to work for you</span>
+      </h3>
+      {!isSubmitted && <GetFreeQuoteContent onSubmitFinished={handleSubmitFinished} />}
+      {isSubmitted && <GetFreeQuoteConfirmationMessage />}
+    </div>
   )
 }
 

@@ -22,15 +22,7 @@
   width: 100%;
   font-size: 18px;
   font-weight: 700;
-  margin-bottom: 10px;
-
-  &:last-of-type {
-    margin-top: 44px;
-  }
-
-  @include for-tablet-up {
-    font-size: 22px;
-  }
+  margin-bottom: 14px;
 }
 
 .inputStyles {
@@ -38,10 +30,11 @@
   border-radius: 4px;
   padding: 16px;
   width: 100%;
+  height: 51px;
   font-size: inherit;
   transition: all ease-in-out 150ms;
   outline: none;
-  margin-top: 10px;
+  margin-top: 14px;
 
   &:focus {
     border-color: rgba($color: #000000, $alpha: 1.0);
@@ -62,10 +55,10 @@
   resize: none;
   height: 180px;
   font-family: inherit;
-  margin-top: 16px;
+  margin-top: 14px;
 
   @include for-desktop-up {
-    height: 129px;
+    height: 116px;
   }
 }
 
@@ -74,15 +67,16 @@
   width: 100%;
 
   @include for-desktop-up {
-    margin-top: 42px;
+    margin-top: 30px;
   }
 }
 
 .buttonContainer {
   display: flex;
+  margin: auto;
   width: 100%;
 
   @include for-desktop-up{
-    width: 334px;
+    width: 193px;
   }
 }

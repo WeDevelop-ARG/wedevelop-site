@@ -22,7 +22,7 @@ function FreeQuote ({ className, onSubmitFinished }) {
     email: '',
     message: ''
   }
-  const messageExample = 'I need a Senior Ruby on Rails Developer, with experience in AWS and Elastic Search. He or she has to be a really good problem-solver and a key team player.'
+  const messageExample = 'I need a Senior Ruby on Rails Developer, with experience in AWS and Elastic Search.'
 
   return (
     <QuotesForm
@@ -31,12 +31,22 @@ function FreeQuote ({ className, onSubmitFinished }) {
       className={classnames(classes.form, { [className]: className })}
     >
       <label className={classes.label}>
+        Name
+        <Field
+          as={InputWithError}
+          type='text'
+          name='name'
+          placeholder='Your name'
+          className={classes.inputStyles}
+        />
+      </label>
+      <label className={classes.label}>
         Email
         <Field
           as={InputWithError}
           type='email'
           name='email'
-          placeholder='Email'
+          placeholder='Your work email'
           className={classes.inputStyles}
         />
       </label>

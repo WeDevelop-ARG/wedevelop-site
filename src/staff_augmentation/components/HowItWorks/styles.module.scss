@@ -4,14 +4,13 @@
 .howItWorksSection {
   display: flex;
   flex-direction: column;
-  margin-top: -130px;
-  padding-top: 175px;
+  padding-top: 50px;
   padding-bottom: 50px;
   background: rgba($color: $buttonBackground, $alpha: 1.0);
   color: rgba($color: #FFFFFF, $alpha: 1.0);
 
   @include for-desktop-up {
-    padding-top: 250px;
+    padding-top: 150px;
     padding-bottom: 150px;
   }
 }

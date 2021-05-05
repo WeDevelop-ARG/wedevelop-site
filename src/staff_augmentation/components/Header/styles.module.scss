@@ -7,35 +7,24 @@
   flex-direction: column;
 }
 
-.content {
-  position: relative;
-  margin-top: auto;
-  margin-bottom: auto;
-
-  @include for-phone-only {
-    padding-top: 140px;
-
-    @media screen and (max-height: 450px) {
-      padding-top: initial;
-    }
-  }
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+  grid-auto-rows: min-content;
+  column-gap: 25px;
+  row-gap: 20px;
 
   @include for-tablet-up {
-    padding-top: 185px;
-
-    @media screen and (max-height: 550px) {
-      padding-top: initial;
-    }
+    grid-template-columns: repeat(auto-fill, 530px);
   }
 
   @include for-desktop-up {
-    padding-top: initial;
-    padding-bottom: 279px;
-
-    @media screen and (max-height: 790px) {
-      padding-bottom: initial;
-    }
+    padding-bottom: 0;
   }
+}
+
+.textContainer {
+  padding-right: 130px;
 }
 
 .subheadingText {
@@ -47,60 +36,35 @@
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
   font-size: 14px;
+  margin: 0px;
 
   @include for-tablet-up {
-    font-size: 22px;
+    font-size: 16px;
   }
 }
 
 .titleText {
   letter-spacing: 1.2px;
+  line-height: 60px;
+  margin-bottom: 30px;
+
+  @include for-desktop-up {
+    font-size: 52px;
+  }
 }
 
-.highlightedText {
+.gradientText {
   background: $mainGradient;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.rocket {
-  width: 144px;
-  height: auto;
-  position: absolute;
-  top: 0;
-
-  @include for-phone-only {
-    @media screen and (max-height: 450px) {
-      display: none;
-    }
-  }
-
-  @include for-tablet-up {
-    width: 190px;
-
-    @media screen and (max-height: 550px) {
-      display: none;
-    }
-  }
-
-  @include for-desktop-up {
-    width: 287px;
-    top: auto;
-    right: 0;
-    margin-top: -50px;
-
-    @media screen and (max-height: 790px) {
-      display: none;
-    }
-  }
+.descriptionText {
+  line-height: 30px;
+  letter-spacing: 1.2px;
 }
 
-.scrollDown {
-  margin: 0 auto;
-  padding: 10px 15px;
-}
-
-.chevron {
-  transform: rotate(90deg);
+.highlightedText {
+  font-weight: 700;
 }
