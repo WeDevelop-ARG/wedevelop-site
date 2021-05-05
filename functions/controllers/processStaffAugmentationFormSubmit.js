@@ -3,7 +3,7 @@ const { getMailchimpTags } = require('../services/getMailchimpTags')
 const { isReCAPTCHATokenValid } = require('../services/recaptcha')
 const { sendEmail } = require('../services/sendEmail')
 
-const { MAILCHIMP_DEFAULT_LIST_ID } = require('../constants')
+const { MAILCHIMP_DEFAULT_LIST_ID, CONTACT_FORM_DESTINATION_EMAIL } = require('../constants')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
@@ -27,11 +27,30 @@ function handleOptionsRequest (req, res) {
 }
 
 async function handlePostRequest (req, res) {
+  const message = `
+      New message received from Free Quote form, Staff Augmentation landing page:
+
+      ${req.body.message}
+    `
+  const data = {
+    personalizations: [{
+      to: [{ email: CONTACT_FORM_DESTINATION_EMAIL }],
+      subject: 'New message from WeDevelop site'
+    }],
+    from: {
+      email: req.body.email
+    },
+    content: [{
+      type: 'text/plain',
+      value: message
+    }]
+  }
+
   if (!await isReCAPTCHATokenValid(req.body.recaptchaToken)) {
     return res.status(403).end()
   }
 
-  await sendEmail(req.body.data)
+  await sendEmail(data)
 
   const subscriber = await addSubscriberToMailchimp({
     listId: MAILCHIMP_DEFAULT_LIST_ID,

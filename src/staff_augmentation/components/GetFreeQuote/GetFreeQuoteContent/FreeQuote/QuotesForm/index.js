@@ -5,10 +5,7 @@ import * as Yup from 'yup'
 import axios from 'axios'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
-import {
-  CONTACT_FORM_DESTINATION_EMAIL,
-  STAFF_AUGMENTATION_FORM_PROCESSOR_URL
-} from 'main_app/constants'
+import { STAFF_AUGMENTATION_FORM_PROCESSOR_URL } from 'main_app/constants'
 
 const schema = Yup.object({
   email: Yup.string().email().required(),
@@ -18,28 +15,8 @@ const schema = Yup.object({
 
 function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
   const handleSubmit = useCallback(async (values) => {
-    const message = `
-      New message received from Free Quote form, Staff Augmentation landing page:
-
-      ${values.message}
-    `
-
-    const data = {
-      personalizations: [{
-        to: [{ email: CONTACT_FORM_DESTINATION_EMAIL }],
-        subject: 'New message from WeDevelop site'
-      }],
-      from: {
-        email: values.email
-      },
-      content: [{
-        type: 'text/plain',
-        value: message
-      }]
-    }
-
     try {
-      await axios.post(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, values, data)
+      await axios.post(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, values)
       logAnalyticsEvent({
         event: 'contact',
         contactType: 'free-quote-form',
