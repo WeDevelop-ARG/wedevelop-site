@@ -9,6 +9,7 @@ import Header from './components/Header'
 import GetFreeQuote from './components/GetFreeQuote'
 import HowItWorks from './components/HowItWorks'
 import WhyWeDevelop from './components/WhyWeDevelop'
+import OurTalents from './components/OurTalents'
 
 import classes from './styles.module.scss'
 import useOverlappingObserver from 'utils/use_overlapping_observer'
@@ -38,6 +39,7 @@ function StaffAugmentation () {
         <GetFreeQuote />
         <HowItWorks />
         <WhyWeDevelop />
+        <OurTalents />
         <section id='contact' className={classes.wrapper}>
           <div className={classes.fillHeight}>
             <h1 className={classes.titleText}>Schedule a call with us</h1>
