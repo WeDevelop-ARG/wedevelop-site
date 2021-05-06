@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import FreeQuoteForm from '../FreeQuoteForm'
 import ConfirmationMessage from '../ConfirmationMessage'
+import EntrepreneurLaptop from 'assets/staff_augmentation/entrepreneur_laptop.png'
 
 import classes from './styles.module.scss'
 
@@ -32,6 +33,9 @@ function Header () {
           {isSubmitted && <ConfirmationMessage />}
         </div>
       </div>
+      <img src={EntrepreneurLaptop} alt='' role='presentation' className={classes.entrepreneurLaptop} />
+      <div className={classes.bigCircle} role='presentation' />
+      <div className={classes.smallCircle} role='presentation' />
     </section>
   )
 }
