@@ -5,11 +5,11 @@ import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
-import QuotesForm from './QuotesForm'
+import FormLogic from './FormLogic'
 
 import classes from './styles.module.scss'
 
-function FreeQuote ({ className, onSubmitFinished }) {
+function FreeQuoteForm ({ onSubmitFinished }) {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
     classes.fieldWithError
@@ -19,16 +19,17 @@ function FreeQuote ({ className, onSubmitFinished }) {
     classes.fieldWithError
   )
   const initialValues = {
+    name: '',
     email: '',
     message: ''
   }
   const messageExample = 'I need a Senior Ruby on Rails Developer, with experience in AWS and Elastic Search.'
 
   return (
-    <QuotesForm
+    <FormLogic
       initialValues={initialValues}
       onSubmitFinished={onSubmitFinished}
-      className={classnames(classes.form, { [className]: className })}
+      className={classes.form}
     >
       <label className={classes.label}>
         Name
@@ -68,8 +69,8 @@ function FreeQuote ({ className, onSubmitFinished }) {
           Get a free quote
         </SubmitButton>
       </div>
-    </QuotesForm>
+    </FormLogic>
   )
 }
 
-export default FreeQuote
+export default FreeQuoteForm

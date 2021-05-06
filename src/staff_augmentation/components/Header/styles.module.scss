@@ -23,7 +23,7 @@
   }
 }
 
-.textContainer {
+.presentationContainer {
   padding-right: 130px;
 }
 
@@ -67,4 +67,26 @@
 
 .highlightedText {
   font-weight: 700;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 30px 0px 40px;
+  background: $secondaryColor;
+
+  @include for-tablet-up {
+    padding: 30px 80px 65px;
+  }
+
+  @include for-desktop-up {
+    padding: 25px 85px;
+  }
+}
+
+.formTitle {
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  line-height: 30px;
+  text-align: center;
 }
