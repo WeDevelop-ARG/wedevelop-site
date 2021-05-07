@@ -34,8 +34,6 @@ function Header () {
         </div>
       </div>
       <img src={EntrepreneurLaptop} alt='' role='presentation' className={classes.entrepreneurLaptop} />
-      <div className={classes.bigCircle} role='presentation' />
-      <div className={classes.smallCircle} role='presentation' />
     </section>
   )
 }

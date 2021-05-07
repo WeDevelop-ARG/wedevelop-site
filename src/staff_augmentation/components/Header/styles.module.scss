@@ -6,8 +6,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: 285px;
-  margin-bottom: 100px;
+  padding-bottom: 165px;
 }
 
 .wrapper {
@@ -95,24 +94,4 @@
   position: absolute;
   top: 350px;
   left: 0;
-}
-
-.bigCircle {
-  width: 106px;
-  height: 106px;
-  border-radius: 50%;
-  background: rgba($color: #F8B75F, $alpha: 0.85);
-  position: absolute;
-  left: 50px;
-  top: 845px;
-}
-
-.smallCircle {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: rgba($color: #F8B75F, $alpha: 0.85);
-  position: absolute;
-  left: 136px;
-  bottom: 0px;
 }
