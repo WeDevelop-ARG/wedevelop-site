@@ -47,7 +47,7 @@ function StaffAugmentation () {
           </div>
         </section>
       </Article>
-      <Footer />
+      <Footer variant='light' />
     </>
   )
 }
