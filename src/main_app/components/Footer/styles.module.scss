@@ -2,8 +2,6 @@
 @import '/src/styles/media_queries.scss';
 
 .containerStyle {
-  background-color: $textColor;
-  color: $secondaryColor;
   padding: 25px var(--rootContentHorizontalPadding);
   display: flex;
   flex-direction: column;
@@ -28,6 +26,36 @@
   }
 }
 
+.variant_dark {
+  background-color: $textColor;
+  color: $secondaryColor;
+}
+
+.variant_light {
+  background-color: $backgroundColor;
+
+  .iconStyles {
+    --primaryColor: #{$textColor};
+  }
+
+  %contactLinksColor {
+    color: $textColor;
+  }
+
+  .logoStyle {
+    --primaryColor: #{$textColor};
+    --secondaryColor: #{$secondaryColor};
+  }
+
+  .privacyPolicy {
+    color: $textColor;
+  }
+
+  .copyright {
+    opacity: 0.85;
+  }
+}
+
 .socialNetworks {
   list-style-type: none;
   padding: 0;
@@ -37,7 +65,6 @@
   li + li {
     margin-left: 15px;
   }
-
 }
 
 .contact {
@@ -52,7 +79,6 @@
 %contactLinksColor {
   color: $secondaryColor;
 }
-
 
 .contactContentContainer {
   @extend %contactLinksColor;
@@ -70,7 +96,7 @@
   @extend %contactLinksColor;
   display: inline-block;
   flex-grow: 1;
-  text-align: center;
+  text-align: left;
   font-style: normal;
 }
 
