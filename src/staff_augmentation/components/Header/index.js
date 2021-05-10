@@ -11,7 +11,7 @@ function Header () {
     setIsSubmitted(true)
   }, [])
   return (
-    <section id='headerSection' className={classes.headerContainer}>
+    <section id='header-section' className={classes.headerContainer}>
       <div className={classes.wrapper}>
         <div className={classes.presentationContainer}>
           <p className={classes.subheadingText}>

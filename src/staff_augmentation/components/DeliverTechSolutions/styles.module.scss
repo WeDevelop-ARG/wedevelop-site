@@ -10,53 +10,87 @@
 }
 
 .contentWrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(533px, 1fr));
-  column-gap: 40px;
-  row-gap: 20px;
+  display: flex;
+  justify-content: stretch;
+}
 
-  &:nth-of-type(1) {
-    margin-bottom: 160px;
-  }
+.firstContentWrapper {
+  margin-bottom: 225px;
 }
 
 .maleVideocallFrame {
-  position: relative;
   background: rgba($color: #F8B75F, $alpha: 0.85);
-  width: 568px;
+  width: 532px;
   height: 454px;
   border-radius: 0px 30px 0px 40px;
+  margin-right: 100px;
 
   > .maleVideocallImage {
-    width: 568px;
+    width: 532px;
     height: 454px;
     border-radius: 0px 30px 0px 40px;
-    position: absolute;
+    position: relative;
     left: 26px;
     bottom: 26px;
   }
 }
 
 .maleComputerFrame {
-  position: relative;
   background: rgba($color: #F8B75F, $alpha: 0.85);
-  width: 626px;
+  width: 590px;
   height: 500px;
   border-radius: 0px 30px 0px 40px;
   margin-left: 25px;
+  margin-right: 20px;
 
   .maleComputerImage {
-    width: 626px;
+    width: 590px;
     height: 500px;
     border-radius: 0px 30px 0px 40px;
-    position: absolute;
+    position: relative;
     right: 26px;
     bottom: 26px;
     }
 }
 
 .textContainer {
-  width: 471px;
+  >h2 {
+    font-size: 42px;
+    letter-spacing: 1.2px;
+    line-height: 60px;
+    padding-left: 25px;
+  }
+
+  >p {
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+    padding-left: 25px;
+    margin: 50px 0;
+
+    >span {
+      font-weight: 700;
+    }
+  }
+}
+
+.firstTextContainer {
+  >h2 {
+    padding-left: 16px;
+    border-left: 9px solid rgba($color: #773E9A, $alpha: 1);
+
+    >span {
+      text-decoration: underline;
+    }
+  }
+
+  >p {
+    margin: 30px 0;
+  }
+}
+
+.upgradeButton {
+  margin-left: 25px;
 }
 
 .bigCircle {
@@ -77,11 +111,4 @@
   position: absolute;
   top: 106px;
   left: 136px;
-}
-
-.sideArch {
-  width: 404px;
-  height: 227px;
-  position: absolute;
-  right: 0;
 }

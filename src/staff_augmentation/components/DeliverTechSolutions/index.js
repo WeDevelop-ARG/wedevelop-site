@@ -1,7 +1,7 @@
 import { HashLink } from 'react-router-hash-link'
+import classnames from 'classnames'
 
 import Button from 'main_app/components/Button'
-import SVGIcon from 'main_app/components/SVGIcon'
 import MaleInVideocall from 'assets/staff_augmentation/male_videocall.png'
 import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 
@@ -12,12 +12,11 @@ function DeliverTechSolutions () {
     <section className={classes.techSolutionsSection}>
       <div className={classes.bigCircle} role='presentation' />
       <div className={classes.smallCircle} role='presentation' />
-      <SVGIcon name='staff_augmentation/side_arch' className={classes.sideArch} role='presentation' />
-      <div className={classes.contentWrapper}>
+      <div className={classnames(classes.contentWrapper, classes.firstContentWrapper)}>
         <div className={classes.maleVideocallFrame}>
           <img src={MaleInVideocall} alt='' role='presentation' className={classes.maleVideocallImage} />
         </div>
-        <div className={classes.textContainer}>
+        <div className={classnames(classes.textContainer, classes.firstTextContainer)}>
           <h2>We Deliver scalable <span>Tech Solutions</span></h2>
           <p>
             We are the expert partner you need to deliver scalable, 
@@ -26,9 +25,10 @@ function DeliverTechSolutions () {
           </p>
           <Button
             as={HashLink}
-            to='#headerSection'
+            to='#header-section'
             smooth
             variant={'secondary'}
+            className={classes.upgradeButton}
           >
             Upgrade your team
           </Button>
@@ -39,16 +39,17 @@ function DeliverTechSolutions () {
           <img src={MaleUsingComputer} alt='' role='presentation' className={classes.maleComputerImage} />
         </div>
         <div className={classes.textContainer}>
-          <h2>We Deliver scalable Tech Solutions</h2>
+          <h2 className={classes.titleText}>We Deliver scalable Tech Solutions</h2>
           <p>
             Our experienced engineering teams deliver dream-team 
             outcomes, <span>without the hassles of hiring.</span>
           </p>
           <Button
             as={HashLink}
-            to='#headerSection'
+            to='#header-section'
             smooth
             variant={'secondary'}
+            className={classes.upgradeButton}
           >
             Upgrade your team
           </Button>
