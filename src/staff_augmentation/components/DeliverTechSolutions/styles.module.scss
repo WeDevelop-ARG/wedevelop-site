@@ -1,0 +1,87 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.techSolutionsSection {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 220px;
+  margin-bottom: 70px;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(533px, 1fr));
+  column-gap: 40px;
+  row-gap: 20px;
+
+  &:nth-of-type(1) {
+    margin-bottom: 160px;
+  }
+}
+
+.maleVideocallFrame {
+  position: relative;
+  background: rgba($color: #F8B75F, $alpha: 0.85);
+  width: 568px;
+  height: 454px;
+  border-radius: 0px 30px 0px 40px;
+
+  > .maleVideocallImage {
+    width: 568px;
+    height: 454px;
+    border-radius: 0px 30px 0px 40px;
+    position: absolute;
+    left: 26px;
+    bottom: 26px;
+  }
+}
+
+.maleComputerFrame {
+  position: relative;
+  background: rgba($color: #F8B75F, $alpha: 0.85);
+  width: 626px;
+  height: 500px;
+  border-radius: 0px 30px 0px 40px;
+  margin-left: 25px;
+
+  .maleComputerImage {
+    width: 626px;
+    height: 500px;
+    border-radius: 0px 30px 0px 40px;
+    position: absolute;
+    right: 26px;
+    bottom: 26px;
+    }
+}
+
+.textContainer {
+  width: 471px;
+}
+
+.bigCircle {
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  background: rgba($color: #F8B75F, $alpha: 0.85);
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+
+.smallCircle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba($color: #F8B75F, $alpha: 0.85);
+  position: absolute;
+  top: 106px;
+  left: 136px;
+}
+
+.sideArch {
+  width: 404px;
+  height: 227px;
+  position: absolute;
+  right: 0;
+}
