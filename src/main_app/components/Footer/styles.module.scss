@@ -94,8 +94,6 @@
 
 .contactContent {
   @extend %contactLinksColor;
-  display: inline-block;
-  flex-grow: 1;
   text-align: left;
   font-style: normal;
   line-height: 17px;
@@ -106,11 +104,11 @@
   --secondaryColor: #{$textColor};
   height: 25px;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
 
   @include for-desktop-up {
     flex-basis: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -121,6 +119,7 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
+  
   @include for-desktop-up {
     flex-basis: 100%;
   }
