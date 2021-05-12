@@ -2,43 +2,18 @@
 @import "/src/styles/media_queries.scss";
 
 .headerContainer {
-  min-height: 86vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding-bottom: 165px;
+  height: 100vh;
+  margin-bottom: 67px;
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit);
-  grid-auto-rows: min-content;
-  column-gap: 25px;
-  row-gap: 20px;
-
-  @include for-tablet-up {
-    grid-template-columns: repeat(auto-fill, 530px);
-  }
+  display: flex;
+  justify-content: space-between;
 }
 
 .presentationContainer {
-  padding-right: 130px;
-}
-
-.subheadingText {
-  font-weight: bold;
-  letter-spacing: 3px;
-  background: $primaryGradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin: 0px;
-
-  @include for-tablet-up {
-    font-size: 16px;
-  }
+  width: 525px;
+  position: relative;
 }
 
 .titleText {
@@ -59,39 +34,60 @@
 }
 
 .descriptionText {
-  line-height: 30px;
+  line-height: 28px;
   letter-spacing: 1.2px;
+  margin-bottom: 0px;
 }
 
 .highlightedText {
   font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 1.2px;
+}
+
+.horizontalBar {
+  width: 113px;
+  height: 5px;
+  background: $mainGradient;
+  margin: 15px 0px;
 }
 
 .formContainer {
   display: flex;
   flex-direction: column;
-  border-radius: 0px 30px 0px 40px;
-  background: $secondaryColor;
+  margin-top: 35px;
+}
 
-  @include for-tablet-up {
-    padding: 30px 80px 65px;
-  }
+.formDisclaimer {
+  width: 280px;
+  display: flex;
+  position: absolute;
+  right: 0;
 
-  @include for-desktop-up {
-    padding: 25px 85px;
+  >p {
+    font-size: 12px;
+    color: rgba($color: #363636, $alpha: 1.0);
+    line-height: 32px;
+    margin: auto;
   }
 }
 
-.formTitle {
-  font-weight: 900;
-  letter-spacing: 1.2px;
-  line-height: 30px;
-  text-align: center;
+.visualsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px;
 }
 
 .entrepreneurLaptop {
-  width: 355px;
-  position: absolute;
-  top: 350px;
-  left: 0;
+  width: 455px;
+  height: auto;
+  margin-bottom: 14px;
+}
+
+.widgetsContainer {
+  display: flex;
+}
+
+.clutchWidget {
+  margin: auto 50px;
 }
