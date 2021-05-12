@@ -1,0 +1,25 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.getYourQuoteSection {
+    display: flex;
+    flex-wrap: wrap;
+    height: 971px;
+    background: rgba($color: $textColor, $alpha: 1.0);
+    color: rgba($color: #FFFFFF, $alpha: 1.0);
+    padding: 25em 10em;
+}
+
+.subheadingText {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 32px;
+}
+
+.getYourQuoteButton {
+    border-radius: 4px;
+    width: 334px;
+    height: 58px;
+    margin-top: 80px;
+    margin-left: 220px;
+}
