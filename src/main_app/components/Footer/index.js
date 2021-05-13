@@ -30,7 +30,7 @@ function Footer ({ variant = 'dark', className }) {
           </a>
         </li>
       </ul>
-      <div>
+      <ul className={classes.branding}>
         <Logo className={classes.logoStyle} />
         <div className={classes.copyright}>
           © 2021 WeDevelop LLC. All rights reserved.
@@ -38,7 +38,7 @@ function Footer ({ variant = 'dark', className }) {
         <HashLink to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
           Privacy Policy
         </HashLink>
-      </div>
+      </ul>
       <ul className={classes.contact}>
         <li>
           <a href='mailto:info@wedevelop.me' className={classes.contactContentContainer}>
