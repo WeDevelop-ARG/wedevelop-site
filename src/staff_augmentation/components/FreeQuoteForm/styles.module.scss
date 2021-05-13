@@ -48,6 +48,10 @@
   margin-top: 25px;
   width: 100%;
 
+  @include for-tablet-up {
+    margin-top: 14px;
+  }
+
   @include for-desktop-up {
     margin-top: 22px;
   }
@@ -59,7 +63,7 @@
   margin-right: 0px;
   width: 100%;
 
-  @include for-desktop-up{
+  @include for-tablet-up{
     width: 280px;
   }
 }

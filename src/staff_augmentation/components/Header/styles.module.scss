@@ -2,27 +2,55 @@
 @import "/src/styles/media_queries.scss";
 
 .headerContainer {
-  height: 100vh;
-  margin-bottom: 67px;
+  min-height: 100vh;
+  padding-bottom: 40px;
 }
 
 .wrapper {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  @include for-tablet-up {
+    flex-direction: row;
+    justify-content: stretch;
+
+    @media screen and (min-width: 854px) {
+      justify-content: space-between;
+    }
+  }
 }
 
 .presentationContainer {
-  width: 525px;
   position: relative;
+
+  @include for-tablet-up {
+    padding-top: 136px;
+    width: 450px;
+  }
+
+  @include for-desktop-up {
+    width: 525px;
+  }
 }
 
 .titleText {
+  width: 100%;
   letter-spacing: 1.2px;
-  line-height: 60px;
-  margin-bottom: 30px;
+  line-height: 40px;
+  font-size: 32px;
+
+  @include for-tablet-up {
+    width: 450px;
+    font-size: 42px;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+  }
 
   @include for-desktop-up {
+    width: 525px;
     font-size: 52px;
+    margin-bottom: 30px;
   }
 }
 
@@ -55,20 +83,32 @@
 .formContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 35px;
+  margin-top: 56px;
+
+  @include for-desktop-up {
+    margin-top: 35px;
+  }
 }
 
 .formDisclaimer {
-  width: 280px;
+  width: 100%;
   display: flex;
   position: absolute;
   right: 0;
+
+  @include for-tablet-up {
+    width: 280px;
+  }
 
   >p {
     font-size: 12px;
     color: rgba($color: #363636, $alpha: 1.0);
     line-height: 32px;
-    margin: auto;
+    margin: auto 0px auto auto;
+
+    @include for-tablet-up {
+      margin: auto;
+    }
   }
 }
 
@@ -79,15 +119,48 @@
 }
 
 .entrepreneurLaptop {
-  width: 455px;
+  display: none;
   height: auto;
-  margin-bottom: 14px;
+
+  @include for-tablet-up {
+    display: block;
+    width: 343px;
+    margin-bottom: 20px;
+  }
+
+  @include for-desktop-up {
+    width: 455px;
+    margin-bottom: 14px;
+  }
 }
 
 .widgetsContainer {
   display: flex;
+  
+  @include for-phone-only {
+    margin: auto;
+    margin-top: 12px;
+  }
 }
 
 .clutchWidget {
-  margin: auto 50px;
+  margin: auto 20px auto 0px;
+
+  @include for-tablet-up {
+    margin: auto 25px;
+  }
+
+  @include for-desktop-up {
+    margin: auto 50px;
+  }
+}
+
+.topCompaniesBadge {
+  width: 46px;
+  height: 50px;
+
+  @include for-desktop-up {
+    width: 80px;
+    height: 88px;
+  }
 }
