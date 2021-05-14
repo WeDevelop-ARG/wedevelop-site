@@ -5,80 +5,51 @@
   display: flex;
   background: rgba($color: #00966D, $alpha: 0.1);
   border-radius: 50%;
-  width: 188px;
-  height: 188px;
+  width: 212px;
+  height: 212px;
   margin: auto;
-  margin-top: 99px;
-
-  @include for-tablet-up {
-    width: 212px;
-    height: 212px;
-    margin-top: 97px;
-  }
-
-  @include for-desktop-up {
-    width: 252px;
-    height: 252px;
-    margin-top: 115px;
-  }
+  margin-top: 53px;
 }
 
 .checkSign {
-  width: 91px;
+  width: 103px;
   height: auto;
   margin: auto;
-
-  @include for-tablet-up {
-    width: 103px;
-  }
-
-  @include for-desktop-up {
-    width: 123px;
-  }
 }
 
 .messageSent {
   text-align: center;
   letter-spacing: 1.1px;
+  line-height: 28px;
   margin: auto;
-  margin-top: 101px;
+  margin-top: 45px;
 
   > h2 {
     font-size: 32px;
     letter-spacing: 1.5px;
-    margin-bottom: 40px;
+    line-height: 38px;
+    margin-bottom: 36px;
 
     @include for-tablet-up {
       font-size: 42px;
-      margin-top: 25px;
+      line-height: 50px;
+      margin-bottom: 24px;
     }
-
-    @include for-desktop-up {
-      font-size: 48px;
-      margin-bottom: 12px;
-    }
-  }
-
-  @include for-tablet-up {
-    margin-top: 45px;
-  }
-
-  @include for-desktop-up {
-    margin-top: 32px;
   }
 }
 
 .addSomething {
   text-align: center;
   letter-spacing: 1.1px;
+  line-height: 28px;
   margin: auto;
-  margin-top: 124px;
+  margin-top: 45px;
 
   @include for-tablet-up {
-    margin-top: 82px;
+    margin-top: 85px;
   }
 
-  @include for-desktop-up {
-    margin-top: 116px;
+  >p:first-of-type {
+    font-weight: 700;
   }
 }
