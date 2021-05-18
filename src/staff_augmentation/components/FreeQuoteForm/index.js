@@ -3,6 +3,7 @@ import { Field } from 'formik'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
+import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
@@ -21,7 +22,8 @@ function FreeQuoteForm ({ onSubmitFinished }) {
   const initialValues = {
     name: '',
     email: '',
-    message: ''
+    message: '',
+    recaptchaToken: ''
   }
 
   return (
@@ -51,6 +53,7 @@ function FreeQuoteForm ({ onSubmitFinished }) {
         maxLength='200'
         className={classnames(classes.inputStyles, classes.textarea)}
       />
+      <ReCAPTCHAField name='recaptchaToken' />
       <div className={classes.buttonContainer}>
         <SubmitButton
           variant='primary'
