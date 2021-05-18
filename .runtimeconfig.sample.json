@@ -6,5 +6,14 @@
     "api_key": "",
     "server": "",
     "default_list_id": ""
+  },
+  "sendgrid": {
+    "api_key": ""
+  },
+  "contact_form": {
+    "destination_email": ""
+  },
+  "recaptcha": {
+    "secret_key": ""
   }
 }
