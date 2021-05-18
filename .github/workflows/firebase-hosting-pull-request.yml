@@ -1,14 +1,16 @@
 name: Deploy to PR Testing environment
 'on':
-  pull_request:
-    branches-ignore: feature/**
+  pull_request
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        if: startsWith(github.head_ref, 'feature/') == false
       - run: npm ci && npm run build-testing
+        if: startsWith(github.head_ref, 'feature/') == false
       - uses: FirebaseExtended/action-hosting-deploy@v0
+        if: startsWith(github.head_ref, 'feature/') == false
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEDEVELOP_SITE }}'

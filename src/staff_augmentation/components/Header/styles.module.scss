@@ -2,105 +2,165 @@
 @import "/src/styles/media_queries.scss";
 
 .headerContainer {
-  min-height: 86vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 40px;
 }
 
-.content {
-  position: relative;
-  margin-top: auto;
-  margin-bottom: auto;
-
-  @include for-phone-only {
-    padding-top: 140px;
-
-    @media screen and (max-height: 450px) {
-      padding-top: initial;
-    }
-  }
+.wrapper {
+  display: flex;
+  flex-direction: column;
 
   @include for-tablet-up {
-    padding-top: 185px;
+    flex-direction: row;
+    justify-content: stretch;
 
-    @media screen and (max-height: 550px) {
-      padding-top: initial;
+    @media screen and (min-width: 854px) {
+      justify-content: space-between;
     }
+  }
+}
+
+.presentationContainer {
+  position: relative;
+
+  @include for-tablet-up {
+    padding-top: 136px;
+    width: 450px;
   }
 
   @include for-desktop-up {
-    padding-top: initial;
-    padding-bottom: 279px;
-
-    @media screen and (max-height: 790px) {
-      padding-bottom: initial;
-    }
-  }
-}
-
-.subheadingText {
-  font-weight: bold;
-  letter-spacing: 3px;
-  background: $primaryGradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
-  font-size: 14px;
-
-  @include for-tablet-up {
-    font-size: 22px;
+    width: 525px;
   }
 }
 
 .titleText {
+  width: 100%;
   letter-spacing: 1.2px;
+  line-height: 40px;
+  font-size: 32px;
+
+  @include for-tablet-up {
+    width: 450px;
+    font-size: 42px;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+  }
+
+  @include for-desktop-up {
+    width: 525px;
+    font-size: 52px;
+    margin-bottom: 30px;
+  }
 }
 
-.highlightedText {
+.gradientText {
   background: $mainGradient;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.rocket {
-  width: 144px;
-  height: auto;
-  position: absolute;
-  top: 0;
+.descriptionText {
+  line-height: 28px;
+  letter-spacing: 1.2px;
+  margin-bottom: 0px;
+}
 
-  @include for-phone-only {
-    @media screen and (max-height: 450px) {
-      display: none;
-    }
+.highlightedText {
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 1.2px;
+}
+
+.horizontalBar {
+  width: 113px;
+  height: 5px;
+  background: $mainGradient;
+  margin: 15px 0px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 56px;
+
+  @include for-desktop-up {
+    margin-top: 35px;
   }
+}
+
+.formDisclaimer {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  right: 0;
 
   @include for-tablet-up {
-    width: 190px;
+    width: 280px;
+  }
 
-    @media screen and (max-height: 550px) {
-      display: none;
+  >p {
+    font-size: 12px;
+    color: rgba($color: #363636, $alpha: 1.0);
+    line-height: 32px;
+    margin: auto 0px auto auto;
+
+    @include for-tablet-up {
+      margin: auto;
     }
+  }
+}
+
+.visualsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px;
+}
+
+.entrepreneurLaptop {
+  display: none;
+  height: auto;
+
+  @include for-tablet-up {
+    display: block;
+    width: 343px;
+    margin-bottom: 20px;
   }
 
   @include for-desktop-up {
-    width: 287px;
-    top: auto;
-    right: 0;
-    margin-top: -50px;
-
-    @media screen and (max-height: 790px) {
-      display: none;
-    }
+    width: 455px;
+    margin-bottom: 14px;
   }
 }
 
-.scrollDown {
-  margin: 0 auto;
-  padding: 10px 15px;
+.widgetsContainer {
+  display: flex;
+  
+  @include for-phone-only {
+    margin: auto;
+    margin-top: 12px;
+  }
 }
 
-.chevron {
-  transform: rotate(90deg);
+.clutchWidget {
+  margin: auto 20px auto 0px;
+
+  @include for-tablet-up {
+    margin: auto 25px;
+  }
+
+  @include for-desktop-up {
+    margin: auto 50px;
+  }
+}
+
+.topCompaniesBadge {
+  width: 46px;
+  height: 50px;
+
+  @include for-desktop-up {
+    width: 80px;
+    height: 88px;
+  }
 }

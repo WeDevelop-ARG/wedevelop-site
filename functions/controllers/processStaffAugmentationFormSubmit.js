@@ -1,4 +1,3 @@
-const { isValidCalendlyURL, getCalendlyAPICallResult } = require('../services/calendly')
 const { addSubscriberToMailchimp, addTagsToMailchimpSubscriber } = require('../services/mailchimp')
 const { getMailchimpTags } = require('../services/getMailchimpTags')
 
@@ -6,7 +5,6 @@ const { MAILCHIMP_DEFAULT_LIST_ID } = require('../constants')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
-
   try {
     switch (req.method) {
       case 'OPTIONS': return await handleOptionsRequest(req, res)
@@ -27,26 +25,15 @@ function handleOptionsRequest (req, res) {
 }
 
 async function handlePostRequest (req, res) {
-  const { calendlyInviteeURI } = req.body
-
-  if (!isValidCalendlyURL(calendlyInviteeURI)) {
-    return res.status(401).end()
-  }
-
-  const { resource: invitee } = await getCalendlyAPICallResult(calendlyInviteeURI)
   const subscriber = await addSubscriberToMailchimp({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
-    subscriber: {
-      firstName: invitee.name,
-      lastName: '',
-      email: invitee.email
-    }
+    subscriber: { email: req.body.email }
   })
 
   await addTagsToMailchimpSubscriber({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriberId: subscriber.id,
-    tags: getMailchimpTags(invitee.tracking.utm_campaign)
+    tags: getMailchimpTags('staff-augmentation')
   })
 
   res.status(200).end()

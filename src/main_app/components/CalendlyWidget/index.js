@@ -4,7 +4,7 @@ import axios from 'axios'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import useMediaQuery from 'utils/use_media_query'
-import { PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL } from 'main_app/constants'
+import { CALENDLY_DEFAULT_EVENT_URL, PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL } from 'main_app/constants'
 
 function CalendlyWidget ({ sourcePage }) {
   const isTablet = useMediaQuery('screen and (min-width: 725px)')
@@ -42,7 +42,7 @@ function CalendlyWidget ({ sourcePage }) {
       <CalendlyEventListener onEventScheduled={handleScheduledEvent}>
         <InlineWidget
           utm={utmValues}
-          url='https://calendly.com/wedevelop/meet-us'
+          url={CALENDLY_DEFAULT_EVENT_URL}
           styles={{ position: 'relative', minWidth: '280px', height }}
         />
       </CalendlyEventListener>

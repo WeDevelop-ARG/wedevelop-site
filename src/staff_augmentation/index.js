@@ -6,7 +6,9 @@ import Footer from 'main_app/components/Footer'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
-import GetFreeQuote from './components/GetFreeQuote'
+import HowItWorks from './components/HowItWorks'
+import WhyWeDevelop from './components/WhyWeDevelop'
+import OurTalents from './components/OurTalents'
 
 import classes from './styles.module.scss'
 import useOverlappingObserver from 'utils/use_overlapping_observer'
@@ -34,16 +36,18 @@ function StaffAugmentation () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header />
-        <GetFreeQuote />
+        <HowItWorks />
+        <WhyWeDevelop />
+        <OurTalents />
         <section id='contact' className={classes.wrapper}>
           <div className={classes.fillHeight}>
-            <h1 className={classes.titleText}>or schedule a call with us</h1>
+            <h1 className={classes.titleText}>Schedule a call with us</h1>
             <CalendlyWidget sourcePage='staff-augmentation' />
           </div>
         </section>
         <GetYourQuote />
       </Article>
-      <Footer />
+      <Footer variant='light' />
     </>
   )
 }
