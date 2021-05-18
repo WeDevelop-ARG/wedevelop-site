@@ -6,7 +6,6 @@ import Footer from 'main_app/components/Footer'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
-import GetFreeQuote from './components/GetFreeQuote'
 import HowItWorks from './components/HowItWorks'
 import WhyWeDevelop from './components/WhyWeDevelop'
 import OurTalents from './components/OurTalents'
@@ -36,7 +35,6 @@ function StaffAugmentation () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header />
-        <GetFreeQuote />
         <HowItWorks />
         <WhyWeDevelop />
         <OurTalents />

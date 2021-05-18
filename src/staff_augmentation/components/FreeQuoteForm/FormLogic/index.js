@@ -12,11 +12,12 @@ import {
 } from 'main_app/constants'
 
 const schema = Yup.object({
+  name: Yup.string().required(),
   email: Yup.string().email().required(),
   message: Yup.string().max(200).required()
 }).required()
 
-function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
+function FormLogic ({ initialValues, onSubmitFinished, ...props }) {
   const handleSubmit = useCallback(async (values) => {
     const message = `
       New message received from Free Quote form, Staff Augmentation landing page:
@@ -73,4 +74,4 @@ function QuotesForm ({ initialValues, onSubmitFinished, ...props }) {
   )
 }
 
-export default QuotesForm
+export default FormLogic
