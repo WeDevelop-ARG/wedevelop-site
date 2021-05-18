@@ -9,9 +9,9 @@ function Review ({ quote, stars, project }) {
         {quote}
       </p>
       <Stars starsNumber={stars} />
-      <p className={classes.project}>
-        {project}
-      </p>
+      <div className={classes.project}>
+        <p>{project}</p>
+      </div>
     </div>
   )
 }
