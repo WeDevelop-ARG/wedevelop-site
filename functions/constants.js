@@ -9,6 +9,6 @@ exports.MAILCHIMP_SERVER = config.mailchimp.server
 exports.MAILCHIMP_DEFAULT_LIST_ID = config.mailchimp.default_list_id
 
 exports.SENDGRID_API_KEY = config.sendgrid.api_key
-exports.CONTACT_FORM_DESTINATION_EMAIL = config.contact_form_destination_email
+exports.CONTACT_FORM_DESTINATION_EMAIL = config.contact_form.destination_email
 
 exports.RECAPTCHA_SECRET_KEY = config.recaptcha.secret_key

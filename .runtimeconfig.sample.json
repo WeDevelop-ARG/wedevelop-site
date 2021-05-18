@@ -7,5 +7,13 @@
     "server": "",
     "default_list_id": ""
   },
-  "recaptcha": { "secret_key": "" }
+  "sendgrid": {
+    "api_key": ""
+  },
+  "contact_form": {
+    "destination_email": ""
+  },
+  "recaptcha": {
+    "secret_key": ""
+  }
 }

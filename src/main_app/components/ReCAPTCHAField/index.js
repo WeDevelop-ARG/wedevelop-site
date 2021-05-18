@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useFormikContext } from 'formik'
 import { RECAPTCHA_SITE_KEY } from 'main_app/constants'
+import { isFunction } from 'lodash'
 
 function ReCAPTCHAField ({ name, className }) {
   const containerRef = useRef()
@@ -13,7 +14,7 @@ function ReCAPTCHAField ({ name, className }) {
     let interval = null
     let timeout = null
     const tryFindReCAPTCHA = () => {
-      if (window.grecaptcha) {
+      if (window.grecaptcha && isFunction(window.grecaptcha.render)) {
         setGrecaptcha(window.grecaptcha)
         clearInterval(interval)
         clearTimeout(timeout)

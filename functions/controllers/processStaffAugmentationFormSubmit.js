@@ -28,10 +28,12 @@ function handleOptionsRequest (req, res) {
 
 async function handlePostRequest (req, res) {
   const message = `
-      New message received from Free Quote form, Staff Augmentation landing page:
+      New message received from Free Quote form, Staff Augmentation landing page.
+
+      ${req.body.name} says:
 
       ${req.body.message}
-    `
+  `
   const data = {
     personalizations: [{
       to: [{ email: CONTACT_FORM_DESTINATION_EMAIL }],
@@ -54,7 +56,10 @@ async function handlePostRequest (req, res) {
 
   const subscriber = await addSubscriberToMailchimp({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
-    subscriber: { email: req.body.email }
+    subscriber: {
+      email: req.body.email,
+      firstName: req.body.name
+    }
   })
 
   await addTagsToMailchimpSubscriber({
