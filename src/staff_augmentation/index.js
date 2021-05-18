@@ -13,6 +13,7 @@ import OurTalents from './components/OurTalents'
 import classes from './styles.module.scss'
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import { useMemo } from 'react'
+import GetYourQuote from './components/GetYourQuote'
 
 function StaffAugmentation () {
   usePageMetadata({
@@ -44,8 +45,9 @@ function StaffAugmentation () {
             <CalendlyWidget sourcePage='staff-augmentation' />
           </div>
         </section>
+        <GetYourQuote />
       </Article>
-      <Footer />
+      <Footer variant='light' />
     </>
   )
 }
