@@ -1,0 +1,91 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.getYourQuoteSection {
+  display: flex;
+  height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: $textColor;
+  color: #FFFFFF;
+
+  > .container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    @include for-desktop-up {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+.leftColumn {
+  max-width: 290px;
+  margin: 0 auto;
+
+  @include for-tablet-up {
+    max-width: 340px;
+  }
+
+  @include for-desktop-up {
+    margin: 0;
+    max-width: 600px;
+  }
+
+  .subheadingText {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 32px;
+    font-size: 16px;
+    margin-bottom: 0;
+
+    @include for-tablet-down {
+      text-align: center;
+    }
+
+    @include for-phone-only {
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  }
+
+  > h2 {
+    font-size: 80px;
+
+    @include for-tablet-down {
+      text-align: center;
+      font-size: 42px;
+    }
+
+    @include for-phone-only {
+      text-align: center;
+      font-size: 32px;
+    }
+  }
+}
+
+.rightColumn {
+  margin-top: 50px;
+
+  @include for-desktop-up {
+    margin: auto 0 auto 50px;
+  }
+
+  .getYourQuoteButton {
+    width: 334px;
+    height: 58px;
+    font-size: 17px;
+  }
+
+  .subText {
+    width: 100%;
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+    opacity: 0.80;
+  }
+}
