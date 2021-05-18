@@ -16,8 +16,8 @@ function ContactUs () {
   return (
     <>
       <NavBar />
-      <div className={classes.wrapper}>
-        <Article className={classes.fillHeight}>
+      <div>
+        <Article>
           <section>
             <p className={classes.subheadingText}>GET IN TOUCH</p>
             <h1 className={classes.titleText}>Schedule a call with us</h1>

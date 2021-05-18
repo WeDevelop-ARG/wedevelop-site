@@ -2,11 +2,10 @@
 @import '/src/styles/media_queries.scss';
 
 .containerStyle {
-  background-color: $textColor;
-  color: $secondaryColor;
   padding: 25px var(--rootContentHorizontalPadding);
   display: flex;
   flex-direction: column;
+  height: 256px;
 
   & > * {
     margin: 0 auto;
@@ -16,7 +15,12 @@
     margin-top: 60px;
   }
 
+  .branding {
+    padding-left: 0px;
+  }
+
   @include for-desktop-up {
+    flex-basis: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
@@ -25,6 +29,63 @@
     & > * {
       margin: 0;
     }
+  }
+
+  @include for-tablet-down {
+    flex-direction: row;
+    height: 400px;
+
+    ul:nth-child(2) {
+      align-self: flex-end;
+    }
+
+    .socialNetworks{
+      height: 130px;
+    }
+  }
+
+  @include for-phone-only {
+    flex-direction: column;
+    height: 500px;
+
+    ul:nth-child(2) {
+      order: 3;
+    }
+
+    .branding {
+      margin-top: 50px;
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.variant_dark {
+  background-color: $textColor;
+  color: $secondaryColor;
+}
+
+.variant_light {
+  background-color: $backgroundColor;
+
+  .iconStyles {
+    --primaryColor: #{$textColor};
+  }
+
+  %contactLinksColor {
+    color: $textColor;
+  }
+
+  .logoStyle {
+    --primaryColor: #{$textColor};
+    --secondaryColor: #{$secondaryColor};
+  }
+
+  .privacyPolicy {
+    color: $textColor;
+  }
+
+  .copyright {
+    opacity: 0.85;
   }
 }
 
@@ -37,7 +98,6 @@
   li + li {
     margin-left: 15px;
   }
-
 }
 
 .contact {
@@ -45,14 +105,13 @@
   padding: 0;
 
   & > li + li {
-    padding-top: 15px;
+    padding-top: 24px;
   }
 }
 
 %contactLinksColor {
   color: $secondaryColor;
 }
-
 
 .contactContentContainer {
   @extend %contactLinksColor;
@@ -63,44 +122,47 @@
 .iconStyles {
   --primaryColor: #{$secondaryColor};
   width: 20px;
-  margin-right: 10px;
+  margin-right: 18px;
 }
 
 .contactContent {
   @extend %contactLinksColor;
-  display: inline-block;
-  flex-grow: 1;
-  text-align: center;
+  text-align: left;
   font-style: normal;
+  line-height: 17px;
 }
 
 .logoStyle {
   --primaryColor: #{$secondaryColor};
   --secondaryColor: #{$textColor};
   height: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
   @include for-desktop-up {
     flex-basis: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
   }
 }
 
 .copyright {
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 14px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  display: block;
+  
   @include for-desktop-up {
     flex-basis: 100%;
   }
 }
 
 .privacyPolicy {
-  margin: 15px auto 0;
+  margin-top: 17px;
   color: $secondaryColor;
+  display: block;
+  text-align: center;
 }
 
 .listsContainer {
