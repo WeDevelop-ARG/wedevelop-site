@@ -48,7 +48,8 @@ const variants = PropTypes.oneOf([
   'disabled',
   'secondary',
   'dark',
-  'link'
+  'link',
+  'icon'
 ])
 
 Button.propTypes = {

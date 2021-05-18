@@ -1,6 +1,10 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
+.container {
+  padding: 0 15px;
+}
+
 .confirmationBadge {
   display: flex;
   background: rgba($color: #00966D, $alpha: 0.1);
