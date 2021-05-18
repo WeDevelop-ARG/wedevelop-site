@@ -1,0 +1,41 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.reviewsSection {
+  display: flex;
+  flex-direction: column;
+  background: rgba($color: #FFFFFF, $alpha: 1.0);
+  padding-bottom: 60px;
+}
+
+.titleText {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 24px;
+
+  @include for-tablet-up {
+    font-size: 22px;
+    line-height: 66px;
+  }
+
+  @include for-desktop-up {
+    font-size: 32px;
+  }
+}
+
+.cardsContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill);
+  gap: 50px;
+
+  @include for-tablet-up {
+    @media screen and (min-width: 746px) {
+      width: 686px;
+      grid-template-columns: repeat(auto-fill, 318px);
+      margin: 0 auto;
+    }
+  }
+}
