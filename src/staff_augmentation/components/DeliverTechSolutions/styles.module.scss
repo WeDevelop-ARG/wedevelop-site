@@ -19,7 +19,7 @@
 }
 
 .maleVideocallFrame {
-  background: rgba($color: #F8B75F, $alpha: 0.85);
+  background: rgba($color:#773E9AD9, $alpha: 0.85);
   width: 532px;
   height: 454px;
   border-radius: 0px 30px 0px 40px;
@@ -93,22 +93,9 @@
   margin-left: 25px;
 }
 
-.bigCircle {
-  width: 106px;
-  height: 106px;
-  border-radius: 50%;
-  background: rgba($color: #F8B75F, $alpha: 0.85);
-  position: absolute;
-  top: 0;
-  left: 50px;
-}
-
-.smallCircle {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: rgba($color: #F8B75F, $alpha: 0.85);
-  position: absolute;
-  top: 106px;
-  left: 136px;
+.gradientText {
+  background: $mainGradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
