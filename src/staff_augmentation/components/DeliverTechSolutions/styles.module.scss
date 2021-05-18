@@ -12,6 +12,11 @@
 .contentWrapper {
   display: flex;
   justify-content: stretch;
+  margin-bottom: 180px;
+  
+  @include for-phone-only {
+   flex-wrap: wrap;
+  }
 }
 
 .firstContentWrapper {
@@ -24,6 +29,13 @@
   height: 454px;
   border-radius: 0px 30px 0px 40px;
   margin-right: 100px;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  @include for-tablet-down {
+    width: 356px;
+    height: 285px;
+  }
 
   > .maleVideocallImage {
     width: 532px;
@@ -32,26 +44,52 @@
     position: relative;
     left: 26px;
     bottom: 26px;
+
+    @include for-tablet-down {
+      width: 356px;
+      height: 285px;
+    }
+  }
+
+  @include for-phone-only {
+    order: 2;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .maleComputerFrame {
   background: rgba($color: #F8B75F, $alpha: 0.85);
-  width: 590px;
-  height: 500px;
+  width: 500px;
+  height: 400px;
   border-radius: 0px 30px 0px 40px;
-  margin-left: 25px;
-  margin-right: 20px;
+  margin: auto 20px auto 25px;
 
-  .maleComputerImage {
-    width: 590px;
-    height: 500px;
+  @include for-tablet-down {
+    width: 337px;
+    height: 269px;
+  }
+
+  > .maleComputerImage {
+    width: 500px;
+    height: 400px;
     border-radius: 0px 30px 0px 40px;
     position: relative;
     right: 26px;
     bottom: 26px;
+  
+    @include for-tablet-down {
+      width: 337px;
+      height: 269px;
     }
+  }
+
+  @include for-phone-only {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
 
 .textContainer {
   >h2 {
@@ -98,4 +136,10 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.hiddenTextContainer {
+  @include for-phone-only {
+    display: none;
+  }
 }
