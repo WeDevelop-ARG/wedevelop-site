@@ -1,0 +1,6 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.star:not(:last-of-type) {
+  margin-right: 5px;
+}

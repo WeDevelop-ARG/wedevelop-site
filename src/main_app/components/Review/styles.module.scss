@@ -1,0 +1,15 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.review {
+  position: relative;
+  background: rgba($color: $backgroundColor, $alpha: 1.0);
+  padding: 31px 44px 26px;
+  border-radius: 6px;
+}
+
+.quote {
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 15px;
+}
