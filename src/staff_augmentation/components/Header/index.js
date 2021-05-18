@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 
 import ClutchWidget from 'main_app/components/ClutchWidget'
+import Modal from 'main_app/components/Modal'
 import FreeQuoteForm from '../FreeQuoteForm'
 import ConfirmationMessage from '../ConfirmationMessage'
 import EntrepreneurLaptop from 'assets/staff_augmentation/entrepreneur_laptop.png'
@@ -10,10 +11,10 @@ import classes from './styles.module.scss'
 
 function Header () {
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const handleSubmitFinished = useCallback (() => {
+  const handleSubmitFinished = useCallback(() => {
     setIsSubmitted(true)
   }, [])
-  const handleModalClose = useCallback (() => {
+  const handleModalClose = useCallback(() => {
     setIsSubmitted(false)
   }, [])
 
@@ -34,7 +35,7 @@ function Header () {
               Sign Up to Get Rates &amp; Available Staff Details
             </p>
             <div id='get-free-quote' className={classes.formContainer}>
-              {<FreeQuoteForm onSubmitFinished={handleSubmitFinished} />}
+              <FreeQuoteForm onSubmitFinished={handleSubmitFinished} />
             </div>
             <div className={classes.formDisclaimer}>
               <p>
@@ -45,13 +46,19 @@ function Header () {
           <div className={classes.visualsContainer}>
             <img src={EntrepreneurLaptop} alt='' role='presentation' className={classes.entrepreneurLaptop} />
             <div className={classes.widgetsContainer}>
-              <ClutchWidget className={classes.clutchWidget} variant={'dark'} />
-              <img src={TopCompaniesBadge} alt='' role='presentation' className={classes.topCompaniesBadge}/>
+              <ClutchWidget className={classes.clutchWidget} variant="dark" />
+              <img src={TopCompaniesBadge} alt='' role='presentation' className={classes.topCompaniesBadge} />
             </div>
           </div>
         </div>
       </section>
-      <ConfirmationMessage showModal={isSubmitted} onModalClose={handleModalClose} />
+      <Modal
+        isOpen={isSubmitted}
+        onRequestClose={handleModalClose}
+        contentLabel='Confirmation Message'
+      >
+        <ConfirmationMessage />
+      </Modal>
     </>
   )
 }

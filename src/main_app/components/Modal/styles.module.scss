@@ -1,7 +1,11 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-.portal {
+.bodyModalOpen {
+  overflow: hidden;
+}
+
+.overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,20 +18,17 @@
   z-index: 99;
 }
 
-.overlay {
-  display: flex;
-  z-index: 100;  
-}
-
 .modal {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: rgba($color: #FFFFFF, $alpha: 1);
+  background: #FFFFFF;
   position: relative;
+  height: 100%;
 
   @include for-tablet-up {
     width: 659px;
+    height: fit-content;
     margin: auto;
     padding: 53px 129px 45px;
   }
@@ -35,18 +36,16 @@
 
 .close {
   position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 23px;
-  right: 18px;
+  top: 13px;
+  right: 8px;
 
   @include for-tablet-up {
-    top: 29px;
-    right: 29px;
+    top: 19px;
+    right: 19px;
   }
 
   @include for-desktop-up {
-    top: 29px;
-    right: 25px;
+    top: 19px;
+    right: 15px;
   }
 }

@@ -1,15 +1,10 @@
 import SVGIcon from 'main_app/components/SVGIcon'
 
-import ConfirmationModal from './ConfirmationModal'
-
 import classes from './styles.module.scss'
 
 function ConfirmationMessage ({ showModal, onModalClose }) {
   return (
-    <ConfirmationModal 
-      showModal={showModal}
-      onModalClose={onModalClose}
-    >
+    <div className={classes.container}>
       <div className={classes.confirmationBadge}>
         <SVGIcon name='staff_augmentation/check_sign' className={classes.checkSign} />
       </div>
@@ -22,7 +17,7 @@ function ConfirmationMessage ({ showModal, onModalClose }) {
         <p>Forgot to say something important?</p>
         <p>Send us a new message or write us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>
       </div>
-    </ConfirmationModal>
+    </div>
   )
 }
 
