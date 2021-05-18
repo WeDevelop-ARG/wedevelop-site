@@ -3,92 +3,89 @@
 
 .getYourQuoteSection {
   display: flex;
-  flex-direction: row;
-  height: 971px;
-  background: rgba($color: $textColor, $alpha: 1.0);
-  color: rgba($color: #FFFFFF, $alpha: 1.0);
-  padding: 25em 10em;
+  height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: $textColor;
+  color: #FFFFFF;
 
-  @include for-tablet-down {
-    padding-top: 300px;
-    height: 860px;
+  > .container {
+    margin: auto;
+    display: flex;
     flex-direction: column;
+
+    @include for-desktop-up {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 }
 
-.subheadingText {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  line-height: 32px;
-  font-size: 16px;
-  
-  @include for-tablet-down {
-    text-align: center;
+.leftColumn {
+  max-width: 290px;
+  margin: 0 auto;
+
+  @include for-tablet-up {
+    max-width: 340px;
   }
 
-  @include for-phone-only {
+  @include for-desktop-up {
+    margin: 0;
+    max-width: 600px;
+  }
+
+  .subheadingText {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 32px;
+    font-size: 16px;
+    margin-bottom: 0;
+
+    @include for-tablet-down {
+      text-align: center;
+    }
+
+    @include for-phone-only {
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  }
+
+  > h2 {
+    font-size: 80px;
+
+    @include for-tablet-down {
+      text-align: center;
+      font-size: 42px;
+    }
+
+    @include for-phone-only {
+      text-align: center;
+      font-size: 32px;
+    }
+  }
+}
+
+.rightColumn {
+  margin-top: 50px;
+
+  @include for-desktop-up {
+    margin: auto 0 auto 50px;
+  }
+
+  .getYourQuoteButton {
+    width: 334px;
+    height: 58px;
+    font-size: 17px;
+  }
+
+  .subText {
+    width: 100%;
     text-align: center;
+    line-height: 32px;
     font-size: 14px;
-    letter-spacing: 1px;
+    opacity: 0.80;
   }
-}
-
-h2 {
-  font-size: 80px;
-  font-weight: 900;
-
-  @include for-tablet-down {
-    text-align: center;
-    font-size: 42px;
-  }
-
-  @include for-phone-only {
-    text-align: center;
-    font-size: 32px;
-  }
-}
-
-.getYourQuoteButton {
-  border-radius: 4px;
-  width: 334px;
-  height: 58px;
-  margin-top: 70px;
-  margin-left: 220px;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 20px;
-
-  @include for-tablet-down {
-    margin: -11px -167px;
-    position: relative;
-    top: 86%;
-    left: 50%;
-  }
-}
-
-.subText {
-  line-height: 32px;
-  font-size: 14px;
-  display: block;
-  margin-left: 240px;
-  opacity: 0.80;
-
-  @include for-tablet-down {
-    margin: -11px -167px;
-    position: relative;
-    top: 144%;
-    left: 53%;
-  }
-
-  @include for-phone-only {
-    margin: -11px -167px;
-    position: relative;
-    top: 144%;
-    left: 56%;
-  }
-}
-
-li {
-  list-style-type: none;
 }
