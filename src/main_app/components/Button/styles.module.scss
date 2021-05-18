@@ -45,6 +45,10 @@
   }
 }
 
+.variant_icon {
+  background-color: transparent;
+}
+
 .variant_primary {
   @extend %buttonFocus;
   background-image: $mainGradient;
