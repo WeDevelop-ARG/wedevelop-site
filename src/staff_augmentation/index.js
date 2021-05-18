@@ -36,15 +36,6 @@ function StaffAugmentation () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header />
-        <HowItWorks />
-        <WhyWeDevelop />
-        <OurTalents />
-        <section id='contact' className={classes.wrapper}>
-          <div className={classes.fillHeight}>
-            <h1 className={classes.titleText}>Schedule a call with us</h1>
-            <CalendlyWidget sourcePage='staff-augmentation' />
-          </div>
-        </section>
         <GetYourQuote />
       </Article>
       <Footer variant='light' />
