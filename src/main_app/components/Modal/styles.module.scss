@@ -1,0 +1,51 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.bodyModalOpen {
+  overflow: hidden;
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.5);
+  z-index: 99;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #FFFFFF;
+  position: relative;
+  height: 100%;
+
+  @include for-tablet-up {
+    width: 659px;
+    height: fit-content;
+    margin: auto;
+    padding: 53px 129px 45px;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 13px;
+  right: 8px;
+
+  @include for-tablet-up {
+    top: 19px;
+    right: 19px;
+  }
+
+  @include for-desktop-up {
+    top: 19px;
+    right: 15px;
+  }
+}

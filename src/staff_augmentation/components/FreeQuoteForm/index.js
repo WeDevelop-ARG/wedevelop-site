@@ -3,6 +3,7 @@ import { Field } from 'formik'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
+import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
@@ -21,9 +22,9 @@ function FreeQuoteForm ({ onSubmitFinished }) {
   const initialValues = {
     name: '',
     email: '',
-    message: ''
+    message: '',
+    recaptchaToken: ''
   }
-  const messageExample = 'I need a Senior Ruby on Rails Developer, with experience in AWS and Elastic Search.'
 
   return (
     <FormLogic
@@ -31,36 +32,28 @@ function FreeQuoteForm ({ onSubmitFinished }) {
       onSubmitFinished={onSubmitFinished}
       className={classes.form}
     >
-      <label className={classes.label}>
-        Name
-        <Field
-          as={InputWithError}
-          type='text'
-          name='name'
-          placeholder='Your name'
-          className={classes.inputStyles}
-        />
-      </label>
-      <label className={classes.label}>
-        Email
-        <Field
-          as={InputWithError}
-          type='email'
-          name='email'
-          placeholder='Your work email'
-          className={classes.inputStyles}
-        />
-      </label>
-      <label className={classes.label}>
-        What are you looking for?
-        <Field
-          as={TextAreaWithError}
-          name='message'
-          placeholder={messageExample}
-          maxLength='200'
-          className={classnames(classes.inputStyles, classes.textarea)}
-        />
-      </label>
+      <Field
+        as={InputWithError}
+        type='text'
+        name='name'
+        placeholder='Your name'
+        className={classes.inputStyles}
+      />
+      <Field
+        as={InputWithError}
+        type='email'
+        name='email'
+        placeholder='Your work email'
+        className={classes.inputStyles}
+      />
+      <Field
+        as={TextAreaWithError}
+        name='message'
+        placeholder='What are you looking for?'
+        maxLength='200'
+        className={classnames(classes.inputStyles, classes.textarea)}
+      />
+      <ReCAPTCHAField name='recaptchaToken' />
       <div className={classes.buttonContainer}>
         <SubmitButton
           variant='primary'

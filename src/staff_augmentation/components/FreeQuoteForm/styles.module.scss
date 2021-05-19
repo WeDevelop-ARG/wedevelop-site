@@ -2,39 +2,21 @@
 @import '/src/styles/media_queries.scss';
 
 .form {
-  @include for-phone-only{
-    .inputStyles + .inputStyles {
-      margin-top: 16px;
-    }
-  }
-  @include for-tablet-up{
-    .inputStyles + .inputStyles {
-      margin-left: 16px;
-    }
-  }
   @include for-desktop-up {
-    width: 100%
+    width: 100%;
   }
-}
-
-.label {
-  display: block;
-  width: 100%;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 14px;
 }
 
 .inputStyles {
   border: rgba($color: #363636, $alpha: 0.12) 1px solid;
   border-radius: 4px;
-  padding: 16px;
+  padding: 15px;
   width: 100%;
   height: 51px;
   font-size: inherit;
   transition: all ease-in-out 150ms;
   outline: none;
-  margin-top: 14px;
+  margin-top: 22px;
 
   &:focus {
     border-color: rgba($color: #000000, $alpha: 1.0);
@@ -53,12 +35,12 @@
 
 .textarea {
   resize: none;
-  height: 180px;
+  height: 88px;
   font-family: inherit;
-  margin-top: 14px;
+  margin-top: 22px;
 
   @include for-desktop-up {
-    height: 116px;
+    height: 88px;
   }
 }
 
@@ -66,17 +48,22 @@
   margin-top: 25px;
   width: 100%;
 
+  @include for-tablet-up {
+    margin-top: 14px;
+  }
+
   @include for-desktop-up {
-    margin-top: 30px;
+    margin-top: 22px;
   }
 }
 
 .buttonContainer {
   display: flex;
   margin: auto;
+  margin-right: 0px;
   width: 100%;
 
-  @include for-desktop-up{
-    width: 193px;
+  @include for-tablet-up{
+    width: 280px;
   }
 }

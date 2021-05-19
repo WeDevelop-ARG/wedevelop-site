@@ -2,52 +2,55 @@
 @import "/src/styles/media_queries.scss";
 
 .headerContainer {
-  min-height: 86vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding-bottom: 165px;
+  min-height: 100vh;
+  padding-bottom: 40px;
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit);
-  grid-auto-rows: min-content;
-  column-gap: 25px;
-  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
 
   @include for-tablet-up {
-    grid-template-columns: repeat(auto-fill, 530px);
+    flex-direction: row;
+    justify-content: stretch;
+
+    @media screen and (min-width: 854px) {
+      justify-content: space-between;
+    }
   }
 }
 
 .presentationContainer {
-  padding-right: 130px;
-}
-
-.subheadingText {
-  font-weight: bold;
-  letter-spacing: 3px;
-  background: $primaryGradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin: 0px;
+  position: relative;
 
   @include for-tablet-up {
-    font-size: 16px;
+    padding-top: 136px;
+    width: 450px;
+  }
+
+  @include for-desktop-up {
+    width: 525px;
   }
 }
 
 .titleText {
+  width: 100%;
   letter-spacing: 1.2px;
-  line-height: 60px;
-  margin-bottom: 30px;
+  line-height: 40px;
+  font-size: 32px;
+
+  @include for-tablet-up {
+    width: 450px;
+    font-size: 42px;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+  }
 
   @include for-desktop-up {
+    width: 525px;
     font-size: 52px;
+    margin-bottom: 30px;
   }
 }
 
@@ -59,39 +62,105 @@
 }
 
 .descriptionText {
-  line-height: 30px;
+  line-height: 28px;
   letter-spacing: 1.2px;
+  margin-bottom: 0px;
 }
 
 .highlightedText {
   font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 1.2px;
+}
+
+.horizontalBar {
+  width: 113px;
+  height: 5px;
+  background: $mainGradient;
+  margin: 15px 0px;
 }
 
 .formContainer {
   display: flex;
   flex-direction: column;
-  border-radius: 0px 30px 0px 40px;
-  background: $secondaryColor;
-
-  @include for-tablet-up {
-    padding: 30px 80px 65px;
-  }
+  margin-top: 56px;
 
   @include for-desktop-up {
-    padding: 25px 85px;
+    margin-top: 35px;
   }
 }
 
-.formTitle {
-  font-weight: 900;
-  letter-spacing: 1.2px;
-  line-height: 30px;
-  text-align: center;
+.formDisclaimer {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  right: 0;
+
+  @include for-tablet-up {
+    width: 280px;
+  }
+
+  >p {
+    font-size: 12px;
+    color: rgba($color: #363636, $alpha: 1.0);
+    line-height: 32px;
+    margin: auto 0px auto auto;
+
+    @include for-tablet-up {
+      margin: auto;
+    }
+  }
+}
+
+.visualsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px;
 }
 
 .entrepreneurLaptop {
-  width: 355px;
-  position: absolute;
-  top: 350px;
-  left: 0;
+  display: none;
+  height: auto;
+
+  @include for-tablet-up {
+    display: block;
+    width: 343px;
+    margin-bottom: 20px;
+  }
+
+  @include for-desktop-up {
+    width: 455px;
+    margin-bottom: 14px;
+  }
+}
+
+.widgetsContainer {
+  display: flex;
+  
+  @include for-phone-only {
+    margin: auto;
+    margin-top: 12px;
+  }
+}
+
+.clutchWidget {
+  margin: auto 20px auto 0px;
+
+  @include for-tablet-up {
+    margin: auto 25px;
+  }
+
+  @include for-desktop-up {
+    margin: auto 50px;
+  }
+}
+
+.topCompaniesBadge {
+  width: 46px;
+  height: 50px;
+
+  @include for-desktop-up {
+    width: 80px;
+    height: 88px;
+  }
 }

@@ -2,22 +2,23 @@ import SVGIcon from 'main_app/components/SVGIcon'
 
 import classes from './styles.module.scss'
 
-function GetFreeQuoteConfirmationMessage () {
+function ConfirmationMessage ({ showModal, onModalClose }) {
   return (
-    <>
+    <div className={classes.container}>
       <div className={classes.confirmationBadge}>
         <SVGIcon name='staff_augmentation/check_sign' className={classes.checkSign} />
       </div>
       <div className={classes.messageSent}>
-        <h2>Message sent</h2>
-        <p>Thanks for contacting us! We'll get back to you as soon as possible! :)</p>
+        <h2>We got it.</h2>
+        <p>Thanks for reaching out to us!</p>
+        <p>We'll get back to you as soon as we can with our rates and available staff! :)</p>
       </div>
       <div className={classes.addSomething}>
-        <p>Want to add something?</p>
+        <p>Forgot to say something important?</p>
         <p>Send us a new message or write us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>
       </div>
-    </>
+    </div>
   )
 }
 
-export default GetFreeQuoteConfirmationMessage
+export default ConfirmationMessage

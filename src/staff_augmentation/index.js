@@ -1,19 +1,15 @@
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
-import CalendlyWidget from 'main_app/components/CalendlyWidget'
 import Footer from 'main_app/components/Footer'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
 import DeliverTechSolutions from './components/DeliverTechSolutions'
-import HowItWorks from './components/HowItWorks'
-import WhyWeDevelop from './components/WhyWeDevelop'
-import OurTalents from './components/OurTalents'
 
-import classes from './styles.module.scss'
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import { useMemo } from 'react'
+import GetYourQuote from './components/GetYourQuote'
 
 function StaffAugmentation () {
   usePageMetadata({
@@ -37,17 +33,9 @@ function StaffAugmentation () {
       <Article>
         <Header />
         <DeliverTechSolutions />
-        <HowItWorks />
-        <WhyWeDevelop />
-        <OurTalents />
-        <section id='contact' className={classes.wrapper}>
-          <div className={classes.fillHeight}>
-            <h1 className={classes.titleText}>Schedule a call with us</h1>
-            <CalendlyWidget sourcePage='staff-augmentation' />
-          </div>
-        </section>
+        <GetYourQuote />
       </Article>
-      <Footer />
+      <Footer variant='light' />
     </>
   )
 }
