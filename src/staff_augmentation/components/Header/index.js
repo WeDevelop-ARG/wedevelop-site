@@ -46,7 +46,7 @@ function Header () {
           <div className={classes.visualsContainer}>
             <img src={EntrepreneurLaptop} alt='' role='presentation' className={classes.entrepreneurLaptop} />
             <div className={classes.widgetsContainer}>
-              <ClutchWidget className={classes.clutchWidget} variant="dark" />
+              <ClutchWidget className={classes.clutchWidget} variant='dark' />
               <img src={TopCompaniesBadge} alt='' role='presentation' className={classes.topCompaniesBadge} />
             </div>
           </div>
