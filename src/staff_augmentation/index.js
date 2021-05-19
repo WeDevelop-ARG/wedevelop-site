@@ -5,6 +5,7 @@ import Footer from 'main_app/components/Footer'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
+import DeliverTechSolutions from './components/DeliverTechSolutions'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import { useMemo } from 'react'
@@ -31,6 +32,7 @@ function StaffAugmentation () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header />
+        <DeliverTechSolutions />
         <GetYourQuote />
       </Article>
       <Footer variant='light' />
