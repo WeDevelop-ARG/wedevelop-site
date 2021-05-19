@@ -9,6 +9,7 @@ import usePageMetadata from 'utils/marketing/use_page_metadata'
 import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
 import GetYourQuote from './components/GetYourQuote'
+import DeliverTechSolutions from './components/DeliverTechSolutions'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 
@@ -34,6 +35,7 @@ function StaffAugmentation () {
       <Article>
         <Header />
         <ReviewCards />
+        <DeliverTechSolutions />
         <GetYourQuote />
       </Article>
       <Footer variant='light' />
