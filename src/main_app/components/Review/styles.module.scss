@@ -1,0 +1,31 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.review {
+  position: relative;
+  background: rgba($color: $backgroundColor, $alpha: 1.0);
+  padding: 31px 44px 155px;
+  border-radius: 6px;
+}
+
+.quote {
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 15px;
+}
+
+.project {
+  position: absolute;
+  bottom: 26px;
+  padding-right: 50px;
+
+  @include for-tablet-up {
+    padding-right: 60px;
+  }
+
+  >p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+}

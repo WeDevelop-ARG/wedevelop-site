@@ -1,3 +1,5 @@
+import { useMemo } from 'react'
+
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Footer from 'main_app/components/Footer'
@@ -5,11 +7,11 @@ import Footer from 'main_app/components/Footer'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
+import ReviewCards from './components/ReviewCards'
+import GetYourQuote from './components/GetYourQuote'
 import DeliverTechSolutions from './components/DeliverTechSolutions'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
-import { useMemo } from 'react'
-import GetYourQuote from './components/GetYourQuote'
 
 function StaffAugmentation () {
   usePageMetadata({
@@ -32,6 +34,7 @@ function StaffAugmentation () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header />
+        <ReviewCards />
         <DeliverTechSolutions />
         <GetYourQuote />
       </Article>
