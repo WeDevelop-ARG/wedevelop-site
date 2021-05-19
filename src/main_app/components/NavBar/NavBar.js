@@ -17,7 +17,7 @@ import Logo from '../Logo'
 
 import classes from './styles.module.scss'
 
-function NavBar ({ variant, show = true }, ref) {
+function NavBar ({ variant, show = true, pathLogo = '/#top', hideMenu = false }, ref) {
   // TODO: add accessibility https://react-spectrum.adobe.com/react-aria/useMenuTrigger.html
   const [menuOpen, setMenuOpen] = useState(false)
   const [atTop, observerRef] = useOverlappingObserver({
@@ -48,6 +48,7 @@ function NavBar ({ variant, show = true }, ref) {
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
+  console.log(pathLogo, hideMenu)
 
   return (
     <header
@@ -60,7 +61,7 @@ function NavBar ({ variant, show = true }, ref) {
       })}
     >
       <HashLink
-        to='/#top'
+        to={pathLogo}
         className={classes.logoLink}
         smooth
       >
@@ -75,21 +76,22 @@ function NavBar ({ variant, show = true }, ref) {
           <stop offset='100%' className={classes.logoGradientStop100} />
         </linearGradient>
       </svg>
-      <nav>
-        <button
-          type='button'
-          onClick={toggleMenu}
-          className={classes.menuToggle}
-        >
-          {menuOpen && <SVGIcon name='nav_bar/close_x' className={classes.close} />}
-          {!menuOpen && <SVGIcon name='nav_bar/hamburguer_menu' className={classes.open} />}
-        </button>
-        <MainMenu
-          isOpen={isDesktopUp || isTabletUp || menuOpen}
-          onRequestClose={closeMenu}
-          className={classes.menu}
-        />
-      </nav>
+      {!hideMenu && (
+        <nav>
+          <button
+            type='button'
+            onClick={toggleMenu}
+            className={classes.menuToggle}
+          >
+            {menuOpen && <SVGIcon name='nav_bar/close_x' className={classes.close} />}
+            {!menuOpen && <SVGIcon name='nav_bar/hamburguer_menu' className={classes.open} />}
+          </button>
+          <MainMenu
+            isOpen={isDesktopUp || isTabletUp || menuOpen}
+            onRequestClose={closeMenu}
+            className={classes.menu}
+          />
+        </nav>)}
     </header>
   )
 }

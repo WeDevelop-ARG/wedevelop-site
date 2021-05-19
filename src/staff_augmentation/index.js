@@ -28,10 +28,11 @@ function StaffAugmentation () {
 
     return ['solid', 'dark']
   }, [isNavBarAtTop])
+  const STAFF_AUGMENTATION_TOP = '/staff-augmentation#top'
 
   return (
     <>
-      <NavBar ref={navBarRef} variant={navBarVariant} />
+      <NavBar ref={navBarRef} variant={navBarVariant} pathLogo={STAFF_AUGMENTATION_TOP} hideMenu />
       <Article>
         <Header />
         <ReviewCards />
