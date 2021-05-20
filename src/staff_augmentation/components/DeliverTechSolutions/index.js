@@ -9,22 +9,28 @@ import classes from './styles.module.scss'
 function DeliverTechSolutions () {
   return (
     <section className={classes.techSolutionsSection}>
-      <div className={classnames(classes.contentWrapper, classes.firstContentWrapper)}>
-        <div className={classes.maleVideocallFrame}>
-          <img src={MaleInVideocall} alt='' role='presentation' className={classes.maleVideocallImage} />
+      <div className={classes.subSection}>
+        <h2 className={classes.title}>
+          Meet your next <br />
+          <span className={classes.gradientText}>Web Developer today</span>
+        </h2>
+        <div className={classes.leftImageContainer}>
+          <img src={MaleInVideocall} alt='' role='presentation' />
         </div>
         <div className={classnames(classes.textContainer, classes.firstTextContainer)}>
-          <h2>Meet your next <br />
+          <h2 className={classes.title}>
+            Meet your next{' '}
             <span className={classes.gradientText}>Web Developer today</span>
           </h2>
           <p>
             We send you a list of candidates today along
             with their rates and easy-to-read resumes.
-            <span>
+            <br />
+            <b>
               Your time is too precious to be dealing with
               Recruiting, Screening, Selection,
               Interviewing, Hiring, and more.
-            </span>
+            </b>
           </p>
           <p>
             Let us alleviate that burden. Save time.
@@ -32,10 +38,14 @@ function DeliverTechSolutions () {
           </p>
         </div>
       </div>
-      <div className={classes.contentWrapper}>
+      <div className={classes.subSection}>
+        <h2 className={classes.title}>Hire Top Web Developers, <br /><span className={classes.gradientText}>Without Hassle</span></h2>
+        <div className={classes.rightImageContainer}>
+          <img src={MaleUsingComputer} alt='' role='presentation' />
+        </div>
         <div className={classes.textContainer}>
           <div className={classnames(classes.textContainer, classes.firstTextContainer)}>
-            <h2 className={classes.titleText}>Hire Top Web Developers, <br /><span className={classes.gradientText}>Without Hassle</span></h2>
+            <h2 className={classes.title}>Hire Top Web Developers, <br /><span className={classes.gradientText}>Without Hassle</span></h2>
             <p>
               Hiring the right developer is hard. Especially
               if you're looking for someone with specific
@@ -58,17 +68,15 @@ function DeliverTechSolutions () {
             </p>
           </div>
         </div>
-        <div className={classes.maleComputerFrame}>
-          <img src={MaleUsingComputer} alt='' role='presentation' className={classes.maleComputerImage} />
-        </div>
       </div>
-      <div className={classnames(classes.contentWrapper, classes.hiddenTextContainer)}>
-        <div className={classes.maleVideocallFrame}>
-          <img src={MaleSalesSolutions} alt='' role='presentation' className={classes.maleVideocallImage} />
+      <div className={classnames(classes.subSection, classes.hiddenTextContainer)}>
+        <h2 className={classes.title}>Save time, <span className={classes.gradientText}>grow faster</span></h2>
+        <div className={classes.leftImageContainer}>
+          <img src={MaleSalesSolutions} alt='' role='presentation' />
         </div>
         <div className={classes.textContainer}>
           <div className={classnames(classes.textContainer, classes.firstTextContainer)}>
-            <h2 className={classes.titleText}>Save time, <span className={classes.gradientText}>grow faster</span></h2>
+            <h2 className={classes.title}>Save time, <span className={classes.gradientText}>grow faster</span></h2>
             <p>
               Hiring the wrong developers can cost
               thousands of dollars and hours of
