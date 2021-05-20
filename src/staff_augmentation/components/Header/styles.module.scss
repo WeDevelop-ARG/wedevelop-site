@@ -94,7 +94,7 @@
   width: 100%;
   display: flex;
   position: absolute;
-  right: 0;
+  left: 0;
 
   @include for-tablet-up {
     width: 280px;
