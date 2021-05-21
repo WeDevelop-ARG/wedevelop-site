@@ -9,121 +9,111 @@
   margin-bottom: 70px;
 }
 
-.contentWrapper {
+.subSection {
   display: flex;
-  justify-content: stretch;
-  margin-bottom: 180px;
-  
-  @include for-phone-only {
-   flex-wrap: wrap;
-  }
-}
+  flex-direction: column;
 
-.firstContentWrapper {
-  margin-bottom: 225px;
-}
-
-.maleVideocallFrame {
-  background: rgba($color:#773E9AD9, $alpha: 0.85);
-  width: 532px;
-  height: 454px;
-  border-radius: 0px 30px 0px 40px;
-  margin-right: 100px;
-  margin-top: auto;
-  margin-bottom: auto;
-
-  @include for-tablet-down {
-    width: 356px;
-    height: 285px;
+  & > .title {
+    margin-bottom: 50px;
   }
 
-  > .maleVideocallImage {
-    width: 532px;
-    height: 454px;
-    border-radius: 0px 30px 0px 40px;
-    position: relative;
-    left: 26px;
-    bottom: 26px;
+  & + & {
+    margin-top: 50px;
 
-    @include for-tablet-down {
-      width: 356px;
-      height: 285px;
+    @include for-tablet-up {
+      margin-top: 140px;
     }
   }
 
-  @include for-phone-only {
-    order: 2;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+  @include for-tablet-up {
+    flex-direction: row;
 
-.maleComputerFrame {
-  background: rgba($color: #F8B75F, $alpha: 0.85);
-  width: 500px;
-  height: 400px;
-  border-radius: 0px 30px 0px 40px;
-  margin: auto 20px auto 25px;
-
-  @include for-tablet-down {
-    width: 337px;
-    height: 269px;
-  }
-
-  > .maleComputerImage {
-    width: 500px;
-    height: 400px;
-    border-radius: 0px 30px 0px 40px;
-    position: relative;
-    right: 26px;
-    bottom: 26px;
-  
-    @include for-tablet-down {
-      width: 337px;
-      height: 269px;
+    & > .title {
+      display: none;
     }
   }
+}
 
-  @include for-phone-only {
-    margin-left: auto;
-    margin-right: auto;
+.leftImageContainer,
+.rightImageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  padding-bottom: 26px;
+  flex-grow: 0;
+  height: fit-content;
+
+  @include for-tablet-up {
+    min-width: calc(50% - 20px);
+  }
+
+  > img {
+    width: 100%;
+    height: auto;
+    border-radius: 0px 30px 0px 40px;
+  }
+
+  &::before {
+    content: '';
+    border-radius: 0px 30px 0px 40px;
+    width: calc(100% - 26px);
+    height: calc(100% - 26px);
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
   }
 }
 
+.leftImageContainer {
+  padding-left: 26px;
+  margin: 0 auto 20px;
+
+  @include for-tablet-up {
+    margin: auto 20px auto 0;
+  }
+
+  &::before {
+    background: rgba($color:#773E9A, $alpha: 0.85);
+    left: 0;
+  }
+}
+
+.rightImageContainer {
+  padding-right: 26px;
+  margin: 0 auto 20px;
+
+  @include for-tablet-up {
+    margin: auto 0 auto 20px;
+    order: 3;
+  }
+
+  &::before {
+    background: rgba($color:#F8B75F, $alpha: 0.85);
+    right: 0;
+  }
+}
+
+.title {
+  letter-spacing: 1.2px;
+  padding-left: 16px;
+  border-left: 9px solid #773E9A;
+}
 
 .textContainer {
-  >h2 {
-    font-size: 42px;
-    letter-spacing: 1.2px;
+  & > .title {
+    display: none;
+    padding-left: 25px;
     line-height: 60px;
-    padding-left: 25px;
-  }
 
-  >p {
-    font-size: 20px;
-    letter-spacing: 1.2px;
-    line-height: 30px;
-    padding-left: 25px;
-    margin: 50px 0;
-
-    >span {
-      font-weight: 700;
-    }
-  }
-}
-
-.firstTextContainer {
-  >h2 {
-    padding-left: 16px;
-    border-left: 9px solid rgba($color: #773E9A, $alpha: 1);
-
-    >span {
-      text-decoration: underline;
+    @include for-tablet-up {
+      display: block;
     }
   }
 
-  >p {
-    margin: 30px 0;
+  @include for-tablet-up {
+    & > p {
+      padding-left: 25px;
+    }
   }
 }
 
