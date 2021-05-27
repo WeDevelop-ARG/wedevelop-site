@@ -86,6 +86,7 @@
 }
 
 .title {
+  @extend .gradientText;
   letter-spacing: 1.2px;
   padding-left: 16px;
   border-left: 9px solid #773E9A;
@@ -114,10 +115,12 @@
 }
 
 .gradientText {
+  > span {
   background: $mainGradient;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  }
 }
 
 .hiddenTextContainer {

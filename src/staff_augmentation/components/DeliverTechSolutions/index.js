@@ -12,7 +12,6 @@ function DeliverTechSolutions () {
           id,
           presentationPhotoURL,
           title,
-          titleGradient,
           imageContainer,
           description
         }) => (
@@ -20,7 +19,6 @@ function DeliverTechSolutions () {
             key={id}
             presentationPhotoURL={presentationPhotoURL}
             title={title}
-            titleGradient={titleGradient}
             imageContainer={imageContainer}
             description={description}
           />))}
