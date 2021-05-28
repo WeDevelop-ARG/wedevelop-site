@@ -25,7 +25,8 @@ function DeliverTechSolutions () {
           <p>
             We send you a list of candidates today along
             with their rates and easy-to-read resumes.
-            <br />
+          </p>
+          <p>
             <b>
               Your time is too precious to be dealing with
               Recruiting, Screening, Selection,
