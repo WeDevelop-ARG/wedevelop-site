@@ -1,4 +1,5 @@
 import classnames from 'classnames'
+import TextGradient from 'main_app/components/TextGradient'
 
 import classes from './styles.module.scss'
 
@@ -6,14 +7,14 @@ const TechSolutions = ({ presentationPhotoURL, title, imageContainer, descriptio
   return (
     <div className={classes.subSection}>
       <h2 className={classes.title}>
-        {title}
+        <TextGradient title={title} />
       </h2>
       <div className={imageContainer ? classes.rightImageContainer : classes.leftImageContainer}>
         <img src={presentationPhotoURL} alt='' role='presentation' />
       </div>
       <div className={classnames(classes.textContainer, classes.firstTextContainer)}>
         <h2 className={classes.title}>
-          {title}{' '}
+          <TextGradient title={title} />{' '}
         </h2>
         <p>{description}</p>
       </div>
