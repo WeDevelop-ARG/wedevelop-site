@@ -1,0 +1,43 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.notFoundSection {
+  position: relative;
+  display: flex;
+  height: 86vh;
+  overflow: hidden;
+}
+
+.textContainer {
+  margin: auto 0;
+
+  > h1 {
+    font-size: 80px;
+    line-height: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 27px;
+  }
+
+  > h2 {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: 1.2px;
+    margin-bottom: 13px;
+  }
+
+  > p {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 58px;
+    letter-spacing: 1.2px;
+    margin-bottom: 16px;;
+  }
+}
+
+.astronaut {
+  width: 456px;
+  height: 594px;
+  position: absolute;
+  top: 18px;
+  right: -46px;
+}
