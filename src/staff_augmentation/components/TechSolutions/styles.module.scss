@@ -4,6 +4,7 @@
 .subSection {
   display: flex;
   flex-direction: column;
+  position: relative;
 
   & > .title {
     margin-bottom: 50px;
@@ -114,6 +115,25 @@
 }
 
 .hiddenTextContainer {
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.circleEmpty {
+  height: 77%;
+  width: 32%;
+  border: 6px solid #F8B75F;
+  border-radius: 50%;
+  position: absolute;
+  top: -65%;
+  right: -316px;
+  overflow: hidden;
+
+  @include for-tablet-down {
+    display: none;
+  }
+
   @include for-phone-only {
     display: none;
   }

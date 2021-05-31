@@ -12,6 +12,7 @@ const TechSolutions = ({ presentationPhotoURL, title, imageContainer, descriptio
       <div className={imageContainer ? classes.rightImageContainer : classes.leftImageContainer}>
         <img src={presentationPhotoURL} alt='' role='presentation' />
       </div>
+      <span className={imageContainer ? classes.circleEmpty : ''}> </span>
       <div className={classnames(classes.textContainer, classes.firstTextContainer)}>
         <h2 className={classes.title}>
           <TextGradient title={title} />{' '}
