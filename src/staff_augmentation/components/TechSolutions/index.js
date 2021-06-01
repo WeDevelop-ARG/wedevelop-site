@@ -1,23 +1,15 @@
-import classnames from 'classnames'
-import TextGradient from 'main_app/components/TextGradient'
-
 import classes from './styles.module.scss'
 
-const TechSolutions = ({ presentationPhotoURL, title, imageContainer, description }) => {
+function TechSolutions ({ title, description, imageURL, imageAtRight }) {
   return (
     <div className={classes.subSection}>
-      <h2 className={classes.title}>
-        <TextGradient title={title} />
-      </h2>
-      <div className={imageContainer ? classes.rightImageContainer : classes.leftImageContainer}>
-        <img src={presentationPhotoURL} alt='' role='presentation' />
+      <h2 className={classes.title}>{title}</h2>
+      <div className={imageAtRight ? classes.rightImageContainer : classes.leftImageContainer}>
+        <img src={imageURL} alt='' role='presentation' />
       </div>
-      <span className={imageContainer ? classes.circleEmpty : ''}> </span>
-      <div className={classnames(classes.textContainer, classes.firstTextContainer)}>
-        <h2 className={classes.title}>
-          <TextGradient title={title} />{' '}
-        </h2>
-        <p>{description}</p>
+      <div className={classes.description}>
+        <h2 className={classes.title}>{title}</h2>
+        {description}
       </div>
     </div>
   )

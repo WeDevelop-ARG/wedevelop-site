@@ -1,9 +1,9 @@
 import classes from './styles.module.scss'
 
-const TextGradient = ({ title }) => {
+function BrandGradient ({ children }) {
   return (
-    <h2 className={classes.gradientText}>{title}</h2>
+    <span className={classes.gradientText}>{children}</span>
   )
 }
 
-export default TextGradient
+export default BrandGradient

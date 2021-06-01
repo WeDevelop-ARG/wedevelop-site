@@ -35,6 +35,7 @@
   padding-bottom: 26px;
   flex-grow: 0;
   height: fit-content;
+  margin: 0 auto 20px;
 
   @include for-tablet-up {
     min-width: calc(50% - 20px);
@@ -59,7 +60,6 @@
 
 .leftImageContainer {
   padding-left: 26px;
-  margin: 0 auto 20px;
 
   @include for-tablet-up {
     margin: auto 20px auto 0;
@@ -73,7 +73,6 @@
 
 .rightImageContainer {
   padding-right: 26px;
-  margin: 0 auto 20px;
 
   @include for-tablet-up {
     margin: auto 0 auto 20px;
@@ -92,7 +91,7 @@
   border-left: 9px solid #773E9A;
 }
 
-.textContainer {
+.description {
   & > .title {
     display: none;
     padding-left: 25px;
@@ -107,33 +106,5 @@
     & > p {
       padding-left: 25px;
     }
-  }
-}
-
-.upgradeButton {
-  margin-left: 25px;
-}
-
-.hiddenTextContainer {
-  @include for-phone-only {
-    display: none;
-  }
-}
-
-.circleEmpty {
-  height: 77%;
-  width: 32%;
-  border: 6px solid #F8B75F;
-  border-radius: 50%;
-  position: absolute;
-  top: -65%;
-  right: -316px;
-
-  @include for-tablet-down {
-    display: none;
-  }
-
-  @include for-phone-only {
-    display: none;
   }
 }

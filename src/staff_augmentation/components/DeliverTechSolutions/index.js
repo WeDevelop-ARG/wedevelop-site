@@ -5,23 +5,25 @@ import classes from './styles.module.scss'
 
 function DeliverTechSolutions () {
   const techSolutions = useTechSolutions()
+
   return (
     <section className={classes.techSolutionsSection}>
-      {techSolutions.map((
-        {
-          id,
-          presentationPhotoURL,
-          title,
-          imageContainer,
-          description
-        }) => (
-          <TechSolutions
-            key={id}
-            presentationPhotoURL={presentationPhotoURL}
-            title={title}
-            imageContainer={imageContainer}
-            description={description}
-          />))}
+      {techSolutions.map(({
+        id,
+        imageURL,
+        title,
+        imageContainer,
+        description
+      }, index) => (
+        <TechSolutions
+          key={id}
+          imageURL={imageURL}
+          title={title}
+          imageContainer={imageContainer}
+          description={description}
+          imageAtRight={index % 2 !== 0}
+        />
+      ))}
     </section>
   )
 }
