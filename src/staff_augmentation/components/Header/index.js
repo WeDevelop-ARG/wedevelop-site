@@ -4,7 +4,7 @@ import ClutchWidget from 'main_app/components/ClutchWidget'
 import Modal from 'main_app/components/Modal'
 import FreeQuoteForm from '../FreeQuoteForm'
 import ConfirmationMessage from '../ConfirmationMessage'
-import EntrepreneurLaptop from 'assets/staff_augmentation/entrepreneur_laptop.png'
+import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
 import TopCompaniesBadge from 'assets/staff_augmentation/top_companies_badge.png'
 
 import classes from './styles.module.scss'
@@ -44,7 +44,7 @@ function Header () {
             </div>
           </div>
           <div className={classes.visualsContainer}>
-            <img src={EntrepreneurLaptop} alt='' role='presentation' className={classes.entrepreneurLaptop} />
+            <img src={AbelLaptop} alt='' role='presentation' className={classes.entrepreneurLaptop} />
             <div className={classes.widgetsContainer}>
               <ClutchWidget className={classes.clutchWidget} variant='dark' />
               <img src={TopCompaniesBadge} alt='' role='presentation' className={classes.topCompaniesBadge} />
