@@ -54,13 +54,6 @@
   }
 }
 
-.gradientText {
-  background: $mainGradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .descriptionText {
   line-height: 28px;
   letter-spacing: 1.2px;
