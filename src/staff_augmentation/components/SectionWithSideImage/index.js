@@ -1,8 +1,10 @@
+import classnames from 'classnames'
+
 import classes from './styles.module.scss'
 
-function TechSolutions ({ title, description, imageURL, imageAtRight }) {
+function SectionWithSideImage ({ className, title, description, imageURL, imageAtRight }) {
   return (
-    <div className={classes.subSection}>
+    <section className={classnames(classes.container, { [className]: className })}>
       <h2 className={classes.title}>{title}</h2>
       <div className={imageAtRight ? classes.rightImageContainer : classes.leftImageContainer}>
         <img src={imageURL} alt='' role='presentation' />
@@ -11,8 +13,8 @@ function TechSolutions ({ title, description, imageURL, imageAtRight }) {
         <h2 className={classes.title}>{title}</h2>
         {description}
       </div>
-    </div>
+    </section>
   )
 }
 
-export default TechSolutions
+export default SectionWithSideImage

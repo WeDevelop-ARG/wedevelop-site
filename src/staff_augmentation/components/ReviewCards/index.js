@@ -8,9 +8,9 @@ function ReviewCards ({ title, reviews }) {
       <h3 className={classes.titleText}>{title}</h3>
       <div className={classes.cardsContainer}>
         {
-          reviews.map(({ quote, stars, project }, index) => (
+          reviews.map(({ id, quote, stars, project }) => (
             <Review
-              key={index}
+              key={id}
               quote={quote}
               stars={stars}
               project={project}

@@ -1,4 +1,5 @@
 import { useRouteMatch } from 'react-router'
+import classnames from 'classnames'
 
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
@@ -8,10 +9,12 @@ import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
-import GetYourQuote from './components/GetYourQuote'
-import DeliverTechSolutions from './components/DeliverTechSolutions'
+import FullSizeCTA from './components/FullSizeCTA'
+import SectionWithSideImage from './components/SectionWithSideImage'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
+
+import classes from './styles.module.scss'
 
 function LandingPage () {
   const { params } = useRouteMatch('/:name')
@@ -41,8 +44,33 @@ function LandingPage () {
           title={landing.reviews.title}
           reviews={landing.reviews.reviews}
         />
-        <DeliverTechSolutions />
-        <GetYourQuote />
+        {landing.sectionsWithSideImage.map(({
+          id,
+          imageURL,
+          title,
+          imageContainer,
+          description
+        }, index) => (
+          <SectionWithSideImage
+            key={id}
+            imageURL={imageURL}
+            title={title}
+            imageContainer={imageContainer}
+            description={description}
+            imageAtRight={index % 2 !== 0}
+            className={classnames({
+              [classes.firstSectionWithSideImage]: index === 0,
+              [classes.lastSectionWithSideImage]: index === landing.sectionsWithSideImage.length - 1
+            })}
+          />
+        ))}
+        <FullSizeCTA
+          title={landing.fullSizeCTA.title}
+          subTitle={landing.fullSizeCTA.subTitle}
+          ctaText={landing.fullSizeCTA.ctaText}
+          ctaToPath={landing.fullSizeCTA.ctaToPath}
+          ctaIncentive={landing.fullSizeCTA.ctaIncentive}
+        />
       </Article>
       <Footer variant='light' />
     </>

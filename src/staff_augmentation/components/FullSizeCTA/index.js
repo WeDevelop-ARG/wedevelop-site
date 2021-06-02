@@ -1,39 +1,37 @@
 import { HashLink } from 'react-router-hash-link'
-import usegetYourQuote from '../../../hooks/useGetYourQuote'
 
 import Button from 'main_app/components/Button'
 
 import classes from './styles.module.scss'
 
-function GetYourQuote () {
-  const {
-    subHeading,
-    title,
-    nameButton,
-    subTextButton
-  } = usegetYourQuote()
-
+function FullSizeCTA ({
+  title,
+  subTitle,
+  ctaText,
+  ctaToPath = '#top',
+  ctaIncentive
+}) {
   return (
     <section className={classes.getYourQuoteSection}>
       <div className={classes.container}>
         <div className={classes.leftColumn}>
-          <h3 className={classes.subheadingText}>{subHeading}</h3>
+          <h3 className={classes.subheadingText}>{subTitle}</h3>
           <h2>{title}</h2>
         </div>
         <div className={classes.rightColumn}>
           <Button
             as={HashLink}
-            to='#top'
+            to={ctaToPath}
             smooth
             className={classes.getYourQuoteButton}
           >
-            {nameButton}
+            {ctaText}
           </Button>
-          <div className={classes.subText}>{subTextButton}</div>
+          {ctaIncentive && <div className={classes.subText}>{ctaIncentive}</div>}
         </div>
       </div>
     </section>
   )
 }
 
-export default GetYourQuote
+export default FullSizeCTA
