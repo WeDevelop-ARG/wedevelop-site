@@ -54,14 +54,7 @@
   }
 }
 
-.descriptionText {
-  line-height: 28px;
-  letter-spacing: 1.2px;
-  margin-bottom: 0px;
-}
-
-.highlightedText {
-  font-weight: 700;
+.description > p {
   line-height: 28px;
   letter-spacing: 1.2px;
 }
@@ -129,7 +122,7 @@
 
 .widgetsContainer {
   display: flex;
-  
+
   @include for-phone-only {
     margin: auto;
     margin-top: 12px;
