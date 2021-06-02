@@ -1,18 +1,14 @@
 import Review from './Review'
-import useReviews from './use_reviews'
 
 import classes from './styles.module.scss'
 
-function ReviewCards () {
-  const reviews = useReviews()
+function ReviewCards ({ title, reviews }) {
   return (
     <section id='reviews-section' className={classes.reviewsSection}>
-      <h3 className={classes.titleText}>
-        The top IT Staff Augmentation Agency so they say...
-      </h3>
+      <h3 className={classes.titleText}>{title}</h3>
       <div className={classes.cardsContainer}>
         {
-          reviews.map(({ index, quote, stars, project }) => (
+          reviews.map(({ quote, stars, project }, index) => (
             <Review
               key={index}
               quote={quote}

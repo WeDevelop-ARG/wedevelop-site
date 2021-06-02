@@ -37,7 +37,10 @@ function LandingPage () {
           formDescription={landing.header.formDescription}
           sideImageURL={landing.header.sideImageURL}
         />
-        <ReviewCards />
+        <ReviewCards
+          title={landing.reviews.title}
+          reviews={landing.reviews.reviews}
+        />
         <DeliverTechSolutions />
         <GetYourQuote />
       </Article>
