@@ -1,4 +1,4 @@
-import EntrepreneurLaptop from 'assets/staff_augmentation/entrepreneur_laptop.png'
+import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
 
 const TEXTS_HEADER = [{
   title: <>Hire top web developers <span>in 48h</span></>,
@@ -6,7 +6,7 @@ const TEXTS_HEADER = [{
   highlightedText: 'Fast, without the hiring hassles.',
   availableDetails: <span>Sign Up to Get Rates &amp; Available Staff Details</span>,
   subTextButton: 'We typically reply every email within an hour.',
-  presentationPhotoURL: EntrepreneurLaptop
+  presentationPhotoURL: AbelLaptop
 }]
 
 function useTextsHeader () {

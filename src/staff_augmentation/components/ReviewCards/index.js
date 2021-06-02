@@ -1,5 +1,5 @@
-import Review from 'main_app/components/Review'
-import useReviews from 'utils/marketing/use_reviews'
+import Review from './Review'
+import useReviews from './use_reviews'
 
 import classes from './styles.module.scss'
 
