@@ -39,6 +39,7 @@ function LandingPage () {
           description={landing.header.description}
           formDescription={landing.header.formDescription}
           sideImageURL={landing.header.sideImageURL}
+          submitButtonText={landing.header.submitButtonText}
         />
         <ReviewCards
           title={landing.reviews.title}

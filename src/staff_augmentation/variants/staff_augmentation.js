@@ -11,22 +11,19 @@ const staffAugmentation = {
     description: 'Stop Interviewing. Start making money. We send you rates and available team within the hour, and make the Staff available to start in 7 days.'
   },
   header: {
-    title: <>Hire top web developers <BrandGradient>in 48h</BrandGradient></>,
+    title: <>The right <BrandGradient>IT Staffing agency for you</BrandGradient></>,
     description: (
       <>
         <p>Get access to the top Software Engineers in Latin America.</p>
-        <p>
-          <b>
-            Fast, without the hiring hassles.
-          </b>
-        </p>
+        <p><b>Fast, without the hiring hassles.</b></p>
       </>
     ),
     formDescription: 'Sign Up to Get Rates & Available Staff Details',
-    sideImageURL: AbelLaptop
+    sideImageURL: AbelLaptop,
+    submitButtonText: 'Get a free quote'
   },
   reviews: {
-    title: 'The top IT Staff Augmentation Agency so they say...',
+    title: 'The top IT Staffing as our customers say',
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
@@ -52,15 +49,16 @@ const staffAugmentation = {
   sectionsWithSideImage: [{
     id: '1',
     imageURL: MaleInVideocall,
-    title: <>Meet your next <BrandGradient>Web Developer today</BrandGradient></>,
+    title: <>Grow <BrandGradient>today</BrandGradient></>,
     description: (
       <>
-        <p>We send you a list of candidates today along with their rates and easy-to-read resumes.</p>
         <p>
-          <b>
-            Your time is too precious to be dealing with Recruiting, Screening, Selection,
-            Interviewing, Hiring, and more.
-          </b>
+          We send you a list of candidates today along with their rates
+          and easy-to-read resumes.
+        </p>
+        <p>
+          <b>Your time is too precious</b> to be dealing with Recruiting,
+          Screening, Selection, Interviewing, Hiring, and more.
         </p>
         <p>Let us alleviate that burden. Save time. Grow Efficiently.</p>
       </>
@@ -68,17 +66,18 @@ const staffAugmentation = {
   }, {
     id: '2',
     imageURL: MaleUsingComputer,
-    title: <>Hire Top Web Developers <BrandGradient>Without Hassle</BrandGradient></>,
+    title: <>Hire Top Talent Only, <BrandGradient>Without Hassle</BrandGradient></>,
     description: (
       <>
         <p>
-          Hiring the right developer is hard. Especially if you're looking for someone with specific
-          skills and experience in a particular language or technology.
+          Hiring the right person is hard. Especially if you're looking for someone with
+          specific skills and experience in a particular tecnology.
         </p>
         <p>
-          At, WeDevelop, we match developers to clients based on skill sets, interests, and location
-          & provide several options that meet your requirements. Hire top talent from around In Latin
-          America without having to go through the hassle of interviewing them yourself.
+          At, WeDevelop, we match people to clients based on skill sets, interests, culture,
+          and location & provide several options that meet your requirements. Hire top
+          talent from around In Latin America without having to go through the hassle of
+          interviewing them yourself.
         </p>
         <p>Focus on other important things such as growing your business and meeting deadlines.</p>
       </>
@@ -89,10 +88,10 @@ const staffAugmentation = {
     title: <>Save time, <BrandGradient>grow faster</BrandGradient></>,
     description: (
       <>
-        <p>Hiring the wrong developers can cost thousands of dollars and hours of wasted time.</p>
+        <p>Hiring the wrong person can cost thousands of dollars and hours of wasted time.</p>
         <p>At WeDevelop, we've already put in the groundwork.</p>
         <p>
-          We have access to the best developers for your company’s needs, allowing you to focus
+          We have access to the best Talent for your company’s needs, allowing you to focus
           on growing your business instead of trying to find new staff members.
         </p>
         <p>

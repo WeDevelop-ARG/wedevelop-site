@@ -12,7 +12,8 @@ function Header ({
   title,
   description,
   formDescription,
-  sideImageURL
+  sideImageURL,
+  submitButtonText
 }) {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const handleSubmitFinished = useCallback(() => {
@@ -32,7 +33,10 @@ function Header ({
             <hr className={classes.horizontalBar} />
             <p>{formDescription}</p>
             <div id='get-free-quote' className={classes.formContainer}>
-              <FreeQuoteForm onSubmitFinished={handleSubmitFinished} />
+              <FreeQuoteForm
+                onSubmitFinished={handleSubmitFinished}
+                submitButtonText={submitButtonText}
+              />
             </div>
             <div className={classes.formDisclaimer}>
               <p>We typically reply every email within an hour.</p>
