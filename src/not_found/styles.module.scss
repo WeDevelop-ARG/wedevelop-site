@@ -6,27 +6,26 @@
   display: flex;
   height: 100vh;
   overflow: hidden;
-  background-image: url('../assets/not_found/mobile_background.png');
-  background-repeat: no-repeat;
-  background-size: 95% 95vh;
-  background-position: center;
+  background:
+    url('../assets/not_found/mobile_background.png')
+    no-repeat
+    center
+    center
+    fixed
+  ;
+  background-size: cover;
 
   @include for-tablet-up {
     background-image: url('../assets/not_found/tablet_background.png');
-    background-repeat: no-repeat;
-    background-size: 100% 95vh;
-    background-position: center;
   }
 
   @include for-desktop-up {
     background-image: url('../assets/not_found/desktop_background.png');
-    background-repeat: no-repeat;
-    background-size: 100% 98vh;
-    background-position: center;
   }
 }
 
 .textContainer {
+  z-index: 1;
   margin: auto 0 20% 0;
 
   @include for-tablet-up {
@@ -107,6 +106,10 @@
   }
 
   @include for-desktop-up {
+    top: -56px;
+  }
+
+  @media screen and (min-width: 1230px) {
     top: 18px;
   }
 }
