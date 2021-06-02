@@ -18,52 +18,46 @@ function Header () {
     setIsSubmitted(false)
   }, [])
 
-  const textsHeader = useTextsHeader()
+  const {
+    title,
+    description,
+    highlightedText,
+    availableDetails,
+    subTextButton,
+    presentationPhotoURL
+  } = useTextsHeader()
 
   return (
     <>
       <section id='headerSection' className={classes.headerContainer}>
-        {textsHeader.map((
-          {
-            index,
-            title,
-            description,
-            highlightedText,
-            availableDetails,
-            subTextButton,
-            presentationPhotoURL
-          }) => (
-            <div className={classes.wrapper} key={index}>
-              <div className={classes.presentationContainer}>
-                <h1 className={classes.titleText}>
-                  {title}
-                </h1>
-                <p className={classes.descriptionText}>
-                  {description}
-                </p>
-                <p className={classes.highlightedText}>{highlightedText}</p>
-                <hr className={classes.horizontalBar} />
-                <p>
-                  {availableDetails}
-                </p>
-                <div id='get-free-quote' className={classes.formContainer}>
-                  <FreeQuoteForm onSubmitFinished={handleSubmitFinished} />
-                </div>
-                <div className={classes.formDisclaimer}>
-                  <p>
-                    {subTextButton}
-                  </p>
-                </div>
-              </div>
-              <div className={classes.visualsContainer}>
-                <img src={presentationPhotoURL} alt='' role='presentation' className={classes.entrepreneurLaptop} />
-                <div className={classes.widgetsContainer}>
-                  <ClutchWidget className={classes.clutchWidget} variant='dark' />
-                  <img src={TopCompaniesBadge} alt='' role='presentation' className={classes.topCompaniesBadge} />
-                </div>
-              </div>
+        <div className={classes.wrapper}>
+          <div className={classes.presentationContainer}>
+            <h1 className={classes.titleText}>
+              {title}
+            </h1>
+            <p className={classes.descriptionText}>
+              {description}
+            </p>
+            <p className={classes.highlightedText}>{highlightedText}</p>
+            <hr className={classes.horizontalBar} />
+            <p>
+              {availableDetails}
+            </p>
+            <div id='get-free-quote' className={classes.formContainer}>
+              <FreeQuoteForm onSubmitFinished={handleSubmitFinished} />
             </div>
-        ))}
+            <div className={classes.formDisclaimer}>
+              <p>{subTextButton}</p>
+            </div>
+          </div>
+          <div className={classes.visualsContainer}>
+            <img src={presentationPhotoURL} alt='' role='presentation' className={classes.entrepreneurLaptop} />
+            <div className={classes.widgetsContainer}>
+              <ClutchWidget className={classes.clutchWidget} variant='dark' />
+              <img src={TopCompaniesBadge} alt='' role='presentation' className={classes.topCompaniesBadge} />
+            </div>
+          </div>
+        </div>
       </section>
       <Modal
         isOpen={isSubmitted}
