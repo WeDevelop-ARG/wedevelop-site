@@ -22,15 +22,7 @@
 
 .presentationContainer {
   position: relative;
-
-  @include for-tablet-up {
-    padding-top: 136px;
-    width: 450px;
-  }
-
-  @include for-desktop-up {
-    width: 525px;
-  }
+  max-width: 525px;
 }
 
 .titleText {
@@ -40,15 +32,11 @@
   font-size: 32px;
 
   @include for-tablet-up {
-    width: 450px;
     font-size: 42px;
     line-height: 60px;
-    position: absolute;
-    top: 0;
   }
 
   @include for-desktop-up {
-    width: 525px;
     font-size: 52px;
     margin-bottom: 30px;
   }
