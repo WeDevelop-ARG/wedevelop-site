@@ -10,7 +10,7 @@ import FormLogic from './FormLogic'
 
 import classes from './styles.module.scss'
 
-function FreeQuoteForm ({ onSubmitFinished }) {
+function FreeQuoteForm ({ onSubmitFinished, submitButtonText }) {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
     classes.fieldWithError
@@ -59,7 +59,7 @@ function FreeQuoteForm ({ onSubmitFinished }) {
           variant='primary'
           className={classes.buttonStyles}
         >
-          Get a free quote
+          {submitButtonText}
         </SubmitButton>
       </div>
     </FormLogic>

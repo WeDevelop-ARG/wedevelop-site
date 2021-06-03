@@ -1,0 +1,13 @@
+@import 'styles/media_queries.scss';
+
+.firstSectionWithSideImage {
+  padding-top: 220px;
+}
+
+.lastSectionWithSideImage {
+  padding-bottom: 100px;
+
+  @include for-phone-only {
+    display: none;
+  }
+}

@@ -17,14 +17,21 @@ import Logo from '../Logo'
 
 import classes from './styles.module.scss'
 
-function NavBar ({ variant, show = true, pathLogo = '/#top', hideMenu = false }, ref) {
+function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top', hideMenu = false }, ref) {
   // TODO: add accessibility https://react-spectrum.adobe.com/react-aria/useMenuTrigger.html
   const [menuOpen, setMenuOpen] = useState(false)
-  const [atTop, observerRef] = useOverlappingObserver({
+  const [atScrollTop, observerRef] = useOverlappingObserver({
     root: document.body,
     ignoreHeight: true
   })
   const containerRef = useCombinedRefs(ref, observerRef)
+
+  variant = useMemo(() => {
+    if (atScrollTop && variantAtScrollTop) return variantAtScrollTop
+
+    return variant
+  }, [atScrollTop, variant, variantAtScrollTop])
+
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
     defaults: {
@@ -48,7 +55,6 @@ function NavBar ({ variant, show = true, pathLogo = '/#top', hideMenu = false },
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
-  console.log(pathLogo, hideMenu)
 
   return (
     <header
@@ -56,7 +62,7 @@ function NavBar ({ variant, show = true, pathLogo = '/#top', hideMenu = false },
       aria-hidden={!show}
       className={classnames(classes.header, variantClassNames, {
         [classes.menuOpen]: menuOpen,
-        [classes.atTop]: atTop,
+        [classes.atTop]: atScrollTop,
         [classes.hidden]: !show
       })}
     >
