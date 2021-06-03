@@ -11,16 +11,17 @@ function Routes () {
       <Route exact path='/'>
         <Landing />
       </Route>
-      <StaffAugmentationRoutes />
       <Route path='/contact'>
         <ContactUs />
       </Route>
       <Route path='/privacy-policy'>
         <PrivacyPolicy />
       </Route>
-      <Route path='/'>
-        <NotFound />
-      </Route>
+      <StaffAugmentationRoutes>
+        <Route path='/'>
+          <NotFound />
+        </Route>
+      </StaffAugmentationRoutes>
     </Switch>
   )
 }
