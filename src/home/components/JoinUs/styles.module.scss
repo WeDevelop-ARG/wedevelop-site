@@ -1,0 +1,31 @@
+.subTitle {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  line-height: 40px;
+  margin: 0;
+}
+
+.email {
+  color: #8E54E9;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  line-height: 35px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.description {
+  letter-spacing: 0.6px;
+  line-height: 35px;
+  margin: 27px 0px 25px 0px;
+
+  >span {
+    color: #A7AFC3;
+  }
+}
+
+.joinUs {
+  text-align: center;
+  padding-top: 70px;
+}
