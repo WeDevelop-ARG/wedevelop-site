@@ -4,6 +4,7 @@ import NavBar from 'main_app/components/NavBar'
 
 import Header from './components/Header'
 import Article from 'main_app/components/Article'
+import Footer from 'main_app/components/Footer'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
@@ -29,6 +30,7 @@ function Landing () {
       <Article>
         <Header ref={headerRef} />
       </Article>
+      <Footer variant='light' />
     </>
   )
 }
