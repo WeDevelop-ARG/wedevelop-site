@@ -1,0 +1,26 @@
+.service {
+  width: 33%;
+  padding: 60px 15px 0px 8px;
+  text-align: left;
+}
+
+.description {
+  color: #A7AFC3;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  line-height: 35px;
+
+  >span {
+    color: #272A40; 
+  }
+}
+
+.nameService {
+  margin: 16px 0px 12px 0px;
+  padding-bottom: 16px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  line-height: 40px;
+  border-bottom: 1px solid #F0F1F5;
+}
