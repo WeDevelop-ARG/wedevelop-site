@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import NavBar from 'main_app/components/NavBar'
 
 import Header from './components/Header'
+import Skills from './components/Skills'
 import Article from 'main_app/components/Article'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
@@ -28,6 +29,7 @@ function Landing () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header ref={headerRef} />
+        <Skills />
       </Article>
     </>
   )

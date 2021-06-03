@@ -1,0 +1,28 @@
+.skill {
+  width: 25%;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.logoSkill {
+  transition: filter 0.3s ease-in-out;
+  filter: grayscale(1);
+  margin-bottom: 45px;
+  height: 95px;
+}
+
+.skill:hover .logoSkill {
+  filter: grayscale(0);
+}
+
+.nameSkill {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  line-height: 35px;
+}
+
+.skill:hover .nameSkill {
+  color: #8E54E9;
+}
+
