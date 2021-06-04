@@ -1,3 +1,5 @@
+@import '/src/styles/media_queries.scss';
+
 .subHeading {
   margin: 0px 0px 28px 0px;
   letter-spacing: 1px;
@@ -13,4 +15,33 @@
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+}
+
+@include for-desktop-up {
+  .serviceList {
+    padding: 0 72px;
+  }
+}
+
+@include for-tablet-up {
+  .subHeading {
+    font-size: 40px;
+  }
+}
+
+@include for-phone-only {
+  .subHeading {
+    margin: 0 0 36px 0;
+    font-size: 30px;
+    letter-spacing: 0.6px
+  }
+
+  .services {
+    margin-top: 72px;
+  }
+
+  .serviceList {
+    flex-direction: column;
+    padding: 0 26px;
+  }
 }
