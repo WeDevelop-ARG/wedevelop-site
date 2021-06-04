@@ -6,7 +6,7 @@ function Services () {
   const services = useService()
 
   return (
-    <div className={classes.services}>
+    <section className={classes.services}>
       <h2 className={classes.subHeading}>What we do</h2>
       <ul className={classes.serviceList}>
         {services.map(({
@@ -15,15 +15,16 @@ function Services () {
           description,
           photo
         }, index) => (
-          <Service
-            key={id}
-            name={name}
-            description={description}
-            photo={photo}
-          />
+          <li className={classes.service} key={id}>
+            <Service
+              name={name}
+              description={description}
+              photo={photo}
+            />
+          </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 

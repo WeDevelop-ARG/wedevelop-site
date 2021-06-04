@@ -1,46 +1,42 @@
-import webDevelopment from 'assets/home/web_development.svg'
-import consultingServices from 'assets/home/consulting_services.svg'
-import outsourcing from 'assets/home/outsourcing.svg'
-
 const services = [{
   id: '1',
-  name: 'Web Development',
+  name: <b>Web Development</b>,
   description: (
     <>
-      From basic institutional webpages to large Web Applications, we create solutions <b />
-      <span>
+      From basic institutional webpages to large Web Applications, we create solutions&nbsp;
+      <b>
         focused on scalability, performance, and user experience.
-      </span>
+      </b>
     </>
   ),
-  photo: webDevelopment
+  photo: 'home/web_development'
 },
 {
   id: '2',
-  name: 'Consulting Services',
+  name: <b>Consulting Services</b>,
   description: (
     <>
-      Our extensive experience allows us to help you with decisions regarding your daily work. We help you to <b />
-      <span>
+      Our extensive experience allows us to help you with decisions regarding your daily work. We help you to&nbsp;
+      <b>
         find improvement opportunities.
-      </span>
+      </b>
     </>
   ),
-  photo: consultingServices
+  photo: 'home/consulting_services'
 },
 {
   id: '3',
-  name: 'Outsourcing',
+  name: <b>Outsourcing</b>,
   description: (
     <>
-      We provide <b />
-      <span>
-        the human resources you need, <b />
-      </span>
+      We provide&nbsp;
+      <b>
+        the human resources you need,&nbsp;
+      </b>
       either an entire and independent team or specific professionals for your projects.
     </>
   ),
-  photo: outsourcing
+  photo: 'home/outsourcing'
 }
 ]
 

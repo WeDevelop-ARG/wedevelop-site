@@ -1,46 +1,21 @@
 @import '/src/styles/media_queries.scss';
 
-.service {
-  width: 33%;
-  padding: 60px 15px 0px 8px;
-  text-align: left;
-}
-
 .description {
-  color: #A7AFC3;
-  font-size: 18px;
   letter-spacing: 0.6px;
   line-height: 35px;
-
-  >span {
-    color: #272A40; 
-  }
 }
 
 .nameService {
   margin: 16px 0px 12px 0px;
   padding-bottom: 16px;
-  font-size: 32px;
-  font-weight: 700;
   letter-spacing: 0.6px;
   line-height: 40px;
   border-bottom: 1px solid #F0F1F5;
 }
 
-@include for-desktop-up {
-  .service {
-    padding: 0 32px;
-  }
-}
-
 @include for-tablet-up {
   .nameService {
-    font-size: 25px;
     padding-bottom: 8px;
-  }
-
-  .service {
-    padding: 24px;
   }
 }
 
@@ -48,18 +23,10 @@
   .nameService {
     margin: 16px 0;
     padding-bottom: 16px;
-    font-size: 22px;
     letter-spacing: 0.44px;
   }
 
-  .service {
-    width: auto;
-    padding: 0;
-    text-align: center;
-  }
-
   .description {
-    font-size: 16px;
     line-height: 28px;
   }
 }
