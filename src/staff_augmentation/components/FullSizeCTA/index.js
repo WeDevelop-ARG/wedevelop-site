@@ -4,28 +4,34 @@ import Button from 'main_app/components/Button'
 
 import classes from './styles.module.scss'
 
-function GetYourQuote () {
+function FullSizeCTA ({
+  title,
+  subTitle,
+  ctaText,
+  ctaToPath = '#top',
+  ctaIncentive
+}) {
   return (
     <section className={classes.getYourQuoteSection}>
       <div className={classes.container}>
         <div className={classes.leftColumn}>
-          <h3 className={classes.subheadingText}>Get your quote now</h3>
-          <h2>Ready to grow your IT Staff?</h2>
+          <h3 className={classes.subheadingText}>{subTitle}</h3>
+          <h2>{title}</h2>
         </div>
         <div className={classes.rightColumn}>
           <Button
             as={HashLink}
-            to='#top'
+            to={ctaToPath}
             smooth
             className={classes.getYourQuoteButton}
           >
-            Get your quote now
+            {ctaText}
           </Button>
-          <div className={classes.subText}>We typically reply every email within an hour.</div>
+          {ctaIncentive && <div className={classes.subText}>{ctaIncentive}</div>}
         </div>
       </div>
     </section>
   )
 }
 
-export default GetYourQuote
+export default FullSizeCTA
