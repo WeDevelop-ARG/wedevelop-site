@@ -1,0 +1,55 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.ourPeopleSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  margin: 50px 0;
+
+  @include for-tablet-up {
+    flex-direction: row;
+  }
+}
+
+.textContainer {
+  >h2 {
+    letter-spacing: 1.2px;
+    line-height: 60px;
+    margin-bottom: 40px;
+  }
+
+  >p {
+    line-height: 34px;
+  }
+
+  @include for-tablet-up {
+    padding-right: 25px;
+  }
+}
+
+.gradientText {
+  background: $mainGradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.introductionImg {
+  width: 100%;
+  margin-top: 40px;
+
+  @include for-tablet-up {
+    width: 400px;
+    margin-top: 0;
+  }
+
+  @include for-desktop-up {
+    width: initial;
+
+    @media screen and (max-width: 1148px) {
+      width: 400px;
+    }
+  }
+}
