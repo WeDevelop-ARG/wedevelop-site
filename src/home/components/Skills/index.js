@@ -6,22 +6,23 @@ function Skills () {
   const skills = useSkill()
 
   return (
-    <div className={classes.altSection}>
-      <h2 className={classes.title}>We have all the skills you need</h2>
-      <ul className={classes.listSkill}>
+    <section className={classes.altSection}>
+      <h2 className={classes.title}>
+        We have all the skills you need
+      </h2>
+      <div className={classes.listSkill}>
         {skills.map(({
-          id,
           name,
           photo
         }, index) => (
           <Skill
-            key={id}
+            key={index}
             name={name}
             photo={photo}
           />
         ))}
-      </ul>
-    </div>
+      </div>
+    </section>
   )
 }
 

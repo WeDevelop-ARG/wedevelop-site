@@ -1,51 +1,42 @@
-import react from '../../assets/home/react.svg'
-import node from '../../assets/home/node.svg'
-import python from '../../assets/home/python.svg'
-import aws from '../../assets/home/aws.svg'
-import ruby from '../../assets/home/ruby.svg'
-import postgresql from '../../assets/home/postgresql.svg'
-import graphql from '../../assets/home/graphql.svg'
-import mongodb from '../../assets/home/mongodb.svg'
-
 const skills = [{
-  id: 1,
+  id: '1',
   name: 'React',
-  photo: react
+  photo: 'home/react'
 },
 {
-  id: 2,
+  id: '2',
   name: 'Node.js',
-  photo: node
+  photo: 'home/node'
 },
 {
-  id: 3,
+  id: '3',
   name: 'Python',
-  photo: python
+  photo: 'home/python'
 },
 {
-  id: 4,
+  id: '4',
   name: 'Amazon Web Services',
-  photo: aws
+  photo: 'home/aws'
 },
 {
-  id: 5,
+  id: '5',
   name: 'Ruby on Rails',
-  photo: ruby
+  photo: 'home/ruby'
 },
 {
-  id: 6,
+  id: '6',
   name: 'PostgreSQL',
-  photo: postgresql
+  photo: 'home/postgresql'
 },
 {
-  id: 7,
+  id: '7',
   name: 'GraphQL',
-  photo: graphql
+  photo: 'home/graphql'
 },
 {
-  id: 8,
+  id: '8',
   name: 'MongoDB',
-  photo: mongodb
+  photo: 'home/mongodb'
 }
 ]
 

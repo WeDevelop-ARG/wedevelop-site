@@ -1,11 +1,13 @@
+import SVGIcon from 'main_app/components/SVGIcon'
+
 import classes from './styles.module.scss'
 
-function Skill ({ id, name, photo }) {
+function Skill ({ name, photo }) {
   return (
-    <li className={classes.skill}>
-      <img className={classes.logoSkill} src={photo} alt='skillName' />
+    <div className={classes.skill}>
+      <SVGIcon className={classes.logoSkill} name={photo} />
       <p className={classes.nameSkill}>{name}</p>
-    </li>
+    </div>
   )
 }
 
