@@ -1,0 +1,8 @@
+@import "/src/styles/theme.scss";
+
+.gradientText {
+  background: $mainGradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

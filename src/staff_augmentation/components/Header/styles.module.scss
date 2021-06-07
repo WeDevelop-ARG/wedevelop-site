@@ -22,15 +22,7 @@
 
 .presentationContainer {
   position: relative;
-
-  @include for-tablet-up {
-    padding-top: 136px;
-    width: 450px;
-  }
-
-  @include for-desktop-up {
-    width: 525px;
-  }
+  max-width: 525px;
 }
 
 .titleText {
@@ -40,35 +32,17 @@
   font-size: 32px;
 
   @include for-tablet-up {
-    width: 450px;
     font-size: 42px;
     line-height: 60px;
-    position: absolute;
-    top: 0;
   }
 
   @include for-desktop-up {
-    width: 525px;
     font-size: 52px;
     margin-bottom: 30px;
   }
 }
 
-.gradientText {
-  background: $mainGradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.descriptionText {
-  line-height: 28px;
-  letter-spacing: 1.2px;
-  margin-bottom: 0px;
-}
-
-.highlightedText {
-  font-weight: 700;
+.description > p {
   line-height: 28px;
   letter-spacing: 1.2px;
 }
@@ -130,16 +104,20 @@
 
   @include for-desktop-up {
     width: 455px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 }
 
 .widgetsContainer {
   display: flex;
-  
+
   @include for-phone-only {
     margin: auto;
     margin-top: 12px;
+  }
+
+  @include for-tablet-up {
+    justify-content: flex-end;
   }
 }
 
