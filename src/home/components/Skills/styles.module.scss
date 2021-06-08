@@ -11,7 +11,7 @@
 .listSkill {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
   gap: 50px;
 }
 
@@ -47,15 +47,10 @@
     letter-spacing: 0.6px;
     line-height: 36px;
   }
-
-  .listSkill {
-    padding: 0 64px;
-  }
 }
 
 @include for-tablet-down {
   .listSkill {
-    grid-template-columns: repeat(3, 200px);
     margin: 0;
   }
 
