@@ -52,6 +52,8 @@ async function handlePostRequest (req, res) {
     return res.status(403).end()
   }
 
+  console.log('STAFF_AUGMENTATION_FORM_SUBMIT', JSON.stringify(data))
+
   await sendEmail(data)
 
   const subscriber = await addSubscriberToMailchimp({
