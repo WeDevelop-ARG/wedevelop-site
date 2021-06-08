@@ -30,7 +30,7 @@ async function handlePostRequest (req, res) {
   const message = `
       New message received from Free Quote form, Staff Augmentation landing page.
 
-      ${req.body.name} says:
+      ${req.body.name} (${req.body.email}) says:
 
       ${req.body.message}
   `
@@ -39,9 +39,7 @@ async function handlePostRequest (req, res) {
       to: [{ email: CONTACT_FORM_DESTINATION_EMAIL }],
       subject: 'New message from WeDevelop site'
     }],
-    from: {
-      email: req.body.email
-    },
+    from: { email: CONTACT_FORM_DESTINATION_EMAIL },
     content: [{
       type: 'text/plain',
       value: message
