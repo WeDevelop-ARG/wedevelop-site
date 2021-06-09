@@ -3,7 +3,7 @@ import classes from './styles.module.scss'
 function JoinUs () {
   return (
     <section className={classes.joinUs}>
-      <h3 className={classes.subTitle}>Want to join us?</h3>
+      <h2 className={classes.subTitle}>Want to join us?</h2>
       <p className={classes.description}>
         We love to meet new people and have their ideas come alive in the projects we work.<br />If you share our
         <b>{' '}passion of working creatively and professionally</b>
