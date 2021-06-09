@@ -14,7 +14,7 @@ function Services () {
           name,
           description,
           photo
-        }, index) => (
+        }) => (
           <li className={classes.service} key={id}>
             <Service
               name={name}
