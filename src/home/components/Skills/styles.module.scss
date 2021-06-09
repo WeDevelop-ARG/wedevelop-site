@@ -1,0 +1,94 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.title {
+  margin: 100px 0px 100px 0px;
+  letter-spacing: 1px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.listSkill {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+  gap: 50px;
+}
+
+.altSection {
+  position: relative;
+  background-color: #F7F9FC;
+
+  &.altSection::before {
+    top: 0;
+    left: 0;
+    border-bottom: 210px solid transparent;
+    border-left: 240px solid $secondaryColor;
+  }
+
+  &.altSection::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 125px solid $secondaryColor;
+    border-left: 170px solid transparent;
+  }
+
+  &.altSection::before, &.altSection::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+@include for-desktop-up {
+  .title {
+    padding: 0 20px;
+    letter-spacing: 0.6px;
+    line-height: 36px;
+  }
+}
+
+@include for-tablet-down {
+  .listSkill {
+    margin: 0;
+  }
+
+  .altSection {
+  
+    &.altSection::before {
+      border-bottom: 0px solid transparent;
+      border-left: 0px solid $secondaryColor;
+    }
+  
+    &.altSection::after {
+      border-bottom: 0px solid $secondaryColor;
+      border-left: 0px solid transparent;
+    }
+  }
+}
+
+@include for-phone-only {
+  .skills {
+    margin-top: 93px;
+    padding: 56px 0 77px 0;
+  }
+
+  .listSkill {
+    margin: 0;
+    display: block;
+  }
+
+  .altSection {
+  
+    &.altSection::before {
+      border-bottom: 0px solid transparent;
+      border-left: 0px solid $secondaryColor;
+    }
+  
+    &.altSection::after {
+      border-bottom: 0px solid $secondaryColor;
+      border-left: 0px solid transparent;
+    }
+  }
+}
