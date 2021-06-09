@@ -26,12 +26,12 @@ function withNavBarContextProps (NavBarComponent) {
   }
 }
 
-const NavBarContextProxy = forwardRef(({ variant, pathLogo, hideMenu }, ref) => {
+const NavBarContextProxy = forwardRef(({ variant, variantAtScrollTop, pathLogo, hideMenu }, ref) => {
   const { setProps, setShow } = useContext(NavBarContext) ?? {}
 
   useEffect(() => {
-    setProps?.({ variant, ref, pathLogo, hideMenu })
-  }, [setProps, variant, ref, pathLogo, hideMenu])
+    setProps?.({ variant, variantAtScrollTop, ref, pathLogo, hideMenu })
+  }, [setProps, variant, variantAtScrollTop, ref, pathLogo, hideMenu])
 
   useEffect(() => {
     setShow?.(true)

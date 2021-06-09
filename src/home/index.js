@@ -5,6 +5,7 @@ import NavBar from 'main_app/components/NavBar'
 import Header from './components/Header'
 import Article from 'main_app/components/Article'
 import JoinUs from './components/JoinUs'
+import Footer from 'main_app/components/Footer'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
@@ -31,6 +32,7 @@ function Landing () {
         <Header ref={headerRef} />
         <JoinUs />
       </Article>
+      <Footer variant='light' />
     </>
   )
 }
