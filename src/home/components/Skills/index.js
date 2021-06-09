@@ -12,11 +12,12 @@ function Skills () {
       </h2>
       <div className={classes.listSkill}>
         {skills.map(({
+          id,
           name,
           photo
-        }, index) => (
+        }) => (
           <Skill
-            key={index}
+            key={id}
             name={name}
             photo={photo}
           />
