@@ -12,7 +12,7 @@ function OurPeople () {
         <p>Clients’ satisfaction is our goal, so we strive to always provide excellent software following the <b>best practices</b> and pursuing <b>cutting-edge technologies.</b></p>
         <p>We are also friendly people with professionalism and good vibes and we want everyone to feel that <b>working with us is like working with friends.</b></p>
       </div>
-      <img src={IntroductionImg} alt='' role='img' className={classes.introductionImg} />
+      <img src={IntroductionImg} alt='' className={classes.introductionImg} />
     </div>
   )
 }
