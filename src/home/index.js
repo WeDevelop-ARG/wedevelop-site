@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import NavBar from 'main_app/components/NavBar'
 
 import Header from './components/Header'
+import Skills from './components/Skills'
 import Services from './components/Services'
 import Methodologies from './components/Methodologies'
 import Article from 'main_app/components/Article'
@@ -33,6 +34,7 @@ function Landing () {
         <Header ref={headerRef} />
         <Services />
         <Methodologies />
+        <Skills />
       </Article>
       <Footer variant='light' />
     </>
