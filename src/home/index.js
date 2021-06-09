@@ -4,6 +4,9 @@ import NavBar from 'main_app/components/NavBar'
 
 import Header from './components/Header'
 import FullSizeCTA from 'staff_augmentation/components/FullSizeCTA'
+import Skills from './components/Skills'
+import Services from './components/Services'
+import Methodologies from './components/Methodologies'
 import Article from 'main_app/components/Article'
 import Footer from 'main_app/components/Footer'
 
@@ -35,6 +38,9 @@ function Landing () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header ref={headerRef} />
+        <Services />
+        <Methodologies />
+        <Skills />
         <FullSizeCTA
           title={FULLSIZECTA_TITLE}
           subTitle={FULLSIZECTA_SUBTITLE}
