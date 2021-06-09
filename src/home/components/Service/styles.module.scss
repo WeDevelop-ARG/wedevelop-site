@@ -1,0 +1,32 @@
+@import '/src/styles/media_queries.scss';
+
+.description {
+  letter-spacing: 0.6px;
+  line-height: 35px;
+}
+
+.nameService {
+  margin: 16px 0px 12px 0px;
+  padding-bottom: 16px;
+  letter-spacing: 0.6px;
+  line-height: 40px;
+  border-bottom: 1px solid #F0F1F5;
+}
+
+@include for-tablet-up {
+  .nameService {
+    padding-bottom: 8px;
+  }
+}
+
+@include for-phone-only {
+  .nameService {
+    margin: 16px 0;
+    padding-bottom: 16px;
+    letter-spacing: 0.44px;
+  }
+
+  .description {
+    line-height: 28px;
+  }
+}

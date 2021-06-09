@@ -3,6 +3,10 @@ import { useMemo } from 'react'
 import NavBar from 'main_app/components/NavBar'
 
 import Header from './components/Header'
+import FullSizeCTA from 'staff_augmentation/components/FullSizeCTA'
+import Skills from './components/Skills'
+import Services from './components/Services'
+import Methodologies from './components/Methodologies'
 import Article from 'main_app/components/Article'
 import JoinUs from './components/JoinUs'
 import Footer from 'main_app/components/Footer'
@@ -24,13 +28,28 @@ function Landing () {
 
     return ['solid', 'dark']
   }, [isNavBarOverHeader])
+  const FULLSIZECTA_TITLE = 'Schedule a call with us'
+  const FULLSIZECTA_SUBTITLE = 'Get in touch'
+  const CTA_TEXT = 'Contact Us'
+  const CTA_PATH = '/contact#top'
+  const CTA_INCENTIVE = 'We typically get back to you within an hour.'
 
   return (
     <>
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header ref={headerRef} />
+        <Services />
+        <Methodologies />
+        <Skills />
         <JoinUs />
+        <FullSizeCTA
+          title={FULLSIZECTA_TITLE}
+          subTitle={FULLSIZECTA_SUBTITLE}
+          ctaText={CTA_TEXT}
+          ctaToPath={CTA_PATH}
+          ctaIncentive={CTA_INCENTIVE} 
+        />
       </Article>
       <Footer variant='light' />
     </>
