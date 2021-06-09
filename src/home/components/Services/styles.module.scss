@@ -1,0 +1,62 @@
+@import '/src/styles/media_queries.scss';
+
+.subHeading {
+  margin: 0px 0px 28px 0px;
+  letter-spacing: 1px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.service {
+  width: 33%;
+  padding: 60px 15px 0px 8px;
+  text-align: left;
+}
+
+.services {
+  padding-top: calc(50px + var(--rootContentMinPadding));
+  background-color: #FFFFFF;
+}
+
+.serviceList {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@include for-desktop-up {
+  .serviceList {
+    padding: 0 72px;
+  }
+
+  .service {
+    padding: 0 32px;
+  }
+}
+
+@include for-tablet-up {
+  .service {
+    padding: 24px;
+  }
+}
+
+@include for-phone-only {
+  .subHeading {
+    margin: 0 0 20px 0;
+    letter-spacing: 0.6px
+  }
+
+  .service {
+    width: auto;
+    text-align: center;
+  }
+
+  .services {
+    margin-top: 72px;
+  }
+
+  .serviceList {
+    flex-direction: column;
+    padding: 0 26px;
+  }
+}

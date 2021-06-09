@@ -1,0 +1,29 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.joinUs {
+  text-align: center;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  background-color: #FFFFFF;
+}
+
+.subTitle {
+  letter-spacing: 0.6px;
+  line-height: 40px;
+  margin: 0;
+}
+
+.email {
+  color: $brandingColor;
+  letter-spacing: 0.8px;
+  line-height: 35px;
+  margin: 0;
+}
+
+.description {
+  letter-spacing: 0.6px;
+  line-height: 35px;
+  margin: 27px 0px 25px 0px;
+  padding: 0 32px;
+}
