@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import NavBar from 'main_app/components/NavBar'
 
 import Header from './components/Header'
+import Services from './components/Services'
 import Article from 'main_app/components/Article'
 import Footer from 'main_app/components/Footer'
 
@@ -29,6 +30,7 @@ function Landing () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header ref={headerRef} />
+        <Services />
       </Article>
       <Footer variant='light' />
     </>
