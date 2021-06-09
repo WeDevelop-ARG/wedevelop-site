@@ -27,7 +27,7 @@ function Landing () {
   const FULLSIZECTA_TITLE = 'Schedule a call with us'
   const FULLSIZECTA_SUBTITLE = 'Get in touch'
   const CTA_TEXT = 'Contact Us'
-  const CTA_PATH = '/contact'
+  const CTA_PATH = '/contact#top'
   const CTA_INCENTIVE = 'We typically get back to you within an hour.'
 
   return (
