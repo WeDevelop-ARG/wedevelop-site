@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import NavBar from 'main_app/components/NavBar'
 
 import Header from './components/Header'
+import OurPeople from './components/OurPeople'
 import FullSizeCTA from 'staff_augmentation/components/FullSizeCTA'
 import Skills from './components/Skills'
 import Services from './components/Services'
@@ -42,6 +43,7 @@ function Landing () {
         <Services />
         <Methodologies />
         <Skills />
+        <OurPeople />
         <JoinUs />
         <FullSizeCTA
           title={FULLSIZECTA_TITLE}
