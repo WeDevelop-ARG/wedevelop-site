@@ -5,6 +5,7 @@ import NavBar from 'main_app/components/NavBar'
 import Header from './components/Header'
 import Skills from './components/Skills'
 import Services from './components/Services'
+import Methodologies from './components/Methodologies'
 import Article from 'main_app/components/Article'
 import Footer from 'main_app/components/Footer'
 
@@ -32,6 +33,7 @@ function Landing () {
       <Article>
         <Header ref={headerRef} />
         <Services />
+        <Methodologies />
         <Skills />
       </Article>
       <Footer variant='light' />
