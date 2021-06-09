@@ -14,7 +14,8 @@
 }
 
 .services {
-  margin-top: 50px;  
+  padding-top: calc(50px + var(--rootContentMinPadding));
+  background-color: #FFFFFF;
 }
 
 .serviceList {
@@ -27,7 +28,7 @@
   .serviceList {
     padding: 0 72px;
   }
-  
+
   .service {
     padding: 0 32px;
   }

@@ -2,13 +2,13 @@ import { useMemo } from 'react'
 
 import NavBar from 'main_app/components/NavBar'
 
+import Article from 'main_app/components/Article'
 import Header from './components/Header'
 import OurPeople from './components/OurPeople'
 import FullSizeCTA from 'staff_augmentation/components/FullSizeCTA'
 import Skills from './components/Skills'
 import Services from './components/Services'
 import Methodologies from './components/Methodologies'
-import Article from 'main_app/components/Article'
 import JoinUs from './components/JoinUs'
 import Footer from 'main_app/components/Footer'
 
@@ -50,7 +50,7 @@ function Landing () {
           subTitle={FULLSIZECTA_SUBTITLE}
           ctaText={CTA_TEXT}
           ctaToPath={CTA_PATH}
-          ctaIncentive={CTA_INCENTIVE} 
+          ctaIncentive={CTA_INCENTIVE}
         />
       </Article>
       <Footer variant='light' />
