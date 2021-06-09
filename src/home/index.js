@@ -4,7 +4,9 @@ import NavBar from 'main_app/components/NavBar'
 
 import Header from './components/Header'
 import Skills from './components/Skills'
+import Services from './components/Services'
 import Article from 'main_app/components/Article'
+import Footer from 'main_app/components/Footer'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
@@ -29,8 +31,10 @@ function Landing () {
       <NavBar ref={navBarRef} variant={navBarVariant} />
       <Article>
         <Header ref={headerRef} />
+        <Services />
         <Skills />
       </Article>
+      <Footer variant='light' />
     </>
   )
 }
