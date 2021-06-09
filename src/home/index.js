@@ -8,6 +8,7 @@ import Skills from './components/Skills'
 import Services from './components/Services'
 import Methodologies from './components/Methodologies'
 import Article from 'main_app/components/Article'
+import JoinUs from './components/JoinUs'
 import Footer from 'main_app/components/Footer'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
@@ -41,6 +42,7 @@ function Landing () {
         <Services />
         <Methodologies />
         <Skills />
+        <JoinUs />
         <FullSizeCTA
           title={FULLSIZECTA_TITLE}
           subTitle={FULLSIZECTA_SUBTITLE}
