@@ -9,7 +9,9 @@ function JoinUs () {
         <b>{' '}passion of working creatively and professionally</b>
         , please email us your resume or LinkedIn profile to
       </p>
-      <h4 className={classes.email}>jobs@wedevelop.me</h4>
+      <a href='mailto:jobs@wedevelop.me'>
+        <span className={classes.email}>jobs@wedevelop.me</span>
+      </a>
     </section>
   )
 }
