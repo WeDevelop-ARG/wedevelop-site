@@ -10,7 +10,7 @@ function Methodologies () {
         <p>We understand the meaning of “Agile”, and we love it. SCRUM sets the way and we set the pace by generating <b>small and efficient iterations.</b></p>
         <p><b>Clean code</b> is our distinctive mark. We know code may change and will change through your project’s lifetime, so we help you to have it adjusted and improved to meet new requirements over time.</p>
       </div>
-      <img src={Agile} alt='' role='img' className={classes.agileImg} />
+      <img src={Agile} alt='' className={classes.agileImg} />
     </section>
   )
 }
