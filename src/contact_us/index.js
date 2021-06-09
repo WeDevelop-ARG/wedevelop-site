@@ -15,7 +15,10 @@ function ContactUs () {
 
   return (
     <>
-      <NavBar />
+      <NavBar
+        variant={['solid', 'dark']}
+        variantAtScrollTop={['transparent', 'dark']}
+      />
       <div>
         <Article>
           <section>

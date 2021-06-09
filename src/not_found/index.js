@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { HashLink } from 'react-router-hash-link'
 
 import NavBar from 'main_app/components/NavBar'
@@ -7,7 +6,6 @@ import Button from 'main_app/components/Button'
 import SVGIcon from 'main_app/components/SVGIcon'
 
 import usePageMedatada from 'utils/marketing/use_page_metadata'
-import useOverlappingObserver from 'utils/use_overlapping_observer'
 
 import classes from './styles.module.scss'
 
@@ -17,19 +15,13 @@ function NotFound () {
     description: 'The page you\'re looking for was not found.'
   })
 
-  const [isNavBarAtTop, navBarRef] = useOverlappingObserver({
-    root: document.body,
-    ignoreHeight: true
-  })
-  const navBarVariant = useMemo(() => {
-    if (isNavBarAtTop) return ['transparent', 'dark']
-
-    return ['solid', 'dark']
-  }, [isNavBarAtTop])
-
   return (
     <>
-      <NavBar ref={navBarRef} variant={navBarVariant} hideMenu />
+      <NavBar
+        hideMenu
+        variant={['solid', 'dark']}
+        variantAtScrollTop={['transparent', 'dark']}
+      />
       <Article>
         <section className={classes.notFoundSection}>
           <div className={classes.textContainer}>

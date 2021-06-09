@@ -12,7 +12,10 @@ function PrivacyPolicy () {
 
   return (
     <>
-      <NavBar />
+      <NavBar
+        variant={['solid', 'dark']}
+        variantAtScrollTop={['transparent', 'dark']}
+      />
       <Article>
         <section>
           <h1>Privacy Policy</h1>
