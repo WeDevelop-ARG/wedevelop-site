@@ -9,7 +9,7 @@ import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
-import FullSizeCTA from './components/FullSizeCTA'
+import FullSizeCTA from '../main_app/components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
