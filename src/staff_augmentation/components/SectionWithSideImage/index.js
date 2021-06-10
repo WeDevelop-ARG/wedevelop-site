@@ -7,7 +7,7 @@ function SectionWithSideImage ({ className, title, description, imageURL, imageA
     <section className={classnames(classes.container, { [className]: className })}>
       <h2 className={classes.title}>{title}</h2>
       <div className={imageAtRight ? classes.rightImageContainer : classes.leftImageContainer}>
-        <img src={imageURL} alt='' role='presentation' />
+        <img src={imageURL} alt='' role='presentation' loading='lazy' />
       </div>
       <div className={classes.description}>
         <h2 className={classes.title}>{title}</h2>
