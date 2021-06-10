@@ -43,10 +43,10 @@ function Header ({
             </div>
           </div>
           <div className={classes.visualsContainer}>
-            <img src={sideImageURL} alt='' role='presentation' className={classes.entrepreneurLaptop} />
+            <img src={sideImageURL} alt='' role='presentation' className={classes.entrepreneurLaptop} loading='lazy' />
             <div className={classes.widgetsContainer}>
               <ClutchWidget className={classes.clutchWidget} variant='dark' />
-              <img src={TopCompaniesBadge} alt='' role='presentation' className={classes.topCompaniesBadge} />
+              <img src={TopCompaniesBadge} alt='' role='presentation' className={classes.topCompaniesBadge} loading='lazy' />
             </div>
           </div>
         </div>
