@@ -7,8 +7,8 @@ import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
 const staffAugmentation = {
   pathName: 'staff-augmentation',
   metadata: {
-    title: 'IT Staff Augmentation delivered in 7 days',
-    description: 'Stop Interviewing. Start making money. We send you rates and available team within the hour, and make the Staff available to start in 7 days.'
+    title: 'Nearshore IT Staffing company',
+    description: 'Add the right Talent for your time in no time. Get a free quote in the next hour!'
   },
   header: {
     title: <>The right <BrandGradient>IT Staffing agency for you</BrandGradient></>,
