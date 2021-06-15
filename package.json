@@ -40,7 +40,8 @@
     "http2PushManifest": true,
     "include": [
       "/privacy-policy",
-      "/staff-augmentation"
+      "/staff-augmentation",
+      "/web-developers"
     ]
   },
   "eslintConfig": {
