@@ -41,7 +41,8 @@
     "include": [
       "/privacy-policy",
       "/staff-augmentation",
-      "/web-developers"
+      "/web-developers",
+      "/web-designers"
     ]
   },
   "eslintConfig": {
