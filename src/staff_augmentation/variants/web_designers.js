@@ -14,7 +14,7 @@ const webDesigners = {
     title: <>Talent that delivers like <BrandGradient>your Dream Team</BrandGradient> would</>,
     description: (
       <>
-        <p>Get the ultimate outcomes from the Top Web Developers without the hiring hassles.</p>
+        <p>Get the ultimate outcomes from the Top Web Designers without the hiring hassles.</p>
       </>
     ),
     formDescription: 'Sign Up to Get Rates & Available Staff Details',
