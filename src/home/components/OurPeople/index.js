@@ -1,5 +1,5 @@
 import BrandGradient from 'main_app/components/TextGradient'
-import IntroductionImg from 'assets/home/introduction-img.svg'
+import IntroductionImg from 'assets/home/introduction-img.png'
 
 import classes from './styles.module.scss'
 
