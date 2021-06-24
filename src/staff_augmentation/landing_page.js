@@ -38,6 +38,7 @@ function LandingPage () {
           title={landing.header.title}
           description={landing.header.description}
           formDescription={landing.header.formDescription}
+          formOrigin={landing.header.formOrigin}
           sideImageURL={landing.header.sideImageURL}
           submitButtonText={landing.header.submitButtonText}
         />
