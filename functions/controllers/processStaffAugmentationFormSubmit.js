@@ -28,7 +28,7 @@ function handleOptionsRequest (req, res) {
 
 async function handlePostRequest (req, res) {
   const message = `
-      New message received from Free Quote form, Staff Augmentation landing page.
+      New message received from Free Quote form, ${getMailchimpTags(req.body.formOrigin)} landing page.
 
       ${req.body.name} (${req.body.email}) says:
 
@@ -51,6 +51,7 @@ async function handlePostRequest (req, res) {
   }
 
   console.log('STAFF_AUGMENTATION_FORM_SUBMIT', JSON.stringify(data))
+  console.log(`FORM_ORIGIN ${req.body.formOrigin}`)
 
   await sendEmail(data)
 
@@ -65,7 +66,7 @@ async function handlePostRequest (req, res) {
   await addTagsToMailchimpSubscriber({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriberId: subscriber.id,
-    tags: getMailchimpTags('staff-augmentation')
+    tags: getMailchimpTags(req.body.formOrigin)
   })
 
   return res.status(200).end()

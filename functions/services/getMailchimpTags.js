@@ -1,6 +1,8 @@
 function getMailchimpTags (source) {
   switch (source) {
-    case 'staff-augmentation': return ['LANDING_STAFF_AUG']
+    case 'staff-augmentation': return ['STAFF_AUGMENTATION']
+    case 'web-designers': return ['WEB_DESIGNERS']
+    case 'web-developers': return ['WEB_DEVELOPERS']
     case 'contact': return ['WEB_WEDEV']
     default: return ['CALENDLY_EVENT_UNKNOWN_SOURCE']
   }
