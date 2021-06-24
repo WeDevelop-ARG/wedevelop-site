@@ -19,6 +19,7 @@ const staffAugmentation = {
       </>
     ),
     formDescription: 'Sign Up to Get Rates & Available Staff Details',
+    formOrigin: 'staff-augmentation',
     sideImageURL: AbelLaptop,
     submitButtonText: 'Get a free quote'
   },
