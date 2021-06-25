@@ -1,4 +1,8 @@
-const { addSubscriberToMailchimp, addTagsToMailchimpSubscriber } = require('../services/mailchimp')
+const {
+  addSubscriberToMailchimp,
+  addTagsToMailchimpSubscriber,
+  addNoteToMailchimpSubscriber
+} = require('../services/mailchimp')
 const { getMailchimpTags } = require('../services/getMailchimpTags')
 const { isReCAPTCHATokenValid } = require('../services/recaptcha')
 const { sendEmail } = require('../services/sendEmail')
@@ -67,6 +71,12 @@ async function handlePostRequest (req, res) {
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriberId: subscriber.id,
     tags: getMailchimpTags(req.body.formOrigin)
+  })
+
+  await addNoteToMailchimpSubscriber({
+    listId: MAILCHIMP_DEFAULT_LIST_ID,
+    subscriberId: subscriber.id,
+    note: req.body.message
   })
 
   return res.status(200).end()

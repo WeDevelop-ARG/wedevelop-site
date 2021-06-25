@@ -46,5 +46,18 @@ async function addTagsToMailchimpSubscriber ({
   )
 }
 
+async function addNoteToMailchimpSubscriber ({
+  listId,
+  subscriberId,
+  note
+}) {
+  await mailchimp.lists.createListMemberNote(
+    listId,
+    subscriberId,
+    { note: note }
+  )
+}
+
 exports.addSubscriberToMailchimp = addSubscriberToMailchimp
 exports.addTagsToMailchimpSubscriber = addTagsToMailchimpSubscriber
+exports.addNoteToMailchimpSubscriber = addNoteToMailchimpSubscriber
