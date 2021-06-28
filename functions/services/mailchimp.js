@@ -54,7 +54,7 @@ async function addNoteToMailchimpSubscriber ({
   await mailchimp.lists.createListMemberNote(
     listId,
     subscriberId,
-    { note: note }
+    { note }
   )
 }
 

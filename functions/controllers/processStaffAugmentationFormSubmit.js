@@ -55,7 +55,6 @@ async function handlePostRequest (req, res) {
   }
 
   console.log('STAFF_AUGMENTATION_FORM_SUBMIT', JSON.stringify(data))
-  console.log(`FORM_ORIGIN ${req.body.formOrigin}`)
 
   await sendEmail(data)
 
