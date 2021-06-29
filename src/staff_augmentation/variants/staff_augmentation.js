@@ -20,6 +20,14 @@ const staffAugmentation = {
     ),
     formDescription: 'Sign Up to Get Rates & Available Staff Details',
     formOrigin: 'staff-augmentation',
+    formCustomizations: {
+      fixedFieldsPlaceholders: {
+        name: 'Your name',
+        email: 'Your work email',
+        message: 'What are you looking for?'
+      },
+      customFields: undefined
+    },
     sideImageURL: AbelLaptop,
     submitButtonText: 'Get a free quote'
   },

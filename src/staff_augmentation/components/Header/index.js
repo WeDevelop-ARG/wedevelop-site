@@ -13,6 +13,7 @@ function Header ({
   description,
   formDescription,
   formOrigin,
+  formCustomizations,
   sideImageURL,
   submitButtonText
 }) {
@@ -38,6 +39,8 @@ function Header ({
                 onSubmitFinished={handleSubmitFinished}
                 submitButtonText={submitButtonText}
                 formOrigin={formOrigin}
+                fixedFieldsPlaceholders={formCustomizations.fixedFieldsPlaceholders}
+                customFields={formCustomizations.customFields}
               />
             </div>
             <div className={classes.formDisclaimer}>
