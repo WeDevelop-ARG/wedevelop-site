@@ -24,8 +24,7 @@ const webDesigners = {
         name: 'Your name',
         email: 'Your work email',
         message: 'What are you looking for?'
-      },
-      customFields: undefined
+      }
     },
     sideImageURL: AbelLaptop,
     submitButtonText: 'Get a free quote'
