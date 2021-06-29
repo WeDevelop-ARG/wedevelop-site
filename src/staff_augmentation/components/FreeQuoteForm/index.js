@@ -10,7 +10,7 @@ import FormLogic from './FormLogic'
 
 import classes from './styles.module.scss'
 
-function FreeQuoteForm ({ onSubmitFinished, submitButtonText }) {
+function FreeQuoteForm ({ onSubmitFinished, submitButtonText, formOrigin }) {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
     classes.fieldWithError
@@ -29,6 +29,7 @@ function FreeQuoteForm ({ onSubmitFinished, submitButtonText }) {
   return (
     <FormLogic
       initialValues={initialValues}
+      formOrigin={formOrigin}
       onSubmitFinished={onSubmitFinished}
       className={classes.form}
     >

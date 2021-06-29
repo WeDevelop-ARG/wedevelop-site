@@ -1,4 +1,8 @@
-const { addSubscriberToMailchimp, addTagsToMailchimpSubscriber } = require('../services/mailchimp')
+const {
+  addSubscriberToMailchimp,
+  addTagsToMailchimpSubscriber,
+  addNoteToMailchimpSubscriber
+} = require('../services/mailchimp')
 const { getMailchimpTags } = require('../services/getMailchimpTags')
 const { isReCAPTCHATokenValid } = require('../services/recaptcha')
 const { sendEmail } = require('../services/sendEmail')
@@ -28,7 +32,7 @@ function handleOptionsRequest (req, res) {
 
 async function handlePostRequest (req, res) {
   const message = `
-      New message received from Free Quote form, Staff Augmentation landing page.
+      New message received from Free Quote form, ${getMailchimpTags(req.body.formOrigin)} landing page.
 
       ${req.body.name} (${req.body.email}) says:
 
@@ -65,7 +69,13 @@ async function handlePostRequest (req, res) {
   await addTagsToMailchimpSubscriber({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriberId: subscriber.id,
-    tags: getMailchimpTags('staff-augmentation')
+    tags: getMailchimpTags(req.body.formOrigin)
+  })
+
+  await addNoteToMailchimpSubscriber({
+    listId: MAILCHIMP_DEFAULT_LIST_ID,
+    subscriberId: subscriber.id,
+    note: req.body.message
   })
 
   return res.status(200).end()
