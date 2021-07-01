@@ -42,7 +42,8 @@
       "/privacy-policy",
       "/staff-augmentation",
       "/web-developers",
-      "/web-designers"
+      "/web-designers",
+      "/hire-developers"
     ]
   },
   "eslintConfig": {
