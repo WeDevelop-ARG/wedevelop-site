@@ -11,6 +11,7 @@ import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
 import FullSizeCTA from '../main_app/components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
+import AvailableDevs from './components/AvailableDevs'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
@@ -67,6 +68,7 @@ function LandingPage () {
             })}
           />
         ))}
+        {landing.availableDevs && <AvailableDevs />}
         <FullSizeCTA
           title={landing.fullSizeCTA.title}
           subTitle={landing.fullSizeCTA.subTitle}
