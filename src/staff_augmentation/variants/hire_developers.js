@@ -7,15 +7,14 @@ import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
 const hireDevelopers = {
   pathName: 'hire-developers',
   metadata: {
-    title: 'Nearshore IT Staffing company',
-    description: 'Add the right Talent for your time in no time. Get a free quote in the next hour!'
+    title: 'Web Development Agency',
+    description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
-    title: <>The right <BrandGradient>IT Staffing agency for you</BrandGradient></>,
+    title: <>Talent that delivers like <BrandGradient>your Dream Team</BrandGradient> would</>,
     description: (
       <>
-        <p>Get access to the top Software Engineers in Latin America.</p>
-        <p><b>Fast, without the hiring hassles.</b></p>
+        <p>Get the ultimate outcomes from the Top Web Developers without the hiring hassles.</p>
       </>
     ),
     formDescription: 'Sign Up to Get Rates & Available Staff Details',
@@ -31,7 +30,7 @@ const hireDevelopers = {
     submitButtonText: 'Get a free quote'
   },
   reviews: {
-    title: 'The top IT Staffing as our customers say',
+    title: <>We trust our Customers' words</>,
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
@@ -93,7 +92,7 @@ const hireDevelopers = {
   }, {
     id: '3',
     imageURL: MaleSalesSolutions,
-    title: <>Save time, <BrandGradient>grow faster</BrandGradient></>,
+    title: <>Save time, <BrandGradient>Learn faster</BrandGradient></>,
     description: (
       <>
         <p>Hiring the wrong person can cost thousands of dollars and hours of wasted time.</p>
