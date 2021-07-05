@@ -108,7 +108,10 @@ const hireDevelopers = {
       </>
     )
   }],
-  availableDevs: true,
+  availableDevs: {
+    show: true,
+    title: <>This is our <BrandGradient>Available Team</BrandGradient></>
+  },
   fullSizeCTA: {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',

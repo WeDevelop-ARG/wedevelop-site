@@ -8,10 +8,11 @@ import useRandonNumber from './use_random_number'
 
 import classes from './styles.module.scss'
 
-function AvailableDevs () {
+function AvailableDevs ({ title }) {
   const devsInfo = useDevsInfo()
   return (
     <section className={classes.availableDevs}>
+      <h2 className={classes.title}>{title}</h2>
       <div className={classes.devsList}>
         {devsInfo.map(({ id, devImgURL, devRole, techLogoURL, devDescription, devRate }) => (
           <ListRow
