@@ -10,7 +10,13 @@ import FormLogic from './FormLogic'
 
 import classes from './styles.module.scss'
 
-function FreeQuoteForm ({ onSubmitFinished, submitButtonText, formOrigin }) {
+function FreeQuoteForm ({
+  onSubmitFinished,
+  submitButtonText,
+  fixedFieldsPlaceholders,
+  customFields,
+  formOrigin
+}) {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
     classes.fieldWithError
@@ -26,10 +32,15 @@ function FreeQuoteForm ({ onSubmitFinished, submitButtonText, formOrigin }) {
     recaptchaToken: ''
   }
 
+  customFields?.forEach(({ name, initialValue = '' }) => {
+    initialValues[name] = initialValue
+  })
+
   return (
     <FormLogic
       initialValues={initialValues}
       formOrigin={formOrigin}
+      customFields={customFields}
       onSubmitFinished={onSubmitFinished}
       className={classes.form}
     >
@@ -37,20 +48,30 @@ function FreeQuoteForm ({ onSubmitFinished, submitButtonText, formOrigin }) {
         as={InputWithError}
         type='text'
         name='name'
-        placeholder='Your name'
+        placeholder={fixedFieldsPlaceholders.name}
         className={classes.inputStyles}
       />
       <Field
         as={InputWithError}
         type='email'
         name='email'
-        placeholder='Your work email'
+        placeholder={fixedFieldsPlaceholders.email}
         className={classes.inputStyles}
       />
+      {customFields?.map(({ name, placeholder }) => (
+        <Field
+          key={name}
+          as={InputWithError}
+          type='text'
+          name={name}
+          placeholder={placeholder}
+          className={classes.inputStyles}
+        />
+      ))}
       <Field
         as={TextAreaWithError}
         name='message'
-        placeholder='What are you looking for?'
+        placeholder={fixedFieldsPlaceholders.message}
         maxLength='200'
         className={classnames(classes.inputStyles, classes.textarea)}
       />

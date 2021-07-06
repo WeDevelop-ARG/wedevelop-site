@@ -7,14 +7,14 @@ import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import { STAFF_AUGMENTATION_FORM_PROCESSOR_URL } from 'main_app/constants'
 
-const schema = Yup.object({
+const schemaShape = {
   name: Yup.string().required(),
   email: Yup.string().email().required(),
   message: Yup.string().max(200).required(),
   recaptchaToken: Yup.string().required()
-}).required()
+}
 
-function FormLogic ({ initialValues, onSubmitFinished, formOrigin, ...props }) {
+function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin, ...props }) {
   const handleSubmit = useCallback(async (values) => {
     try {
       await axios.post(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, { ...values, formOrigin })
@@ -29,6 +29,14 @@ function FormLogic ({ initialValues, onSubmitFinished, formOrigin, ...props }) {
 
     if (isFunction(onSubmitFinished)) onSubmitFinished()
   }, [onSubmitFinished, formOrigin])
+
+  customFields?.forEach(({ name, required }) => {
+    let validator = Yup.string()
+    if (required) validator = validator.required()
+    schemaShape[name] = validator
+  })
+
+  const schema = Yup.object(schemaShape).required()
 
   return (
     <Form

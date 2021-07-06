@@ -31,12 +31,30 @@ function handleOptionsRequest (req, res) {
 }
 
 async function handlePostRequest (req, res) {
-  const message = `
-      New message received from Free Quote form, ${getMailchimpTags(req.body.formOrigin)} landing page.
+  const {
+    name,
+    email,
+    message,
+    recaptchaToken,
+    formOrigin,
+    ...customFields
+  } = req.body
 
-      ${req.body.name} (${req.body.email}) says:
+  let customFieldsMessage = ''
 
-      ${req.body.message}
+  Object.entries(customFields).forEach(([name, value]) => {
+    customFieldsMessage += `- ${name}: ${value}\n`
+  })
+
+  const emailMessage = `
+      New message received from Free Quote form, ${getMailchimpTags(formOrigin)} landing page.
+
+      ${name} (${email}) says:
+
+      ${message}
+
+      Form custom fields:
+      ${customFieldsMessage}
   `
   const data = {
     personalizations: [{
@@ -46,11 +64,11 @@ async function handlePostRequest (req, res) {
     from: { email: CONTACT_FORM_DESTINATION_EMAIL },
     content: [{
       type: 'text/plain',
-      value: message
+      value: emailMessage
     }]
   }
 
-  if (!await isReCAPTCHATokenValid(req.body.recaptchaToken)) {
+  if (!await isReCAPTCHATokenValid(recaptchaToken)) {
     return res.status(403).end()
   }
 
@@ -61,21 +79,21 @@ async function handlePostRequest (req, res) {
   const subscriber = await addSubscriberToMailchimp({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriber: {
-      email: req.body.email,
-      firstName: req.body.name
+      email: email,
+      firstName: name
     }
   })
 
   await addTagsToMailchimpSubscriber({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriberId: subscriber.id,
-    tags: getMailchimpTags(req.body.formOrigin)
+    tags: getMailchimpTags(formOrigin)
   })
 
   await addNoteToMailchimpSubscriber({
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     subscriberId: subscriber.id,
-    note: req.body.message
+    note: message
   })
 
   return res.status(200).end()
