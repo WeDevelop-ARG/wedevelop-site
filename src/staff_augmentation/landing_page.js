@@ -68,7 +68,11 @@ function LandingPage () {
             })}
           />
         ))}
-        {landing.availableDevs.show && <AvailableDevs title={landing.availableDevs.title} />}
+        {landing.availableDevs &&
+          <AvailableDevs
+            title={landing.availableDevs.title}
+            devs={landing.availableDevs.devs}
+          />}
         <FullSizeCTA
           title={landing.fullSizeCTA.title}
           subTitle={landing.fullSizeCTA.subTitle}
