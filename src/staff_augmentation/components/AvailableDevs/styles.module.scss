@@ -1,0 +1,35 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.availableDevs {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  margin: auto auto 75px auto;
+}
+
+.devsList {
+  width: 100%;
+  border-top: 1px solid rgba($color: $textColor, $alpha: 0.25);
+}
+
+.moreOnBench {
+  text-align: center;
+  padding: 25px;
+
+  >p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.getRatesButton {
+  width: 100%;
+  max-width: 334px;
+  height: 58px;
+  font-size: 17px;
+  margin: 40px auto;
+}

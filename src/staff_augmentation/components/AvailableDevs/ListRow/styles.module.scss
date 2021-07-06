@@ -1,0 +1,84 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.devRow {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba($color: $textColor, $alpha: 0.25);
+  margin: 0;
+  padding: 0;
+
+  >li {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 22px;
+    padding: 10px 0;
+
+    @include for-phone-only {
+      padding: 25px 0;
+    }
+  }
+
+  @include for-tablet-up {
+    flex-direction: row;
+  }
+}
+
+.profileImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  filter: blur(8px);
+  margin-right: 15px;
+
+  @include for-desktop-up {
+    margin-right: 0;
+  }
+}
+
+.roleTech {
+  display: flex;
+
+  >b {
+    margin: auto;
+  }
+}
+
+.techLogo {
+  width: 50px;
+  height: 50px;
+  margin-left: 25px;
+}
+
+.description {
+  width: 100%;
+  max-width: 275px;
+  text-align: center;
+}
+
+.rateMagnifier {
+  display: flex;
+  justify-content: stretch;
+
+  >p {
+    font-size: 22px;
+    margin: auto;
+  }
+}
+
+.profileRate {
+  font-size: 24px;
+  font-weight: 700;
+  filter: blur(5px);
+}
+
+.magnifier {
+  width: 25px;
+  height: 25px;
+  color: $textColor;
+  margin-left: 10px;
+}
