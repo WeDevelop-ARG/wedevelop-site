@@ -1,4 +1,6 @@
+import Button from 'main_app/components/Button'
 import SVGIcon from 'main_app/components/SVGIcon'
+import { HashLink as Link } from 'react-router-hash-link'
 
 import classes from './styles.module.scss'
 
@@ -23,7 +25,9 @@ function ListRow ({
       </li>
       <li className={classes.rateMagnifier}>
         <p>$<span className={classes.profileRate}>{devRate}</span> / h</p>
-        <SVGIcon name='hire_developers/search_solid' className={classes.magnifier} />
+        <Button variant='icon' as={Link} isAnchor smooth to='#top' className={classes.searchButton}>
+          <SVGIcon name='hire_developers/search_solid' className={classes.magnifier} />
+        </Button>
       </li>
     </ul>
   )
