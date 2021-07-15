@@ -54,7 +54,15 @@
 }
 
 .variant_solid.variant_light-bg {
-  background-color: rgba($color: $secondaryColor, $alpha: .9);
+  @extend .logo_transparent_dark;
+  background-color: #FFFFFF;
+}
+
+.logo_transparent_dark {
+  background-image: url(../../../assets/logoBlue.svg);
+  background-repeat:no-repeat;
+  background-position: left center;
+  background-origin: content-box;
 }
 
 .header.menuOpen {
