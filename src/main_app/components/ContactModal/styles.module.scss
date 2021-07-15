@@ -1,0 +1,66 @@
+@import "/src/styles/media_queries.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.fillHeight {
+  flex-grow: 1;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contactModal {
+  max-width: 1260px;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.modalContent {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+}
+
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+.titleText {
+
+  @include for-desktop-up {
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 14px;
+  color: rgba($color: #363636, $alpha: 0.5);
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 20px 0px 30px;
+  border: none;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cancelButton {
+  padding: 10px 50px;
+}
