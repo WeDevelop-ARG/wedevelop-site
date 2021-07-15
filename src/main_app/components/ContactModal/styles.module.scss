@@ -13,16 +13,36 @@
 }
 
 .contactModal {
-  max-width: 1260px;
+  max-width: 1020px;
   width: 100%;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  height: 100%;
+  padding: 30px 0 20px;
+
+  @include for-desktop-up {
+    max-height: 95%;
+  }
 }
 
-.modalContent {
+.modalHeader {
+  padding: 0px 30px;
+
+  @include for-tablet-up {
+    padding: 0px 60px;
+  }
+}
+
+.calendlyWidget {
   width: 100%;
   height: auto;
   overflow: auto;
+
+  > p {
+    margin-left: 30px;
+
+    @media screen and (min-width: 768px) {
+      margin-left: 60px;
+    }
+  }
 }
 
 .subheadingText {
@@ -58,7 +78,13 @@
 
 .btnContainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  padding: 0px 60px;
+  margin-top: 20px;
+
+  @include for-tablet-up {
+    justify-content: flex-end;
+  }
 }
 
 .cancelButton {
