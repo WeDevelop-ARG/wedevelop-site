@@ -14,8 +14,8 @@ function Footer ({ variant = 'dark', className }) {
   return (
     <footer className={className}>
       <ul className={classes.contact}>
-        <li><SVGIcon name='footer/logoBlue' /></li>
-        <ClutchWidget variant='dark' className={classes.clutchWidget} />
+        <li><SVGIcon name='logoBlue' /></li>
+        <ClutchWidget className={classes.clutchWidget} variant='dark' />
       </ul>
       <ul className={classes.contact}>
         <li><p className={classes.titleContainer}>company</p></li>

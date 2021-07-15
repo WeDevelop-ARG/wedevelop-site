@@ -59,6 +59,7 @@
 }
 
 .variant_light {
+  @extend .backgroundDown;
   background-color: #ffffff;
 
   .iconStyles {
@@ -100,6 +101,7 @@
   list-style-type: none;
   padding: 0;
   margin-top: 100px;
+  margin-left: 0px;
 
   & > li + li {
     padding-top: 24px;
@@ -189,7 +191,7 @@
 }
 
 .clutchWidget {
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .pattern {
@@ -198,7 +200,8 @@
   top: 15%;
 }
 
-.backDown {
+.backgroundDown {
   background-image: url(../../../assets/footer/background.svg);
-  width: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
 }
