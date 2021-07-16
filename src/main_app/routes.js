@@ -8,7 +8,7 @@ import PrivacyPolicy from 'privacy_policy'
 function Routes () {
   return (
     <Switch>
-      <Route exact path='/'>
+      <Route exact path={['/', '/contact']}>
         <Landing />
       </Route>
       <Route path='/contact'>

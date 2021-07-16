@@ -1,5 +1,6 @@
-import NavBar from 'main_app/components/NavBar'
+import { useRouteMatch } from 'react-router-dom'
 
+import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Header from './components/Header'
 import OurPeople from './components/OurPeople'
@@ -11,12 +12,14 @@ import JoinUs from './components/JoinUs'
 import Footer from 'main_app/components/Footer'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
+import ContactModal from 'main_app/components/ContactModal'
 
 function Landing () {
   usePageMetadata({
     title: 'A Human-Centered Company that Gets Things Done',
     description: 'We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
   })
+  const match = useRouteMatch('/contact')
 
   return (
     <>
@@ -39,6 +42,7 @@ function Landing () {
           ctaIncentive='We typically get back to you within an hour.'
         />
       </Article>
+      {match?.isExact && <ContactModal isOpen />}
       <Footer variant='light' />
     </>
   )
