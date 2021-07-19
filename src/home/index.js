@@ -1,4 +1,5 @@
-import { useRouteMatch } from 'react-router-dom'
+import { useCallback } from 'react'
+import { useRouteMatch, useHistory } from 'react-router-dom'
 
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
@@ -20,6 +21,10 @@ function Landing () {
     description: 'We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
   })
   const match = useRouteMatch('/contact')
+  const history = useHistory()
+  const handleClose = useCallback(() => {
+    history.push('/')
+  }, [history])
 
   return (
     <>
@@ -42,7 +47,7 @@ function Landing () {
           ctaIncentive='We typically get back to you within an hour.'
         />
       </Article>
-      {match?.isExact && <ContactModal isOpen />}
+      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
     </>
   )
