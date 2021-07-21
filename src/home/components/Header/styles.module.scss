@@ -2,77 +2,24 @@
 @import '/src/styles/media_queries.scss';
 
 .headerContainer {
-  padding-top: calc(
-    var(--rootContentMinPadding) +
-    var(--rootContentExtraPaddingTop)
-  );
-  height: 100vh;
+  height: 800px;
   position: relative;
-  overflow: hidden;
   display: flex;
 }
 
 .decorationWrapper {
   position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: $backgroundColor;
-
-  min-height: 500px;
-
-  @media screen and (min-width: 450px) and (max-width: 500px) {
-    min-height: 600px;
-  }
-
-  @media screen and (min-width: 500px) and (max-width: 600px) {
-    min-height: 675px;
-  }
-
-  @media screen and (min-width: 600px) and (max-width: 700px) {
-    min-height: 750px;
-  }
-
-  @include for-tablet-up {
-    min-height: 500px;
-  }
-
-  @include for-desktop-up {
-    min-height: 600px;
-  }
-}
-
-.decorationContainer {
-  position: absolute;
-  left: 0;
-  width: 100%;
+  right: 0;
   bottom: -4px;
-
-  --cloudsWidth: 257.86vw;
-  --cloudsLeftOffset: -125vw;
-
-  @include for-tablet-up {
-    --cloudsWidth: 116vw;
-    --cloudsLeftOffset: -10.19vw;
-  }
-
-  @include for-desktop-up {
-    --cloudsWidth: 100vw;
-    --cloudsLeftOffset: 0px;
-  }
-}
-
-.clouds {
-  margin-left: var(--cloudsLeftOffset);
-  width: var(--cloudsWidth);
-  height: auto;
+  left: 0;
+  z-index: -1;
+  background-color: #FFFFFF;
 }
 
 .content {
   margin: auto;
-  transform: translateY(-60px);
+  transform: translateY(-90px);
   position: relative;
   text-align: center;
 }
@@ -82,8 +29,11 @@
   font-weight: 900;
 
   .firstLine {
-    font-size: 18px;
-    font-weight: 500;
+    font-weight: 300;
+    line-height: 35px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+    line-height: 73px;
   }
 
   .thirdLine {
@@ -99,33 +49,107 @@
 
   @include for-desktop-up {
     font-size: 72px;
-    .firstLine { font-size: 28px; }
+    .firstLine { font-size: 60px; }
   }
 }
 
 .text {
-  display: none;
-  margin-top: 16px;
-  margin-bottom: 30px;
-  font-size: 18px;
-  line-height: 28px;
-
-  @include for-tablet-up {
-    display: block;
-    max-width: 380px;
-  }
-
-  @include for-desktop-up {
-    max-width: 580px;
-  }
-
-  @media screen and (max-height: 500px) {
-    display: none;
-  }
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  opacity: 0.7;
+  letter-spacing: -0.3px;
 }
 
 .clutchWidget {
   position: relative;
   left: calc(50% + 5px);
   transform: translateX(-50%);
+}
+
+.divider {
+  width: 100px;
+  height: 10px;
+  background-color:#FFC331;
+  margin-top: 30px;
+  border: none;
+}
+
+.buttonContact {
+  margin-top: 40px;
+}
+
+.introTitle {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.7em;
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+
+.imgHeader {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.halfCircle {
+  position: absolute;
+  top: 110px; 
+  left: 0px;
+}
+
+.pattern {
+  position: absolute;
+  top: 170px; 
+  left: 83px;
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  background: #FFFFFF;
+}
+
+.filledCircle {
+  @extend .circle;
+  width: 250px;
+  height: 250px;
+  top: 360px; 
+  right: 55px;
+  opacity: 0.1;
+  filter: blur(4px);
+  background: #EAEAEA;
+}
+
+.emptyCircle {
+  @extend .circle;
+  width: 250px;
+  height: 250px;
+  top: 370px; 
+  right: 40px;
+  opacity: 0.2;
+  border: 2px solid;
+  border-color: #E1E1E1;
+  background: none;
+}
+
+.clutchCircle {
+  @extend .circle;
+  width: 180px;
+  height: 180px;
+  top: 455px; 
+  right: 130px;
+  filter: drop-shadow(0px -4.42367px 8.84734px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+.smallCircle {
+  @extend .circle;
+  width: 30px;
+  height: 30px;
+  top: 535px; 
+  right: 320px;
+  opacity: 0.2;
+  filter: blur(7px);
 }
