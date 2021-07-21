@@ -7,7 +7,7 @@ import FullSizeCTA from 'main_app/components/FullSizeCTA'
 import Skills from './components/Skills'
 import Services from './components/Services'
 import Methodologies from './components/Methodologies'
-import JoinUs from './components/JoinUs'
+import GetInTouch from './components/GetInTouch'
 import Footer from 'main_app/components/Footer'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
@@ -30,7 +30,7 @@ function Landing () {
         <Methodologies />
         <Skills />
         <OurPeople />
-        <JoinUs />
+        <GetInTouch />
         <FullSizeCTA
           title='Schedule a call with us'
           subTitle='Get in touch'

@@ -1,0 +1,46 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.getInTouch {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.sectionContent {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 10px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.titleText {
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba($color: #363636, $alpha: 0.5);
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 40px auto;
+  border: none;
+}
