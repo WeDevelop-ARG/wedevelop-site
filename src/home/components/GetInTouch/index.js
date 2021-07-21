@@ -1,12 +1,10 @@
-import { useHistory } from 'react-router'
+import { HashLink } from 'react-router-hash-link'
 
 import Button from 'main_app/components/Button'
 
 import classes from './styles.module.scss'
 
 function GetInTouch () {
-  const history = useHistory()
-
   return (
     <section className={classes.getInTouch}>
       <div className={classes.sectionContent}>
@@ -17,10 +15,12 @@ function GetInTouch () {
         </p>
         <hr className={classes.horizontalBar} />
         <Button
+          as={HashLink}
+          to='/contact'
+          smooth
           isAnchor
           variant='primary'
           className={classes.buttonTalk}
-          onClick={() => history.push('/contact')}
         >
           Get in Touch
         </Button>
