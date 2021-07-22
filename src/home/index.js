@@ -3,7 +3,6 @@ import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Header from './components/Header'
 import OurPeople from './components/OurPeople'
-import FullSizeCTA from 'main_app/components/FullSizeCTA'
 import Skills from './components/Skills'
 import Services from './components/Services'
 import Methodologies from './components/Methodologies'
@@ -31,13 +30,6 @@ function Landing () {
         <Skills />
         <OurPeople />
         <GetInTouch />
-        <FullSizeCTA
-          title='Schedule a call with us'
-          subTitle='Get in touch'
-          ctaText='Contact Us'
-          ctaToPath='/contact#top'
-          ctaIncentive='We typically get back to you within an hour.'
-        />
       </Article>
       <Footer variant='light' />
     </>
