@@ -1,6 +1,12 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/base_link.scss';
 
+$primaryVariantBackground: #377DFF;
+$primaryVariantHoverBackground: #2564D9;
+$secondaryVariantBackground: transparent;
+$lightTextBorder: #377DFF;
+$darkTextBorder: #FFFFFF;
+
 .button {
   display: inline-flex;
   text-align: center;
@@ -51,22 +57,32 @@
 
 .variant_primary {
   @extend %buttonFocus;
-  background-image: $mainGradient;
+  background-color: $primaryVariantBackground;
   color: $secondaryColor;
 
   &:hover, &:focus {
-    background-image: $mainGradient;
+    background-color: $primaryVariantHoverBackground;
   }
 }
 
 .variant_secondary {
-  @extend %buttonFocus;
-  background-color: $secondaryButtonBackgroundColor;
-  color: $secondaryButtonTextColor;
+  outline: none;
+  background-color: $secondaryVariantBackground;
+  color: $lightTextBorder;
+  border-color: $lightTextBorder;
 
   &.variant_dark {
-    background-color: $secondaryButtonDarkBackgroundColor;
-    color: $secondaryButtonDarkTextColor;
+    background-color: $secondaryVariantBackground;
+    border-color: $darkTextBorder;
+    color: $darkTextBorder;
+  }
+
+  &:hover, &:focus {
+    box-shadow: 0 0 0 1px $lightTextBorder;
+
+    &.variant_dark {
+      box-shadow: 0 0 0 1px $darkTextBorder;
+    }
   }
 }
 
