@@ -25,7 +25,7 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
           className={classes.buttonTalk}
           onClick={onRequestClose}
         >
-          Contact us
+          Get in Touch
         </Button>
       </li>
     </ul>
