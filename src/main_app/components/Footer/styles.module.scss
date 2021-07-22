@@ -5,7 +5,7 @@
   padding: 25px var(--rootContentHorizontalPadding);
   display: flex;
   flex-direction: column;
-  height: 256px;
+  height: 530px;
 
   & > * {
     margin: 0 auto;
@@ -16,7 +16,14 @@
   }
 
   .branding {
+    list-style-type: none;
+    display: flex;
     padding-left: 0px;
+  }
+
+  .pleca {
+    font-size: 10px;
+    margin: 17px 10px 0px 10px;
   }
 
   @include for-desktop-up {
@@ -34,14 +41,6 @@
   @include for-tablet-down {
     flex-direction: row;
     height: 400px;
-
-    ul:nth-child(2) {
-      align-self: flex-end;
-    }
-
-    .socialNetworks{
-      height: 130px;
-    }
   }
 
   @include for-phone-only {
@@ -50,11 +49,6 @@
 
     ul:nth-child(2) {
       order: 3;
-    }
-
-    .branding {
-      margin-top: 50px;
-      margin-bottom: 80px;
     }
   }
 }
@@ -65,7 +59,8 @@
 }
 
 .variant_light {
-  background-color: $backgroundColor;
+  @extend .backgroundDown;
+  background-color: #ffffff;
 
   .iconStyles {
     --primaryColor: #{$textColor};
@@ -94,6 +89,8 @@
   padding: 0;
   display: flex;
   align-items: center;
+  margin-left: 85px;
+  opacity: 0.5;
 
   li + li {
     margin-left: 15px;
@@ -103,6 +100,8 @@
 .contact {
   list-style-type: none;
   padding: 0;
+  margin-top: 100px;
+  margin-left: 0px;
 
   & > li + li {
     padding-top: 24px;
@@ -117,11 +116,12 @@
   @extend %contactLinksColor;
   display: flex;
   align-items: center;
+  font-size: 15px;
 }
 
 .iconStyles {
   --primaryColor: #{$secondaryColor};
-  width: 20px;
+  width: 15px;
   margin-right: 18px;
 }
 
@@ -146,8 +146,8 @@
 }
 
 .copyright {
-  margin-top: 14px;
-  font-size: 14px;
+  margin-top: 17px;
+  font-size: 10px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -160,9 +160,9 @@
 
 .privacyPolicy {
   margin-top: 17px;
+  font-size: 10px;
   color: $secondaryColor;
   display: block;
-  text-align: center;
 }
 
 .listsContainer {
@@ -172,4 +172,36 @@
     justify-content: space-between;
     margin: 0px;
   }
+}
+
+.titleContainer {
+  text-transform: uppercase;
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.techContent {
+  margin-left: auto;
+  padding-left: 50px;
+}
+
+.socials {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clutchWidget {
+  margin-top: 15px;
+}
+
+.pattern {
+  position: relative;
+  left: 11%;
+  top: 15%;
+}
+
+.backgroundDown {
+  background-image: url(../../../assets/footer/background.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
 }
