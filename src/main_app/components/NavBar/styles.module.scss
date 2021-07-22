@@ -59,6 +59,7 @@
 .logo {
   width: 51px;
   height: auto;
+  display: none;
 
   @include for-tablet-up {
     width: 192px;

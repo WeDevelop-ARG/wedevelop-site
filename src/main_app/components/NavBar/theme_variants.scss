@@ -33,6 +33,19 @@
   .menuToggle .open { @extend %menuToggleIconDark; }
 }
 
+.variant_transparent.variant_light-bg {
+  @extend .logo_transparent_dark;
+  background-color: transparent;
+}
+
+.logo_transparent_dark {
+  background-image: url(../../../assets/home/logoWhite.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-origin: content-box;
+  --textColor: #363636;
+}
+
 .variant_solid {
   // Elements behind a backdrop-filter get clipped, so we need
   // to remove the filter when the menu is open. We also need
