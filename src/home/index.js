@@ -5,11 +5,10 @@ import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Header from './components/Header'
 import OurPeople from './components/OurPeople'
-import FullSizeCTA from 'main_app/components/FullSizeCTA'
 import Skills from './components/Skills'
 import Services from './components/Services'
 import Methodologies from './components/Methodologies'
-import JoinUs from './components/JoinUs'
+import GetInTouch from './components/GetInTouch'
 import Footer from 'main_app/components/Footer'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
@@ -38,14 +37,7 @@ function Landing () {
         <Methodologies />
         <Skills />
         <OurPeople />
-        <JoinUs />
-        <FullSizeCTA
-          title='Schedule a call with us'
-          subTitle='Get in touch'
-          ctaText='Contact Us'
-          ctaToPath='/contact#top'
-          ctaIncentive='We typically get back to you within an hour.'
-        />
+        <GetInTouch />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
