@@ -1,8 +1,10 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
+$backgroundColor: #FFFFFF;
+
 .getInTouch {
-  background-color: #FFFFFF;
+  background-color: $backgroundColor;
   position: relative;
 }
 
@@ -43,4 +45,35 @@
   background: #FFC331;
   margin: 40px auto;
   border: none;
+}
+
+%dotsPattern {
+  width: 166px;
+  position: absolute;
+  top: 90px;
+}
+
+.leftPattern {
+  @extend %dotsPattern;
+  left: 85px;
+}
+
+.rightPattern {
+  @extend %dotsPattern;
+  right: 80px;
+}
+
+.pictureWall {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: end;
+  padding: 0;
+  margin-bottom: 50px;
+  background-color: $backgroundColor;
+
+  >img {
+    width: inherit;
+  }
 }
