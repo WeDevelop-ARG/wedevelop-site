@@ -26,6 +26,14 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
   })
   const containerRef = useCombinedRefs(ref, observerRef)
 
+  variantAtScrollTop = useMemo(() => {
+    const isLight = variantAtScrollTop?.find(element => element === 'light')
+
+    if (isLight) return variantAtScrollTop.concat('white')
+
+    return variantAtScrollTop
+  }, [variantAtScrollTop])
+
   variant = useMemo(() => {
     if (atScrollTop && variantAtScrollTop) return variantAtScrollTop
 
@@ -50,7 +58,7 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
   const isDesktopUp = useMediaQuery(forDesktopUp)
   const logoVariant = useMemo(() => {
     if (isTabletUp) return 'full'
-    else return 'hexagon'
+    else return 'mobile'
   }, [isTabletUp])
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
@@ -72,7 +80,8 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
         smooth
       >
         <Logo
-          variant={logoVariant}
+          logoVariant={logoVariant}
+          variant={variant}
           className={classes.logo}
         />
       </HashLink>
