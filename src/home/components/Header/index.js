@@ -3,6 +3,7 @@ import { useHistory } from 'react-router'
 
 import SVGIcon from 'main_app/components/SVGIcon'
 import Button from 'main_app/components/Button'
+import ClutchWidget from 'main_app/components/ClutchWidget'
 import imgHeader from 'assets/home/header/background.png'
 
 import classes from './styles.module.scss'
@@ -43,7 +44,9 @@ function Header (props, ref) {
         </div>
         <div className={classes.filledCircle} />
         <div className={classes.emptyCircle} />
-        <div className={classes.clutchCircle} />
+        <div className={classes.clutchCircle}>
+          <ClutchWidget className={classes.clutchWidget} variant='dark' />
+        </div>
         <div className={classes.smallCircle} />
       </div>
     </section>
