@@ -57,12 +57,8 @@
 }
 
 .logo {
-  width: 51px;
+  width: 203px;
   height: auto;
-
-  @include for-tablet-up {
-    width: 192px;
-  }
 }
 
 .menuToggle {

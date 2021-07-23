@@ -26,19 +26,19 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
   })
   const containerRef = useCombinedRefs(ref, observerRef)
 
-  variantAtScrollTop = useMemo(() => {
-    const isLight = variantAtScrollTop?.find(element => element === 'light')
-
-    if (isLight) return variantAtScrollTop.concat('white')
-
-    return variantAtScrollTop
-  }, [variantAtScrollTop])
-
   variant = useMemo(() => {
     if (atScrollTop && variantAtScrollTop) return variantAtScrollTop
 
     return variant
   }, [atScrollTop, variant, variantAtScrollTop])
+
+  variant = useMemo(() => {
+    const isLight = variant?.find(element => element === 'light')
+
+    if (isLight) return variant.concat('white')
+
+    return variant
+  }, [variant])
 
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
