@@ -101,19 +101,10 @@
 }
 
 .imgHeader {
-  display: block;
-  margin: auto;
+  object-fit: cover;
+  object-position: center bottom;
   width: 100%;
-
-  @include for-tablet-down {
-    max-height: 700px;
-    height: 98%;
-    width: auto;
-  }
-
-  @include for-tablet-up {
-    height: 800px;
-  }
+  height: 100%;
 }
 
 .halfCircle {
