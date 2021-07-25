@@ -31,7 +31,7 @@
     font-size: 20px;
     line-height: 23px;
     outline: none;
-    color: #fff;
+    color: var(--textColor);
 
     @include for-tablet-up {
       font-weight: inherit;

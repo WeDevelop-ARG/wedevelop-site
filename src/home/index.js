@@ -22,7 +22,7 @@ function Landing () {
     <>
       <NavBar
         variant={['solid', 'dark']}
-        variantAtScrollTop={['transparent', 'dark']}
+        variantAtScrollTop={['transparent', 'light']}
       />
       <Article>
         <Header />
