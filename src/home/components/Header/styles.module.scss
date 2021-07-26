@@ -2,7 +2,7 @@
 @import '/src/styles/media_queries.scss';
 
 .headerContainer {
-  height: 800px;
+  min-height: 100vh;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -24,7 +24,8 @@
 
 .content {
   margin: auto;
-  transform: translateY(-9px);
+  min-height: 100vh;
+  transform: translateY(30px);
   position: relative;
   text-align: center;
 
@@ -181,8 +182,18 @@
   opacity: 0.2;
   filter: blur(7px);
 }
+
 .arrow {
-  margin-top: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(85%);
+
+  @include for-desktop-up {
+    transform: translateY(80%);
+  }
 
   @include for-tablet-down {
     display: none;
@@ -197,8 +208,4 @@
   color: #FFFFFF;
   opacity: 0.7;
   margin-top: 17px;
-
-  @include for-tablet-down {
-    display: none;
-  }
 }

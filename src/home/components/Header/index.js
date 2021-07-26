@@ -1,5 +1,6 @@
 import { forwardRef } from 'react'
 import { useHistory } from 'react-router'
+import { HashLink } from 'react-router-hash-link'
 
 import SVGIcon from 'main_app/components/SVGIcon'
 import Button from 'main_app/components/Button'
@@ -35,8 +36,10 @@ function Header (props, ref) {
         </Button>
         <div className={classes.arrow}>
           <SVGIcon name='home/header/arrow' />
+          <div onClick={() => window.location.replace('/#services')}>
+            <HashLink className={classes.scrollText}>scroll down</HashLink>
+          </div>
         </div>
-        <h3 className={classes.scrollText}>scroll down</h3>
       </div>
       <div className={classes.decorationWrapper}>
         <img className={classes.imgHeader} src={imgHeader} alt='' />
