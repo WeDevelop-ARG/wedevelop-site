@@ -33,6 +33,10 @@ function Header (props, ref) {
         >
           Get in Touch
         </Button>
+        <div className={classes.arrow}>
+          <SVGIcon name='home/header/arrow' />
+        </div>
+        <h3 className={classes.scrollText}>scroll down</h3>
       </div>
       <div className={classes.decorationWrapper}>
         <img className={classes.imgHeader} src={imgHeader} alt='' />

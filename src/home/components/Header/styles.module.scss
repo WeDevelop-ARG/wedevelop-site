@@ -24,7 +24,7 @@
 
 .content {
   margin: auto;
-  transform: translateY(-90px);
+  transform: translateY(-9px);
   position: relative;
   text-align: center;
 
@@ -180,4 +180,25 @@
   right: 323px;
   opacity: 0.2;
   filter: blur(7px);
+}
+.arrow {
+  margin-top: 70px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.scrollText {
+  font-size: 10px;
+  text-transform: uppercase;
+  line-height: 12px;
+  letter-spacing: -0.39px;
+  color: #FFFFFF;
+  opacity: 0.7;
+  margin-top: 17px;
+
+  @include for-tablet-down {
+    display: none;
+  }
 }
