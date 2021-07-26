@@ -13,77 +13,72 @@ function Footer ({ variant = 'dark', className }) {
   )
   return (
     <footer className={className}>
-      <ul className={classes.contact}>
-        <li><SVGIcon name='logoBlue' /></li>
-        <ClutchWidget className={classes.clutchWidget} variant='dark' />
-      </ul>
-      <ul className={classes.contact}>
-        <li><p className={classes.titleContainer}>company</p></li>
-        <li className={classes.contactContentContainer}>
-          <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
-            Blog
-          </a>
-        </li>
-      </ul>
-      <ul className={classes.contact}>
-        <li><p className={classes.titleContainer}>technologies</p></li>
-        <li className={classes.contactContentContainer}>
-          <span>
-            React
-          </span>
-          <span className={classes.techContent}>
-            Ruby on Rails
-          </span>
-        </li>
-        <li className={classes.contactContentContainer}>
-          <span>
-            Node.js
-          </span>
-          <span className={classes.techContent}>
-            PostgreSQL
-          </span>
-        </li>
-        <li className={classes.contactContentContainer}>
-          <span>
-            Python
-          </span>
-          <span className={classes.techContent}>
-            GraphQL
-          </span>
-        </li>
-        <li className={classes.contactContentContainer}>
-          <span>
-            AWS
-          </span>
-          <span className={classes.techContent}>
-            MongoDB
-          </span>
-        </li>
-      </ul>
-      <ul className={classes.contact}>
-        <li><p className={classes.titleContainer}>contact us</p></li>
-        <li>
-          <a href='mailto:info@wedevelop.me' className={classes.contactContentContainer}>
-            <SVGIcon name='footer/email' className={classes.iconStyles} />
-            <span className={classes.contactContent}>
-              info@wedevelop.me
-            </span>
-          </a>
-        </li>
-        <li className={classes.contactContentContainer}>
-          <SVGIcon name='footer/location' className={classes.iconStyles} />
-          <address className={classes.contactContent}>
-            WeDevelop LLC FL 33134, US
-          </address>
-        </li>
-        <li className={classes.contactContentContainer}>
-          <SVGIcon name='footer/phone' className={classes.iconStyles} />
-          <a href='tel:+19254486165' className={classes.contactContent}>
-            +1 (925) 448-6165
-          </a>
-        </li>
-      </ul>
-      <SVGIcon name='footer/pattern' className={classes.pattern} />
+      <div className={classes.listUs}>
+        <ul className={classes.contact}>
+          <li><SVGIcon name='logoBlue' /></li>
+          <li><ClutchWidget className={classes.clutchWidget} variant='dark' /></li>
+        </ul>
+        <ul className={classes.contact}>
+          <li><p className={classes.titleContainer}>company</p></li>
+          <li className={classes.contactContentContainer}>
+            <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
+              Blog
+            </a>
+          </li>
+        </ul>
+        <ul className={classes.contact}>
+          <li><p className={classes.titleContainer}>technologies</p></li>
+          <div className={classes.listTech}>
+            <li className={classes.contactContentContainer}>
+              React
+            </li>
+            <li className={classes.contactContentContainer}>
+              Ruby on Rails
+            </li>
+            <li className={classes.contactContentContainer}>
+              Node.js
+            </li>
+            <li className={classes.contactContentContainer}>
+              PostgreSQL
+            </li>
+            <li className={classes.contactContentContainer}>
+              Python
+            </li>
+            <li className={classes.contactContentContainer}>
+              GraphQL
+            </li>
+            <li className={classes.contactContentContainer}>
+              AWS
+            </li>
+            <li className={classes.contactContentContainer}>
+              MongoDB
+            </li>
+          </div>
+        </ul>
+        <ul className={classes.contact}>
+          <li><p className={classes.titleContainer}>contact us</p></li>
+          <li>
+            <a href='mailto:info@wedevelop.me' className={classes.contactContentContainer}>
+              <SVGIcon name='footer/email' className={classes.iconStyles} />
+              <span className={classes.contactContent}>
+                info@wedevelop.me
+              </span>
+            </a>
+          </li>
+          <li className={classes.contactContentContainer}>
+            <SVGIcon name='footer/location' className={classes.iconStyles} />
+            <address className={classes.contactContent}>
+              WeDevelop LLC FL 33134, US
+            </address>
+          </li>
+          <li className={classes.contactContentContainer}>
+            <SVGIcon name='footer/phone' className={classes.iconStyles} />
+            <a href='tel:+19254486165' className={classes.contactContent}>
+              +1 (925) 448-6165
+            </a>
+          </li>
+        </ul>
+      </div>
       <div className={classes.socials}>
         <ul className={classes.branding}>
           <li>
@@ -114,6 +109,7 @@ function Footer ({ variant = 'dark', className }) {
           </li>
         </ul>
       </div>
+      <SVGIcon name='footer/pattern' className={classes.pattern} />
     </footer>
   )
 }
