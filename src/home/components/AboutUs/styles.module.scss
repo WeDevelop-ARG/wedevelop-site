@@ -1,0 +1,86 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+$backgroundColor: #FFFFFF;
+
+.aboutUs {
+  padding-top: calc(50px + var(--rootContentMinPadding));
+  position: relative;
+  background-color: $backgroundColor;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  @include for-tablet-up {
+    align-items: flex-start;
+  }
+}
+
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 10px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.titleText {
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba($color: #363636, $alpha: 0.5);
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 40px 0px 60px;
+  border: none;
+}
+
+.sectionContent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+  gap: 50px;
+  margin-bottom: 60px;
+
+  @include for-desktop-up {
+    grid-template-columns: repeat(3, minmax(250px, auto));
+  }
+}
+
+.aboutUsBullet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bulletImg {
+  flex-shrink: 0;
+  margin-right: 30px;
+}
+
+.moreInfoButton {
+  margin: auto;
+
+  @include for-tablet-up {
+    margin-left: 0;
+  }
+}
