@@ -4,7 +4,7 @@ import { HashLink } from 'react-router-hash-link'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import useElementClass from 'utils/use_element_class'
-import useVariants from 'utils/use_variants'
+import useVariants, { isVariant } from 'utils/use_variants'
 import useCombinedRefs from 'utils/use_combined_refs'
 import useMediaQuery from 'utils/use_media_query'
 
@@ -32,6 +32,12 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
     return variant
   }, [atScrollTop, variant, variantAtScrollTop])
 
+  const logoVariant = useMemo(() => {
+    if (isVariant(variant, 'light')) return 'white'
+
+    return 'color'
+  }, [variant])
+
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
     defaults: {
@@ -48,10 +54,6 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
   }, [])
   const isTabletUp = useMediaQuery(forTabletUp)
   const isDesktopUp = useMediaQuery(forDesktopUp)
-  const logoVariant = useMemo(() => {
-    if (isTabletUp) return 'full'
-    else return 'hexagon'
-  }, [isTabletUp])
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
