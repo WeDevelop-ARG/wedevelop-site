@@ -6,7 +6,7 @@ function Services () {
   const services = useService()
 
   return (
-    <section className={classes.services}>
+    <section id='services' className={classes.services}>
       <h2 className={classes.subHeading}>What we do</h2>
       <ul className={classes.serviceList}>
         {services.map(({
