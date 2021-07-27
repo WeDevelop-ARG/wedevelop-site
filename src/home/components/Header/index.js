@@ -34,12 +34,13 @@ function Header (props, ref) {
         >
           Get in Touch
         </Button>
-        <div className={classes.arrow}>
-          <SVGIcon name='home/header/arrow' />
-          <div onClick={() => window.location.replace('/#services')}>
-            <HashLink className={classes.scrollText}>scroll down</HashLink>
-          </div>
-        </div>
+      </div>
+      <HashLink to='#services' smooth className={classes.arrow}>
+        <SVGIcon name='home/header/arrow' />
+        <div className={classes.scrollText}>scroll down</div>
+      </HashLink>
+      <div className={classes.clutchCircle}>
+        <ClutchWidget className={classes.clutchWidget} variant='dark' />
       </div>
       <div className={classes.decorationWrapper}>
         <img className={classes.imgHeader} src={imgHeader} alt='' />
@@ -51,9 +52,6 @@ function Header (props, ref) {
         </div>
         <div className={classes.filledCircle} />
         <div className={classes.emptyCircle} />
-        <div className={classes.clutchCircle}>
-          <ClutchWidget className={classes.clutchWidget} variant='dark' />
-        </div>
         <div className={classes.smallCircle} />
       </div>
     </section>
