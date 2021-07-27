@@ -1,9 +1,13 @@
 import { HashLink } from 'react-router-hash-link'
+
 import SVGIcon from '../SVGIcon'
 import ClutchWidget from 'main_app/components/ClutchWidget'
+
 import classes from './styles.module.scss'
 import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
+
+import pattern from 'assets/footer/pattern.svg'
 
 function Footer ({ variant = 'dark', className }) {
   className = classnames(
@@ -109,7 +113,7 @@ function Footer ({ variant = 'dark', className }) {
           </li>
         </ul>
       </div>
-      <SVGIcon name='footer/pattern' className={classes.pattern} />
+      <img src={pattern} alt='' className={classes.pattern} />
     </footer>
   )
 }
