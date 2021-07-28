@@ -8,6 +8,7 @@ import OurPeople from './components/OurPeople'
 import Skills from './components/Skills'
 import Services from './components/Services'
 import Methodologies from './components/Methodologies'
+import Testimonials from './components/Testimonials'
 import GetInTouch from './components/GetInTouch'
 import Footer from 'main_app/components/Footer'
 
@@ -37,6 +38,7 @@ function Landing () {
         <Methodologies />
         <Skills />
         <OurPeople />
+        <Testimonials />
         <GetInTouch />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
