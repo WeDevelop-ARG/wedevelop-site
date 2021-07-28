@@ -5,10 +5,20 @@ $backgroundColor: #FFFFFF;
 
 .aboutUs {
   padding-top: calc(50px + var(--rootContentMinPadding));
+  padding-bottom: 200px;
   position: relative;
   background-color: $backgroundColor;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  @include for-tablet-up {
+    padding-bottom: 300px;
+  }
+
+  @include for-desktop-up {
+    padding-bottom: 450px;
+  }
 }
 
 .sectionHeader {
@@ -83,4 +93,11 @@ $backgroundColor: #FFFFFF;
   @include for-tablet-up {
     margin-left: 0;
   }
+}
+
+.bottomImg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }

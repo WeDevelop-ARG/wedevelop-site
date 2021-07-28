@@ -3,6 +3,8 @@ import { HashLink } from 'react-router-hash-link'
 import Button from 'main_app/components/Button'
 import SVGIcon from 'main_app/components/SVGIcon'
 
+import BottomImg from 'assets/home/about_us_background_img.png'
+
 import classes from './styles.module.scss'
 
 function AboutUs () {
@@ -49,6 +51,7 @@ function AboutUs () {
       >
         More Info
       </Button>
+      <img src={BottomImg} alt='' className={classes.bottomImg} />
     </div>
   )
 }
