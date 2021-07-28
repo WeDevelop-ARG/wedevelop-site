@@ -2,79 +2,31 @@
 @import '/src/styles/media_queries.scss';
 
 .headerContainer {
-  padding-top: calc(
-    var(--rootContentMinPadding) +
-    var(--rootContentExtraPaddingTop)
-  );
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
-  overflow: hidden;
   display: flex;
+  overflow: hidden;
+  padding-bottom: 180px;
 }
 
 .decorationWrapper {
   position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: $backgroundColor;
-
-  min-height: 500px;
-
-  @media screen and (min-width: 450px) and (max-width: 500px) {
-    min-height: 600px;
-  }
-
-  @media screen and (min-width: 500px) and (max-width: 600px) {
-    min-height: 675px;
-  }
-
-  @media screen and (min-width: 600px) and (max-width: 700px) {
-    min-height: 750px;
-  }
-
-  @include for-tablet-up {
-    min-height: 500px;
-  }
-
-  @include for-desktop-up {
-    min-height: 600px;
-  }
-}
-
-.decorationContainer {
-  position: absolute;
-  left: 0;
-  width: 100%;
+  right: 0;
   bottom: -4px;
-
-  --cloudsWidth: 257.86vw;
-  --cloudsLeftOffset: -125vw;
-
-  @include for-tablet-up {
-    --cloudsWidth: 116vw;
-    --cloudsLeftOffset: -10.19vw;
-  }
-
-  @include for-desktop-up {
-    --cloudsWidth: 100vw;
-    --cloudsLeftOffset: 0px;
-  }
-}
-
-.clouds {
-  margin-left: var(--cloudsLeftOffset);
-  width: var(--cloudsWidth);
-  height: auto;
+  left: 0;
+  z-index: -1;
+  background-color: #FFFFFF;
 }
 
 .content {
   margin: auto;
-  transform: translateY(-60px);
   position: relative;
   text-align: center;
+
+  @include for-tablet-up {
+    transform: translateY(-50px);
+  }
 }
 
 .title {
@@ -82,8 +34,9 @@
   font-weight: 900;
 
   .firstLine {
-    font-size: 18px;
-    font-weight: 500;
+    font-weight: 300;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
   }
 
   .thirdLine {
@@ -93,39 +46,157 @@
   }
 
   @include for-tablet-up {
-    font-size: 42px;
-    .firstLine { font-size: 20px; }
+    .firstLine { font-size: 50px; }
   }
 
   @include for-desktop-up {
-    font-size: 72px;
-    .firstLine { font-size: 28px; }
+    .firstLine { font-size: 60px; }
+  }
+
+  @include for-phone-only {
+    .firstLine { font-size: 27px; }
   }
 }
 
 .text {
-  display: none;
-  margin-top: 16px;
-  margin-bottom: 30px;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 17px;
+  line-height: 29px;
+  color: #FFFFFF;
+  opacity: 0.7;
+  letter-spacing: -0.3px;
 
   @include for-tablet-up {
-    display: block;
-    max-width: 380px;
+    font-size: 24px;
+    margin-top: 40px;
   }
+}
 
-  @include for-desktop-up {
-    max-width: 580px;
+.divider {
+  width: 100px;
+  height: 10px;
+  background-color:#FFC331;
+  margin-top: 30px;
+  border: none;
+}
+
+.buttonContact {
+  margin-top: 40px;
+}
+
+.introTitle {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.7em;
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+
+.imgHeader {
+  object-fit: cover;
+  object-position: center bottom;
+  width: 100%;
+  height: 100%;
+}
+
+.halfCircle {
+  position: absolute;
+  top: 110px;
+  left: 0px;
+
+  @include for-tablet-down {
+    display: none;
   }
+}
 
-  @media screen and (max-height: 500px) {
+.pattern {
+  position: absolute;
+  top: 170px;
+  left: 83px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  background: #FFFFFF;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend .circle;
+  width: 250px;
+  height: 250px;
+  top: calc(50% + 10px);
+  right: 55px;
+  opacity: 0.1;
+  filter: blur(4px);
+  background: #EAEAEA;
+}
+
+.emptyCircle {
+  @extend .circle;
+  width: 250px;
+  height: 250px;
+  top: calc(50% + 20px);
+  right: 40px;
+  opacity: 0.2;
+  border: 2px solid;
+  border-color: #E1E1E1;
+  background: none;
+}
+
+.clutchCircle {
+  @extend .circle;
+  width: 210px;
+  height: 210px;
+  top: calc(50% + 105px);
+  right: 125px;
+  filter: drop-shadow(0px -4.42367px 8.84734px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid;
+  border-color: #ffffff;
+  z-index: 2;
+  display: flex;
+
+  @include for-tablet-down {
     display: none;
   }
 }
 
 .clutchWidget {
-  position: relative;
-  left: calc(50% + 5px);
+  margin: auto;
+}
+
+.smallCircle {
+  @extend .circle;
+  width: 30px;
+  height: 30px;
+  top: calc(50% + 185px);
+  right: 323px;
+  opacity: 0.2;
+  filter: blur(7px);
+}
+
+.arrow {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
   transform: translateX(-50%);
+  text-align: center;
+}
+
+.scrollText {
+  font-size: 10px;
+  text-transform: uppercase;
+  line-height: 12px;
+  letter-spacing: -0.39px;
+  color: #FFFFFF;
+  opacity: 0.7;
+  margin-top: 17px;
 }
