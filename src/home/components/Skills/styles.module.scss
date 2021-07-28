@@ -10,35 +10,7 @@
 
 .listSkill {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
-  gap: 50px;
-}
-
-.altSection {
-  position: relative;
-  background-color: #F7F9FC;
-
-  &.altSection::before {
-    top: 0;
-    left: 0;
-    border-bottom: 210px solid transparent;
-    border-left: 240px solid $secondaryColor;
-  }
-
-  &.altSection::after {
-    bottom: 0;
-    right: 0;
-    border-bottom: 125px solid $secondaryColor;
-    border-left: 170px solid transparent;
-  }
-
-  &.altSection::before, &.altSection::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-  }
+  display: flex;
 }
 
 @include for-desktop-up {
@@ -53,19 +25,6 @@
   .listSkill {
     margin: 0;
   }
-
-  .altSection {
-  
-    &.altSection::before {
-      border-bottom: 0px solid transparent;
-      border-left: 0px solid $secondaryColor;
-    }
-  
-    &.altSection::after {
-      border-bottom: 0px solid $secondaryColor;
-      border-left: 0px solid transparent;
-    }
-  }
 }
 
 @include for-phone-only {
@@ -77,18 +36,5 @@
   .listSkill {
     margin: 0;
     display: block;
-  }
-
-  .altSection {
-  
-    &.altSection::before {
-      border-bottom: 0px solid transparent;
-      border-left: 0px solid $secondaryColor;
-    }
-  
-    &.altSection::after {
-      border-bottom: 0px solid $secondaryColor;
-      border-left: 0px solid transparent;
-    }
   }
 }

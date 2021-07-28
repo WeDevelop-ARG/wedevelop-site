@@ -6,7 +6,6 @@ function Skill ({ name, photo }) {
   return (
     <div className={classes.skill}>
       <SVGIcon className={classes.logoSkill} name={photo} />
-      <p className={classes.nameSkill}>{name}</p>
     </div>
   )
 }

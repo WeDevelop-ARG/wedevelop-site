@@ -2,20 +2,14 @@
 @import '/src/styles/media_queries.scss';
 
 .logoSkill {
-  transition: filter 0.3s ease-in-out;
-  filter: grayscale(1);
-  margin-bottom: 45px;
-  height: 95px;
+  margin-top: 30px;
+  justify-content: center;
+  margin-right: 40px;
 }
 
 .skill {
   width: 100%;
-  margin-bottom: 100px;
-  text-align: center;
-}
-
-.skill:hover .logoSkill {
-  filter: grayscale(0);
+  margin-bottom: 67px;
 }
 
 .nameSkill {
@@ -24,13 +18,9 @@
   line-height: 35px;
 }
 
-.skill:hover .nameSkill {
-  color: $secondaryGradient;
-}
-
 @include for-desktop-up {
   .logoSkill {
-    height: 75px;
+    height: 52px;
   }
 }
 

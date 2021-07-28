@@ -1,62 +1,102 @@
+@import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-.subHeading {
-  margin: 0px 0px 28px 0px;
-  letter-spacing: 1px;
-  line-height: 60px;
-  text-align: center;
+$backgroundColor: #FFFFFF;
+
+.getInTouch {
+  background-color: $backgroundColor;
+  position: relative;
 }
 
-.service {
-  width: 33%;
-  padding: 60px 15px 0px 8px;
-  text-align: left;
+.sectionContent {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
-.services {
-  padding-top: calc(50px + var(--rootContentMinPadding));
-  background-color: #FFFFFF;
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 10px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.titleText {
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba($color: #363636, $alpha: 0.5);
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 32px 0px 30px 0px;
+  border: none;
+}
+
+.divider {
+  @extend .horizontalBar; 
+  background: #F9F9F9;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.serviceBox {
+  width: 504px;
+  height: 444px;
+  background: #FFFFFF;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  margin-right: 50px;
+  padding-bottom: 43px;
+
+  &:hover {
+    box-shadow: 8px 8px 10px 0 #E1E1E1;
+
+    .divider {
+      background: #FFC331;
+    }
+
+    .link {
+      color: #2426E3;
+    }
+  }
+
+  @include for-tablet-down {
+    margin-bottom: 50px;
+  }
 }
 
 .serviceList {
-  list-style-type: none;
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-}
+  flex-direction: row;
+  justify-content: center;
 
-@include for-desktop-up {
-  .serviceList {
-    padding: 0 72px;
-  }
-
-  .service {
-    padding: 0 32px;
-  }
-}
-
-@include for-tablet-up {
-  .service {
-    padding: 24px;
-  }
-}
-
-@include for-phone-only {
-  .subHeading {
-    margin: 0 0 20px 0;
-    letter-spacing: 0.6px
-  }
-
-  .service {
-    width: auto;
-    text-align: center;
-  }
-
-  .services {
-    margin-top: 72px;
-  }
-
-  .serviceList {
+  @include for-tablet-down {
     flex-direction: column;
-    padding: 0 26px;
   }
+}
+
+.link {
+  color: #363636;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+  font-weight: 600;
+  text-align: center;
 }
