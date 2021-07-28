@@ -37,6 +37,7 @@ $backgroundColor: #FFFFFF;
   font-weight: 300;
   font-size: 20px;
   color: rgba($color: #363636, $alpha: 0.5);
+  text-align: center;
 }
 
 .horizontalBar {
@@ -51,6 +52,11 @@ $backgroundColor: #FFFFFF;
   width: 166px;
   position: absolute;
   top: 90px;
+  display: none;
+
+  @media screen and (min-width: 1230px) {
+    display: block;
+  }
 }
 
 .leftPattern {
