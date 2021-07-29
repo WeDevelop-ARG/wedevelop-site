@@ -52,6 +52,10 @@ function AboutUs () {
         More Info
       </Button>
       <img src={BottomImg} alt='' className={classes.bottomImg} />
+      <div className={classes.filledCircle} aria-hidden='true' />
+      <div className={classes.emptyCircle} aria-hidden='true' />
+      <div className={classes.smallCircle} aria-hidden='true' />
+      <div className={classes.smallBlurCircle} aria-hidden='true' />
     </div>
   )
 }
