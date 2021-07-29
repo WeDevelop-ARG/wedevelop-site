@@ -8,7 +8,15 @@ $backgroundColor: #FFFFFF;
   flex-direction: column;
   background-color: $backgroundColor;
   position: relative;
-  padding-bottom: 500px;
+  padding-bottom: 225px;
+
+  @include for-tablet-up {
+    padding-bottom: 300px;
+  }
+
+  @include for-desktop-up {
+    padding-bottom: 500px;
+  }
 }
 
 .sectionHeader {
@@ -28,6 +36,7 @@ $backgroundColor: #FFFFFF;
 }
 
 .titleText {
+  text-align: center;
 
   @include for-desktop-up {
     font-weight: 600;
@@ -98,6 +107,12 @@ $backgroundColor: #FFFFFF;
   }
 }
 
+.quoteContainer {
+  max-width: 650px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .quote {
   font-weight: 300;
   font-size: 20px;
@@ -105,7 +120,6 @@ $backgroundColor: #FFFFFF;
   line-height: 35px;
   padding: 40px 0;
   margin: 0;
-  max-width: 580px;
 
   > strong {
     font-weight: 700;
@@ -130,6 +144,28 @@ $backgroundColor: #FFFFFF;
   > p {
     margin: 0;
   }
+}
+
+%quotation-mark {
+  width: 26px;
+  height: 18px;
+  color: #8224E3;
+  flex-shrink: 0;
+
+  @include for-tablet-up {
+    width: 36px;
+    height: 28px;
+  }
+}
+
+.openQuote {
+  @extend %quotation-mark;
+}
+
+.closeQuote {
+  @extend %quotation-mark;
+  transform: rotate(180deg);
+  align-self: flex-end;
 }
 
 .bottomImg {
