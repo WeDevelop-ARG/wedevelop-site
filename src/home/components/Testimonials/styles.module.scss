@@ -40,6 +40,7 @@ $backgroundColor: #FFFFFF;
   font-weight: 300;
   font-size: 20px;
   color: rgba($color: #363636, $alpha: 0.5);
+  text-align: center;
 }
 
 .horizontalBar {
@@ -48,6 +49,87 @@ $backgroundColor: #FFFFFF;
   background: #FFC331;
   margin: 40px auto;
   border: none;
+}
+
+.carousel > *[class^='react-slideshow-container'] {
+  display: flex;
+  justify-content: space-around;
+
+  & > .carouselArrow {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+
+  @include for-tablet-up {
+    & > *[class^='react-slideshow-wrapper'] {
+      max-width: 865px;
+    }
+  }
+}
+
+.carousel > *[class^='indicators'] {
+  max-width: 865px;
+  margin: auto;
+  margin-top: 50px !important;
+  padding: 0;
+
+  & > li:not(:last-of-type) {
+    margin-right: 20px;
+    width: 10px;
+    height: 10px;
+  }
+
+  & > li > *[class^='each-slideshow-indicator']::before {
+    background: #8224E3;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+
+  @include for-tablet-up {
+    margin: auto;
+  }
+}
+
+.quote {
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  line-height: 35px;
+  padding: 40px 0;
+  margin: 0;
+  max-width: 580px;
+
+  > strong {
+    font-weight: 700;
+  }
+
+  @include for-tablet-up {
+    font-size: 30px;
+    padding: 40px 10px;
+  }
+}
+
+.profileImg {
+  width: 115px;
+  height: 115px;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.profileData {
+  text-align: center;
+
+  > p {
+    margin: 0;
+  }
 }
 
 .bottomImg {
