@@ -43,7 +43,15 @@ function combineVariants (...variants) {
   return uniq(result)
 }
 
+function isVariant (variants, variant) {
+  if (!Array.isArray(variants)) {
+    variants = [variants]
+  }
+  return variants.includes(variant)
+}
+
 export {
   useVariants as default,
-  combineVariants
+  combineVariants,
+  isVariant
 }

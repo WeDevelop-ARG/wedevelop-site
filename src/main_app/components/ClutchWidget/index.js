@@ -31,6 +31,7 @@ function ClutchWidget ({ className, variant = 'light' }) {
       data-height='45'
       style={{ width: '192px', height: '45px' }}
       data-clutchcompany-id='810049'
+      data-primary-color='#FFC331'
       {...extraProps}
     />
   )

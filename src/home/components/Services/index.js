@@ -11,6 +11,7 @@ function ServicesOffered () {
   const services = useServicesOffered()
 
   return (
+<<<<<<< HEAD
     <>
       <section className={classes.getInTouch}>
         <div className={classes.sectionContent}>
@@ -60,6 +61,27 @@ function ServicesOffered () {
         </div>
       </section>
     </>
+=======
+    <section id='services' className={classes.services}>
+      <h2 className={classes.subHeading}>What we do</h2>
+      <ul className={classes.serviceList}>
+        {services.map(({
+          id,
+          name,
+          description,
+          photo
+        }) => (
+          <li className={classes.service} key={id}>
+            <Service
+              name={name}
+              description={description}
+              photo={photo}
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
+>>>>>>> feature/redesign
   )
 }
 
