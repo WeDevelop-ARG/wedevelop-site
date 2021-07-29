@@ -76,7 +76,6 @@ $backgroundColor: #FFFFFF;
     }
   }
 
-<<<<<<< HEAD
   @include for-tablet-down {
     margin-bottom: 50px;
   }
@@ -89,9 +88,6 @@ $backgroundColor: #FFFFFF;
   justify-content: center;
 
   @include for-tablet-down {
-=======
-  .serviceList {
->>>>>>> feature/redesign
     flex-direction: column;
   }
 }
