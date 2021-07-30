@@ -24,6 +24,7 @@
 @include for-tablet-down {
   .listSkill {
     margin: 0;
+    flex-direction: column;
   }
 }
 

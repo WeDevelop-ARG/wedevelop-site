@@ -3,8 +3,6 @@
 
 .logoSkill {
   margin-top: 30px;
-  justify-content: center;
-  margin-right: 40px;
 }
 
 .skill {
@@ -21,6 +19,7 @@
 @include for-desktop-up {
   .logoSkill {
     height: 52px;
+    margin-right: 40px;
   }
 }
 
@@ -33,5 +32,11 @@
     width: auto;
     margin: 0 32px 50px 32px;
     flex: 0 0 auto;
+  }
+}
+
+@include for-tablet-down {
+  .logoSkill {
+    transform: translateX(32px);
   }
 }

@@ -34,7 +34,6 @@ function Landing () {
         <Header />
         <Services />
         <Methodologies />
-        <Services />
         <OurPeople />
         <GetInTouch />
       </Article>

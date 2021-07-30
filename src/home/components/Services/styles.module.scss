@@ -63,21 +63,29 @@ $backgroundColor: #FFFFFF;
   border-radius: 5px;
   margin-right: 50px;
   padding-bottom: 43px;
+  z-index: 1;
 
   &:hover {
-    box-shadow: 8px 8px 10px 0 #E1E1E1;
+    -webkit-box-shadow: 1px 15px 13px 3px rgba(225,225,225,1);
+    -moz-box-shadow: 1px 15px 13px 3px rgba(225,225,225,1);
+    box-shadow: 1px 15px 13px 3px rgba(225,225,225,1);
 
     .divider {
       background: #FFC331;
     }
 
     .link {
-      color: #2426E3;
+      color: $primaryGradient;
     }
   }
 
   @include for-tablet-down {
     margin-bottom: 50px;
+  }
+
+  @include for-phone-only {
+    width: 324px;
+    height: 484px;
   }
 }
 
@@ -99,4 +107,47 @@ $backgroundColor: #FFFFFF;
   letter-spacing: -0.3px;
   font-weight: 600;
   text-align: center;
+}
+
+.descriptionText {
+  float: left;
+  margin-top: 7px;
+}
+
+.talk {
+  margin-left: 20px;
+
+  @include for-phone-only {
+    transform: translate(88px, -4px);
+  }
+
+  @media screen and (min-width: 528px) {
+    transform: none;
+  }
+}
+
+.patternRight {
+  
+  @include for-tablet-down {
+    display: none;
+  }
+
+  @include for-desktop-up {
+    position: absolute;
+    right: 65px;
+    padding-top: 189px;
+  }
+}
+
+.patternLeft {
+  
+  @include for-tablet-down {
+    display: none;
+  }
+
+  @include for-desktop-up {
+    position: absolute;
+    left: 22px;
+    padding-top: 440px;
+  }
 }

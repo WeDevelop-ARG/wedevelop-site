@@ -4,6 +4,8 @@ import Button from 'main_app/components/Button'
 import Skills from '../Skills'
 import Service from '../Service'
 import useServicesOffered from '../../hooks/useServicesOffered'
+import pattern from 'assets/home/services/pattern.svg'
+import patternLeft from 'assets/footer/pattern.svg'
 
 import classes from './styles.module.scss'
 
@@ -44,19 +46,23 @@ function ServicesOffered () {
             ))}
           </ul>
           <Skills />
-          <p className={classes.descriptionText}>
-            ...and other tailor made solutions!
-          </p>
-          <Button
-            as={HashLink}
-            to='/contact'
-            smooth
-            isAnchor
-            variant='primary'
-            className={classes.buttonTalk}
-          >
-            Get in Touch
-          </Button>
+          <div>
+            <p className={classes.descriptionText}>
+              ...and other tailor made solutions!
+            </p>
+            <Button
+              as={HashLink}
+              to='/contact'
+              smooth
+              isAnchor
+              variant='primary'
+              className={classes.talk}
+            >
+              Get in Touch
+            </Button>
+          </div>
+          <img src={pattern} alt='' className={classes.patternRight} />
+          <img src={patternLeft} alt='' className={classes.patternLeft} />
         </div>
       </section>
     </>
