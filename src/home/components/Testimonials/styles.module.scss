@@ -8,6 +8,7 @@ $backgroundColor: #FFFFFF;
   flex-direction: column;
   background-color: $backgroundColor;
   position: relative;
+  padding-top: 60px;
   padding-bottom: 225px;
 
   @include for-tablet-up {
@@ -58,6 +59,11 @@ $backgroundColor: #FFFFFF;
   background: #FFC331;
   margin: 40px auto;
   border: none;
+}
+
+.carousel {
+  z-index: 1;
+  position: relative;
 }
 
 .carousel > *[class^='react-slideshow-container'] {
@@ -173,4 +179,119 @@ $backgroundColor: #FFFFFF;
   left: 0;
   bottom: 0;
   width: 100%;
+}
+
+%dotsPattern {
+  width: 277px;
+  position: absolute;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.topRightPattern {
+  @extend %dotsPattern;
+  top: 0;
+  right: 50px;
+}
+
+.middelLeftPattern {
+  @extend %dotsPattern;
+  transform: rotate(90deg);
+  top: 316px;
+  left: 80px;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledSmallCircle {
+  @extend %circle;
+  width: 76px;
+  height: 76px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 59px;
+  left: 150px;
+}
+
+.emptySmallCircle {
+  @extend %circle;
+  width: 139px;
+  height: 139px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  top: 45px;
+  left: 72px;
+}
+
+.smallBlurLeftCircle {
+  @extend %circle;
+  width: 14px;
+  height: 14px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(3px);
+  top: 155px;
+  left: 60px;
+}
+
+.filledBigCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 408px;
+  right: 66px;
+}
+
+.emptyBigCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  top: 426px;
+  right: 100px;
+}
+
+.smallBlurRightCircle {
+  @extend %circle;
+  width: 17px;
+  height: 17px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(6px);
+  top: 670px;
+  right: 365px;
+}
+
+.smallCircle {
+  @extend %circle;
+  width: 10px;
+  height: 10px;
+  background-color: rgba($color: #8224E3, $alpha: 0.3);
+  filter: blur(1px);
+  top: 416px;
+  right: 112px;
+}
+
+.filledProfileCircle {
+  @extend %circle;
+  width: 140px;
+  height: 140px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 495px;
+  left: calc(50% - 60px);
+}
+
+.emptyProfileCircle {
+  @extend %circle;
+  width: 132px;
+  height: 132px;
+  border: .5px solid rgba($color: #8224E3, $alpha: 0.5);
+  top: 495px;
+  left: calc(50% - 70px);
 }

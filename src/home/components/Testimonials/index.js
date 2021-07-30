@@ -5,6 +5,7 @@ import SVGIcon from 'main_app/components/SVGIcon'
 
 import useReviews from '../../hooks/useReviews'
 import TestimonialsBg from 'assets/home/testimonials_background_image.png'
+import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
@@ -52,6 +53,17 @@ function Testimonials () {
         </Slide>
       </div>
       <img src={TestimonialsBg} alt='' className={classes.bottomImg} />
+      <img src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
+      <img src={DotsPattern} alt='' className={classes.middelLeftPattern} aria-hidden='true' />
+      <div className={classes.filledSmallCircle} aria-hidden='true' />
+      <div className={classes.emptySmallCircle} aria-hidden='true' />
+      <div className={classes.smallBlurLeftCircle} aria-hidden='true' />
+      <div className={classes.filledBigCircle} aria-hidden='true' />
+      <div className={classes.emptyBigCircle} aria-hidden='true' />
+      <div className={classes.smallCircle} aria-hidden='true' />
+      <div className={classes.smallBlurRightCircle} aria-hidden='true' />
+      <div className={classes.filledProfileCircle} aria-hidden='true' />
+      <div className={classes.emptyProfileCircle} aria-hidden='true' />
     </section>
   )
 }
