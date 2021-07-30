@@ -17,9 +17,9 @@ function ServicesOffered () {
       <section id='services' className={classes.getInTouch}>
         <div className={classes.sectionContent}>
           <p className={classes.subheadingText}>services</p>
-          <h2 className={classes.titleText}>What we're good at</h2>
+          <h2 className={classes.titleText}>What we’re good at</h2>
           <p className={classes.descriptionText}>
-            We are an agile and unstoppable team commited to your vision and goals
+            We are an agile and unstoppable team committed to your vision and goals
           </p>
           <hr className={classes.horizontalBar} />
           <ul className={classes.serviceList}>
