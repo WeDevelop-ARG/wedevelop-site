@@ -12,7 +12,6 @@ $backgroundColor: #FFFFFF;
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: center;
 }
 
 .subheadingText {
@@ -20,11 +19,13 @@ $backgroundColor: #FFFFFF;
   letter-spacing: 3px;
   color: rgba($color: #363636, $alpha: 0.5);
   font-size: 10px;
-  margin-bottom: 40px;
+  margin: 0px auto 40px auto;
   text-transform: uppercase;
 }
 
 .titleText {
+  margin-left: auto;
+  margin-right: auto;
 
   @include for-desktop-up {
     font-weight: 600;
@@ -37,13 +38,15 @@ $backgroundColor: #FFFFFF;
   font-weight: 300;
   font-size: 20px;
   color: rgba($color: #363636, $alpha: 0.5);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .horizontalBar {
   width: 100px;
   height: 10px;
   background: #FFC331;
-  margin: 32px 0px 30px 0px;
+  margin: 32px auto 30px auto;
   border: none;
 }
 
@@ -56,14 +59,14 @@ $backgroundColor: #FFFFFF;
 }
 
 .serviceBox {
-  width: 504px;
-  height: 444px;
   background: #FFFFFF;
   border: 1px solid #E1E1E1;
   border-radius: 5px;
   margin-right: 50px;
   padding-bottom: 43px;
   z-index: 1;
+  flex-grow: 1;
+  max-width: 504px;
 
   &:hover {
     -webkit-box-shadow: 1px 15px 13px 3px rgba(225,225,225,1);
@@ -82,20 +85,14 @@ $backgroundColor: #FFFFFF;
   @include for-tablet-down {
     margin-bottom: 50px;
   }
-
-  @include for-phone-only {
-    width: 324px;
-    height: 484px;
-  }
 }
 
 .serviceList {
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: center;
 
-  @include for-tablet-down {
+  @include for-phone-only {
     flex-direction: column;
   }
 }
@@ -134,8 +131,8 @@ $backgroundColor: #FFFFFF;
 
   @include for-desktop-up {
     position: absolute;
-    right: 65px;
-    padding-top: 189px;
+    right: 110px;
+    padding-top: 160px;
   }
 }
 
@@ -147,7 +144,17 @@ $backgroundColor: #FFFFFF;
 
   @include for-desktop-up {
     position: absolute;
-    left: 22px;
-    padding-top: 440px;
+    left: 15px;
+    padding-top: 500px;
   }
+}
+
+.contentText {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.arrow {
+  margin-bottom: -7px;
+  margin-left: 8px;
 }

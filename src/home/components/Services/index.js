@@ -1,11 +1,11 @@
 import { HashLink } from 'react-router-hash-link'
 
+import SVGIcon from 'main_app/components/SVGIcon'
 import Button from 'main_app/components/Button'
 import Skills from '../Skills'
 import Service from '../Service'
 import useServicesOffered from '../../hooks/useServicesOffered'
 import pattern from 'assets/home/services/pattern.svg'
-import patternLeft from 'assets/footer/pattern.svg'
 
 import classes from './styles.module.scss'
 
@@ -40,13 +40,13 @@ function ServicesOffered () {
                   description={description}
                 />
                 <HashLink to={path} smooth>
-                  <p className={classes.link}>Learn More</p>
+                  <p className={classes.link}>Learn More <SVGIcon name='home/services/arrow' className={classes.arrow} /></p>
                 </HashLink>
               </li>
             ))}
           </ul>
           <Skills />
-          <div>
+          <div className={classes.contentText}>
             <p className={classes.descriptionText}>
               ...and other tailor made solutions!
             </p>
@@ -62,7 +62,7 @@ function ServicesOffered () {
             </Button>
           </div>
           <img src={pattern} alt='' className={classes.patternRight} />
-          <img src={patternLeft} alt='' className={classes.patternLeft} />
+          <img src={pattern} alt='' className={classes.patternLeft} />
         </div>
       </section>
     </>

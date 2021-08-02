@@ -1,42 +1,21 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-.logoSkill {
-  margin-top: 30px;
-}
-
 .skill {
-  width: 100%;
-  margin-bottom: 67px;
+  margin: 30px auto 67px auto;
 }
 
-.nameSkill {
-  margin: 0;
-  letter-spacing: 0.6px;
-  line-height: 35px;
+.logoSkill {
+  height: 50px;
 }
 
-@include for-desktop-up {
-  .logoSkill {
-    height: 52px;
-    margin-right: 40px;
-  }
-}
-
-@include for-phone-only {
+@include for-tablet-down {
   .logoSkill {
     margin-bottom: 20px;
   }
 
   .skill {
-    width: auto;
     margin: 0 32px 50px 32px;
     flex: 0 0 auto;
-  }
-}
-
-@include for-tablet-down {
-  .logoSkill {
-    transform: translateX(32px);
   }
 }
