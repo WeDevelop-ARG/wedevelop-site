@@ -63,6 +63,12 @@ function ServicesOffered () {
           </div>
           <img src={pattern} alt='' className={classes.patternRight} />
           <img src={pattern} alt='' className={classes.patternLeft} />
+          <div className={classes.halfCircle}>
+            <SVGIcon name='home/services/half_circle' />
+          </div>
+          <div className={classes.filledCircle} />
+          <div className={classes.emptyCircle} />
+          <div className={classes.smallCircle} />
         </div>
       </section>
     </>

@@ -158,3 +158,57 @@ $backgroundColor: #FFFFFF;
   margin-bottom: -7px;
   margin-left: 8px;
 }
+
+.halfCircle {
+  position: absolute;
+  top: 770px;
+  left: 0px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  background: #FFFFFF;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend .circle;
+  width: 120px;
+  height: 120px;
+  top: 850px;
+  left: 26px;
+  opacity: 0.3;
+  filter: blur(1px);
+  background: #EAEAEA;
+}
+
+.emptyCircle {
+  @extend .circle;
+  width: 120px;
+  height: 120px;
+  top: 854px;
+  left: 35px;
+  opacity: 0.2;
+  border: 2px solid;
+  border-color: #E1E1E1;
+  background: none;
+}
+
+.smallCircle {
+  @extend .circle;
+  width: 14px;
+  height: 14px;
+  top: 950px;
+  left: 23px;
+  opacity: 0.3;
+  filter: blur(1.5px);
+  background: #8224E3;;
+}
