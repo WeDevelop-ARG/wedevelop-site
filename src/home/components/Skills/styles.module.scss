@@ -30,7 +30,9 @@
   }
 
   .listSkill {
-    flex-direction: column;
+    margin-top: 50px;
+    overflow-x: scroll;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
   }

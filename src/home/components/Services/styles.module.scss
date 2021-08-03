@@ -1,14 +1,13 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-$backgroundColor: #FFFFFF;
-
 .getInTouch {
   background-color: $backgroundColor;
   position: relative;
 }
 
 .sectionContent {
+  padding-top: 50px;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -62,11 +61,11 @@ $backgroundColor: #FFFFFF;
   background: #FFFFFF;
   border: 1px solid #E1E1E1;
   border-radius: 5px;
-  margin-right: 50px;
   padding-bottom: 43px;
   z-index: 1;
   flex-grow: 1;
   max-width: 504px;
+  padding: 10px;
 
   &:hover {
     -webkit-box-shadow: 1px 15px 13px 3px rgba(225,225,225,1);
@@ -82,13 +81,26 @@ $backgroundColor: #FFFFFF;
     }
   }
 
-  @include for-tablet-down {
-    margin-bottom: 50px;
+  @include for-desktop-up {
+    margin: auto;
+  }
+}
+
+@include for-phone-only {
+  .serviceBox + .serviceBox {
+    margin-top: 50px;
+  }
+}
+
+@include for-tablet-up {
+  .serviceBox + .serviceBox {
+    margin-left: 50px;
   }
 }
 
 .serviceList {
   list-style: none;
+  padding-left: 0px;
   display: flex;
   flex-direction: row;
 
@@ -112,15 +124,8 @@ $backgroundColor: #FFFFFF;
 }
 
 .talk {
-  margin-left: 20px;
-
-  @include for-phone-only {
-    transform: translate(88px, -4px);
-  }
-
-  @media screen and (min-width: 528px) {
-    transform: none;
-  }
+  text-align: center;
+  margin: auto;
 }
 
 .patternRight {
@@ -131,7 +136,7 @@ $backgroundColor: #FFFFFF;
 
   @include for-desktop-up {
     position: absolute;
-    right: 110px;
+    right: 70px;
     padding-top: 160px;
   }
 }
@@ -144,14 +149,16 @@ $backgroundColor: #FFFFFF;
 
   @include for-desktop-up {
     position: absolute;
-    left: 15px;
-    padding-top: 500px;
+    left: 17px;
+    padding-top: 475px;
   }
 }
 
 .contentText {
   margin-right: auto;
   margin-left: auto;
+  margin-top: 15px;
+  z-index: 1;
 }
 
 .arrow {
@@ -161,7 +168,7 @@ $backgroundColor: #FFFFFF;
 
 .halfCircle {
   position: absolute;
-  top: 770px;
+  top: 800px;
   left: 0px;
 
   @include for-tablet-down {
@@ -183,7 +190,7 @@ $backgroundColor: #FFFFFF;
   @extend .circle;
   width: 120px;
   height: 120px;
-  top: 850px;
+  top: 890px;
   left: 26px;
   opacity: 0.3;
   filter: blur(1px);
@@ -194,8 +201,8 @@ $backgroundColor: #FFFFFF;
   @extend .circle;
   width: 120px;
   height: 120px;
-  top: 854px;
-  left: 35px;
+  top: 893px;
+  left: 37px;
   opacity: 0.2;
   border: 2px solid;
   border-color: #E1E1E1;
@@ -206,9 +213,9 @@ $backgroundColor: #FFFFFF;
   @extend .circle;
   width: 14px;
   height: 14px;
-  top: 950px;
-  left: 23px;
+  top: 1000px;
+  left: 32px;
   opacity: 0.3;
   filter: blur(1.5px);
-  background: #8224E3;;
+  background: #8224E3;
 }
