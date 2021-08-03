@@ -5,19 +5,11 @@ $grayColor: #363636;
 
 .aboutUs {
   padding-top: calc(125px + var(--rootContentMinPadding));
-  padding-bottom: 200px;
+  padding-bottom: 33vw;
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
-  @include for-tablet-up {
-    padding-bottom: 300px;
-  }
-
-  @include for-desktop-up {
-    padding-bottom: 450px;
-  }
 }
 
 .sectionHeader {
@@ -112,6 +104,7 @@ $grayColor: #363636;
   left: 0;
   bottom: 0;
   width: 100%;
+  z-index: -1;
 }
 
 %circle {
