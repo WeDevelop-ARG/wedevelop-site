@@ -1,8 +1,26 @@
-<svg id="full" width="113" height="327" viewBox="0 0 113 327" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.3">
-<line x1="10" y1="10" x2="9.99999" y2="317" stroke="#377DFF" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 26"/>
-<line x1="40" y1="10" x2="40" y2="317" stroke="#377DFF" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 26"/>
-<line x1="70.0001" y1="10" x2="70" y2="317" stroke="#377DFF" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 26"/>
-<line x1="100" y1="10" x2="100" y2="317" stroke="#377DFF" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 26"/>
-</g>
+<svg id="full" width="94" height="311" viewBox="0 0 94 311" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+  <linearGradient id="paint0_linear" x1="-0.500014" y1="311" x2="-0.49722" y2="-4.46835e-06" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#8224E3"/>
+    <stop offset="1" stop-color="#361989" stop-opacity="0.3"/>
+  </linearGradient>
+  <linearGradient id="paint1_linear" x1="29.5" y1="311" x2="29.5028" y2="-4.46835e-06" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#8224E3"/>
+    <stop offset="1" stop-color="#361989" stop-opacity="0.3"/>
+  </linearGradient>
+  <linearGradient id="paint2_linear" x1="59.5" y1="311" x2="59.5028" y2="-4.46835e-06" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#8224E3"/>
+    <stop offset="1" stop-color="#361989" stop-opacity="0.3"/>
+  </linearGradient>
+  <linearGradient id="paint3_linear" x1="89.5" y1="311" x2="89.5028" y2="-4.46835e-06" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#8224E3"/>
+    <stop offset="1" stop-color="#361989" stop-opacity="0.3"/>
+</linearGradient>
+</defs>
+
+<line x1="2" y1="2" x2="1.99999" y2="309" stroke="url(#paint0_linear)" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 26"/>
+<line x1="32" y1="2" x2="32" y2="309" stroke="url(#paint1_linear)" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 26"/>
+<line x1="62.0001" y1="2" x2="62" y2="309" stroke="url(#paint2_linear)" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 26"/>
+<line x1="92.0001" y1="2" x2="92" y2="309" stroke="url(#paint3_linear)" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 26"/>
 </svg>
