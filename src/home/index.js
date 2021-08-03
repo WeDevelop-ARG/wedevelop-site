@@ -8,6 +8,7 @@ import AboutUs from './components/AboutUs'
 import Skills from './components/Skills'
 import Services from './components/Services'
 import Methodologies from './components/Methodologies'
+import Testimonials from './components/Testimonials'
 import GetInTouch from './components/GetInTouch'
 import Footer from 'main_app/components/Footer'
 
@@ -36,6 +37,7 @@ function Landing () {
         <Services />
         <Methodologies />
         <Skills />
+        <Testimonials />
         <AboutUs />
         <GetInTouch />
       </Article>

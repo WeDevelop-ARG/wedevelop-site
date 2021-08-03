@@ -18,6 +18,7 @@
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.4.0",
     "react-scripts": "4.0.3",
+    "react-slideshow-image": "^3.5.0",
     "rectangles": "^0.0.4",
     "web-vitals": "^1.1.0",
     "yup": "^0.32.9"
