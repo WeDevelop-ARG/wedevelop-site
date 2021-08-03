@@ -2,6 +2,7 @@ import { HashLink } from 'react-router-hash-link'
 
 import SVGIcon from '../SVGIcon'
 import ClutchWidget from 'main_app/components/ClutchWidget'
+import Logo from '../Logo'
 
 import classes from './styles.module.scss'
 import useVariants from 'utils/use_variants'
@@ -19,7 +20,11 @@ function Footer ({ variant = 'dark', className }) {
     <footer className={className}>
       <div className={classes.listUs}>
         <ul className={classes.contact}>
-          <li><SVGIcon name='logoBlue' /></li>
+          <li>
+            <Logo
+              variant='dark'
+            />
+          </li>
           <li><ClutchWidget className={classes.clutchWidget} variant='dark' /></li>
         </ul>
         <ul className={classes.contact}>
@@ -79,6 +84,12 @@ function Footer ({ variant = 'dark', className }) {
             <SVGIcon name='footer/phone' className={classes.iconStyles} />
             <a href='tel:+19254486165' className={classes.contactContent}>
               +1 (925) 448-6165
+            </a>
+          </li>
+          <li className={classes.contactContentContainer}>
+            <SVGIcon name='footer/download' className={classes.iconStyles} />
+            <a href='/storage/WeDevelop-Brochure.pdf?alt=media' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
+              Download brochure
             </a>
           </li>
         </ul>
