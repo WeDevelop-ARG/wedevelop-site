@@ -1,12 +1,10 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-$backgroundColor: #FFFFFF;
 
 .testimonials {
   display: flex;
   flex-direction: column;
-  background-color: $backgroundColor;
   position: relative;
   padding-top: 60px;
   padding-bottom: 225px;

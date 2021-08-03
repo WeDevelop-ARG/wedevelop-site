@@ -1,14 +1,12 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-$backgroundColor: #FFFFFF;
 $grayColor: #363636;
 
 .aboutUs {
   padding-top: calc(125px + var(--rootContentMinPadding));
   padding-bottom: 200px;
   position: relative;
-  background-color: $backgroundColor;
   display: flex;
   flex-direction: column;
   overflow: hidden;
