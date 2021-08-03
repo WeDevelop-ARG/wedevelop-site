@@ -1,8 +1,8 @@
 import { HashLink } from 'react-router-hash-link'
 
 import Button from 'main_app/components/Button'
-import SVGIcon from 'main_app/components/SVGIcon'
 
+import DotsPattern from 'assets/home/dots_pattern.svg'
 import Picture1 from 'assets/home/picture_wall_1.png'
 import Picture2 from 'assets/home/picture_wall_2.png'
 import Picture3 from 'assets/home/picture_wall_3.png'
@@ -14,7 +14,7 @@ function GetInTouch () {
   return (
     <>
       <section className={classes.getInTouch}>
-        <SVGIcon name='home/dots_pattern' className={classes.leftPattern} />
+        <img src={DotsPattern} alt='' className={classes.leftPattern} aria-hidden='true' />
         <div className={classes.sectionContent}>
           <p className={classes.subheadingText}>Get in touch</p>
           <h2 className={classes.titleText}>Schedule a call with us</h2>
@@ -33,7 +33,7 @@ function GetInTouch () {
             Get in Touch
           </Button>
         </div>
-        <SVGIcon name='home/dots_pattern' className={classes.rightPattern} />
+        <img src={DotsPattern} alt='' className={classes.rightPattern} aria-hidden='true' />
       </section>
       <div className={classes.pictureWall}>
         <img src={Picture1} alt='' />

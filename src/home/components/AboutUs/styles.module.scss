@@ -1,0 +1,151 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+$backgroundColor: #FFFFFF;
+$grayColor: #363636;
+
+.aboutUs {
+  padding-top: calc(125px + var(--rootContentMinPadding));
+  padding-bottom: 200px;
+  position: relative;
+  background-color: $backgroundColor;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include for-tablet-up {
+    padding-bottom: 300px;
+  }
+
+  @include for-desktop-up {
+    padding-bottom: 450px;
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  @include for-tablet-up {
+    align-items: flex-start;
+  }
+}
+
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: $grayColor, $alpha: 0.5);
+  font-size: 10px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.titleText {
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba($color: $grayColor, $alpha: 0.5);
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 40px 0px 60px;
+  border: none;
+}
+
+.sectionContent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+  gap: 50px;
+  margin-bottom: 60px;
+
+  @include for-desktop-up {
+    grid-template-columns: repeat(3, minmax(250px, auto));
+  }
+}
+
+.aboutUsBullet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bulletImg {
+  flex-shrink: 0;
+  margin-right: 30px;
+}
+
+.moreInfoButton {
+  margin: auto;
+
+  @include for-tablet-up {
+    margin-left: 0;
+  }
+}
+
+.bottomImg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %circle;
+  width: 376px;
+  height: 376px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 0;
+  right: -188px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  width: 376px;
+  height: 376px;
+  border: .5px solid rgba($color: $grayColor, $alpha: 0.2);
+  top: 16px;
+  right: -158px;
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 17px;
+  height: 17px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(6px);
+  top: 313px;
+  right: 158px;
+}
+
+.smallCircle {
+  @extend %circle;
+  width: 10px;
+  height: 10px;
+  background-color: rgba($color: #8224E3, $alpha: 0.3);
+  filter: blur(1px);
+  top: 0;
+  right: 283px;
+}
