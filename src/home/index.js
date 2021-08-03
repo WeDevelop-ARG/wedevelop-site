@@ -4,9 +4,11 @@ import { useRouteMatch, useHistory } from 'react-router-dom'
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Header from './components/Header'
-import OurPeople from './components/OurPeople'
+import AboutUs from './components/AboutUs'
+import Skills from './components/Skills'
 import Services from './components/Services'
 import Methodologies from './components/Methodologies'
+import Testimonials from './components/Testimonials'
 import GetInTouch from './components/GetInTouch'
 import Footer from 'main_app/components/Footer'
 
@@ -34,7 +36,9 @@ function Landing () {
         <Header />
         <Services />
         <Methodologies />
-        <OurPeople />
+        <Skills />
+        <Testimonials />
+        <AboutUs />
         <GetInTouch />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
