@@ -1,46 +1,20 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-.logoSkill {
-  transition: filter 0.3s ease-in-out;
-  filter: grayscale(1);
-  margin-bottom: 45px;
-  height: 95px;
-}
-
 .skill {
-  width: 100%;
-  margin-bottom: 100px;
-  text-align: center;
+  margin: 30px auto 67px auto;
 }
 
-.skill:hover .logoSkill {
-  filter: grayscale(0);
+.logoSkill {
+  height: 50px;
 }
 
-.nameSkill {
-  margin: 0;
-  letter-spacing: 0.6px;
-  line-height: 35px;
-}
-
-.skill:hover .nameSkill {
-  color: $secondaryGradient;
-}
-
-@include for-desktop-up {
-  .logoSkill {
-    height: 75px;
-  }
-}
-
-@include for-phone-only {
+@include for-tablet-down {
   .logoSkill {
     margin-bottom: 20px;
   }
 
   .skill {
-    width: auto;
     margin: 0 32px 50px 32px;
     flex: 0 0 auto;
   }

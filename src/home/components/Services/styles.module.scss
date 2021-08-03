@@ -1,58 +1,214 @@
+@import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-.subHeading {
-  margin: 0px 0px 28px 0px;
-  letter-spacing: 1px;
-  line-height: 60px;
-  text-align: center;
+$backgroundColor: #FFFFFF;
+
+.getInTouch {
+  background-color: $backgroundColor;
+  position: relative;
 }
 
-.service {
-  width: 33%;
-  padding: 60px 15px 0px 8px;
-  text-align: left;
+.sectionContent {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 
-.services {
-  padding-top: calc(50px + var(--rootContentMinPadding));
-  background-color: #FFFFFF;
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 10px;
+  margin: 0px auto 40px auto;
+  text-transform: uppercase;
+}
+
+.titleText {
+  margin-left: auto;
+  margin-right: auto;
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 32px auto 30px auto;
+  border: none;
+}
+
+.divider {
+  @extend .horizontalBar; 
+  background: #F9F9F9;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.serviceBox {
+  background: #FFFFFF;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  margin-right: 50px;
+  padding-bottom: 43px;
+  z-index: 1;
+  flex-grow: 1;
+  max-width: 504px;
+
+  &:hover {
+    -webkit-box-shadow: 1px 15px 13px 3px rgba(225,225,225,1);
+    -moz-box-shadow: 1px 15px 13px 3px rgba(225,225,225,1);
+    box-shadow: 1px 15px 13px 3px rgba(225,225,225,1);
+
+    .divider {
+      background: #FFC331;
+    }
+
+    .link {
+      color: $primaryGradient;
+    }
+  }
+
+  @include for-tablet-down {
+    margin-bottom: 50px;
+  }
 }
 
 .serviceList {
-  list-style-type: none;
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-}
+  flex-direction: row;
 
-@include for-desktop-up {
-  .serviceList {
-    padding: 0 72px;
-  }
-
-  .service {
-    padding: 0 32px;
-  }
-}
-
-@include for-tablet-up {
-  .service {
-    padding: 24px;
-  }
-}
-
-@include for-phone-only {
-  .subHeading {
-    margin: 0 0 20px 0;
-    letter-spacing: 0.6px
-  }
-
-  .service {
-    width: auto;
-    text-align: center;
-  }
-
-  .serviceList {
+  @include for-phone-only {
     flex-direction: column;
-    padding: 0 26px;
   }
+}
+
+.link {
+  color: #363636;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.descriptionText {
+  float: left;
+  margin-top: 7px;
+}
+
+.talk {
+  margin-left: 20px;
+
+  @include for-phone-only {
+    transform: translate(88px, -4px);
+  }
+
+  @media screen and (min-width: 528px) {
+    transform: none;
+  }
+}
+
+.patternRight {
+  
+  @include for-tablet-down {
+    display: none;
+  }
+
+  @include for-desktop-up {
+    position: absolute;
+    right: 110px;
+    padding-top: 160px;
+  }
+}
+
+.patternLeft {
+  
+  @include for-tablet-down {
+    display: none;
+  }
+
+  @include for-desktop-up {
+    position: absolute;
+    left: 15px;
+    padding-top: 500px;
+  }
+}
+
+.contentText {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.arrow {
+  margin-bottom: -7px;
+  margin-left: 8px;
+}
+
+.halfCircle {
+  position: absolute;
+  top: 770px;
+  left: 0px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  background: #FFFFFF;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend .circle;
+  width: 120px;
+  height: 120px;
+  top: 850px;
+  left: 26px;
+  opacity: 0.3;
+  filter: blur(1px);
+  background: #EAEAEA;
+}
+
+.emptyCircle {
+  @extend .circle;
+  width: 120px;
+  height: 120px;
+  top: 854px;
+  left: 35px;
+  opacity: 0.2;
+  border: 2px solid;
+  border-color: #E1E1E1;
+  background: none;
+}
+
+.smallCircle {
+  @extend .circle;
+  width: 14px;
+  height: 14px;
+  top: 950px;
+  left: 23px;
+  opacity: 0.3;
+  filter: blur(1.5px);
+  background: #8224E3;;
 }

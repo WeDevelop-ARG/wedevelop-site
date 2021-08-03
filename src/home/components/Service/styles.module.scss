@@ -3,6 +3,7 @@
 .description {
   letter-spacing: 0.6px;
   line-height: 35px;
+  text-align: center;
 }
 
 .nameService {
@@ -10,7 +11,7 @@
   padding-bottom: 16px;
   letter-spacing: 0.6px;
   line-height: 40px;
-  border-bottom: 1px solid #F0F1F5;
+  text-align: center;
 }
 
 @include for-tablet-up {
@@ -25,8 +26,10 @@
     padding-bottom: 16px;
     letter-spacing: 0.44px;
   }
+}
 
-  .description {
-    line-height: 28px;
-  }
+.photo {
+  display: block;
+  margin: auto;
+  margin-top: 40px;
 }
