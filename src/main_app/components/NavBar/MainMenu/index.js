@@ -8,7 +8,7 @@ import { forPhoneOnly } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
 
-function MainMenu ({ isOpen, onRequestClose, className }) {
+function MainMenu ({ isOpen, onRequestClose, className, buttonVariant }) {
   const isPhone = useMediaQuery(forPhoneOnly)
 
   return (
@@ -19,7 +19,7 @@ function MainMenu ({ isOpen, onRequestClose, className }) {
         <Button
           as={HashLink}
           isAnchor
-          variant={['secondary', ...(isPhone ? ['dark'] : [])]}
+          variant={['secondary', ...(isPhone ? ['dark'] : [buttonVariant])]}
           to='/contact'
           smooth
           className={classes.buttonTalk}

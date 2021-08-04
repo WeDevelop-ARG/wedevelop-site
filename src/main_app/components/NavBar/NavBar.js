@@ -38,6 +38,10 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
     return 'color'
   }, [variant])
 
+  const buttonVariant = useMemo(() => {
+    if (isVariant(variant, 'light')) return 'dark'
+  }, [variant])
+
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
     defaults: {
@@ -74,6 +78,7 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
         smooth
       >
         <Logo
+          menuOpen={menuOpen}
           variant={logoVariant}
           className={classes.logo}
         />
@@ -98,6 +103,7 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
             isOpen={isDesktopUp || isTabletUp || menuOpen}
             onRequestClose={closeMenu}
             className={classes.menu}
+            buttonVariant={buttonVariant}
           />
         </nav>)}
     </header>
