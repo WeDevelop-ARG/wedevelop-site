@@ -126,6 +126,11 @@
   margin-right: 18px;
 }
 
+.iconSocialNetworks {
+  @extend .iconStyles;
+  margin-right: 24px;
+}
+
 .contactContent {
   @extend %contactLinksColor;
   text-align: left;
