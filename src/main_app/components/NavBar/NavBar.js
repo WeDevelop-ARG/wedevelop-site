@@ -97,7 +97,15 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
             className={classes.menuToggle}
           >
             {menuOpen && <SVGIcon name='nav_bar/close_x' className={classes.close} />}
-            {!menuOpen && <SVGIcon name='nav_bar/hamburguer_menu' className={classes.open} />}
+            {!menuOpen &&
+              <SVGIcon
+                name='nav_bar/hamburguer_menu'
+                className={
+                  classnames(classes.open, {
+                    [classes.white]: isVariant(variant, 'light')
+                  })
+                }
+              />}
           </button>
           <MainMenu
             isOpen={isDesktopUp || isTabletUp || menuOpen}
