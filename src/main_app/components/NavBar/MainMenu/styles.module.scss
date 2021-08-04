@@ -106,5 +106,8 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  margin-right: 35px;
+
+  @include for-tablet-up {
+    margin-right: 35px;
+  }
 }
