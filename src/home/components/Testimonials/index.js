@@ -1,9 +1,8 @@
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
-import SVGIcon from 'main_app/components/SVGIcon'
-
 import useReviews from '../../hooks/useReviews'
+import QuotationMark from 'assets/home/quotation_mark.svg'
 import TestimonialsBg from 'assets/home/testimonials_background_image.png'
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
@@ -34,9 +33,9 @@ function Testimonials () {
           {reviews.map((review, i) => (
             <figure key={i} className={classes.slide}>
               <div className={classes.quoteContainer}>
-                <SVGIcon name='home/quotation_mark' className={classes.openQuote} />
+                <img src={QuotationMark} alt='' className={classes.openQuote} />
                 <blockquote className={classes.quote}>{review.quote}</blockquote>
-                <SVGIcon name='home/quotation_mark' className={classes.closeQuote} />
+                <img src={QuotationMark} alt='' className={classes.closeQuote} />
               </div>
               <img
                 src={review.profileImageURL}
