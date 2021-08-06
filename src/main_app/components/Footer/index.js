@@ -2,6 +2,7 @@ import { HashLink } from 'react-router-hash-link'
 
 import SVGIcon from '../SVGIcon'
 import ClutchWidget from 'main_app/components/ClutchWidget'
+import Logo from '../Logo'
 
 import classes from './styles.module.scss'
 import useVariants from 'utils/use_variants'
@@ -19,7 +20,11 @@ function Footer ({ variant = 'dark', className }) {
     <footer className={className}>
       <div className={classes.listUs}>
         <ul className={classes.contact}>
-          <li><SVGIcon name='logoBlue' /></li>
+          <li>
+            <Logo
+              variant='dark'
+            />
+          </li>
           <li><ClutchWidget className={classes.clutchWidget} variant='dark' /></li>
         </ul>
         <ul className={classes.contact}>
@@ -81,6 +86,12 @@ function Footer ({ variant = 'dark', className }) {
               +1 (925) 448-6165
             </a>
           </li>
+          <li className={classes.contactContentContainer}>
+            <SVGIcon name='footer/download' className={classes.iconStyles} />
+            <a href='/storage/WeDevelop-Brochure.pdf?alt=media' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
+              Download brochure
+            </a>
+          </li>
         </ul>
       </div>
       <div className={classes.socials}>
@@ -98,17 +109,17 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.socialNetworks}>
           <li>
             <a href='https://www.linkedin.com/company/wedevelop-arg' target='_blank' rel='noreferrer'>
-              <SVGIcon name='footer/linked_in' title={'WeDevelop\'s LinkedIn'} className={classes.iconStyles} />
+              <SVGIcon name='footer/linked_in' title={'WeDevelop\'s LinkedIn'} className={classes.iconSocialNetworks} />
             </a>
           </li>
           <li>
             <a href='https://facebook.com/WeDevelop-101618141565362' target='_blank' rel='noreferrer'>
-              <SVGIcon name='footer/facebook' title={'WeDevelop\'s Facebook'} className={classes.iconStyles} />
+              <SVGIcon name='footer/facebook' title={'WeDevelop\'s Facebook'} className={classes.iconSocialNetworks} />
             </a>
           </li>
           <li>
             <a href='https://www.instagram.com/wedevelop.me' target='_blank' rel='noreferrer'>
-              <SVGIcon name='footer/instagram' title={'WeDevelop\'s Instagram'} className={classes.iconStyles} />
+              <SVGIcon name='footer/instagram' title={'WeDevelop\'s Instagram'} className={classes.iconSocialNetworks} />
             </a>
           </li>
         </ul>

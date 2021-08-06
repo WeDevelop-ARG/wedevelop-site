@@ -50,16 +50,17 @@ function ServicesOffered () {
             <p className={classes.descriptionText}>
               ...and other tailor made solutions!
             </p>
-            <Button
-              as={HashLink}
-              to='/contact'
-              smooth
-              isAnchor
-              variant='primary'
-              className={classes.talk}
-            >
-              Get in Touch
-            </Button>
+            <div className={classes.talk}>
+              <Button
+                as={HashLink}
+                to='/contact'
+                smooth
+                isAnchor
+                variant='primary'
+              >
+                Get in Touch
+              </Button>
+            </div>
           </div>
           <img src={pattern} alt='' className={classes.patternRight} />
           <img src={pattern} alt='' className={classes.patternLeft} />
