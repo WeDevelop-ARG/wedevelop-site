@@ -49,7 +49,7 @@
 }
 
 .divider {
-  @extend .horizontalBar; 
+  @extend .horizontalBar;
   background: #F9F9F9;
   display: block;
   margin: auto;
@@ -129,7 +129,7 @@
 }
 
 .patternRight {
-  
+
   @include for-tablet-down {
     display: none;
   }
@@ -142,7 +142,7 @@
 }
 
 .patternLeft {
-  
+
   @include for-tablet-down {
     display: none;
   }
@@ -170,6 +170,10 @@
   position: absolute;
   top: 800px;
   left: 0px;
+  width: 150px;
+  height: 270px;
+  z-index: -1;
+  overflow: hidden;
 
   @include for-tablet-down {
     display: none;

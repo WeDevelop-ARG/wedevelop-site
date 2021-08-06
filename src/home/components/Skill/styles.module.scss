@@ -3,7 +3,12 @@
 
 .skill {
   margin: 30px auto 67px auto;
-  opacity: 0.3;
+  filter: grayscale(1) contrast(0.5) brightness(1.1) opacity(.6);
+  transition: filter ease-in-out 200ms;
+
+  &:hover {
+    filter: grayscale(0) contrast(1) brightness(1) opacity(1);
+  }
 }
 
 .logoSkill {
