@@ -38,6 +38,10 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
     return 'color'
   }, [variant])
 
+  const buttonVariant = useMemo(() => {
+    if (isVariant(variant, 'light')) return 'dark'
+  }, [variant])
+
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
     defaults: {
@@ -74,6 +78,7 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
         smooth
       >
         <Logo
+          menuOpen={menuOpen}
           variant={logoVariant}
           className={classes.logo}
         />
@@ -92,12 +97,21 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
             className={classes.menuToggle}
           >
             {menuOpen && <SVGIcon name='nav_bar/close_x' className={classes.close} />}
-            {!menuOpen && <SVGIcon name='nav_bar/hamburguer_menu' className={classes.open} />}
+            {!menuOpen &&
+              <SVGIcon
+                name='nav_bar/hamburguer_menu'
+                className={
+                  classnames(classes.open, {
+                    [classes.white]: isVariant(variant, 'light')
+                  })
+                }
+              />}
           </button>
           <MainMenu
             isOpen={isDesktopUp || isTabletUp || menuOpen}
             onRequestClose={closeMenu}
             className={classes.menu}
+            buttonVariant={buttonVariant}
           />
         </nav>)}
     </header>

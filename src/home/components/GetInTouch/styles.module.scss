@@ -1,10 +1,7 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-$backgroundColor: #FFFFFF;
-
 .getInTouch {
-  background-color: $backgroundColor;
   position: relative;
 }
 
@@ -49,24 +46,37 @@ $backgroundColor: #FFFFFF;
 }
 
 %dotsPattern {
-  width: 166px;
+  width: 15vw;
   position: absolute;
   top: 90px;
   display: none;
 
-  @media screen and (min-width: 1230px) {
+  @include for-desktop-up {
     display: block;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      top: 100px;
+      width: 12vw;
+    }
   }
 }
 
 .leftPattern {
   @extend %dotsPattern;
-  left: 85px;
+  left: 5vw;
+
+  @media screen and (min-width: 1024px) and (max-width: 1230px) {
+    left: 3vw;
+  }
 }
 
 .rightPattern {
   @extend %dotsPattern;
-  right: 80px;
+  right: 5vw;
+
+  @media screen and (min-width: 1024px) and (max-width: 1230px) {
+    right: 3vw;
+  }
 }
 
 .pictureWall {
@@ -76,7 +86,6 @@ $backgroundColor: #FFFFFF;
   gap: 16px;
   align-items: end;
   padding: 0;
-  background-color: $backgroundColor;
 
   >img {
     width: inherit;
