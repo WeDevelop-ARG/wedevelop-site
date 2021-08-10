@@ -23,7 +23,7 @@ function Landing () {
   const match = useRouteMatch('/contact')
   const history = useHistory()
   const handleClose = useCallback(() => {
-    history.push('/')
+    history.go(-1)
   }, [history])
 
   return (
