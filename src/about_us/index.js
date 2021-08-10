@@ -11,10 +11,10 @@ import ContactModal from 'main_app/components/ContactModal'
 import TestimonialsBg from 'assets/home/testimonials_background_image.png'
 
 function AboutUs () {
-  const match = useRouteMatch('/contact')
+  const match = useRouteMatch('/about-us/contact')
   const history = useHistory()
   const handleClose = useCallback(() => {
-    history.push('/')
+    history.push('/about-us')
   }, [history])
 
   return (

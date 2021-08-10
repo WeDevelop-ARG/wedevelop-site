@@ -18,7 +18,7 @@ function Routes () {
       <Route path='/privacy-policy'>
         <PrivacyPolicy />
       </Route>
-      <Route path='/about-us'>
+      <Route path='/about-us(/contact)?'>
         <AboutUs />
       </Route>
       <StaffAugmentationRoutes>
