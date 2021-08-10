@@ -1,14 +1,13 @@
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
-import useReviews from '../../hooks/useReviews'
+import useReviews from './hooks/useReviews'
 import QuotationMark from 'assets/home/quotation_mark.svg'
-import TestimonialsBg from 'assets/home/testimonials_background_image.png'
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
-function Testimonials () {
+function Testimonials ({ bottomImageURL }) {
   const { reviews } = useReviews()
   return (
     <section id='testimonials' className={classes.testimonials}>
@@ -51,7 +50,7 @@ function Testimonials () {
           ))}
         </Slide>
       </div>
-      <img src={TestimonialsBg} alt='' className={classes.bottomImg} />
+      <img src={bottomImageURL} alt='' className={classes.bottomImg} />
       <img src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
       <img src={DotsPattern} alt='' className={classes.middelLeftPattern} aria-hidden='true' />
       <div className={classes.filledSmallCircle} aria-hidden='true' />
