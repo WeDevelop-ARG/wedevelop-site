@@ -9,7 +9,7 @@ import GetInTouch from 'main_app/components/GetInTouch'
 import PictureWall from 'main_app/components/PictureWall'
 import ContactModal from 'main_app/components/ContactModal'
 
-import TestimonialsBg from 'assets/home/testimonials_background_image.png'
+import TestimonialsBg from 'assets/about_us/testimonials/people_smiling.png'
 
 function AboutUs () {
   const match = useRouteMatch('/about-us/contact')
