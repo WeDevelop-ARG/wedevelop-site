@@ -4,6 +4,7 @@ import { useRouteMatch, useHistory } from 'react-router-dom'
 import NavBar from 'main_app/components/NavBar'
 import Footer from 'main_app/components/Footer'
 import Article from 'main_app/components/Article'
+import OurCulture from './components/OurCulture'
 import Testimonials from 'main_app/components/Testimonials'
 import GetInTouch from 'main_app/components/GetInTouch'
 import ContactModal from 'main_app/components/ContactModal'
@@ -24,6 +25,7 @@ function AboutUs () {
         pathLogo='#top'
       />
       <Article>
+        <OurCulture />
         <Testimonials bottomImageURL={TestimonialsBg} />
         <GetInTouch />
       </Article>
