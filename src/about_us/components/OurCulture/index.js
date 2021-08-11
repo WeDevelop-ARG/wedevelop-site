@@ -12,7 +12,7 @@ import classes from './styles.module.scss'
 
 function OurCulture () {
   return (
-    <div id='our-culture' className={classes.aboutUs}>
+    <section id='our-culture' className={classes.aboutUs}>
       <div className={classes.sectionHeader}>
         <p className={classes.subheadingText}>About Us</p>
         <h2 className={classes.titleText}>Our Culture</h2>
@@ -76,7 +76,7 @@ function OurCulture () {
       <div className={classes.leftFilledCircle} />
       <div className={classes.leftEmptyCircle} />
       <div className={classes.leftSmallCircle} />
-    </div>
+    </section>
   )
 }
 
