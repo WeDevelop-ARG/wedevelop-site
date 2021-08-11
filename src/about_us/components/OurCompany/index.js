@@ -1,3 +1,5 @@
+import PeopleWorking from 'assets/about_us/our_company/people_working.png'
+
 import classes from './styles.module.scss'
 
 function OurCompany () {
@@ -25,6 +27,9 @@ function OurCompany () {
             innovate as we want to build a better tomorrow for the
             world we live in and love.
           </p>
+        </div>
+        <div className={classes.backgroundImgContainer}>
+          <img src={PeopleWorking} alt='' className={classes.backgroundImg} />
         </div>
         <div className={classes.textBlock}>
           <p>
