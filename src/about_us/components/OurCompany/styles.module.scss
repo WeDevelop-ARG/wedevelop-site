@@ -84,6 +84,10 @@ $grayColor: #363636;
     @include for-tablet-up {
       margin-top: 50vw;
     }
+
+    @include for-desktop-up {
+      margin-top: 40vw;
+    }
   }
 }
 
@@ -97,6 +101,10 @@ $grayColor: #363636;
   @include for-tablet-up {   
     height: 42vw;
   }
+
+  @include for-desktop-up {   
+    height: 37vw;
+  }
 }
 
 .backgroundImg {
@@ -105,4 +113,118 @@ $grayColor: #363636;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+%dotsPattern {
+  width: 277px;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(90deg);
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.topRightDotsPattern {
+  @extend %dotsPattern;
+  top: 335px;
+  right: 0;
+
+  @media screen and (min-width:1025px) and (max-width: 1250px) {
+    top: 450px;
+  }
+}
+
+.topLeftDotsPattern {
+  @extend %dotsPattern;
+  top: 751px;
+  left: 0;
+
+  @media screen and (min-width:1025px) and (max-width: 1250px) {
+    top: 700px;
+  }
+
+  @include for-big-desktop-up {
+    top: 42vw;
+  }
+}
+
+.bottomRightDotsPattern {
+  @extend %dotsPattern;
+  bottom: 371px;
+  right: 5vw;
+
+  @media screen and (min-width:1025px) and (max-width: 1250px) {
+    right: 0;
+  }
+}
+
+.bottomLeftDotsPattern {
+  @extend %dotsPattern;
+  bottom: 111px;
+  left: 0;
+
+  @media screen and (min-width:1025px) and (max-width: 1250px) {
+    left: -15px;
+  }
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 46px;
+  right: 241px;
+
+  @media screen and (min-width:1025px) and (max-width: 1250px) {
+    right: 111px;
+  }
+}
+
+.emptyCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  top: 51px;
+  right: 275px;
+
+  @media screen and (min-width:1025px) and (max-width: 1250px) {
+    right: 145px;
+  }
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 16px;
+  height: 16px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(6px);
+  top: 315px;
+  right: 525px;
+
+  @media screen and (min-width:1025px) and (max-width: 1250px) {
+    right: 395px;
+  }
+}
+
+.emptySemiCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  top: 150px;
+  left: -217px;
 }

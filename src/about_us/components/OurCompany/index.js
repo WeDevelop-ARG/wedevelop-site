@@ -1,4 +1,5 @@
 import PeopleWorking from 'assets/about_us/our_company/people_working.png'
+import DotsPattern from 'assets/about_us/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
@@ -49,6 +50,14 @@ function OurCompany () {
           </p>
         </div>
       </div>
+      <div className={classes.filledCircle} />
+      <div className={classes.emptyCircle} />
+      <div className={classes.smallBlurCircle} />
+      <div className={classes.emptySemiCircle} />
+      <img src={DotsPattern} alt='' className={classes.topRightDotsPattern} aria-hidden='true' />
+      <img src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <img src={DotsPattern} alt='' className={classes.bottomRightDotsPattern} aria-hidden='true' />
+      <img src={DotsPattern} alt='' className={classes.bottomLeftDotsPattern} aria-hidden='true' />
     </section>
   )
 }
