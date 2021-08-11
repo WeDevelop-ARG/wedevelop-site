@@ -6,6 +6,7 @@ import Footer from 'main_app/components/Footer'
 import Article from 'main_app/components/Article'
 import Testimonials from 'main_app/components/Testimonials'
 import GetInTouch from 'main_app/components/GetInTouch'
+import PictureWall from 'main_app/components/PictureWall'
 import ContactModal from 'main_app/components/ContactModal'
 
 import TestimonialsBg from 'assets/home/testimonials_background_image.png'
@@ -26,6 +27,7 @@ function AboutUs () {
       <Article>
         <Testimonials bottomImageURL={TestimonialsBg} />
         <GetInTouch />
+        <PictureWall />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
