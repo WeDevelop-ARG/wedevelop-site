@@ -4,7 +4,7 @@ import { HashLink } from 'react-router-hash-link'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import useElementClass from 'utils/use_element_class'
-import useVariants, { isVariant } from 'utils/use_variants'
+import useVariants, { combineVariants, isVariant } from 'utils/use_variants'
 import useCombinedRefs from 'utils/use_combined_refs'
 import useMediaQuery from 'utils/use_media_query'
 
@@ -17,7 +17,14 @@ import Logo from '../Logo'
 
 import classes from './styles.module.scss'
 
-function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top', hideMenu = false }, ref) {
+function NavBar ({
+  variant,
+  variantAtScrollTop,
+  show = true,
+  pathLogo = '/#top',
+  hideMenu = false,
+  contactPagePath = '/contact'
+}, ref) {
   // TODO: add accessibility https://react-spectrum.adobe.com/react-aria/useMenuTrigger.html
   const [menuOpen, setMenuOpen] = useState(false)
   const [atScrollTop, observerRef] = useOverlappingObserver({
@@ -31,6 +38,11 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
 
     return variant
   }, [atScrollTop, variant, variantAtScrollTop])
+  variant = useMemo(() => {
+    if (atScrollTop) return variant
+
+    return combineVariants(variant, 'scroll')
+  }, [atScrollTop, variant])
 
   const logoVariant = useMemo(() => {
     if (isVariant(variant, 'light')) return 'white'
@@ -45,9 +57,9 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
     defaults: {
-      solid: variants => !variants.includes('transparent'),
-      dark: variants => !variants.includes('light'),
-      'light-bg': variants => !variants.includes('dark-bg')
+      solid: variants => !isVariant(variants, 'transparent'),
+      dark: variants => !isVariant(variants, 'light'),
+      'light-bg': variants => !isVariant(variants, 'dark-bg')
     }
   })
   const toggleMenu = useCallback(() => {
@@ -83,12 +95,6 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
           className={classes.logo}
         />
       </HashLink>
-      <svg width='0' height='0' version='1.1' xmlns='http://www.w3.org/2000/svg'>
-        <linearGradient id='NavBarLogoGradient'>
-          <stop offset='0%' className={classes.logoGradientStop0} />
-          <stop offset='100%' className={classes.logoGradientStop100} />
-        </linearGradient>
-      </svg>
       {!hideMenu && (
         <nav>
           <button
@@ -112,6 +118,7 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
             onRequestClose={closeMenu}
             className={classes.menu}
             buttonVariant={buttonVariant}
+            contactPagePath={contactPagePath}
           />
         </nav>)}
     </header>

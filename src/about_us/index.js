@@ -11,7 +11,8 @@ import ContactModal from 'main_app/components/ContactModal'
 import TestimonialsBg from 'assets/home/testimonials_background_image.png'
 
 function AboutUs () {
-  const match = useRouteMatch('/about-us/contact')
+  const contactPagePath = '/about-us/contact'
+  const match = useRouteMatch(contactPagePath)
   const history = useHistory()
   const handleClose = useCallback(() => {
     history.push('/about-us')
@@ -21,11 +22,11 @@ function AboutUs () {
     <>
       <NavBar
         variant={['solid', 'dark']}
-        pathLogo='#top'
+        contactPagePath={contactPagePath}
       />
       <Article>
         <Testimonials bottomImageURL={TestimonialsBg} />
-        <GetInTouch />
+        <GetInTouch contactPagePath={contactPagePath} />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
