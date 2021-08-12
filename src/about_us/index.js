@@ -7,8 +7,7 @@ import Article from 'main_app/components/Article'
 import Testimonials from 'main_app/components/Testimonials'
 import GetInTouch from 'main_app/components/GetInTouch'
 import ContactModal from 'main_app/components/ContactModal'
-
-import TestimonialsBg from 'assets/home/testimonials_background_image.png'
+import Values from './components/Values'
 
 function AboutUs () {
   const match = useRouteMatch('/about-us/contact')
@@ -24,8 +23,9 @@ function AboutUs () {
         pathLogo='#top'
       />
       <Article>
-        <Testimonials bottomImageURL={TestimonialsBg} />
+        <Testimonials />
         <GetInTouch />
+        <Values />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
