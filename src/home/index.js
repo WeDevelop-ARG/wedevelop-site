@@ -37,7 +37,7 @@ function Landing () {
         <Services />
         <AboutUs />
         <Testimonials bottomImageURL={TestimonialsBg} />
-        <GetInTouch />
+        <GetInTouch contactPagePath='/contact' />
         <PictureWall />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}

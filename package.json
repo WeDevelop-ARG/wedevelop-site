@@ -44,7 +44,8 @@
       "/staff-augmentation",
       "/web-developers",
       "/web-designers",
-      "/hire-developers"
+      "/hire-developers",
+      "/about-us"
     ]
   },
   "eslintConfig": {

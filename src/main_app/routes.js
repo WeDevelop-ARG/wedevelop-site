@@ -4,6 +4,7 @@ import NotFound from 'not_found'
 import StaffAugmentationRoutes from 'staff_augmentation/routes'
 import ContactUs from 'contact_us'
 import PrivacyPolicy from 'privacy_policy'
+import AboutUs from 'about_us'
 
 function Routes () {
   return (
@@ -16,6 +17,9 @@ function Routes () {
       </Route>
       <Route path='/privacy-policy'>
         <PrivacyPolicy />
+      </Route>
+      <Route path='/about-us(/contact)?'>
+        <AboutUs />
       </Route>
       <StaffAugmentationRoutes>
         <Route path='/'>
