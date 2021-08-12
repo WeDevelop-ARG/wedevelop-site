@@ -7,9 +7,10 @@ import Article from 'main_app/components/Article'
 import OurCompany from './components/OurCompany'
 import Testimonials from 'main_app/components/Testimonials'
 import GetInTouch from 'main_app/components/GetInTouch'
+import PictureWall from 'main_app/components/PictureWall'
 import ContactModal from 'main_app/components/ContactModal'
 
-import TestimonialsBg from 'assets/home/testimonials_background_image.png'
+import TestimonialsBg from 'assets/about_us/testimonials/people_smiling.png'
 
 function AboutUs () {
   const contactPagePath = '/about-us/contact'
@@ -29,6 +30,7 @@ function AboutUs () {
         <OurCompany />
         <Testimonials bottomImageURL={TestimonialsBg} />
         <GetInTouch contactPagePath={contactPagePath} />
+        <PictureWall />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
