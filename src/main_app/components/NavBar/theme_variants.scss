@@ -35,6 +35,16 @@
 
 .variant_scroll {
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+
+  .menu {
+    & > li > *:not(.buttonTalk){
+      text-decoration: none;
+      &:hover {
+        border-bottom: 3px solid #377DFF;
+        padding-bottom: 23px;
+      }
+    }
+  }
 }
 
 .variant_solid {
