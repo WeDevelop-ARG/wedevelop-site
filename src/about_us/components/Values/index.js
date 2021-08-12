@@ -1,4 +1,3 @@
-import Service from '../Value'
 import useValues from '../../hooks/useValues'
 
 import DotsPattern from 'assets/home/dots_pattern.svg'
@@ -23,10 +22,10 @@ function Values () {
               description
             }) => (
               <li className={classes.valueBox} key={id}>
-                <Service
-                  title={title}
-                  description={description}
-                />
+                <div className={classes.valueContainer}>
+                  <h3 className={classes.valueTitle}>{title}</h3>
+                  <p className={classes.valueDescription}>{description}</p>
+                </div>
               </li>
             ))}
           </ul>
