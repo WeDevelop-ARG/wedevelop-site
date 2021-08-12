@@ -6,7 +6,7 @@ import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
-function GetInTouch () {
+function GetInTouch ({ contactPagePath }) {
   return (
     <>
       <section className={classes.getInTouch}>
@@ -20,7 +20,7 @@ function GetInTouch () {
           <hr className={classes.horizontalBar} />
           <Button
             as={HashLink}
-            to='/contact'
+            to={contactPagePath}
             smooth
             isAnchor
             variant='primary'

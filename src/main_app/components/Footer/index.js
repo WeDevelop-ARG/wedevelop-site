@@ -30,6 +30,11 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.contact}>
           <li><p className={classes.titleContainer}>company</p></li>
           <li className={classes.contactContentContainer}>
+            <HashLink to='/about-us#top' smooth className={classes.contactContent}>
+              About Us
+            </HashLink>
+          </li>
+          <li className={classes.contactContentContainer}>
             <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
               Blog
             </a>
