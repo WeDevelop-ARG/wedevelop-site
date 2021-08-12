@@ -23,7 +23,7 @@ function Landing () {
   const match = useRouteMatch('/contact')
   const history = useHistory()
   const handleClose = useCallback(() => {
-    history.go(-1)
+    history.push('/')
   }, [history])
 
   return (
@@ -37,7 +37,7 @@ function Landing () {
         <Services />
         <AboutUs />
         <Testimonials bottomImageURL={TestimonialsBg} />
-        <GetInTouch />
+        <GetInTouch contactPagePath='/contact' />
         <PictureWall />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
