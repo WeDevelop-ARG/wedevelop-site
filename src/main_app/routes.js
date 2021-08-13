@@ -5,6 +5,7 @@ import StaffAugmentationRoutes from 'staff_augmentation/routes'
 import ContactUs from 'contact_us'
 import PrivacyPolicy from 'privacy_policy'
 import AboutUs from 'about_us'
+import Career from 'career'
 
 function Routes () {
   return (
@@ -20,6 +21,9 @@ function Routes () {
       </Route>
       <Route path='/about-us(/contact)?'>
         <AboutUs />
+      </Route>
+      <Route path='/career(/contact)?'>
+        <Career />
       </Route>
       <StaffAugmentationRoutes>
         <Route path='/'>
