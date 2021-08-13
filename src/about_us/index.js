@@ -11,9 +11,15 @@ import GetInTouch from 'main_app/components/GetInTouch'
 import PictureWall from 'main_app/components/PictureWall'
 import ContactModal from 'main_app/components/ContactModal'
 import Values from './components/Values'
+
+import usePageMetadata from 'utils/marketing/use_page_metadata'
 import TestimonialsBg from 'assets/about_us/testimonials/people_smiling.png'
 
 function AboutUs () {
+  usePageMetadata({
+    title: 'WeDevelop: About Us',
+    description: 'Founded in 2019, WeDevelop is a Web Development and IT Staff Augmentation agency. Meet us.'
+  })
   const contactPagePath = '/about-us/contact'
   const match = useRouteMatch(contactPagePath)
   const history = useHistory()
