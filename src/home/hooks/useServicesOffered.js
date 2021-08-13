@@ -5,15 +5,16 @@ const services = [{
   id: '1',
   title: 'Web Development',
   description: 'We build trustworthy digital product',
+  introText: 'We understand how important it is for businesses to get a competitive web solution. Our expertise and talent ensures the most agile development process.',
   photo: webServices,
-  path: ''
+  path: '/services/web-development'
 },
 {
   id: '2',
   title: 'Staff Augmentation',
   description: 'Extend your team with the right talent',
   photo: staffAugm,
-  path: ''
+  path: '/services/staff-augmentation'
 }
 ]
 

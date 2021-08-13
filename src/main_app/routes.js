@@ -3,6 +3,7 @@ import Landing from 'home'
 import NotFound from 'not_found'
 import StaffAugmentationRoutes from 'staff_augmentation/routes'
 import ContactUs from 'contact_us'
+import Services from 'services'
 import PrivacyPolicy from 'privacy_policy'
 import AboutUs from 'about_us'
 import Career from 'career'
@@ -12,6 +13,9 @@ function Routes () {
     <Switch>
       <Route exact path={['/', '/contact']}>
         <Landing />
+      </Route>
+      <Route path='/services'>
+        <Services/>
       </Route>
       <Route path='/contact'>
         <ContactUs />
