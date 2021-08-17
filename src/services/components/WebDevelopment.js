@@ -1,11 +1,12 @@
-import Hero from './Hero'
+import Hero from './hero'
 import Details from './Details'
 import Benefits from 'services/Benefits'
 import Schedule from './Schedule'
 
-import webDevelopmentPhoto from 'assets/home/services/web-services.svg'
+import webDevelopmentPhoto from 'assets/services/web-services.svg'
 import webDevelopmentIcon from 'assets/services/icon-web-development.svg'
 import webDevelopmentBackground from 'assets/services/web_development_background.png'
+import webDevelopementHeroPattern from 'assets/services/dots-pattern.png'
 
 import picturesWall from 'assets/services/pictures-wall.png'
 
@@ -42,6 +43,7 @@ function WebDevelopment() {
           icon={webDevelopmentIcon}
           photo={webDevelopmentPhoto}
           background={webDevelopmentBackground}
+          pattern={webDevelopementHeroPattern}
           title="Web Development"
           description="We understand how important it is for businesses to get a competitive web solution. Our expertise and talent ensures the most agile development process."
         />

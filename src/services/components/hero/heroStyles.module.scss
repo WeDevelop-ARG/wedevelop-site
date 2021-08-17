@@ -1,0 +1,30 @@
+// TODO: DRY this shared elements
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 40px 0px 60px;
+  border: none;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+
+.flex {
+  display: flex;
+}
+
+.colLeft {
+  width: 40%;
+}
+
+.colRight{
+  width: 60%;
+}
+
+
