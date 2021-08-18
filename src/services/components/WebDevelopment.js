@@ -3,10 +3,11 @@ import Details from './Details'
 import Benefits from 'services/Benefits'
 import Schedule from './Schedule'
 
-import webDevelopmentPhoto from 'assets/services/web-services.svg'
-import webDevelopmentIcon from 'assets/services/icon-web-development.svg'
-import webDevelopmentBackground from 'assets/services/web_development_background.png'
-import webDevelopementHeroPattern from 'assets/services/dots-pattern.png'
+import photo from 'assets/services/web-services.svg'
+import icon from 'assets/services/icon-web-development.svg'
+import background from 'assets/services/web_development_background.png'
+
+import classes from './WebDevelopment.module.scss'
 
 import picturesWall from 'assets/services/pictures-wall.png'
 
@@ -38,12 +39,11 @@ const SERVICES_LIST = [
 function WebDevelopment() {
   return (
     <>
-      <section>
+      <section className={classes.sectionHero}>
         <Hero
-          icon={webDevelopmentIcon}
-          photo={webDevelopmentPhoto}
-          background={webDevelopmentBackground}
-          pattern={webDevelopementHeroPattern}
+          icon={icon}
+          photo={photo}
+          background={background}
           title="Web Development"
           description="We understand how important it is for businesses to get a competitive web solution. Our expertise and talent ensures the most agile development process."
         />

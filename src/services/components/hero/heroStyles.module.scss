@@ -1,9 +1,14 @@
 // TODO: DRY this shared elements
+
+.heroContainer {
+  padding-bottom: 22vw;
+}
+
 .horizontalBar {
   width: 100px;
   height: 10px;
   background: #FFC331;
-  margin: 40px 0px 60px;
+  margin: 40px 0px;
   border: none;
 }
 
@@ -12,19 +17,109 @@
   height: 100px;
 }
 
+.titleText {
+  font-weight: 600;
+  font-size: 60px;
+  color: #363636;
 
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba(54, 54, 54, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .flex {
   display: flex;
 }
 
-.colLeft {
-  width: 40%;
+.cols {
+  width: 50%;
 }
 
-.colRight{
-  width: 60%;
+.photo {
+  max-width: 100%;
 }
 
+.heroBackground {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.webDecoCircleDot {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  max-width: 321px;
+  z-index: -1;
+}
+
+.staffDecoCircleDot {
+  position: absolute;
+  top: 0;
+  left: 80%;
+  max-width: 321px;
+  z-index: -1;
+}
+
+.webDevDecoPattern {
+  position: absolute;
+  top: 200px;
+  right: 0;
+  z-index: -1;
+}
+
+.staffDecoPattern {
+  position: absolute;
+  width: 166px;
+  top: 0;
+  left: 35%;
+  z-index: -1;
+}
+
+.webDevDecoEmptyCircle {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  z-index: -1;
+}
+
+.stafffDecoEmptyCircle {
+  position: absolute;
+  top: 5%;
+  left: -50px;
+  z-index: -1;
+}
+
+
+.webDevDecoCircle {
+  position: absolute;
+  top: 23%;
+  left: 50px;
+  z-index: -1;
+}
+
+.staffDecoCircle {
+  position: absolute;
+  top: 40%;
+  left: -50px;
+  z-index: -1;
+}
 
