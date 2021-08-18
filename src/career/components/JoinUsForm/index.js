@@ -1,6 +1,7 @@
 import classnames from 'classnames'
 import { Field } from 'formik'
 import Select from 'react-select'
+import { InputGroup } from 'react-bootstrap'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
@@ -9,6 +10,7 @@ import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 import FormLogic from './FormLogic'
 
 import classes from './styles.module.scss'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function JoinUsForm ({
   onSubmitFinished,
@@ -29,6 +31,7 @@ function JoinUsForm ({
     firstName: '',
     lastName: '',
     email: '',
+    remuneration: '',
     message: ''
   }
   const skill = [
@@ -58,28 +61,28 @@ function JoinUsForm ({
         onSubmitFinished={onSubmitFinished}
         className={classes.form}
       >
-        <label>First Name</label>
+        <label className={classes.labels}><span>*</span>{' '}First Name</label>
         <Field
           as={InputWithError}
           type='text'
           name='firstName'
           className={classes.inputStyles}
         />
-        <label>Last Name</label>
+        <label className={classes.labels}><span>*</span>{' '}Last Name</label>
         <Field
           as={InputWithError}
           type='text'
           name='lastName'
           className={classes.inputStyles}
         />
-        <label>Email</label>
+        <label className={classes.labels}><span>*</span>{' '}Email</label>
         <Field
           as={InputWithError}
           type='email'
           name='email'
           className={classes.inputStyles}
         />
-        <label>Skills</label>
+        <label className={classes.labels}><span>*</span>{' '}Skills</label>
         <Select
           isMulti
           name='skills'
@@ -88,7 +91,18 @@ function JoinUsForm ({
           classNamePrefix='select'
           placeholder='Select an skill'
         />
-        <label>In one sentence, tell us what makes you unique</label>
+        <label className={classes.labels}>Intended Remuneration (monthly)</label>
+        <InputGroup className={classes.remunerationGroup}>
+          <InputGroup.Text className={classes.currency}>$</InputGroup.Text>
+          <Field
+            as={InputWithError}
+            type='text'
+            name='remuneration'
+            placeholder='0.0'
+            className={classes.remuneration}
+          />
+        </InputGroup>
+        <label className={classes.labels}>In one sentence, tell us what makes you unique</label>
         <Field
           as={TextAreaWithError}
           name='message'

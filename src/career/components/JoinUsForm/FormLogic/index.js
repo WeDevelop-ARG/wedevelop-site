@@ -9,7 +9,8 @@ const schemaShape = {
   firstName: Yup.string().required(),
   lastName: Yup.string().required(),
   email: Yup.string().email().required(),
-  message: Yup.string().max(200).required()
+  remuneration: Yup.string(),
+  message: Yup.string().max(200)
 }
 
 function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin, ...props }) {
