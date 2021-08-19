@@ -20,9 +20,9 @@ function MainMenu ({
   return (
     <ul className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li className={classnames(classes.blogText)}>
-        <HashLink to='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
+        <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
           Blog
-        </HashLink>
+        </a>
       </li>
       <li className={classnames(classes.blogText)}>
         <HashLink to='/career#top'>
