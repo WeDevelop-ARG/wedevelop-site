@@ -50,10 +50,10 @@ function OurCompany () {
           </p>
         </div>
       </div>
-      <div className={classes.filledCircle} />
-      <div className={classes.emptyCircle} />
-      <div className={classes.smallBlurCircle} />
-      <div className={classes.emptySemiCircle} />
+      <div className={classes.filledCircle} aria-hidden='true' />
+      <div className={classes.emptyCircle} aria-hidden='true' />
+      <div className={classes.smallBlurCircle} aria-hidden='true' />
+      <div className={classes.emptySemiCircle} aria-hidden='true' />
       <img src={DotsPattern} alt='' className={classes.topRightDotsPattern} aria-hidden='true' />
       <img src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
       <img src={DotsPattern} alt='' className={classes.bottomRightDotsPattern} aria-hidden='true' />
