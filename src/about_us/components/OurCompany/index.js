@@ -18,9 +18,12 @@ function OurCompany () {
       <div className={classes.sectionContent}>
         <div className={classes.textBlock}>
           <p>
-            Since 2019, WeDevelop has been delivering exceptional
-            software development services that help our partners
-            make their vision come true with a competitive edge.
+            Since 2019, this US-based company has been delivering
+            exceptional Software Development Services. Our team is
+            a diverse group of people from all around the globe,
+            with the majority of the Engineers and Designers from
+            Argentina, Uruguay, Peru, Colombia, and other central
+            and south american countries.
           </p>
           <p>
             At WeDevelop, we love what we do, and that gets reflected
