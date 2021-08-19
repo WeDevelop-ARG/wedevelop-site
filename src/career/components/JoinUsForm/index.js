@@ -12,8 +12,7 @@ import classes from './styles.module.scss'
 
 function JoinUsForm ({
   onSubmitFinished,
-  submitButtonText,
-  formOrigin
+  submitButtonText
 }) {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
@@ -47,7 +46,6 @@ function JoinUsForm ({
       <hr className={classes.horizontalBar} />
       <FormLogic
         initialValues={initialValues}
-        formOrigin={formOrigin}
         onSubmitFinished={onSubmitFinished}
         className={classes.form}
       >

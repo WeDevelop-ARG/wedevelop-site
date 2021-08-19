@@ -10,12 +10,12 @@ const schemaShape = {
   message: Yup.string().max(200).required()
 }
 
-function FormLogic ({ onSubmitFinished, formOrigin, ...props }) {
+function FormLogic ({ onSubmitFinished, ...props }) {
   const handleSubmit = useCallback(async (values) => {
     // TODO: implement submit handler try {} catch (err) {}
 
     if (isFunction(onSubmitFinished)) onSubmitFinished()
-  }, [onSubmitFinished, formOrigin])
+  }, [onSubmitFinished])
 
   const schema = Yup.object(schemaShape).required()
 
