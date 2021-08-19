@@ -13,8 +13,6 @@ import classes from './styles.module.scss'
 function JoinUsForm ({
   onSubmitFinished,
   submitButtonText,
-  fixedFieldsPlaceholders,
-  customFields,
   formOrigin
 }) {
   const TextAreaWithError = useFieldWithErrorClassName(
@@ -42,10 +40,6 @@ function JoinUsForm ({
     label: skill.label
   }))
 
-  customFields?.forEach(({ name, initialValue = '' }) => {
-    initialValues[name] = initialValue
-  })
-
   return (
     <section>
       <p className={classes.subheadingText}>Join Us</p>
@@ -54,7 +48,6 @@ function JoinUsForm ({
       <FormLogic
         initialValues={initialValues}
         formOrigin={formOrigin}
-        customFields={customFields}
         onSubmitFinished={onSubmitFinished}
         className={classes.form}
       >
