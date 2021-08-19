@@ -17,7 +17,7 @@ import TestimonialsBg from 'assets/about_us/testimonials/people_smiling.png'
 
 function AboutUs () {
   usePageMetadata({
-    title: 'WeDevelop: About Us',
+    title: 'About Us',
     description: 'Founded in 2019, WeDevelop is a Web Development and IT Staff Augmentation agency. Meet us.'
   })
   const contactPagePath = '/about-us/contact'
