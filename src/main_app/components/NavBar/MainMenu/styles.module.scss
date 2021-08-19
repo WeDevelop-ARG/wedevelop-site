@@ -108,6 +108,8 @@
   line-height: 17px;
 
   @include for-tablet-up {
-    margin-right: 35px;
+    .blogText + .blogText {
+      margin-right: 35px;
+    }
   }
 }
