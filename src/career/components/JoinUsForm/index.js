@@ -10,7 +10,6 @@ import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 import FormLogic from './FormLogic'
 
 import classes from './styles.module.scss'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 function JoinUsForm ({
   onSubmitFinished,

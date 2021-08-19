@@ -4,6 +4,9 @@
 $grayColor: #363636;
 
 .form {
+  display: flex;
+  flex-direction: column;
+
   @include for-desktop-up {
     width: 100%;
   }
@@ -40,9 +43,16 @@ $grayColor: #363636;
 }
 
 .remunerationGroup {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
   border-radius: 4px;
 
   .currency {
+    display: flex;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
