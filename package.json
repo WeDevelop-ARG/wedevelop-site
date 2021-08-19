@@ -45,7 +45,8 @@
       "/web-developers",
       "/web-designers",
       "/hire-developers",
-      "/about-us"
+      "/about-us",
+      "/career"
     ]
   },
   "eslintConfig": {
