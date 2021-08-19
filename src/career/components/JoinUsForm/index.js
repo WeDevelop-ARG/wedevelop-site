@@ -5,6 +5,7 @@ import { InputGroup } from 'react-bootstrap'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
+import FileInput from './FileInput'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
@@ -31,7 +32,8 @@ function JoinUsForm ({
     lastName: '',
     email: '',
     remuneration: '',
-    message: ''
+    message: '',
+    resume: null
   }
   const skill = [
     { label: 'Angular' },
@@ -107,6 +109,12 @@ function JoinUsForm ({
           name='message'
           maxLength='200'
           className={classnames(classes.inputStyles, classes.textarea)}
+        />
+        <label className={classes.labels}>Resume/CV</label>
+        <Field
+          as={InputWithError}
+          name='resume'
+          component={FileInput}
         />
         <div className={classes.buttonContainer}>
           <SubmitButton
