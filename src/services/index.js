@@ -7,13 +7,8 @@ import NavBar from 'main_app/components/NavBar'
 import Footer from 'main_app/components/Footer'
 import Service from './components/Service'
 
-import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 function Services() {
-  usePageMetadata({
-    title: 'Web Development',
-    description: '+++'
-  })
 
   return (
     <>

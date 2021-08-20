@@ -1,35 +1,19 @@
 import { HashLink } from 'react-router-hash-link'
+import { useLocation } from 'react-router-dom'
 import Button from 'main_app/components/Button'
 import classes from './heroStyles.module.scss'
-
-//Pattern
-import webDevPattern from 'assets/services/web-pattern.png'
-import staffPattern from 'assets/services/staff-pattern.svg'
-//Circle and dot
-import webDevCircleDot from 'assets/services/web-circle-dot.svg'
-import staffCircleDot from 'assets/services/staff-circle-dot.svg'
-
-//Empty Circle
-import webDevEmptyCircle from 'assets/services/web-empty-circle.svg'
-import staffEmptyCircle from 'assets/services/staff-empty-circle.svg'
-
-// Circle
-
-import webDevCircle from 'assets/services/web-circle.svg'
-import staffCircle from 'assets/services/staff-circle.svg'
+import { useHeroDecoration } from './hooks/useHeroDecoration'
 
 function Hero({ icon, photo, background, title, description }) {
-  const decoCircleDotClass = title === 'Web Development' ? 'webDecoCircleDot' : 'staffDecoCircleDot'
-  const decoCircleDot = title === 'Web Development' ? webDevCircleDot : staffCircleDot
-
-  const decoPatternClass = title === 'Web Development' ? 'webDevDecoPattern' : 'staffDecoPattern'
-  const decoPattern = title === 'Web Development' ? webDevPattern : staffPattern
-
-  const decoEmptyCircleClass = title === 'Web Development' ? 'webDevDecoEmptyCircle' : 'stafffDecoEmptyCircle'
-  const decoEmptyCircle = title === 'Web Development' ? webDevEmptyCircle : staffEmptyCircle
-
-  const decoBlurClass = title === 'Web Development' ? 'webDevDecoCircle' : 'staffDecoCircle'
-  const decoCircle = title === 'Web Development' ? webDevCircle : staffCircle
+  const location = useLocation()
+  const path = location.pathname
+  const {
+    Pattern,
+    CircleDot,
+    EmptyCircle,
+    Circle,
+    decoClasses
+  } = useHeroDecoration(path)
 
   return (
     <div className={classes.heroContainer}>
@@ -55,10 +39,10 @@ function Hero({ icon, photo, background, title, description }) {
           <img className={classes.photo} src={photo} alt='' />
         </div>
       </div>
-      <img className={classes[decoCircleDotClass]} src={decoCircleDot} alt='' />
-      <img className={classes[decoPatternClass]} src={decoPattern} alt='' />
-      <img className={classes[decoBlurClass]} src={decoCircle} alt='' />
-      <img className={classes[decoEmptyCircleClass]} src={decoEmptyCircle} alt='' />
+      <img className={classes[decoClasses.circleDot]} src={CircleDot} alt='' />
+      <img className={classes[decoClasses.pattern]} src={Pattern} alt='' />
+      <img className={classes[decoClasses.circle]} src={Circle} alt='' />
+      <img className={classes[decoClasses.emptyCircle]} src={EmptyCircle} alt='' />
       <img className={classes.heroBackground} src={background} alt='' />
     </div>
   )

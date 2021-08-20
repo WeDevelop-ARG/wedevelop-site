@@ -1,0 +1,33 @@
+.container {
+  padding: 20vw 0 15vw;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 100%;
+  text-align: center;
+  color: #363636;
+}
+
+.shadowLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.background {
+  position: absolute;
+  top: 8%;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+
+.row {
+  display: flex;
+}

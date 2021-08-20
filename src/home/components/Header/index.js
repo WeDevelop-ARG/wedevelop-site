@@ -44,6 +44,15 @@ function Header (props, ref) {
       </div>
       <div className={classes.decorationWrapper}>
         <img className={classes.imgHeader} src={imgHeader} alt='' />
+        <div className={classes.halfCircle}>
+          <SVGIcon name='home/header/half_circle' />
+        </div>
+        <div className={classes.pattern}>
+          <SVGIcon name='home/header/pattern' />
+        </div>
+        <div className={classes.filledCircle} />
+        <div className={classes.emptyCircle} />
+        <div className={classes.smallCircle} />
 
       </div>
     </section>

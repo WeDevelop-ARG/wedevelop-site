@@ -1,0 +1,42 @@
+.container {
+  text-align: center;
+}
+
+.heading {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  color: #363636;
+  opacity: 0.5;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 60px;
+  color: #363636;
+  line-height: 100%;
+}
+
+.description {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+  color: #363636;
+}
+
+.role {
+  background: linear-gradient(to right, #6B67E9 100%, #8224E3 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.horizontalBar {
+	width: 100px;
+	height: 10px;
+	background: #FFC331;
+	border: none;
+}

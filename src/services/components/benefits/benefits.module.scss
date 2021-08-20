@@ -1,0 +1,55 @@
+.container {
+  padding-bottom: 28vw;
+}
+
+.header {
+  text-align: center;
+}
+
+.keyFeatured {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  color: #363636;
+  opacity: 0.5;
+}
+
+.titleText {
+  font-weight: 600;
+  font-size: 60px;
+  color: #363636;
+  line-height: 100%;
+}
+
+.horizontalBar {
+	width: 100px;
+	height: 10px;
+	background: #FFC331;
+	border: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.col2Items {
+  width: 50%;
+  text-align: center;
+}
+
+.col3Items {
+  width: 33%;
+  text-align: center;
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
