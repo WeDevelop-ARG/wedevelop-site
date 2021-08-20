@@ -1,17 +1,14 @@
 function FileInput ({ form, field }) {
-  const handleChange = async (e) => {
-    const file = e.currentTarget.files[0]
-    const reader = new window.FileReader()
-
-    reader.readAsDataURL(file)
-
-    reader.onload = await function (event) {
-      form.setFieldValue(field.name, event.target?.result)
-    }
+  const handleChange = (event) => {
+    const file = event.currentTarget.files[0]
+    form.setFieldValue(field.name, file)
   }
 
   return (
-    <input type='file' onChange={(input) => handleChange(input)} />
+    <input
+      type='file'
+      onChange={(input) => handleChange(input)}
+    />
   )
 }
 
