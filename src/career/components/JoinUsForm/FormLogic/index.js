@@ -5,13 +5,23 @@ import * as Yup from 'yup'
 import axios from 'axios'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
+const MAX_FILE_SIZE = 20971520
+const SUPPORTED_FILES = [
+  'application/pdf',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/vnd.oasis.opendocument.text'
+]
+
 const schemaShape = {
   firstName: Yup.string().required(),
   lastName: Yup.string().required(),
   email: Yup.string().email().required(),
   remuneration: Yup.string(),
   message: Yup.string().max(200),
-  resume: Yup.string()
+  resume: Yup.mixed().required()
+    .test('fileSize', 'Max file size is 20MB', value => value?.size <= MAX_FILE_SIZE)
+    .test('fileType', 'Supported formats: PDF, Word, ODT', value => SUPPORTED_FILES.includes(value?.type))
 }
 
 function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin, ...props }) {
