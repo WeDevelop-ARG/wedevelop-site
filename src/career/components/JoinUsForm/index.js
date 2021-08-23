@@ -1,21 +1,18 @@
 import classnames from 'classnames'
 import { Field } from 'formik'
-import Select from 'react-select'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
+import FormikSelect from './FormikSelect/index'
 
 import classes from './styles.module.scss'
 
 function JoinUsForm ({
   onSubmitFinished,
-  submitButtonText,
-  fixedFieldsPlaceholders,
-  customFields,
-  formOrigin
+  submitButtonText
 }) {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
@@ -29,22 +26,32 @@ function JoinUsForm ({
     firstName: '',
     lastName: '',
     email: '',
-    message: ''
+    message: '',
+    multiSkills: []
   }
-  const skill = [
-    { label: 'Angular' },
-    { label: 'MongoDB' },
-    { label: 'NodeJS' },
-    { label: 'Python' },
-    { label: 'React' }
-  ].map(skill => ({
-    value: skill.label,
-    label: skill.label
-  }))
 
-  customFields?.forEach(({ name, initialValue = '' }) => {
-    initialValues[name] = initialValue
-  })
+  const multiSkills = [
+    {
+      value: 1,
+      label: 'Angular'
+    },
+    {
+      value: 2,
+      label: 'MongoDB'
+    },
+    {
+      value: 3,
+      label: 'NodeJS'
+    },
+    {
+      value: 4,
+      label: 'Python'
+    },
+    {
+      value: 5,
+      label: 'React'
+    }
+  ]
 
   return (
     <section>
@@ -53,8 +60,6 @@ function JoinUsForm ({
       <hr className={classes.horizontalBar} />
       <FormLogic
         initialValues={initialValues}
-        formOrigin={formOrigin}
-        customFields={customFields}
         onSubmitFinished={onSubmitFinished}
         className={classes.form}
       >
@@ -80,13 +85,10 @@ function JoinUsForm ({
           className={classes.inputStyles}
         />
         <label>Skills</label>
-        <Select
-          isMulti
-          name='skills'
-          options={skill}
-          className='basic-multi-select'
-          classNamePrefix='select'
-          placeholder='Select an skill'
+        <Field
+          component={FormikSelect}
+          name='selectSkills'
+          options={multiSkills}
         />
         <label>In one sentence, tell us what makes you unique</label>
         <Field
