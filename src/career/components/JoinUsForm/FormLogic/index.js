@@ -19,9 +19,9 @@ const schemaShape = {
   email: Yup.string().email().required(),
   remuneration: Yup.string(),
   message: Yup.string().max(200),
-  resume: Yup.mixed().required()
-    .test('fileSize', 'Max file size is 20MB', value => value?.size <= MAX_FILE_SIZE)
-    .test('fileType', 'Supported formats: PDF, Word, ODT', value => SUPPORTED_FILES.includes(value?.type))
+  resume: Yup.mixed().required('Must attach your Resume/CV.')
+    .test('fileSize', 'Maximum file size allowed: 20MB.', value => value?.size <= MAX_FILE_SIZE)
+    .test('fileType', 'Supported formats: PDF, Word, ODT.', value => SUPPORTED_FILES.includes(value?.type))
 }
 
 function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin, ...props }) {

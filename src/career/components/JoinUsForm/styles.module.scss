@@ -2,6 +2,8 @@
 @import '/src/styles/media_queries.scss';
 
 $grayColor: #363636;
+$required: #F00;
+$attachColor: #377DFF;
 
 .form {
   display: flex;
@@ -17,7 +19,7 @@ $grayColor: #363636;
   margin-bottom: 12px;
 
   >span {
-    color: #F00;
+    color: $required;
   }
 }
 
@@ -90,7 +92,7 @@ $grayColor: #363636;
 }
 
 .fieldWithError {
-  border-color: #F00;
+  border-color: $required;
 }
 
 .textarea {
@@ -101,6 +103,55 @@ $grayColor: #363636;
   @include for-desktop-up {
     height: 88px;
   }
+}
+
+.fileInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fileUploadField {
+  position: relative;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  padding-bottom: 25px;
+  margin-top: 32px;
+  margin-bottom: 12px;
+
+  >label {
+    margin: 0 25px 0 0;
+
+    >span {
+      color: $required;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    padding-bottom: 40px;
+  }
+}
+
+.fileUploadMask {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  color: rgba($color: $attachColor, $alpha: 1.0);
+  cursor: pointer;
+
+  > .clip {
+    margin-right: 11px;
+  }
+}
+
+.fileUploadErrorMessage {
+  position: absolute;
+  bottom: 0;
+  left: 125px;
+  color: rgba($color: $required, $alpha: 1.0);
+  font-size: 12px;
 }
 
 .buttonStyles {

@@ -1,10 +1,11 @@
 import classnames from 'classnames'
-import { Field } from 'formik'
+import { Field, ErrorMessage } from 'formik'
 import Select from 'react-select'
 import { InputGroup } from 'react-bootstrap'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
+import SVGIcon from 'main_app/components/SVGIcon'
 import FileInput from './FileInput'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
@@ -110,12 +111,21 @@ function JoinUsForm ({
           maxLength='200'
           className={classnames(classes.inputStyles, classes.textarea)}
         />
-        <label className={classes.labels}>Resume/CV</label>
-        <Field
-          as={InputWithError}
-          name='resume'
-          component={FileInput}
-        />
+        <div className={classes.fileUploadField}>
+          <label><span>*</span>{' '}Resume/CV</label>
+          <div className={classes.fileInputContainer}>
+            <Field
+              name='resume'
+              component={FileInput}
+              aria-hidden='true'
+            />
+            <label for='attach' className={classes.fileUploadMask}>
+              <SVGIcon name='career/clip' className={classes.clip} />
+              Attach
+            </label>
+          </div>
+          <ErrorMessage name='resume' component='span' className={classes.fileUploadErrorMessage} />
+        </div>
         <div className={classes.buttonContainer}>
           <SubmitButton
             variant='primary'
