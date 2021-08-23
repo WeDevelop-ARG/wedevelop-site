@@ -23,6 +23,7 @@ function WebDevelopment() {
     <>
       <section className={classes.sectionContainer}>
         <Hero
+          service="webDev"
           icon={icon}
           photo={photo}
           background={background}

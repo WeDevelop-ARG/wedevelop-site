@@ -1,7 +1,7 @@
 import classes from './details.module.scss'
 function Details({ subTitle, children }) {
   return (
-    <div>
+    <div className={classes.container}>
       <div>
         <p className={classes.keyFeatured}>Key featured </p>
         <h3 className={classes.titleText}>Service Details</h3>
@@ -9,6 +9,7 @@ function Details({ subTitle, children }) {
         <hr className={classes.horizontalBar} />
       </div>
       {children}
+
     </div>
   )
 }

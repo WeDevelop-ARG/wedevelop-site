@@ -1,3 +1,5 @@
+@import '/src/styles/media_queries.scss';
+
 .row {
   display: flex;
   flex-direction: row;
@@ -23,4 +25,82 @@
   font-size: 20px;
   line-height: 150%;
   color: #363636;
+}
+
+.decoPattern {
+  left: 0;
+  position: absolute;
+  top: -20vh;
+  z-index: -1;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.decoCircle {
+  right: -14vw;
+  position: absolute;
+  bottom: -11vh;
+  z-index: -1;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.decoEmptyCircle {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.decoFilledCircle {
+  left: 7vw;
+  bottom: 9vh;
+  position: absolute;
+  z-index: -1;
+  max-width: 140px;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.decoCircleLine {
+  left: 8vw;
+  bottom: 8vh;
+  position: absolute;
+  z-index: -1;
+  max-width: 140px;
+
+@include for-phone-only {
+  display: none;
+}
+}
+
+.decoBlur {
+  left: 6vw;
+  bottom: 8vh;
+  position: absolute;
+  z-index: -1;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+.decoBlurSmall {
+  right: 6vw;
+  bottom: 8vh;
+  position: absolute;
+  z-index: -1;
+
+  @include for-phone-only {
+    display: none;
+  }
 }

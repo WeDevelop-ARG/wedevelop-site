@@ -23,6 +23,7 @@ function StaffAugmentation() {
     <>
       <section className={classes.sectionContainer}>
         <Hero
+          service="staff"
           icon={icon}
           photo={photo}
           background={background}
