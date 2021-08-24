@@ -5,6 +5,8 @@ import * as Yup from 'yup'
 import axios from 'axios'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
+import { CAREER_FORM_PROCESSOR_URL } from 'main_app/constants'
+
 const MAX_FILE_SIZE = 20971520
 const SUPPORTED_FILES = [
   'application/pdf',
@@ -24,27 +26,21 @@ const schemaShape = {
     .test('fileType', 'Supported formats: PDF, Word, ODT.', value => SUPPORTED_FILES.includes(value?.type))
 }
 
-function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin, ...props }) {
+function FormLogic ({ initialValues, onSubmitFinished, ...props }) {
   const handleSubmit = useCallback(async (values) => {
     try {
-      await axios.post('', { ...values, formOrigin })
+      await axios.post(CAREER_FORM_PROCESSOR_URL, { values })
       logAnalyticsEvent({
         event: '',
         contactType: '',
-        source: formOrigin
+        source: ''
       })
     } catch (err) {
       console.error(err)
     }
 
     if (isFunction(onSubmitFinished)) onSubmitFinished()
-  }, [onSubmitFinished, formOrigin])
-
-  customFields?.forEach(({ name, required }) => {
-    let validator = Yup.string()
-    if (required) validator = validator.required()
-    schemaShape[name] = validator
-  })
+  }, [onSubmitFinished])
 
   const schema = Yup.object(schemaShape).required()
 
