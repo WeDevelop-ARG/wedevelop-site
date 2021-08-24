@@ -8,7 +8,7 @@ const schemaShape = {
   lastName: Yup.string().required(),
   email: Yup.string().email().required(),
   message: Yup.string().max(200).required(),
-  multiSkills: Yup.array()
+  skillOptions: Yup.array()
     .min(3, 'Select an skill')
     .of(
       Yup.object().shape({

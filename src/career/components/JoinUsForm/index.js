@@ -27,28 +27,28 @@ function JoinUsForm ({
     lastName: '',
     email: '',
     message: '',
-    multiSkills: []
+    skillOptions: []
   }
 
-  const multiSkills = [
+  const skillOptions = [
     {
-      value: 1,
+      value: '1',
       label: 'Angular'
     },
     {
-      value: 2,
+      value: '2',
       label: 'MongoDB'
     },
     {
-      value: 3,
+      value: '3',
       label: 'NodeJS'
     },
     {
-      value: 4,
+      value: '4',
       label: 'Python'
     },
     {
-      value: 5,
+      value: '5',
       label: 'React'
     }
   ]
@@ -85,10 +85,10 @@ function JoinUsForm ({
           className={classes.inputStyles}
         />
         <label>Skills</label>
-        <Field
-          component={FormikSelect}
+        <FormikSelect
           name='selectSkills'
-          options={multiSkills}
+          options={skillOptions}
+          placeholder='Select an skill'
         />
         <label>In one sentence, tell us what makes you unique</label>
         <Field

@@ -1,23 +1,21 @@
+import React from 'react'
 import { useField } from 'formik'
 import Select from 'react-select'
 
-function FormikSelect (props) {
-  const [field, state, { setValue, value, setTouched }] = useField(props.field.name)
+function FormikSelect ({ name, options, placeholder }) {
+  const [, { value: fieldValue }, { setValue, setTouched }] = useField(name)
 
   return (
-    <div>
-      <Select
-        {...props}
-        isMulti
-        value={props.options.find(opt => opt.value === value)}
-        onChange={(selectedOption) => {
-          setValue(selectedOption.value)
-          setTouched(true)
-        }}
-        onBlur={setTouched}
-        placeholder='Select an skill'
-      />
-    </div>
+    <Select
+      options={options}
+      isMulti
+      onChange={(values) => {
+        setValue(values.map(({ value }) => value), true)
+      }}
+      value={options.filter(opt => fieldValue?.includes(opt.value))}
+      placeholder={placeholder}
+      onBlur={setTouched}
+    />
   )
 }
 
