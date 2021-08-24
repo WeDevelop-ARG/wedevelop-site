@@ -4,6 +4,7 @@ import Select from 'react-select'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
+import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
@@ -26,7 +27,8 @@ function JoinUsForm ({
     firstName: '',
     lastName: '',
     email: '',
-    message: ''
+    message: '',
+    recaptchaToken: ''
   }
   const skill = [
     { label: 'Angular' },
@@ -86,6 +88,7 @@ function JoinUsForm ({
           maxLength='200'
           className={classnames(classes.inputStyles, classes.textarea)}
         />
+        <ReCAPTCHAField name='recaptchaToken' />
         <div className={classes.buttonContainer}>
           <SubmitButton
             variant='primary'
