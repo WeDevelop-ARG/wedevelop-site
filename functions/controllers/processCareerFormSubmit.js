@@ -2,6 +2,7 @@ const {
   addApplicantToMailchimp,
   addDetailsToMailchimpApplicant
 } = require('../services/mailchimp')
+const { addDataToFirestore } = require('../services/firestore')
 const { isReCAPTCHATokenValid } = require('../services/recaptcha')
 const { sendEmail } = require('../services/sendEmail')
 
@@ -90,6 +91,16 @@ async function handlePostRequest (req, res) {
     listId: MAILCHIMP_DEFAULT_LIST_ID,
     applicantId: applicant.id,
     note: applicantDetails
+  })
+
+  await addDataToFirestore({
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    skills: skills,
+    remuneration: remuneration,
+    message: message,
+    resume: resume
   })
 
   return res.status(200).end()
