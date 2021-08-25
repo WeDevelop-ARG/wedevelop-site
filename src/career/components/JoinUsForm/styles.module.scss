@@ -122,10 +122,6 @@ $grayColor: #363636;
   margin-left: 0px;
   margin-right: 0px;
   width: 100%;
-
-  @include for-tablet-up{
-    width: 280px;
-  }
 }
 
 .subheadingText {
