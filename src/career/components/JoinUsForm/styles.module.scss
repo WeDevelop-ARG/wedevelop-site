@@ -120,6 +120,7 @@ $grayColor: #363636;
   display: flex;
   margin: auto;
   margin-left: 0px;
+  margin-right: 0px;
   width: 100%;
 
   @include for-tablet-up{
@@ -134,10 +135,12 @@ $grayColor: #363636;
   font-size: 13px;
   margin-bottom: 40px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .titleText {
-
+  text-align: center;
+  
   @include for-desktop-up {
     font-weight: 600;
     font-size: 60px;
@@ -151,4 +154,136 @@ $grayColor: #363636;
   background: #FFC331;
   margin: 32px 0px 40px;
   border: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.joinUsForm {
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 70%;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %circle;
+  width: 376px;
+  height: 376px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 0;
+  right: -188px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  width: 376px;
+  height: 376px;
+  border: .5px solid rgba($color: $grayColor, $alpha: 0.2);
+  top: 16px;
+  right: -158px;
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 17px;
+  height: 17px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(6px);
+  top: 313px;
+  right: 158px;
+}
+
+%dotsPattern {
+  width: 277px;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(90deg);
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.topLeftDotsPattern {
+  @extend %dotsPattern;
+  top: 277px;
+  left: 0;
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  background: #FFFFFF;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.leftFilledCircle {
+  @extend .circle;
+  width: 120px;
+  height: 120px;
+  top: 970px;
+  left: 44px;
+  opacity: 0.3;
+  filter: blur(1px);
+  background: #EAEAEA;
+}
+
+.leftEmptyCircle {
+  @extend .circle;
+  width: 120px;
+  height: 120px;
+  top: 974px;
+  left: 36px;
+  opacity: 0.2;
+  border: 2px solid;
+  border-color: #E1E1E1;
+  background: none;
+}
+
+.leftSmallCircle {
+  @extend .circle;
+  width: 14px;
+  height: 14px;
+  top: 1100px;
+  left: 118px;
+  opacity: 0.3;
+  filter: blur(1.5px);
+  background: #8224E3;
+}
+
+.halfCircle {
+  position: absolute;
+  top: 879px;
+  left: 0px;
+  width: 150px;
+  height: 270px;
+  z-index: -1;
+  overflow: hidden;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.leftSmallBlurCircle {
+  @extend %circle;
+  width: 17px;
+  height: 17px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  opacity: 0.3;
+  filter: blur(1.5px);
+  top: 861px;
+  left: 16px;
 }
