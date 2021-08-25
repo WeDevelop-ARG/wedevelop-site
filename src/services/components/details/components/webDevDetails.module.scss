@@ -2,6 +2,10 @@
 
 .row {
   display: flex;
+
+  @include for-phone-only {
+    flex-direction: column-reverse;
+  }
 }
 
 .column {
@@ -18,7 +22,7 @@
 
 .list {
   list-style: none;
-  margin: 0;
+  margin: 0 0 5vh 0;
 }
 
 .listItem {
@@ -42,7 +46,7 @@
   top: -7vh;
   z-index: -1;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: none;
   }
 }
@@ -53,7 +57,7 @@
   right: 2vw;
   z-index: -1;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: none;
   }
 }
@@ -64,7 +68,7 @@
   top: 40vh;
   z-index: -1;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: none;
   }
 }

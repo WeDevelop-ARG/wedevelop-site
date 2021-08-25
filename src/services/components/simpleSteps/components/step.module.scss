@@ -1,3 +1,5 @@
+@import '/src/styles/media_queries.scss';
+
 .numberBackground {
   width: 70px;
   height: 70px;
@@ -6,6 +8,11 @@
   border-radius: 10px;
   display: flex;
   margin-bottom: 30px;
+
+  @include for-phone-only {
+    width: 35px;
+    height: 35px;
+  }
 }
 
 .number {
@@ -16,6 +23,10 @@
   text-align: center;
   color: #363636;
   margin: auto;
+
+  @include for-phone-only {
+    font-size: 18px;
+  }
 }
 
 .title{
@@ -27,7 +38,6 @@
 }
 
 .column {
-  width: 33%;
   text-align: center;
   padding: 20px;
 }

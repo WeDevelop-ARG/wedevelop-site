@@ -1,5 +1,21 @@
+@import '/src/styles/media_queries.scss';
+
 .container {
   text-align: center;
+  margin-top: 10vh;
+  padding-bottom: 45vh;
+
+  @include for-big-desktop-up {
+    padding-bottom: 60vh;
+  }
+
+  @include for-tablet-down {
+    padding-bottom: 25vh;
+  }
+
+  @include for-phone-only {
+    padding-bottom: 15vh;
+  }
 }
 
 .heading {
@@ -39,4 +55,34 @@
 	height: 10px;
 	background: #FFC331;
 	border: none;
+}
+
+.background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.patternHorizontalLeft {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.patternHorizontalRight {
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
 }

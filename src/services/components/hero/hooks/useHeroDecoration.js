@@ -1,4 +1,3 @@
-//Pattern
 import WebDevPattern from 'assets/services/web-pattern.png'
 import WebDevCircleDot from 'assets/services/web-circle-dot.svg'
 import WebDevEmptyCircle from 'assets/services/web-empty-circle.svg'
@@ -20,6 +19,7 @@ const WEB_DEV = {
     circle: 'webDevDecoCircle'
   }
 }
+
 const STAFF = {
   Pattern: StaffPattern,
   CircleDot: StaffCircleDot,
@@ -33,10 +33,7 @@ const STAFF = {
   }
 }
 
-
 const useHeroDecoration = (path) => {
-
-
   switch (path) {
     case '/services/web-development':
       return WEB_DEV

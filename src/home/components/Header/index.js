@@ -53,7 +53,6 @@ function Header (props, ref) {
         <div className={classes.filledCircle} />
         <div className={classes.emptyCircle} />
         <div className={classes.smallCircle} />
-
       </div>
     </section>
   )

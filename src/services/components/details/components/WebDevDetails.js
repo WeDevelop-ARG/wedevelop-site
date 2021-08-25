@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link'
 import Button from 'main_app/components/Button'
 
 import Pattern from 'assets/services/dots-pattern.svg'
-import Circle from 'assets/services/details-deco-circle.svg'
+import Circle from 'assets/services/details-web-deco-circle.svg'
 
 
 import classes from './webDevDetails.module.scss'

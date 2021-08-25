@@ -16,7 +16,7 @@ import classes from './services.module.scss'
 function StaffAugmentation() {
   usePageMetadata({
     title: 'Staff Augmentation',
-    description: ''
+    description: 'TBD'
   })
 
   return (
@@ -27,7 +27,7 @@ function StaffAugmentation() {
           icon={icon}
           photo={photo}
           background={background}
-          title="Staff Augmentation"
+          title={<>Staff <br />Augmentation</>}
           description="Expand your team with our skilled experts who can scale up your development speed, quality and substantially cut down your costs."
         />
       </section>

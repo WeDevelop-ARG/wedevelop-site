@@ -9,14 +9,14 @@ import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import photo from 'assets/services/web-services.svg'
 import icon from 'assets/services/icon-web-development.svg'
-import background from 'assets/services/web_development_background.png'
+import background from 'assets/services/web-development-background.png'
 
 import classes from './services.module.scss'
 
 function WebDevelopment() {
   usePageMetadata({
     title: 'Web Development',
-    description: ''
+    description: 'TBD'
   })
 
   return (
@@ -27,7 +27,7 @@ function WebDevelopment() {
           icon={icon}
           photo={photo}
           background={background}
-          title="Web Development"
+          title={<>Web <br />Development</>}
           description="We understand how important it is for businesses to get a competitive web solution. Our expertise and talent ensures the most agile development process."
         />
       </section>

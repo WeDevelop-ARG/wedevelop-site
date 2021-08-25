@@ -8,7 +8,11 @@
 
 .column {
   width: 46%;
-  margin: 2% 2% 0 0
+  margin: 2% 2% 0 0;
+
+  @include for-phone-only {
+    width:100%
+  }
 }
 
 .serviceTitle {
@@ -28,23 +32,23 @@
 }
 
 .decoPattern {
-  left: 0;
+  left: -4vw;
   position: absolute;
   top: -20vh;
   z-index: -1;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: none;
   }
 }
 
 .decoCircle {
-  right: -14vw;
+  right: 0;
   position: absolute;
-  bottom: -11vh;
+  bottom: 0;
   z-index: -1;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: none;
   }
 }
@@ -55,7 +59,7 @@
   position: absolute;
   z-index: -1;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: none;
   }
 }
@@ -67,7 +71,7 @@
   z-index: -1;
   max-width: 140px;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: none;
   }
 }
@@ -79,9 +83,9 @@
   z-index: -1;
   max-width: 140px;
 
-@include for-phone-only {
-  display: none;
-}
+  @include for-tablet-down {
+    display: none;
+  }
 }
 
 .decoBlur {
@@ -90,17 +94,8 @@
   position: absolute;
   z-index: -1;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: none;
   }
 }
-.decoBlurSmall {
-  right: 6vw;
-  bottom: 8vh;
-  position: absolute;
-  z-index: -1;
 
-  @include for-phone-only {
-    display: none;
-  }
-}

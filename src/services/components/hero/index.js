@@ -36,12 +36,10 @@ function Hero({ service, icon, photo, background, title, description }) {
         <img className={classes.photo} src={photo} alt='' />
       </div>
       <img className={classes[decoClasses.circleDot]} src={CircleDot} alt='' />
-        <img className={classes[decoClasses.pattern]} src={Pattern} alt='' />
-        <img className={classes[decoClasses.circle]} src={Circle} alt='' />
-        <img className={classes[decoClasses.emptyCircle]} src={EmptyCircle} alt='' />
-        <img className={classes.heroBackground} src={background} alt='' />
-
-
+      <img className={classes[decoClasses.pattern]} src={Pattern} alt='' />
+      <img className={classes[decoClasses.circle]} src={Circle} alt='' />
+      <img className={classes[decoClasses.emptyCircle]} src={EmptyCircle} alt='' />
+      <img className={classes.heroBackground} src={background} alt='' />
     </>
   )
 }

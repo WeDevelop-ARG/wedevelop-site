@@ -7,11 +7,10 @@ function Step({ number, title, description }) {
       <div className={classes.numberBackground}>
         <span className={classes.number}>{number}</span>
       </div>
-      <h4>{title}</h4>
+      <h3>{title}</h3>
       <p>{description}</p>
     </div>
   )
 }
 
 export default Step
-

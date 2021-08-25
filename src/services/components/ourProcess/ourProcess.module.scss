@@ -1,12 +1,33 @@
 .container {
   text-align: center;
-  margin-bottom: 50vw;
+}
+
+.content {
+  padding: 10vh 0;
+}
+
+.shadowLine {
+  background-image: url("../../../assets/services/our-process-shadow-line.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  background-position: 0 0;
 }
 
 .background {
-  position: absolute;
+  background-image: url("../../../assets/services/our-process-background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  height: 100%;
   left: 0;
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: auto;
   z-index: -1;
 }

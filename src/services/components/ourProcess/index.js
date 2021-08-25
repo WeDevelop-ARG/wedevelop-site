@@ -1,12 +1,19 @@
 import React from 'react'
-import bg from 'assets/services/our-process-background.png'
 import classes from './ourProcess.module.scss'
 
 function OurProcess() {
   return (
-    <div className={classes.container}>
-      <img className={classes.background} src={bg} alt="" />
-    </div>
+    <>
+      <div className={classes.container}>
+        <div className={classes.content}>
+          <h3>Our Process</h3>
+          <p>TBD</p>
+        </div>
+      </div>
+      <div className={classes.shadowLine} ></div>
+      <div className={classes.background}></div>
+    </>
+
   )
 }
 
