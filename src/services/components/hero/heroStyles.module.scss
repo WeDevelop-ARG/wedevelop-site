@@ -29,15 +29,11 @@
 }
 
 .titleText {
-  color: #363636;
-  font-size: 60px;
   font-weight: 600;
 }
 
 .descriptionText {
   font-weight: 300;
-  font-size: 20px;
-  color: rgba(54, 54, 54, 0.5);
   padding-right: 50%;
   
   @include for-phone-only {

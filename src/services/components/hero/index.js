@@ -1,8 +1,8 @@
 import { HashLink } from 'react-router-hash-link'
 import { useLocation } from 'react-router-dom'
+import { useHeroDecoration } from './hooks/useHeroDecoration'
 import Button from 'main_app/components/Button'
 import classes from './heroStyles.module.scss'
-import { useHeroDecoration } from './hooks/useHeroDecoration'
 
 function Hero({ service, icon, photo, background, title, description }) {
   const location = useLocation()
@@ -19,7 +19,7 @@ function Hero({ service, icon, photo, background, title, description }) {
     <>
       <div className={`${classes.container} ${classes[service]}`}>
         <img className={classes.icon} src={icon} alt='' />
-        <h3 className={classes.titleText}>{title}</h3>
+        <h2 className={classes.titleText}>{title}</h2>
         <p className={classes.descriptionText}>
           {description}
         </p>

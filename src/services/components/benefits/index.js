@@ -21,7 +21,7 @@ function Benefits() {
       <div className={classes.container}>
         <div className={classes.header}>
           <p className={classes.keyFeatured}>Key featured</p>
-          <h3 className={classes.titleText}>Benefits</h3>
+          <h2 className={classes.titleText}>Benefits</h2>
           <hr className={classes.horizontalBar} />
         </div>
         <div className={classes.row}>

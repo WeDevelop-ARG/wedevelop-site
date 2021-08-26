@@ -6,7 +6,7 @@ function OurProcess() {
     <>
       <div className={classes.container}>
         <div className={classes.content}>
-          <h3>Our Process</h3>
+          <h2 className={classes.title}>Our Process</h2>
           <p>TBD</p>
         </div>
       </div>

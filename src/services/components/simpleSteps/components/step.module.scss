@@ -16,25 +16,9 @@
 }
 
 .number {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 36px;
   line-height: 100%;
   text-align: center;
-  color: #363636;
   margin: auto;
-
-  @include for-phone-only {
-    font-size: 18px;
-  }
-}
-
-.title{
-
-}
-
-.description {
-
 }
 
 .column {

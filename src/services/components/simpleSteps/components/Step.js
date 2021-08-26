@@ -5,7 +5,7 @@ function Step({ number, title, description }) {
   return (
     <div className={classes.column}>
       <div className={classes.numberBackground}>
-        <span className={classes.number}>{number}</span>
+        <h3 className={classes.number}>{number}</h3>
       </div>
       <h3>{title}</h3>
       <p>{description}</p>

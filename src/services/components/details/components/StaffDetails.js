@@ -14,7 +14,7 @@ function StaffDetails() {
     <div className={classes.row}>
       {servicesList && servicesList.map(service => (
         <div key={service.title} className={classes.column}>
-          <h4 className={classes.serviceTitle}>{service.title}</h4>
+          <h3 className={classes.serviceTitle}>{service.title}</h3>
           <p className={classes.serviceDescription}>{service.description}</p>
         </div>
       ))}

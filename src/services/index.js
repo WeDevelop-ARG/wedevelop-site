@@ -7,9 +7,7 @@ import NavBar from 'main_app/components/NavBar'
 import Footer from 'main_app/components/Footer'
 import Service from './components/Service'
 
-
 function Services() {
-
   return (
     <>
       <NavBar

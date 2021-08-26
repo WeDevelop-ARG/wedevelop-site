@@ -9,7 +9,7 @@ function Schedule({ role = 'Full-Stack Developer' }) {
     <>
       <div className={classes.container}>
       <p className={classes.heading}>Get in touch</p>
-      <h3 className={classes.title}>Hire your new <span className={classes.role}>{role}</span> now!</h3>
+        <h2 className={classes.title}>Hire your new <span className={classes.role}>{role}</span> now!</h2>
       <p className={classes.description}>Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc. </p>
       <hr className={classes.horizontalBar} />
       <Button
