@@ -6,6 +6,7 @@ import Footer from 'main_app/components/Footer'
 import Article from 'main_app/components/Article'
 import PictureWall from 'main_app/components/PictureWall'
 import ContactModal from 'main_app/components/ContactModal'
+import JoinUsForm from './components/JoinUsForm'
 
 function Career () {
   const contactPagePath = '/career/contact'
@@ -22,6 +23,7 @@ function Career () {
         contactPagePath={contactPagePath}
       />
       <Article>
+        <JoinUsForm submitButtonText='Join Us' />
         <PictureWall />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
