@@ -2,6 +2,7 @@ import classnames from 'classnames'
 import { Field, ErrorMessage } from 'formik'
 import Select from 'react-select'
 import { InputGroup } from 'react-bootstrap'
+import { isNil } from 'lodash'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
@@ -106,30 +107,22 @@ function JoinUsForm ({
             className={classnames(classes.inputStyles, classes.textarea)}
           />
         </label>
-        <label className={classes.labels}>In one sentence, tell us what makes you unique</label>
-        <Field
-          as={TextAreaWithError}
-          name='message'
-          maxLength='200'
-          className={classnames(classes.inputStyles, classes.textarea)}
-        />
-        <div className={classes.fileUploadField}>
-          <label>
-            Resume/CV
-            <div className={classes.fileInputContainer}>
-              <Field
-                name='resume'
-                component={FileInput}
-                aria-hidden='true'
-              />
-              <div className={classes.fileUploadMask}>
-                <SVGIcon name='career/clip' className={classes.clip} />
-                Attach
-              </div>
-            </div>
-            <ErrorMessage name='resume' component='span' className={classes.fileUploadErrorMessage} />
-          </label>
-        </div>
+        <label className={classes.fileUploadField}>
+          Resume/CV
+          <Field
+            name='resume'
+            component={FileInput}
+            aria-hidden='true'
+          />
+          <div className={classes.field}>
+            <SVGIcon name='career/clip' className={classes.clip} />
+            <Field
+              name='resume'
+              render={(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
+            />
+          </div>
+          <ErrorMessage name='resume' component='div' className={classes.errorMessage} />
+        </label>
         <ReCAPTCHAField name='recaptchaToken' />
         <div className={classes.buttonContainer}>
           <SubmitButton

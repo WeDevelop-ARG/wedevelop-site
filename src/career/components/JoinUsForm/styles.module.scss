@@ -82,7 +82,7 @@ $attachColor: #377DFF;
       border-color: rgba($color: #000000, $alpha: 1.0);
       border-width: 1px;
     }
-  
+
     &::placeholder {
       font-size: 16px;
       color: rgba($color: #707070, $alpha: 1);
@@ -105,53 +105,29 @@ $attachColor: #377DFF;
   }
 }
 
-.fileInputContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 .fileUploadField {
-  position: relative;
-  display: flex;
-  justify-content: stretch;
-  align-items: center;
-  padding-bottom: 25px;
-  margin-top: 32px;
-  margin-bottom: 12px;
-
-  >label {
-    margin: 0 25px 0 0;
-
-    >span {
-      color: $required;
-    }
-  }
-
-  @media screen and (max-width: 350px) {
-    padding-bottom: 40px;
-  }
-}
-
-.fileUploadMask {
-  position: absolute;
-  left: 0;
   display: flex;
   align-items: center;
-  color: rgba($color: $attachColor, $alpha: 1.0);
-  cursor: pointer;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
 
-  > .clip {
-    margin-right: 11px;
+  .clip {
+    margin: 0 10px 0 20px;
   }
-}
 
-.fileUploadErrorMessage {
-  position: absolute;
-  bottom: 0;
-  left: 125px;
-  color: rgba($color: $required, $alpha: 1.0);
-  font-size: 12px;
+  .field {
+    display: inline-flex;
+    align-items: center;
+    color: rgba($color: $attachColor, $alpha: 1.0);
+    cursor: pointer;
+  }
+
+  .errorMessage {
+    margin-top: 10px;
+    width: 100%;
+    color: rgba($color: $required, $alpha: 1.0);
+    font-size: 12px;
+  }
 }
 
 .buttonStyles {

@@ -1,4 +1,4 @@
-const landing_variant = {
+const landingVariant = {
   pathName: '',
   metadata: {
     title: '',
@@ -59,4 +59,4 @@ const landing_variant = {
   }
 }
 
-export default landing_variant
+export default landingVariant
