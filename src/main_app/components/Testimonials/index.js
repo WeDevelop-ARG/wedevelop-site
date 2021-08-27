@@ -36,12 +36,14 @@ function Testimonials ({ bottomImageURL }) {
                 <blockquote className={classes.quote}>{review.quote}</blockquote>
                 <img src={QuotationMark} alt='' className={classes.closeQuote} />
               </div>
-              <img
-                src={review.profileImageURL}
-                alt={`Profile of ${review.name}`}
-                title={review.name}
-                className={classes.profileImg}
-              />
+              <div className={classes.profileImgContainer}>
+                <img
+                  src={review.profileImageURL}
+                  alt={`Profile of ${review.name}`}
+                  title={review.name}
+                  className={classes.profileImg}
+                />
+              </div>
               <figcaption className={classes.profileData}>
                 <p>{review.name}</p>
                 <p><strong>{review.position}, {review.company}</strong></p>
