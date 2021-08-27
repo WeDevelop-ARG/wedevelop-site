@@ -1,6 +1,7 @@
 import classnames from 'classnames'
 import { Field } from 'formik'
 import Select from 'react-select'
+import { InputGroup } from 'react-bootstrap'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
@@ -23,7 +24,6 @@ function JoinUsForm ({
     'input',
     classes.fieldWithError
   )
-
   const skill = [
     { label: 'Angular' },
     { label: 'MongoDB' },
@@ -44,43 +44,66 @@ function JoinUsForm ({
         onSubmitFinished={onSubmitFinished}
         className={classes.form}
       >
-        <label>First Name</label>
-        <Field
-          as={InputWithError}
-          type='text'
-          name='firstName'
-          className={classes.inputStyles}
-        />
-        <label>Last Name</label>
-        <Field
-          as={InputWithError}
-          type='text'
-          name='lastName'
-          className={classes.inputStyles}
-        />
-        <label>Email</label>
-        <Field
-          as={InputWithError}
-          type='email'
-          name='email'
-          className={classes.inputStyles}
-        />
-        <label>Skills</label>
-        <Select
-          isMulti
-          name='skills'
-          options={skill}
-          className='basic-multi-select'
-          classNamePrefix='select'
-          placeholder='Select an skill'
-        />
-        <label>In one sentence, tell us what makes you unique</label>
-        <Field
-          as={TextAreaWithError}
-          name='message'
-          maxLength='200'
-          className={classnames(classes.inputStyles, classes.textarea)}
-        />
+        <label className={classes.labels}>
+          <span>*</span>{' '}First Name
+          <Field
+            as={InputWithError}
+            type='text'
+            name='firstName'
+            className={classes.inputStyles}
+          />
+        </label>
+        <label className={classes.labels}>
+          <span>*</span>{' '}Last Name
+          <Field
+            as={InputWithError}
+            type='text'
+            name='lastName'
+            className={classes.inputStyles}
+          />
+        </label>
+        <label className={classes.labels}>
+          <span>*</span>{' '}Email
+          <Field
+            as={InputWithError}
+            type='email'
+            name='email'
+            className={classes.inputStyles}
+          />
+        </label>
+        <label className={classes.labels}>
+          <span>*</span>{' '}Skills
+          <Select
+            isMulti
+            name='skills'
+            options={skill}
+            className='basic-multi-select'
+            classNamePrefix='select'
+            placeholder='Select an skill'
+          />
+        </label>
+        <label className={classes.labels}>
+          Intended Remuneration (monthly)
+          <InputGroup className={classes.remunerationGroup}>
+            <InputGroup.Text className={classes.currency}>$</InputGroup.Text>
+            <Field
+              as={InputWithError}
+              type='text'
+              name='remuneration'
+              placeholder='0.0'
+              className={classes.remuneration}
+            />
+          </InputGroup>
+        </label>
+        <label className={classes.labels}>
+          In one sentence, tell us what makes you unique
+          <Field
+            as={TextAreaWithError}
+            name='message'
+            maxLength='200'
+            className={classnames(classes.inputStyles, classes.textarea)}
+          />
+        </label>
         <ReCAPTCHAField name='recaptchaToken' />
         <div className={classes.buttonContainer}>
           <SubmitButton
