@@ -28,6 +28,15 @@ function MainMenu ({
           About Us
         </HashLink>
       </li>
+      <li
+        className={classnames(classes.navItem, {
+          [classes.active]: window.location.pathname.startsWith('/career')
+        })}
+      >
+        <HashLink to='/career#top'>
+          Career
+        </HashLink>
+      </li>
       <li className={classnames(classes.navItem)}>
         <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
           Blog
