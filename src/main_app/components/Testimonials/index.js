@@ -15,7 +15,7 @@ function Testimonials ({ bottomImageURL }) {
         <p className={classes.subheadingText}>Testimonials</p>
         <h2 className={classes.titleText}>What clients say</h2>
         <p className={classes.descriptionText}>
-          Duis ornare nunc sed molestie consectetur nulla eget. Tincidunt curabitur.
+          Don't take our word for it. See what our customers say.
         </p>
         <hr className={classes.horizontalBar} />
       </div>
