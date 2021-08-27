@@ -1,10 +1,13 @@
 import classnames from 'classnames'
-import { Field } from 'formik'
+import { Field, ErrorMessage } from 'formik'
 import Select from 'react-select'
 import { InputGroup } from 'react-bootstrap'
+import { isNil } from 'lodash'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
+import SVGIcon from 'main_app/components/SVGIcon'
+import FileInput from './FileInput'
 import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
@@ -103,6 +106,22 @@ function JoinUsForm ({
             maxLength='200'
             className={classnames(classes.inputStyles, classes.textarea)}
           />
+        </label>
+        <label className={classes.fileUploadField}>
+          Resume/CV
+          <Field
+            name='resume'
+            component={FileInput}
+            aria-hidden='true'
+          />
+          <div className={classes.field}>
+            <SVGIcon name='career/clip' className={classes.clip} />
+            <Field
+              name='resume'
+              render={(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
+            />
+          </div>
+          <ErrorMessage name='resume' component='div' className={classes.errorMessage} />
         </label>
         <ReCAPTCHAField name='recaptchaToken' />
         <div className={classes.buttonContainer}>

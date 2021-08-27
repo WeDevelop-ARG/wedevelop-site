@@ -1,6 +1,6 @@
 import Form from 'main_app/components/Form'
 import { useCallback } from 'react'
-import { isFunction } from 'lodash'
+import { isFunction, isNil } from 'lodash'
 import * as Yup from 'yup'
 
 const initialValues = {
@@ -9,15 +9,27 @@ const initialValues = {
   email: '',
   message: '',
   remuneration: '',
-  recaptchaToken: ''
+  recaptchaToken: '',
+  resume: null
 }
+
+const MAX_FILE_SIZE = 20 * 1024 * 1024 // 1MB
+const SUPPORTED_FILES = [
+  'application/pdf',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/vnd.oasis.opendocument.text'
+]
 
 const schemaShape = {
   firstName: Yup.string().required(),
   lastName: Yup.string().required(),
   email: Yup.string().email().required(),
   remuneration: Yup.string(),
-  message: Yup.string().max(200)
+  message: Yup.string().max(200),
+  resume: Yup.mixed()
+    .test('fileSize', 'Maximum file size allowed: 20MB.', value => isNil(value) || value.size <= MAX_FILE_SIZE)
+    .test('fileType', 'Supported formats: PDF, Word, ODT.', value => isNil(value) || SUPPORTED_FILES.includes(value?.type))
 }
 
 function FormLogic ({ onSubmitFinished, ...props }) {
