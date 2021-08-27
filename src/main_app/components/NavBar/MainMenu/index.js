@@ -19,8 +19,23 @@ function MainMenu ({
 
   return (
     <ul className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
-      <li className={classnames(classes.blogText)}><a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>Blog</a></li>
-      <li className={classnames(classes.textList)}>Let's talk and work together</li>
+      <li
+        className={classnames(classes.navItem, {
+          [classes.active]: window.location.pathname.startsWith('/about-us')
+        })}
+      >
+        <HashLink to='/about-us#top'>
+          About Us
+        </HashLink>
+      </li>
+      <li className={classnames(classes.navItem)}>
+        <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
+          Blog
+        </a>
+      </li>
+      <li className={classnames(classes.textList)}>
+        Let's talk and work together
+      </li>
       <li>
         <Button
           as={HashLink}

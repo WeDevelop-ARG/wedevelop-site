@@ -2,8 +2,15 @@ import Form from 'main_app/components/Form'
 import { useCallback } from 'react'
 import { isFunction } from 'lodash'
 import * as Yup from 'yup'
-import axios from 'axios'
-import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
+
+const initialValues = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  message: '',
+  remuneration: '',
+  recaptchaToken: ''
+}
 
 const schemaShape = {
   firstName: Yup.string().required(),
@@ -13,27 +20,12 @@ const schemaShape = {
   message: Yup.string().max(200)
 }
 
-function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin, ...props }) {
+function FormLogic ({ onSubmitFinished, ...props }) {
   const handleSubmit = useCallback(async (values) => {
-    try {
-      await axios.post('', { ...values, formOrigin })
-      logAnalyticsEvent({
-        event: '',
-        contactType: '',
-        source: formOrigin
-      })
-    } catch (err) {
-      console.error(err)
-    }
+    // TODO: implement submit handler try {} catch (err) {}
 
     if (isFunction(onSubmitFinished)) onSubmitFinished()
-  }, [onSubmitFinished, formOrigin])
-
-  customFields?.forEach(({ name, required }) => {
-    let validator = Yup.string()
-    if (required) validator = validator.required()
-    schemaShape[name] = validator
-  })
+  }, [onSubmitFinished])
 
   const schema = Yup.object(schemaShape).required()
 
@@ -41,8 +33,8 @@ function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin,
     <Form
       onSubmit={handleSubmit}
       resetOnSuccessfulSubmit
-      initialValues={initialValues}
       validationSchema={schema}
+      initialValues={initialValues}
       {...props}
     />
   )
