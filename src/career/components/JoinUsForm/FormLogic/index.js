@@ -3,6 +3,14 @@ import { useCallback } from 'react'
 import { isFunction } from 'lodash'
 import * as Yup from 'yup'
 
+const initialValues = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  message: '',
+  recaptchaToken: ''
+}
+
 const schemaShape = {
   firstName: Yup.string().required(),
   lastName: Yup.string().required(),
@@ -24,6 +32,7 @@ function FormLogic ({ onSubmitFinished, ...props }) {
       onSubmit={handleSubmit}
       resetOnSuccessfulSubmit
       validationSchema={schema}
+      initialValues={initialValues}
       {...props}
     />
   )

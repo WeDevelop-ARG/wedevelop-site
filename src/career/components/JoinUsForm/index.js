@@ -23,13 +23,7 @@ function JoinUsForm ({
     'input',
     classes.fieldWithError
   )
-  const initialValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: '',
-    recaptchaToken: ''
-  }
+
   const skill = [
     { label: 'Angular' },
     { label: 'MongoDB' },
@@ -47,7 +41,6 @@ function JoinUsForm ({
       <h2 className={classes.titleText}>Let’s grow together</h2>
       <hr className={classes.horizontalBar} />
       <FormLogic
-        initialValues={initialValues}
         onSubmitFinished={onSubmitFinished}
         className={classes.form}
       >
