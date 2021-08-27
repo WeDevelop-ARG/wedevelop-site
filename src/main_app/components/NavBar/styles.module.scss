@@ -109,6 +109,20 @@
 
   @include for-tablet-up {
     overflow: visible;
-    position: static;
+    position: relative;
+    top: -10px;
+    height: calc(100% + 20px);
+  }
+}
+
+.header.atTop .menu {
+  @include for-tablet-up {
+    top: -20px;
+  }
+}
+
+.nav {
+  @include for-tablet-up {
+    align-self: stretch;
   }
 }

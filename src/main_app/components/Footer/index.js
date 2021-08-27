@@ -35,6 +35,11 @@ function Footer ({ variant = 'dark', className }) {
             </HashLink>
           </li>
           <li className={classes.contactContentContainer}>
+            <HashLink to='/career#top' smooth className={classes.contactContent}>
+              Career
+            </HashLink>
+          </li>
+          <li className={classes.contactContentContainer}>
             <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
               Blog
             </a>

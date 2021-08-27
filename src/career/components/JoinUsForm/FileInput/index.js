@@ -6,7 +6,6 @@ function FileInput ({ form, field }) {
 
   return (
     <input
-      id='attach'
       type='file'
       onChange={(input) => handleChange(input)}
       style={{ display: 'none' }}
