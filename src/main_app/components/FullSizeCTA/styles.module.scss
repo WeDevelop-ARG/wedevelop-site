@@ -1,92 +1,64 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-.getYourQuoteSection {
-  display: flex;
-  height: 100vh;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background: $textColor;
-  color: #FFFFFF;
+.getInTouch {
+  position: relative;
+  background-image: url(../../../assets/staff_augmentation/getYourQuoteNow.png);
+  background-repeat: no-repeat;
+  background-position: 1% 107%;
+  height: 130vh;
+  margin-top: -180px;
 
-  > .container {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+  @include for-tablet-down {
+    margin-bottom: -40px;
+  }
 
-    @include for-desktop-up {
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+  @include for-desktop-up {
+    margin-bottom: -100px;
   }
 }
 
-.leftColumn {
-  max-width: 290px;
-  margin: 0 auto;
+.sectionContent {
+  padding: 400px 0px 0px 0px; 
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
 
   @include for-tablet-up {
-    max-width: 340px;
-  }
-
-  @include for-desktop-up {
-    margin: 0;
-    max-width: 600px;
-  }
-
-  .subheadingText {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    line-height: 32px;
-    font-size: 16px;
-    margin-bottom: 0;
-
-    @include for-tablet-down {
-      text-align: center;
-    }
-
-    @include for-phone-only {
-      text-align: center;
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-  }
-
-  > h2 {
-    font-size: 80px;
-
-    @include for-tablet-down {
-      text-align: center;
-      font-size: 42px;
-    }
-
-    @include for-phone-only {
-      text-align: center;
-      font-size: 32px;
-    }
+    padding: 350px 0px 0px 0px; 
   }
 }
 
-.rightColumn {
-  margin-top: 50px;
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 10px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.titleText {
 
   @include for-desktop-up {
-    margin: auto 0 auto 50px;
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
   }
+}
 
-  .getYourQuoteButton {
-    width: 100%;
-    max-width: 334px;
-    height: 58px;
-    font-size: 17px;
-  }
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  text-align: center;
+}
 
-  .subText {
-    width: 100%;
-    text-align: center;
-    line-height: 32px;
-    font-size: 14px;
-    opacity: 0.80;
-  }
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 40px auto;
+  border: none;
 }

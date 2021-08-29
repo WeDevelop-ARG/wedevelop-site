@@ -12,6 +12,7 @@ import ReviewCards from './components/ReviewCards'
 import FullSizeCTA from '../main_app/components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
 import AvailableDevs from './components/AvailableDevs'
+import PictureWall from 'main_app/components/PictureWall'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
@@ -78,9 +79,10 @@ function LandingPage () {
           subTitle={landing.fullSizeCTA.subTitle}
           ctaText={landing.fullSizeCTA.ctaText}
           ctaToPath={landing.fullSizeCTA.ctaToPath}
-          ctaIncentive={landing.fullSizeCTA.ctaIncentive}
+          description={landing.fullSizeCTA.description}
         />
       </Article>
+      <PictureWall />
       <Footer variant='light' />
     </>
   )

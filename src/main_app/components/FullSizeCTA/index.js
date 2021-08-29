@@ -9,26 +9,27 @@ function FullSizeCTA ({
   subTitle,
   ctaText,
   ctaToPath = '#top',
-  ctaIncentive
+  description
 }) {
   return (
-    <section className={classes.getYourQuoteSection}>
-      <div className={classes.container}>
-        <div className={classes.leftColumn}>
-          <h3 className={classes.subheadingText}>{subTitle}</h3>
-          <h2>{title}</h2>
-        </div>
-        <div className={classes.rightColumn}>
-          <Button
-            as={HashLink}
-            to={ctaToPath}
-            smooth
-            className={classes.getYourQuoteButton}
-          >
-            {ctaText}
-          </Button>
-          {ctaIncentive && <div className={classes.subText}>{ctaIncentive}</div>}
-        </div>
+    <section className={classes.getInTouch}>
+      <div className={classes.sectionContent}>
+        <p className={classes.subheadingText}>{subTitle}</p>
+        <h2 className={classes.titleText}>{title}</h2>
+        <p className={classes.descriptionText}>
+          {description}
+        </p>
+        <hr className={classes.horizontalBar} />
+        <Button
+          as={HashLink}
+          to={ctaToPath}
+          smooth
+          isAnchor
+          variant='primary'
+          className={classes.buttonTalk}
+        >
+          {ctaText}
+        </Button>
       </div>
     </section>
   )

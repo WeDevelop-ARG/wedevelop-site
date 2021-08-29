@@ -112,9 +112,9 @@ const staffAugmentation = {
   fullSizeCTA: {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
-    ctaText: 'Get your quote now',
+    ctaText: 'Get a Free Quote',
     ctaToPath: '#top',
-    ctaIncentive: 'We typically reply every email within an hour.'
+    description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
   }
 }
 
