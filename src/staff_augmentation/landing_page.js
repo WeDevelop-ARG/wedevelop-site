@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
-import Footer from 'main_app/components/Footer'
+import Footer from './components/Footer'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
