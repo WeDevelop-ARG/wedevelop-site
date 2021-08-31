@@ -12,6 +12,7 @@ import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
 import FormikSelect from './FormikSelect/index'
+import DotsPattern from 'assets/about_us/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
@@ -121,10 +122,9 @@ function JoinUsForm ({
           />
           <div className={classes.field}>
             <SVGIcon name='career/clip' className={classes.clip} />
-            <Field
-              name='resume'
-              render={(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
-            />
+            <Field name='resume'>
+              {(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
+            </Field>
           </div>
           <ErrorMessage name='resume' component='div' className={classes.errorMessage} />
         </label>
@@ -138,6 +138,17 @@ function JoinUsForm ({
           </SubmitButton>
         </div>
       </FormLogic>
+      <div className={classes.filledCircle} aria-hidden='true' />
+      <div className={classes.emptyCircle} aria-hidden='true' />
+      <div className={classes.smallBlurCircle} aria-hidden='true' />
+      <img src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <div className={classes.halfCircle}>
+        <SVGIcon name='home/services/half_circle' />
+      </div>
+      <div className={classes.leftSmallBlurCircle} />
+      <div className={classes.leftFilledCircle} />
+      <div className={classes.leftEmptyCircle} />
+      <div className={classes.leftSmallCircle} />
     </section>
   )
 }

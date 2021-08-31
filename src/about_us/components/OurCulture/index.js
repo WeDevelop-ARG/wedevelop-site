@@ -72,7 +72,7 @@ function OurCulture () {
       <div className={classes.halfCircle}>
         <SVGIcon name='home/services/half_circle' />
       </div>
-      <div className={classes.smallBlurCircle} />
+      <div className={classes.leftsmallBlurCircle} />
       <div className={classes.leftFilledCircle} />
       <div className={classes.leftEmptyCircle} />
       <div className={classes.leftSmallCircle} />
