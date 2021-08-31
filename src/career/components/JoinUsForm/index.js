@@ -88,6 +88,7 @@ function JoinUsForm ({
             options={skillOptions}
             placeholder='Select your skills'
           />
+          <ErrorMessage name='skills' component='div' className={classes.errorMessage} />
         </label>
         <label className={classes.labels}>
           Intended Remuneration (monthly)

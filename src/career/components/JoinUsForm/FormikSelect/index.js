@@ -10,11 +10,12 @@ function FormikSelect ({ name, options, placeholder }) {
       options={options}
       isMulti
       onChange={(values) => {
+        setTouched(true)
         setValue(values.map(({ value }) => value), true)
       }}
       value={options.filter(opt => fieldValue?.includes(opt.value))}
       placeholder={placeholder}
-      onBlur={setTouched}
+      onBlur={() => setTouched(true)}
     />
   )
 }
