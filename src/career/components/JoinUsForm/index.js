@@ -1,6 +1,5 @@
 import classnames from 'classnames'
 import { Field, ErrorMessage } from 'formik'
-import Select from 'react-select'
 import { InputGroup } from 'react-bootstrap'
 import { isNil } from 'lodash'
 
@@ -12,8 +11,26 @@ import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
+import FormikSelect from './FormikSelect/index'
 
 import classes from './styles.module.scss'
+
+const skillOptions = [{
+  value: 'ANGULAR',
+  label: 'Angular'
+}, {
+  value: 'MONGODB',
+  label: 'MongoDB'
+}, {
+  value: 'NODEJS',
+  label: 'NodeJS'
+}, {
+  value: 'PYTHON',
+  label: 'Python'
+}, {
+  value: 'REACT',
+  label: 'React'
+}]
 
 function JoinUsForm ({
   onSubmitFinished,
@@ -27,16 +44,6 @@ function JoinUsForm ({
     'input',
     classes.fieldWithError
   )
-  const skill = [
-    { label: 'Angular' },
-    { label: 'MongoDB' },
-    { label: 'NodeJS' },
-    { label: 'Python' },
-    { label: 'React' }
-  ].map(skill => ({
-    value: skill.label,
-    label: skill.label
-  }))
 
   return (
     <section>
@@ -76,14 +83,12 @@ function JoinUsForm ({
         </label>
         <label className={classes.labels}>
           <span>*</span>{' '}Skills
-          <Select
-            isMulti
+          <FormikSelect
             name='skills'
-            options={skill}
-            className='basic-multi-select'
-            classNamePrefix='select'
-            placeholder='Select an skill'
+            options={skillOptions}
+            placeholder='Select your skills'
           />
+          <ErrorMessage name='skills' component='div' className={classes.errorMessage} />
         </label>
         <label className={classes.labels}>
           Intended Remuneration (monthly)

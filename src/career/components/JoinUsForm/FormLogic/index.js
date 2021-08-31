@@ -10,7 +10,8 @@ const initialValues = {
   message: '',
   remuneration: '',
   recaptchaToken: '',
-  resume: null
+  resume: null,
+  skills: []
 }
 
 const MAX_FILE_SIZE = 20 * 1024 * 1024 // 1MB
@@ -25,6 +26,10 @@ const schemaShape = {
   firstName: Yup.string().required(),
   lastName: Yup.string().required(),
   email: Yup.string().email().required(),
+  skills: Yup.array()
+    .min(1, 'Select at least one skill')
+    .of(Yup.string().required())
+    .required('Select a skill'),
   remuneration: Yup.string(),
   message: Yup.string().max(200),
   resume: Yup.mixed()

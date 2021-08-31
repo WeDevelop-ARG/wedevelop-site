@@ -121,13 +121,13 @@ $attachColor: #377DFF;
     color: rgba($color: $attachColor, $alpha: 1.0);
     cursor: pointer;
   }
+}
 
-  .errorMessage {
-    margin-top: 10px;
-    width: 100%;
-    color: rgba($color: $required, $alpha: 1.0);
-    font-size: 12px;
-  }
+.errorMessage {
+  margin-top: 10px;
+  width: 100%;
+  color: rgba($color: $required, $alpha: 1.0);
+  font-size: 12px;
 }
 
 .buttonStyles {
@@ -164,7 +164,6 @@ $attachColor: #377DFF;
 }
 
 .titleText {
-
   @include for-desktop-up {
     font-weight: 600;
     font-size: 60px;
