@@ -2,7 +2,7 @@ import MaleInVideocall from 'assets/staff_augmentation/male_videocall.png'
 import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
-import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
+import BgStaffAugmentation from 'assets/staff_augmentation/bg_staff_augmentation.png'
 
 const staffAugmentation = {
   pathName: 'staff-augmentation',
@@ -11,11 +11,12 @@ const staffAugmentation = {
     description: 'Add the right Talent for your time in no time. Get a free quote in the next hour!'
   },
   header: {
-    title: <>The right <BrandGradient>IT Staffing agency for you</BrandGradient></>,
+    landingName: <>staff augmentation</>,
+    title: <>The <b>right IT Staffing</b> agency for</>,
     description: (
       <>
         <p>Get access to the top Software Engineers in Latin America.</p>
-        <p><b>Fast, without the hiring hassles.</b></p>
+        <p>Fast, without the hiring hassles.</p>
       </>
     ),
     formDescription: 'Sign Up to Get Rates & Available Staff Details',
@@ -27,8 +28,9 @@ const staffAugmentation = {
         message: 'What are you looking for?'
       }
     },
-    sideImageURL: AbelLaptop,
-    submitButtonText: 'Get a free quote'
+    sideImageURL: BgStaffAugmentation,
+    submitButtonText: 'Get a free quote',
+    backgroundColor: '#377DFF'
   },
   reviews: {
     title: 'The top IT Staffing as our customers say',

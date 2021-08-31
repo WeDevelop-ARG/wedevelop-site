@@ -2,7 +2,7 @@ import MaleInVideocall from 'assets/staff_augmentation/male_videocall.png'
 import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
-import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
+import BgWebDevelopers from 'assets/staff_augmentation/bg_web_developers.png'
 
 const webDevelopers = {
   pathName: 'web-developers',
@@ -11,7 +11,8 @@ const webDevelopers = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
-    title: <>Talent that delivers like <BrandGradient>your Dream Team</BrandGradient> would</>,
+    landingName: <>web developers</>,
+    title: <>Talent that delivers like your <b>Dream Team</b> would</>,
     description: (
       <>
         <p>Get the ultimate outcomes from the Top Web Developers without the hiring hassles.</p>
@@ -26,8 +27,9 @@ const webDevelopers = {
         message: 'What are you looking for?'
       }
     },
-    sideImageURL: AbelLaptop,
-    submitButtonText: 'Get a free quote'
+    sideImageURL: BgWebDevelopers,
+    submitButtonText: 'Get a free quote',
+    backgroundColor: '#361989'
   },
   reviews: {
     title: <>We trust our Customers' words</>,

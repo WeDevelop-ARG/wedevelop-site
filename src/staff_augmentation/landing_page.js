@@ -1,7 +1,6 @@
 import { useRouteMatch } from 'react-router'
 import classnames from 'classnames'
 
-import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Footer from 'main_app/components/Footer'
 
@@ -28,14 +27,9 @@ function LandingPage () {
 
   return (
     <>
-      <NavBar
-        variant={['solid', 'dark']}
-        variantAtScrollTop={['transparent', 'dark']}
-        pathLogo='#top'
-        hideMenu
-      />
       <Article>
         <Header
+          landingName={landing.header.landingName}
           title={landing.header.title}
           description={landing.header.description}
           formDescription={landing.header.formDescription}
@@ -43,6 +37,7 @@ function LandingPage () {
           formCustomizations={landing.header.formCustomizations}
           sideImageURL={landing.header.sideImageURL}
           submitButtonText={landing.header.submitButtonText}
+          backgroundColor={landing.header.backgroundColor}
         />
         <ReviewCards
           title={landing.reviews.title}
