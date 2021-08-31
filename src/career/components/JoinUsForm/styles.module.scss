@@ -8,6 +8,9 @@ $attachColor: #377DFF;
 .form {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
 
   @include for-desktop-up {
     width: 100%;
@@ -179,13 +182,6 @@ $attachColor: #377DFF;
   border: none;
   margin-right: auto;
   margin-left: auto;
-}
-
-.joinUsForm {
-  margin: 0;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 70%;
 }
 
 %circle {

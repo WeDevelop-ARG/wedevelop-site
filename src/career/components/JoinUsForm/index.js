@@ -47,7 +47,7 @@ function JoinUsForm ({
   )
 
   return (
-    <section className={classes.joinUsForm}>
+    <section>
       <p className={classes.subheadingText}>Join Us</p>
       <h2 className={classes.titleText}>Let’s grow together</h2>
       <hr className={classes.horizontalBar} />
@@ -122,10 +122,9 @@ function JoinUsForm ({
           />
           <div className={classes.field}>
             <SVGIcon name='career/clip' className={classes.clip} />
-            <Field
-              name='resume'
-              render={(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
-            />
+            <Field name='resume'>
+              {(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
+            </Field>
           </div>
           <ErrorMessage name='resume' component='div' className={classes.errorMessage} />
         </label>
