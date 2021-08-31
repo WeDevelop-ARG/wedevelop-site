@@ -53,6 +53,30 @@ const webDesigners = {
       project: 'Product Development for Ferry Booking Platform'
     }]
   },
+  HireTopTalent: {
+    subtitle: 'top talent',
+    title: 'Hire Top Talent Only, Without Hassle',
+    description: 'Purus elit viverra nec mus. Euismod non suscipit id lobortis vel',
+    content: (
+      <>
+        <ul>
+          <li>
+            Hiring the right person is hard.
+            Especially if you're <b>looking for someone with specific skills and experience</b> in a particular tecnology.
+          </li>
+          <li>
+            At, WeDevelop, <b>we match people to clients based on skill sets</b>, interests, culture, and location & provide several options that meet your requirements.
+            Hire top talent from around In Latin America without having to go through the hassle of interviewing them yourself.
+          </li>
+          <li>
+            <b>Focus on other important things</b> such as growing your business and meeting deadlines.
+          </li>
+        </ul>
+      </>
+    ),
+    buttonText: 'Get a Free Quote',
+    buttonLink: '#'
+  },
   sectionsWithSideImage: [{
     id: '1',
     imageURL: MaleInVideocall,

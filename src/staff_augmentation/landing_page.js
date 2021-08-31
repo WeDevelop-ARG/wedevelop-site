@@ -12,6 +12,7 @@ import ReviewCards from './components/ReviewCards'
 import FullSizeCTA from '../main_app/components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
 import AvailableDevs from './components/AvailableDevs'
+import HireTopTalent from './components/HireTopTalent'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
@@ -47,6 +48,14 @@ function LandingPage () {
         <ReviewCards
           title={landing.reviews.title}
           reviews={landing.reviews.reviews}
+        />
+        <HireTopTalent
+          subheadingText={landing.HireTopTalent.subtitle}
+          titleText={landing.HireTopTalent.title}
+          descriptionText={landing.HireTopTalent.description}
+          contentText={landing.HireTopTalent.content}
+          buttonText={landing.HireTopTalent.buttonText}
+          buttonLink={landing.HireTopTalent.buttonLink}
         />
         {landing.sectionsWithSideImage.map(({
           id,
