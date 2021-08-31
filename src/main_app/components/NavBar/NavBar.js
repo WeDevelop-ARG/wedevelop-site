@@ -96,7 +96,7 @@ function NavBar ({
         />
       </HashLink>
       {!hideMenu && (
-        <nav>
+        <nav className={classes.nav}>
           <button
             type='button'
             onClick={toggleMenu}
