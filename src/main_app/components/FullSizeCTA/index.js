@@ -1,6 +1,7 @@
 import { HashLink } from 'react-router-hash-link'
 
 import Button from 'main_app/components/Button'
+import DotsPattern from '../../../assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
@@ -31,6 +32,10 @@ function FullSizeCTA ({
           {ctaText}
         </Button>
       </div>
+      <img src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
+      <div className={classes.emptyCircle} />
+      <div className={classes.filledBigCircle} />
+      <div className={classes.smallBlurRightCircle} />
     </section>
   )
 }

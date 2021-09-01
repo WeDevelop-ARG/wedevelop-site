@@ -8,6 +8,7 @@
   background-position: 1% 107%;
   height: 130vh;
   margin-top: -180px;
+  overflow: hidden;
 
   @include for-tablet-down {
     margin-bottom: -40px;
@@ -26,7 +27,11 @@
   align-items: center;
 
   @include for-tablet-up {
-    padding: 350px 0px 0px 0px; 
+    padding: 420px 0px 0px 0px; 
+  }
+
+  @include for-phone-only {
+    padding: 450px 0px 0px 0px; 
   }
 }
 
@@ -61,4 +66,58 @@
   background: #FFC331;
   margin: 40px auto;
   border: none;
+}
+
+%dotsPattern {
+  width: 277px;
+  position: absolute;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.topRightPattern {
+  @extend %dotsPattern;
+  margin-top: -94px;
+  margin-left: -100px;
+}
+
+%circle {
+  border-radius: 50%;
+  position: relative;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledBigCircle {
+  @extend %circle;
+  width: 200px;
+  height: 200px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  margin-top: -227px;
+  margin-left: 1068px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  width: 229px;
+  height: 230px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  opacity: 0.5;
+  margin-top: -487px;
+  margin-left: 1045px;
+}
+
+.smallBlurRightCircle {
+  @extend %circle;
+  width: 10px;
+  height: 10px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(3px);
+  margin-top: 2px;
+  margin-left: 1067px;
+  opacity: 0.7;
 }
