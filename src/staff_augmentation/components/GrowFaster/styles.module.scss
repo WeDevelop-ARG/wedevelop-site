@@ -1,11 +1,11 @@
 @import '/src/styles/media_queries.scss';
 
-.growToday {
+.growFaster {
   display: flex;
   padding-top: calc(125px + var(--rootContentMinPadding));
 }
 
-.sectionContainer {
+.growFasterContainer {
   max-width: 960px;
   width: 100%;
   margin: 0px auto;
@@ -67,4 +67,64 @@
 .freeQuoteButton {
   width: 260px;
   margin: 20px auto auto;
+}
+
+.patternRight {
+
+  @include for-tablet-down {
+    display: none;
+  }
+
+  @include for-desktop-up {
+    position: absolute;
+    right: 0px;
+    margin-top: -148px;
+    padding: 0px;
+  }
+}
+
+%circle {
+  border-radius: 50%;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledBigCircle {
+  @extend %circle;
+  width: 270px;
+  height: 270px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  margin-top: -291px;
+  margin-left: -85px;
+}
+
+.emptyBigCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  margin-top: -265px;
+  margin-left: -100px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  margin-top: -304px;
+  margin-left: -92px;
+  opacity: 0.5;
+}
+
+.smallBlurRightCircle {
+  @extend %circle;
+  width: 15px;
+  height: 15px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(4px);
+  margin-top: -30px;
+  margin-left: 180px;
 }
