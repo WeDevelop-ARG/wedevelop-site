@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react'
 import { useRouteMatch } from 'react-router'
 import classnames from 'classnames'
 
@@ -12,6 +13,7 @@ import ReviewCards from './components/ReviewCards'
 import FullSizeCTA from '../main_app/components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
 import AvailableDevs from './components/AvailableDevs'
+import FreeQuoteModal from './components/FreeQuoteModal'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
@@ -26,6 +28,11 @@ function LandingPage () {
     description: landing.metadata.description
   })
 
+  const [isModalOpen, setModalOpen] = useState(false)
+  const handleModalOpen = useCallback(() => {
+    setModalOpen(true)
+  }, [])
+
   return (
     <>
       <NavBar
@@ -38,11 +45,8 @@ function LandingPage () {
         <Header
           title={landing.header.title}
           description={landing.header.description}
-          formDescription={landing.header.formDescription}
-          formOrigin={landing.header.formOrigin}
-          formCustomizations={landing.header.formCustomizations}
+          freeQuoteForm={landing.freeQuoteForm}
           sideImageURL={landing.header.sideImageURL}
-          submitButtonText={landing.header.submitButtonText}
         />
         <ReviewCards
           title={landing.reviews.title}
@@ -82,6 +86,11 @@ function LandingPage () {
         />
       </Article>
       <Footer variant='light' />
+      <FreeQuoteModal
+        isModalOpen={isModalOpen}
+        setModalOpen={setModalOpen}
+        freeQuoteForm={landing.freeQuoteForm}
+      />
     </>
   )
 }
