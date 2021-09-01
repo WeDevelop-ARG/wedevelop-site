@@ -8,6 +8,9 @@ $attachColor: #377DFF;
 .form {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
 
   @include for-desktop-up {
     width: 100%;
@@ -82,7 +85,7 @@ $attachColor: #377DFF;
       border-color: rgba($color: #000000, $alpha: 1.0);
       border-width: 1px;
     }
-  
+
     &::placeholder {
       font-size: 16px;
       color: rgba($color: #707070, $alpha: 1);
@@ -105,51 +108,27 @@ $attachColor: #377DFF;
   }
 }
 
-.fileInputContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 .fileUploadField {
-  position: relative;
   display: flex;
-  justify-content: stretch;
   align-items: center;
-  padding-bottom: 25px;
-  margin-top: 32px;
-  margin-bottom: 12px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
 
-  >label {
-    margin: 0 25px 0 0;
-
-    >span {
-      color: $required;
-    }
+  .clip {
+    margin: 0 10px 0 20px;
   }
 
-  @media screen and (max-width: 350px) {
-    padding-bottom: 40px;
+  .field {
+    display: inline-flex;
+    align-items: center;
+    color: rgba($color: $attachColor, $alpha: 1.0);
+    cursor: pointer;
   }
 }
 
-.fileUploadMask {
-  position: absolute;
-  left: 0;
-  display: flex;
-  align-items: center;
-  color: rgba($color: $attachColor, $alpha: 1.0);
-  cursor: pointer;
-
-  > .clip {
-    margin-right: 11px;
-  }
-}
-
-.fileUploadErrorMessage {
-  position: absolute;
-  bottom: 0;
-  left: 125px;
+.errorMessage {
+  margin-top: 10px;
+  width: 100%;
   color: rgba($color: $required, $alpha: 1.0);
   font-size: 12px;
 }
@@ -171,11 +150,8 @@ $attachColor: #377DFF;
   display: flex;
   margin: auto;
   margin-left: 0px;
+  margin-right: 0px;
   width: 100%;
-
-  @include for-tablet-up{
-    width: 280px;
-  }
 }
 
 .subheadingText {
@@ -185,9 +161,11 @@ $attachColor: #377DFF;
   font-size: 13px;
   margin-bottom: 40px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .titleText {
+  text-align: center;
 
   @include for-desktop-up {
     font-weight: 600;
@@ -202,4 +180,129 @@ $attachColor: #377DFF;
   background: #FFC331;
   margin: 32px 0px 40px;
   border: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %circle;
+  width: 376px;
+  height: 376px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 0;
+  right: -188px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  width: 376px;
+  height: 376px;
+  border: .5px solid rgba($color: $grayColor, $alpha: 0.2);
+  top: 16px;
+  right: -158px;
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 17px;
+  height: 17px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(6px);
+  top: 313px;
+  right: 158px;
+}
+
+%dotsPattern {
+  width: 277px;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(90deg);
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.topLeftDotsPattern {
+  @extend %dotsPattern;
+  top: 277px;
+  left: 0;
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  background: #FFFFFF;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.leftFilledCircle {
+  @extend .circle;
+  width: 120px;
+  height: 120px;
+  top: 970px;
+  left: 44px;
+  opacity: 0.3;
+  filter: blur(1px);
+  background: #EAEAEA;
+}
+
+.leftEmptyCircle {
+  @extend .circle;
+  width: 120px;
+  height: 120px;
+  top: 974px;
+  left: 36px;
+  opacity: 0.2;
+  border: 2px solid;
+  border-color: #E1E1E1;
+  background: none;
+}
+
+.leftSmallCircle {
+  @extend .circle;
+  width: 14px;
+  height: 14px;
+  top: 1100px;
+  left: 118px;
+  opacity: 0.1;
+  filter: blur(1.5px);
+  background: #8224E3;
+}
+
+.halfCircle {
+  position: absolute;
+  top: 879px;
+  left: 0px;
+  width: 150px;
+  height: 270px;
+  z-index: -1;
+  overflow: hidden;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.leftSmallBlurCircle {
+  @extend %circle;
+  width: 17px;
+  height: 17px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  opacity: 0.1;
+  filter: blur(1.5px);
+  top: 861px;
+  left: 16px;
 }
