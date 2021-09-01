@@ -37,8 +37,8 @@ const hireDevelopers = {
   },
   reviews: {
     subtitle: 'Customers reviews',
-    title: 'The top IT Staffing as our customers say',
-    description: 'Duis ornare nunc sed molestie consectetur nulla eget. Tincidunt curabitur.',
+    title: 'The TOP IT Staffing as our customers say',
+    description: 'Don\'t take our word for it. See what our customers say.',
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
