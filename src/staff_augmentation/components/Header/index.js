@@ -11,11 +11,8 @@ import classes from './styles.module.scss'
 function Header ({
   title,
   description,
-  formDescription,
-  formOrigin,
-  formCustomizations,
-  sideImageURL,
-  submitButtonText
+  freeQuoteForm,
+  sideImageURL
 }) {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const handleSubmitFinished = useCallback(() => {
@@ -33,18 +30,16 @@ function Header ({
             <h1 className={classes.titleText}>{title}</h1>
             <div className={classes.description}>{description}</div>
             <hr className={classes.horizontalBar} />
-            <p>{formDescription}</p>
             <div id='get-free-quote' className={classes.formContainer}>
               <FreeQuoteForm
                 onSubmitFinished={handleSubmitFinished}
-                submitButtonText={submitButtonText}
-                formOrigin={formOrigin}
-                fixedFieldsPlaceholders={formCustomizations.fixedFieldsPlaceholders}
-                customFields={formCustomizations.customFields}
+                formHeader={freeQuoteForm.formHeader}
+                fixedFields={freeQuoteForm.formCustomizations.fixedFields}
+                customFields={freeQuoteForm.formCustomizations.customFields}
+                formButtonText={freeQuoteForm.formButtonText}
+                formOrigin={freeQuoteForm.formOrigin}
+                formDisclaimer={freeQuoteForm.formDisclaimer}
               />
-            </div>
-            <div className={classes.formDisclaimer}>
-              <p>We typically reply every email within an hour.</p>
             </div>
           </div>
           <div className={classes.visualsContainer}>
