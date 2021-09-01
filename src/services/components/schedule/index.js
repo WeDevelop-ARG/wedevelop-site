@@ -1,6 +1,5 @@
 import { HashLink } from 'react-router-hash-link'
 import Button from 'main_app/components/Button'
-import background from 'assets/services/background-schedule.png'
 import patternHorizontal from 'assets/services/dots-pattern-horizontal.svg'
 import classes from './schedule.module.scss'
 
@@ -26,7 +25,6 @@ function Schedule ({ contactPagePath, className, role = 'Full-Stack Developer' }
         <img className={classes.patternHorizontalLeft} src={patternHorizontal} alt='' />
         <img className={classes.patternHorizontalRight} src={patternHorizontal} alt='' />
       </section>
-      <img className={classes.background} src={background} alt='' />
     </>
   )
 }

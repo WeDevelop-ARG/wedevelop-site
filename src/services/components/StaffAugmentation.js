@@ -9,6 +9,7 @@ import StaffDetails from './details/components/StaffDetails'
 import SimpleSteps from './simpleSteps'
 import Benefits from './benefits'
 import Schedule from './schedule'
+import PictureWall from 'main_app/components/PictureWall'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
@@ -54,6 +55,7 @@ function StaffAugmentation () {
       <SimpleSteps className={classes.sectionContainer} />
       <Benefits className={classes.sectionContainer} />
       <Schedule className={classes.sectionContainer} contactPagePath={contactPagePath} />
+      <PictureWall />
     </>
   )
 }

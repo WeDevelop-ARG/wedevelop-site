@@ -9,6 +9,7 @@ import Benefits from './benefits'
 import Schedule from './schedule'
 import WebDevDetails from './details/components/WebDevDetails'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
+import PictureWall from 'main_app/components/PictureWall'
 
 import photo from 'assets/services/web-services.svg'
 import icon from 'assets/services/icon-web-development.svg'
@@ -50,6 +51,7 @@ function WebDevelopment () {
       </section>
       <Benefits className={classes.sectionContainer} service='web-development' />
       <Schedule className={classes.sectionContainer} contactPagePath={contactPagePath} />
+      <PictureWall />
     </>
   )
 }
