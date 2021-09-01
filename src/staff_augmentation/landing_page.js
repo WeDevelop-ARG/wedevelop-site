@@ -12,6 +12,7 @@ import ReviewCards from './components/ReviewCards'
 import FullSizeCTA from '../main_app/components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
 import AvailableDevs from './components/AvailableDevs'
+import GrowFaster from './components/GrowFaster'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
@@ -47,6 +48,14 @@ function LandingPage () {
         <ReviewCards
           title={landing.reviews.title}
           reviews={landing.reviews.reviews}
+        />
+        <GrowFaster
+          subheadingText={landing.GrowFaster.subtitle}
+          titleText={landing.GrowFaster.title}
+          descriptionText={landing.GrowFaster.description}
+          contentText={landing.GrowFaster.content}
+          buttonText={landing.GrowFaster.buttonText}
+          buttonLink={landing.GrowFaster.buttonLink}
         />
         {landing.sectionsWithSideImage.map(({
           id,
