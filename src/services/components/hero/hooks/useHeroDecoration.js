@@ -33,11 +33,11 @@ const STAFF = {
   }
 }
 
-const useHeroDecoration = (path) => {
-  switch (path) {
-    case '/services/web-development':
+const useHeroDecoration = (service) => {
+  switch (service) {
+    case 'web-development':
       return WEB_DEV
-    case '/services/staff-augmentation':
+    case 'staff-augmentation':
       return STAFF
     default:
       break

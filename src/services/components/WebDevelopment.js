@@ -1,10 +1,13 @@
+import { useCallback } from 'react'
+import { useRouteMatch, useHistory } from 'react-router-dom'
+
+import ContactModal from 'main_app/components/ContactModal'
+
 import Hero from './hero'
 import Details from './details'
 import Benefits from './benefits'
 import Schedule from './schedule'
 import WebDevDetails from './details/components/WebDevDetails'
-import OurProcess from './ourProcess'
-
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import photo from 'assets/services/web-services.svg'
@@ -13,43 +16,40 @@ import background from 'assets/services/web-development-background.png'
 
 import classes from './services.module.scss'
 
-function WebDevelopment() {
+function WebDevelopment () {
   usePageMetadata({
     title: 'Web Development',
     description: 'TBD'
   })
+  const contactPagePath = '/services/web-development/contact'
+  const match = useRouteMatch(contactPagePath)
+  const history = useHistory()
+  const handleClose = useCallback(() => {
+    history.push('/services/web-development')
+  }, [history])
 
   return (
     <>
-      <section className={classes.sectionContainer}>
-        <Hero
-          service="webDev"
-          icon={icon}
-          photo={photo}
-          background={background}
-          title={<>Web <br />Development</>}
-          description="We understand how important it is for businesses to get a competitive web solution. Our expertise and talent ensures the most agile development process."
-        />
-      </section>
+      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
+      <Hero
+        service='web-development'
+        className={classes.sectionContainer}
+        icon={icon}
+        photo={photo}
+        background={background}
+        title={<>Web <br />Development</>}
+        description='We understand how important it is for businesses to get a competitive web solution. Our expertise and talent ensures the most agile development process.'
+        contactPagePath={contactPagePath}
+      />
       <section className={classes.sectionContainer}>
         <Details
-          subTitle="Custom Web Services, from basic informational websites to complex web applications."
+          subTitle='Custom Web Services, from basic informational websites to complex web applications.'
         >
-          <WebDevDetails />
+          <WebDevDetails contactPagePath={contactPagePath} />
         </Details>
       </section>
-
-      <section className={classes.sectionContainer}>
-        <OurProcess />
-      </section>
-
-      <section className={classes.sectionContainer}>
-        <Benefits />
-      </section>
-
-      <section className={classes.sectionContainer}>
-        <Schedule />
-      </section>
+      <Benefits className={classes.sectionContainer} service='web-development' />
+      <Schedule className={classes.sectionContainer} contactPagePath={contactPagePath} />
     </>
   )
 }

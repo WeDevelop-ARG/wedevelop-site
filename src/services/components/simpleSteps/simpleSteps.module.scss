@@ -1,14 +1,16 @@
 @import '/src/styles/media_queries.scss';
 
 .container {
-  padding: 10vh 0;
+  background-image: url("../../../assets/services/three-simple-steps-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  padding-top: 150px;
+  padding-bottom: 100px;
 
-  @include for-big-desktop-up {
-    padding: 20vh 0 10vh 0;
-  }
-  
-  @include for-phone-only {
-    padding: 5vh 0;
+  @include for-tablet-up {
+    padding-top: 230px;
+    padding-bottom: 190px;
   }
 }
 
@@ -17,38 +19,14 @@
   text-align: center;
 }
 
-.shadowLine {
-  background-image: url("../../../assets/services/simple-steps-bottom_shadow_line.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-  background-position: 0 0;
-}
-
-.background {
-  background-image: url("../../../assets/services/three-simple-steps-bg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-}
-
-
 .row {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
-  @include for-tablet-down {
-    flex-direction: column;
-  }
+.step {
+  flex: 1 0 0;
+  min-width: 200px;
+  max-width: 300px;
 }

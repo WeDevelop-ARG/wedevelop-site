@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './ourProcess.module.scss'
 
-function OurProcess() {
+function OurProcess () {
   return (
     <>
       <div className={classes.container}>
@@ -10,8 +10,8 @@ function OurProcess() {
           <p>TBD</p>
         </div>
       </div>
-      <div className={classes.shadowLine} ></div>
-      <div className={classes.background}></div>
+      <div className={classes.shadowLine} />
+      <div className={classes.background} />
     </>
 
   )

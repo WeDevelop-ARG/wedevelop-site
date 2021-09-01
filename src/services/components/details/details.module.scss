@@ -1,5 +1,10 @@
 .container {
-  padding: 0 0 10vh 10vw;
+  display: flex;
+}
+
+.centeredContainer {
+  margin: 0 auto;
+  max-width: 750px;
 }
 
 .keyFeatured {

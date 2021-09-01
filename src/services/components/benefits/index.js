@@ -1,4 +1,3 @@
-import { useLocation } from 'react-router-dom'
 import Benefit from './components/Benefit'
 import DecorationWebDev from './components/DecorationWebDev'
 import DecorationStaff from './components/DecorationStaff'
@@ -11,32 +10,28 @@ import background from 'assets/services/background-key-featured-benefits.png'
 
 import classes from './benefits.module.scss'
 
-function Benefits() {
-  const location = useLocation()
-  const path = location.pathname
-  const isWebDev = path === '/services/web-development'
-  const isStaff = path === '/services/staff-augmentation'
+function Benefits ({ service, className }) {
+  const isWebDev = service === 'web-development'
+  const isStaff = service === 'staff-augmentation'
   return (
     <>
-      <div className={classes.container}>
+      <section className={className}>
         <div className={classes.header}>
           <p className={classes.keyFeatured}>Key featured</p>
           <h2 className={classes.titleText}>Benefits</h2>
           <hr className={classes.horizontalBar} />
         </div>
-        <div className={classes.row}>
-          <Benefit className={classes.col3Items} image={iconCostReduction} text="Cost and risk reduction" />
-          <Benefit className={classes.col3Items} image={iconTime} text="More time to prioritize your own project" />
-          <Benefit className={classes.col3Items} image={iconExperts} text="Highly skilled experts with a proficient english level" />
+        <div className={classes.benefitsContainer}>
+          <Benefit className={classes.benefit} image={iconCostReduction} text='Cost and risk reduction' />
+          <Benefit className={classes.benefit} image={iconTime} text='More time to prioritize your own project' />
+          <Benefit className={classes.benefit} image={iconExperts} text='Highly skilled experts with a proficient english level' />
+          <Benefit className={classes.benefit} image={iconRecruitmentCost} text='No recruitment cost' />
+          <Benefit className={classes.benefit} image={iconAgile} text='Agile scale up/down' />
         </div>
-        <div className={`${classes.row} ${classes.row2}`}>
-          <Benefit className={classes.col2Items} image={iconRecruitmentCost} text="No recruitment cost" />
-          <Benefit className={classes.col2Items} image={iconAgile} text="Agile scale up/down" />
-        </div>
-      </div>
-      <img className={classes.background} src={background} alt="" />
-      { isWebDev && <DecorationWebDev />}
-      { isStaff && <DecorationStaff />}
+        {isWebDev && <DecorationWebDev />}
+        {isStaff && <DecorationStaff />}
+      </section>
+      <img className={classes.background} src={background} alt='' />
     </>
   )
 }

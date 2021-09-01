@@ -2,20 +2,6 @@
 
 .container {
   text-align: center;
-  margin-top: 10vh;
-  padding-bottom: 45vh;
-
-  @include for-big-desktop-up {
-    padding-bottom: 60vh;
-  }
-
-  @include for-tablet-down {
-    padding-bottom: 25vh;
-  }
-
-  @include for-phone-only {
-    padding-bottom: 15vh;
-  }
 }
 
 .heading {
@@ -42,6 +28,7 @@
 .role {
   background: linear-gradient(to right, #6B67E9 100%, #8224E3 100%);
 	-webkit-background-clip: text;
+  background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
@@ -53,10 +40,8 @@
 }
 
 .background {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   z-index: -1;
+  padding: 0;
   width: 100%;
 }
 

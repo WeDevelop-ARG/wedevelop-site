@@ -15,7 +15,7 @@ function Routes () {
         <Landing />
       </Route>
       <Route path='/services'>
-        <Services/>
+        <Services />
       </Route>
       <Route path='/contact'>
         <ContactUs />

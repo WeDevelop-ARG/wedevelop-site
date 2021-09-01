@@ -5,9 +5,10 @@ import {
 import Article from 'main_app/components/Article'
 import NavBar from 'main_app/components/NavBar'
 import Footer from 'main_app/components/Footer'
-import Service from './components/Service'
+import WebDevelopment from './components/WebDevelopment'
+import StaffAugmentation from './components/StaffAugmentation'
 
-function Services() {
+function Services () {
   return (
     <>
       <NavBar
@@ -16,12 +17,19 @@ function Services() {
       />
       <Article>
         <Switch>
-          <Route path="/services">
-            <Service />
-          </Route>
+          <Route
+            exact
+            path={['/services/web-development', '/services/web-development/contact']}
+            component={WebDevelopment}
+          />
+          <Route
+            exact
+            path={['/services/staff-augmentation', '/services/staff-augmentation/contact']}
+            component={StaffAugmentation}
+          />
         </Switch>
       </Article>
-      <Footer variant="light" />
+      <Footer variant='light' />
     </>
   )
 }

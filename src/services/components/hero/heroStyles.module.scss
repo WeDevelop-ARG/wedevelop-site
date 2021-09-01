@@ -1,18 +1,14 @@
 @import '/src/styles/media_queries.scss';
 
 .container {
+  display: flex;
+}
+
+.contentContainer {
+  flex-grow: 1;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  position: relative;
-}
-
-.webDev {
-  padding-bottom: 25vw;
-}
-
-.staff {
-  padding-bottom: 38vw;
 }
 
 .horizontalBar {
@@ -34,30 +30,30 @@
 
 .descriptionText {
   font-weight: 300;
-  padding-right: 50%;
-  
+
   @include for-phone-only {
     padding-right: 0;
   }
 }
 
 .photo {
-  max-height: 45%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
+  display: none;
+  height: auto;
+  margin-left: 15px;
 
-  @include for-phone-only {
-    display: none;
+  @include for-tablet-up {
+    display: block;
+    width: 350px;
+  }
+
+  @include for-desktop-up {
+    width: 500px;
   }
 }
 
 .heroBackground {
-  bottom: 0;
-  left: 0;
-  position: absolute;
   width: 100%;
+  padding: 0;
   z-index: -1;
 }
 
@@ -70,7 +66,7 @@
 
   @include for-tablet-down {
     display: none;
-  }  
+  }
 }
 
 .staffDecoCircleDot {

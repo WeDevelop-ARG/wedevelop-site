@@ -1,11 +1,12 @@
 import classes from '../benefits.module.scss'
 
-function Benefit({ className, image, text }) {
+function Benefit ({ className, image, text }) {
   return (
     <div className={className}>
-      <img className={classes.iconCircle} src={image} alt="" />
+      <img className={classes.iconCircle} src={image} alt='' />
       <p className={classes.descriptionText}>{text}</p>
-    </div>)
+    </div>
+  )
 }
 
 export default Benefit

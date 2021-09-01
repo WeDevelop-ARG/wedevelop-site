@@ -1,20 +1,5 @@
 @import '/src/styles/media_queries.scss';
 
-.container {
-  padding: 10vh 0 40vh 0;
-
-  @include for-big-desktop-up {
-    padding: 10vh 0 50vh 0;
-  }
-
-  @include for-tablet-down {
-    padding: 10vh 0 15vh 0;
-  }
-
-  @include for-phone-only {
-    padding: 5vh 0;
-  }
-}
 
 .header {
   text-align: center;
@@ -35,51 +20,54 @@
   line-height: 100%;
 }
 
-.descriptionText {
-  max-width: 300px;
-}
-
 .horizontalBar {
 	width: 100px;
 	height: 10px;
 	background: #FFC331;
 	border: none;
+  margin: 40px auto;
 }
 
-.row {
-  height: 200px;
+.benefitsContainer {
   display: flex;
-  align-items: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 20px;
+  max-width: 675px;
 }
 
-.row2 {
-  display: flex;
-  padding: 0 10vw;
-  margin-bottom: 20px;
-}
-
-.col2Items {
-  width: 50%;
+.benefit {
+  margin: 12.5px;
+  flex: 0 1 0;
   text-align: center;
-}
 
-.col3Items {
-  width: 33%;
-  text-align: center;
-}
-
-.iconCircle {
-  @include for-tablet-down {
-    max-width: 100px;
+  @include for-phone-only {
+    width: 100%;
+    flex: 1 0 100%;
   }
 }
 
+// Benefit component
+
+.iconCircle {
+  width: 100px;
+  margin-bottom: 15px;
+
+  @include for-tablet-up {
+    width: 150px;
+  }
+
+  @include for-desktop-up {
+    width: 200px;
+  }
+}
+
+// Decoration
+
 .background {
-  bottom: 0;
-  position: absolute;
-  left: 0;
+  position: relative;
   width: 100%;
+  padding: 0;
   z-index: -1;
 }
