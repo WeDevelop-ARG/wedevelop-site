@@ -40,10 +40,10 @@ const skillOptions = [{
   label: 'Java'
 }, {
   value: 'JAVASCRIPT',
-  label: 'Javascript'
+  label: 'JavaScript'
 }, {
   value: 'TYPESCRIPT',
-  label: 'Typescript'
+  label: 'TypeScript'
 }, {
   value: 'VUE.JS',
   label: 'Vue.js'
@@ -55,7 +55,7 @@ const skillOptions = [{
   label: 'PHP'
 }, {
   value: 'RUBY ON RAILS',
-  label: 'Ruby on rails'
+  label: 'Ruby on Rails'
 }, {
   value: 'POSTGRESQL',
   label: 'PostgreSQL'
@@ -79,7 +79,7 @@ const skillOptions = [{
   label: 'Azure'
 }, {
   value: '.NET',
-  label: '.Net'
+  label: '.NET'
 }, {
   value: 'C#',
   label: 'C#'
@@ -88,7 +88,7 @@ const skillOptions = [{
   label: 'C++'
 }, {
   value: 'EXPRESS.JS',
-  label: 'Express.JS'
+  label: 'Express.js'
 }, {
   value: 'IOS',
   label: 'iOS'
@@ -127,7 +127,7 @@ const skillOptions = [{
   label: 'Django'
 }, {
   value: 'CODEIGNITER',
-  label: 'Codeigniter'
+  label: 'CodeIgniter'
 }, {
   value: 'FLASK',
   label: 'Flask'
