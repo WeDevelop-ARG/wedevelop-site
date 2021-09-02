@@ -29,8 +29,129 @@ const skillOptions = [{
   value: 'PYTHON',
   label: 'Python'
 }, {
+  value: 'REACT NATIVE',
+  label: 'React Native'
+}, {
   value: 'REACT',
   label: 'React'
+},
+{
+  value: 'JAVA',
+  label: 'Java'
+}, {
+  value: 'JAVASCRIPT',
+  label: 'Javascript'
+}, {
+  value: 'TYPESCRIPT',
+  label: 'Typescript'
+}, {
+  value: 'VUE.JS',
+  label: 'Vue.js'
+}, {
+  value: 'GOLANG',
+  label: 'Golang'
+}, {
+  value: 'PHP',
+  label: 'PHP'
+}, {
+  value: 'RUBY ON RAILS',
+  label: 'Ruby on rails'
+}, {
+  value: 'POSTGRESQL',
+  label: 'PostgreSQL'
+}, {
+  value: 'MYSQL',
+  label: 'MySQL'
+}, {
+  value: 'REDIS',
+  label: 'Redis'
+}, {
+  value: 'MARÍA.DB',
+  label: 'María.DB'
+}, {
+  value: 'AWS',
+  label: 'AWS'
+}, {
+  value: 'GCP',
+  label: 'GCP'
+}, {
+  value: 'AZURE',
+  label: 'Azure'
+}, {
+  value: '.NET',
+  label: '.Net'
+}, {
+  value: 'C#',
+  label: 'C#'
+}, {
+  value: 'C++',
+  label: 'C++'
+}, {
+  value: 'EXPRESS.JS',
+  label: 'Express.JS'
+}, {
+  value: 'IOS',
+  label: 'iOS'
+}, {
+  value: 'SWIFT',
+  label: 'Swift'
+}, {
+  value: 'ANDROID',
+  label: 'Android'
+}, {
+  value: 'KOTLIN',
+  label: 'Kotlin'
+}, {
+  value: 'FLUTTER',
+  label: 'Flutter'
+}, {
+  value: 'BOOTSTRAP',
+  label: 'Bootstrap'
+}, {
+  value: 'HTML',
+  label: 'HTML'
+}, {
+  value: 'CSS',
+  label: 'CSS'
+}, {
+  value: 'DOCKER',
+  label: 'Docker'
+}, {
+  value: 'KUBERNETES',
+  label: 'Kubernetes'
+}, {
+  value: 'GRAPHQL',
+  label: 'GraphQl'
+}, {
+  value: 'DJANGO',
+  label: 'Django'
+}, {
+  value: 'CODEIGNITER',
+  label: 'Codeigniter'
+}, {
+  value: 'FLASK',
+  label: 'Flask'
+}, {
+  value: 'UI/UX',
+  label: 'UI/UX'
+}, {
+  value: 'TRELLO',
+  label: 'Trello'
+}, {
+  value: 'GIT',
+  label: 'Git'
+}, {
+  value: 'ORACLE',
+  label: 'Oracle'
+}, {
+  value: 'SELENIUM',
+  label: 'Selenium'
+}, {
+  value: 'CYPRESS',
+  label: 'Cypress'
+}, {
+  value: 'JMETER',
+  label: 'Jmeter'
 }]
 
 function JoinUsForm ({
