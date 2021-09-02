@@ -1,17 +1,7 @@
-const admin = require('firebase-admin')
+const admin = require('./firebase_admin')
 
-async function initializeFirestore () {
-  admin.initializeApp()
-
-  return admin.firestore()
-}
-
-async function addDataToFirestore (data) {
-  const db = await initializeFirestore()
-
-  const res = await db.collection('curriculums').add(data)
-
-  console.log('Added document: ', res.id)
+function addDataToFirestore (data) {
+  return admin.firestore().collection('resumes').add(data)
 }
 
 exports.addDataToFirestore = addDataToFirestore

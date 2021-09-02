@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react'
 import classnames from 'classnames'
 import { Field, ErrorMessage } from 'formik'
 import { InputGroup } from 'react-bootstrap'
@@ -42,6 +43,12 @@ function JoinUsForm () {
     'input',
     classes.fieldWithError
   )
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState()
+  const onSubmitFinished = useCallback((err) => {
+    setIsSubmitted(true)
+    setError(err)
+  }, [])
 
   return (
     <section>
@@ -49,6 +56,7 @@ function JoinUsForm () {
       <h2 className={classes.titleText}>Let’s grow together</h2>
       <hr className={classes.horizontalBar} />
       <FormLogic
+        onSubmitFinished={onSubmitFinished}
         className={classes.form}
       >
         <label className={classes.labels}>
@@ -125,6 +133,16 @@ function JoinUsForm () {
           <ErrorMessage name='resume' component='div' className={classes.errorMessage} />
         </label>
         <ReCAPTCHAField name='recaptchaToken' />
+        {isSubmitted && error && (
+          <p className={classes.submitError}>
+            Oops! An error occurred and we couldn't receive your application. Please try again later.
+          </p>
+        )}
+        {isSubmitted && !error && (
+          <p className={classes.submitSuccessful}>
+            Your application has been received successfully. We'll contact you soon.
+          </p>
+        )}
         <div className={classes.buttonContainer}>
           <SubmitButton
             variant='primary'

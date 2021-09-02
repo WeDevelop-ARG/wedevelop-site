@@ -1,14 +1,16 @@
-import firebase from 'firebase/app'
-import 'firebase/storage'
 import { v4 as uuidv4 } from 'uuid'
+import { getStorage, ref, uploadBytes } from 'firebase/storage'
+import firebase from '.'
+
+const storage = getStorage(firebase)
 
 async function uploadFile (file) {
-  const storageRef = firebase.storage().ref('raw-uploads')
   const randomFileName = uuidv4()
+  const storageRef = ref(storage, `raw-uploads/${randomFileName}${file.name.replace(/[^0-9a-z_\-.]/ig, '_')}`)
 
   try {
-    const snapshot = await storageRef.child(`${randomFileName}_${file.name}`).put(file)
-    return snapshot.ref.getDownloadURL()
+    const snapshot = await uploadBytes(storageRef, file)
+    return snapshot.metadata.fullPath
   } catch (err) {
     switch (err.code) {
       case 'storage/unauthorized': throw new Error('Cannot upload file due to invalid permissions.')

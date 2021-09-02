@@ -1,12 +1,13 @@
 const {
-  addApplicantToMailchimp,
-  addDetailsToMailchimpApplicant
+  addSubscriberToMailchimp,
+  addNoteToMailchimpSubscriber
 } = require('../services/mailchimp')
 const { addDataToFirestore } = require('../services/firestore')
 const { isReCAPTCHATokenValid } = require('../services/recaptcha')
 const { sendEmail } = require('../services/sendEmail')
 
-const { MAILCHIMP_DEFAULT_LIST_ID, CONTACT_FORM_DESTINATION_EMAIL } = require('../constants')
+const { MAILCHIMP_CAREER_LIST_ID, CONTACT_FORM_DESTINATION_EMAIL } = require('../constants')
+const { getDownloadURLForPath } = require('../services/storage')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
@@ -37,27 +38,34 @@ async function handlePostRequest (req, res) {
     skills,
     remuneration,
     message,
-    resume,
+    resume: resumePath,
     recaptchaToken
   } = req.body
 
-  const emailMessage = `
-      New application received from Join Us form, Career page.
+  if (!await isReCAPTCHATokenValid(recaptchaToken)) {
+    return res.status(403).end()
+  }
 
-      - First name: ${firstName}
-      - Last name: ${lastName}
-      - Email: ${email}
-      - Skills: ${skills}
-      - Intended remuneration (monthly): ${remuneration}
-      - About me: ${message}
-      - Resume: ${resume}
-  `
+  let resume = resumePath
+  try {
+    resume = await getDownloadURLForPath(resumePath)
+  } catch (err) {
+    console.error('Could not get Download URL for path', resumePath)
+  }
 
   const applicantDetails = `
     - Skills: ${skills}
     - Intended remuneration (monthly): ${remuneration}
     - About me: ${message}
     - Resume: ${resume}
+  `
+
+  const emailMessage = `
+    New application received from Join Us form, Career page.
+
+    - First name: ${firstName}
+    - Last name: ${lastName}
+    - Email: ${email} ${applicantDetails}
   `
 
   const data = {
@@ -72,24 +80,22 @@ async function handlePostRequest (req, res) {
     }]
   }
 
-  if (!await isReCAPTCHATokenValid(recaptchaToken)) {
-    return res.status(403).end()
-  }
+  console.log('CAREER_FORM_SUBMIT', JSON.stringify(data))
 
   await sendEmail(data)
 
-  const applicant = await addApplicantToMailchimp({
-    listId: MAILCHIMP_DEFAULT_LIST_ID,
-    applicant: {
+  const applicant = await addSubscriberToMailchimp({
+    listId: MAILCHIMP_CAREER_LIST_ID,
+    subscriber: {
       email: email,
       firstName: firstName,
       lastName: lastName
     }
   })
 
-  await addDetailsToMailchimpApplicant({
-    listId: MAILCHIMP_DEFAULT_LIST_ID,
-    applicantId: applicant.id,
+  await addNoteToMailchimpSubscriber({
+    listId: MAILCHIMP_CAREER_LIST_ID,
+    subscriberId: applicant.id,
     note: applicantDetails
   })
 

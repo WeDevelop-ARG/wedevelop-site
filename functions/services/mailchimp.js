@@ -58,33 +58,6 @@ async function addNoteToMailchimpSubscriber ({
   )
 }
 
-function addApplicantToMailchimp ({ listId, applicant }) {
-  const applicantHash = md5(applicant.email.toLowerCase())
-
-  return mailchimp.lists.setListMember(listId, applicantHash, {
-    email_address: applicant.email,
-    status_if_new: 'subscribed',
-    merge_fields: {
-      FNAME: applicant.firstName || '',
-      LNAME: applicant.lastName || ''
-    }
-  })
-}
-
-async function addDetailsToMailchimpApplicant ({
-  listId,
-  applicantId,
-  note
-}) {
-  await mailchimp.lists.createListMemberNote(
-    listId,
-    applicantId,
-    { note }
-  )
-}
-
 exports.addSubscriberToMailchimp = addSubscriberToMailchimp
 exports.addTagsToMailchimpSubscriber = addTagsToMailchimpSubscriber
 exports.addNoteToMailchimpSubscriber = addNoteToMailchimpSubscriber
-exports.addApplicantToMailchimp = addApplicantToMailchimp
-exports.addDetailsToMailchimpApplicant = addDetailsToMailchimpApplicant

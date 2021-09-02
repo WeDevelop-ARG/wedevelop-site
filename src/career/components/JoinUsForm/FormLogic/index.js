@@ -4,6 +4,8 @@ import { isFunction, isNil } from 'lodash'
 import * as Yup from 'yup'
 import axios from 'axios'
 
+import uploadFile from 'service_providers/firebase/uploadFile'
+
 import { CAREER_FORM_PROCESSOR_URL } from 'main_app/constants'
 
 const initialValues = {
@@ -41,10 +43,12 @@ const schemaShape = {
 }
 
 function FormLogic ({ onSubmitFinished, ...props }) {
-  const handleSubmit = useCallback(async (values) => {
+  const handleSubmit = useCallback(async (values, actions) => {
     let error
     try {
-      await axios.post(CAREER_FORM_PROCESSOR_URL, { values })
+      const path = values.resume && await uploadFile(values.resume)
+      await axios.post(CAREER_FORM_PROCESSOR_URL, { ...values, resume: path })
+      actions.resetForm()
     } catch (err) {
       console.error(err)
       error = err
@@ -58,7 +62,6 @@ function FormLogic ({ onSubmitFinished, ...props }) {
   return (
     <Form
       onSubmit={handleSubmit}
-      resetOnSuccessfulSubmit
       validationSchema={schema}
       initialValues={initialValues}
       {...props}
