@@ -34,7 +34,7 @@ function MainMenu ({
         })}
       >
         <HashLink to='/career#top'>
-          Career
+          Careers
         </HashLink>
       </li>
       <li className={classnames(classes.navItem)}>
