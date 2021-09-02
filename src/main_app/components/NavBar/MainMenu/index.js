@@ -44,7 +44,7 @@ function MainMenu ({
             Services
           </Dropdown.Toggle>
 
-          <Dropdown.Menu className={classes.dropdownMenu} show>
+          <Dropdown.Menu className={classes.dropdownMenu}>
             <Dropdown.Item
               as={HashLink}
               to='/services/web-development#top'
