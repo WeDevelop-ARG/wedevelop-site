@@ -48,12 +48,12 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.contact}>
           <li><p className={classes.titleContainer}>services</p></li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/#top' smooth className={classes.contactContent}>
+            <HashLink to='/services/web-development#top' smooth className={classes.contactContent}>
               Web Development
             </HashLink>
           </li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/#top' smooth className={classes.contactContent}>
+            <HashLink to='/services/staff-augmentation#top' smooth className={classes.contactContent}>
               Staff Augmentation
             </HashLink>
           </li>
