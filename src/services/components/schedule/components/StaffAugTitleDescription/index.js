@@ -9,7 +9,7 @@ function StaffAugTitleDescription () {
     <>
       <h2 className={classes.title}>
         <span>Hire your new</span>
-        <TextLoop className={classes.textLoop}>
+        <TextLoop delay={1500} className={classes.textLoop}>
           {roleList.map(str => <div key={str} className={classes.role}>{str}</div>)}
         </TextLoop>
         <span>now!</span>
@@ -18,7 +18,6 @@ function StaffAugTitleDescription () {
         Get a free quote within the hour. Get ready
         to boost your team with great team players.
       </p>
-      {console.log(roleList)}
     </>
   )
 }
