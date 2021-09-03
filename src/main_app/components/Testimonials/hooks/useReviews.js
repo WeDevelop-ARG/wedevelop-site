@@ -1,5 +1,3 @@
-import { shuffle } from 'lodash'
-
 import RachelAram from 'assets/about_us/testimonials/rachel_aram.jpg'
 import FilipElez from 'assets/about_us/testimonials/filip_elez.jpg'
 import HugoTroche from 'assets/about_us/testimonials/hugo_troche.jpg'
@@ -7,6 +5,7 @@ import DarrenLiu from 'assets/about_us/testimonials/darren_liu.jpg'
 
 const reviews = [
   {
+    id: 1,
     profileImageURL: RachelAram,
     name: 'Rachel Aram',
     quote: 'They\'re a well-round team, which is conducive to troubleshooting [and] having difficult conversations.',
@@ -14,6 +13,7 @@ const reviews = [
     company: 'TrainWith'
   },
   {
+    id: 2,
     profileImageURL: FilipElez,
     name: 'Filip Elez',
     quote: 'WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.',
@@ -21,6 +21,7 @@ const reviews = [
     company: 'RAFT Croatia'
   },
   {
+    id: 3,
     profileImageURL: HugoTroche,
     name: 'Hugo Troche',
     quote: 'The project cost about half of what it would have had we hired local engineers.',
@@ -28,6 +29,7 @@ const reviews = [
     company: 'Moneda Lending'
   },
   {
+    id: 4,
     profileImageURL: DarrenLiu,
     name: 'Darren Liu',
     quote: 'They\'re willing to engage with a problem to figure it out rather than waiting to be told what to do.',
@@ -37,9 +39,9 @@ const reviews = [
 ]
 
 function useReviews () {
-  return {
-    reviews: shuffle(reviews)
-  }
+    return {
+      reviews: reviews
+    }
 }
 
 export default useReviews
