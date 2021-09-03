@@ -33,6 +33,10 @@
   .menuToggle .open { @extend %menuToggleIconDark; }
 }
 
+.variant_scroll {
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+}
+
 .variant_solid {
   // Elements behind a backdrop-filter get clipped, so we need
   // to remove the filter when the menu is open. We also need

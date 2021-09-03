@@ -57,12 +57,8 @@
 }
 
 .logo {
-  width: 51px;
+  width: 203px;
   height: auto;
-
-  @include for-tablet-up {
-    width: 192px;
-  }
 }
 
 .menuToggle {
@@ -79,10 +75,6 @@
     display: none;
   }
 
-  @include for-tablet-up {
-    display: none;
-  }
-
   & > * {
     margin: auto;
   }
@@ -90,6 +82,10 @@
  .open {
     width: 27px;
     height: 18px;
+
+    &.white {
+      --primaryColor: #{$secondaryColor};
+    }
   }
 
   .close {
@@ -107,8 +103,22 @@
   overflow: auto;
   margin: 0;
 
-  @include for-tablet-up {
+  @include for-desktop-up {
     overflow: visible;
-    position: static;
+    position: relative;
+    top: -10px;
+    height: calc(100% + 20px);
+  }
+}
+
+.header.atTop .menu {
+  @include for-desktop-up {
+    top: -20px;
+  }
+}
+
+.nav {
+  @include for-desktop-up {
+    align-self: stretch;
   }
 }

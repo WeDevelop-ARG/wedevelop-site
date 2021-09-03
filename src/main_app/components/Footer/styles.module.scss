@@ -5,7 +5,7 @@
   padding: 25px var(--rootContentHorizontalPadding);
   display: flex;
   flex-direction: column;
-  height: 256px;
+  height: 530px;
 
   & > * {
     margin: 0 auto;
@@ -16,7 +16,14 @@
   }
 
   .branding {
+    list-style-type: none;
+    display: flex;
     padding-left: 0px;
+  }
+
+  .pleca {
+    font-size: 10px;
+    margin: 17px 10px 0px 10px;
   }
 
   @include for-desktop-up {
@@ -32,30 +39,13 @@
   }
 
   @include for-tablet-down {
-    flex-direction: row;
+    flex-direction: column;
     height: 400px;
-
-    ul:nth-child(2) {
-      align-self: flex-end;
-    }
-
-    .socialNetworks{
-      height: 130px;
-    }
   }
 
   @include for-phone-only {
     flex-direction: column;
     height: 500px;
-
-    ul:nth-child(2) {
-      order: 3;
-    }
-
-    .branding {
-      margin-top: 50px;
-      margin-bottom: 80px;
-    }
   }
 }
 
@@ -65,7 +55,8 @@
 }
 
 .variant_light {
-  background-color: $backgroundColor;
+  @extend .backgroundDown;
+  background-color: #ffffff;
 
   .iconStyles {
     --primaryColor: #{$textColor};
@@ -94,6 +85,8 @@
   padding: 0;
   display: flex;
   align-items: center;
+  margin-left: 85px;
+  opacity: 0.5;
 
   li + li {
     margin-left: 15px;
@@ -102,10 +95,17 @@
 
 .contact {
   list-style-type: none;
-  padding: 0;
+  margin-top: 50px;
+  padding: 0px;
 
   & > li + li {
     padding-top: 24px;
+  }
+
+  @include for-desktop-up {
+    padding: 0;
+    margin-left: 0px;
+    margin-top: 100px;
   }
 }
 
@@ -117,12 +117,18 @@
   @extend %contactLinksColor;
   display: flex;
   align-items: center;
+  font-size: 15px;
 }
 
 .iconStyles {
   --primaryColor: #{$secondaryColor};
-  width: 20px;
+  width: 15px;
   margin-right: 18px;
+}
+
+.iconSocialNetworks {
+  @extend .iconStyles;
+  margin-right: 24px;
 }
 
 .contactContent {
@@ -146,8 +152,8 @@
 }
 
 .copyright {
-  margin-top: 14px;
-  font-size: 14px;
+  margin-top: 17px;
+  font-size: 10px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -160,9 +166,9 @@
 
 .privacyPolicy {
   margin-top: 17px;
+  font-size: 10px;
   color: $secondaryColor;
   display: block;
-  text-align: center;
 }
 
 .listsContainer {
@@ -172,4 +178,73 @@
     justify-content: space-between;
     margin: 0px;
   }
+}
+
+.titleContainer {
+  text-transform: uppercase;
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.techContent {
+  margin-left: auto;
+  padding-left: 50px;
+}
+
+.socials {
+  margin: 50px auto 50px auto;
+}
+
+.clutchWidget {
+  margin-top: 15px;
+}
+
+.pattern {
+  position: absolute;
+  right: 0px;
+  padding-top: 85px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.backgroundDown {
+  background-image: url(../../../assets/footer/background.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  height: 100%;
+
+  @include for-desktop-up {
+    background-size: contain;
+  }
+}
+
+.listUs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 50px;
+
+  ul:nth-child(1) {
+    text-align: center;
+    display: inline-block;
+
+    & > li {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @include for-desktop-up {
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    justify-content: left;
+  }
+}
+
+.listTech {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  grid-gap: 20px;
 }

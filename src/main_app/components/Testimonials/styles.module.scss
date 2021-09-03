@@ -1,0 +1,295 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 35vw;
+}
+
+.sectionHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 10px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.titleText {
+  text-align: center;
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  text-align: center;
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 40px auto;
+  border: none;
+}
+
+.carousel {
+  z-index: 1;
+  position: relative;
+}
+
+.carousel > *[class^='react-slideshow-container'] {
+  display: flex;
+  justify-content: space-around;
+
+  & > .carouselArrow {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+
+  @include for-tablet-up {
+    & > *[class^='react-slideshow-wrapper'] {
+      max-width: 865px;
+    }
+  }
+}
+
+.carousel > *[class^='indicators'] {
+  max-width: 865px;
+  margin: auto;
+  margin-top: 50px !important;
+  padding: 0;
+
+  & > li:not(:last-of-type) {
+    margin-right: 20px;
+    width: 10px;
+    height: 10px;
+  }
+
+  & > li > *[class^='each-slideshow-indicator']::before {
+    background: #8224E3;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+
+  @include for-tablet-up {
+    margin: auto;
+  }
+}
+
+.quoteContainer {
+  max-width: 650px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quote {
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  line-height: 35px;
+  padding: 40px 0;
+  margin: 0;
+
+  > strong {
+    font-weight: 700;
+  }
+
+  @include for-tablet-up {
+    font-size: 30px;
+    padding: 40px 10px;
+  }
+}
+
+.profileImgContainer {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileData {
+  text-align: center;
+
+  > p {
+    margin: 0;
+  }
+}
+
+%quotation-mark {
+  width: 26px;
+  height: 18px;
+  color: #8224E3;
+  flex-shrink: 0;
+
+  @include for-tablet-up {
+    width: 36px;
+    height: 28px;
+  }
+}
+
+.openQuote {
+  @extend %quotation-mark;
+}
+
+.closeQuote {
+  @extend %quotation-mark;
+  transform: rotate(180deg);
+  align-self: flex-end;
+}
+
+.bottomImg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+%dotsPattern {
+  width: 277px;
+  position: absolute;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.topRightPattern {
+  @extend %dotsPattern;
+  top: 0;
+  right: 50px;
+}
+
+.middelLeftPattern {
+  @extend %dotsPattern;
+  transform: rotate(90deg);
+  top: 316px;
+  left: 80px;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledSmallCircle {
+  @extend %circle;
+  width: 76px;
+  height: 76px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 59px;
+  left: 150px;
+}
+
+.emptySmallCircle {
+  @extend %circle;
+  width: 139px;
+  height: 139px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  top: 45px;
+  left: 72px;
+}
+
+.smallBlurLeftCircle {
+  @extend %circle;
+  width: 14px;
+  height: 14px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(3px);
+  top: 155px;
+  left: 60px;
+}
+
+.filledBigCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 408px;
+  right: 66px;
+}
+
+.emptyBigCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  top: 426px;
+  right: 100px;
+}
+
+.smallBlurRightCircle {
+  @extend %circle;
+  width: 17px;
+  height: 17px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(6px);
+  top: 670px;
+  right: 365px;
+}
+
+.smallCircle {
+  @extend %circle;
+  width: 10px;
+  height: 10px;
+  background-color: rgba($color: #8224E3, $alpha: 0.3);
+  filter: blur(1px);
+  top: 416px;
+  right: 112px;
+}
+
+.filledProfileCircle {
+  @extend %circle;
+  width: 140px;
+  height: 140px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 495px;
+  left: calc(50% - 60px);
+}
+
+.emptyProfileCircle {
+  @extend %circle;
+  width: 132px;
+  height: 132px;
+  border: .5px solid rgba($color: #8224E3, $alpha: 0.5);
+  top: 495px;
+  left: calc(50% - 70px);
+}

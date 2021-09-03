@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import classnames from 'classnames'
+import { isFunction } from 'lodash'
 
 let script
 
@@ -11,7 +12,7 @@ function ClutchWidget ({ className, variant = 'light' }) {
   }
 
   useEffect(() => {
-    if (script) {
+    if (script && isFunction(window.CLUTCHCO?.Init)) {
       window.CLUTCHCO.Init()
     } else {
       script = document.createElement('script')
@@ -30,6 +31,7 @@ function ClutchWidget ({ className, variant = 'light' }) {
       data-height='45'
       style={{ width: '192px', height: '45px' }}
       data-clutchcompany-id='810049'
+      data-primary-color='#FFC331'
       {...extraProps}
     />
   )

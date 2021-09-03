@@ -4,11 +4,11 @@ import { HashLink } from 'react-router-hash-link'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import useElementClass from 'utils/use_element_class'
-import useVariants from 'utils/use_variants'
+import useVariants, { combineVariants, isVariant } from 'utils/use_variants'
 import useCombinedRefs from 'utils/use_combined_refs'
 import useMediaQuery from 'utils/use_media_query'
 
-import { forDesktopUp, forTabletUp } from 'styles/media_queries'
+import { forDesktopUp } from 'styles/media_queries'
 
 import SVGIcon from '../SVGIcon'
 
@@ -17,8 +17,14 @@ import Logo from '../Logo'
 
 import classes from './styles.module.scss'
 
-function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top', hideMenu = false }, ref) {
-  // TODO: add accessibility https://react-spectrum.adobe.com/react-aria/useMenuTrigger.html
+function NavBar ({
+  variant,
+  variantAtScrollTop,
+  show = true,
+  pathLogo = '/#top',
+  hideMenu = false,
+  contactPagePath = '/contact'
+}, ref) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [atScrollTop, observerRef] = useOverlappingObserver({
     root: document.body,
@@ -31,13 +37,24 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
 
     return variant
   }, [atScrollTop, variant, variantAtScrollTop])
+  variant = useMemo(() => {
+    if (atScrollTop) return variant
+
+    return combineVariants(variant, 'scroll')
+  }, [atScrollTop, variant])
+
+  const logoVariant = useMemo(() => {
+    if (isVariant(variant, 'light')) return 'white'
+
+    return 'color'
+  }, [variant])
 
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
     defaults: {
-      solid: variants => !variants.includes('transparent'),
-      dark: variants => !variants.includes('light'),
-      'light-bg': variants => !variants.includes('dark-bg')
+      solid: variants => !isVariant(variants, 'transparent'),
+      dark: variants => !isVariant(variants, 'light'),
+      'light-bg': variants => !isVariant(variants, 'dark-bg')
     }
   })
   const toggleMenu = useCallback(() => {
@@ -46,12 +63,7 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
   const closeMenu = useCallback(() => {
     setMenuOpen(false)
   }, [])
-  const isTabletUp = useMediaQuery(forTabletUp)
   const isDesktopUp = useMediaQuery(forDesktopUp)
-  const logoVariant = useMemo(() => {
-    if (isTabletUp) return 'full'
-    else return 'hexagon'
-  }, [isTabletUp])
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
@@ -72,30 +84,35 @@ function NavBar ({ variant, variantAtScrollTop, show = true, pathLogo = '/#top',
         smooth
       >
         <Logo
+          menuOpen={menuOpen}
           variant={logoVariant}
           className={classes.logo}
         />
       </HashLink>
-      <svg width='0' height='0' version='1.1' xmlns='http://www.w3.org/2000/svg'>
-        <linearGradient id='NavBarLogoGradient'>
-          <stop offset='0%' className={classes.logoGradientStop0} />
-          <stop offset='100%' className={classes.logoGradientStop100} />
-        </linearGradient>
-      </svg>
       {!hideMenu && (
-        <nav>
+        <nav className={classes.nav}>
           <button
             type='button'
             onClick={toggleMenu}
             className={classes.menuToggle}
           >
             {menuOpen && <SVGIcon name='nav_bar/close_x' className={classes.close} />}
-            {!menuOpen && <SVGIcon name='nav_bar/hamburguer_menu' className={classes.open} />}
+            {!menuOpen &&
+              <SVGIcon
+                name='nav_bar/hamburguer_menu'
+                className={
+                  classnames(classes.open, {
+                    [classes.white]: isVariant(variant, 'light')
+                  })
+                }
+              />}
           </button>
           <MainMenu
-            isOpen={isDesktopUp || isTabletUp || menuOpen}
+            isOpen={isDesktopUp || menuOpen}
             onRequestClose={closeMenu}
             className={classes.menu}
+            variant={variant}
+            contactPagePath={contactPagePath}
           />
         </nav>)}
     </header>
