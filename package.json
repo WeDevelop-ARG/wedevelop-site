@@ -23,6 +23,7 @@
     "react-scripts": "4.0.3",
     "react-select": "^4.3.1",
     "react-slideshow-image": "^3.5.0",
+    "react-text-loop": "^2.3.0",
     "rectangles": "^0.0.4",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.0",

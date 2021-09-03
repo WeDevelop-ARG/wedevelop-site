@@ -1,16 +1,23 @@
 import { HashLink } from 'react-router-hash-link'
+
 import Button from 'main_app/components/Button'
+import WebDevTitleDescription from './components/WebDevTitleDescription'
+import StaffAugTitleDescription from './components/StaffAugTitleDescription'
+
 import patternHorizontal from 'assets/services/dots-pattern-horizontal.svg'
 import classes from './schedule.module.scss'
 
-function Schedule ({ contactPagePath, className, role = 'Full-Stack Developer' }) {
+function Schedule ({ contactPagePath, className, service }) {
+  const renderTitleDescription = (service) => {
+    if (service === 'staff-augmentation') return (<StaffAugTitleDescription />)
+    return (<WebDevTitleDescription />)
+  }
   return (
     <>
       <section className={className}>
         <div className={classes.container}>
           <p className={classes.heading}>Get in touch</p>
-          <h2 className={classes.title}>Hire your new <span className={classes.role}>{role}</span> now!</h2>
-          <p className={classes.description}>Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc. </p>
+          {renderTitleDescription(service)}
           <hr className={classes.horizontalBar} />
           <Button
             as={HashLink}

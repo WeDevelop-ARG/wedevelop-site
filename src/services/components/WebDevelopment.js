@@ -22,6 +22,7 @@ function WebDevelopment () {
     title: 'Agile Web Development',
     description: 'We create high-quality Digital Products through our Agile Web Development services, delivering meaningful experiences to clients and users all over the world.'
   })
+  const SERVICE_NAME = 'web-development'
   const contactPagePath = '/services/web-development/contact'
   const match = useRouteMatch(contactPagePath)
   const history = useHistory()
@@ -33,7 +34,7 @@ function WebDevelopment () {
     <>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Hero
-        service='web-development'
+        service={SERVICE_NAME}
         className={classes.sectionContainer}
         icon={icon}
         photo={photo}
@@ -50,7 +51,11 @@ function WebDevelopment () {
         </Details>
       </section>
       <Benefits className={classes.sectionContainer} service='web-development' />
-      <Schedule className={classes.sectionContainer} contactPagePath={contactPagePath} />
+      <Schedule
+        className={classes.sectionContainer}
+        contactPagePath={contactPagePath}
+        service={SERVICE_NAME}
+      />
       <PictureWall />
     </>
   )

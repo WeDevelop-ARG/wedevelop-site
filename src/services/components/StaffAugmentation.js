@@ -25,6 +25,7 @@ function StaffAugmentation () {
     title: 'Staff Augmentation',
     description: 'A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
   })
+  const SERVICE_NAME = 'staff-augmentation'
   const contactPagePath = '/services/staff-augmentation/contact'
   const match = useRouteMatch(contactPagePath)
   const history = useHistory()
@@ -36,7 +37,7 @@ function StaffAugmentation () {
     <>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Hero
-        service='staff-augmentation'
+        service={SERVICE_NAME}
         className={classes.sectionContainer}
         contactPagePath={contactPagePath}
         icon={icon}
@@ -54,7 +55,11 @@ function StaffAugmentation () {
       </section>
       <SimpleSteps className={classes.sectionContainer} />
       <Benefits className={classes.sectionContainer} />
-      <Schedule className={classes.sectionContainer} contactPagePath={contactPagePath} />
+      <Schedule
+        className={classes.sectionContainer}
+        contactPagePath={contactPagePath}
+        service={SERVICE_NAME}
+      />
       <PictureWall />
     </>
   )
