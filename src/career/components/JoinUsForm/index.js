@@ -29,7 +29,7 @@ const skillOptions = [{
   value: 'PYTHON',
   label: 'Python'
 }, {
-  value: 'REACT NATIVE',
+  value: 'REACT_NATIVE',
   label: 'React Native'
 }, {
   value: 'REACT',
@@ -45,7 +45,7 @@ const skillOptions = [{
   value: 'TYPESCRIPT',
   label: 'TypeScript'
 }, {
-  value: 'VUE.JS',
+  value: 'VUEJS',
   label: 'Vue.js'
 }, {
   value: 'GOLANG',
@@ -54,7 +54,7 @@ const skillOptions = [{
   value: 'PHP',
   label: 'PHP'
 }, {
-  value: 'RUBY ON RAILS',
+  value: 'RUBY_ON_RAILS',
   label: 'Ruby on Rails'
 }, {
   value: 'POSTGRESQL',
@@ -66,8 +66,8 @@ const skillOptions = [{
   value: 'REDIS',
   label: 'Redis'
 }, {
-  value: 'MARÍA.DB',
-  label: 'María.DB'
+  value: 'MARIADB',
+  label: 'María DB'
 }, {
   value: 'AWS',
   label: 'AWS'
@@ -78,7 +78,7 @@ const skillOptions = [{
   value: 'AZURE',
   label: 'Azure'
 }, {
-  value: '.NET',
+  value: 'NET',
   label: '.NET'
 }, {
   value: 'C#',
@@ -87,7 +87,7 @@ const skillOptions = [{
   value: 'C++',
   label: 'C++'
 }, {
-  value: 'EXPRESS.JS',
+  value: 'EXPRESSJS',
   label: 'Express.js'
 }, {
   value: 'IOS',
@@ -132,7 +132,7 @@ const skillOptions = [{
   value: 'FLASK',
   label: 'Flask'
 }, {
-  value: 'UI/UX',
+  value: 'UI_UX',
   label: 'UI/UX'
 }, {
   value: 'TRELLO',
