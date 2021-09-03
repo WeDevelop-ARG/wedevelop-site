@@ -19,8 +19,8 @@ import classes from './services.module.scss'
 
 function WebDevelopment () {
   usePageMetadata({
-    title: 'Web Development',
-    description: 'TBD'
+    title: 'Agile Web Development',
+    description: 'We create high-quality Digital Products through our Agile Web Development services, delivering meaningful experiences to clients and users all over the world.'
   })
   const contactPagePath = '/services/web-development/contact'
   const match = useRouteMatch(contactPagePath)

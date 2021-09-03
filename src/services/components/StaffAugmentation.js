@@ -23,7 +23,7 @@ import classNames from 'classnames'
 function StaffAugmentation () {
   usePageMetadata({
     title: 'Staff Augmentation',
-    description: 'TBD'
+    description: 'A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
   })
   const contactPagePath = '/services/staff-augmentation/contact'
   const match = useRouteMatch(contactPagePath)
