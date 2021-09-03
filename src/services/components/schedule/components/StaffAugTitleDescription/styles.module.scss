@@ -10,6 +10,17 @@
 
 .textLoop {
   margin: 15px auto 10px;
+  width: 100%;
+
+  > div {
+    width: 100%;
+    height: 1.1em !important;
+
+    > div {
+      width: 100%;
+      height: 1.1em !important;
+    }
+  }
 }
 
 .description {
@@ -19,6 +30,7 @@
 }
 
 .role {
+  height: 100%;
   background: linear-gradient(to right, #6B67E9 100%, #8224E3 100%);
 	-webkit-background-clip: text;
   background-clip: text;
