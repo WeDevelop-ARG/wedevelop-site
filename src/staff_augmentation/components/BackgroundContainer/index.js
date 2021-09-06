@@ -1,9 +1,11 @@
+import classnames from 'classnames'
+
 import classes from './styles.module.scss'
 
-function BackgroundContainer ({ backgroundURL }) {
+function BackgroundContainer ({ backgroundURL, className }) {
   return (
-    <div className={classes.backgroundContainer}>
-      <img src={backgroundURL} alt='' className={classes.background} />
+    <div className={classnames(classes.backgroundContainer, className)}>
+      <img src={backgroundURL} alt='' className={classes.backgroundImg} />
     </div>
   )
 }
