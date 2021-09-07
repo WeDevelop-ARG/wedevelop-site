@@ -3,12 +3,11 @@ import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
 import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
-import AbelImg from 'assets/hire_developers/abel_profile.png'
-import NahuelImg from 'assets/hire_developers/nahuel_profile.png'
-import VaninaImg from 'assets/hire_developers/vanina_profile.png'
-import JSLogo from 'assets/hire_developers/javascript.png'
-import PythonLogo from 'assets/hire_developers/python.png'
-import AngularLogo from 'assets/hire_developers/angular.png'
+import JennyWilson from 'assets/hire_developers/profiles/jenny_wilson.png'
+import GeoffreyMott from 'assets/hire_developers/profiles/geoffrey_mott.png'
+import RodolfoGoode from 'assets/hire_developers/profiles/rodolfo_goode.png'
+import LeatriceHandler from 'assets/hire_developers/profiles/leatrice_handler.png'
+import FlorencioDorrance from 'assets/hire_developers/profiles/florencio_dorrance.png'
 
 const hireDevelopers = {
   pathName: 'hire-developers',
@@ -115,31 +114,152 @@ const hireDevelopers = {
     )
   }],
   availableDevs: {
-    title: <>This is our <BrandGradient>Available Team</BrandGradient></>,
+    subtitle: 'Top Engineers',
+    title: 'This is our Available Team',
+    description: 'Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc. ',
+    buttonText: 'Get a Free Quote',
     devs: [
       {
         id: '1',
-        devImgURL: AbelImg,
-        devRole: 'Full Stack',
-        techLogoURL: JSLogo,
-        devDescription: '7 years experience',
-        devRate: '12'
+        devImgURL: JennyWilson,
+        devName: 'Jenny Wilson',
+        devRole: 'Javascript Developer',
+        devSkills: [
+          {
+            skill: 'Java',
+            color: 'yellow'
+          },
+          {
+            skill: 'Javascript',
+            color: 'gray'
+          },
+          {
+            skill: 'MySQL',
+            color: 'black'
+          },
+          {
+            skill: 'Angular',
+            color: 'red'
+          },
+          {
+            skill: 'Vue.js',
+            color: 'green'
+          }
+        ],
+        devExperience: '+7 years',
+        devRate: '$$ / h'
       },
       {
         id: '2',
-        devImgURL: NahuelImg,
-        devRole: 'Backend',
-        techLogoURL: PythonLogo,
-        devDescription: 'Former Google',
-        devRate: '15'
+        devImgURL: GeoffreyMott,
+        devName: 'Geoffrey Mott',
+        devRole: 'Full-Stack Developer',
+        devSkills: [
+          {
+            skill: 'Python',
+            color: 'black'
+          },
+          {
+            skill: 'PHP',
+            color: 'blue'
+          },
+          {
+            skill: 'Vue.js',
+            color: 'green'
+          }
+        ],
+        devExperience: '+12 years',
+        devRate: '$$$ / h'
       },
       {
         id: '3',
-        devImgURL: VaninaImg,
-        devRole: 'Frontend',
-        techLogoURL: AngularLogo,
-        devDescription: 'Experience leading teams',
-        devRate: '10'
+        devImgURL: RodolfoGoode,
+        devName: 'Rodolfo Goode',
+        devRole: 'Ruby on Rails Developer',
+        devSkills: [
+          {
+            skill: 'Java',
+            color: 'yellow'
+          },
+          {
+            skill: 'Javascript',
+            color: 'gray'
+          },
+          {
+            skill: 'MySQL',
+            color: 'black'
+          },
+          {
+            skill: 'Angular',
+            color: 'red'
+          },
+          {
+            skill: 'Vue.js',
+            color: 'green'
+          }
+        ],
+        devExperience: '+3 years',
+        devRate: '$ / h'
+      },
+      {
+        id: '4',
+        devImgURL: LeatriceHandler,
+        devName: 'Leatrice Handler',
+        devRole: 'Python Developer',
+        devSkills: [
+          {
+            skill: 'Java',
+            color: 'yellow'
+          },
+          {
+            skill: 'Javascript',
+            color: 'gray'
+          },
+          {
+            skill: 'MySQL',
+            color: 'black'
+          },
+          {
+            skill: 'Angular',
+            color: 'red'
+          },
+          {
+            skill: 'Vue.js',
+            color: 'green'
+          }
+        ],
+        devExperience: '+9 years',
+        devRate: '$$ / h'
+      },
+      {
+        id: '5',
+        devImgURL: FlorencioDorrance,
+        devName: 'Florencio Dorrance',
+        devRole: 'QA Engineer',
+        devSkills: [
+          {
+            skill: 'Java',
+            color: 'yellow'
+          },
+          {
+            skill: 'Javascript',
+            color: 'gray'
+          },
+          {
+            skill: 'MySQL',
+            color: 'black'
+          },
+          {
+            skill: 'Angular',
+            color: 'red'
+          },
+          {
+            skill: 'Vue.js',
+            color: 'green'
+          }
+        ],
+        devExperience: '+11 years',
+        devRate: '$$$ / h'
       }
     ]
   },
