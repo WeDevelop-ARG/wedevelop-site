@@ -31,7 +31,7 @@
   }
 
   @include for-phone-only {
-    padding: 450px 0px 0px 0px; 
+    padding: 450px 0px 0px 0px;
   }
 }
 
@@ -120,4 +120,83 @@
   margin-top: 2px;
   margin-left: 1067px;
   opacity: 0.7;
+}
+
+.leftPattern {
+  display: none;
+}
+
+.rightPattern {
+  display: none;
+}
+
+.variant_reverse_items {
+  .topRightPattern {
+    margin-top: -311px;
+    margin-left: 1040px;
+    transform: rotate(-90deg);
+  }
+
+  .shapes {
+    position: absolute;
+    margin-top: 331px;
+    margin-left: -1128px;
+  }
+
+  .leftPattern {
+    display: none;
+  }
+  
+  .rightPattern {
+    display: none;
+  }
+}
+
+.variant_notBackground {
+  background-image: none;
+
+  .shapes {
+    display: none;
+  }
+
+  .topRightPattern {
+    display: none;
+  }
+
+  %dotPattern {
+    width: 15vw;
+    position: absolute;
+    top: 494px;
+    display: none;
+  
+    @include for-desktop-up {
+      display: block;
+  
+      @media screen and (min-width: 1024px) and (max-width: 1230px) {
+        width: 12vw;
+      }
+    }
+
+    @include for-tablet-down {
+      display: none;
+    }
+  }
+
+  .leftPattern {
+    @extend %dotPattern;
+    left: 2vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      left: -3vw;
+    }
+  }
+
+  .rightPattern {
+    @extend %dotPattern;
+    right: 2vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      right: -3vw;
+    }
+  }
 }

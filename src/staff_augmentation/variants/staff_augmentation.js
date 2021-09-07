@@ -114,7 +114,8 @@ const staffAugmentation = {
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get a Free Quote',
     ctaToPath: '#top',
-    description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
+    description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.',
+    variant: ''
   }
 }
 
