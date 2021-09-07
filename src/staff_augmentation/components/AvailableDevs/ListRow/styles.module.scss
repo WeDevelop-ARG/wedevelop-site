@@ -1,42 +1,52 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
+$primaryBlue: #377DFF;
+
 .devRow {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 40px;
   border-bottom: 1px solid rgba($color: $textColor, $alpha: 0.25);
   margin: 0;
   padding: 0;
 
   >li {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     margin: auto;
-    font-size: 22px;
-    padding: 10px 0;
+    padding: 15px 0;
+    font-size: 15px;
 
     @include for-phone-only {
       padding: 25px 0;
     }
   }
 
-  @include for-tablet-up {
-    flex-direction: row;
+  >li:not(:first-of-type) {
+    font-weight: 600;
   }
 }
 
-.profileImg {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  filter: blur(8px);
-  margin-right: 15px;
+.devImgName {
+  >p {
+    align-self: center;
+    font-size: 15px;
+    margin: 0;
+  }
 
-  @include for-desktop-up {
-    margin-right: 0;
+  >.profileImgContainer {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .profileImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -48,40 +58,48 @@
   }
 }
 
-.techLogo {
-  width: 50px;
-  height: 50px;
-  margin-left: 25px;
+.skills {
+
+  >span {
+    border-radius: 50px;
+    padding: 6px 16px;
+  }
+
+  >span:not(:last-of-type) {
+    margin-right: 21px;
+  }
 }
 
 .description {
-  width: 100%;
-  max-width: 275px;
   text-align: center;
 }
 
-.rateMagnifier {
+.rate {
   display: flex;
   justify-content: stretch;
 
   >p {
-    font-size: 22px;
+    font-size: 15px;
     margin: auto;
+    font-weight: 600;
   }
 }
 
-.profileRate {
-  font-size: 24px;
-  font-weight: 700;
-  filter: blur(5px);
+.viewProfile {
+  display: flex;
+  align-items: center;
 }
 
-.magnifier {
-  width: 25px;
-  height: 25px;
+.viewProfileText {
+  color: $primaryBlue;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.rightArrow {
+  width: 16px;
+  height: 16px;
   color: $textColor;
-}
-
-.searchButton {
   margin-left: 10px;
 }
