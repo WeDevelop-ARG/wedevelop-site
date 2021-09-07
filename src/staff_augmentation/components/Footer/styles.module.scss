@@ -1,0 +1,213 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.containerStyle {
+  padding: 25px var(--rootContentHorizontalPadding);
+  display: flex;
+  flex-direction: column;
+  height: 530px;
+
+  & > * {
+    margin: 0 auto;
+  }
+
+  & > * + * {
+    margin-top: 60px;
+  }
+
+  .branding {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0px;
+
+    @include for-desktop-up {
+      padding-left: 140px;
+    }
+  }
+
+  .pleca {
+    font-size: 10px;
+    margin: 17px 10px 0px 10px;
+  }
+
+  @include for-desktop-up {
+    flex-basis: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+
+    & > * {
+      margin: 0;
+    }
+  }
+
+  @include for-tablet-down {
+    flex-direction: column;
+    height: 400px;
+
+    & > * + * {
+      margin-top: 0px;
+    }
+  }
+
+  @include for-phone-only {
+    flex-direction: column;
+    height: 500px;
+  }
+}
+
+.variant_dark {
+  background-color: $textColor;
+  color: $secondaryColor;
+}
+
+.variant_light {
+  @extend .backgroundDown;
+  background-color: #ffffff;
+
+  .iconStyles {
+    --primaryColor: #{$textColor};
+  }
+
+  %contactLinksColor {
+    color: $textColor;
+  }
+
+  .logoStyle {
+    --primaryColor: #{$textColor};
+    --secondaryColor: #{$secondaryColor};
+  }
+
+  .privacyPolicy {
+    color: $textColor;
+  }
+
+  .copyright {
+    opacity: 0.85;
+  }
+}
+
+.socialNetworks {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+
+  li + li {
+    margin-left: 15px;
+  }
+
+  @include for-desktop-up {
+    margin-top: 74px;
+  }
+}
+
+.contact {
+  list-style-type: none;
+  margin-top: 50px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  & > li + li {
+    padding-top: 20px;
+  }
+
+  @include for-desktop-up {
+    padding: 0;
+    margin-left: 0px;
+    flex-direction: row;
+    margin-bottom: -13px;
+
+    & > li + li {
+      margin-left: 15px;
+      padding-top: 10px;
+    }
+  }
+}
+
+%contactLinksColor {
+  color: $secondaryColor;
+}
+
+.contactContentContainer {
+  @extend %contactLinksColor;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.iconStyles {
+  --primaryColor: #{$secondaryColor};
+  width: 15px;
+  margin-right: 10px;
+}
+
+.iconSocialNetworks {
+  @extend .iconStyles;
+  margin-right: 24px;
+}
+
+.contactContent {
+  @extend %contactLinksColor;
+  text-align: left;
+  font-style: normal;
+  line-height: 17px;
+}
+
+.logoStyle {
+  --primaryColor: #{$secondaryColor};
+  --secondaryColor: #{$textColor};
+  height: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include for-desktop-up {
+    flex-basis: 100%;
+  }
+}
+
+.copyright {
+  margin-top: 17px;
+  font-size: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  
+  @include for-desktop-up {
+    flex-basis: 100%;
+  }
+}
+
+.privacyPolicy {
+  margin-top: 17px;
+  font-size: 10px;
+  color: $secondaryColor;
+  display: block;
+}
+
+.socials {
+  margin: -12px auto 50px auto;
+}
+
+.backgroundDown {
+  background-image: url(../../../assets/footer/background.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  height: 100%;
+
+  @include for-desktop-up {
+    background-size: contain;
+  }
+}
+
+.listUs {
+  @include for-desktop-up {
+    margin-left: 40px;
+    margin-bottom: 40px;
+  }
+}
