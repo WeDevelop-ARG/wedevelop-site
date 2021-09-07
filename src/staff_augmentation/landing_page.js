@@ -45,7 +45,9 @@ function LandingPage () {
           submitButtonText={landing.header.submitButtonText}
         />
         <ReviewCards
+          subtitle={landing.reviews.subtitle}
           title={landing.reviews.title}
+          description={landing.reviews.description}
           reviews={landing.reviews.reviews}
         />
         {landing.sectionsWithSideImage.map(({

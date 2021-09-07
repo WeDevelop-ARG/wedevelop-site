@@ -30,27 +30,41 @@ const webDevelopers = {
     submitButtonText: 'Get a free quote'
   },
   reviews: {
-    title: <>We trust our Customers' words</>,
+    subtitle: 'Customers reviews',
+    title: 'The TOP IT Staffing as our customers say',
+    description: 'Don\'t take our word for it. See what our customers say.',
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
       stars: 5,
-      project: 'App Development for Online Fitness Company'
+      project: {
+        type: 'App Development',
+        company: 'Online Fitness Company'
+      }
     }, {
       id: '2',
       quote: 'They’re willing to engage with a problem to figure it out rather than waiting to be told what to do.',
       stars: 5,
-      project: 'Software Development for Sports Betting Startup'
+      project: {
+        type: 'Software Development',
+        company: 'Sports Betting Startup'
+      }
     }, {
       id: '3',
       quote: 'The project cost about half of what it would have had we hired local engineers.',
       stars: 5,
-      project: 'Web App Development for Loan Company'
+      project: {
+        type: 'Web App Development',
+        company: 'Loan Company'
+      }
     }, {
       id: '4',
       quote: 'WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.',
       stars: 5,
-      project: 'Product Development for Ferry Booking Platform'
+      project: {
+        type: 'Product Development',
+        company: 'Ferry Booking Platform'
+      }
     }]
   },
   sectionsWithSideImage: [{
