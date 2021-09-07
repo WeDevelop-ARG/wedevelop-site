@@ -70,8 +70,11 @@ function LandingPage () {
         ))}
         {landing.availableDevs &&
           <AvailableDevs
+            subtitle={landing.availableDevs.subtitle}
             title={landing.availableDevs.title}
+            description={landing.availableDevs.description}
             devs={landing.availableDevs.devs}
+            buttonText={landing.availableDevs.buttonText}
           />}
         <FullSizeCTA
           title={landing.fullSizeCTA.title}
