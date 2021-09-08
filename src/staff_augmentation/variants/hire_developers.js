@@ -8,6 +8,7 @@ import VaninaImg from 'assets/hire_developers/vanina_profile.png'
 import JSLogo from 'assets/hire_developers/javascript.png'
 import PythonLogo from 'assets/hire_developers/python.png'
 import AngularLogo from 'assets/hire_developers/angular.png'
+import picturebgHdev from 'assets/hire_developers/picturebgHdev.png'
 
 const hireDevelopers = {
   pathName: 'hire-developers',
@@ -98,7 +99,8 @@ const hireDevelopers = {
       </>
     ),
     buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonLink: '#',
+    imageURL: picturebgHdev
   },
   HireTopTalent: {
     subtitle: 'top talent',

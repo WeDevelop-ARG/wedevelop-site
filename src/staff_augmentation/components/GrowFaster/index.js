@@ -11,12 +11,14 @@ function GrowFaster ({
   descriptionText,
   contentText,
   buttonText,
-  buttonLink
+  buttonLink,
+  imageURL
 }) {
   return (
     <section id='grow-today' className={classes.growFaster}>
       <div className={classes.growFasterContainer}>
         <div className={classes.sectionHeader}>
+          <img className={classes.imgHeader} src={imageURL} alt='' />
           <p className={classes.subheadingText}>{subheadingText}</p>
           <h2 className={classes.titleText}>{titleText}</h2>
           <p className={classes.descriptionText}>{descriptionText}</p>

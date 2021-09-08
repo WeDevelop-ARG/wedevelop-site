@@ -2,6 +2,7 @@ import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
 import BgWebDesigners from 'assets/staff_augmentation/bg_web_designers.png'
+import picturebgWd from 'assets/staff_augmentation/picturebgWd.png'
 
 const webDesigners = {
   pathName: 'web-designers',
@@ -92,7 +93,8 @@ const webDesigners = {
       </>
     ),
     buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonLink: '#',
+    imageURL: picturebgWd
   },
   HireTopTalent: {
     subtitle: 'top talent',
@@ -116,7 +118,8 @@ const webDesigners = {
       </>
     ),
     buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonLink: '#',
+    sideImageURL: picturebgWd
   },
   growToday: {
     subtitle: 'Efficiency',

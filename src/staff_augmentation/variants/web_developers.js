@@ -2,6 +2,7 @@ import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
 import BgWebDevelopers from 'assets/staff_augmentation/bg_web_developers.png'
+import picturebgWdev from 'assets/staff_augmentation/picturebgWdev.png'
 
 const webDevelopers = {
   pathName: 'web-developers',
@@ -92,7 +93,8 @@ const webDevelopers = {
       </>
     ),
     buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonLink: '#',
+    imageURL: picturebgWdev
   },
   HireTopTalent: {
     subtitle: 'top talent',

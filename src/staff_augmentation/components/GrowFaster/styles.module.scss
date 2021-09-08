@@ -128,3 +128,14 @@
   margin-top: -30px;
   margin-left: 180px;
 }
+
+.imgHeader {
+  position: absolute;
+  width: 100%;
+  margin-left: -1175px;
+  margin-top: -233px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
