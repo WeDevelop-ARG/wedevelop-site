@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react'
 import { useRouteMatch } from 'react-router'
-import classnames from 'classnames'
 
 import Article from 'main_app/components/Article'
 import Footer from './components/Footer'
@@ -11,7 +10,6 @@ import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
 import GrowToday from './components/GrowToday'
 import FullSizeCTA from './components/FullSizeCTA'
-import SectionWithSideImage from './components/SectionWithSideImage'
 import AvailableDevs from './components/AvailableDevs'
 import FreeQuoteModal from './components/FreeQuoteModal'
 import GrowFaster from './components/GrowFaster'
@@ -19,8 +17,6 @@ import HireTopTalent from './components/HireTopTalent'
 import PictureWall from 'main_app/components/PictureWall'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
-
-import classes from './styles.module.scss'
 
 function LandingPage () {
   const { params } = useRouteMatch('/:name')
@@ -77,28 +73,9 @@ function LandingPage () {
           descriptionText={landing.GrowFaster.description}
           contentText={landing.GrowFaster.content}
           buttonText={landing.GrowFaster.buttonText}
+          imageURL={landing.GrowFaster.imageURL}
           handleModal={handleModalOpen}
         />
-        {landing.sectionsWithSideImage.map(({
-          id,
-          imageURL,
-          title,
-          imageContainer,
-          description
-        }, index) => (
-          <SectionWithSideImage
-            key={id}
-            imageURL={imageURL}
-            title={title}
-            imageContainer={imageContainer}
-            description={description}
-            imageAtRight={index % 2 !== 0}
-            className={classnames({
-              [classes.firstSectionWithSideImage]: index === 0,
-              [classes.lastSectionWithSideImage]: index === landing.sectionsWithSideImage.length - 1
-            })}
-          />
-        ))}
         {landing.availableDevs &&
           <AvailableDevs
             title={landing.availableDevs.title}

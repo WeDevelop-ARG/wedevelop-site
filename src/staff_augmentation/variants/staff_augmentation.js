@@ -2,6 +2,7 @@ import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
 import BgStaffAugmentation from 'assets/staff_augmentation/bg_staff_augmentation.png'
+import picturebgStaff from 'assets/staff_augmentation/picturebgStaff.png'
 
 const staffAugmentation = {
   pathName: 'staff-augmentation',
@@ -109,7 +110,8 @@ const staffAugmentation = {
         </>
       </>
     ),
-    buttonText: 'Get a Free Quote'
+    buttonText: 'Get a Free Quote',
+    imageURL: picturebgStaff
   },
   HireTopTalent: {
     subtitle: 'top talent',

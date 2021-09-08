@@ -9,36 +9,39 @@ function GrowFaster ({
   descriptionText,
   contentText,
   buttonText,
+  imageURL,
   handleModal
 }) {
   return (
-    <section id='grow-today' className={classes.growFaster}>
-      <div className={classes.growFasterContainer}>
-        <div className={classes.sectionHeader}>
-          <p className={classes.subheadingText}>{subheadingText}</p>
-          <h2 className={classes.titleText}>{titleText}</h2>
-          <p className={classes.descriptionText}>{descriptionText}</p>
-          <hr className={classes.horizontalBar} />
-          <div className={classes.sectionContent}>
-            <p>{contentText}</p>
+    <>
+      <img className={classes.imgHeader} src={imageURL} alt='' />
+      <section id='grow-today' className={classes.growFaster}>
+        <div className={classes.growFasterContainer}>
+          <div className={classes.sectionHeader}>
+            <p className={classes.subheadingText}>{subheadingText}</p>
+            <h2 className={classes.titleText}>{titleText}</h2>
+            <p className={classes.descriptionText}>{descriptionText}</p>
+            <hr className={classes.horizontalBar} />
+            <br />
+            <div className={classes.sectionContent}>
+              <p>{contentText}</p>
+            </div>
+            <Button
+              variant='primary'
+              className={classes.freeQuoteButton}
+              onClick={handleModal}
+            >
+              {buttonText}
+            </Button>
+            <div className={classes.emptyBigCircle} />
+            <div className={classes.emptyCircle} />
+            <div className={classes.smallBlurRightCircle} />
+            <div className={classes.filledBigCircle} />
           </div>
-          <Button
-            smooth
-            isAnchor
-            variant='primary'
-            className={classes.freeQuoteButton}
-            onClick={handleModal}
-          >
-            {buttonText}
-          </Button>
-          <div className={classes.emptyBigCircle} />
-          <div className={classes.emptyCircle} />
-          <div className={classes.smallBlurRightCircle} />
-          <div className={classes.filledBigCircle} />
         </div>
-      </div>
-      <img src={pattern} alt='' className={classes.patternRight} />
-    </section>
+        <img src={pattern} alt='' className={classes.patternRight} />
+      </section>
+    </>
   )
 }
 
