@@ -11,7 +11,7 @@ function Form ({
 }) {
   const handleSubmit = useCallback(async (values, actions) => {
     try {
-      await onSubmit?.(values)
+      await onSubmit?.(values, actions)
 
       if (resetOnSuccessfulSubmit) actions.resetForm()
     } finally {

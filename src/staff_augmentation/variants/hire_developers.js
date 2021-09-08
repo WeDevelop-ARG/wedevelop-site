@@ -1,8 +1,7 @@
-import MaleInVideocall from 'assets/staff_augmentation/male_videocall.png'
 import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
-import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
+import BgHireDevelopers from 'assets/staff_augmentation/bg_hire_developers.png'
 import AbelImg from 'assets/hire_developers/abel_profile.png'
 import NahuelImg from 'assets/hire_developers/nahuel_profile.png'
 import VaninaImg from 'assets/hire_developers/vanina_profile.png'
@@ -17,7 +16,8 @@ const hireDevelopers = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
-    title: <>Talent that delivers like <BrandGradient>your Dream Team</BrandGradient> would</>,
+    landingName: <>hire developers</>,
+    title: <>Talent that delivers like your <b>Dream Team</b> would</>,
     description: (
       <>
         <p>Get the ultimate outcomes from the Top Web Developers without the hiring hassles.</p>
@@ -32,31 +32,46 @@ const hireDevelopers = {
         message: 'What are you looking for?'
       }
     },
-    sideImageURL: AbelLaptop,
-    submitButtonText: 'Get a free quote'
+    sideImageURL: BgHireDevelopers,
+    submitButtonText: 'Get a free quote',
+    backgroundColor: '#8224E3'
   },
   reviews: {
-    title: <>We trust our Customers' words</>,
+    subtitle: 'Customers reviews',
+    title: 'The TOP IT Staffing as our customers say',
+    description: 'Don\'t take our word for it. See what our customers say.',
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
       stars: 5,
-      project: 'App Development for Online Fitness Company'
+      project: {
+        type: 'App Development',
+        company: 'Online Fitness Company'
+      }
     }, {
       id: '2',
       quote: 'They’re willing to engage with a problem to figure it out rather than waiting to be told what to do.',
       stars: 5,
-      project: 'Software Development for Sports Betting Startup'
+      project: {
+        type: 'Software Development',
+        company: 'Sports Betting Startup'
+      }
     }, {
       id: '3',
       quote: 'The project cost about half of what it would have had we hired local engineers.',
       stars: 5,
-      project: 'Web App Development for Loan Company'
+      project: {
+        type: 'Web App Development',
+        company: 'Loan Company'
+      }
     }, {
       id: '4',
       quote: 'WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.',
       stars: 5,
-      project: 'Product Development for Ferry Booking Platform'
+      project: {
+        type: 'Product Development',
+        company: 'Ferry Booking Platform'
+      }
     }]
   },
   GrowFaster: {
@@ -85,24 +100,46 @@ const hireDevelopers = {
     buttonText: 'Get a Free Quote',
     buttonLink: '#'
   },
-  sectionsWithSideImage: [{
-    id: '1',
-    imageURL: MaleInVideocall,
-    title: <>Grow <BrandGradient>today</BrandGradient></>,
-    description: (
+  HireTopTalent: {
+    subtitle: 'top talent',
+    title: 'Hire Top Talent Only, Without Hassle',
+    description: 'Purus elit viverra nec mus. Euismod non suscipit id lobortis vel',
+    content: (
       <>
-        <p>
-          We send you a list of candidates today along with their rates
-          and easy-to-read resumes.
-        </p>
-        <p>
-          <b>Your time is too precious</b> to be dealing with Recruiting,
-          Screening, Selection, Interviewing, Hiring, and more.
-        </p>
-        <p>Let us alleviate that burden. Save time. Grow Efficiently.</p>
+        <ul>
+          <li>
+            Hiring the right person is hard.
+            Especially if you're <b>looking for someone with specific skills and experience</b> in a particular tecnology.
+          </li>
+          <li>
+            At, WeDevelop, <b>we match people to clients based on skill sets</b>, interests, culture, and location & provide several options that meet your requirements.
+            Hire top talent from around In Latin America without having to go through the hassle of interviewing them yourself.
+          </li>
+          <li>
+            <b>Focus on other important things</b> such as growing your business and meeting deadlines.
+          </li>
+        </ul>
       </>
-    )
-  }, {
+    ),
+    buttonText: 'Get a Free Quote',
+    buttonLink: '#'
+  },
+  growToday: {
+    subtitle: 'Efficiency',
+    title: 'Grow today',
+    description: 'Let us alleviate that burden. Save time. Grow Efficiently.',
+    content: (
+      <>
+        We send you a list of candidates today along with their rates
+        and easy-to-read resumes. Your time is too precious to be dealing
+        with <b>Recruiting, Screening, Selection, Interviewing, Hiring</b>,
+        and more.
+      </>
+    ),
+    buttonText: 'Get a Free Quote',
+    buttonLink: '#'
+  },
+  sectionsWithSideImage: [{
     id: '2',
     imageURL: MaleUsingComputer,
     title: <>Hire Top Talent Only, <BrandGradient>Without Hassle</BrandGradient></>,

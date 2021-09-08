@@ -8,7 +8,7 @@ import useVariants, { combineVariants, isVariant } from 'utils/use_variants'
 import useCombinedRefs from 'utils/use_combined_refs'
 import useMediaQuery from 'utils/use_media_query'
 
-import { forDesktopUp, forTabletUp } from 'styles/media_queries'
+import { forDesktopUp } from 'styles/media_queries'
 
 import SVGIcon from '../SVGIcon'
 
@@ -25,7 +25,6 @@ function NavBar ({
   hideMenu = false,
   contactPagePath = '/contact'
 }, ref) {
-  // TODO: add accessibility https://react-spectrum.adobe.com/react-aria/useMenuTrigger.html
   const [menuOpen, setMenuOpen] = useState(false)
   const [atScrollTop, observerRef] = useOverlappingObserver({
     root: document.body,
@@ -50,10 +49,6 @@ function NavBar ({
     return 'color'
   }, [variant])
 
-  const buttonVariant = useMemo(() => {
-    if (isVariant(variant, 'light')) return 'dark'
-  }, [variant])
-
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
     defaults: {
@@ -68,7 +63,6 @@ function NavBar ({
   const closeMenu = useCallback(() => {
     setMenuOpen(false)
   }, [])
-  const isTabletUp = useMediaQuery(forTabletUp)
   const isDesktopUp = useMediaQuery(forDesktopUp)
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
@@ -114,10 +108,10 @@ function NavBar ({
               />}
           </button>
           <MainMenu
-            isOpen={isDesktopUp || isTabletUp || menuOpen}
+            isOpen={isDesktopUp || menuOpen}
             onRequestClose={closeMenu}
             className={classes.menu}
-            buttonVariant={buttonVariant}
+            variant={variant}
             contactPagePath={contactPagePath}
           />
         </nav>)}
