@@ -1,0 +1,73 @@
+@import '/src/styles/media_queries.scss';
+
+
+.header {
+  text-align: center;
+}
+
+.keyFeatured {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  color: #363636;
+  opacity: 0.5;
+}
+
+.titleText {
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.horizontalBar {
+	width: 100px;
+	height: 10px;
+	background: #FFC331;
+	border: none;
+  margin: 40px auto;
+}
+
+.benefitsContainer {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 675px;
+}
+
+.benefit {
+  margin: 12.5px;
+  flex: 0 1 0;
+  text-align: center;
+
+  @include for-phone-only {
+    width: 100%;
+    flex: 1 0 100%;
+  }
+}
+
+// Benefit component
+
+.iconCircle {
+  width: 100px;
+  margin-bottom: 15px;
+
+  @include for-tablet-up {
+    width: 150px;
+  }
+
+  @include for-desktop-up {
+    width: 200px;
+  }
+}
+
+// Decoration
+
+.background {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  z-index: -1;
+}

@@ -8,6 +8,10 @@ export const STAFF_AUGMENTATION_FORM_PROCESSOR_URL = (
   process.env.REACT_APP_STAFF_AUGMENTATION_FORM_PROCESSOR_URL ||
   'http://localhost:5001/wedevelop-site/us-central1/processStaffAugmentationFormSubmit'
 )
+export const CAREER_FORM_PROCESSOR_URL = (
+  process.env.REACT_APP_CAREER_FORM_PROCESSOR_URL ||
+  'http://localhost:5001/wedevelop-site/us-central1/processCareerFormSubmit'
+)
 export const CALENDLY_DEFAULT_EVENT_URL = process.env.REACT_APP_CALENDLY_DEFAULT_EVENT_URL
 export const IS_DEVELOPMENT = ENVIRONMENT === 'development'
 export const IS_TESTING = ENVIRONMENT === 'testing'

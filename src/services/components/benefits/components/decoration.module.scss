@@ -1,0 +1,89 @@
+@import '/src/styles/media_queries.scss';
+
+.webDevPatternVertical {
+  left: 5vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.webDevPatternHorizontal {
+  position: absolute;
+  right: 0;
+  top: 40vh;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.webDevCircles {
+  left: 5vw;
+  position: absolute;
+  top: 50vh;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.staffCircleLeft {
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.staffCircleLine {
+  right: 2vw;
+  position: absolute;
+  top: 40vh;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.staffCircleRight {
+  right: 10vh;
+  position: absolute;
+  top: 40vh;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.staffBlurSmallDot {
+  right: 3vw;
+  position: absolute;
+  top: 53vh;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.staffPatternHorizontal {
+  right: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
