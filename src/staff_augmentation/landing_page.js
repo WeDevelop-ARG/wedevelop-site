@@ -12,6 +12,7 @@ import FullSizeCTA from './components/FullSizeCTA'
 import AvailableDevs from './components/AvailableDevs'
 import GrowFaster from './components/GrowFaster'
 import HireTopTalent from './components/HireTopTalent'
+import BackgroundContainer from './components/BackgroundContainer'
 import PictureWall from 'main_app/components/PictureWall'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
@@ -45,6 +46,7 @@ function LandingPage () {
           description={landing.reviews.description}
           reviews={landing.reviews.reviews}
         />
+        <BackgroundContainer backgroundURL={landing.backgrounds.firstBackground} />
         <GrowToday
           subheadingText={landing.growToday.subtitle}
           titleText={landing.growToday.title}
@@ -53,6 +55,7 @@ function LandingPage () {
           buttonText={landing.growToday.buttonText}
           buttonLink={landing.growToday.buttonLink}
         />
+        <BackgroundContainer backgroundURL={landing.backgrounds.secondBackground} />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}

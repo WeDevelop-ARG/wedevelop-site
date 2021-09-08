@@ -1,4 +1,6 @@
-import BgStaffAugmentation from 'assets/staff_augmentation/bg_staff_augmentation.png'
+import BgStaffAugmentation from 'assets/staff_augmentation/backgrounds/bg_staff_augmentation.png'
+import StaffAugScreen from 'assets/staff_augmentation/backgrounds/staff_aug_screen.png'
+import WeDevMeeting from 'assets/staff_augmentation/backgrounds/wedev_meeting.png'
 
 const staffAugmentation = {
   pathName: 'staff-augmentation',
@@ -137,6 +139,10 @@ const staffAugmentation = {
     ctaText: 'Get a Free Quote',
     ctaToPath: '#top',
     description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
+  },
+  backgrounds: {
+    firstBackground: StaffAugScreen,
+    secondBackground: WeDevMeeting
   }
 }
 

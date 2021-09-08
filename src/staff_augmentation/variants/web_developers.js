@@ -1,4 +1,6 @@
-import BgWebDevelopers from 'assets/staff_augmentation/bg_web_developers.png'
+import BgWebDevelopers from 'assets/web_developers/backgrounds/bg_web_developers.png'
+import WeDevLaptops from 'assets/web_developers/backgrounds/wedev_laptops.png'
+import BookLaptop from 'assets/web_developers/backgrounds/book_laptop.png'
 
 const webDevelopers = {
   pathName: 'web-developers',
@@ -136,6 +138,10 @@ const webDevelopers = {
     ctaText: 'Get your quote now',
     ctaToPath: '#top',
     ctaIncentive: 'We typically reply every email within an hour.'
+  },
+  backgrounds: {
+    firstBackground: WeDevLaptops,
+    secondBackground: BookLaptop
   }
 }
 

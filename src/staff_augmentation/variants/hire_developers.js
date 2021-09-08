@@ -1,11 +1,13 @@
 import BrandGradient from 'main_app/components/TextGradient'
-import BgHireDevelopers from 'assets/staff_augmentation/bg_hire_developers.png'
+import BgHireDevelopers from 'assets/hire_developers/backgrounds/bg_hire_developers.png'
 import AbelImg from 'assets/hire_developers/abel_profile.png'
 import NahuelImg from 'assets/hire_developers/nahuel_profile.png'
 import VaninaImg from 'assets/hire_developers/vanina_profile.png'
 import JSLogo from 'assets/hire_developers/javascript.png'
 import PythonLogo from 'assets/hire_developers/python.png'
 import AngularLogo from 'assets/hire_developers/angular.png'
+import HoldingBook from 'assets/hire_developers/backgrounds/holding_book.png'
+import CodeScreen from 'assets/hire_developers/backgrounds/code_screen.png'
 
 const hireDevelopers = {
   pathName: 'hire-developers',
@@ -172,6 +174,10 @@ const hireDevelopers = {
     ctaText: 'Get your quote now',
     ctaToPath: '#top',
     ctaIncentive: 'We typically reply every email within an hour.'
+  },
+  backgrounds: {
+    firstBackground: HoldingBook,
+    secondBackground: CodeScreen
   }
 }
 
