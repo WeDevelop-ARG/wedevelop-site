@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="153.17354"
+   height="155"
+   viewBox="0 0 153.17354 155"
+   fill="none"
+   version="1.1"
+   id="svg38"
+   sodipodi:docname="benefits-deco-circles.svg"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)">
+  <metadata
+     id="metadata42">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="999"
+     id="namedview40"
+     showgrid="false"
+     inkscape:zoom="0.79320318"
+     inkscape:cx="690.67374"
+     inkscape:cy="155"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg38" />
+  <path
+     opacity="0.3"
+     d="m 153.06774,69.399101 c 0,38.269899 -30.976,69.292899 -69.187299,69.292899 -38.2111,0 -69.1876,-31.023 -69.1876,-69.292899 0,-38.2698 30.9765,-69.2933095 69.1876,-69.2933095 38.211299,0 69.187299,31.0235095 69.187299,69.2933095 z"
+     stroke="#363636"
+     stroke-width="0.211583"
+     id="path10" />
+  <circle
+     opacity="0.3"
+     cx="84.173744"
+     cy="117"
+     r="38"
+     fill="#eaeaea"
+     id="circle12" />
+  <g
+     transform="translate(-0.82625902)"
+     opacity="0.3"
+     filter="url(#filter0_f)"
+     id="g16">
+    <circle
+       cx="11"
+       cy="116.831"
+       r="7"
+       fill="#8224e3"
+       id="circle14" />
+  </g>
+  <defs
+     id="defs36">
+    <filter
+       id="filter0_f"
+       x="0.82625902"
+       y="106.657"
+       width="20.3475"
+       height="20.3475"
+       filterUnits="userSpaceOnUse"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity="0"
+         result="BackgroundImageFix"
+         id="feFlood22" />
+      <feBlend
+         mode="normal"
+         in="SourceGraphic"
+         in2="BackgroundImageFix"
+         result="shape"
+         id="feBlend24" />
+      <feGaussianBlur
+         stdDeviation="1.58687"
+         result="effect1_foregroundBlur"
+         id="feGaussianBlur26" />
+    </filter>
+    <filter
+       id="filter1_f"
+       x="1371"
+       y="297.83099"
+       width="12"
+       height="12"
+       filterUnits="userSpaceOnUse"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity="0"
+         result="BackgroundImageFix"
+         id="feFlood29" />
+      <feBlend
+         mode="normal"
+         in="SourceGraphic"
+         in2="BackgroundImageFix"
+         result="shape"
+         id="feBlend31" />
+      <feGaussianBlur
+         stdDeviation="0.5"
+         result="effect1_foregroundBlur"
+         id="feGaussianBlur33" />
+    </filter>
+  </defs>
+</svg>

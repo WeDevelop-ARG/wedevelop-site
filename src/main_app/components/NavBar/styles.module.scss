@@ -75,10 +75,6 @@
     display: none;
   }
 
-  @include for-tablet-up {
-    display: none;
-  }
-
   & > * {
     margin: auto;
   }
@@ -107,7 +103,7 @@
   overflow: auto;
   margin: 0;
 
-  @include for-tablet-up {
+  @include for-desktop-up {
     overflow: visible;
     position: relative;
     top: -10px;
@@ -116,13 +112,13 @@
 }
 
 .header.atTop .menu {
-  @include for-tablet-up {
+  @include for-desktop-up {
     top: -20px;
   }
 }
 
 .nav {
-  @include for-tablet-up {
+  @include for-desktop-up {
     align-self: stretch;
   }
 }

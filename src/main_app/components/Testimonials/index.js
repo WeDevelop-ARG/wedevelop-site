@@ -29,8 +29,8 @@ function Testimonials ({ bottomImageURL }) {
           arrows={false}
           className={classes.carousel}
         >
-          {reviews.map((review, i) => (
-            <figure key={i} className={classes.slide}>
+          {reviews.map((review) => (
+            <figure key={review.id} className={classes.slide}>
               <div className={classes.quoteContainer}>
                 <img src={QuotationMark} alt='' className={classes.openQuote} />
                 <blockquote className={classes.quote}>{review.quote}</blockquote>

@@ -3,7 +3,9 @@
 
 .headerContainer {
   min-height: 100vh;
-  padding-bottom: 40px;
+  position: relative;
+  display: flex;
+  padding-bottom: 180px;
 }
 
 .wrapper {
@@ -27,9 +29,11 @@
 
 .titleText {
   width: 100%;
-  letter-spacing: 1.2px;
-  line-height: 40px;
-  font-size: 32px;
+  letter-spacing: -0.3px;
+  line-height: 73px;
+  font-size: 60px;
+  color: #FFFFFF;
+  font-weight: 300;
 
   @include for-tablet-up {
     font-size: 42px;
@@ -43,8 +47,12 @@
 }
 
 .description > p {
-  line-height: 28px;
-  letter-spacing: 1.2px;
+  letter-spacing: -0.3px;
+  font-size: 24px;
+  line-height: 29px;
+  opacity: 0.7;
+  color: #FFFFFF;
+  font-weight: 300;
 }
 
 .horizontalBar {
@@ -55,12 +63,14 @@
 }
 
 .formContainer {
-  display: flex;
-  flex-direction: column;
-  margin-top: 56px;
+  border: 3px solid #ffffff;
+  background: #ffffff;
+  padding: 40px 32px;
+  border-radius: 5px;
 
-  @include for-desktop-up {
-    margin-top: 35px;
+  @include for-tablet-up {
+    margin-top: -40px;
+    margin-left: 74px;
   }
 }
 
@@ -68,7 +78,7 @@
   width: 100%;
   display: flex;
   position: absolute;
-  left: 0;
+  right: 0;
 
   @include for-tablet-up {
     width: 280px;
@@ -133,12 +143,100 @@
   }
 }
 
-.topCompaniesBadge {
-  width: 46px;
-  height: 50px;
+.imgHeader {
+  object-fit: cover;
+  object-position: center bottom;
+  width: 100%;
+  height: 99%;
+}
 
-  @include for-desktop-up {
-    width: 80px;
-    height: 88px;
+.decorationWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  z-index: -1;
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  background: #FFFFFF;
+
+  @include for-tablet-down {
+    display: none;
   }
+}
+
+.filledCircle {
+  @extend .circle;
+  width: 235px;
+  height: 235px;
+  top: calc(-12% + 10px);
+  right: -28px;
+  opacity: 0.1;
+  filter: blur(2px);
+  background: #EAEAEA; 
+}
+
+.emptyCircle {
+  @extend .circle;
+  width: 239px;
+  height: 239px;
+  top: calc(18% - 50px);
+  right: -3px;
+  opacity: 0.2;
+  border: 2px solid;
+  border-color: #E1E1E1;
+  background: none;
+}
+
+.clutchCircle {
+  @extend .circle;
+  width: 210px;
+  height: 210px;
+  top: 450px;
+  right: 318px;
+  filter: drop-shadow(0px -4.42367px 8.84734px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid;
+  border-color: #ffffff;
+  z-index: 2;
+  display: flex;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.clutchWidget {
+  margin: auto;
+}
+
+.pattern {
+  position: absolute;
+  top: 20px;
+  left: 630px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.tagName {
+  border-radius: 3px;
+  padding: 4px 20px;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.tagNameContainer {
+  margin-top: 60px;
+  margin-bottom: 32px;
+}
+
+.logoContainer {
+  margin-top: -30px;
 }
