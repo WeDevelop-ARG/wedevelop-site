@@ -1,5 +1,3 @@
-import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
-import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
 import BgHireDevelopers from 'assets/staff_augmentation/bg_hire_developers.png'
 import AbelImg from 'assets/hire_developers/abel_profile.png'
@@ -139,44 +137,6 @@ const hireDevelopers = {
     buttonText: 'Get a Free Quote',
     buttonLink: '#'
   },
-  sectionsWithSideImage: [{
-    id: '2',
-    imageURL: MaleUsingComputer,
-    title: <>Hire Top Talent Only, <BrandGradient>Without Hassle</BrandGradient></>,
-    description: (
-      <>
-        <p>
-          Hiring the right person is hard. Especially if you're looking for someone with
-          specific skills and experience in a particular tecnology.
-        </p>
-        <p>
-          At, WeDevelop, we match people to clients based on skill sets, interests, culture,
-          and location & provide several options that meet your requirements. Hire top
-          talent from around In Latin America without having to go through the hassle of
-          interviewing them yourself.
-        </p>
-        <p>Focus on other important things such as growing your business and meeting deadlines.</p>
-      </>
-    )
-  }, {
-    id: '3',
-    imageURL: MaleSalesSolutions,
-    title: <>Save time, <BrandGradient>Learn faster</BrandGradient></>,
-    description: (
-      <>
-        <p>Hiring the wrong person can cost thousands of dollars and hours of wasted time.</p>
-        <p>At WeDevelop, we've already put in the groundwork.</p>
-        <p>
-          We have access to the best Talent for your company’s needs, allowing you to focus
-          on growing your business instead of trying to find new staff members.
-        </p>
-        <p>
-          Stop spending time and resources on Interviews. If you want to grow your company’s
-          IT Staff quickly
-        </p>
-      </>
-    )
-  }],
   availableDevs: {
     title: <>This is our <BrandGradient>Available Team</BrandGradient></>,
     devs: [
