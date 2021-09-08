@@ -18,6 +18,7 @@ function HireTopTalent ({
           <h2 className={classes.titleText}>{titleText}</h2>
           <p className={classes.descriptionText}>{descriptionText}</p>
           <hr className={classes.horizontalBar} />
+          <br />
           <Button
             smooth
             isAnchor
