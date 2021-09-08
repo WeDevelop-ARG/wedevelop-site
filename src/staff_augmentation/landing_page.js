@@ -3,16 +3,17 @@ import classnames from 'classnames'
 
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
-import Footer from 'main_app/components/Footer'
+import Footer from './components/Footer'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
 import GrowToday from './components/GrowToday'
-import FullSizeCTA from '../main_app/components/FullSizeCTA'
+import FullSizeCTA from './components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
 import AvailableDevs from './components/AvailableDevs'
+import PictureWall from 'main_app/components/PictureWall'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
@@ -46,7 +47,9 @@ function LandingPage () {
           submitButtonText={landing.header.submitButtonText}
         />
         <ReviewCards
+          subtitle={landing.reviews.subtitle}
           title={landing.reviews.title}
+          description={landing.reviews.description}
           reviews={landing.reviews.reviews}
         />
         <GrowToday
@@ -87,9 +90,10 @@ function LandingPage () {
           subTitle={landing.fullSizeCTA.subTitle}
           ctaText={landing.fullSizeCTA.ctaText}
           ctaToPath={landing.fullSizeCTA.ctaToPath}
-          ctaIncentive={landing.fullSizeCTA.ctaIncentive}
+          description={landing.fullSizeCTA.description}
         />
       </Article>
+      <PictureWall />
       <Footer variant='light' />
     </>
   )

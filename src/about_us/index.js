@@ -13,7 +13,7 @@ import ContactModal from 'main_app/components/ContactModal'
 import Values from './components/Values'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
-import TestimonialsBg from 'assets/about_us/testimonials/people_smiling.png'
+import WorkCofee from 'assets/about_us/testimonials/work_cofee.png'
 
 function AboutUs () {
   usePageMetadata({
@@ -37,7 +37,7 @@ function AboutUs () {
         <OurCompany />
         <OurCulture />
         <Values />
-        <Testimonials bottomImageURL={TestimonialsBg} />
+        <Testimonials bottomImageURL={WorkCofee} />
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>

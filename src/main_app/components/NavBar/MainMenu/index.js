@@ -1,10 +1,16 @@
+import { useMemo } from 'react'
 import classnames from 'classnames'
 import { HashLink } from 'react-router-hash-link'
+import { Dropdown } from 'react-bootstrap'
 
 import Button from 'main_app/components/Button'
 import useMediaQuery from 'utils/use_media_query'
+import { isVariant } from 'utils/use_variants'
 
-import { forPhoneOnly } from 'styles/media_queries'
+import { forTabletDown } from 'styles/media_queries'
+
+import DropdownIcon from 'assets/nav_bar/dropdown_icon.svg'
+import DropdownIconWhite from 'assets/nav_bar/dropdown_icon_white.svg'
 
 import classes from './styles.module.scss'
 
@@ -12,13 +18,52 @@ function MainMenu ({
   isOpen,
   onRequestClose,
   className,
-  buttonVariant,
+  variant,
   contactPagePath = '/contact'
 }) {
-  const isPhone = useMediaQuery(forPhoneOnly)
+  const isTabletDown = useMediaQuery(forTabletDown)
+  const dropdownIconURL = isVariant(variant, 'light') || isTabletDown ? DropdownIconWhite : DropdownIcon
+  const buttonVariant = useMemo(() => {
+    if (isVariant(variant, 'light')) return 'dark'
+  }, [variant])
 
   return (
     <ul className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
+      <li
+        className={classnames(classes.navItem, {
+          [classes.active]: window.location.pathname.startsWith('/services')
+        })}
+      >
+        <Dropdown className={classnames({ [classes.hidden]: isTabletDown })}>
+          <Dropdown.Toggle
+            as={Button}
+            variant='link'
+            className={classes.servicesDropdownToggle}
+            iconRight={<img src={dropdownIconURL} alt='' />}
+          >
+            Services
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu className={classes.dropdownMenu}>
+            <Dropdown.Item
+              as={HashLink}
+              to='/services/web-development#top'
+              smooth
+              className={classes.dropdownItem}
+            >
+              Web Development
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={HashLink}
+              to='/services/staff-augmentation#top'
+              smooth
+              className={classes.dropdownItem}
+            >
+              Staff Augmentation
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </li>
       <li
         className={classnames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/about-us')
@@ -34,7 +79,7 @@ function MainMenu ({
         })}
       >
         <HashLink to='/career#top'>
-          Career
+          Careers
         </HashLink>
       </li>
       <li className={classnames(classes.navItem)}>
@@ -42,6 +87,23 @@ function MainMenu ({
           Blog
         </a>
       </li>
+      {isTabletDown && (
+        <>
+          <li className={classnames(classes.textList)}>
+            Our Services
+          </li>
+          <li className={classes.navItem}>
+            <HashLink to='/services/web-development#top'>
+              Web Development
+            </HashLink>
+          </li>
+          <li className={classes.navItem}>
+            <HashLink to='/services/staff-augmentation#top'>
+              Staff Augmentation
+            </HashLink>
+          </li>
+        </>
+      )}
       <li className={classnames(classes.textList)}>
         Let's talk and work together
       </li>
@@ -49,7 +111,7 @@ function MainMenu ({
         <Button
           as={HashLink}
           isAnchor
-          variant={['secondary', ...(isPhone ? ['dark'] : [buttonVariant])]}
+          variant={['secondary', ...(isTabletDown ? ['dark'] : [buttonVariant])]}
           to={contactPagePath}
           smooth
           className={classes.buttonTalk}
