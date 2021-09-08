@@ -12,6 +12,7 @@ import GrowToday from './components/GrowToday'
 import FullSizeCTA from './components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
 import AvailableDevs from './components/AvailableDevs'
+import HireTopTalent from './components/HireTopTalent'
 import PictureWall from 'main_app/components/PictureWall'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
@@ -54,6 +55,14 @@ function LandingPage () {
           contentText={landing.growToday.content}
           buttonText={landing.growToday.buttonText}
           buttonLink={landing.growToday.buttonLink}
+        />
+        <HireTopTalent
+          subheadingText={landing.HireTopTalent.subtitle}
+          titleText={landing.HireTopTalent.title}
+          descriptionText={landing.HireTopTalent.description}
+          contentText={landing.HireTopTalent.content}
+          buttonText={landing.HireTopTalent.buttonText}
+          buttonLink={landing.HireTopTalent.buttonLink}
         />
         {landing.sectionsWithSideImage.map(({
           id,
