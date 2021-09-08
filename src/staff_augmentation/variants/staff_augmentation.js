@@ -19,18 +19,34 @@ const staffAugmentation = {
         <p>Fast, without the hiring hassles.</p>
       </>
     ),
-    formDescription: 'Sign Up to Get Rates & Available Staff Details',
-    formOrigin: 'staff-augmentation',
+    sideImageURL: BgStaffAugmentation,
+    backgroundColor: '#377DFF'
+  },
+  freeQuoteForm: {
+    formHeader: {
+      subtitle: 'Get in touch',
+      title: 'Sign Up to Get Rates & Available Staff Details',
+      description: 'We look forward to learning how WeDevelop can help you and your business.'
+    },
     formCustomizations: {
-      fixedFieldsPlaceholders: {
-        name: 'Your name',
-        email: 'Your work email',
-        message: 'What are you looking for?'
+      fixedFields: {
+        name: {
+          label: 'Name',
+          placeholder: 'Your name'
+        },
+        email: {
+          label: 'Company Email',
+          placeholder: 'Your company email'
+        },
+        message: {
+          label: 'What are you looking for?',
+          placeholder: 'A Full-Stack Node and React Developer'
+        }
       }
     },
-    sideImageURL: BgStaffAugmentation,
-    submitButtonText: 'Get a free quote',
-    backgroundColor: '#377DFF'
+    formOrigin: 'staff-augmentation',
+    formButtonText: 'Get a free quote',
+    formDisclaimer: 'We typically reply every email within an hour.'
   },
   reviews: {
     subtitle: 'Customers reviews',
@@ -68,7 +84,8 @@ const staffAugmentation = {
         type: 'Product Development',
         company: 'Ferry Booking Platform'
       }
-    }]
+    }],
+    buttonText: 'Get a Free Quote'
   },
   GrowFaster: {
     subtitle: 'Efficiency',
@@ -94,7 +111,6 @@ const staffAugmentation = {
       </>
     ),
     buttonText: 'Get a Free Quote',
-    buttonLink: '#',
     imageURL: picturebgStaff
   },
   HireTopTalent: {
@@ -118,8 +134,7 @@ const staffAugmentation = {
         </ul>
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   growToday: {
     subtitle: 'Efficiency',
@@ -133,8 +148,7 @@ const staffAugmentation = {
         and more.
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   sectionsWithSideImage: [{
     id: '1',
@@ -178,7 +192,6 @@ const staffAugmentation = {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get a Free Quote',
-    ctaToPath: '#top',
     description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
   }
 }

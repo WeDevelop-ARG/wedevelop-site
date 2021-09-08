@@ -44,6 +44,10 @@
     font-size: 52px;
     margin-bottom: 30px;
   }
+
+  > b {
+    font-weight: 700;
+  }
 }
 
 .description > p {
@@ -67,6 +71,7 @@
   background: #ffffff;
   padding: 40px 32px;
   border-radius: 5px;
+  align-items: flex-start;
 
   @include for-tablet-up {
     margin-top: -40px;
@@ -164,12 +169,12 @@
   position: absolute;
   background: #FFFFFF;
 
-  @include for-tablet-down {
+  @include for-phone-only {
     display: none;
   }
 }
 
-.filledCircle {
+.filled {
   @extend .circle;
   width: 235px;
   height: 235px;
@@ -178,6 +183,7 @@
   opacity: 0.1;
   filter: blur(2px);
   background: #EAEAEA; 
+  z-index: -1;
 }
 
 .emptyCircle {
@@ -190,22 +196,24 @@
   border: 2px solid;
   border-color: #E1E1E1;
   background: none;
+  z-index: -1;
 }
 
 .clutchCircle {
   @extend .circle;
   width: 210px;
   height: 210px;
-  top: 450px;
-  right: 318px;
+  top: 70px;
+  right: 10px;
   filter: drop-shadow(0px -4.42367px 8.84734px rgba(0, 0, 0, 0.1));
   box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
   border: 3px solid;
   border-color: #ffffff;
   z-index: 2;
   display: flex;
+  position: relative;
 
-  @include for-tablet-down {
+  @include for-phone-only {
     display: none;
   }
 }

@@ -13,11 +13,8 @@ function Header ({
   landingName,
   title,
   description,
-  formDescription,
-  formOrigin,
-  formCustomizations,
+  freeQuoteForm,
   sideImageURL,
-  submitButtonText,
   backgroundColor
 }) {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -43,13 +40,14 @@ function Header ({
             </div>
           </div>
           <div id='get-free-quote' className={classes.formContainer}>
-            <p>{formDescription}</p>
             <FreeQuoteForm
               onSubmitFinished={handleSubmitFinished}
-              submitButtonText={submitButtonText}
-              formOrigin={formOrigin}
-              fixedFieldsPlaceholders={formCustomizations.fixedFieldsPlaceholders}
-              customFields={formCustomizations.customFields}
+              formHeader={freeQuoteForm.formHeader}
+              fixedFields={freeQuoteForm.formCustomizations.fixedFields}
+              customFields={freeQuoteForm.formCustomizations.customFields}
+              formButtonText={freeQuoteForm.formButtonText}
+              formOrigin={freeQuoteForm.formOrigin}
+              formDisclaimer={freeQuoteForm.formDisclaimer}
             />
           </div>
         </div>
