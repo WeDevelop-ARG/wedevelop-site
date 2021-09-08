@@ -1,6 +1,7 @@
 import BgWebDesigners from 'assets/web_designers/backgrounds/bg_web_designers.png'
 import WomanLaptop from 'assets/web_designers/backgrounds/woman_laptop.png'
 import WeDevPlanning from 'assets/web_designers/backgrounds/wedev_planning.png'
+import picturebgWd from 'assets/staff_augmentation/picturebgWd.png'
 
 const webDesigners = {
   pathName: 'web-designers',
@@ -16,18 +17,34 @@ const webDesigners = {
         <p>Get the ultimate outcomes from the Top Web Designers without the hiring hassles.</p>
       </>
     ),
-    formDescription: 'Sign Up to Get Rates & Available Staff Details',
-    formOrigin: 'web-designers',
+    sideImageURL: BgWebDesigners,
+    backgroundColor: '#363636'
+  },
+  freeQuoteForm: {
+    formHeader: {
+      subtitle: 'Get in touch',
+      title: 'Sign Up to Get Rates & Available Staff Details',
+      description: 'We look forward to learning how WeDevelop can help you and your business.'
+    },
     formCustomizations: {
-      fixedFieldsPlaceholders: {
-        name: 'Your name',
-        email: 'Your work email',
-        message: 'What are you looking for?'
+      fixedFields: {
+        name: {
+          label: 'Name',
+          placeholder: 'Your name'
+        },
+        email: {
+          label: 'Company Email',
+          placeholder: 'Your company email'
+        },
+        message: {
+          label: 'What are you looking for?',
+          placeholder: 'A Full-Stack Node and React Developer'
+        }
       }
     },
-    sideImageURL: BgWebDesigners,
-    submitButtonText: 'Get a free quote',
-    backgroundColor: '#363636'
+    formOrigin: 'web-designers',
+    formButtonText: 'Get a free quote',
+    formDisclaimer: 'We typically reply every email within an hour.'
   },
   reviews: {
     subtitle: 'Customers reviews',
@@ -65,7 +82,8 @@ const webDesigners = {
         type: 'Product Development',
         company: 'Ferry Booking Platform'
       }
-    }]
+    }],
+    buttonText: 'Get a Free Quote'
   },
   GrowFaster: {
     subtitle: 'Efficiency',
@@ -91,7 +109,7 @@ const webDesigners = {
       </>
     ),
     buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    imageURL: picturebgWd
   },
   HireTopTalent: {
     subtitle: 'top talent',
@@ -115,7 +133,7 @@ const webDesigners = {
       </>
     ),
     buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    sideImageURL: picturebgWd
   },
   growToday: {
     subtitle: 'Efficiency',
@@ -129,14 +147,12 @@ const webDesigners = {
         and more.
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   fullSizeCTA: {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get your quote now',
-    ctaToPath: '#top',
     ctaIncentive: 'We typically reply every email within an hour.'
   },
   backgrounds: {
