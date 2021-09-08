@@ -14,6 +14,7 @@ import AvailableDevs from './components/AvailableDevs'
 import FreeQuoteModal from './components/FreeQuoteModal'
 import GrowFaster from './components/GrowFaster'
 import HireTopTalent from './components/HireTopTalent'
+import BackgroundContainer from './components/BackgroundContainer'
 import PictureWall from 'main_app/components/PictureWall'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
@@ -51,6 +52,7 @@ function LandingPage () {
           buttonText={landing.reviews.buttonText}
           handleModal={handleModalOpen}
         />
+        <BackgroundContainer backgroundURL={landing.backgrounds.firstBackground} />
         <GrowToday
           subheadingText={landing.growToday.subtitle}
           titleText={landing.growToday.title}
@@ -59,6 +61,7 @@ function LandingPage () {
           buttonText={landing.growToday.buttonText}
           handleModal={handleModalOpen}
         />
+        <BackgroundContainer backgroundURL={landing.backgrounds.secondBackground} />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}
