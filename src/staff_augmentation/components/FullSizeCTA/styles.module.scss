@@ -5,33 +5,45 @@
   position: relative;
   background-image: url(../../../assets/staff_augmentation/getYourQuoteNow.png);
   background-repeat: no-repeat;
-  background-position: 1% 107%;
-  height: 130vh;
-  margin-top: -180px;
-  overflow: hidden;
+  background-position: 0 center;
+  background-size: cover;
+  min-height: 56vw;
+  margin-bottom: 50px;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: -400px;
 
-  @include for-tablet-down {
-    margin-bottom: -40px;
+  @include for-tablet-up {
+    margin-top: -300px;
   }
 
   @include for-desktop-up {
-    margin-bottom: -100px;
+    margin-top: -200px;
   }
 }
 
 .sectionContent {
-  padding: 400px 0px 0px 0px; 
+  margin-top: auto;
   display: flex;
   width: 100%;
+  height: 868px;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 75px;
 
   @include for-tablet-up {
-    padding: 420px 0px 0px 0px; 
+    padding-bottom: 120px;
   }
 
-  @include for-phone-only {
-    padding: 450px 0px 0px 0px; 
+  @include for-desktop-up {
+    height: 800px;
+    padding-bottom: 186px;
+  }
+
+  @include for-big-desktop-up {
+    height: 830px;
   }
 }
 
@@ -80,7 +92,7 @@
 .topRightPattern {
   @extend %dotsPattern;
   margin-top: -94px;
-  margin-left: -100px;
+  left: 0;
 }
 
 %circle {
