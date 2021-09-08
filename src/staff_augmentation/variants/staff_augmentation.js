@@ -1,4 +1,3 @@
-import MaleInVideocall from 'assets/staff_augmentation/male_videocall.png'
 import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
@@ -68,25 +67,23 @@ const staffAugmentation = {
       }
     }]
   },
+  growToday: {
+    subtitle: 'Efficiency',
+    title: 'Grow today',
+    description: 'Let us alleviate that burden. Save time. Grow Efficiently.',
+    content: (
+      <>
+        We send you a list of candidates today along with their rates
+        and easy-to-read resumes. Your time is too precious to be dealing
+        with <b>Recruiting, Screening, Selection, Interviewing, Hiring</b>,
+        and more.
+      </>
+    ),
+    buttonText: 'Get a Free Quote',
+    buttonLink: '#'
+  },
   sectionsWithSideImage: [{
     id: '1',
-    imageURL: MaleInVideocall,
-    title: <>Grow <BrandGradient>today</BrandGradient></>,
-    description: (
-      <>
-        <p>
-          We send you a list of candidates today along with their rates
-          and easy-to-read resumes.
-        </p>
-        <p>
-          <b>Your time is too precious</b> to be dealing with Recruiting,
-          Screening, Selection, Interviewing, Hiring, and more.
-        </p>
-        <p>Let us alleviate that burden. Save time. Grow Efficiently.</p>
-      </>
-    )
-  }, {
-    id: '2',
     imageURL: MaleUsingComputer,
     title: <>Hire Top Talent Only, <BrandGradient>Without Hassle</BrandGradient></>,
     description: (
@@ -105,7 +102,7 @@ const staffAugmentation = {
       </>
     )
   }, {
-    id: '3',
+    id: '2',
     imageURL: MaleSalesSolutions,
     title: <>Save time, <BrandGradient>grow faster</BrandGradient></>,
     description: (

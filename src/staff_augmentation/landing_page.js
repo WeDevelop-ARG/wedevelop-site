@@ -9,6 +9,7 @@ import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
+import GrowToday from './components/GrowToday'
 import FullSizeCTA from './components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
 import AvailableDevs from './components/AvailableDevs'
@@ -50,6 +51,14 @@ function LandingPage () {
           title={landing.reviews.title}
           description={landing.reviews.description}
           reviews={landing.reviews.reviews}
+        />
+        <GrowToday
+          subheadingText={landing.growToday.subtitle}
+          titleText={landing.growToday.title}
+          descriptionText={landing.growToday.description}
+          contentText={landing.growToday.content}
+          buttonText={landing.growToday.buttonText}
+          buttonLink={landing.growToday.buttonLink}
         />
         {landing.sectionsWithSideImage.map(({
           id,
