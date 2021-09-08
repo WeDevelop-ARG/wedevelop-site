@@ -169,12 +169,12 @@
   position: absolute;
   background: #FFFFFF;
 
-  @include for-tablet-down {
+  @include for-phone-only {
     display: none;
   }
 }
 
-.filledCircle {
+.filled {
   @extend .circle;
   width: 235px;
   height: 235px;
@@ -213,13 +213,9 @@
   display: flex;
   position: relative;
 
-  @include for-tablet-down {
+  @include for-phone-only {
     display: none;
   }
-}
-
-.clutchWidget {
-  margin: auto;
 }
 
 .clutchWidget {
