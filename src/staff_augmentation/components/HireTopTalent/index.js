@@ -1,5 +1,3 @@
-import { HashLink } from 'react-router-hash-link'
-
 import Button from 'main_app/components/Button'
 
 import classes from './styles.module.scss'
@@ -10,7 +8,7 @@ function HireTopTalent ({
   descriptionText,
   contentText,
   buttonText,
-  buttonLink
+  handleModal
 }) {
   return (
     <section id='grow-today' className={classes.growToday}>
@@ -21,12 +19,11 @@ function HireTopTalent ({
           <p className={classes.descriptionText}>{descriptionText}</p>
           <hr className={classes.horizontalBar} />
           <Button
-            as={HashLink}
-            to={buttonLink}
             smooth
             isAnchor
             variant='primary'
             className={classes.freeQuoteButton}
+            onClick={handleModal}
           >
             {buttonText}
           </Button>

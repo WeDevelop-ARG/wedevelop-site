@@ -1,5 +1,3 @@
-import { HashLink } from 'react-router-hash-link'
-
 import Review from './Review'
 import Button from 'main_app/components/Button'
 
@@ -7,7 +5,14 @@ import DotsPattern from 'assets/staff_augmentation/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
-function ReviewCards ({ subtitle, title, description, reviews }) {
+function ReviewCards ({
+  subtitle,
+  title,
+  description,
+  reviews,
+  buttonText,
+  handleModal
+}) {
   return (
     <section id='reviews-section' className={classes.reviewsSection}>
       <div className={classes.sectionHeader}>
@@ -29,14 +34,13 @@ function ReviewCards ({ subtitle, title, description, reviews }) {
         }
       </div>
       <Button
-        as={HashLink}
-        to='#'
         smooth
         isAnchor
         variant='primary'
         className={classes.freeQuoteButton}
+        onClick={handleModal}
       >
-        Get a Free Quote
+        {buttonText}
       </Button>
       <img src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
       <div className={classes.filledCircle} aria-hidden='true' />

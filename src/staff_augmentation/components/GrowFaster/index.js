@@ -1,5 +1,3 @@
-import { HashLink } from 'react-router-hash-link'
-
 import Button from 'main_app/components/Button'
 import pattern from '../../../assets/home/services/pattern.svg'
 
@@ -11,7 +9,7 @@ function GrowFaster ({
   descriptionText,
   contentText,
   buttonText,
-  buttonLink
+  handleModal
 }) {
   return (
     <section id='grow-today' className={classes.growFaster}>
@@ -25,12 +23,11 @@ function GrowFaster ({
             <p>{contentText}</p>
           </div>
           <Button
-            as={HashLink}
-            to={buttonLink}
             smooth
             isAnchor
             variant='primary'
             className={classes.freeQuoteButton}
+            onClick={handleModal}
           >
             {buttonText}
           </Button>

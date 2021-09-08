@@ -88,7 +88,8 @@ const hireDevelopers = {
         type: 'Product Development',
         company: 'Ferry Booking Platform'
       }
-    }]
+    }],
+    buttonText: 'Get a Free Quote'
   },
   GrowFaster: {
     subtitle: 'Efficiency',
@@ -113,8 +114,7 @@ const hireDevelopers = {
         </>
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   HireTopTalent: {
     subtitle: 'top talent',
@@ -137,8 +137,7 @@ const hireDevelopers = {
         </ul>
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   growToday: {
     subtitle: 'Efficiency',
@@ -152,8 +151,7 @@ const hireDevelopers = {
         and more.
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   sectionsWithSideImage: [{
     id: '2',
@@ -226,7 +224,6 @@ const hireDevelopers = {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get your quote now',
-    ctaToPath: '#top',
     ctaIncentive: 'We typically reply every email within an hour.'
   }
 }

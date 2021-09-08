@@ -83,7 +83,8 @@ const staffAugmentation = {
         type: 'Product Development',
         company: 'Ferry Booking Platform'
       }
-    }]
+    }],
+    buttonText: 'Get a Free Quote'
   },
   GrowFaster: {
     subtitle: 'Efficiency',
@@ -108,8 +109,7 @@ const staffAugmentation = {
         </>
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   HireTopTalent: {
     subtitle: 'top talent',
@@ -132,8 +132,7 @@ const staffAugmentation = {
         </ul>
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   growToday: {
     subtitle: 'Efficiency',
@@ -147,8 +146,7 @@ const staffAugmentation = {
         and more.
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   sectionsWithSideImage: [{
     id: '1',
@@ -192,7 +190,6 @@ const staffAugmentation = {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get a Free Quote',
-    ctaToPath: '#top',
     description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
   }
 }
