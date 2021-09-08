@@ -2,18 +2,21 @@ import { useState, useCallback } from 'react'
 import { useRouteMatch } from 'react-router'
 import classnames from 'classnames'
 
-import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
-import Footer from 'main_app/components/Footer'
+import Footer from './components/Footer'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
-import FullSizeCTA from '../main_app/components/FullSizeCTA'
+import GrowToday from './components/GrowToday'
+import FullSizeCTA from './components/FullSizeCTA'
 import SectionWithSideImage from './components/SectionWithSideImage'
 import AvailableDevs from './components/AvailableDevs'
 import FreeQuoteModal from './components/FreeQuoteModal'
+import GrowFaster from './components/GrowFaster'
+import HireTopTalent from './components/HireTopTalent'
+import PictureWall from 'main_app/components/PictureWall'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
@@ -35,22 +38,45 @@ function LandingPage () {
 
   return (
     <>
-      <NavBar
-        variant={['solid', 'dark']}
-        variantAtScrollTop={['transparent', 'dark']}
-        pathLogo='#top'
-        hideMenu
-      />
       <Article>
         <Header
+          landingName={landing.header.landingName}
           title={landing.header.title}
           description={landing.header.description}
           freeQuoteForm={landing.freeQuoteForm}
           sideImageURL={landing.header.sideImageURL}
+          backgroundColor={landing.header.backgroundColor}
         />
         <ReviewCards
+          subtitle={landing.reviews.subtitle}
           title={landing.reviews.title}
+          description={landing.reviews.description}
           reviews={landing.reviews.reviews}
+        />
+        <GrowToday
+          subheadingText={landing.growToday.subtitle}
+          titleText={landing.growToday.title}
+          descriptionText={landing.growToday.description}
+          contentText={landing.growToday.content}
+          buttonText={landing.growToday.buttonText}
+          buttonLink={landing.growToday.buttonLink}
+        />
+        <HireTopTalent
+          subheadingText={landing.HireTopTalent.subtitle}
+          titleText={landing.HireTopTalent.title}
+          descriptionText={landing.HireTopTalent.description}
+          contentText={landing.HireTopTalent.content}
+          buttonText={landing.HireTopTalent.buttonText}
+          buttonLink={landing.HireTopTalent.buttonLink}
+        />
+        <GrowFaster
+          subheadingText={landing.GrowFaster.subtitle}
+          titleText={landing.GrowFaster.title}
+          descriptionText={landing.GrowFaster.description}
+          contentText={landing.GrowFaster.content}
+          buttonText={landing.GrowFaster.buttonText}
+          buttonLink={landing.GrowFaster.buttonLink}
+
         />
         {landing.sectionsWithSideImage.map(({
           id,
@@ -82,9 +108,10 @@ function LandingPage () {
           subTitle={landing.fullSizeCTA.subTitle}
           ctaText={landing.fullSizeCTA.ctaText}
           ctaToPath={landing.fullSizeCTA.ctaToPath}
-          ctaIncentive={landing.fullSizeCTA.ctaIncentive}
+          description={landing.fullSizeCTA.description}
         />
       </Article>
+      <PictureWall />
       <Footer variant='light' />
       <FreeQuoteModal
         isModalOpen={isModalOpen}

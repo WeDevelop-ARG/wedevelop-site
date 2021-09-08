@@ -23,7 +23,7 @@ function Career () {
         contactPagePath={contactPagePath}
       />
       <Article>
-        <JoinUsForm submitButtonText='Join Us' />
+        <JoinUsForm />
         <PictureWall />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}

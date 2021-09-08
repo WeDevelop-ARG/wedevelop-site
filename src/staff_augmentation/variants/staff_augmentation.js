@@ -1,8 +1,7 @@
-import MaleInVideocall from 'assets/staff_augmentation/male_videocall.png'
 import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
 import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
-import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
+import BgStaffAugmentation from 'assets/staff_augmentation/bg_staff_augmentation.png'
 
 const staffAugmentation = {
   pathName: 'staff-augmentation',
@@ -11,14 +10,16 @@ const staffAugmentation = {
     description: 'Add the right Talent for your time in no time. Get a free quote in the next hour!'
   },
   header: {
-    title: <>The right <BrandGradient>IT Staffing agency for you</BrandGradient></>,
+    landingName: <>staff augmentation</>,
+    title: <>The <b>right IT Staffing</b> agency for</>,
     description: (
       <>
         <p>Get access to the top Software Engineers in Latin America.</p>
-        <p><b>Fast, without the hiring hassles.</b></p>
+        <p>Fast, without the hiring hassles.</p>
       </>
     ),
-    sideImageURL: AbelLaptop
+    sideImageURL: BgStaffAugmentation,
+    backgroundColor: '#377DFF'
   },
   freeQuoteForm: {
     formHeader: {
@@ -47,48 +48,110 @@ const staffAugmentation = {
     formDisclaimer: 'We typically reply every email within an hour.'
   },
   reviews: {
-    title: 'The top IT Staffing as our customers say',
+    subtitle: 'Customers reviews',
+    title: 'The TOP IT Staffing as our customers say',
+    description: 'Don\'t take our word for it. See what our customers say.',
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
       stars: 5,
-      project: 'App Development for Online Fitness Company'
+      project: {
+        type: 'App Development',
+        company: 'Online Fitness Company'
+      }
     }, {
       id: '2',
       quote: 'They’re willing to engage with a problem to figure it out rather than waiting to be told what to do.',
       stars: 5,
-      project: 'Software Development for Sports Betting Startup'
+      project: {
+        type: 'Software Development',
+        company: 'Sports Betting Startup'
+      }
     }, {
       id: '3',
       quote: 'The project cost about half of what it would have had we hired local engineers.',
       stars: 5,
-      project: 'Web App Development for Loan Company'
+      project: {
+        type: 'Web App Development',
+        company: 'Loan Company'
+      }
     }, {
       id: '4',
       quote: 'WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.',
       stars: 5,
-      project: 'Product Development for Ferry Booking Platform'
+      project: {
+        type: 'Product Development',
+        company: 'Ferry Booking Platform'
+      }
     }]
+  },
+  GrowFaster: {
+    subtitle: 'Efficiency',
+    title: <>Save Time, <br /> grow faster</>,
+    description: 'Sit augue auctor fermentum ipsum diam',
+    content: (
+      <>
+        <>
+          <p>Hiring the wrong person can cost thousands of dollars<br />
+            and hours of wasted time.
+          </p>
+          <p>At WeDevelop, <b>we've already put in the groundwork.</b></p>
+          <p>
+            We have access to the best Talent for your company’s<br />
+            needs, allowing you to focus on growing your business<br />
+            instead of trying to find new staff members.
+          </p>
+          <p>
+            Stop spending time and resources on Interviews. If you<br />
+            want to grow your company’s IT Staff quickly
+          </p>
+        </>
+      </>
+    ),
+    buttonText: 'Get a Free Quote',
+    buttonLink: '#'
+  },
+  HireTopTalent: {
+    subtitle: 'top talent',
+    title: 'Hire Top Talent Only, Without Hassle',
+    description: 'Purus elit viverra nec mus. Euismod non suscipit id lobortis vel',
+    content: (
+      <>
+        <ul>
+          <li>
+            Hiring the right person is hard.
+            Especially if you're <b>looking for someone with specific skills and experience</b> in a particular tecnology.
+          </li>
+          <li>
+            At, WeDevelop, <b>we match people to clients based on skill sets</b>, interests, culture, and location & provide several options that meet your requirements.
+            Hire top talent from around In Latin America without having to go through the hassle of interviewing them yourself.
+          </li>
+          <li>
+            <b>Focus on other important things</b> such as growing your business and meeting deadlines.
+          </li>
+        </ul>
+      </>
+    ),
+    buttonText: 'Get a Free Quote',
+    buttonLink: '#'
+  },
+  growToday: {
+    subtitle: 'Efficiency',
+    title: 'Grow today',
+    description: 'Let us alleviate that burden. Save time. Grow Efficiently.',
+    content: (
+      <>
+        We send you a list of candidates today along with their rates
+        and easy-to-read resumes. Your time is too precious to be dealing
+        with <b>Recruiting, Screening, Selection, Interviewing, Hiring</b>,
+        and more.
+      </>
+    ),
+    buttonText: 'Get a Free Quote',
+    buttonLink: '#'
   },
   sectionsWithSideImage: [{
     id: '1',
-    imageURL: MaleInVideocall,
-    title: <>Grow <BrandGradient>today</BrandGradient></>,
-    description: (
-      <>
-        <p>
-          We send you a list of candidates today along with their rates
-          and easy-to-read resumes.
-        </p>
-        <p>
-          <b>Your time is too precious</b> to be dealing with Recruiting,
-          Screening, Selection, Interviewing, Hiring, and more.
-        </p>
-        <p>Let us alleviate that burden. Save time. Grow Efficiently.</p>
-      </>
-    )
-  }, {
-    id: '2',
     imageURL: MaleUsingComputer,
     title: <>Hire Top Talent Only, <BrandGradient>Without Hassle</BrandGradient></>,
     description: (
@@ -107,7 +170,7 @@ const staffAugmentation = {
       </>
     )
   }, {
-    id: '3',
+    id: '2',
     imageURL: MaleSalesSolutions,
     title: <>Save time, <BrandGradient>grow faster</BrandGradient></>,
     description: (
@@ -128,9 +191,9 @@ const staffAugmentation = {
   fullSizeCTA: {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
-    ctaText: 'Get your quote now',
+    ctaText: 'Get a Free Quote',
     ctaToPath: '#top',
-    ctaIncentive: 'We typically reply every email within an hour.'
+    description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
   }
 }
 

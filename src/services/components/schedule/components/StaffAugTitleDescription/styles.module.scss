@@ -1,0 +1,38 @@
+@import '/src/styles/media_queries.scss';
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.textLoop {
+  margin: 15px auto 10px;
+  width: 100%;
+
+  > div {
+    width: 100%;
+    height: 1.1em !important;
+
+    > div {
+      width: 100%;
+      height: 1.1em !important;
+    }
+  }
+}
+
+.description {
+  font-weight: 300;
+  line-height: 100%;
+  text-align: center;
+}
+
+.role {
+  height: 100%;
+  background: linear-gradient(to right, #6B67E9 100%, #8224E3 100%);
+	-webkit-background-clip: text;
+  background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

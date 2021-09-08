@@ -36,13 +36,26 @@ function Footer ({ variant = 'dark', className }) {
           </li>
           <li className={classes.contactContentContainer}>
             <HashLink to='/career#top' smooth className={classes.contactContent}>
-              Career
+              Careers
             </HashLink>
           </li>
           <li className={classes.contactContentContainer}>
             <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
               Blog
             </a>
+          </li>
+        </ul>
+        <ul className={classes.contact}>
+          <li><p className={classes.titleContainer}>services</p></li>
+          <li className={classes.contactContentContainer}>
+            <HashLink to='/services/web-development#top' smooth className={classes.contactContent}>
+              Web Development
+            </HashLink>
+          </li>
+          <li className={classes.contactContentContainer}>
+            <HashLink to='/services/staff-augmentation#top' smooth className={classes.contactContent}>
+              Staff Augmentation
+            </HashLink>
           </li>
         </ul>
         <ul className={classes.contact}>
