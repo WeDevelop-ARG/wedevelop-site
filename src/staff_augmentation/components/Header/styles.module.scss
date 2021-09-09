@@ -11,20 +11,29 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
   @include for-tablet-up {
     flex-direction: row;
-    justify-content: stretch;
+    justify-content: space-between;
 
-    @media screen and (min-width: 854px) {
+    /* @media screen and (min-width: 854px) {
       justify-content: space-between;
-    }
+    } */
   }
 }
 
 .presentationContainer {
   position: relative;
-  max-width: 525px;
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 40px;
+
+  @include for-tablet-up {
+    margin-bottom: auto;
+  }
 }
 
 .titleText {
@@ -34,8 +43,10 @@
   font-size: 60px;
   color: #FFFFFF;
   font-weight: 300;
+  text-align: center;
 
   @include for-tablet-up {
+    text-align: left;
     font-size: 42px;
     line-height: 60px;
   }
@@ -57,13 +68,11 @@
   opacity: 0.7;
   color: #FFFFFF;
   font-weight: 300;
-}
+  text-align: center;
 
-.horizontalBar {
-  width: 113px;
-  height: 5px;
-  background: $mainGradient;
-  margin: 15px 0px;
+  @include for-tablet-up {
+    text-align: left;
+  }
 }
 
 .formContainer {
@@ -75,7 +84,7 @@
 
   @include for-tablet-up {
     margin-top: -40px;
-    margin-left: 74px;
+    margin-left: 75px;
   }
 }
 
