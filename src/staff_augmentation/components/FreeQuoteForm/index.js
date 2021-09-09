@@ -91,7 +91,7 @@ function FreeQuoteForm ({
           maxLength='200'
           className={classnames(classes.inputStyles, classes.textarea)}
         />
-        <ReCAPTCHAField name='recaptchaToken' />
+        <ReCAPTCHAField name='recaptchaToken' className={classes.recaptcha} />
         <div className={classes.buttonContainer}>
           <SubmitButton
             variant='primary'
