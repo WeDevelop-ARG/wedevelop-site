@@ -154,7 +154,8 @@ const staffAugmentation = {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get a Free Quote',
-    description: ''
+    description: '',
+    variant: ''
   },
   backgrounds: {
     firstBackground: StaffAugScreen,
