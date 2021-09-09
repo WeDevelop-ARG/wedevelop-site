@@ -176,7 +176,9 @@ const webDevelopers = {
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get your quote now',
     ctaToPath: '#top',
-    ctaIncentive: 'We typically reply every email within an hour.'
+    ctaIncentive: 'We typically reply every email within an hour.',
+    description: 'Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc.',
+    variant: 'notBackground'
   }
 }
 
