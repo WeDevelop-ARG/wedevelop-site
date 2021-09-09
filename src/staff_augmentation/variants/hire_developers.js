@@ -1,13 +1,14 @@
-import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
-import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
 import BrandGradient from 'main_app/components/TextGradient'
-import BgHireDevelopers from 'assets/staff_augmentation/bg_hire_developers.png'
+import BgHireDevelopers from 'assets/hire_developers/backgrounds/bg_hire_developers.png'
 import AbelImg from 'assets/hire_developers/abel_profile.png'
 import NahuelImg from 'assets/hire_developers/nahuel_profile.png'
 import VaninaImg from 'assets/hire_developers/vanina_profile.png'
 import JSLogo from 'assets/hire_developers/javascript.png'
 import PythonLogo from 'assets/hire_developers/python.png'
 import AngularLogo from 'assets/hire_developers/angular.png'
+import HoldingBook from 'assets/hire_developers/backgrounds/holding_book.png'
+import CodeScreen from 'assets/hire_developers/backgrounds/code_screen.png'
+import picturebgHdev from 'assets/hire_developers/picturebgHdev.png'
 
 const hireDevelopers = {
   pathName: 'hire-developers',
@@ -23,18 +24,34 @@ const hireDevelopers = {
         <p>Get the ultimate outcomes from the Top Web Developers without the hiring hassles.</p>
       </>
     ),
-    formDescription: 'Sign Up to Get Rates & Available Staff Details',
-    formOrigin: 'hire-developers',
+    sideImageURL: BgHireDevelopers,
+    backgroundColor: '#8224E3'
+  },
+  freeQuoteForm: {
+    formHeader: {
+      subtitle: 'Get in touch',
+      title: 'Sign Up to Get Rates & Available Staff Details',
+      description: 'We look forward to learning how WeDevelop can help you and your business.'
+    },
     formCustomizations: {
-      fixedFieldsPlaceholders: {
-        name: 'Your name',
-        email: 'Your work email',
-        message: 'What are you looking for?'
+      fixedFields: {
+        name: {
+          label: 'Name',
+          placeholder: 'Your name'
+        },
+        email: {
+          label: 'Company Email',
+          placeholder: 'Your company email'
+        },
+        message: {
+          label: 'What are you looking for?',
+          placeholder: 'A Full-Stack Node and React Developer'
+        }
       }
     },
-    sideImageURL: BgHireDevelopers,
-    submitButtonText: 'Get a free quote',
-    backgroundColor: '#8224E3'
+    formOrigin: 'hire-developers',
+    formButtonText: 'Get a free quote',
+    formDisclaimer: 'We typically reply every email within an hour.'
   },
   reviews: {
     subtitle: 'Customers reviews',
@@ -72,7 +89,8 @@ const hireDevelopers = {
         type: 'Product Development',
         company: 'Ferry Booking Platform'
       }
-    }]
+    }],
+    buttonText: 'Get a Free Quote'
   },
   GrowFaster: {
     subtitle: 'Efficiency',
@@ -98,7 +116,7 @@ const hireDevelopers = {
       </>
     ),
     buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    imageURL: picturebgHdev
   },
   HireTopTalent: {
     subtitle: 'top talent',
@@ -121,8 +139,7 @@ const hireDevelopers = {
         </ul>
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   growToday: {
     subtitle: 'Efficiency',
@@ -136,47 +153,8 @@ const hireDevelopers = {
         and more.
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
-  sectionsWithSideImage: [{
-    id: '2',
-    imageURL: MaleUsingComputer,
-    title: <>Hire Top Talent Only, <BrandGradient>Without Hassle</BrandGradient></>,
-    description: (
-      <>
-        <p>
-          Hiring the right person is hard. Especially if you're looking for someone with
-          specific skills and experience in a particular tecnology.
-        </p>
-        <p>
-          At, WeDevelop, we match people to clients based on skill sets, interests, culture,
-          and location & provide several options that meet your requirements. Hire top
-          talent from around In Latin America without having to go through the hassle of
-          interviewing them yourself.
-        </p>
-        <p>Focus on other important things such as growing your business and meeting deadlines.</p>
-      </>
-    )
-  }, {
-    id: '3',
-    imageURL: MaleSalesSolutions,
-    title: <>Save time, <BrandGradient>Learn faster</BrandGradient></>,
-    description: (
-      <>
-        <p>Hiring the wrong person can cost thousands of dollars and hours of wasted time.</p>
-        <p>At WeDevelop, we've already put in the groundwork.</p>
-        <p>
-          We have access to the best Talent for your company’s needs, allowing you to focus
-          on growing your business instead of trying to find new staff members.
-        </p>
-        <p>
-          Stop spending time and resources on Interviews. If you want to grow your company’s
-          IT Staff quickly
-        </p>
-      </>
-    )
-  }],
   availableDevs: {
     title: <>This is our <BrandGradient>Available Team</BrandGradient></>,
     devs: [
@@ -214,6 +192,10 @@ const hireDevelopers = {
     ctaIncentive: 'We typically reply every email within an hour.',
     description: 'Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc.',
     variant: 'reverse_items'
+  },
+  backgrounds: {
+    firstBackground: HoldingBook,
+    secondBackground: CodeScreen
   }
 }
 

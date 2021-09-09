@@ -1,7 +1,7 @@
-import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
-import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
-import BrandGradient from 'main_app/components/TextGradient'
-import BgStaffAugmentation from 'assets/staff_augmentation/bg_staff_augmentation.png'
+import BgStaffAugmentation from 'assets/staff_augmentation/backgrounds/bg_staff_augmentation.png'
+import StaffAugScreen from 'assets/staff_augmentation/backgrounds/staff_aug_screen.png'
+import WeDevMeeting from 'assets/staff_augmentation/backgrounds/wedev_meeting.png'
+import picturebgStaff from 'assets/staff_augmentation/picturebgStaff.png'
 
 const staffAugmentation = {
   pathName: 'staff-augmentation',
@@ -18,18 +18,34 @@ const staffAugmentation = {
         <p>Fast, without the hiring hassles.</p>
       </>
     ),
-    formDescription: 'Sign Up to Get Rates & Available Staff Details',
-    formOrigin: 'staff-augmentation',
+    sideImageURL: BgStaffAugmentation,
+    backgroundColor: '#377DFF'
+  },
+  freeQuoteForm: {
+    formHeader: {
+      subtitle: 'Get in touch',
+      title: 'Sign Up to Get Rates & Available Staff Details',
+      description: 'We look forward to learning how WeDevelop can help you and your business.'
+    },
     formCustomizations: {
-      fixedFieldsPlaceholders: {
-        name: 'Your name',
-        email: 'Your work email',
-        message: 'What are you looking for?'
+      fixedFields: {
+        name: {
+          label: 'Name',
+          placeholder: 'Your name'
+        },
+        email: {
+          label: 'Company Email',
+          placeholder: 'Your company email'
+        },
+        message: {
+          label: 'What are you looking for?',
+          placeholder: 'A Full-Stack Node and React Developer'
+        }
       }
     },
-    sideImageURL: BgStaffAugmentation,
-    submitButtonText: 'Get a free quote',
-    backgroundColor: '#377DFF'
+    formOrigin: 'staff-augmentation',
+    formButtonText: 'Get a free quote',
+    formDisclaimer: 'We typically reply every email within an hour.'
   },
   reviews: {
     subtitle: 'Customers reviews',
@@ -67,7 +83,8 @@ const staffAugmentation = {
         type: 'Product Development',
         company: 'Ferry Booking Platform'
       }
-    }]
+    }],
+    buttonText: 'Get a Free Quote'
   },
   GrowFaster: {
     subtitle: 'Efficiency',
@@ -93,7 +110,7 @@ const staffAugmentation = {
       </>
     ),
     buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    imageURL: picturebgStaff
   },
   HireTopTalent: {
     subtitle: 'top talent',
@@ -116,8 +133,7 @@ const staffAugmentation = {
         </ul>
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
   growToday: {
     subtitle: 'Efficiency',
@@ -131,47 +147,8 @@ const staffAugmentation = {
         and more.
       </>
     ),
-    buttonText: 'Get a Free Quote',
-    buttonLink: '#'
+    buttonText: 'Get a Free Quote'
   },
-  sectionsWithSideImage: [{
-    id: '1',
-    imageURL: MaleUsingComputer,
-    title: <>Hire Top Talent Only, <BrandGradient>Without Hassle</BrandGradient></>,
-    description: (
-      <>
-        <p>
-          Hiring the right person is hard. Especially if you're looking for someone with
-          specific skills and experience in a particular tecnology.
-        </p>
-        <p>
-          At, WeDevelop, we match people to clients based on skill sets, interests, culture,
-          and location & provide several options that meet your requirements. Hire top
-          talent from around In Latin America without having to go through the hassle of
-          interviewing them yourself.
-        </p>
-        <p>Focus on other important things such as growing your business and meeting deadlines.</p>
-      </>
-    )
-  }, {
-    id: '2',
-    imageURL: MaleSalesSolutions,
-    title: <>Save time, <BrandGradient>grow faster</BrandGradient></>,
-    description: (
-      <>
-        <p>Hiring the wrong person can cost thousands of dollars and hours of wasted time.</p>
-        <p>At WeDevelop, we've already put in the groundwork.</p>
-        <p>
-          We have access to the best Talent for your company’s needs, allowing you to focus
-          on growing your business instead of trying to find new staff members.
-        </p>
-        <p>
-          Stop spending time and resources on Interviews. If you want to grow your company’s
-          IT Staff quickly
-        </p>
-      </>
-    )
-  }],
   fullSizeCTA: {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
@@ -179,6 +156,10 @@ const staffAugmentation = {
     ctaToPath: '#top',
     description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.',
     variant: ''
+  },
+  backgrounds: {
+    firstBackground: StaffAugScreen,
+    secondBackground: WeDevMeeting
   }
 }
 

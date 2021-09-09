@@ -1,5 +1,3 @@
-import { HashLink } from 'react-router-hash-link'
-
 import Button from 'main_app/components/Button'
 import DotsPattern from '../../../assets/home/dots_pattern.svg'
 
@@ -14,7 +12,8 @@ function FullSizeCTA ({
   ctaToPath = '#top',
   description,
   variant,
-  className
+  className,
+  handleModal
 }) {
   className = classnames(
     classes.containerStyle,
@@ -31,12 +30,11 @@ function FullSizeCTA ({
         </p>
         <hr className={classes.horizontalBar} />
         <Button
-          as={HashLink}
-          to={ctaToPath}
           smooth
           isAnchor
           variant='primary'
           className={classes.buttonTalk}
+          onClick={handleModal}
         >
           {ctaText}
         </Button>
