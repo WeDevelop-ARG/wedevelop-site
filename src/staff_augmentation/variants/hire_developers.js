@@ -95,7 +95,7 @@ const hireDevelopers = {
   GrowFaster: {
     subtitle: 'Efficiency',
     title: <>Save Time, <br /> grow faster</>,
-    description: 'Sit augue auctor fermentum ipsum diam',
+    description: '',
     content: (
       <>
         <p>
@@ -122,7 +122,7 @@ const hireDevelopers = {
   HireTopTalent: {
     subtitle: 'top talent',
     title: 'Hire Top Talent Only, Without Hassle',
-    description: 'Purus elit viverra nec mus. Euismod non suscipit id lobortis vel',
+    description: '',
     content: (
       <>
         <ul>

@@ -11,7 +11,7 @@ const staffAugmentation = {
   },
   header: {
     landingName: <>staff augmentation</>,
-    title: <>The <b>right IT Staffing</b> agency for</>,
+    title: <>The <b>right IT Staffing</b> agency</>,
     description: (
       <>
         <p>Get access to the top Software Engineers in Latin America.</p>
@@ -89,7 +89,7 @@ const staffAugmentation = {
   GrowFaster: {
     subtitle: 'Efficiency',
     title: <>Save Time, <br /> grow faster</>,
-    description: 'Sit augue auctor fermentum ipsum diam',
+    description: '',
     content: (
       <>
         <p>
@@ -116,7 +116,7 @@ const staffAugmentation = {
   HireTopTalent: {
     subtitle: 'top talent',
     title: 'Hire Top Talent Only, Without Hassle',
-    description: 'Purus elit viverra nec mus. Euismod non suscipit id lobortis vel',
+    description: '',
     content: (
       <>
         <ul>
@@ -154,7 +154,7 @@ const staffAugmentation = {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get a Free Quote',
-    description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
+    description: ''
   },
   backgrounds: {
     firstBackground: StaffAugScreen,
