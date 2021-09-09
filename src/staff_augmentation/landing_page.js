@@ -89,6 +89,7 @@ function LandingPage () {
           subTitle={landing.fullSizeCTA.subTitle}
           ctaText={landing.fullSizeCTA.ctaText}
           description={landing.fullSizeCTA.description}
+          variant={landing.fullSizeCTA.variant}
           handleModal={handleModalOpen}
         />
       </Article>

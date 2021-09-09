@@ -45,6 +45,11 @@
 
   @include for-big-desktop-up {
     height: 830px;
+    padding-bottom: 50px;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1230px) {
+    padding-bottom: 98px;
   }
 }
 
@@ -88,11 +93,15 @@
   @include for-tablet-down {
     display: none;
   }
+
+  @media screen and (min-width: 1024px) and (max-width: 1230px) {
+    display: none;
+  }
 }
 
 .topRightPattern {
   @extend %dotsPattern;
-  margin-top: -94px;
+  margin-top: -300px;
   left: 0;
 }
 
@@ -110,8 +119,12 @@
   width: 200px;
   height: 200px;
   background: rgba($color: #EAEAEA, $alpha: 0.3);
-  margin-top: -227px;
-  margin-left: 1068px;
+  margin-top: -224px;
+  margin-left: 963px;
+
+  @media screen and (min-width: 1024px) and (max-width: 1230px) {
+    display: none;
+  }
 }
 
 .emptyCircle {
@@ -120,8 +133,12 @@
   height: 230px;
   border: .5px solid rgba($color: #363636, $alpha: 0.2);
   opacity: 0.5;
-  margin-top: -487px;
-  margin-left: 1045px;
+  margin-top: -681px;
+  margin-left: 939px;
+
+  @media screen and (min-width: 1024px) and (max-width: 1230px) {
+    display: none;
+  }
 }
 
 .smallBlurRightCircle {
@@ -130,7 +147,91 @@
   height: 10px;
   background-color: rgba($color: #8224E3, $alpha: 0.5);
   filter: blur(3px);
-  margin-top: 2px;
-  margin-left: 1067px;
+  margin-top: 15px;
+  margin-left: 974px;
   opacity: 0.7;
+
+  @media screen and (min-width: 1024px) and (max-width: 1230px) {
+    display: none;
+  }
+}
+
+.leftPattern {
+  display: none;
+}
+
+.rightPattern {
+  display: none;
+}
+
+.variant_reverse_items {
+  .topRightPattern {
+    margin-top: -548px;
+    margin-left: 1070px;
+    transform: rotate(-90deg);
+  }
+
+  .shapes {
+    position: absolute;
+    margin-top: 350px;
+    margin-left: -1000px;
+  }
+
+  .leftPattern {
+    display: none;
+  }
+
+  .rightPattern {
+    display: none;
+  }
+}
+
+.variant_notBackground {
+  background-image: none;
+
+  .shapes {
+    display: none;
+  }
+
+  .topRightPattern {
+    display: none;
+  }
+
+  %dotPattern {
+    width: 15vw;
+    position: absolute;
+    top: 370px;
+    display: none;
+
+    @include for-desktop-up {
+      display: block;
+
+      @media screen and (min-width: 1024px) and (max-width: 1230px) {
+        width: 12vw;
+        top: 477px;
+      }
+    }
+
+    @include for-tablet-down {
+      display: none;
+    }
+  }
+
+  .leftPattern {
+    @extend %dotPattern;
+    left: 2vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      left: 0vw;
+    }
+  }
+
+  .rightPattern {
+    @extend %dotPattern;
+    right: 2vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      right: 0vw;
+    }
+  }
 }

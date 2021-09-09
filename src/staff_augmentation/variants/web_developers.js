@@ -152,7 +152,10 @@ const webDevelopers = {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get your quote now',
-    ctaIncentive: 'We typically reply every email within an hour.'
+    ctaToPath: '#top',
+    ctaIncentive: 'We typically reply every email within an hour.',
+    description: 'Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc.',
+    variant: 'notBackground'
   },
   backgrounds: {
     firstBackground: WeDevLaptops,

@@ -153,7 +153,9 @@ const staffAugmentation = {
     title: 'Ready to grow your IT Staff?',
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get a Free Quote',
-    description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
+    ctaToPath: '#top',
+    description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.',
+    variant: ''
   },
   backgrounds: {
     firstBackground: StaffAugScreen,
