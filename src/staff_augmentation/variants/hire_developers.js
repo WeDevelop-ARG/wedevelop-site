@@ -95,24 +95,25 @@ const hireDevelopers = {
   GrowFaster: {
     subtitle: 'Efficiency',
     title: <>Save Time, <br /> grow faster</>,
-    description: 'Sit augue auctor fermentum ipsum diam',
+    description: '',
     content: (
       <>
-        <>
-          <p>Hiring the wrong person can cost thousands of dollars<br />
-            and hours of wasted time.
-          </p>
-          <p>At WeDevelop, <b>we've already put in the groundwork.</b></p>
-          <p>
-            We have access to the best Talent for your company’s<br />
-            needs, allowing you to focus on growing your business<br />
-            instead of trying to find new staff members.
-          </p>
-          <p>
-            Stop spending time and resources on Interviews. If you<br />
-            want to grow your company’s IT Staff quickly
-          </p>
-        </>
+        <p>
+          Hiring the wrong person can cost thousands of dollars
+          and hours of wasted time.
+        </p>
+        <p>
+          At WeDevelop, <b>we've already put in the groundwork.</b>
+        </p>
+        <p>
+          We have access to the best Talent for your company’s
+          needs, allowing you to focus on growing your business
+          instead of trying to find new staff members.
+        </p>
+        <p>
+          Stop spending time and resources on Interviews. If you
+          want to grow your company’s IT Staff quickly
+        </p>
       </>
     ),
     buttonText: 'Get a Free Quote',
@@ -121,7 +122,7 @@ const hireDevelopers = {
   HireTopTalent: {
     subtitle: 'top talent',
     title: 'Hire Top Talent Only, Without Hassle',
-    description: 'Purus elit viverra nec mus. Euismod non suscipit id lobortis vel',
+    description: '',
     content: (
       <>
         <ul>

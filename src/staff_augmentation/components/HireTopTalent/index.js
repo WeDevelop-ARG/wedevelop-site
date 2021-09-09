@@ -11,14 +11,13 @@ function HireTopTalent ({
   handleModal
 }) {
   return (
-    <section id='grow-today' className={classes.growToday}>
+    <section id='hire-top-talent' className={classes.hireTopTalent}>
       <div className={classes.sectionContainer}>
         <div className={classes.sectionHeader}>
           <p className={classes.subheadingText}>{subheadingText}</p>
           <h2 className={classes.titleText}>{titleText}</h2>
           <p className={classes.descriptionText}>{descriptionText}</p>
           <hr className={classes.horizontalBar} />
-          <br />
           <Button
             smooth
             isAnchor
@@ -30,7 +29,7 @@ function HireTopTalent ({
           </Button>
         </div>
         <div className={classes.sectionContent}>
-          <p>{contentText}</p>
+          {contentText}
         </div>
       </div>
     </section>

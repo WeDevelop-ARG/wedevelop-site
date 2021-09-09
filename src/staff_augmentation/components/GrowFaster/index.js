@@ -23,22 +23,22 @@ function GrowFaster ({
             <p className={classes.descriptionText}>{descriptionText}</p>
             <hr className={classes.horizontalBar} />
             <br />
-            <div className={classes.sectionContent}>
-              <p>{contentText}</p>
-            </div>
-            <Button
-              variant='primary'
-              className={classes.freeQuoteButton}
-              onClick={handleModal}
-            >
-              {buttonText}
-            </Button>
-            <div className={classes.emptyBigCircle} />
-            <div className={classes.emptyCircle} />
-            <div className={classes.smallBlurRightCircle} />
-            <div className={classes.filledBigCircle} />
           </div>
+          <div className={classes.sectionContent}>
+            {contentText}
+          </div>
+          <Button
+            variant='primary'
+            className={classes.freeQuoteButton}
+            onClick={handleModal}
+          >
+            {buttonText}
+          </Button>
         </div>
+        <div className={classes.emptyBigCircle} />
+        <div className={classes.emptyCircle} />
+        <div className={classes.smallBlurRightCircle} />
+        <div className={classes.filledBigCircle} />
         <img src={pattern} alt='' className={classes.patternRight} />
       </section>
     </>

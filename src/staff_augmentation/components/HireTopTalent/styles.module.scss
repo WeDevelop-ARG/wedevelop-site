@@ -1,30 +1,46 @@
 @import '/src/styles/media_queries.scss';
 
-.growToday {
+.hireTopTalent {
   display: flex;
   padding-top: calc(125px + var(--rootContentMinPadding));
+  position: relative;
+  padding-bottom: 100px;
+
+  @include for-tablet-up {
+    padding: auto;
+  }
 }
 
 .sectionContainer {
-  max-width: 960px;
   width: 100%;
-  margin: 0px auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-gap: 40px;
 
   @include for-phone-only {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  @include for-tablet-up {
+    grid-gap: 20px;
+  }
+
+  @include for-desktop-up {
+    grid-gap: 40px;
+  }
 }
 
 .sectionHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
   width: 100%;
   text-align: right;
-  margin: auto 0 auto 20px;
 
   @include for-phone-only {
     text-align: center;
+    align-items: center;
   }
 }
 
@@ -58,7 +74,10 @@
   height: 10px;
   background: #FFC331;
   border: none;
-  display: inline-block;
+
+  @include for-tablet-up {
+    margin-right: 0px;
+  }
 }
 
 .sectionContent {
@@ -66,13 +85,37 @@
   line-height: 36px;
   text-align: left;
   list-style-image: url('../../../assets/staff_augmentation/bullet_points.svg');
-  
-  @include for-tablet-up {
-    margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  >ul {
+    margin: 0px;
+
+    >li {
+      font-size: 18px;
+
+      @include for-desktop-up {
+        font-size: 20px;
+      }
+    }
+
+    >li:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
   }
 }
 
 .freeQuoteButton {
   width: 260px;
-  margin: 35px auto auto;
+
+  @include for-phone-only {
+    position: absolute;
+    bottom: 35px;
+  }
+  
+  @include for-tablet-up {
+    margin-top: 35px;
+    margin-right: 0px;
+  }
 }
