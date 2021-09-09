@@ -155,8 +155,7 @@ const webDevelopers = {
     ctaToPath: '#top',
     ctaIncentive: 'We typically reply every email within an hour.',
     description: 'Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc.',
-    variant: 'notBackground',
-    ctaIncentive: 'We typically reply every email within an hour.'
+    variant: 'notBackground'
   },
   backgrounds: {
     firstBackground: WeDevLaptops,
