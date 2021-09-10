@@ -30,19 +30,19 @@ function ServicesOffered () {
               photo,
               path
             }) => (
-              <li className={classes.serviceBox} key={id}>
-                <Service
-                  photo={photo}
-                  title={title}
-                />
-                <hr className={classes.divider} />
-                <Service
-                  description={description}
-                />
-                <HashLink to={path} smooth>
+              <HashLink to={path} smooth className={classes.serviceBox} key={id}>
+                <li>
+                  <Service
+                    photo={photo}
+                    title={title}
+                  />
+                  <hr className={classes.divider} />
+                  <Service
+                    description={description}
+                  />
                   <p className={classes.link}>Learn More <SVGIcon name='home/services/arrow' className={classes.arrow} /></p>
-                </HashLink>
-              </li>
+                </li>
+              </HashLink>
             ))}
           </ul>
           <Skills />

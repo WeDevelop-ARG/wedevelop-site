@@ -1,6 +1,6 @@
+import { useState, useCallback } from 'react'
 import classnames from 'classnames'
 import { Field, ErrorMessage } from 'formik'
-import Select from 'react-select'
 import { InputGroup } from 'react-bootstrap'
 import { isNil } from 'lodash'
 
@@ -12,13 +12,150 @@ import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
+import FormikSelect from './FormikSelect/index'
+import DotsPattern from 'assets/about_us/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
-function JoinUsForm ({
-  onSubmitFinished,
-  submitButtonText
-}) {
+const skillOptions = [{
+  value: 'ANGULAR',
+  label: 'Angular'
+}, {
+  value: 'MONGODB',
+  label: 'MongoDB'
+}, {
+  value: 'NODEJS',
+  label: 'NodeJS'
+}, {
+  value: 'PYTHON',
+  label: 'Python'
+}, {
+  value: 'REACT_NATIVE',
+  label: 'React Native'
+}, {
+  value: 'REACT',
+  label: 'React'
+},
+{
+  value: 'JAVA',
+  label: 'Java'
+}, {
+  value: 'JAVASCRIPT',
+  label: 'JavaScript'
+}, {
+  value: 'TYPESCRIPT',
+  label: 'TypeScript'
+}, {
+  value: 'VUEJS',
+  label: 'Vue.js'
+}, {
+  value: 'GOLANG',
+  label: 'Golang'
+}, {
+  value: 'PHP',
+  label: 'PHP'
+}, {
+  value: 'RUBY_ON_RAILS',
+  label: 'Ruby on Rails'
+}, {
+  value: 'POSTGRESQL',
+  label: 'PostgreSQL'
+}, {
+  value: 'MYSQL',
+  label: 'MySQL'
+}, {
+  value: 'REDIS',
+  label: 'Redis'
+}, {
+  value: 'MARIADB',
+  label: 'María DB'
+}, {
+  value: 'AWS',
+  label: 'AWS'
+}, {
+  value: 'GCP',
+  label: 'GCP'
+}, {
+  value: 'AZURE',
+  label: 'Azure'
+}, {
+  value: 'NET',
+  label: '.NET'
+}, {
+  value: 'C#',
+  label: 'C#'
+}, {
+  value: 'C++',
+  label: 'C++'
+}, {
+  value: 'EXPRESSJS',
+  label: 'Express.js'
+}, {
+  value: 'IOS',
+  label: 'iOS'
+}, {
+  value: 'SWIFT',
+  label: 'Swift'
+}, {
+  value: 'ANDROID',
+  label: 'Android'
+}, {
+  value: 'KOTLIN',
+  label: 'Kotlin'
+}, {
+  value: 'FLUTTER',
+  label: 'Flutter'
+}, {
+  value: 'BOOTSTRAP',
+  label: 'Bootstrap'
+}, {
+  value: 'HTML',
+  label: 'HTML'
+}, {
+  value: 'CSS',
+  label: 'CSS'
+}, {
+  value: 'DOCKER',
+  label: 'Docker'
+}, {
+  value: 'KUBERNETES',
+  label: 'Kubernetes'
+}, {
+  value: 'GRAPHQL',
+  label: 'GraphQl'
+}, {
+  value: 'DJANGO',
+  label: 'Django'
+}, {
+  value: 'CODEIGNITER',
+  label: 'CodeIgniter'
+}, {
+  value: 'FLASK',
+  label: 'Flask'
+}, {
+  value: 'UI_UX',
+  label: 'UI/UX'
+}, {
+  value: 'TRELLO',
+  label: 'Trello'
+}, {
+  value: 'GIT',
+  label: 'Git'
+}, {
+  value: 'ORACLE',
+  label: 'Oracle'
+}, {
+  value: 'SELENIUM',
+  label: 'Selenium'
+}, {
+  value: 'CYPRESS',
+  label: 'Cypress'
+}, {
+  value: 'JMETER',
+  label: 'Jmeter'
+}]
+
+function JoinUsForm () {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
     classes.fieldWithError
@@ -27,16 +164,12 @@ function JoinUsForm ({
     'input',
     classes.fieldWithError
   )
-  const skill = [
-    { label: 'Angular' },
-    { label: 'MongoDB' },
-    { label: 'NodeJS' },
-    { label: 'Python' },
-    { label: 'React' }
-  ].map(skill => ({
-    value: skill.label,
-    label: skill.label
-  }))
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState()
+  const onSubmitFinished = useCallback((err) => {
+    setIsSubmitted(true)
+    setError(err)
+  }, [])
 
   return (
     <section>
@@ -76,14 +209,12 @@ function JoinUsForm ({
         </label>
         <label className={classes.labels}>
           <span>*</span>{' '}Skills
-          <Select
-            isMulti
+          <FormikSelect
             name='skills'
-            options={skill}
-            className='basic-multi-select'
-            classNamePrefix='select'
-            placeholder='Select an skill'
+            options={skillOptions}
+            placeholder='Select your skills'
           />
+          <ErrorMessage name='skills' component='div' className={classes.errorMessage} />
         </label>
         <label className={classes.labels}>
           Intended Remuneration (monthly)
@@ -116,23 +247,43 @@ function JoinUsForm ({
           />
           <div className={classes.field}>
             <SVGIcon name='career/clip' className={classes.clip} />
-            <Field
-              name='resume'
-              render={(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
-            />
+            <Field name='resume'>
+              {(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
+            </Field>
           </div>
           <ErrorMessage name='resume' component='div' className={classes.errorMessage} />
         </label>
         <ReCAPTCHAField name='recaptchaToken' />
+        {isSubmitted && error && (
+          <p className={classes.submitError}>
+            Oops! An error occurred and we couldn't receive your application. Please try again later.
+          </p>
+        )}
+        {isSubmitted && !error && (
+          <p className={classes.submitSuccessful}>
+            Your application has been received successfully. We'll contact you soon.
+          </p>
+        )}
         <div className={classes.buttonContainer}>
           <SubmitButton
             variant='primary'
             className={classes.buttonStyles}
           >
-            {submitButtonText}
+            Join Us
           </SubmitButton>
         </div>
       </FormLogic>
+      <div className={classes.filledCircle} aria-hidden='true' />
+      <div className={classes.emptyCircle} aria-hidden='true' />
+      <div className={classes.smallBlurCircle} aria-hidden='true' />
+      <img src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <div className={classes.halfCircle}>
+        <SVGIcon name='home/services/half_circle' />
+      </div>
+      <div className={classes.leftSmallBlurCircle} />
+      <div className={classes.leftFilledCircle} />
+      <div className={classes.leftEmptyCircle} />
+      <div className={classes.leftSmallCircle} />
     </section>
   )
 }

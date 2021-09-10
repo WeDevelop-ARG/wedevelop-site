@@ -1,0 +1,95 @@
+@import '/src/styles/media_queries.scss';
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  width: 46%;
+  margin: 2% 2% 0 0;
+
+  @include for-phone-only {
+    width:100%
+  }
+}
+
+.serviceTitle {
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.serviceDescription {
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.decoPattern {
+  left: -4vw;
+  position: absolute;
+  top: -20vh;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.decoCircle {
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.decoEmptyCircle {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.decoFilledCircle {
+  left: 7vw;
+  bottom: 9vh;
+  position: absolute;
+  z-index: -1;
+  max-width: 140px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.decoCircleLine {
+  left: 8vw;
+  bottom: 8vh;
+  position: absolute;
+  z-index: -1;
+  max-width: 140px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.decoBlur {
+  left: 6vw;
+  bottom: 8vh;
+  position: absolute;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+

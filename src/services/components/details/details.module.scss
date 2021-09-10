@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+}
+
+.centeredContainer {
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+.keyFeatured {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1em;
+  line-height: 100%;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.titleText {
+  font-weight: 600;
+}
+
+.subtitleText {
+  font-weight: 300;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.horizontalBar {
+  background: #FFC331;
+  border: none;
+  height: 10px;
+  margin: 40px 0px;
+  width: 100px;
+}
+

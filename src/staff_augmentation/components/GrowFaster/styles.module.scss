@@ -1,0 +1,171 @@
+@import '/src/styles/media_queries.scss';
+
+.imgHeader {
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  z-index: -1;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.growFaster {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  margin-bottom: 30px;
+  overflow: hidden;
+
+  @include for-phone-only {
+    text-align: center;
+  }
+
+  @include for-tablet-up {
+    padding-top: 30vw;
+  }
+
+  @include for-desktop-up {
+    padding-top: 35vw;
+  }
+
+  @include for-big-desktop-up {
+    padding-top: 45vw;
+  }
+}
+
+.growFasterContainer {
+  @include for-tablet-up {
+    max-width: 470px;
+    width: 100%;
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @include for-tablet-up {
+    align-items: flex-end;
+  }
+}
+
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 13px;
+  line-height: 13px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+.titleText {
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba($color: #363636, $alpha: 0.5);
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  border: none;
+  margin: 30px auto 40px;
+
+  @include for-tablet-up {
+    margin: 30px 0px 40px auto;
+  }
+}
+
+.sectionContent {
+  width: 100%;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.freeQuoteButton {
+  width: 260px;
+  margin: 20px auto auto;
+  position: relative;
+  z-index: 1;
+}
+
+.patternRight {
+  @include for-tablet-down {
+    display: none;
+  }
+
+  @include for-desktop-up {
+    position: absolute;
+    right: 0;
+    margin-right: -50px;
+    margin-top: -148px;
+    padding: 0px;
+  }
+
+  @include for-big-desktop-up {
+    margin-right: 0;
+  }
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -2;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledBigCircle {
+  @extend %circle;
+  width: 270px;
+  height: 270px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  bottom: 35px;
+  left: 140px;
+}
+
+.emptyBigCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  bottom: 12px;
+  left: 120px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  width: 314px;
+  height: 314px;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  opacity: 0.5;
+  bottom: 0;
+  left: 130px;
+}
+
+.smallBlurRightCircle {
+  @extend %circle;
+  width: 15px;
+  height: 15px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(4px);
+  bottom: 10px;
+  left: 390px;
+}

@@ -1,13 +1,12 @@
-import MaleInVideocall from 'assets/staff_augmentation/male_videocall.png'
-import MaleUsingComputer from 'assets/staff_augmentation/male_computer.png'
-import MaleSalesSolutions from 'assets/staff_augmentation/male_sales_solutions.png'
-import BrandGradient from 'main_app/components/TextGradient'
-import AbelLaptop from 'assets/staff_augmentation/abel_laptop.png'
 import JennyWilson from 'assets/hire_developers/profiles/jenny_wilson.png'
 import GeoffreyMott from 'assets/hire_developers/profiles/geoffrey_mott.png'
 import RodolfoGoode from 'assets/hire_developers/profiles/rodolfo_goode.png'
 import LeatriceHandler from 'assets/hire_developers/profiles/leatrice_handler.png'
 import FlorencioDorrance from 'assets/hire_developers/profiles/florencio_dorrance.png'
+import BgHireDevelopers from 'assets/hire_developers/backgrounds/bg_hire_developers.png'
+import HoldingBook from 'assets/hire_developers/backgrounds/holding_book.png'
+import CodeScreen from 'assets/hire_developers/backgrounds/code_screen.png'
+import picturebgHdev from 'assets/hire_developers/picturebgHdev.png'
 
 const hireDevelopers = {
   pathName: 'hire-developers',
@@ -16,103 +15,145 @@ const hireDevelopers = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
-    title: <>Talent that delivers like <BrandGradient>your Dream Team</BrandGradient> would</>,
+    landingName: <>hire developers</>,
+    title: <>Talent that delivers like your <b>Dream Team</b> would</>,
     description: (
       <>
         <p>Get the ultimate outcomes from the Top Web Developers without the hiring hassles.</p>
       </>
     ),
-    formDescription: 'Sign Up to Get Rates & Available Staff Details',
-    formOrigin: 'hire-developers',
+    sideImageURL: BgHireDevelopers,
+    backgroundColor: '#8224E3'
+  },
+  freeQuoteForm: {
+    formHeader: {
+      subtitle: 'Get in touch',
+      title: 'Sign Up to Get Rates & Available Staff Details',
+      description: 'We look forward to learning how WeDevelop can help you and your business.'
+    },
     formCustomizations: {
-      fixedFieldsPlaceholders: {
-        name: 'Your name',
-        email: 'Your work email',
-        message: 'What are you looking for?'
+      fixedFields: {
+        name: {
+          label: 'Name',
+          placeholder: 'Your name'
+        },
+        email: {
+          label: 'Company Email',
+          placeholder: 'Your company email'
+        },
+        message: {
+          label: 'What are you looking for?',
+          placeholder: 'A Full-Stack Node and React Developer'
+        }
       }
     },
-    sideImageURL: AbelLaptop,
-    submitButtonText: 'Get a free quote'
+    formOrigin: 'hire-developers',
+    formButtonText: 'Get a free quote',
+    formDisclaimer: 'We typically reply every email within an hour.'
   },
   reviews: {
-    title: <>We trust our Customers' words</>,
+    subtitle: 'Customers reviews',
+    title: 'The TOP IT Staffing as our customers say',
+    description: 'Don\'t take our word for it. See what our customers say.',
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
       stars: 5,
-      project: 'App Development for Online Fitness Company'
+      project: {
+        type: 'App Development',
+        company: 'Online Fitness Company'
+      }
     }, {
       id: '2',
       quote: 'They’re willing to engage with a problem to figure it out rather than waiting to be told what to do.',
       stars: 5,
-      project: 'Software Development for Sports Betting Startup'
+      project: {
+        type: 'Software Development',
+        company: 'Sports Betting Startup'
+      }
     }, {
       id: '3',
       quote: 'The project cost about half of what it would have had we hired local engineers.',
       stars: 5,
-      project: 'Web App Development for Loan Company'
+      project: {
+        type: 'Web App Development',
+        company: 'Loan Company'
+      }
     }, {
       id: '4',
       quote: 'WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.',
       stars: 5,
-      project: 'Product Development for Ferry Booking Platform'
-    }]
+      project: {
+        type: 'Product Development',
+        company: 'Ferry Booking Platform'
+      }
+    }],
+    buttonText: 'Get a Free Quote'
   },
-  sectionsWithSideImage: [{
-    id: '1',
-    imageURL: MaleInVideocall,
-    title: <>Grow <BrandGradient>today</BrandGradient></>,
-    description: (
+  GrowFaster: {
+    subtitle: 'Efficiency',
+    title: <>Save Time, <br /> grow faster</>,
+    description: '',
+    content: (
       <>
         <p>
-          We send you a list of candidates today along with their rates
-          and easy-to-read resumes.
+          Hiring the wrong person can cost thousands of dollars
+          and hours of wasted time.
         </p>
         <p>
-          <b>Your time is too precious</b> to be dealing with Recruiting,
-          Screening, Selection, Interviewing, Hiring, and more.
+          At WeDevelop, <b>we've already put in the groundwork.</b>
         </p>
-        <p>Let us alleviate that burden. Save time. Grow Efficiently.</p>
+        <p>
+          We have access to the best Talent for your company’s
+          needs, allowing you to focus on growing your business
+          instead of trying to find new staff members.
+        </p>
+        <p>
+          Stop spending time and resources on Interviews. If you
+          want to grow your company’s IT Staff quickly
+        </p>
       </>
-    )
-  }, {
-    id: '2',
-    imageURL: MaleUsingComputer,
-    title: <>Hire Top Talent Only, <BrandGradient>Without Hassle</BrandGradient></>,
-    description: (
+    ),
+    buttonText: 'Get a Free Quote',
+    imageURL: picturebgHdev
+  },
+  HireTopTalent: {
+    subtitle: 'top talent',
+    title: 'Hire Top Talent Only, Without Hassle',
+    description: '',
+    content: (
       <>
-        <p>
-          Hiring the right person is hard. Especially if you're looking for someone with
-          specific skills and experience in a particular tecnology.
-        </p>
-        <p>
-          At, WeDevelop, we match people to clients based on skill sets, interests, culture,
-          and location & provide several options that meet your requirements. Hire top
-          talent from around In Latin America without having to go through the hassle of
-          interviewing them yourself.
-        </p>
-        <p>Focus on other important things such as growing your business and meeting deadlines.</p>
+        <ul>
+          <li>
+            Hiring the right person is hard.
+            Especially if you're <b>looking for someone with specific skills and experience</b> in a particular tecnology.
+          </li>
+          <li>
+            At, WeDevelop, <b>we match people to clients based on skill sets</b>, interests, culture, and location & provide several options that meet your requirements.
+            Hire top talent from around In Latin America without having to go through the hassle of interviewing them yourself.
+          </li>
+          <li>
+            <b>Focus on other important things</b> such as growing your business and meeting deadlines.
+          </li>
+        </ul>
       </>
-    )
-  }, {
-    id: '3',
-    imageURL: MaleSalesSolutions,
-    title: <>Save time, <BrandGradient>Learn faster</BrandGradient></>,
-    description: (
+    ),
+    buttonText: 'Get a Free Quote'
+  },
+  growToday: {
+    subtitle: 'Efficiency',
+    title: 'Grow today',
+    description: 'Let us alleviate that burden. Save time. Grow Efficiently.',
+    content: (
       <>
-        <p>Hiring the wrong person can cost thousands of dollars and hours of wasted time.</p>
-        <p>At WeDevelop, we've already put in the groundwork.</p>
-        <p>
-          We have access to the best Talent for your company’s needs, allowing you to focus
-          on growing your business instead of trying to find new staff members.
-        </p>
-        <p>
-          Stop spending time and resources on Interviews. If you want to grow your company’s
-          IT Staff quickly
-        </p>
+        We send you a list of candidates today along with their rates
+        and easy-to-read resumes. Your time is too precious to be dealing
+        with <b>Recruiting, Screening, Selection, Interviewing, Hiring</b>,
+        and more.
       </>
-    )
-  }],
+    ),
+    buttonText: 'Get a Free Quote'
+  },
   availableDevs: {
     subtitle: 'Top Engineers',
     title: 'This is our Available Team',
@@ -268,7 +309,13 @@ const hireDevelopers = {
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get your quote now',
     ctaToPath: '#top',
-    ctaIncentive: 'We typically reply every email within an hour.'
+    ctaIncentive: 'We typically reply every email within an hour.',
+    description: 'Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc.',
+    variant: 'reverse_items'
+  },
+  backgrounds: {
+    firstBackground: HoldingBook,
+    secondBackground: CodeScreen
   }
 }
 

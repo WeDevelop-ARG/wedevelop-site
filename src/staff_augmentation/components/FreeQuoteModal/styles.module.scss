@@ -1,0 +1,14 @@
+@import '/src/styles/media_queries.scss';
+
+.freeQuoteModal {
+  overflow: auto;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 45px 10px;
+
+  @include for-tablet-up {
+    padding: 45px;
+    max-height: 95vh;
+    max-width: 95vw;
+  }
+}
