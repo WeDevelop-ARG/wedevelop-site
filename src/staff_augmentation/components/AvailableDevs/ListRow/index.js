@@ -14,34 +14,40 @@ function ListRow ({
   devRate
 }) {
   return (
-    <ul className={classes.devRow}>
-      <li className={classes.devImgName}>
-        <div className={classes.profileImgContainer}>
-          <img src={devImgURL} alt='' className={classes.profileImg} />
-        </div>
+    <>
+      <div className={classes.devImgName}>
+        <img src={devImgURL} alt='' className={classes.profileImg} />
         <p>{devName}</p>
-      </li>
-      <li className={classes.roleTech}>
-        <b>{devRole}</b>
-      </li>
-      <li className={classes.skills}>
-        {devSkills.map(({ skill, color }) => (
-          <span key={skill}>{skill}</span>
-        ))}
-      </li>
-      <li className={classes.description}>
-        {devExperience}
-      </li>
-      <li className={classes.rate}>
+      </div>
+      <div className={classes.roleTech}>
+        <p><b>{devRole}</b></p>
+      </div>
+      <div className={classes.skills}>
+        {devSkills.map(({ skill, color }) => {
+          color = `rgba(${color})`
+          return (
+            <span
+              key={skill}
+              style={{ backgroundColor: color }}
+            >
+              {skill}
+            </span>
+          )
+        })}
+      </div>
+      <div className={classes.description}>
+        <p>{devExperience}</p>
+      </div>
+      <div className={classes.rate}>
         <p>{devRate}</p>
-      </li>
-      <li className={classes.viewProfile}>
+      </div>
+      <div className={classes.viewProfile}>
         <p className={classes.viewProfileText}>View Profile</p>
         <Button variant='icon' as={Link} isAnchor smooth to='#top'>
           <SVGIcon name='hire_developers/right_arrow' className={classes.rightArrow} />
         </Button>
-      </li>
-    </ul>
+      </div>
+    </>
   )
 }
 

@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { HashLink } from 'react-router-hash-link'
 
 import Button from 'main_app/components/Button'
@@ -19,15 +20,18 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
       </div>
       <div className={classes.devsList}>
         {devs.map(({ id, devImgURL, devName, devRole, devSkills, devExperience, devRate }) => (
-          <ListRow
-            key={id}
-            devImgURL={devImgURL}
-            devName={devName}
-            devRole={devRole}
-            devSkills={devSkills}
-            devExperience={devExperience}
-            devRate={devRate}
-          />
+          <Fragment key={id}>
+            <ListRow
+              key={id}
+              devImgURL={devImgURL}
+              devName={devName}
+              devRole={devRole}
+              devSkills={devSkills}
+              devExperience={devExperience}
+              devRate={devRate}
+            />
+            <hr key={id} className={classes.separator} />
+          </Fragment>
         ))}
         <div className={classes.moreOnBench}>
           <p>and more than <b>{useRandonNumber(6, 20)} awesome professionals</b> waiting for you!</p>

@@ -3,75 +3,49 @@
 
 $primaryBlue: #377DFF;
 
-.devRow {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(6, auto);
-  grid-gap: 40px;
-  border-bottom: 1px solid rgba($color: $textColor, $alpha: 0.25);
-  margin: 0;
-  padding: 0;
-
-  >li {
-    display: flex;
-    justify-content: left;
-    margin: auto;
-    padding: 15px 0;
-    font-size: 15px;
-
-    @include for-phone-only {
-      padding: 25px 0;
-    }
-  }
-
-  >li:not(:first-of-type) {
-    font-weight: 600;
-  }
-}
-
 .devImgName {
   >p {
     align-self: center;
     font-size: 15px;
-    margin: 0;
-  }
-
-  >.profileImgContainer {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 10px;
+    margin: 0 auto;
   }
 
   .profileImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: auto 10px auto 0;
   }
 }
 
 .roleTech {
-  display: flex;
+  text-align: center;
 
-  >b {
+  >p {
     margin: auto;
   }
 }
 
 .skills {
+  justify-content: flex-start;
+  align-items: center;
 
   >span {
     border-radius: 50px;
-    padding: 6px 16px;
+    padding: 5px 10px;
   }
 
   >span:not(:last-of-type) {
-    margin-right: 21px;
+    margin-right: 10px;
   }
 }
 
 .description {
   text-align: center;
+
+  >p {
+    margin: auto;
+  }
 }
 
 .rate {
@@ -102,4 +76,5 @@ $primaryBlue: #377DFF;
   height: 16px;
   color: $textColor;
   margin-left: 10px;
+  padding: 0;
 }
