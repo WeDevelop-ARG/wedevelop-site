@@ -153,6 +153,33 @@ const skillOptions = [{
 }, {
   value: 'JMETER',
   label: 'Jmeter'
+}, {
+  value: 'HEADHUNTING',
+  label: 'Headhunting'
+}, {
+  value: 'IT_RECRUITMENT',
+  label: 'IT Recruitment'
+}, {
+  value: 'TECH_RECRUITING',
+  label: 'Technical Recruiting'
+}, {
+  value: 'STRATEGIC_PLANNING',
+  label: 'Strategic Planning'
+}, {
+  value: 'TALENT_ACQUISITION',
+  label: 'Talent Acquisition'
+}, {
+  value: 'SOURCING',
+  label: 'Sourcing'
+}, {
+  value: 'JOB_POSTING',
+  label: 'Job Posting'
+}, {
+  value: 'ATS_MANAGEMENT',
+  label: 'ATS Management'
+}, {
+  value: 'CLIENT_ORIENTATION',
+  label: 'Client Orientation'
 }]
 
 function JoinUsForm () {
