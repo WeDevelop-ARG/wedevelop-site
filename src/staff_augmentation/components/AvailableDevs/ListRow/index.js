@@ -3,6 +3,8 @@ import { HashLink as Link } from 'react-router-hash-link'
 import Button from 'main_app/components/Button'
 import SVGIcon from 'main_app/components/SVGIcon'
 
+import getBackgroundColor from '../use_background_colors'
+
 import classes from './styles.module.scss'
 
 function ListRow ({
@@ -24,11 +26,10 @@ function ListRow ({
       </div>
       <div className={classes.skills}>
         {devSkills.map(({ skill, color }) => {
-          color = `rgba(${color})`
           return (
             <span
               key={skill}
-              style={{ backgroundColor: color }}
+              style={{ backgroundColor: getBackgroundColor(color) }}
             >
               {skill}
             </span>

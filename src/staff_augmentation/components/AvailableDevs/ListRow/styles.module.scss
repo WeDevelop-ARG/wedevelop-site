@@ -5,9 +5,9 @@ $primaryBlue: #377DFF;
 
 .devImgName {
   >p {
-    align-self: center;
     font-size: 15px;
-    margin: 0 auto;
+    margin: auto 0;
+    text-align: left;
   }
 
   .profileImg {
@@ -19,10 +19,8 @@ $primaryBlue: #377DFF;
 }
 
 .roleTech {
-  text-align: center;
-
   >p {
-    margin: auto;
+    margin: auto 0;
   }
 }
 

@@ -57,19 +57,20 @@
   width: 100%;
   border-top: 1px solid rgba($color: $textColor, $alpha: 0.25);
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 0 15px;
+  grid-gap: 0 25px;
+  overflow: auto;
 
   >div:not(:last-of-type) {
     height: 80px;
     display: flex;
 
-    @include for-phone-only {
-      padding: 25px 0;
-    }
-
     >p, span {
       font-size: 15px;
+      text-align: center;
+
+      @include for-tablet-up {
+        text-align: initial;
+      }
     }
   }
 }
