@@ -49,7 +49,7 @@ const staffAugmentation = {
   },
   reviews: {
     subtitle: 'Customers reviews',
-    title: 'The TOP IT Staffing as our customers say',
+    title: 'The TOP IT Staffing Agency as our customers say',
     description: 'Don\'t take our word for it. See what our customers say.',
     reviews: [{
       id: '1',
