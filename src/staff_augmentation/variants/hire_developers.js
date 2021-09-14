@@ -8,6 +8,7 @@ import PythonLogo from 'assets/hire_developers/python.png'
 import AngularLogo from 'assets/hire_developers/angular.png'
 import HoldingBook from 'assets/hire_developers/backgrounds/holding_book.png'
 import CodeScreen from 'assets/hire_developers/backgrounds/code_screen.png'
+import BookLaptop from 'assets/hire_developers/backgrounds/book_laptop.png'
 import picturebgHdev from 'assets/hire_developers/picturebgHdev.png'
 
 const hireDevelopers = {
@@ -196,7 +197,8 @@ const hireDevelopers = {
   },
   backgrounds: {
     firstBackground: HoldingBook,
-    secondBackground: CodeScreen
+    secondBackground: CodeScreen,
+    thirdBackground: BookLaptop
   }
 }
 
