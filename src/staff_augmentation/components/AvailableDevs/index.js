@@ -1,5 +1,4 @@
 import { Fragment } from 'react'
-import { HashLink } from 'react-router-hash-link'
 
 import Button from 'main_app/components/Button'
 import ListRow from './ListRow'
@@ -9,7 +8,7 @@ import DotsPattern from 'assets/hire_developers/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
-function AvailableDevs ({ subtitle, title, description, devs, buttonText, handleModalClose }) {
+function AvailableDevs ({ subtitle, title, description, devs, buttonText, handleModal }) {
   return (
     <section className={classes.availableDevs}>
       <div className={classes.sectionHeader}>
@@ -29,21 +28,20 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
               devSkills={devSkills}
               devExperience={devExperience}
               devRate={devRate}
+              handleModal={handleModal}
             />
             <hr key={id} className={classes.separator} />
           </Fragment>
         ))}
-        <div className={classes.moreOnBench}>
-          <p>and more than <b>{useRandonNumber(6, 20)} awesome professionals</b> waiting for you!</p>
-        </div>
+      </div>
+      <div className={classes.moreOnBench}>
+        <p>and more than <b>{useRandonNumber(6, 20)} awesome professionals</b> waiting for you!</p>
       </div>
       <Button
-        as={HashLink}
-        to=''
         smooth
         variant='primary'
         className={classes.getRatesButton}
-        onClick={handleModalClose}
+        onClick={handleModal}
       >
         {buttonText}
       </Button>

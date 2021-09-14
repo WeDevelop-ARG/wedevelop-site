@@ -57,22 +57,9 @@ $primaryBlue: #377DFF;
   }
 }
 
-.viewProfile {
-  display: flex;
-  align-items: center;
-}
-
-.viewProfileText {
+.viewProfileButton {
   color: $primaryBlue;
   font-size: 15px;
   font-weight: 600;
   margin: 0;
-}
-
-.rightArrow {
-  width: 16px;
-  height: 16px;
-  color: $textColor;
-  margin-left: 10px;
-  padding: 0;
 }

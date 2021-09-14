@@ -1,9 +1,7 @@
-import { HashLink as Link } from 'react-router-hash-link'
-
 import Button from 'main_app/components/Button'
-import SVGIcon from 'main_app/components/SVGIcon'
 
 import getBackgroundColor from '../use_background_colors'
+import RightArrow from 'assets/hire_developers/right_arrow.svg'
 
 import classes from './styles.module.scss'
 
@@ -13,8 +11,11 @@ function ListRow ({
   devRole,
   devSkills,
   devExperience,
-  devRate
+  devRate,
+  handleModal
 }) {
+  const btnRightArrow = (<img src={RightArrow} alt='' />)
+
   return (
     <>
       <div className={classes.devImgName}>
@@ -43,9 +44,15 @@ function ListRow ({
         <p>{devRate}</p>
       </div>
       <div className={classes.viewProfile}>
-        <p className={classes.viewProfileText}>View Profile</p>
-        <Button variant='icon' as={Link} isAnchor smooth to='#top'>
-          <SVGIcon name='hire_developers/right_arrow' className={classes.rightArrow} />
+        <Button
+          variant='icon'
+          isAnchor
+          smooth
+          iconRight={btnRightArrow}
+          className={classes.viewProfileButton}
+          onClick={handleModal}
+        >
+          View Profile
         </Button>
       </div>
     </>

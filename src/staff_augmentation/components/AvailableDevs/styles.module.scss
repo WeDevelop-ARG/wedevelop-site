@@ -60,7 +60,7 @@
   grid-gap: 0 25px;
   overflow: auto;
 
-  >div:not(:last-of-type) {
+  >div {
     height: 80px;
     display: flex;
 
@@ -85,9 +85,8 @@
 }
 
 .moreOnBench {
-  text-align: center;
   margin: 40px auto;
-  grid-column: 1/ span 6;
+  text-align: center;
 
   >p {
     font-size: 20px;

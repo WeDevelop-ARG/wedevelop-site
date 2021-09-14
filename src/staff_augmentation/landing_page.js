@@ -86,6 +86,7 @@ function LandingPage () {
             description={landing.availableDevs.description}
             devs={landing.availableDevs.devs}
             buttonText={landing.availableDevs.buttonText}
+            handleModal={handleModalOpen}
           />}
         <FullSizeCTA
           title={landing.fullSizeCTA.title}
