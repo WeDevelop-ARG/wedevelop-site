@@ -8,20 +8,21 @@ import PythonLogo from 'assets/hire_developers/python.png'
 import AngularLogo from 'assets/hire_developers/angular.png'
 import HoldingBook from 'assets/hire_developers/backgrounds/holding_book.png'
 import CodeScreen from 'assets/hire_developers/backgrounds/code_screen.png'
+import BookLaptop from 'assets/hire_developers/backgrounds/book_laptop.png'
 import picturebgHdev from 'assets/hire_developers/picturebgHdev.png'
 
 const hireDevelopers = {
   pathName: 'hire-developers',
   metadata: {
-    title: 'Web Development Agency',
-    description: 'Outsource with Us and Accelerate your Digital Transformation.'
+    title: 'IT Staffing Agency',
+    description: 'Hire Developers and Development Teams.'
   },
   header: {
     landingName: <>hire developers</>,
-    title: <>Talent that delivers like your <b>Dream Team</b> would</>,
+    title: <>Hire Developers and Development Teams</>,
     description: (
       <>
-        <p>Get the ultimate outcomes from the Top Web Developers without the hiring hassles.</p>
+        <p>Hire the Top Web Developers without the hiring hassles.</p>
       </>
     ),
     sideImageURL: BgHireDevelopers,
@@ -29,9 +30,9 @@ const hireDevelopers = {
   },
   freeQuoteForm: {
     formHeader: {
-      subtitle: 'Get in touch',
-      title: 'Sign Up to Get Rates & Available Staff Details',
-      description: 'We look forward to learning how WeDevelop can help you and your business.'
+      subtitle: 'Get profiles',
+      title: 'Get Developer Profiles',
+      description: 'Fill out the form and Get Developer Profiles and Developer Rates.'
     },
     formCustomizations: {
       fixedFields: {
@@ -44,19 +45,19 @@ const hireDevelopers = {
           placeholder: 'Your company email'
         },
         message: {
-          label: 'What are you looking for?',
-          placeholder: 'A Full-Stack Node and React Developer'
+          label: 'Requirement',
+          placeholder: 'I need a Full-Stack Node and React Developer for a 6-month project.'
         }
       }
     },
     formOrigin: 'hire-developers',
-    formButtonText: 'Get a free quote',
-    formDisclaimer: 'We typically reply every email within an hour.'
+    formButtonText: 'Get profiles and rates',
+    formDisclaimer: 'We\'ll email you available staff and their rates within the next hour.'
   },
   reviews: {
     subtitle: 'Customers reviews',
-    title: 'The TOP IT Staffing as our customers say',
-    description: 'Don\'t take our word for it. See what our customers say.',
+    title: 'The TOP IT Staffing Agency, as our customers say',
+    description: 'Don\'t take our word for it:',
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
@@ -148,7 +149,7 @@ const hireDevelopers = {
     description: 'Let us alleviate that burden. Save time. Grow Efficiently.',
     content: (
       <>
-        We send you a list of candidates today along with their rates
+        We'll send you a list of candidates today along with their rates
         and easy-to-read resumes. Your time is too precious to be dealing
         with <b>Recruiting, Screening, Selection, Interviewing, Hiring</b>,
         and more.
@@ -157,12 +158,12 @@ const hireDevelopers = {
     buttonText: 'Get a Free Quote'
   },
   availableDevs: {
-    title: <>This is our <BrandGradient>Available Team</BrandGradient></>,
+    title: <>Pick your <BrandGradient>Next Developer</BrandGradient></>,
     devs: [
       {
         id: '1',
         devImgURL: AbelImg,
-        devRole: 'Full Stack',
+        devRole: 'Full Stack Developer',
         techLogoURL: JSLogo,
         devDescription: '7 years experience',
         devRate: '12'
@@ -170,7 +171,7 @@ const hireDevelopers = {
       {
         id: '2',
         devImgURL: NahuelImg,
-        devRole: 'Backend',
+        devRole: 'Backend Engineer',
         techLogoURL: PythonLogo,
         devDescription: 'Former Google',
         devRate: '15'
@@ -178,7 +179,7 @@ const hireDevelopers = {
       {
         id: '3',
         devImgURL: VaninaImg,
-        devRole: 'Frontend',
+        devRole: 'Frontend Specialist',
         techLogoURL: AngularLogo,
         devDescription: 'Experience leading teams',
         devRate: '10'
@@ -186,17 +187,18 @@ const hireDevelopers = {
     ]
   },
   fullSizeCTA: {
-    title: 'Ready to grow your IT Staff?',
-    subTitle: 'GET YOUR QUOTE NOW',
-    ctaText: 'Get your quote now',
+    title: 'Ready to hire your new Developer?',
+    subTitle: 'GET PROFILES NOW',
+    ctaText: 'Get profiles and rates',
     ctaToPath: '#top',
     ctaIncentive: 'We typically reply every email within an hour.',
-    description: 'Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc.',
+    description: 'Get a list of available staff with their rates.',
     variant: 'reverse_items'
   },
   backgrounds: {
     firstBackground: HoldingBook,
-    secondBackground: CodeScreen
+    secondBackground: CodeScreen,
+    thirdBackground: BookLaptop
   }
 }
 
