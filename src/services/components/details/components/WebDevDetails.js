@@ -31,7 +31,6 @@ function WebDevDetails ({ contactPagePath }) {
         </ul>
       </div>
       <img className={classes.decoPattern} src={Pattern} alt='' />
-      <img className={classes.decoPatternRight} src={Pattern} alt='' />
       <img className={classes.decoCircle} src={Circle} alt='' />
     </>
   )
