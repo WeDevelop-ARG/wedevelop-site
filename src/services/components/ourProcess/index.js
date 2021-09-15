@@ -81,6 +81,9 @@ function OurProcess () {
               </li>
             </ul>
           </div>
+          <div className={classes.firstCurvedArrow} />
+          <div className={classes.secondCurvedArrow} />
+          <div className={classes.thirdCurvedArrow} />
         </div>
         <div className={classes.processDiagramContainer}>
           <img src={ProcessDiagram} alt='' className={classes.processDiagram} />
