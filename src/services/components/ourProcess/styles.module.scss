@@ -4,10 +4,15 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-top: calc(200px + var(--rootContentMinPadding));
+  padding-top: calc(375px + var(--rootContentMinPadding));
+  padding-bottom: calc(50px + var(--rootContentMinPadding));
   margin: 0 0 50px;
   min-height: 100vh;
   height: auto;
+
+  @include for-tablet-up {
+    padding-top: calc(250px + var(--rootContentMinPadding));
+  }
 
   @include for-desktop-up {
     padding-bottom: calc(75px + var(--rootContentMinPadding));
@@ -27,10 +32,14 @@
   line-height: 100%;
   letter-spacing: 1em;
   color: rgba($color: #363636, $alpha: 0.5);
-  font-size: 13px;
+  font-size: 10px;
   margin-bottom: 32px;
   text-transform: uppercase;
   text-align: center;
+
+  @include for-tablet-up {
+    font-size: 13px;
+  }
 }
 
 .titleText {
@@ -45,9 +54,13 @@
 
 .descriptionText {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 15px;
   color: rgba($color: #363636, $alpha: 0.5);
   text-align: center;
+
+  @include for-tablet-up {
+    font-size: 20px;
+  }
 }
 
 .horizontalBar {
@@ -61,6 +74,7 @@
 .sectionContent {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @include for-tablet-up {
     flex-direction: row;
@@ -71,6 +85,7 @@
   max-width: 850px;
   width: 100%;
   margin: auto 0;
+  position: relative;
 
   @include for-tablet-up {
     padding-right: 50px;
@@ -83,15 +98,26 @@
 
 .phaseIdentifier {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 60px;
 
   >p {
-    margin: auto 0 auto 30px;
+    margin: 20px 0 10px 0;
+
+    @include for-desktop-up {
+      margin: auto 0 auto 30px;
+    }
   }
 
   @include for-phone-only {
     margin-bottom: 15px;
+  }
+
+  @include for-desktop-up {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0px;
   }
 }
 
@@ -100,11 +126,110 @@
   font-weight: 300;
   line-height: 24px;
   list-style-image: url('../../../assets/services/web_dev_our_process/check_bullet.svg');
-  padding-left: 120px;
+  padding-left: 80px;
   margin: 0;
 
   >li:not(:last-of-type) {
     margin-bottom: 8px;
+  }
+
+  @include for-desktop-up {
+    padding-left: 120px;
+  }
+}
+
+%curvedArrow {
+  position: absolute;
+
+  @include for-desktop-up {
+    left: -8%;
+
+    @media screen and (min-width: 1024px) and (max-width: 1149px) {
+      left: -13%;
+    }
+
+    @media screen and (min-width: 1150px) and (max-width: 1329px) {
+      left: -10%;
+    }
+  }
+}
+
+.firstCurvedArrow {
+  @extend %curvedArrow;
+  background-image: url('../../../assets/services/web_dev_our_process/first_curved_arrow_mobile.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 49px;
+  height: 228px;
+  top: 5%;
+
+  @media screen and (min-width: 800px) and (max-width: 1023px) {
+    top: 4%;
+  }
+
+  @include for-desktop-up {
+    background-image: url('../../../assets/services/web_dev_our_process/first_curved_arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 51px;
+    height: 172px;
+    top: 6%;
+  }
+}
+
+.secondCurvedArrow {
+  @extend %curvedArrow;
+  background-image: url('../../../assets/services/web_dev_our_process/second_curved_arrow_mobile.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 52px;
+  height: 284px;
+  top: 29%;
+
+  @media screen and (min-width: 800px) and (max-width: 1023px) {
+    top: 27%;
+  }
+
+  @include for-desktop-up {
+    background-image: url('../../../assets/services/web_dev_our_process/second_curved_arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 53px;
+    height: 155px;
+    top: 34%;
+
+    @media screen and (min-width: 1024px) and (max-width: 1329px) {
+      top: 33%;
+    }
+  }
+}
+
+.thirdCurvedArrow {
+  @extend %curvedArrow;
+  background-image: url('../../../assets/services/web_dev_our_process/third_curved_arrow_mobile.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 51px;
+  height: 250px;
+  top: 58%;
+
+  @media screen and (min-width: 800px) and (max-width: 1023px) {
+    top: 56%;
+  }
+
+  @include for-desktop-up {
+    background-image: url('../../../assets/services/web_dev_our_process/third_curved_arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 53px;
+    height: 130px;
+    top: 60%;
   }
 }
 
@@ -115,8 +240,8 @@
 }
 
 .processDiagram {
-  width: 100%;
-  height: 100%;
+  width: inherit;
+  height: inherit;
   object-fit: cover;
 }
 
