@@ -1,13 +1,14 @@
 import { React, useState } from 'react'
 import { useField } from 'formik'
-import Creatable from 'react-select/creatable'
+import CreatableSelect from 'react-select/creatable'
 
 function FormikSelect ({ name, options, placeholder }) {
   const [, { value: fieldValue }, { setValue, setTouched }] = useField(name)
   const [allOptions, setOptions] = useState(options)
 
   return (
-    <Creatable
+
+    <CreatableSelect
       options={options}
       isMulti
       onChange={(values) => {
@@ -18,6 +19,7 @@ function FormikSelect ({ name, options, placeholder }) {
       value={allOptions ? allOptions.find(option => option.value === fieldValue) : ''}
       placeholder={placeholder}
       onBlur={() => setTouched(true)}
+      formatCreateLabel={() => 'Create new skill'}
     />
   )
 }
