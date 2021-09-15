@@ -1,19 +1,21 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { useField } from 'formik'
-import Select from 'react-select'
+import Creatable from 'react-select/creatable'
 
 function FormikSelect ({ name, options, placeholder }) {
   const [, { value: fieldValue }, { setValue, setTouched }] = useField(name)
+  const [allOptions, setOptions] = useState(options)
 
   return (
-    <Select
+    <Creatable
       options={options}
       isMulti
       onChange={(values) => {
         setTouched(true)
         setValue(values.map(({ value }) => value), true)
+        setOptions([...new Set(options.concat(values))])
       }}
-      value={options.filter(opt => fieldValue?.includes(opt.value))}
+      value={allOptions ? allOptions.find(option => option.value === fieldValue) : ''}
       placeholder={placeholder}
       onBlur={() => setTouched(true)}
     />
