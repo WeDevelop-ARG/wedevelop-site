@@ -36,5 +36,14 @@
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+
+    @include for-phone-only {
+      flex-wrap: wrap;
+      overflow-x: hidden;
+    }
+
+    @media screen and (max-width: 427px) { 
+      flex-direction: column;
+    }
   }
 }
