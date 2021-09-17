@@ -6,7 +6,6 @@ $grayColor: #363636;
 .ourCompany {
   min-height: 100vh;
   padding-top: calc(125px + var(--rootContentMinPadding));
-  padding-bottom: 150px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,24 +16,24 @@ $grayColor: #363636;
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  @include for-tablet-up {
-    align-items: flex-start;
-  }
+  align-items: flex-start;
 }
 
 .subheadingText {
   font-weight: 500;
-  letter-spacing: 5px;
+  letter-spacing: 1em;
   color: rgba($color: $grayColor, $alpha: 0.5);
-  font-size: 13px;
-  margin-bottom: 40px;
+  font-size: 10px;
+  margin-bottom: 32px;
   text-transform: uppercase;
+
+  @include for-tablet-up {
+    font-size: 13px;
+  }
 }
 
 .titleText {
+  font-size: 32px;
 
   @include for-desktop-up {
     font-weight: 600;
@@ -47,12 +46,13 @@ $grayColor: #363636;
   max-width: 466px;
   width: 100%;
   font-weight: 300;
-  font-size: 20px;
-  line-height: 36px;
+  font-size: 15px;
+  line-height: 23px;
   color: rgba($color: $grayColor, $alpha: 0.5);
   
   @include for-tablet-up {
-    text-align: left;
+    font-size: 20px;
+    line-height: 36px;
   }
 }
 
