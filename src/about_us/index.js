@@ -13,7 +13,9 @@ import ContactModal from 'main_app/components/ContactModal'
 import Values from './components/Values'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
+import useMediaQuery from 'utils/use_media_query'
 import WorkCofee from 'assets/about_us/testimonials/work_cofee.png'
+import { forTabletDown } from 'styles/media_queries'
 
 function AboutUs () {
   usePageMetadata({
@@ -26,6 +28,12 @@ function AboutUs () {
   const handleClose = useCallback(() => {
     history.push('/about-us')
   }, [history])
+  const isTabletDown = useMediaQuery(forTabletDown)
+  console.log(isTabletDown)
+  const renderTestimonials = () => {
+    if (isTabletDown) return <Testimonials bottomImageURL={WorkCofee} hideHeader />
+    return <Testimonials bottomImageURL={WorkCofee} />
+  }
 
   return (
     <>
@@ -37,7 +45,7 @@ function AboutUs () {
         <OurCompany />
         <OurCulture />
         <Values />
-        <Testimonials bottomImageURL={WorkCofee} />
+        {renderTestimonials()}
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
