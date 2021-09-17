@@ -7,18 +7,19 @@ import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
-function Testimonials ({ bottomImageURL }) {
+function Testimonials ({ bottomImageURL, hideHeader = false }) {
   const { reviews } = useReviews()
   return (
     <section id='testimonials' className={classes.testimonials}>
-      <div className={classes.sectionHeader}>
-        <p className={classes.subheadingText}>Testimonials</p>
-        <h2 className={classes.titleText}>What clients say</h2>
-        <p className={classes.descriptionText}>
-          Don't take our word for it. See what our customers say.
-        </p>
-        <hr className={classes.horizontalBar} />
-      </div>
+      {!hideHeader &&
+        <div className={classes.sectionHeader}>
+          <p className={classes.subheadingText}>Testimonials</p>
+          <h2 className={classes.titleText}>What clients say</h2>
+          <p className={classes.descriptionText}>
+            Don't take our word for it. See what our customers say.
+          </p>
+          <hr className={classes.horizontalBar} />
+        </div>}
       <div>
         <Slide
           duration={5000}
