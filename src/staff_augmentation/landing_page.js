@@ -73,8 +73,12 @@ function LandingPage () {
         <BackgroundContainer backgroundURL={landing.backgrounds.thirdBackground} />
         {landing.availableDevs &&
           <AvailableDevs
+            subtitle={landing.availableDevs.subtitle}
             title={landing.availableDevs.title}
+            description={landing.availableDevs.description}
             devs={landing.availableDevs.devs}
+            buttonText={landing.availableDevs.buttonText}
+            handleModal={handleModalOpen}
           />}
       </Article>
       <PictureWall />

@@ -1,11 +1,11 @@
-import BrandGradient from 'main_app/components/TextGradient'
+import JonathanM from 'assets/hire_developers/profiles/jonathan_m.jpg'
+import AlejandraL from 'assets/hire_developers/profiles/alejandra_l.jpg'
+import LeonardoC from 'assets/hire_developers/profiles/leonardo_c.jpeg'
+import MarcoP from 'assets/hire_developers/profiles/marco_p.jpg'
+import RicardoC from 'assets/hire_developers/profiles/ricardo_c.jpg'
+import RobertinoN from 'assets/hire_developers/profiles/robertino_n.jpeg'
+
 import BgHireDevelopers from 'assets/hire_developers/backgrounds/bg_hire_developers.png'
-import AbelImg from 'assets/hire_developers/abel_profile.png'
-import NahuelImg from 'assets/hire_developers/nahuel_profile.png'
-import VaninaImg from 'assets/hire_developers/vanina_profile.png'
-import JSLogo from 'assets/hire_developers/javascript.png'
-import PythonLogo from 'assets/hire_developers/python.png'
-import AngularLogo from 'assets/hire_developers/angular.png'
 import HoldingBook from 'assets/hire_developers/backgrounds/holding_book.png'
 import CodeScreen from 'assets/hire_developers/backgrounds/code_screen.png'
 import BookLaptop from 'assets/hire_developers/backgrounds/book_laptop.png'
@@ -22,7 +22,7 @@ const hireDevelopers = {
     title: <>Hire Developers and Development Teams</>,
     description: (
       <>
-        <p>Hire the Top Web Developers without the hiring hassles.</p>
+        <p>Hire Top Web Developers without the hiring hassles.</p>
       </>
     ),
     sideImageURL: BgHireDevelopers,
@@ -158,42 +158,164 @@ const hireDevelopers = {
     buttonText: 'Get a Free Quote'
   },
   availableDevs: {
-    title: <>Pick your <BrandGradient>Next Developer</BrandGradient></>,
+    subtitle: 'Hire Engineers',
+    title: 'Pick your new Web Developer Today',
+    description: 'Get instant access to our Talent Pool of 20+ vetted engineers.',
+    buttonText: 'Get a Free Quote',
     devs: [
       {
         id: '1',
-        devImgURL: AbelImg,
-        devRole: 'Full Stack Developer',
-        techLogoURL: JSLogo,
-        devDescription: '7 years experience',
-        devRate: '12'
+        devImgURL: JonathanM,
+        devName: 'Jonathan M.',
+        devRole: 'IT Project Manager',
+        devSkills: [
+          {
+            skill: 'SCRUM',
+            color: 'yellow'
+          },
+          {
+            skill: 'Python',
+            color: 'black'
+          },
+          {
+            skill: 'Ruby',
+            color: 'red'
+          }
+        ],
+        devExperience: '+7 years',
+        devRate: '$$ / h'
       },
       {
         id: '2',
-        devImgURL: NahuelImg,
-        devRole: 'Backend Engineer',
-        techLogoURL: PythonLogo,
-        devDescription: 'Former Google',
-        devRate: '15'
+        devImgURL: RobertinoN,
+        devName: 'Robertino N.',
+        devRole: 'Full-Stack Javascript Developer',
+        devSkills: [
+          {
+            skill: 'Node.js',
+            color: 'blue'
+          },
+          {
+            skill: 'React',
+            color: 'green'
+          },
+          {
+            skill: 'PostgreSQL',
+            color: 'gray'
+          },
+          {
+            skill: 'AWS',
+            color: 'yellow'
+          }
+        ],
+        devExperience: '+5 years',
+        devRate: '$ / h'
       },
       {
         id: '3',
-        devImgURL: VaninaImg,
-        devRole: 'Frontend Specialist',
-        techLogoURL: AngularLogo,
-        devDescription: 'Experience leading teams',
-        devRate: '10'
+        devImgURL: MarcoP,
+        devName: 'Marco P.',
+        devRole: '.NET Developer',
+        devSkills: [
+          {
+            skill: '.NET',
+            color: 'black'
+          },
+          {
+            skill: 'MySQL',
+            color: 'gray'
+          },
+          {
+            skill: 'PostgreSQL',
+            color: 'gray'
+          },
+          {
+            skill: 'Javascript',
+            color: 'red'
+          }
+        ],
+        devExperience: '+8 years',
+        devRate: '$$ / h'
+      },
+      {
+        id: '4',
+        devImgURL: RicardoC,
+        devName: 'Ricardo C.',
+        devRole: 'PHP Developer',
+        devSkills: [
+          {
+            skill: 'PHP',
+            color: 'blue'
+          },
+          {
+            skill: 'Laravel',
+            color: 'gray'
+          },
+          {
+            skill: 'SQL Server',
+            color: 'black'
+          },
+          {
+            skill: 'Woocommerce',
+            color: 'red'
+          }
+        ],
+        devExperience: '+6 years',
+        devRate: '$ / h'
+      },
+      {
+        id: '5',
+        devImgURL: LeonardoC,
+        devName: 'Leonardo C.',
+        devRole: 'QA Engineer',
+        devSkills: [
+          {
+            skill: 'Selenium',
+            color: 'yellow'
+          },
+          {
+            skill: 'Postman',
+            color: 'gray'
+          },
+          {
+            skill: 'BDD',
+            color: 'black'
+          },
+          {
+            skill: 'Jira',
+            color: 'red'
+          }
+        ],
+        devExperience: '+7 years',
+        devRate: '$$$ / h'
+      },
+      {
+        id: '6',
+        devImgURL: AlejandraL,
+        devName: 'Alejandra L.',
+        devRole: 'React Developer',
+        devSkills: [
+          {
+            skill: 'Node.js',
+            color: 'blue'
+          },
+          {
+            skill: 'Symfony',
+            color: 'gray'
+          },
+          {
+            skill: 'React',
+            color: 'red'
+          },
+          {
+            skill: 'PHP',
+            color: 'blue'
+          }
+        ],
+        devExperience: '+6 years',
+        devRate: '$$$ / h'
       }
     ]
-  },
-  fullSizeCTA: {
-    title: 'Ready to hire your new Developer?',
-    subTitle: 'GET PROFILES NOW',
-    ctaText: 'Get profiles and rates',
-    ctaToPath: '#top',
-    ctaIncentive: 'We typically reply every email within an hour.',
-    description: 'Get a list of available staff with their rates.',
-    variant: 'reverse_items'
   },
   backgrounds: {
     firstBackground: HoldingBook,

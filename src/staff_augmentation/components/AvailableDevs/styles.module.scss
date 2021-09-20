@@ -4,34 +4,159 @@
 .availableDevs {
   display: flex;
   flex-direction: column;
+  padding-top: calc(110px + var(--rootContentMinPadding));
+  padding-bottom: 75px;
   z-index: 1;
   position: relative;
+  overflow: hidden;
 }
 
-.title {
+.sectionHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 13px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.titleText {
   text-align: center;
-  margin: auto auto 75px auto;
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba($color: #363636, $alpha: 0.5);
+  text-align: center;
+  margin: 0;
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 40px auto;
+  border: none;
 }
 
 .devsList {
   width: 100%;
   border-top: 1px solid rgba($color: $textColor, $alpha: 0.25);
+  display: grid;
+  grid-gap: 0 25px;
+  overflow: auto;
+
+  >div {
+    height: 80px;
+    display: flex;
+
+    >p, span {
+      font-size: 15px;
+      text-align: center;
+
+      @include for-tablet-up {
+        text-align: initial;
+      }
+    }
+  }
+}
+
+.separator {
+  grid-column: 1/span 6;
+  width: 100%;
+  height: 1px;
+  background: rgba($color: $textColor, $alpha: 0.25);
+  border: none;
+  margin: 0;
 }
 
 .moreOnBench {
+  margin: 40px auto;
   text-align: center;
-  padding: 25px;
 
   >p {
     font-size: 20px;
-    font-weight: 700;
+    margin: 0;
   }
 }
 
 .getRatesButton {
   width: 100%;
-  max-width: 334px;
-  height: 58px;
+  max-width: 260px;
+  height: 45px;
   font-size: 17px;
-  margin: 40px auto;
+  margin: auto;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %circle;
+  width: 276px;
+  height: 276px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: 20px;
+  right: -170px;
+}
+
+.emptySolidCircle {
+  @extend %circle;
+  width: 324px;
+  height: 324px;
+  border: 1.5px solid rgba($color: #363636, $alpha: .2);
+  top: 0;
+  right: -188px;
+}
+
+.emptyLightCircle {
+  @extend %circle;
+  width: 324px;
+  height: 324px;
+  border: .5px solid rgba($color: #E1E1E1, $alpha: .9);
+  top: 12px;
+  right: -176px;
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 16px;
+  height: 16px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(6px);
+  top: 305px;
+  right: 105px;
+}
+
+.dotsPattern {
+  width: 277px;
+  position: absolute;
+  bottom: 20px;
+  left: 75px;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
 }

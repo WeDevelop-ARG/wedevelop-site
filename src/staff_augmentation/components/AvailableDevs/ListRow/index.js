@@ -1,35 +1,61 @@
 import Button from 'main_app/components/Button'
-import SVGIcon from 'main_app/components/SVGIcon'
-import { HashLink as Link } from 'react-router-hash-link'
+
+import getBackgroundColor from '../use_background_colors'
+import RightArrow from 'assets/hire_developers/right_arrow.svg'
 
 import classes from './styles.module.scss'
 
 function ListRow ({
   devImgURL,
+  devName,
   devRole,
-  techLogoURL,
-  devDescription,
-  devRate
+  devSkills,
+  devExperience,
+  devRate,
+  handleModal
 }) {
+  const btnRightArrow = (<img src={RightArrow} alt='' />)
+
   return (
-    <ul className={classes.devRow}>
-      <li>
+    <>
+      <div className={classes.devImgName}>
         <img src={devImgURL} alt='' className={classes.profileImg} />
-      </li>
-      <li className={classes.roleTech}>
-        <b>{devRole}</b>
-        <img src={techLogoURL} alt='' className={classes.techLogo} />
-      </li>
-      <li className={classes.description}>
-        {devDescription}
-      </li>
-      <li className={classes.rateMagnifier}>
-        <p>$<span className={classes.profileRate}>{devRate}</span> / h</p>
-        <Button variant='icon' as={Link} isAnchor smooth to='#top' className={classes.searchButton}>
-          <SVGIcon name='hire_developers/search_solid' className={classes.magnifier} />
+        <p>{devName}</p>
+      </div>
+      <div className={classes.roleTech}>
+        <p><b>{devRole}</b></p>
+      </div>
+      <div className={classes.skills}>
+        {devSkills.map(({ skill, color }) => {
+          return (
+            <span
+              key={skill}
+              style={{ backgroundColor: getBackgroundColor(color) }}
+            >
+              {skill}
+            </span>
+          )
+        })}
+      </div>
+      <div className={classes.description}>
+        <p>{devExperience}</p>
+      </div>
+      <div className={classes.rate}>
+        <p>{devRate}</p>
+      </div>
+      <div className={classes.viewProfile}>
+        <Button
+          variant='icon'
+          isAnchor
+          smooth
+          iconRight={btnRightArrow}
+          className={classes.viewProfileButton}
+          onClick={handleModal}
+        >
+          View Profile
         </Button>
-      </li>
-    </ul>
+      </div>
+    </>
   )
 }
 
