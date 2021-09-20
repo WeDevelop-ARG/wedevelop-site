@@ -5,6 +5,7 @@ import ContactModal from 'main_app/components/ContactModal'
 
 import Hero from './hero'
 import Details from './details'
+import OurProcess from './ourProcess'
 import Benefits from './benefits'
 import Schedule from './schedule'
 import WebDevDetails from './details/components/WebDevDetails'
@@ -50,6 +51,7 @@ function WebDevelopment () {
           <WebDevDetails contactPagePath={contactPagePath} />
         </Details>
       </section>
+      <OurProcess />
       <Benefits className={classes.sectionContainer} service='web-development' />
       <Schedule
         className={classes.sectionContainer}
