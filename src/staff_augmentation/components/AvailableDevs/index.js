@@ -2,9 +2,7 @@ import { Fragment } from 'react'
 
 import Button from 'main_app/components/Button'
 import ListRow from './ListRow'
-
-import useRandonNumber from './use_random_number'
-import DotsPattern from 'assets/hire_developers/dots_pattern.svg'
+import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
@@ -33,9 +31,9 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
             <hr key={id} className={classes.separator} />
           </Fragment>
         ))}
-      </div>
-      <div className={classes.moreOnBench}>
-        <p>and more than <b>{useRandonNumber(6, 20)} awesome professionals</b> waiting for you!</p>
+        <div className={classes.moreOnBench}>
+          <p>20+ more on bench</p>
+        </div>
       </div>
       <Button
         smooth
