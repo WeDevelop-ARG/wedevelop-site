@@ -217,6 +217,14 @@
   background: rgba($color: #EAEAEA, $alpha: 0.3);
   top: 59px;
   left: 150px;
+
+  @include for-phone-only {
+    display: block;
+    top: 31px;
+    width: 140px;
+    height: 140px;
+    left: -98px;
+  }
 }
 
 .emptySmallCircle {
@@ -226,6 +234,14 @@
   border: .5px solid rgba($color: #363636, $alpha: 0.2);
   top: 45px;
   left: 72px;
+
+  @include for-phone-only {
+    display: block;
+    top: 16px;
+    left: -88px;
+    height: 153px;
+    width: 142px;
+  }
 }
 
 .smallBlurLeftCircle {
@@ -236,6 +252,14 @@
   filter: blur(3px);
   top: 155px;
   left: 60px;
+
+  @include for-phone-only {
+    display: block;
+    top: 30px;
+    left: 24px;
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .filledBigCircle {
