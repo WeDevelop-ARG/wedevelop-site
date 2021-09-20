@@ -3,8 +3,6 @@ import { HashLink } from 'react-router-hash-link'
 import Button from 'main_app/components/Button'
 import ListRow from './ListRow'
 
-import useRandonNumber from './use_random_number'
-
 import classes from './styles.module.scss'
 
 function AvailableDevs ({ title, devs }) {
@@ -23,7 +21,7 @@ function AvailableDevs ({ title, devs }) {
           />
         ))}
         <div className={classes.moreOnBench}>
-          <p>{useRandonNumber(6, 15)} more on bench</p>
+          <p>20+ more on bench</p>
         </div>
       </div>
       <Button
