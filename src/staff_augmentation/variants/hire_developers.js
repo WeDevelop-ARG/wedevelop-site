@@ -1,8 +1,10 @@
-import JennyWilson from 'assets/hire_developers/profiles/jenny_wilson.png'
-import GeoffreyMott from 'assets/hire_developers/profiles/geoffrey_mott.png'
-import RodolfoGoode from 'assets/hire_developers/profiles/rodolfo_goode.png'
-import LeatriceHandler from 'assets/hire_developers/profiles/leatrice_handler.png'
-import FlorencioDorrance from 'assets/hire_developers/profiles/florencio_dorrance.png'
+import JonathanM from 'assets/hire_developers/profiles/jonathan_m.jpg'
+import AlejandraL from 'assets/hire_developers/profiles/alejandra_l.jpg'
+import LeonardoC from 'assets/hire_developers/profiles/leonardo_c.jpeg'
+import MarcoP from 'assets/hire_developers/profiles/marco_p.jpg'
+import RicardoC from 'assets/hire_developers/profiles/ricardo_c.jpg'
+import RobertinoN from 'assets/hire_developers/profiles/robertino_n.jpeg'
+
 import BgHireDevelopers from 'assets/hire_developers/backgrounds/bg_hire_developers.png'
 import HoldingBook from 'assets/hire_developers/backgrounds/holding_book.png'
 import CodeScreen from 'assets/hire_developers/backgrounds/code_screen.png'
@@ -163,29 +165,21 @@ const hireDevelopers = {
     devs: [
       {
         id: '1',
-        devImgURL: JennyWilson,
-        devName: 'Jenny Wilson',
-        devRole: 'Javascript Developer',
+        devImgURL: JonathanM,
+        devName: 'Jonathan M.',
+        devRole: 'IT Project Manager',
         devSkills: [
           {
-            skill: 'Java',
+            skill: 'SCRUM',
             color: 'yellow'
           },
           {
-            skill: 'Javascript',
-            color: 'gray'
-          },
-          {
-            skill: 'MySQL',
+            skill: 'Python',
             color: 'black'
           },
           {
-            skill: 'Angular',
+            skill: 'Ruby',
             color: 'red'
-          },
-          {
-            skill: 'Vue.js',
-            color: 'green'
           }
         ],
         devExperience: '+7 years',
@@ -193,114 +187,132 @@ const hireDevelopers = {
       },
       {
         id: '2',
-        devImgURL: GeoffreyMott,
-        devName: 'Geoffrey Mott',
-        devRole: 'Full-Stack Developer',
+        devImgURL: RobertinoN,
+        devName: 'Robertino N.',
+        devRole: 'Full-Stack Javascript Developer',
         devSkills: [
           {
-            skill: 'Python',
+            skill: 'Node.js',
+            color: 'blue'
+          },
+          {
+            skill: 'React',
+            color: 'green'
+          },
+          {
+            skill: 'PostgreSQL',
+            color: 'gray'
+          },
+          {
+            skill: 'AWS',
+            color: 'yellow'
+          }
+        ],
+        devExperience: '+5 years',
+        devRate: '$ / h'
+      },
+      {
+        id: '3',
+        devImgURL: MarcoP,
+        devName: 'Marco P.',
+        devRole: '.NET Developer',
+        devSkills: [
+          {
+            skill: '.NET',
             color: 'black'
           },
+          {
+            skill: 'MySQL',
+            color: 'gray'
+          },
+          {
+            skill: 'PostgreSQL',
+            color: 'gray'
+          },
+          {
+            skill: 'Javascript',
+            color: 'red'
+          }
+        ],
+        devExperience: '+8 years',
+        devRate: '$$ / h'
+      },
+      {
+        id: '4',
+        devImgURL: RicardoC,
+        devName: 'Ricardo C.',
+        devRole: 'PHP Developer',
+        devSkills: [
           {
             skill: 'PHP',
             color: 'blue'
           },
           {
-            skill: 'Vue.js',
-            color: 'green'
-          }
-        ],
-        devExperience: '+12 years',
-        devRate: '$$$ / h'
-      },
-      {
-        id: '3',
-        devImgURL: RodolfoGoode,
-        devName: 'Rodolfo Goode',
-        devRole: 'Ruby on Rails Developer',
-        devSkills: [
-          {
-            skill: 'Java',
-            color: 'yellow'
-          },
-          {
-            skill: 'Javascript',
+            skill: 'Laravel',
             color: 'gray'
           },
           {
-            skill: 'MySQL',
+            skill: 'SQL Server',
             color: 'black'
           },
           {
-            skill: 'Angular',
+            skill: 'Woocommerce',
             color: 'red'
-          },
-          {
-            skill: 'Vue.js',
-            color: 'green'
           }
         ],
-        devExperience: '+3 years',
+        devExperience: '+6 years',
         devRate: '$ / h'
       },
       {
-        id: '4',
-        devImgURL: LeatriceHandler,
-        devName: 'Leatrice Handler',
-        devRole: 'Python Developer',
-        devSkills: [
-          {
-            skill: 'Java',
-            color: 'yellow'
-          },
-          {
-            skill: 'Javascript',
-            color: 'gray'
-          },
-          {
-            skill: 'MySQL',
-            color: 'black'
-          },
-          {
-            skill: 'Angular',
-            color: 'red'
-          },
-          {
-            skill: 'Vue.js',
-            color: 'green'
-          }
-        ],
-        devExperience: '+9 years',
-        devRate: '$$ / h'
-      },
-      {
         id: '5',
-        devImgURL: FlorencioDorrance,
-        devName: 'Florencio Dorrance',
+        devImgURL: LeonardoC,
+        devName: 'Leonardo C.',
         devRole: 'QA Engineer',
         devSkills: [
           {
-            skill: 'Java',
+            skill: 'Selenium',
             color: 'yellow'
           },
           {
-            skill: 'Javascript',
+            skill: 'Postman',
             color: 'gray'
           },
           {
-            skill: 'MySQL',
+            skill: 'BDD',
             color: 'black'
           },
           {
-            skill: 'Angular',
+            skill: 'Jira',
+            color: 'red'
+          }
+        ],
+        devExperience: '+7 years',
+        devRate: '$$$ / h'
+      },
+      {
+        id: '6',
+        devImgURL: AlejandraL,
+        devName: 'Alejandra L.',
+        devRole: 'React Developer',
+        devSkills: [
+          {
+            skill: 'Node.js',
+            color: 'blue'
+          },
+          {
+            skill: 'Symfony',
+            color: 'gray'
+          },
+          {
+            skill: 'React',
             color: 'red'
           },
           {
-            skill: 'Vue.js',
-            color: 'green'
+            skill: 'PHP',
+            color: 'blue'
           }
         ],
-        devExperience: '+11 years',
+        devExperience: '+6 years',
         devRate: '$$$ / h'
       }
     ]
