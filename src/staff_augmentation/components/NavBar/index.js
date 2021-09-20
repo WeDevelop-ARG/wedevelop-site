@@ -21,6 +21,7 @@ function NavBar ({
   return (
     <header
       ref={observerRef}
+      aria-hidden={atScrollTop}
       className={classnames(classes.navBar, {
         [classes.navBarHidden]: atScrollTop
       })}
