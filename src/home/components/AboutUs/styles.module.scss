@@ -124,6 +124,15 @@ $grayColor: #363636;
   background: rgba($color: #EAEAEA, $alpha: 0.3);
   top: 0;
   right: -188px;
+
+  @include for-phone-only {
+    display: block;
+    top: -11px;
+    right: -195px;
+    width: 271px;
+    height: 263px;
+    z-index: -1;
+  }
 }
 
 .emptyCircle {
@@ -133,6 +142,14 @@ $grayColor: #363636;
   border: .5px solid rgba($color: $grayColor, $alpha: 0.2);
   top: 16px;
   right: -158px;
+
+  @include for-phone-only {
+    display: block;
+    top: 1px;
+    right: -204px;
+    width: 301px;
+    height: 266px;
+  }
 }
 
 .smallBlurCircle {
@@ -143,6 +160,15 @@ $grayColor: #363636;
   filter: blur(6px);
   top: 313px;
   right: 158px;
+
+  @include for-phone-only {
+    display: block;
+    filter: blur(3px);
+    top: 199px;
+    right: 68px;
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .smallCircle {
