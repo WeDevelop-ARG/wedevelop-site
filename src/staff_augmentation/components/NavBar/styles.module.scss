@@ -1,7 +1,7 @@
 @import '/src/styles/media_queries.scss';
 
 $grayColor: #363636;
-$bubbleBackground: #F9F9F9; 
+$bubbleBackground: #F9F9F9;
 $borderBubble: #E1E1E1;
 
 .navBar {
@@ -18,15 +18,16 @@ $borderBubble: #E1E1E1;
   align-items: center;
   z-index: 10;
   transition:
-    all 150ms linear,
-    backdrop-filter 0ms,
-    padding-left 0ms,
-    padding-right 0ms
+    opacity ease-in-out 300ms,
+    transform ease-in-out 200ms
   ;
 }
 
 .navBar.navBarHidden {
-  display: none;
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+  user-select: none;
 }
 
 .tagName {
