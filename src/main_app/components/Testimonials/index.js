@@ -44,6 +44,8 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
                   title={review.name}
                   className={classes.profileImg}
                 />
+                <div className={classes.filledProfileCircle} aria-hidden='true' />
+                <div className={classes.emptyProfileCircle} aria-hidden='true' />
               </div>
               <figcaption className={classes.profileData}>
                 <p>{review.name}</p>
@@ -53,9 +55,8 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
           ))}
         </Slide>
       </div>
-      <img src={bottomImageURL} alt='' className={classes.bottomImg} />
       <img src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.middelLeftPattern} aria-hidden='true' />
+      <img src={DotsPattern} alt='' className={classes.middleLeftPattern} aria-hidden='true' />
       <div className={classes.filledSmallCircle} aria-hidden='true' />
       <div className={classes.emptySmallCircle} aria-hidden='true' />
       <div className={classes.smallBlurLeftCircle} aria-hidden='true' />
@@ -63,8 +64,6 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
       <div className={classes.emptyBigCircle} aria-hidden='true' />
       <div className={classes.smallCircle} aria-hidden='true' />
       <div className={classes.smallBlurRightCircle} aria-hidden='true' />
-      <div className={classes.filledProfileCircle} aria-hidden='true' />
-      <div className={classes.emptyProfileCircle} aria-hidden='true' />
     </section>
   )
 }
