@@ -19,7 +19,7 @@ function FormikSelect ({ name, options, placeholder }) {
       value={allOptions ? allOptions.find(option => option.value === fieldValue) : ''}
       placeholder={placeholder}
       onBlur={() => setTouched(true)}
-      formatCreateLabel={() => 'Create new skill'}
+      formatCreateLabel={(skill) => `Other: "${skill}"`}
     />
   )
 }
