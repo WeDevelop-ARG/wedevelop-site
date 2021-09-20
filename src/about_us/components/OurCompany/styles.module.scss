@@ -79,10 +79,10 @@ $grayColor: #363636;
     font-size: 24px;
     line-height: 36px;
     margin: auto;
-    margin-top: 55vw;
+    margin-top: 75vw;
 
     @include for-tablet-up {
-      margin-top: 50vw;
+      margin-top: 55vw;
     }
 
     @include for-desktop-up {
@@ -97,12 +97,14 @@ $grayColor: #363636;
   position: absolute;
   left: 0;
   right: 0;
+  margin-top: 75px;
 
-  @include for-tablet-up {   
+  @include for-tablet-up {
     height: 42vw;
   }
 
-  @include for-desktop-up {   
+  @include for-desktop-up {
+    margin-top: auto;
     height: 37vw;
   }
 }
@@ -117,13 +119,13 @@ $grayColor: #363636;
 }
 
 %dotsPattern {
-  width: 277px;
+  width: 217px;
   position: absolute;
   z-index: -1;
   transform: rotate(90deg);
 
-  @include for-tablet-down {
-    display: none;
+  @include for-desktop-up {
+    width: 277px;
   }
 }
 
@@ -135,15 +137,40 @@ $grayColor: #363636;
   @media screen and (min-width:1025px) and (max-width: 1250px) {
     top: 450px;
   }
+
+  @include for-tablet-down {
+    display: none;
+  }
 }
 
 .topLeftDotsPattern {
   @extend %dotsPattern;
-  top: 751px;
-  left: 0;
+  top: 53%;
+  left: -117px;
 
-  @media screen and (min-width:1025px) and (max-width: 1250px) {
-    top: 700px;
+  @media screen and (min-width: 425px) and (max-width: 600px) {
+    top: 49%;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 699px) {
+    top: 48%;
+  }
+
+  @include for-tablet-down {
+    transform: rotate(0deg);
+  }
+
+  @include for-tablet-up {
+    top: 50%;
+  }
+  
+  @include for-desktop-up {
+    top: 751px;
+    left: 0;
+
+    @media screen and (min-width:1025px) and (max-width: 1250px) {
+      top: 700px;
+    }
   }
 
   @include for-big-desktop-up {
@@ -159,6 +186,10 @@ $grayColor: #363636;
   @media screen and (min-width:1025px) and (max-width: 1250px) {
     right: 0;
   }
+
+  @include for-tablet-down {
+    display: none;
+  }
 }
 
 .bottomLeftDotsPattern {
@@ -169,41 +200,55 @@ $grayColor: #363636;
   @media screen and (min-width:1025px) and (max-width: 1250px) {
     left: -15px;
   }
-}
-
-%circle {
-  border-radius: 50%;
-  position: absolute;
-  z-index: -1;
 
   @include for-tablet-down {
     display: none;
   }
 }
 
+%circle {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
 .filledCircle {
   @extend %circle;
-  width: 314px;
-  height: 314px;
   background: rgba($color: #EAEAEA, $alpha: 0.3);
-  top: 46px;
-  right: 241px;
+  width: 102px;
+  height: 102px;
+  top: 80px;
+  right: -42px;
 
-  @media screen and (min-width:1025px) and (max-width: 1250px) {
-    right: 111px;
+  @include for-desktop-up {
+    width: 314px;
+    height: 314px;
+    top: 46px;
+    right: 241px;
+
+    @media screen and (min-width:1025px) and (max-width: 1250px) {
+      right: 111px;
+    }
   }
 }
 
 .emptyCircle {
   @extend %circle;
-  width: 314px;
-  height: 314px;
   border: .5px solid rgba($color: #363636, $alpha: 0.2);
-  top: 51px;
-  right: 275px;
+  width: 191px;
+  height: 191px;
+  top: 25px;
+  right: -145px;
 
-  @media screen and (min-width:1025px) and (max-width: 1250px) {
-    right: 145px;
+  @include for-desktop-up {
+    width: 314px;
+    height: 314px;
+    top: 51px;
+    right: 275px;
+
+    @media screen and (min-width:1025px) and (max-width: 1250px) {
+      right: 145px;
+    }
   }
 }
 
@@ -219,6 +264,10 @@ $grayColor: #363636;
   @media screen and (min-width:1025px) and (max-width: 1250px) {
     right: 395px;
   }
+
+  @include for-tablet-down {
+    display: none;
+  }
 }
 
 .emptySemiCircle {
@@ -228,4 +277,8 @@ $grayColor: #363636;
   border: .5px solid rgba($color: #363636, $alpha: 0.2);
   top: 150px;
   left: -217px;
+
+  @include for-tablet-down {
+    display: none;
+  }
 }
