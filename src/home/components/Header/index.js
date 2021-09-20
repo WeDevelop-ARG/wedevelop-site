@@ -1,20 +1,16 @@
 import { forwardRef } from 'react'
-import { useHistory } from 'react-router'
 import { HashLink } from 'react-router-hash-link'
 
 import SVGIcon from 'main_app/components/SVGIcon'
-import Button from 'main_app/components/Button'
 import ClutchWidget from 'main_app/components/ClutchWidget'
 import imgHeader from 'assets/home/header/background.png'
 
 import classes from './styles.module.scss'
 
 function Header (props, ref) {
-  const history = useHistory()
   return (
     <section ref={ref} className={classes.headerContainer}>
       <div className={classes.content}>
-        <h3 className={classes.introTitle}>what we are</h3>
         <h1 className={classes.title}>
           <p className={classes.firstLine}>
             A <b>human-centered company <br /></b>
@@ -26,14 +22,6 @@ function Header (props, ref) {
           <br />experiences to clients and users all over the world.
         </p>
         <hr className={classes.divider} />
-        <Button
-          isAnchor
-          variant='primary'
-          className={classes.buttonContact}
-          onClick={() => history.push('/contact')}
-        >
-          Get in Touch
-        </Button>
       </div>
       <HashLink to='#services' smooth className={classes.arrow}>
         <SVGIcon name='home/header/arrow' />

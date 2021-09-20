@@ -61,6 +61,7 @@ function FreeQuoteForm ({
           name='name'
           placeholder={fixedFields.name.placeholder}
           className={classes.inputStyles}
+          autoFocus
         />
         <label className={classes.fieldLabel}>{fixedFields.email.label}</label>
         <Field
