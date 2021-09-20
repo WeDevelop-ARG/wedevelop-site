@@ -3,10 +3,10 @@ import SVGIcon from 'main_app/components/SVGIcon'
 import SmilingFace from 'assets/home/smiling_face.svg'
 import CuriousHead from 'assets/home/curious_head.svg'
 import DreamTeam from 'assets/home/dream_team.svg'
-import AgileBook from 'assets/home/agile_book.png'
 import workplace from 'assets/home/workplace.svg'
 import excellence from 'assets/home/excellence.svg'
 import alwaysBeLearning from 'assets/home/always_be_learning.svg'
+import DotsPattern from 'assets/about_us/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
@@ -65,17 +65,16 @@ function OurCulture () {
           </p>
         </div>
       </div>
-      <img src={AgileBook} alt='' className={classes.bottomImg} />
       <div className={classes.filledCircle} aria-hidden='true' />
       <div className={classes.emptyCircle} aria-hidden='true' />
       <div className={classes.smallCircle} aria-hidden='true' />
       <div className={classes.halfCircle}>
         <SVGIcon name='home/services/half_circle' />
       </div>
-      <div className={classes.leftsmallBlurCircle} />
       <div className={classes.leftFilledCircle} />
       <div className={classes.leftEmptyCircle} />
       <div className={classes.leftSmallCircle} />
+      <img src={DotsPattern} alt='' className={classes.dotsPattern} />
     </section>
   )
 }
