@@ -20,7 +20,7 @@ const hireDevelopers = {
     title: <>Hire Developers and Development Teams</>,
     description: (
       <>
-        <p>Hire the Top Web Developers without the hiring hassles.</p>
+        <p>Hire Top Web Developers without the hiring hassles.</p>
       </>
     ),
     sideImageURL: BgHireDevelopers,
@@ -156,9 +156,9 @@ const hireDevelopers = {
     buttonText: 'Get a Free Quote'
   },
   availableDevs: {
-    subtitle: 'Top Engineers',
-    title: 'This is our Available Team',
-    description: 'Vitae habitant blandit adipiscing porta. Nulla tortor, eu consectetur nunc. ',
+    subtitle: 'Hire Engineers',
+    title: 'Pick your new Web Developer Today',
+    description: 'Get instant access to our Talent Pool of 20+ vetted engineers.',
     buttonText: 'Get a Free Quote',
     devs: [
       {
@@ -304,15 +304,6 @@ const hireDevelopers = {
         devRate: '$$$ / h'
       }
     ]
-  },
-  fullSizeCTA: {
-    title: 'Ready to hire your new Developer?',
-    subTitle: 'GET PROFILES NOW',
-    ctaText: 'Get profiles and rates',
-    ctaToPath: '#top',
-    ctaIncentive: 'We typically reply every email within an hour.',
-    description: 'Get a list of available staff with their rates.',
-    variant: 'reverse_items'
   },
   backgrounds: {
     firstBackground: HoldingBook,

@@ -31,9 +31,9 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
             <hr key={id} className={classes.separator} />
           </Fragment>
         ))}
-        <div className={classes.moreOnBench}>
-          <p>20+ more on bench</p>
-        </div>
+      </div>
+      <div className={classes.moreOnBench}>
+        <p>...<b>20+ more</b> awesome Web Developers on bench</p>
       </div>
       <Button
         smooth
