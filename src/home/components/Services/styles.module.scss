@@ -210,6 +210,13 @@
   opacity: 0.3;
   filter: blur(1px);
   background: #EAEAEA;
+
+  @include for-phone-only {
+    display: flex;
+    top: 20px;
+    left: -54px;
+    z-index: -1;
+  }
 }
 
 .emptyCircle {
@@ -222,6 +229,29 @@
   border: 2px solid;
   border-color: #E1E1E1;
   background: none;
+
+  @include for-phone-only {
+    display: flex;
+    top: 27px;
+    left: -64px;
+    z-index: -1;
+  }
+}
+
+.smallHalfCircle {
+  @extend .circle;
+
+  @include for-phone-only {
+    display: block;
+    border-style: dashed;
+    width: 150px;
+    height: 150px;
+    border-color: #E1E1E1;
+    border-width: 0.38px;
+    left: -72px;
+    top: 9px;
+    z-index: -1;
+  }
 }
 
 .smallCircle {
@@ -233,4 +263,11 @@
   opacity: 0.3;
   filter: blur(1.5px);
   background: #8224E3;
+
+  @include for-phone-only {
+    display: block;
+    top: 122px;
+    left: 54px;
+    z-index: -1;
+  }
 }
