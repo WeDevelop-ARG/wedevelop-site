@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
+import NavBar from './components/NavBar'
 import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
 import GrowToday from './components/GrowToday'
@@ -34,6 +35,11 @@ function LandingPage () {
 
   return (
     <>
+      <NavBar
+        landingName={landing.header.landingName}
+        handleModal={handleModalOpen}
+        backgroundColor={landing.header.backgroundColor}
+      />
       <Article>
         <Header
           landingName={landing.header.landingName}
