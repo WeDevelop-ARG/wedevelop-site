@@ -6,11 +6,6 @@
   position: relative;
   display: flex;
   padding-bottom: 180px;
-
-  @include for-phone-only {
-    padding-bottom: 250px;
-    min-height: 115vh;
-  }
 }
 
 .decorationWrapper {
@@ -101,7 +96,7 @@
   left: 83px;
 
   @include for-tablet-down {
-    display: flex;
+    display: block;
     top: 290px;
     left: -66px;
   }
@@ -113,11 +108,7 @@
   background: #FFFFFF;
 
   @include for-tablet-down {
-    display: none;
-  }
-
-  @include for-phone-only {
-    display: flex;
+    display: block;
   }
 }
 
@@ -130,15 +121,6 @@
   opacity: 0.1;
   filter: blur(4px);
   background: #EAEAEA;
-
-  @media only screen and (max-width: 329px) and (min-width: 133px) {  
-    display: none;
-  }
-
-  @include for-phone-only {
-    top: calc(56% + 10px);
-    right: 10px;
-  }
 }
 
 .emptyCircle {
@@ -151,15 +133,6 @@
   border: 2px solid;
   border-color: #E1E1E1;
   background: none;
-
-  @media only screen and (max-width: 329px) and (min-width: 133px) {  
-    display: none;
-  }
-
-  @include for-phone-only {
-    top: calc(55% + 30px);
-    right: 0px;
-  }
 }
 
 .clutchCircle {
@@ -174,26 +147,6 @@
   border-color: #ffffff;
   z-index: 2;
   display: flex;
-
-  @include for-tablet-down {
-    display: none;
-  }
-
-  @include for-phone-only {
-    display: flex;
-    top: calc(60% + 70px);
-    right: 80px;
-  }
-
-  @media only screen and (max-width: 500px) and (min-width: 320px) {  
-    display: flex;
-    top: calc(60% + 70px);
-    right: 0px;
-  }
-
-  @media only screen and (max-width: 329px) and (min-width: 133px) {  
-    display: none;
-  }
 }
 
 .clutchWidget {
@@ -208,15 +161,6 @@
   right: 323px;
   opacity: 0.2;
   filter: blur(7px);
-
-  @include for-phone-only {
-    top: calc(50% + 200px);
-    right: 300px;
-  }
-
-  @media only screen and (max-width: 500px) and (min-width: 320px) {  
-    display: none;
-  }
 }
 
 .arrow {
@@ -225,14 +169,6 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-
-  @include for-phone-only {
-    bottom: 230px;
-  }
-
-  @media only screen and (max-width: 329px) and (min-width: 133px) {  
-    bottom: 80px;
-  }
 }
 
 .scrollText {
