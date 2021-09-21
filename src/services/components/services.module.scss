@@ -2,6 +2,10 @@
 
 .sectionContainer {
   position: relative;
+  
+  @include for-phone-only {
+    overflow: hidden;
+  }
 }
 
 .serviceDetails {

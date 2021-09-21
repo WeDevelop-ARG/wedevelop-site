@@ -20,6 +20,7 @@ function WebDevDetails ({ contactPagePath }) {
             smooth
             isAnchor
             variant='primary'
+            className={classes.getInTouchBtn}
           >
             Get in Touch
           </Button>
@@ -30,8 +31,8 @@ function WebDevDetails ({ contactPagePath }) {
           ))}
         </ul>
       </div>
-      <img className={classes.decoPattern} src={Pattern} alt='' />
-      <img className={classes.decoCircle} src={Circle} alt='' />
+      <img className={classes.decoPattern} src={Pattern} alt='' aria-hidden />
+      <img className={classes.decoCircle} src={Circle} alt='' aria-hidden />
     </>
   )
 }
