@@ -32,7 +32,6 @@ function AboutUs () {
     history.push('/about-us')
   }, [history])
   const isTabletDown = useMediaQuery(forTabletDown)
-  console.log(isTabletDown)
   const renderTestimonials = () => {
     if (isTabletDown) return <Testimonials hideHeader />
     return <Testimonials />
