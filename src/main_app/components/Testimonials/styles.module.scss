@@ -218,7 +218,7 @@
   top: 59px;
   left: 150px;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: block;
     top: 31px;
     width: 140px;
@@ -235,7 +235,7 @@
   top: 45px;
   left: 72px;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: block;
     top: 16px;
     left: -88px;
@@ -253,7 +253,7 @@
   top: 155px;
   left: 60px;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: block;
     top: 30px;
     left: 24px;

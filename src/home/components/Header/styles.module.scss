@@ -101,10 +101,6 @@
   left: 83px;
 
   @include for-tablet-down {
-    display: none;
-  }
-
-  @include for-phone-only {
     display: flex;
     top: 290px;
     left: -66px;
