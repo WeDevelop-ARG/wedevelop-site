@@ -54,7 +54,6 @@ function FreeQuoteForm ({
         onSubmitFinished={onSubmitFinished}
         className={classes.form}
       >
-        <label className={classes.fieldLabel}>{fixedFields.name.label}</label>
         <Field
           as={InputWithError}
           type='text'
@@ -63,7 +62,6 @@ function FreeQuoteForm ({
           className={classes.inputStyles}
           autoFocus
         />
-        <label className={classes.fieldLabel}>{fixedFields.email.label}</label>
         <Field
           as={InputWithError}
           type='email'

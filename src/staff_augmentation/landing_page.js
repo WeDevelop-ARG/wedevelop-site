@@ -9,7 +9,6 @@ import usePageMetadata from 'utils/marketing/use_page_metadata'
 import NavBar from './components/NavBar'
 import Header from './components/Header'
 import ReviewCards from './components/ReviewCards'
-import GrowToday from './components/GrowToday'
 import AvailableDevs from './components/AvailableDevs'
 import FreeQuoteModal from './components/FreeQuoteModal'
 import HireTopTalent from './components/HireTopTalent'
@@ -58,25 +57,6 @@ function LandingPage () {
           handleModal={handleModalOpen}
         />
         <BackgroundContainer backgroundURL={landing.backgrounds.firstBackground} />
-        <SimpleSteps />
-        <GrowToday
-          subheadingText={landing.growToday.subtitle}
-          titleText={landing.growToday.title}
-          descriptionText={landing.growToday.description}
-          contentText={landing.growToday.content}
-          buttonText={landing.growToday.buttonText}
-          handleModal={handleModalOpen}
-        />
-        <BackgroundContainer backgroundURL={landing.backgrounds.secondBackground} />
-        <HireTopTalent
-          subheadingText={landing.HireTopTalent.subtitle}
-          titleText={landing.HireTopTalent.title}
-          descriptionText={landing.HireTopTalent.description}
-          contentText={landing.HireTopTalent.content}
-          buttonText={landing.HireTopTalent.buttonText}
-          handleModal={handleModalOpen}
-        />
-        <BackgroundContainer backgroundURL={landing.backgrounds.thirdBackground} />
         {landing.availableDevs &&
           <AvailableDevs
             subtitle={landing.availableDevs.subtitle}
@@ -86,6 +66,15 @@ function LandingPage () {
             buttonText={landing.availableDevs.buttonText}
             handleModal={handleModalOpen}
           />}
+        <SimpleSteps />
+        <HireTopTalent
+          subheadingText={landing.HireTopTalent.subtitle}
+          titleText={landing.HireTopTalent.title}
+          descriptionText={landing.HireTopTalent.description}
+          contentText={landing.HireTopTalent.content}
+          buttonText={landing.HireTopTalent.buttonText}
+          handleModal={handleModalOpen}
+        />
       </Article>
       <PictureWall />
       <Footer variant='light' />
