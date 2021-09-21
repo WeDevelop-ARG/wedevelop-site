@@ -9,6 +9,7 @@
 
   @include for-phone-only {
     padding-bottom: 250px;
+    min-height: 115vh;
   }
 }
 
@@ -137,6 +138,11 @@
   @media only screen and (max-width: 329px) and (min-width: 133px) {  
     display: none;
   }
+
+  @include for-phone-only {
+    top: calc(56% + 10px);
+    right: 10px;
+  }
 }
 
 .emptyCircle {
@@ -152,6 +158,11 @@
 
   @media only screen and (max-width: 329px) and (min-width: 133px) {  
     display: none;
+  }
+
+  @include for-phone-only {
+    top: calc(55% + 30px);
+    right: 0px;
   }
 }
 
@@ -174,11 +185,13 @@
 
   @include for-phone-only {
     display: flex;
+    top: calc(60% + 70px);
+    right: 80px;
   }
 
   @media only screen and (max-width: 500px) and (min-width: 320px) {  
     display: flex;
-    top: calc(50% + 77px);
+    top: calc(60% + 70px);
     right: 0px;
   }
 
@@ -199,6 +212,15 @@
   right: 323px;
   opacity: 0.2;
   filter: blur(7px);
+
+  @include for-phone-only {
+    top: calc(50% + 200px);
+    right: 300px;
+  }
+
+  @media only screen and (max-width: 500px) and (min-width: 320px) {  
+    display: none;
+  }
 }
 
 .arrow {
@@ -209,7 +231,11 @@
   text-align: center;
 
   @include for-phone-only {
-    display: none;
+    bottom: 230px;
+  }
+
+  @media only screen and (max-width: 329px) and (min-width: 133px) {  
+    bottom: 80px;
   }
 }
 
