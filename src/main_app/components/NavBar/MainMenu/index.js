@@ -64,6 +64,23 @@ function MainMenu ({
           </Dropdown.Menu>
         </Dropdown>
       </li>
+      {isTabletDown && (
+        <>
+          <li>
+            Services
+          </li>
+          <li className={classes.navItem}>
+            <HashLink to='/services/web-development#top'>
+              Web Development
+            </HashLink>
+          </li>
+          <li className={classes.navItem}>
+            <HashLink to='/services/staff-augmentation#top'>
+              Staff Augmentation
+            </HashLink>
+          </li>
+        </>
+      )}
       <li
         className={classnames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/about-us')
@@ -82,36 +99,25 @@ function MainMenu ({
           Careers
         </HashLink>
       </li>
+      <li
+        className={classnames(classes.navItem, {
+          [classes.active]: window.location.pathname.startsWith('/')
+        })}
+      >
+        <HashLink to='/'>
+          Testimonials
+        </HashLink>
+      </li>
       <li className={classnames(classes.navItem)}>
         <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
           Blog
         </a>
       </li>
-      {isTabletDown && (
-        <>
-          <li className={classnames(classes.textList)}>
-            Our Services
-          </li>
-          <li className={classes.navItem}>
-            <HashLink to='/services/web-development#top'>
-              Web Development
-            </HashLink>
-          </li>
-          <li className={classes.navItem}>
-            <HashLink to='/services/staff-augmentation#top'>
-              Staff Augmentation
-            </HashLink>
-          </li>
-        </>
-      )}
-      <li className={classnames(classes.textList)}>
-        Let's talk and work together
-      </li>
       <li>
         <Button
           as={HashLink}
           isAnchor
-          variant={['secondary', ...(isTabletDown ? ['dark'] : [buttonVariant])]}
+          variant={['primary', ...(isTabletDown ? ['dark'] : [buttonVariant])]}
           to={contactPagePath}
           smooth
           className={classes.buttonTalk}
