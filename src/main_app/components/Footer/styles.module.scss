@@ -231,10 +231,8 @@
     display: inline-block;
 
     & > li {
-      display: flex;
-      justify-content: center;
-
-      @include for-phone-only {
+      @include for-tablet-down {
+        display: flex;
         justify-content: left;
       }
     }
