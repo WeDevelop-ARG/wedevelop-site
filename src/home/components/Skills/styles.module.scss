@@ -10,9 +10,7 @@
 
 .listSkill {
   display: flex;
-  align-items: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  justify-content: center;
   z-index: 1;
 }
 
@@ -32,12 +30,7 @@
 
   .listSkill {
     margin-top: 50px;
-    overflow-x: scroll;
-    width: 90%;
-
-    @include for-phone-only {
-      flex-wrap: wrap;
-      overflow-x: hidden;
-    }
+    flex-wrap: wrap;
+    overflow: hidden;
   }
 }
