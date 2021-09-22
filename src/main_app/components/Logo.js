@@ -1,17 +1,23 @@
 import useVariants, { combineVariants, isVariant } from 'utils/use_variants'
 import SVGIcon from 'main_app/components/SVGIcon'
 
-function Logo ({ className, variant, menuOpen }) {
+function Logo ({ menuOpen, variant, mobile, className }) {
   const variantPaths = {
     white: 'logoWhiteFull',
     color: 'logoBlueFull'
   }
 
-  if (!isVariant(variant, 'white')) {
-    variant = combineVariants(variant, 'color')
+  const variantMobilePaths = {
+    white: 'onlyLogoWhite',
+    color: 'onlyLogoBlue'
   }
 
   const useVariant = useVariants(variantPaths, variant)
+  const useVariantMobile = useVariants(variantMobilePaths, variant)
+
+  if (!isVariant(variant, 'white')) {
+    variant = combineVariants(variant, 'color')
+  }
 
   const logoPath = () => {
     if (menuOpen) return variantPaths.white
@@ -19,8 +25,16 @@ function Logo ({ className, variant, menuOpen }) {
     return useVariant
   }
 
+  const logoMobilePath = () => {
+    if (menuOpen) return variantMobilePaths.white
+
+    return useVariantMobile
+  }
+
   return (
-    <SVGIcon name={logoPath()} className={className} />
+    <>
+      {mobile ? <SVGIcon name={logoMobilePath()} className={className} /> : <SVGIcon name={logoPath()} className={className} />}
+    </>
   )
 }
 
