@@ -37,7 +37,7 @@
   }
 
   &.menuOpen {
-    --textColor: #{$secondaryColor};
+    --textColor: #363636;
   }
 
   &.menuOpen::before {
@@ -48,7 +48,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: $textColor;
+    background-color: #FFFFFF;
   }
 }
 

@@ -8,7 +8,7 @@ import useVariants, { combineVariants, isVariant } from 'utils/use_variants'
 import useCombinedRefs from 'utils/use_combined_refs'
 import useMediaQuery from 'utils/use_media_query'
 
-import { forDesktopUp } from 'styles/media_queries'
+import { forDesktopUp, forTabletDown } from 'styles/media_queries'
 
 import SVGIcon from '../SVGIcon'
 
@@ -64,6 +64,7 @@ function NavBar ({
     setMenuOpen(false)
   }, [])
   const isDesktopUp = useMediaQuery(forDesktopUp)
+  const isTabletDown = useMediaQuery(forTabletDown)
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
@@ -86,6 +87,7 @@ function NavBar ({
         <Logo
           menuOpen={menuOpen}
           variant={logoVariant}
+          mobile={isTabletDown}
           className={classes.logo}
         />
       </HashLink>
