@@ -12,17 +12,33 @@
   text-transform: uppercase;
   color: #363636;
   opacity: 0.5;
+  margin-bottom: 32px;
+
+  @include for-tablet-down {
+    font-size: 10px;
+  }
 }
 
 .title {
   font-weight: 600;
   line-height: 100%;
+
+  @include for-tablet-down {
+    font-size: 32px;
+  }
 }
 
 .description {
-  font-weight: 300;
-  line-height: 100%;
   text-align: center;
+  color: rgba($color: #363636, $alpha: .5);
+  font-weight: 300;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include for-tablet-down {
+    font-size: 15px;
+    line-height: 22px;
+  }
 }
 
 .role {
@@ -33,10 +49,11 @@
 }
 
 .horizontalBar {
-	width: 100px;
-	height: 10px;
 	background: #FFC331;
-	border: none;
+  border: none;
+  width: 100px;
+  height: 10px;
+  margin: 32px auto 30px;
 }
 
 .background {
@@ -45,24 +62,48 @@
   width: 100%;
 }
 
-.patternHorizontalLeft {
+%dotsPattern {
   position: absolute;
-  top: 10vh;
-  left: 0;
   z-index: -1;
+  width: 250px;
 
-  @include for-tablet-down {
-    display: none;
+  @include for-desktop-up {
+    width: 15vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      width: 12vw;
+    }
+  }
+}
+
+.patternHorizontalLeft {
+  @extend %dotsPattern;
+  top: 40px;
+  left: calc(50% - 125px);
+  
+  @include for-desktop-up {
+    top: 90px;
+    left: 5vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      left: 3vw;
+    }
   }
 }
 
 .patternHorizontalRight {
-  position: absolute;
-  top: 10vh;
-  right: 0;
-  z-index: -1;
+  @extend %dotsPattern;
+  bottom: 40px;
+  right: calc(50% - 125px);
+  
+  @include for-desktop-up {
+    top: 90px;
+    bottom: auto;
+    right: 5vw;
 
-  @include for-tablet-down {
-    display: none;
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      top: 100px;
+      right: 3vw;
+    }
   }
 }

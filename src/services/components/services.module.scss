@@ -2,9 +2,12 @@
 
 .sectionContainer {
   position: relative;
-  
-  @include for-phone-only {
-    overflow: hidden;
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+  @include for-desktop-up {
+    padding-top: var(--rootContentMinPadding);
+    padding-bottom: var(--rootContentMinPadding);
   }
 }
 
