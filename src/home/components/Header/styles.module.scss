@@ -6,6 +6,10 @@
   position: relative;
   display: flex;
   padding-bottom: 180px;
+
+  @include for-tablet-down {
+    padding-bottom: 130px;
+  }
 }
 
 .decorationWrapper {
@@ -121,6 +125,24 @@
   opacity: 0.1;
   filter: blur(4px);
   background: #EAEAEA;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircleMobile {
+  @extend .circle;
+
+  @include for-tablet-down {
+    width: 240px;
+    height: 240px;
+    top: -35px;
+    opacity: 0.1;
+    filter: blur(4px);
+    background: #EAEAEA;
+    z-index: -1;
+  }
 }
 
 .emptyCircle {
@@ -133,6 +155,26 @@
   border: 2px solid;
   border-color: #E1E1E1;
   background: none;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.emptyCircleMobile {
+  @extend .circle;
+
+  @include for-tablet-down {
+    width: 240px;
+    height: 240px;
+    top: -20px;
+    opacity: 0.2;
+    right: -45px;
+    border: 2px solid;
+    border-color: #E1E1E1;
+    background: none;
+    z-index: -1;
+  }
 }
 
 .clutchCircle {
@@ -147,6 +189,30 @@
   border-color: #ffffff;
   z-index: 2;
   display: flex;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.clutchCircleMobile {
+  @extend .circle;
+
+  @include for-desktop-up {
+    display: none;
+  }
+
+  @include for-tablet-down {
+    width: 210px;
+    height: 210px;
+    filter: drop-shadow(0px -4.42367px 8.84734px rgba(0, 0, 0, 0.1));
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+    border: 3px solid;
+    border-color: #ffffff;
+    display: flex;
+    margin: 50px auto auto;
+    position: relative;
+  }
 }
 
 .clutchWidget {
@@ -161,6 +227,23 @@
   right: 323px;
   opacity: 0.2;
   filter: blur(7px);
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.smallCircleMobile {
+  @extend .circle;
+
+  @include for-tablet-down {
+    width: 30px;
+    height: 30px;
+    top: 100px;
+    right: 218px;
+    opacity: 0.2;
+    filter: blur(7px);
+  }
 }
 
 .arrow {
@@ -169,6 +252,16 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.arrowMobile {
+  @include for-desktop-up {
+    display: none;
+  }
 }
 
 .scrollText {
@@ -179,4 +272,12 @@
   color: #FFFFFF;
   opacity: 0.7;
   margin-top: 17px;
+}
+
+.scrollTextMobile {
+  @extend .scrollText;
+  
+  @include for-desktop-up {
+    display: none;
+  }
 }
