@@ -7,18 +7,19 @@ import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
-function Testimonials ({ bottomImageURL }) {
+function Testimonials ({ bottomImageURL, hideHeader = false }) {
   const { reviews } = useReviews()
   return (
     <section id='testimonials' className={classes.testimonials}>
-      <div className={classes.sectionHeader}>
-        <p className={classes.subheadingText}>Testimonials</p>
-        <h2 className={classes.titleText}>What clients say</h2>
-        <p className={classes.descriptionText}>
-          Don't take our word for it. See what our customers say.
-        </p>
-        <hr className={classes.horizontalBar} />
-      </div>
+      {!hideHeader &&
+        <div className={classes.sectionHeader}>
+          <p className={classes.subheadingText}>Testimonials</p>
+          <h2 className={classes.titleText}>What clients say</h2>
+          <p className={classes.descriptionText}>
+            Don't take our word for it. See what our customers say.
+          </p>
+          <hr className={classes.horizontalBar} />
+        </div>}
       <div>
         <Slide
           duration={5000}
@@ -43,6 +44,8 @@ function Testimonials ({ bottomImageURL }) {
                   title={review.name}
                   className={classes.profileImg}
                 />
+                <div className={classes.filledProfileCircle} aria-hidden='true' />
+                <div className={classes.emptyProfileCircle} aria-hidden='true' />
               </div>
               <figcaption className={classes.profileData}>
                 <p>{review.name}</p>
@@ -52,9 +55,8 @@ function Testimonials ({ bottomImageURL }) {
           ))}
         </Slide>
       </div>
-      <img src={bottomImageURL} alt='' className={classes.bottomImg} />
       <img src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.middelLeftPattern} aria-hidden='true' />
+      <img src={DotsPattern} alt='' className={classes.middleLeftPattern} aria-hidden='true' />
       <div className={classes.filledSmallCircle} aria-hidden='true' />
       <div className={classes.emptySmallCircle} aria-hidden='true' />
       <div className={classes.smallBlurLeftCircle} aria-hidden='true' />
@@ -62,8 +64,6 @@ function Testimonials ({ bottomImageURL }) {
       <div className={classes.emptyBigCircle} aria-hidden='true' />
       <div className={classes.smallCircle} aria-hidden='true' />
       <div className={classes.smallBlurRightCircle} aria-hidden='true' />
-      <div className={classes.filledProfileCircle} aria-hidden='true' />
-      <div className={classes.emptyProfileCircle} aria-hidden='true' />
     </section>
   )
 }

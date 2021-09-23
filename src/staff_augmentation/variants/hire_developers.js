@@ -121,27 +121,25 @@ const hireDevelopers = {
     imageURL: picturebgHdev
   },
   HireTopTalent: {
-    subtitle: 'top talent',
-    title: 'Hire Top Talent Only, Without Hassle',
+    subtitle: 'white-glove service',
+    title: '3 reasons to choose WeDevelop',
     description: '',
     content: (
       <>
         <ul>
           <li>
-            Hiring the right person is hard.
-            Especially if you're <b>looking for someone with specific skills and experience</b> in a particular tecnology.
+            <b>Strong Talent</b> - We've iterated our Vetting Process to make sure you get the Best Professionals.
           </li>
           <li>
-            At, WeDevelop, <b>we match people to clients based on skill sets</b>, interests, culture, and location & provide several options that meet your requirements.
-            Hire top talent from around In Latin America without having to go through the hassle of interviewing them yourself.
+            <b>White Glove Service</b> - We strive to provide you the Best IT Staffing Services you'll find.
           </li>
           <li>
-            <b>Focus on other important things</b> such as growing your business and meeting deadlines.
+            <b>High Values</b> - We pride ourselves on being very transparent, trustworthy, and dedicated.
           </li>
         </ul>
       </>
     ),
-    buttonText: 'Get a Free Quote'
+    buttonText: 'Get In Touch'
   },
   growToday: {
     subtitle: 'Efficiency',
