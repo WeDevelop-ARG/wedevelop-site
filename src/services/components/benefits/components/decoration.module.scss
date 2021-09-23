@@ -74,8 +74,8 @@
 
 .staffCircleLine {
   @extend %decoStyles;
-  right: 2vw;
-  top: 40vh;
+  right: 9%;
+  bottom: 7%;
 
   @include for-tablet-down {
     display: none;
@@ -84,8 +84,8 @@
 
 .staffCircleRight {
   @extend %decoStyles;
-  right: 10vh;
-  top: 40vh;
+  right: 15%;
+  bottom: 12%;
 
   @include for-tablet-down {
     display: none;
@@ -94,8 +94,8 @@
 
 .staffBlurSmallDot {
   @extend %decoStyles;
-  right: 3vw;
-  top: 53vh;
+  right: 8%;
+  bottom: 10%;
 
   @include for-tablet-down {
     display: none;
@@ -104,10 +104,33 @@
 
 .staffPatternHorizontal {
   @extend %decoStyles;
-  right: 0;
+  right: 5%;
   top: 0;
 
   @include for-tablet-down {
+    width: 197px;
+    height: 100px;
+    top: auto;
+    right: auto;
+    bottom: 5%;
+    left: -95px;
+    transform: rotate(90deg)
+  }
+}
+
+.staffPatternVertical {
+  @extend %decoStyles;
+  
+  @include for-desktop-up {
     display: none;
+  }
+
+  @include for-tablet-down {
+    display: block;
+    width: 197px;
+    height: 100px;
+    top: 50%;
+    right: -90px;
+    transform: rotate(90deg);
   }
 }

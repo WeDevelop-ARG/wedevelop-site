@@ -5,7 +5,7 @@ import LeftSemicircleMobile from 'assets/services/benefits/left_semicircle_mobil
 import RightSemicircleMobile from 'assets/services/benefits/right_semicircle_mobile.svg'
 import classes from './decoration.module.scss'
 
-function DecorationWebDev() {
+function DecorationWebDev () {
   return (
     <>
       <img className={classes.webDevPatternVertical} src={PatternVertical} alt='' aria-hidden />

@@ -11,8 +11,10 @@ import background from 'assets/services/background-key-featured-benefits.png'
 import classes from './benefits.module.scss'
 
 function Benefits ({ service, className }) {
-  const isWebDev = service === 'web-development'
-  const isStaff = service === 'staff-augmentation'
+  const renderDecoration = service => {
+    if (service === 'staff-augmentation') return (<DecorationStaff />)
+    return (<DecorationWebDev />)
+  }
   return (
     <>
       <section className={className}>
@@ -28,8 +30,7 @@ function Benefits ({ service, className }) {
           <Benefit className={classes.benefit} image={iconRecruitmentCost} text='No recruitment cost' />
           <Benefit className={classes.benefit} image={iconAgile} text='Agile scale up/down' />
         </div>
-        {isWebDev && <DecorationWebDev />}
-        {isStaff && <DecorationStaff />}
+        {renderDecoration(service)}
       </section>
       <img className={classes.background} src={background} alt='' />
     </>

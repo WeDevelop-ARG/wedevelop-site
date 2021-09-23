@@ -54,7 +54,7 @@ function StaffAugmentation () {
         </Details>
       </section>
       <SimpleSteps className={classes.sectionContainer} />
-      <Benefits className={classes.sectionContainer} />
+      <Benefits className={classes.sectionContainer} service='staff-augmentation' />
       <Schedule
         className={classes.sectionContainer}
         contactPagePath={contactPagePath}
