@@ -53,7 +53,7 @@ function StaffAugmentation () {
           <StaffDetails />
         </Details>
       </section>
-      <SimpleSteps className={classes.sectionContainer} />
+      <SimpleSteps />
       <Benefits className={classes.sectionContainer} service='staff-augmentation' />
       <Schedule
         className={classes.sectionContainer}
