@@ -7,6 +7,7 @@ import Services from 'services'
 import PrivacyPolicy from 'privacy_policy'
 import AboutUs from 'about_us'
 import Career from 'career'
+import Testimonials from './components/Testimonials'
 
 function Routes () {
   return (
@@ -16,6 +17,9 @@ function Routes () {
       </Route>
       <Route path='/services'>
         <Services />
+      </Route>
+      <Route path='/testimonials'>
+        <Testimonials />
       </Route>
       <Route path='/contact'>
         <ContactUs />
