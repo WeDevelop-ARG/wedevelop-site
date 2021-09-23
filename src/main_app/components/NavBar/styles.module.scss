@@ -50,6 +50,10 @@
     right: 0;
     background-color: #FFFFFF;
   }
+
+  @include for-tablet-down {
+    left: -80px;
+  }
 }
 
 .logoLink:focus {

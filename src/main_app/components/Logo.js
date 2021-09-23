@@ -26,7 +26,7 @@ function Logo ({ menuOpen, variant, mobile, className }) {
   }
 
   const logoMobilePath = () => {
-    if (menuOpen) return variantMobilePaths.white
+    if (menuOpen) return variantMobilePaths.color
 
     return useVariantMobile
   }
