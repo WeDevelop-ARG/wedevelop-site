@@ -93,14 +93,15 @@
   }
 
   .close {
-    width: 15px;
-    height: 15px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
   }
 }
 
 .menu {
   position: fixed;
-  top: 63px;
+  top: 25px;
   left: 0;
   right: 0;
   bottom: 10px;

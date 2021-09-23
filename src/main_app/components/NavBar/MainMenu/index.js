@@ -30,7 +30,7 @@ function MainMenu ({
   return (
     <ul className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li
-        className={classnames(classes.navItem, {
+        className={classnames(classes.navItem, { [classes.hidden]: isTabletDown }, {
           [classes.active]: window.location.pathname.startsWith('/services')
         })}
       >
@@ -66,18 +66,39 @@ function MainMenu ({
       </li>
       {isTabletDown && (
         <>
-          <li>
-            Services
-          </li>
-          <li className={classes.navItem}>
-            <HashLink to='/services/web-development#top'>
-              Web Development
-            </HashLink>
-          </li>
-          <li className={classes.navItem}>
-            <HashLink to='/services/staff-augmentation#top'>
-              Staff Augmentation
-            </HashLink>
+          <li className={classnames(classes.navItem, {
+            [classes.active]: window.location.pathname.startsWith('/services')
+          })}
+          >
+            <Dropdown>
+              <Dropdown.Toggle
+                as={Button}
+                variant='link'
+                className={classes.servicesDropdownToggle}
+                iconRight={<img src={DropdownIcon} alt='' />}
+              >
+                Services
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className={classes.dropdownMenu}>
+                <Dropdown.Item
+                  as={HashLink}
+                  to='/services/web-development#top'
+                  smooth
+                  className={classes.dropdownItem}
+                >
+                  Web Development
+                </Dropdown.Item>
+                <Dropdown.Item
+                  as={HashLink}
+                  to='/services/staff-augmentation#top'
+                  smooth
+                  className={classes.dropdownItem}
+                >
+                  Staff Augmentation
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </li>
         </>
       )}
@@ -92,19 +113,10 @@ function MainMenu ({
       </li>
       <li
         className={classnames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/career')
+          [classes.active]: window.location.pathname.startsWith('/testimonials')
         })}
       >
-        <HashLink to='/career#top'>
-          Careers
-        </HashLink>
-      </li>
-      <li
-        className={classnames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/')
-        })}
-      >
-        <HashLink to='/'>
+        <HashLink to='#testimonials'>
           Testimonials
         </HashLink>
       </li>
@@ -112,6 +124,15 @@ function MainMenu ({
         <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
           Blog
         </a>
+      </li>
+      <li
+        className={classnames(classes.navItem, {
+          [classes.active]: window.location.pathname.startsWith('/career')
+        })}
+      >
+        <HashLink to='/career#top'>
+          Careers
+        </HashLink>
       </li>
       <li>
         <Button

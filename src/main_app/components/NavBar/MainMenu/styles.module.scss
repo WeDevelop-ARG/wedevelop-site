@@ -19,6 +19,10 @@
   & > li + li {
     margin-top: 33px;
 
+    @include for-tablet-down {
+      margin-top: 14px;
+    }
+
     @include for-desktop-up {
       margin: 0;
       margin-left: 40px;
@@ -27,7 +31,6 @@
 
   & > li > *:not(.buttonTalk),
   & > li .servicesDropdownToggle {
-    font-weight: 300;
     font-size: 19px;
     line-height: 23px;
     outline: none;
@@ -67,6 +70,13 @@
     display: block;
     opacity: 1 !important;
   }
+
+  @include for-tablet-down {
+    position: relative !important;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+  }
 }
 
 .dropdownItem {
@@ -95,6 +105,11 @@
 .navItem {
   font-size: 14px;
   line-height: 17px;
+
+  @include for-tablet-down {
+    border-bottom: 1px solid #E1E1E1;
+    padding-bottom: 24px;
+  }
 
   @include for-desktop-up {
     position: relative;
