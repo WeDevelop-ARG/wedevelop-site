@@ -75,7 +75,7 @@ function MainMenu ({
                 as={Button}
                 variant='link'
                 className={classes.servicesDropdownToggle}
-                iconRight={<img src={DropdownIcon} alt='' />}
+                iconRight={<img src={DropdownIcon} alt='' className={classes.iconRight} />}
               >
                 Services
               </Dropdown.Toggle>
