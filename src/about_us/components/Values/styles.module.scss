@@ -6,8 +6,8 @@ $grayColor: #363636;
 .values {
   position: relative;
   padding-top: 60px;
-  padding-bottom: 35vw;
-  overflow-x: hidden;
+  padding-bottom: 115px;
+  overflow: hidden;
 }
 
 .sectionContent {
@@ -22,11 +22,16 @@ $grayColor: #363636;
   letter-spacing: 3px;
   color: rgba($color: #363636, $alpha: 0.5);
   font-size: 10px;
-  margin: 0px auto 40px auto;
+  margin: 0px auto 32px auto;
   text-transform: uppercase;
+
+  @include for-tablet-up {
+    font-size: 13px;
+  }
 }
 
 .titleText {
+  font-size: 32px;
   margin-left: auto;
   margin-right: auto;
 
@@ -37,19 +42,11 @@ $grayColor: #363636;
   }
 }
 
-.descriptionText {
-  font-weight: 300;
-  font-size: 20px;
-  color: rgba($color: #363636, $alpha: 0.5);
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .horizontalBar {
   width: 100px;
   height: 10px;
   background: #FFC331;
-  margin: 32px auto 30px auto;
+  margin: 32px auto 40px auto;
   border: none;
 }
 
@@ -65,8 +62,12 @@ $grayColor: #363636;
   display: grid;
   grid-template-columns: repeat(var(--repeat), minmax(250px, 1fr));
   column-gap: 60px;
-  row-gap: 70px;
+  row-gap: 30px;
   margin: auto;
+
+  @include for-tablet-up {
+    row-gap: 70px;
+  }
 }
 
 .valueBox {
@@ -100,105 +101,172 @@ $grayColor: #363636;
   opacity: 0.5;
 }
 
-.halfCircle {
-  position: absolute;
-  top: 800px;
-  left: 0px;
-  width: 150px;
-  height: 270px;
-  z-index: -1;
-  overflow: hidden;
-
-  @include for-tablet-down {
-    display: none;
-  }
-}
-
-.circle {
+%circle {
   border-radius: 50%;
   position: absolute;
-
-  @include for-tablet-down {
-    display: none;
-  }
+  z-index: -1;
 }
 
 .filledCircle {
-  @extend .circle;
-  width: 376px;
-  height: 376px;
+  @extend %circle;
   background: rgba($color: #EAEAEA, $alpha: 0.3);
-  top: 704px;
-  right: -188px;
+  
+  @include for-desktop-up {
+    width: 376px;
+    height: 376px;
+    top: 704px;
+    right: -188px;
+  }
+
+  @include for-tablet-down {
+    width: 179px;
+    height: 179px;
+    right: 27px;
+    bottom: 30px;
+  }
 }
 
 .emptyCircle {
-  @extend .circle;
-  width: 376px;
-  height: 376px;
+  @extend %circle;
   border: .5px solid rgba($color: $grayColor, $alpha: 0.2);
-  top: 724px;
-  right: -158px;
+  
+  @include for-desktop-up {
+    width: 376px;
+    height: 376px;
+    top: 724px;
+    right: -158px;
+  }
+
+  @include for-tablet-down {
+    width: 179px;
+    height: 179px;
+    right: 12px;
+    bottom: 30px;
+  }
 }
 
 .smallCircle {
-  @extend .circle;
-  width: 17px;
-  height: 17px;
+  @extend %circle;
   background-color: rgba($color: #8224E3, $alpha: 0.5);
-  filter: blur(6px);
-  top: 1054px;
-  right: 136px;
+
+  @include for-desktop-up {
+    width: 17px;
+    height: 17px;
+    top: 1054px;
+    right: 136px;
+    filter: blur(6px);
+  }
+
+  @include for-tablet-down {
+    width: 8px;
+    height: 8px;
+    right: 34px;
+    bottom: 60px;
+    filter: blur(4px);
+  }
 }
 
 %dotsPattern {
-  width: 277px;
   position: absolute;
+  z-index: -1;
+
+  @include for-desktop-up {
+    width: 277px;
+  }
 
   @include for-tablet-down {
-    display: none;
+    width: 217px;
   }
 }
 
 .topRightPattern {
   @extend %dotsPattern;
-  top: 0;
-  right: 50px;
+  top: 25%;
+  right: -65px;
+
+  @include for-tablet-down {
+    transform: rotate(90deg);
+  }
+  
+  @include for-desktop-up {
+    transform: rotate(0deg);
+    top: 0;
+    right: 50px;
+  }
 }
 
-.middelLeftPattern {
+.middleLeftPattern {
   @extend %dotsPattern;
   transform: rotate(90deg);
-  top: 722px;
-  left: -44px;
+  
+  @include for-desktop-up {
+    top: 722px;
+    left: -44px;
+  }
+
+  @include for-tablet-down {
+    top: auto;
+    bottom: 39%;
+    left: -95px;
+  }
 }
 
 .filledSmallCircle {
-  @extend .circle;
-  width: 76px;
-  height: 76px;
+  @extend %circle;
   background: rgba($color: #EAEAEA, $alpha: 0.3);
-  top: 59px;
-  left: 150px;
+
+  @include for-desktop-up {
+    width: 76px;
+    height: 76px;
+    top: 59px;
+    left: 150px;
+  }
+
+  @include for-tablet-down {
+    width: 201px;
+    height: 201px;
+    top: 130px;
+    left: -126px;
+  }
 }
 
 .emptySmallCircle {
-  @extend .circle;
-  width: 139px;
-  height: 139px;
+  @extend %circle;
   border: .5px solid rgba($color: #363636, $alpha: 0.2);
-  top: 45px;
-  left: 72px;
+
+  @include for-desktop-up {
+    width: 139px;
+    height: 139px;
+    top: 45px;
+    left: 72px;
+  }
+
+  @include for-tablet-down {
+    width: 201px;
+    height: 201px;
+    top: 121px;
+    left: -109px;
+  }
 }
 
 .smallBlurLeftCircle {
-  @extend .circle;
-  width: 14px;
-  height: 14px;
+  @extend %circle;
   background-color: rgba($color: #8224E3, $alpha: 0.5);
   filter: blur(3px);
-  top: 155px;
-  left: 60px;
+
+  @include for-desktop-up {
+    width: 14px;
+    height: 14px;
+    top: 155px;
+    left: 60px;
+  }
+
+  @include for-tablet-down {
+    width: 9px;
+    height: 9px;
+    top: 150px;
+    left: 57px;
+  }
 }
 
 .bottomImg {

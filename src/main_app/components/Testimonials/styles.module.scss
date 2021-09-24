@@ -7,7 +7,8 @@
   flex-direction: column;
   position: relative;
   padding-top: 79px;
-  padding-bottom: 35vw;
+  padding-bottom: 100px;
+  overflow: hidden;
 }
 
 .sectionHeader {
@@ -128,6 +129,7 @@
 }
 
 .profileImgContainer {
+  position: relative;
   width: 115px;
   height: 115px;
   border-radius: 50%;
@@ -140,6 +142,26 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.filledProfileCircle {
+  @extend %circle;
+  width: 140px;
+  height: 140px;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: -10px;
+  left: calc(50% - 63px);
+  z-index: -1;
+}
+
+.emptyProfileCircle {
+  @extend %circle;
+  width: 132px;
+  height: 132px;
+  border: .5px solid rgba($color: #8224E3, $alpha: 0.5);
+  top: -8px;
+  left: calc(50% - 70px);
+  z-index: -1;
 }
 
 .profileData {
@@ -182,32 +204,37 @@
 %dotsPattern {
   width: 277px;
   position: absolute;
-
-  @include for-tablet-down {
-    display: none;
-  }
 }
 
 .topRightPattern {
   @extend %dotsPattern;
   top: 0;
   right: 50px;
+
+  @include for-tablet-down {
+    display: none;
+  }
 }
 
-.middelLeftPattern {
+.middleLeftPattern {
   @extend %dotsPattern;
   transform: rotate(90deg);
-  top: 316px;
-  left: 80px;
+  
+  @include for-desktop-up {
+    top: 316px;
+    left: 80px;
+  }
+
+  @include for-tablet-down {
+    width: 237px;
+    bottom: 175px;
+    left: -115px;
+  }
 }
 
 %circle {
   border-radius: 50%;
   position: absolute;
-
-  @include for-tablet-down {
-    display: none;
-  }
 }
 
 .filledSmallCircle {
@@ -217,6 +244,10 @@
   background: rgba($color: #EAEAEA, $alpha: 0.3);
   top: 59px;
   left: 150px;
+
+  @include for-tablet-down {
+    display: none;
+  }
 }
 
 .emptySmallCircle {
@@ -226,6 +257,10 @@
   border: .5px solid rgba($color: #363636, $alpha: 0.2);
   top: 45px;
   left: 72px;
+
+  @include for-tablet-down {
+    display: none;
+  }
 }
 
 .smallBlurLeftCircle {
@@ -236,34 +271,72 @@
   filter: blur(3px);
   top: 155px;
   left: 60px;
+
+  @include for-tablet-down {
+    display: none;
+  }
 }
 
 .filledBigCircle {
   @extend %circle;
-  width: 314px;
-  height: 314px;
   background: rgba($color: #EAEAEA, $alpha: 0.3);
-  top: 408px;
-  right: 66px;
+
+  @include for-desktop-up {
+    width: 314px;
+    height: 314px;
+    top: 408px;
+    right: 66px;
+  }
+
+  @include for-tablet-down {
+    width: 201px;
+    height: 201px;
+    top: auto;
+    right: -145px;
+    bottom: 0;
+  }
 }
 
 .emptyBigCircle {
   @extend %circle;
-  width: 314px;
-  height: 314px;
   border: .5px solid rgba($color: #363636, $alpha: 0.2);
-  top: 426px;
-  right: 100px;
+
+  @include for-desktop-up {
+    width: 314px;
+    height: 314px;
+    top: 426px;
+    right: 100px;
+  }
+
+  @include for-tablet-down {
+    width: 201px;
+    height: 201px;
+    top: auto;
+    right: -128px;
+    bottom: 10px;
+  }
 }
 
 .smallBlurRightCircle {
   @extend %circle;
-  width: 17px;
-  height: 17px;
   background-color: rgba($color: #8224E3, $alpha: 0.5);
-  filter: blur(6px);
-  top: 670px;
-  right: 365px;
+  filter: blur(4px);
+
+  @include for-desktop-up {
+    filter: blur(6px);
+    width: 17px;
+    height: 17px;
+    top: 670px;
+    right: 365px;
+  }
+
+  @include for-tablet-down {
+    width: 9px;
+    height: 9px;
+    top: auto;
+    right: 39px;
+    bottom: 170px;
+  }
 }
 
 .smallCircle {
@@ -274,22 +347,8 @@
   filter: blur(1px);
   top: 416px;
   right: 112px;
-}
 
-.filledProfileCircle {
-  @extend %circle;
-  width: 140px;
-  height: 140px;
-  background: rgba($color: #EAEAEA, $alpha: 0.3);
-  top: 495px;
-  left: calc(50% - 60px);
-}
-
-.emptyProfileCircle {
-  @extend %circle;
-  width: 132px;
-  height: 132px;
-  border: .5px solid rgba($color: #8224E3, $alpha: 0.5);
-  top: 495px;
-  left: calc(50% - 70px);
+  @include for-tablet-down {
+    display: none;
+  }
 }
