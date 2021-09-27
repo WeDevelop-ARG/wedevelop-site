@@ -116,7 +116,7 @@ function MainMenu ({
           [classes.active]: window.location.pathname.startsWith('/testimonials')
         })}
       >
-        <HashLink to='#testimonials'>
+        <HashLink to='/#testimonials'>
           Testimonials
         </HashLink>
       </li>
