@@ -4,11 +4,14 @@
   position: relative;
   padding-top: 200px;
   padding-bottom: 200px;
-  overflow: hidden;
 
   @include for-desktop-up {
     padding-top: var(--rootContentMinPadding);
     padding-bottom: var(--rootContentMinPadding);
+  }
+
+  @include for-tablet-down {
+    overflow: hidden;
   }
 }
 
