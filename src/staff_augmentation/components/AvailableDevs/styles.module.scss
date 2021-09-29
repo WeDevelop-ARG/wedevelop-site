@@ -11,6 +11,18 @@
   overflow: hidden;
 }
 
+.backgroundPadding {
+  padding-bottom: 220px;
+}
+
+.carouselBackground {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .sectionHeader {
   display: flex;
   width: 100%;
@@ -73,6 +85,21 @@
       }
     }
   }
+}
+
+.devsCarousel {
+  position: relative;
+  margin: auto -15% 80px;
+}
+
+.prevArrow {
+  position: absolute;
+  left: -60px;
+}
+
+.nextArrow {
+  position: absolute;
+  right: -60px;
 }
 
 .separator {
