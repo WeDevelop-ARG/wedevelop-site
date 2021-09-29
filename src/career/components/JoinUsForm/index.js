@@ -13,6 +13,7 @@ import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
 import FormikSelect from './FormikSelect/index'
+import CountrySelect from './CountrySelect/index'
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
 
 import classes from './styles.module.scss'
@@ -242,6 +243,14 @@ function JoinUsForm () {
             placeholder='Select your skills'
           />
           <ErrorMessage name='skills' component='div' className={classes.errorMessage} />
+        </label>
+        <label className={classes.labels}>
+          <span>*</span>{' '}Where are you from?
+          <CountrySelect
+            name='country'
+            placeholder='Select your country'
+          />
+          <ErrorMessage name='country' component='div' className={classes.errorMessage} />
         </label>
         <label className={classes.labels}>
           Intended Remuneration (monthly)
