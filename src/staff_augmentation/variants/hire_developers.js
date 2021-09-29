@@ -161,6 +161,7 @@ const hireDevelopers = {
     subtitle: 'Hire Engineers',
     title: 'Pick your new Web Developer Today',
     description: 'Get instant access to our Talent Pool of 20+ vetted engineers.',
+    format: 'list',
     buttonText: 'Get a Free Quote',
     devs: [
       {

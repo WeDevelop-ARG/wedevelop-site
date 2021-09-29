@@ -82,6 +82,7 @@ function LandingPage () {
             subtitle={landing.availableDevs.subtitle}
             title={landing.availableDevs.title}
             description={landing.availableDevs.description}
+            format={landing.availableDevs.format}
             devs={landing.availableDevs.devs}
             buttonText={landing.availableDevs.buttonText}
             handleModal={handleModalOpen}
