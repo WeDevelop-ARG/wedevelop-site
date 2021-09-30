@@ -7,8 +7,10 @@ $borderColor: #E1E1E1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 375px;
-  height: 415px;
+  max-width: 375px;
+  width: 100%;
+  min-height: 415px;
+  height: 100%;
   margin: auto;
   padding: 16px 30px 30px;
   background: $backgroundColor;
@@ -39,6 +41,7 @@ $borderColor: #E1E1E1;
   margin: 0 auto 20px;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .profileImg {
@@ -51,7 +54,6 @@ $borderColor: #E1E1E1;
 .devName {
   font-size: 15px;
   margin: 10px auto;
-  text-align: center;
 }
 
 .devRole {

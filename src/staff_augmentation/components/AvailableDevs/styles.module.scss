@@ -12,15 +12,24 @@
 }
 
 .backgroundPadding {
-  padding-bottom: 220px;
+  @include for-tablet-up {
+    padding-bottom: 100px;
+  }
+
+  @include for-big-desktop-up {
+    padding-bottom: 220px;
+  }
 }
 
 .carouselBackground {
-  width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: -1;
+
+  @media screen and (min-width: 1680px) {
+    width: 100%;
+  }
 }
 
 .sectionHeader {
@@ -89,17 +98,37 @@
 
 .devsCarousel {
   position: relative;
-  margin: auto -15% 80px;
+  margin: auto 6% 80px;
+
+  @include for-desktop-up {
+    margin: auto -7% 80px;
+
+    @media screen and (max-width: 1275px) {
+      margin: auto -4% 80px;
+    }
+  }
+
+  @include for-big-desktop-up {
+    margin: auto -15% 80px;
+  }
 }
 
 .prevArrow {
   position: absolute;
-  left: -60px;
+  left: -40px;
+
+  @include for-big-desktop-up {
+    left: -60px;
+  }
 }
 
 .nextArrow {
   position: absolute;
-  right: -60px;
+  right: -40px;
+
+  @include for-big-desktop-up {
+    right: -60px;
+  }
 }
 
 .separator {
