@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { AdvancedImage, lazyload, responsive, placeholder } from '@cloudinary/react'
 import { Cloudinary } from "@cloudinary/url-gen"
-import { format, dpr } from '@cloudinary/url-gen/actions/delivery'
+import { format, dpr, quality } from '@cloudinary/url-gen/actions/delivery'
 import { isString } from 'lodash'
 
 import { IS_DEVELOPMENT, BASE_URL } from 'main_app/constants.js'
@@ -16,9 +16,9 @@ export default function Image ({ src, alt, ...props }) {
   const image = useMemo(() => {
     const image = cloudinary.image(src)
     image.setDeliveryType('fetch')
+    image.delivery(quality('auto'))
     image.delivery(format('auto'))
     image.delivery(dpr('auto'))
-    image.quality('auto')
     return image
   }, [src])
   const isOptimizationDenied = useMemo(() => cloudinaryDenylistRegex.test(src), [src])
