@@ -2,7 +2,6 @@ import Form from 'main_app/components/Form'
 import { useCallback } from 'react'
 import isFunction from 'lodash/isFunction'
 import * as Yup from 'yup'
-import axios from 'axios'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import { STAFF_AUGMENTATION_FORM_PROCESSOR_URL } from 'main_app/constants'
@@ -17,7 +16,14 @@ const schemaShape = {
 function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin, ...props }) {
   const handleSubmit = useCallback(async (values) => {
     try {
-      await axios.post(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, { ...values, formOrigin })
+      await fetch(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ...values, formOrigin })
+      })
       logAnalyticsEvent({
         event: 'contact',
         contactType: 'free-quote-form',

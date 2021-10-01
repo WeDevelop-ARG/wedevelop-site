@@ -3,7 +3,6 @@ import { useCallback } from 'react'
 import isNil from 'lodash/isNil'
 import isFunction from 'lodash/isFunction'
 import * as Yup from 'yup'
-import axios from 'axios'
 
 import uploadFile from 'service_providers/firebase/uploadFile'
 
@@ -48,7 +47,14 @@ function FormLogic ({ onSubmitFinished, ...props }) {
     let error
     try {
       const path = values.resume && await uploadFile(values.resume)
-      await axios.post(CAREER_FORM_PROCESSOR_URL, { ...values, resume: path })
+      await fetch(CAREER_FORM_PROCESSOR_URL, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ...values, resume: path })
+      })
       actions.resetForm()
     } catch (err) {
       console.error(err)

@@ -1,6 +1,5 @@
 import { useCallback, useMemo } from 'react'
 import { CalendlyEventListener, InlineWidget } from 'react-calendly'
-import axios from 'axios'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import useMediaQuery from 'utils/use_media_query'
@@ -31,7 +30,14 @@ function CalendlyWidget ({ sourcePage }) {
       contactSource: sourcePage
     })
     try {
-      await axios.post(PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL, { calendlyInviteeURI })
+      await fetch(PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ calendlyInviteeURI })
+      })
     } catch (err) {
       console.error(err)
     }
