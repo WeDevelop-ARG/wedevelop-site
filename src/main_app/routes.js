@@ -1,38 +1,43 @@
-import { Route, Switch } from 'react-router-dom'
-import Landing from 'home'
-import NotFound from 'not_found'
+import { lazy } from 'react'
+import { Switch } from 'react-router-dom'
+
+import { LazyRoute } from './components/LazyRoute'
+
 import StaffAugmentationRoutes from 'staff_augmentation/routes'
-import ContactUs from 'contact_us'
-import Services from 'services'
-import PrivacyPolicy from 'privacy_policy'
-import AboutUs from 'about_us'
-import Career from 'career'
+
+const Landing = lazy(() => import('home'))
+const NotFound = lazy(() => import('not_found'))
+const ContactUs = lazy(() => import('contact_us'))
+const Services = lazy(() => import('services'))
+const PrivacyPolicy = lazy(() => import('privacy_policy'))
+const AboutUs = lazy(() => import('about_us'))
+const Career = lazy(() => import('career'))
 
 function Routes () {
   return (
     <Switch>
-      <Route exact path={['/', '/contact']}>
+      <LazyRoute exact path={['/', '/contact']}>
         <Landing />
-      </Route>
-      <Route path='/services'>
+      </LazyRoute>
+      <LazyRoute path='/services'>
         <Services />
-      </Route>
-      <Route path='/contact'>
+      </LazyRoute>
+      <LazyRoute path='/contact'>
         <ContactUs />
-      </Route>
-      <Route path='/privacy-policy'>
+      </LazyRoute>
+      <LazyRoute path='/privacy-policy'>
         <PrivacyPolicy />
-      </Route>
-      <Route path='/about-us(/contact)?'>
+      </LazyRoute>
+      <LazyRoute path='/about-us(/contact)?'>
         <AboutUs />
-      </Route>
-      <Route path='/career(/contact)?'>
+      </LazyRoute>
+      <LazyRoute path='/career(/contact)?'>
         <Career />
-      </Route>
+      </LazyRoute>
       <StaffAugmentationRoutes>
-        <Route path='/'>
+        <LazyRoute path='/'>
           <NotFound />
-        </Route>
+        </LazyRoute>
       </StaffAugmentationRoutes>
     </Switch>
   )
