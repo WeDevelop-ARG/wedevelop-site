@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react'
 import isNil from 'lodash/isNil'
 import classnames from 'classnames'
 import { Field, ErrorMessage } from 'formik'
-import { InputGroup } from 'react-bootstrap'
+import InputGroup from 'react-bootstrap/InputGroup'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'

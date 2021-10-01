@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import classnames from 'classnames'
 import { HashLink } from 'react-router-hash-link'
-import { Dropdown } from 'react-bootstrap'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 import Button from 'main_app/components/Button'
 import useMediaQuery from 'utils/use_media_query'
