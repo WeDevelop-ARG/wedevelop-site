@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import classnames from 'classnames'
-import { isFunction } from 'lodash'
+import isFunction from 'lodash/isFunction'
 
 const CLUTCH_URL = 'https://widget.clutch.co/static/js/widget.js'
 

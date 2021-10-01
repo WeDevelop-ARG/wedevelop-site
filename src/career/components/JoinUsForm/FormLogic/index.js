@@ -1,6 +1,7 @@
 import Form from 'main_app/components/Form'
 import { useCallback } from 'react'
-import { isFunction, isNil } from 'lodash'
+import isNil from 'lodash/isNil'
+import isFunction from 'lodash/isFunction'
 import * as Yup from 'yup'
 import axios from 'axios'
 

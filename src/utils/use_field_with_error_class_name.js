@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import classnames from 'classnames'
 import { useField } from 'formik'
-import { isEmpty } from 'lodash'
+import isEmpty from 'lodash/isEmpty'
 
 function useFieldWithErrorClassName (Field, errorClassName) {
   const AugmentedField = useCallback(({ name, className, ...props }) => {

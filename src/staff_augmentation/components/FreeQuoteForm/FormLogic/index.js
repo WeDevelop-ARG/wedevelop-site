@@ -1,6 +1,6 @@
 import Form from 'main_app/components/Form'
 import { useCallback } from 'react'
-import { isFunction } from 'lodash'
+import isFunction from 'lodash/isFunction'
 import * as Yup from 'yup'
 import axios from 'axios'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'

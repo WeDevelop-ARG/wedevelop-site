@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useFormikContext } from 'formik'
 import { RECAPTCHA_SITE_KEY } from 'main_app/constants'
-import { isFunction } from 'lodash'
+import isFunction from 'lodash/isFunction'
 import { useMemo } from 'react'
 
 const RECAPTCHA_URL = 'https://www.google.com/recaptcha/api.js?onload=RECAPTCHA_LOAD_HANDLER&render=explicit'

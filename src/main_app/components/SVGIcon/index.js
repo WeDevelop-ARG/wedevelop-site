@@ -1,6 +1,6 @@
 import { useRef, useEffect, useMemo, useState } from 'react'
 import classnames from 'classnames'
-import { isEmpty } from 'lodash'
+import isEmpty from 'lodash/isEmpty'
 
 import { ENVIRONMENT } from 'main_app/constants'
 

@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { AdvancedImage, lazyload, responsive, placeholder } from '@cloudinary/react'
 import { Cloudinary } from "@cloudinary/url-gen"
 import { format, dpr, quality } from '@cloudinary/url-gen/actions/delivery'
-import { isString } from 'lodash'
+import isString from 'lodash/isString'
 
 import { IS_DEVELOPMENT, BASE_URL } from 'main_app/constants.js'
 
