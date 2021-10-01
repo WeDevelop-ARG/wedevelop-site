@@ -6,6 +6,7 @@ import QuotationMark from 'assets/home/quotation_mark.svg'
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
+import Image from '../Image'
 
 function Testimonials ({ bottomImageURL, hideHeader = false }) {
   const { reviews } = useReviews()
@@ -33,12 +34,12 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
           {reviews.map((review) => (
             <figure key={review.id} className={classes.slide}>
               <div className={classes.quoteContainer}>
-                <img src={QuotationMark} alt='' className={classes.openQuote} />
+                <Image src={QuotationMark} alt='' className={classes.openQuote} />
                 <blockquote className={classes.quote}>{review.quote}</blockquote>
-                <img src={QuotationMark} alt='' className={classes.closeQuote} />
+                <Image src={QuotationMark} alt='' className={classes.closeQuote} />
               </div>
               <div className={classes.profileImgContainer}>
-                <img
+                <Image
                   src={review.profileImageURL}
                   alt={`Profile of ${review.name}`}
                   title={review.name}
@@ -55,8 +56,8 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
           ))}
         </Slide>
       </div>
-      <img src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.middleLeftPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.middleLeftPattern} aria-hidden='true' />
       <div className={classes.filledSmallCircle} aria-hidden='true' />
       <div className={classes.emptySmallCircle} aria-hidden='true' />
       <div className={classes.smallBlurLeftCircle} aria-hidden='true' />

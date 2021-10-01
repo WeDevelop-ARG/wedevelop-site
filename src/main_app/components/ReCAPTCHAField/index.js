@@ -31,7 +31,7 @@ function loadRecaptcha (onPossiblyLoaded) {
   setTimeout(function () {
     if (isRecaptchaScriptPresent()) return onPossiblyLoaded()
     document.head.appendChild(sc)
-  }, 1500)
+  }, 3000)
 }
 
 function isRecaptchaScriptPresent () {

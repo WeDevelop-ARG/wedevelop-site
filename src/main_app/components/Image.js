@@ -41,7 +41,7 @@ export default function Image ({ src, alt, ...props }) {
   return (
     <AdvancedImage
       cldImg={image}
-      plugins={[lazyload(), responsive(150), placeholder('predominant-color')]}
+      plugins={[lazyload(), responsive(200), placeholder('predominant-color')]}
       alt={alt}
       {...props}
     />

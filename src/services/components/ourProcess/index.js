@@ -8,6 +8,7 @@ import ProcessDiagram from 'assets/services/web_dev_our_process/process_diagram.
 import DotsPattern from 'assets/services/dots-pattern.svg'
 
 import classes from './styles.module.scss'
+import Image from 'main_app/components/Image'
 
 function OurProcess () {
   return (
@@ -24,7 +25,7 @@ function OurProcess () {
         <div className={classes.bulletsList}>
           <div className={classes.phaseContainer}>
             <div className={classes.phaseIdentifier}>
-              <img src={Discovery} alt='' />
+              <Image src={Discovery} alt='' />
               <p>Discovery</p>
             </div>
             <ul className={classes.phaseSteps}>
@@ -41,7 +42,7 @@ function OurProcess () {
           </div>
           <div className={classes.phaseContainer}>
             <div className={classes.phaseIdentifier}>
-              <img src={InitialBacklog} alt='' />
+              <Image src={InitialBacklog} alt='' />
               <p>Initial Backlog Definition &amp; Estimation</p>
             </div>
             <ul className={classes.phaseSteps}>
@@ -56,7 +57,7 @@ function OurProcess () {
           </div>
           <div className={classes.phaseContainer}>
             <div className={classes.phaseIdentifier}>
-              <img src={Proposal} alt='' />
+              <Image src={Proposal} alt='' />
               <p>Proposal</p>
             </div>
             <ul className={classes.phaseSteps}>
@@ -68,7 +69,7 @@ function OurProcess () {
           </div>
           <div className={classes.phaseContainer}>
             <div className={classes.phaseIdentifier}>
-              <img src={ProjectStarts} alt='' />
+              <Image src={ProjectStarts} alt='' />
               <p>Project Starts!</p>
             </div>
             <ul className={classes.phaseSteps}>
@@ -86,11 +87,11 @@ function OurProcess () {
           <div className={classes.thirdCurvedArrow} />
         </div>
         <div className={classes.processDiagramContainer}>
-          <img src={ProcessDiagram} alt='' className={classes.processDiagram} />
+          <Image src={ProcessDiagram} alt='' className={classes.processDiagram} />
         </div>
       </div>
       <div className={classes.background} />
-      <img src={DotsPattern} className={classes.dotsPatternRight} alt='' />
+      <Image src={DotsPattern} className={classes.dotsPatternRight} alt='' />
     </section>
   )
 }

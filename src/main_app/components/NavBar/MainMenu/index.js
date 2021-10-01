@@ -13,6 +13,7 @@ import DropdownIcon from 'assets/nav_bar/dropdown_icon.svg'
 import DropdownIconWhite from 'assets/nav_bar/dropdown_icon_white.svg'
 
 import classes from './styles.module.scss'
+import Image from 'main_app/components/Image'
 
 function MainMenu ({
   isOpen,
@@ -39,7 +40,7 @@ function MainMenu ({
             as={Button}
             variant='link'
             className={classes.servicesDropdownToggle}
-            iconRight={<img src={dropdownIconURL} alt='' />}
+            iconRight={<Image src={dropdownIconURL} alt='' />}
           >
             Services
           </Dropdown.Toggle>
