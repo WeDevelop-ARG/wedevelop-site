@@ -1,17 +1,17 @@
+import { useMemo } from 'react'
 import { AdvancedImage, lazyload, responsive, placeholder } from '@cloudinary/react'
 import { Cloudinary } from "@cloudinary/url-gen"
 import { isString } from 'lodash'
 
-import { IS_DEVELOPMENT } from 'main_app/constants.js'
-import { useMemo } from 'react'
+import { IS_DEVELOPMENT, BASE_URL } from 'main_app/constants.js'
 
-const cloudinaryDenylistRegex = /\.(svg)/i
+const cloudinaryDenylistRegex = /(?:^(?!https:\/\/).*\.?(?:svg)?$|.*\.?(?:svg)$)/i
 const cloudinary = new Cloudinary({
   cloud: { cloudName: 'wedevelop-site' }
 })
 
 export default function Image ({ src, alt, ...props }) {
-  src = useMemo(() => (new URL(src, window.location.href)).href, [src])
+  src = useMemo(() => (new URL(src, BASE_URL)).href, [src])
   const image = useMemo(() => {
     const image = cloudinary.image(src)
     image.setDeliveryType('fetch')
