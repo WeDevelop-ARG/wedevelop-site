@@ -1,12 +1,12 @@
 import { useState, useCallback } from 'react'
 
 import ClutchWidget from 'main_app/components/ClutchWidget'
+import ConfirmationMessage from '../ConfirmationMessage'
+import FreeQuoteForm from '../FreeQuoteForm'
+import Image from 'main_app/components/Image'
+import Logo from 'main_app/components/Logo'
 import Modal from 'main_app/components/Modal'
 import SVGIcon from 'main_app/components/SVGIcon'
-import Logo from 'main_app/components/Logo'
-import Image from 'main_app/components/Image'
-import FreeQuoteForm from '../FreeQuoteForm'
-import ConfirmationMessage from '../ConfirmationMessage'
 
 import classes from './styles.module.scss'
 
