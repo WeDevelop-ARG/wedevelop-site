@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+
 import Routes from './routes'
 
 import { setPageTitlePrefix } from 'utils/marketing/use_page_metadata'

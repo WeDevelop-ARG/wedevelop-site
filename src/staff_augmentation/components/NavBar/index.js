@@ -42,8 +42,6 @@ function NavBar ({
             <p className={classes.descriptionText}>Sign Up to Get Rates & Available Staff Details</p>
           </div>
           <Button
-            smooth
-            isAnchor
             variant='primary'
             className={classes.freeQuoteButton}
             onClick={handleModal}
