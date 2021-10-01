@@ -15,6 +15,8 @@ export default function Image ({ src, alt, ...props }) {
   const image = useMemo(() => {
     const image = cloudinary.image(src)
     image.setDeliveryType('fetch')
+    image.format('auto')
+    image.quality('auto')
     return image
   }, [src])
   const isOptimizationDenied = useMemo(() => cloudinaryDenylistRegex.test(src), [src])
