@@ -3,6 +3,41 @@ import { useFormikContext } from 'formik'
 import { RECAPTCHA_SITE_KEY } from 'main_app/constants'
 import { isFunction } from 'lodash'
 
+const RECAPTCHA_URL = 'https://www.google.com/recaptcha/api.js?onload=RECAPTCHA_LOAD_HANDLER&render=explicit'
+
+let recaptchaLoadListeners = []
+
+window.RECAPTCHA_LOAD_HANDLER = () => {
+  recaptchaLoadListeners.forEach(l => l())
+}
+
+function loadRecaptcha (onPossiblyLoaded) {
+  recaptchaLoadListeners.push(onPossiblyLoaded)
+
+  if (isRecaptchaScriptPresent()) {
+    return onPossiblyLoaded()
+  }
+
+  var sc = document.createElement('script')
+
+  sc.src = RECAPTCHA_URL
+  sc.async = true
+  sc.defer = true
+
+  sc.addEventListener('load', () => {
+    onPossiblyLoaded()
+  })
+
+  setTimeout(function () {
+    if (isRecaptchaScriptPresent()) return onPossiblyLoaded()
+    document.head.appendChild(sc)
+  }, 1500)
+}
+
+function isRecaptchaScriptPresent () {
+  return document.head.querySelector(`script[src="${RECAPTCHA_URL}"]`) !== null
+}
+
 function ReCAPTCHAField ({ name, className }) {
   const containerRef = useRef()
   const widgetIdRef = useRef()
@@ -11,22 +46,13 @@ function ReCAPTCHAField ({ name, className }) {
   const value = values[name]
 
   useEffect(() => {
-    let interval = null
-    let timeout = null
-    const tryFindReCAPTCHA = () => {
-      if (window.grecaptcha && isFunction(window.grecaptcha.render)) {
+    let initialized = false
+    loadRecaptcha(() => {
+      if (!initialized && isFunction(window.grecaptcha?.render)) {
+        initialized = true
         setGrecaptcha(window.grecaptcha)
-        clearInterval(interval)
-        clearTimeout(timeout)
       }
-    }
-
-    interval = setInterval(tryFindReCAPTCHA, 500)
-    timeout = setTimeout(() => {
-      clearInterval(interval)
-      console.error('Could not find ReCAPTCHA in the global scope')
-    }, 10000)
-    tryFindReCAPTCHA()
+    })
   }, [])
 
   useEffect(() => {

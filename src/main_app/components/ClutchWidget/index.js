@@ -2,7 +2,34 @@ import { useEffect } from 'react'
 import classnames from 'classnames'
 import { isFunction } from 'lodash'
 
-let script
+const CLUTCH_URL = 'https://widget.clutch.co/static/js/widget.js'
+
+function loadClutch (onPossiblyLoaded) {
+  if (isClutchScriptPresent()) {
+    return onPossiblyLoaded()
+  }
+
+  var sc = document.createElement('script')
+
+  sc.src = CLUTCH_URL
+  sc.async = true
+  sc.defer = true
+
+  sc.addEventListener('load', () => {
+    onPossiblyLoaded()
+  })
+
+  setTimeout(function () {
+    if (isClutchScriptPresent()) {
+      onPossiblyLoaded()
+    }
+    document.head.appendChild(sc)
+  }, 1500)
+}
+
+function isClutchScriptPresent () {
+  return document.head.querySelector(`script[src="${CLUTCH_URL}"]`) !== null
+}
 
 function ClutchWidget ({ className, variant = 'light' }) {
   const extraProps = {}
@@ -12,15 +39,13 @@ function ClutchWidget ({ className, variant = 'light' }) {
   }
 
   useEffect(() => {
-    if (script && isFunction(window.CLUTCHCO?.Init)) {
-      window.CLUTCHCO.Init()
-    } else {
-      script = document.createElement('script')
-
-      script.src = 'https://widget.clutch.co/static/js/widget.js'
-      script.async = true
-      document.head.appendChild(script)
-    }
+    let initialized = false
+    loadClutch(() => {
+      if (!initialized && isFunction(window.CLUTCHCO?.Init)) {
+        initialized = true
+        window.CLUTCHCO.Init()
+      }
+    })
   }, [])
 
   return (
