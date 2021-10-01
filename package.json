@@ -47,6 +47,7 @@
   "reactSnap": {
     "skipThirdPartyRequests": true,
     "http2PushManifest": true,
+    "asyncScriptTags": true,
     "include": [
       "/privacy-policy",
       "/staff-augmentation",

@@ -42,6 +42,7 @@ function Header ({
           </div>
           <div id='get-free-quote' className={classes.formContainer}>
             <FreeQuoteForm
+              noAutofocus
               onSubmitFinished={handleSubmitFinished}
               formHeader={freeQuoteForm.formHeader}
               fixedFields={freeQuoteForm.formCustomizations.fixedFields}
