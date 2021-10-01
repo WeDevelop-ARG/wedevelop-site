@@ -31,7 +31,7 @@ export default function Image ({ src, alt, ...props }) {
     return (
       <img
         src={src}
-        data-cloud-url={isOptimizationDenied ? undefined : image.toURL()}
+        data-cloud-url={!IS_DEVELOPMENT && isOptimizationDenied ? undefined : image.toURL()}
         alt={alt}
         {...props}
       />
