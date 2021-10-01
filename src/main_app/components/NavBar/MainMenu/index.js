@@ -14,6 +14,7 @@ import DropdownIconWhite from 'assets/nav_bar/dropdown_icon_white.svg'
 
 import classes from './styles.module.scss'
 import Image from 'main_app/components/Image'
+import { useCallback } from 'react'
 
 function MainMenu ({
   isOpen,
@@ -27,9 +28,14 @@ function MainMenu ({
   const buttonVariant = useMemo(() => {
     if (isVariant(variant, 'light')) return 'dark'
   }, [variant])
+  const handleClick = useCallback((e) => {
+    if (e.target.closest('a') !== null || e.target.closest('button') !== null) {
+      onRequestClose()
+    }
+  }, [onRequestClose])
 
   return (
-    <ul className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
+    <ul onClick={handleClick} className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li
         className={classnames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/services')
