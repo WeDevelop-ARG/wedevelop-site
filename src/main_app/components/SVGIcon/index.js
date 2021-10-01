@@ -135,7 +135,7 @@ function SVGIcon ({ name, title, description, className, variant = 'full', ...pr
     return null
   }
 
-  const role = !isEmpty(title) || !isEmpty(description) ? 'img' : 'presentational'
+  const role = !isEmpty(title) || !isEmpty(description) ? 'img' : 'presentation'
   const baseId = `__SVGIcon__${name}-${uniqueId}`
   const titleId = `${baseId}-title`
   const descriptionId = `${baseId}-description`
