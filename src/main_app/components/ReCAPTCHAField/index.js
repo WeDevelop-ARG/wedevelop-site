@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useFormikContext } from 'formik'
 import { RECAPTCHA_SITE_KEY } from 'main_app/constants'
 import { isFunction } from 'lodash'
+import { useMemo } from 'react'
 
 const RECAPTCHA_URL = 'https://www.google.com/recaptcha/api.js?onload=RECAPTCHA_LOAD_HANDLER&render=explicit'
 
@@ -41,11 +42,16 @@ function isRecaptchaScriptPresent () {
 function ReCAPTCHAField ({ name, className }) {
   const containerRef = useRef()
   const widgetIdRef = useRef()
-  const { setFieldValue, setTouched, values } = useFormikContext()
+  const { setFieldValue, setTouched, values, touched } = useFormikContext()
   const [grecaptcha, setGrecaptcha] = useState()
+  const formTouched = useMemo(() => Object.values(touched).some(v => v === true), [touched])
   const value = values[name]
 
   useEffect(() => {
+    if (!formTouched && !isFunction(window.grecaptcha?.render)) {
+      return undefined
+    }
+
     let initialized = false
     loadRecaptcha(() => {
       if (!initialized && isFunction(window.grecaptcha?.render)) {
@@ -53,7 +59,7 @@ function ReCAPTCHAField ({ name, className }) {
         setGrecaptcha(window.grecaptcha)
       }
     })
-  }, [])
+  }, [formTouched])
 
   useEffect(() => {
     if (!value && widgetIdRef.current) {
