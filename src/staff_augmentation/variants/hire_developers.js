@@ -26,7 +26,22 @@ const hireDevelopers = {
       </>
     ),
     sideImageURL: BgHireDevelopers,
-    backgroundColor: '#8224E3'
+    backgroundColor: '#8224E3',
+    mobileBullets: (
+      <>
+        <ul>
+          <li>
+            Sit nunc, sed sit erat. Quis purus facilisi.
+          </li>
+          <li>
+            Amet tellus porttitor dolor lectus.
+          </li>
+          <li>
+            Feugiat neque, viverra ultricies amet.
+          </li>
+        </ul>
+      </>
+    )
   },
   freeQuoteForm: {
     formHeader: {

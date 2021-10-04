@@ -236,13 +236,17 @@
 
 .pattern {
   position: absolute;
-  top: 20px;
-  left: 630px;
+  bottom: 15%;
+  left: -65px;
+  
+  @include for-tablet-up {
+    display: none;
+  }
 
-  @include for-tablet-down {
-    top: auto;
-    bottom: 15%;
-    left: -60px;
+  @include for-desktop-up {
+    display: block;
+    top: 20px;
+    left: 45%;
   }
 }
 
@@ -275,8 +279,35 @@
   }
 }
 
+.mobileBullets {
+  font-size: 14px;
+  line-height: 21px;
+  color: #FFFFFF;
+  text-align: left;
+  list-style-image: url('../../../assets/staff_augmentation/bullet_points.svg');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  >ul {
+    margin: 0px;
+
+    >li {
+      font-size: 14px;
+    }
+
+    >li:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @include for-tablet-up {
+    display: none;
+  }
+}
+
 .freeQuoteButton {
-  margin: auto;
+  margin: 32px auto auto;
 
   @include for-tablet-up {
     display: none;

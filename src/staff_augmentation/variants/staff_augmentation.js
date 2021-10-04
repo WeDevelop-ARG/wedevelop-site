@@ -19,7 +19,22 @@ const staffAugmentation = {
       </>
     ),
     sideImageURL: BgStaffAugmentation,
-    backgroundColor: '#377DFF'
+    backgroundColor: '#377DFF',
+    mobileBullets: (
+      <>
+        <ul>
+          <li>
+            Sit nunc, sed sit erat. Quis purus facilisi.
+          </li>
+          <li>
+            Amet tellus porttitor dolor lectus.
+          </li>
+          <li>
+            Feugiat neque, viverra ultricies amet.
+          </li>
+        </ul>
+      </>
+    )
   },
   freeQuoteForm: {
     formHeader: {

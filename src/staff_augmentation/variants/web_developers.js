@@ -18,7 +18,22 @@ const webDevelopers = {
       </>
     ),
     sideImageURL: BgWebDevelopers,
-    backgroundColor: '#361989'
+    backgroundColor: '#361989',
+    mobileBullets: (
+      <>
+        <ul>
+          <li>
+            Sit nunc, sed sit erat. Quis purus facilisi.
+          </li>
+          <li>
+            Amet tellus porttitor dolor lectus.
+          </li>
+          <li>
+            Feugiat neque, viverra ultricies amet.
+          </li>
+        </ul>
+      </>
+    )
   },
   freeQuoteForm: {
     formHeader: {

@@ -18,6 +18,7 @@ function Header ({
   freeQuoteForm,
   sideImageURL,
   backgroundColor,
+  mobileBullets,
   getFreeQuote
 }) {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -42,6 +43,9 @@ function Header ({
               <div className={classes.emptyCircle} />
             </div>
             <hr className={classes.horizontalBar} />
+            <div className={classes.mobileBullets}>
+              {mobileBullets}
+            </div>
             <Button
               smooth
               isAnchor
