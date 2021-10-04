@@ -6,10 +6,11 @@ import isString from 'lodash/isString'
 import isFunction from 'lodash/isFunction'
 import classNames from 'classnames'
 
-import { IS_DEVELOPMENT, BASE_URL } from 'main_app/constants.js'
+import { IS_DEVELOPMENT, BASE_URL, IS_STATIC_RENDERER } from 'main_app/constants.js'
 
 import classes from './styles.module.scss'
 import { isEmpty } from 'lodash'
+import { vectorize } from '@cloudinary/url-gen/actions/effect'
 
 const cloudinaryDenylistRegex = /(?:^(?!https:\/\/).*\.?(?:svg)?$|.*\.?(?:svg)$)/i
 const cloudinary = new Cloudinary({
@@ -17,7 +18,7 @@ const cloudinary = new Cloudinary({
 })
 const responsiveSizeStep = 200
 
-function createCloudinaryImage ({ src, objectFit, position, resize, width, height }) {
+function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resize, width, height }) {
   if (resize === 'auto-width') {
     width = undefined
   } else if (resize === 'auto-height') {
@@ -28,7 +29,7 @@ function createCloudinaryImage ({ src, objectFit, position, resize, width, heigh
 
   image.setDeliveryType('fetch')
   image.delivery(quality('auto'))
-  image.delivery(format('auto'))
+  image.delivery(format(isPlaceholder ? 'svg' : 'auto'))
   image.delivery(dpr('auto'))
 
   let resizeAction
@@ -50,6 +51,17 @@ function createCloudinaryImage ({ src, objectFit, position, resize, width, heigh
   }
 
   if (resizeAction) image.resize(resizeAction)
+
+  if (isPlaceholder) {
+    image.effect(
+      vectorize()
+        .numOfColors(3)
+        .detailsLevel(0.3)
+        .despeckleLevel(75)
+        .paths(25)
+        .cornersLevel(50)
+    )
+  }
 
   return image
 }
@@ -113,11 +125,13 @@ export default function Image ({
 
       if (shouldLoadBiggerImage(lastSize, containerSize)) {
         const image = createCloudinaryImage({ src, objectFit, position, resize, ...containerSize })
+        const placeholderImage = createCloudinaryImage({ isPlaceholder: true, src, objectFit, position, resize, ...containerSize })
 
         if (props.loading !== 'eager' && !lastSize) {
-          setOptimizedSrc(image.toURL())
+          if (!IS_STATIC_RENDERER) setOptimizedSrc(image.toURL())
         } else {
-          img.src = image.toURL()
+          if (!lastSize) setOptimizedSrc(placeholderImage.toURL())
+          if (!IS_STATIC_RENDERER) img.src = image.toURL()
         }
         lastSize = containerSize
       }
