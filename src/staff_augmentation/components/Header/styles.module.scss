@@ -30,6 +30,12 @@
   @include for-tablet-up {
     margin-bottom: auto;
   }
+
+  @include for-phone-only {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .titleText {
@@ -81,6 +87,10 @@
   @include for-tablet-up {
     margin-top: -40px;
     margin-left: 75px;
+  }
+
+  @include for-phone-only {
+    display: none;
   }
 }
 
@@ -230,7 +240,9 @@
   left: 630px;
 
   @include for-tablet-down {
-    display: none;
+    top: auto;
+    bottom: 15%;
+    left: -60px;
   }
 }
 
@@ -249,4 +261,24 @@
 
 .logoContainer {
   margin-top: -30px;
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  border: none;
+  margin: 32px auto;
+
+  @include for-tablet-up {
+    display: none;
+  }
+}
+
+.freeQuoteButton {
+  margin: auto;
+
+  @include for-tablet-up {
+    display: none;
+  }
 }

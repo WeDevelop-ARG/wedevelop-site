@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 
+import Button from 'main_app/components/Button'
 import ClutchWidget from 'main_app/components/ClutchWidget'
 import ConfirmationMessage from '../ConfirmationMessage'
 import FreeQuoteForm from '../FreeQuoteForm'
@@ -16,7 +17,8 @@ function Header ({
   description,
   freeQuoteForm,
   sideImageURL,
-  backgroundColor
+  backgroundColor,
+  getFreeQuote
 }) {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const handleSubmitFinished = useCallback(() => {
@@ -39,6 +41,16 @@ function Header ({
               <div className={classes.filledCircle} />
               <div className={classes.emptyCircle} />
             </div>
+            <hr className={classes.horizontalBar} />
+            <Button
+              smooth
+              isAnchor
+              variant='primary'
+              className={classes.freeQuoteButton}
+              onClick={getFreeQuote}
+            >
+              Get a Free Quote
+            </Button>
           </div>
           <div id='get-free-quote' className={classes.formContainer}>
             <FreeQuoteForm

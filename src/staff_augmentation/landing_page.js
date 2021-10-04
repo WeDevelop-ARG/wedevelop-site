@@ -47,6 +47,7 @@ function LandingPage () {
           freeQuoteForm={landing.freeQuoteForm}
           sideImageURL={landing.header.sideImageURL}
           backgroundColor={landing.header.backgroundColor}
+          getFreeQuote={handleModalOpen}
         />
         <ReviewCards
           subtitle={landing.reviews.subtitle}
