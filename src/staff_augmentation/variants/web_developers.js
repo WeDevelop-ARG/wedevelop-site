@@ -11,10 +11,10 @@ const webDevelopers = {
   },
   header: {
     landingName: <>web developers</>,
-    title: <>Talent that delivers like your <b>Dream Team</b> would</>,
+    title: <>Top notch <b>Web Developers</b></>,
     description: (
       <>
-        <p>Get the ultimate outcomes from the Top Web Developers without the hiring hassles.</p>
+        <p>Hire Web Developers without the hiring hassles.</p>
       </>
     ),
     sideImageURL: BgWebDevelopers,
@@ -23,8 +23,8 @@ const webDevelopers = {
   freeQuoteForm: {
     formHeader: {
       subtitle: 'Get in touch',
-      title: 'Sign Up to Get Rates & Available Staff Details',
-      description: 'We look forward to learning how WeDevelop can help you and your business.'
+      title: 'Get Web Developer profiles',
+      description: 'Fill out the form and receive a list of already vetted Web Developers.'
     },
     formCustomizations: {
       fixedFields: {
@@ -37,13 +37,13 @@ const webDevelopers = {
           placeholder: 'Your company email'
         },
         message: {
-          label: 'What are you looking for?',
+          label: 'Requirements',
           placeholder: 'A Full-Stack Node and React Developer'
         }
       }
     },
     formOrigin: 'web-developers',
-    formButtonText: 'Get a free quote',
+    formButtonText: 'Get Web Developer profiles',
     formDisclaimer: 'We typically reply every email within an hour.'
   },
   reviews: {
@@ -113,27 +113,25 @@ const webDevelopers = {
     imageURL: picturebgWdev
   },
   HireTopTalent: {
-    subtitle: 'top talent',
-    title: 'Hire Top Talent Only, Without Hassle',
+    subtitle: 'white-glove service',
+    title: '3 reasons to choose WeDevelop',
     description: '',
     content: (
       <>
         <ul>
           <li>
-            Hiring the right person is hard.
-            Especially if you're <b>looking for someone with specific skills and experience</b> in a particular tecnology.
+            <b>Strong Talent</b> - We've iterated our Vetting Process to make sure you get the Best Professionals.
           </li>
           <li>
-            At, WeDevelop, <b>we match people to clients based on skill sets</b>, interests, culture, and location & provide several options that meet your requirements.
-            Hire top talent from around In Latin America without having to go through the hassle of interviewing them yourself.
+            <b>White Glove Service</b> - We strive to provide you the Best IT Staffing Services you'll find.
           </li>
           <li>
-            <b>Focus on other important things</b> such as growing your business and meeting deadlines.
+            <b>High Values</b> - We pride ourselves on being very transparent, trustworthy, and dedicated.
           </li>
         </ul>
       </>
     ),
-    buttonText: 'Get a Free Quote'
+    buttonText: 'Get In Touch'
   },
   growToday: {
     subtitle: 'Efficiency',
