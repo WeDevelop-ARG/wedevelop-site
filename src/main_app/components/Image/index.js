@@ -83,7 +83,7 @@ export default function Image ({ src, alt, objectFit, className, ...props }) {
       />
     )
   } else if (image) {
-    const plugins = [lazyload(), placeholder('vectorize')]
+    const plugins = [lazyload(), placeholder('predominant-color')]
 
     if (objectFit !== 'cover') {
       plugins.splice(1, 0, responsive(responsiveSizeStep))
