@@ -2,11 +2,11 @@ import { useMemo, useState, useRef, useLayoutEffect } from 'react'
 import { AdvancedImage, lazyload, responsive, placeholder } from '@cloudinary/react'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { format, dpr, quality } from '@cloudinary/url-gen/actions/delivery'
+import { fill } from '@cloudinary/url-gen/actions/resize'
 import isString from 'lodash/isString'
 import classNames from 'classnames'
 
 import { IS_DEVELOPMENT, BASE_URL } from 'main_app/constants.js'
-import { fit } from '@cloudinary/url-gen/actions/resize'
 
 import classes from './styles.module.scss'
 import { isEmpty } from 'lodash'
@@ -52,7 +52,7 @@ export default function Image ({ src, alt, objectFit, className, ...props }) {
         ) {
           lastSize = size
           const image = createImage()
-          image.resize(fit(size.width, size.height))
+          image.resize(fill(size.width, size.height))
           setImage(image)
         }
       }
