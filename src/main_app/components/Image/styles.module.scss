@@ -11,3 +11,40 @@
 .container.cover > img {
   object-fit: cover;
 }
+
+.container.contain > img,
+.container.auto > img {
+  object-fit: contain;
+}
+
+.container.top > img {
+  object-position: top;
+}
+
+.container.right > img {
+  object-position: right;
+}
+
+.container.bottom > img {
+  object-position: bottom;
+}
+
+.container.left > img {
+  object-position: left;
+}
+
+.container.top_left > img {
+  object-position: top left;
+}
+
+.container.top_right > img {
+  object-position: top right;
+}
+
+.container.bottom_left > img {
+  object-position: bottom left;
+}
+
+.container.bottom_right > img {
+  object-position: bottom right;
+}
