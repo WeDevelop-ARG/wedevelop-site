@@ -41,6 +41,7 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
               <div className={classes.profileImgContainer}>
                 <Image
                   src={review.profileImageURL}
+                  objectFit='cover'
                   alt={`Profile of ${review.name}`}
                   title={review.name}
                   className={classes.profileImg}

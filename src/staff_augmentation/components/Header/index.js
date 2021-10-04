@@ -54,7 +54,7 @@ function Header ({
           </div>
         </div>
         <div className={classes.decorationWrapper}>
-          <Image className={classes.imgHeader} src={sideImageURL} alt='' />
+          <Image objectFit='cover' className={classes.imgHeader} src={sideImageURL} alt='' />
         </div>
         <div className={classes.pattern}>
           <SVGIcon name='home/header/pattern' />

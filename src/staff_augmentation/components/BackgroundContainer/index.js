@@ -6,7 +6,7 @@ import classes from './styles.module.scss'
 function BackgroundContainer ({ backgroundURL, className }) {
   return (
     <div className={classnames(classes.backgroundContainer, className)}>
-      <Image src={backgroundURL} alt='' className={classes.backgroundImg} />
+      <Image src={backgroundURL} objectFit='cover' alt='' />
     </div>
   )
 }

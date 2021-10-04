@@ -153,11 +153,8 @@
   }
 }
 
-.imgHeader {
-  object-fit: cover;
+.imgHeader > img {
   object-position: center bottom;
-  width: 100%;
-  height: 99%;
 }
 
 .decorationWrapper {
@@ -187,7 +184,7 @@
   right: -28px;
   opacity: 0.1;
   filter: blur(2px);
-  background: #EAEAEA; 
+  background: #EAEAEA;
   z-index: -1;
 }
 

@@ -87,7 +87,7 @@ function OurProcess () {
           <div className={classes.thirdCurvedArrow} />
         </div>
         <div className={classes.processDiagramContainer}>
-          <Image src={ProcessDiagram} alt='' className={classes.processDiagram} />
+          <Image src={ProcessDiagram} objectFit='cover' alt='' />
         </div>
       </div>
       <div className={classes.background} />

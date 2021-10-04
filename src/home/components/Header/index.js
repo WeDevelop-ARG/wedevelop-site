@@ -32,7 +32,7 @@ function Header (props, ref) {
         <ClutchWidget className={classes.clutchWidget} variant='dark' />
       </div>
       <div className={classes.decorationWrapper}>
-        <Image className={classes.imgHeader} src={imgHeader} alt='' />
+        <Image objectFit='cover' className={classes.imgHeader} src={imgHeader} alt='' />
         <div className={classes.halfCircle}>
           <SVGIcon name='home/header/half_circle' />
         </div>
