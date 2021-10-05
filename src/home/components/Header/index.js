@@ -38,6 +38,7 @@ function Header (props, ref) {
           loading='eager'
           objectFit='cover'
           position='bottom'
+          placeholderColor='#333'
           className={classes.imgHeader}
         />
         <div className={classes.halfCircle}>

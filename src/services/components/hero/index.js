@@ -43,14 +43,14 @@ function Hero ({
               Get in Touch
             </Button>
           </div>
-          <Image className={classes.photo} src={photo} alt='' />
+          <Image className={classes.photo} src={photo} alt='' loading='eager' />
         </div>
         <Image className={classes[decoClasses.circleDot]} src={CircleDot} alt='' />
         <Image className={classes[decoClasses.pattern]} src={Pattern} alt='' />
         <Image className={classes[decoClasses.circle]} src={Circle} alt='' />
         <Image className={classes[decoClasses.emptyCircle]} src={EmptyCircle} alt='' />
       </section>
-      <Image className={classes.heroBackground} src={background} alt='' />
+      <Image className={classes.heroBackground} src={background} alt='' loading='eager' />
     </>
   )
 }
