@@ -200,7 +200,7 @@ function JoinUsForm () {
   }, [])
 
   return (
-    <section>
+    <section className={classes.joinUsSection}>
       <p className={classes.subheadingText}>Join Us</p>
       <h2 className={classes.titleText}>Let’s grow together</h2>
       <hr className={classes.horizontalBar} />
