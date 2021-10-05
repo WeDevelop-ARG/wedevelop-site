@@ -171,7 +171,9 @@ export default function Image ({
         setBackgroundColor(undefined)
       }}
       className={classNames(classes.image, {
-        [className]: !objectFit || objectFit === 'none'
+        [className]: !objectFit || objectFit === 'none',
+        [classes[objectFit]]: !isEmpty(classes[objectFit]),
+        [classes[position]]: !isEmpty(classes[position])
       })}
       style={{
         backgroundColor: backgroundColor && !backgroundSrc ? backgroundColor : undefined,

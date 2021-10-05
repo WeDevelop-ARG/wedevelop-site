@@ -1,7 +1,48 @@
 .image {
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image.cover {
+  background-size: cover;
+}
+
+.image.contain,
+.image.auto {
+  background-size: contain;
+}
+
+.image.top {
+  background-position: top;
+}
+
+.image.right {
+  background-position: right;
+}
+
+.image.bottom {
+  background-position: bottom;
+}
+
+.image.left {
+  background-position: left;
+}
+
+.image.top_left {
+  background-position: top left;
+}
+
+.image.top_right {
+  background-position: top right;
+}
+
+.image.bottom_left {
+  background-position: bottom left;
+}
+
+.image.bottom_right {
+  background-position: bottom right;
 }
 
 .container {
