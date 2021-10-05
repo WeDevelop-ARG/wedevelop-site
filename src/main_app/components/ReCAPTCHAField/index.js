@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useFormikContext } from 'formik'
-import { RECAPTCHA_SITE_KEY } from 'main_app/constants'
+import { IS_STATIC_RENDERER, RECAPTCHA_SITE_KEY } from 'main_app/constants'
 import isFunction from 'lodash/isFunction'
 import { useMemo } from 'react'
 
@@ -13,6 +13,7 @@ window.RECAPTCHA_LOAD_HANDLER = () => {
 }
 
 function loadRecaptcha (onPossiblyLoaded) {
+  if (IS_STATIC_RENDERER) return undefined
   recaptchaLoadListeners.push(onPossiblyLoaded)
 
   if (isRecaptchaScriptPresent()) {

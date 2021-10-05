@@ -36,14 +36,30 @@
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({ 'gtm.start': new Date().getTime(), event:'gtm.js' })
       ;(function () {
+        var IS_STATIC_RENDERER = navigator.userAgent === 'ReactSnap'
         var WAIT_TIME_BEFORE_APPEND = 3000
+
+        if (!IS_STATIC_RENDERER) loadGoogleFonts()
+
         document.addEventListener('DOMContentLoaded', function () {
+          if (IS_STATIC_RENDERER) return undefined
+
           loadCookieConsent()
 
           if (window.IS_PRODUCTION_ENVIRONMENT) {
             loadGoogleTagManager()
           }
         })
+
+        function loadGoogleFonts () {
+          var st = document.createElement('link')
+
+          st.rel = 'stylesheet'
+          st.type = 'text/css'
+          st.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'
+
+          document.head.appendChild(st)
+        }
 
         function loadGoogleTagManager () {
           var sc = document.createElement('script')
