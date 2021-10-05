@@ -49,6 +49,7 @@
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({ 'gtm.start': new Date().getTime(), event:'gtm.js' })
       ;(function () {
+        var IS_STATIC_RENDERER = navigator.userAgent !== 'ReactSnap'
         var WAIT_TIME_BEFORE_APPEND = 3000
 
         document.addEventListener('DOMContentLoaded', function () {
