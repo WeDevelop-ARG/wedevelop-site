@@ -74,11 +74,8 @@
   border: none;
 }
 
-.imgHeader {
-  object-fit: cover;
+.imgHeader > img {
   object-position: center bottom;
-  width: 100%;
-  height: 99%;
 }
 
 .halfCircle {

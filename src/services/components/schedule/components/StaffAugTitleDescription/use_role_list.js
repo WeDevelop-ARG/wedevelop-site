@@ -1,4 +1,4 @@
-import { shuffle } from 'lodash'
+import shuffle from 'lodash/shuffle'
 
 const roleList = shuffle([
   'Full-Stack Web Developer',

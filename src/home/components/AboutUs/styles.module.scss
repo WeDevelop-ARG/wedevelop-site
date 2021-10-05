@@ -5,7 +5,6 @@ $grayColor: #363636;
 
 .aboutUs {
   padding-top: calc(125px + var(--rootContentMinPadding));
-  padding-bottom: 33vw;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -34,7 +33,6 @@ $grayColor: #363636;
 }
 
 .titleText {
-
   @include for-desktop-up {
     font-weight: 600;
     font-size: 60px;
@@ -101,11 +99,8 @@ $grayColor: #363636;
 }
 
 .bottomImg {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  z-index: -1;
+  padding: 0;
 }
 
 %circle {

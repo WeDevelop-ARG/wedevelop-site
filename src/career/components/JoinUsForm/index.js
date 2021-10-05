@@ -1,12 +1,13 @@
 import { useState, useCallback } from 'react'
+import isNil from 'lodash/isNil'
 import classnames from 'classnames'
 import { Field, ErrorMessage } from 'formik'
-import { InputGroup } from 'react-bootstrap'
-import { isNil } from 'lodash'
+import InputGroup from 'react-bootstrap/InputGroup'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
 import SVGIcon from 'main_app/components/SVGIcon'
+import Image from 'main_app/components/Image'
 import FileInput from './FileInput'
 import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
@@ -303,7 +304,7 @@ function JoinUsForm () {
       <div className={classes.filledCircle} aria-hidden='true' />
       <div className={classes.emptyCircle} aria-hidden='true' />
       <div className={classes.smallBlurCircle} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
       <div className={classes.halfCircle}>
         <SVGIcon name='home/services/half_circle' />
       </div>

@@ -9,6 +9,7 @@ import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
 
 import pattern from 'assets/footer/pattern.svg'
+import Image from '../Image'
 
 function Footer ({ variant = 'dark', className }) {
   className = classnames(
@@ -147,7 +148,7 @@ function Footer ({ variant = 'dark', className }) {
           </li>
         </ul>
       </div>
-      <img src={pattern} alt='' className={classes.pattern} />
+      <Image src={pattern} alt='' className={classes.pattern} />
     </footer>
   )
 }

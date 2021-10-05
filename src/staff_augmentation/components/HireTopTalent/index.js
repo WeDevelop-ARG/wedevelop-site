@@ -19,8 +19,6 @@ function HireTopTalent ({
           <p className={classes.descriptionText}>{descriptionText}</p>
           <hr className={classes.horizontalBar} />
           <Button
-            smooth
-            isAnchor
             variant='primary'
             className={classes.freeQuoteButton}
             onClick={handleModal}

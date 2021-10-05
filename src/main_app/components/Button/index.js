@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
@@ -6,7 +6,7 @@ import useVariants from 'utils/use_variants'
 
 import classes from './styles.module.scss'
 
-function Button ({
+const Button = forwardRef(({
   as: ButtonComponent = 'button',
   variant = 'primary',
   isAnchor,
@@ -16,7 +16,7 @@ function Button ({
   iconLeft,
   iconRight,
   ...props
-}) {
+}, ref) => {
   if (ButtonComponent === 'button') type = type ?? 'button'
 
   className = classnames(
@@ -34,6 +34,7 @@ function Button ({
     <ButtonComponent
       type={type}
       className={className}
+      ref={ref}
       {...props}
     >
       {iconLeft && <div className={classes.iconLeft}>{iconLeft}</div>}
@@ -41,7 +42,7 @@ function Button ({
       {iconRight && <div className={classes.iconRight}>{iconRight}</div>}
     </ButtonComponent>
   )
-}
+})
 
 const variants = PropTypes.oneOf([
   'primary',

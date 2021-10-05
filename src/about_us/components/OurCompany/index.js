@@ -1,5 +1,6 @@
 import PeopleWorking from 'assets/about_us/our_company/people_working.png'
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
+import Image from 'main_app/components/Image'
 
 import classes from './styles.module.scss'
 
@@ -33,7 +34,7 @@ function OurCompany () {
           </p>
         </div>
         <div className={classes.backgroundImgContainer}>
-          <img src={PeopleWorking} alt='' className={classes.backgroundImg} />
+          <Image src={PeopleWorking} alt='' className={classes.backgroundImg} />
         </div>
         <div className={classes.textBlock}>
           <p>
@@ -57,10 +58,10 @@ function OurCompany () {
       <div className={classes.emptyCircle} aria-hidden='true' />
       <div className={classes.smallBlurCircle} aria-hidden='true' />
       <div className={classes.emptySemiCircle} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.topRightDotsPattern} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.bottomRightDotsPattern} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.bottomLeftDotsPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.topRightDotsPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.bottomRightDotsPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.bottomLeftDotsPattern} aria-hidden='true' />
     </section>
   )
 }

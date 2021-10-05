@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 
 import Button from 'main_app/components/Button'
+import Image from 'main_app/components/Image'
 import ListRow from './ListRow'
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
@@ -47,7 +48,7 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
       <div className={classes.emptySolidCircle} aria-hidden='true' />
       <div className={classes.emptyLightCircle} aria-hidden='true' />
       <div className={classes.smallBlurCircle} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.dotsPattern} />
+      <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
     </section>
   )
 }

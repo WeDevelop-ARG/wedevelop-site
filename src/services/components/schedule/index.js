@@ -6,6 +6,7 @@ import StaffAugTitleDescription from './components/StaffAugTitleDescription'
 
 import patternHorizontal from 'assets/services/dots-pattern-horizontal.svg'
 import classes from './schedule.module.scss'
+import Image from 'main_app/components/Image'
 
 function Schedule ({ contactPagePath, className, service }) {
   const renderTitleDescription = (service) => {
@@ -29,8 +30,8 @@ function Schedule ({ contactPagePath, className, service }) {
             Get in Touch
           </Button>
         </div>
-        <img className={classes.patternHorizontalLeft} src={patternHorizontal} alt='' />
-        <img className={classes.patternHorizontalRight} src={patternHorizontal} alt='' />
+        <Image className={classes.patternHorizontalLeft} src={patternHorizontal} alt='' />
+        <Image className={classes.patternHorizontalRight} src={patternHorizontal} alt='' />
       </section>
     </>
   )

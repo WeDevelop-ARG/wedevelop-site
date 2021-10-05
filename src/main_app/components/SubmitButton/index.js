@@ -1,5 +1,5 @@
 import { useFormikContext } from 'formik'
-import { isEmpty } from 'lodash'
+import isEmpty from 'lodash/isEmpty'
 import { useMemo } from 'react'
 
 import { combineVariants } from 'utils/use_variants'

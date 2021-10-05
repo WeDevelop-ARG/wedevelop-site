@@ -1,6 +1,6 @@
-import Modal from 'main_app/components/Modal'
-import CalendlyWidget from 'main_app/components/CalendlyWidget'
 import Button from 'main_app/components/Button'
+import CalendlyWidget from 'main_app/components/CalendlyWidget'
+import Modal from 'main_app/components/Modal'
 
 import classes from './styles.module.scss'
 
