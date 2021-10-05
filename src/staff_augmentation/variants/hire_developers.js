@@ -22,7 +22,7 @@ const hireDevelopers = {
     title: <>Hire Developers and Development Teams</>,
     description: (
       <>
-        <p>Hire Top Web Developers without the hiring hassles.</p>
+        <p>Hire Top Web Developers without the hassles.</p>
       </>
     ),
     sideImageURL: BgHireDevelopers,
@@ -52,12 +52,12 @@ const hireDevelopers = {
     },
     formOrigin: 'hire-developers',
     formButtonText: 'Get profiles and rates',
-    formDisclaimer: 'We\'ll email you available staff and their rates within the next hour.'
+    formDisclaimer: 'We\'ll email you available staff and their rates within 1 hour.'
   },
   reviews: {
     subtitle: 'Customers reviews',
-    title: 'The TOP IT Staffing Agency, as our customers say',
-    description: 'Don\'t take our word for it:',
+    title: 'Here\'s what our customers say about our IT Staffing services',
+    description: 'Don\'t take our word for it.',
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
@@ -128,10 +128,10 @@ const hireDevelopers = {
       <>
         <ul>
           <li>
-            <b>Strong Talent</b> - We've iterated our Vetting Process to make sure you get the Best Professionals.
+            <b>Strong Talent</b> - We've iterated our vetting process to make sure you get the best professionals.
           </li>
           <li>
-            <b>White Glove Service</b> - We strive to provide you the Best IT Staffing Services you'll find.
+            <b>White Glove Service</b> - We strive to provide you the best IT Staffing services you'll find.
           </li>
           <li>
             <b>High Values</b> - We pride ourselves on being very transparent, trustworthy, and dedicated.
