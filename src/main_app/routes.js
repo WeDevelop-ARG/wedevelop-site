@@ -1,17 +1,18 @@
-import { lazy } from 'react'
 import { Switch } from 'react-router-dom'
+
+import { prerenderedLazy } from 'utils/prerendered_lazy'
 
 import { LazyRoute } from './components/LazyRoute'
 
 import StaffAugmentationRoutes from 'staff_augmentation/routes'
 
-const Landing = lazy(() => import('home'))
-const NotFound = lazy(() => import('not_found'))
-const ContactUs = lazy(() => import('contact_us'))
-const Services = lazy(() => import('services'))
-const PrivacyPolicy = lazy(() => import('privacy_policy'))
-const AboutUs = lazy(() => import('about_us'))
-const Career = lazy(() => import('career'))
+const Landing = prerenderedLazy(() => import('home'))
+const NotFound = prerenderedLazy(() => import('not_found'))
+const ContactUs = prerenderedLazy(() => import('contact_us'))
+const Services = prerenderedLazy(() => import('services'))
+const PrivacyPolicy = prerenderedLazy(() => import('privacy_policy'))
+const AboutUs = prerenderedLazy(() => import('about_us'))
+const Career = prerenderedLazy(() => import('career'))
 
 function Routes () {
   return (

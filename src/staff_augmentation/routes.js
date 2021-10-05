@@ -1,10 +1,11 @@
 import { LazyRoute } from 'main_app/components/LazyRoute'
-import { lazy } from 'react'
 import { Switch } from 'react-router'
+
+import { prerenderedLazy } from 'utils/prerendered_lazy'
 
 import useLandingVariants from './hooks/useLandingVariants'
 
-const LandingPage = lazy(() => import('./landing_page'))
+const LandingPage = prerenderedLazy(() => import('./landing_page'))
 
 function Routes ({ children }) {
   const { variants } = useLandingVariants()
