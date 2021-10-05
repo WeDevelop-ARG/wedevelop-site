@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import classnames from 'classnames'
 
@@ -15,15 +16,22 @@ function NavBar ({
 }) {
   const [atScrollTop, observerRef] = useOverlappingObserver({
     root: document.body,
-    ignoreHeight: true
+    ignoreHeight: true,
+    defaultValue: null
   })
+  const [initialized, setInitialized] = useState(false)
+
+  useEffect(() => {
+    if (atScrollTop !== null) setInitialized(true)
+  }, [atScrollTop])
 
   return (
     <header
       ref={observerRef}
-      aria-hidden={atScrollTop}
+      aria-hidden={atScrollTop !== false}
       className={classnames(classes.navBar, {
-        [classes.navBarHidden]: atScrollTop
+        [classes.navBarHidden]: atScrollTop === true,
+        [classes.initialized]: initialized
       })}
     >
       <HashLink
@@ -35,20 +43,19 @@ function NavBar ({
           className={classes.logo}
         />
       </HashLink>
-      {!atScrollTop && (
-        <nav className={classes.menu}>
-          <div className={classes.bubble}>
-            <span className={classes.tagName} style={{ color: backgroundColor }}>{landingName}</span>
-            <p className={classes.descriptionText}>Sign Up to Get Rates & Available Staff Details</p>
-          </div>
-          <Button
-            variant='primary'
-            className={classes.freeQuoteButton}
-            onClick={handleModal}
-          >
-            Get a Free Quote
-          </Button>
-        </nav>)}
+      <nav className={classes.menu}>
+        <div className={classes.bubble}>
+          <span className={classes.tagName} style={{ color: backgroundColor }}>{landingName}</span>
+          <p className={classes.descriptionText}>Sign Up to Get Rates & Available Staff Details</p>
+        </div>
+        <Button
+          variant='primary'
+          className={classes.freeQuoteButton}
+          onClick={handleModal}
+        >
+          Get a Free Quote
+        </Button>
+      </nav>
     </header>
   )
 }

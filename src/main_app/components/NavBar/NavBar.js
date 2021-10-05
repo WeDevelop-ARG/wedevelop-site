@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useMemo, useState } from 'react'
+import { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import classnames from 'classnames'
 import { HashLink } from 'react-router-hash-link'
 
@@ -28,17 +28,23 @@ function NavBar ({
   const [menuOpen, setMenuOpen] = useState(false)
   const [atScrollTop, observerRef] = useOverlappingObserver({
     root: document.body,
-    ignoreHeight: true
+    ignoreHeight: true,
+    defaultValue: null
   })
+  const [initialized, setInitialized] = useState(false)
   const containerRef = useCombinedRefs(ref, observerRef)
 
+  useEffect(() => {
+    if (atScrollTop !== null) setInitialized(true)
+  }, [atScrollTop])
+
   variant = useMemo(() => {
-    if (atScrollTop && variantAtScrollTop) return variantAtScrollTop
+    if (atScrollTop !== false && variantAtScrollTop) return variantAtScrollTop
 
     return variant
   }, [atScrollTop, variant, variantAtScrollTop])
   variant = useMemo(() => {
-    if (atScrollTop) return variant
+    if (atScrollTop !== false) return variant
 
     return combineVariants(variant, 'scroll')
   }, [atScrollTop, variant])
@@ -71,11 +77,12 @@ function NavBar ({
   return (
     <header
       ref={containerRef}
-      aria-hidden={!show}
+      aria-hidden={!show || !initialized}
       className={classnames(classes.header, variantClassNames, {
         [classes.menuOpen]: menuOpen,
         [classes.atTop]: atScrollTop,
-        [classes.hidden]: !show
+        [classes.hidden]: !show && initialized,
+        [classes.initialized]: initialized
       })}
     >
       <HashLink
