@@ -14,7 +14,7 @@ const webDevelopers = {
     title: <>Top notch <b>Web Developers</b></>,
     description: (
       <>
-        <p>Hire Web Developers without the hiring hassles.</p>
+        <p>Hire Web Developers without the hassles.</p>
       </>
     ),
     sideImageURL: BgWebDevelopers,
@@ -24,7 +24,7 @@ const webDevelopers = {
     formHeader: {
       subtitle: 'Get in touch',
       title: 'Get Web Developer profiles',
-      description: 'Fill out the form and receive a list of already vetted Web Developers.'
+      description: 'Fill out the form and receive a list of vetted Web Developers.'
     },
     formCustomizations: {
       fixedFields: {
@@ -48,8 +48,8 @@ const webDevelopers = {
   },
   reviews: {
     subtitle: 'Customers reviews',
-    title: 'The TOP IT Staffing Agency as our customers say',
-    description: 'Don\'t take our word for it. See what our customers say.',
+    title: 'Here\'s what our customers say about our IT Staffing services',
+    description: 'In our customers\' words:',
     reviews: [{
       id: '1',
       quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
@@ -120,10 +120,10 @@ const webDevelopers = {
       <>
         <ul>
           <li>
-            <b>Strong Talent</b> - We've iterated our Vetting Process to make sure you get the Best Professionals.
+            <b>Strong Talent</b> - We've iterated our vetting process to make sure you get the best professionals.
           </li>
           <li>
-            <b>White Glove Service</b> - We strive to provide you the Best IT Staffing Services you'll find.
+            <b>White Glove Service</b> - We strive to provide you the best IT Staffing services you'll find.
           </li>
           <li>
             <b>High Values</b> - We pride ourselves on being very transparent, trustworthy, and dedicated.
