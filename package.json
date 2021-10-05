@@ -48,6 +48,7 @@
     "skipThirdPartyRequests": true,
     "http2PushManifest": true,
     "asyncScriptTags": true,
+    "inlineCss": true,
     "include": [
       "/privacy-policy",
       "/staff-augmentation",
