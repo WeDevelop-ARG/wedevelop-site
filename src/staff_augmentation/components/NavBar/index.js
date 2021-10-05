@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import classnames from 'classnames'
 
+import { IS_STATIC_RENDERER } from 'main_app/constants'
+
 import Logo from 'main_app/components/Logo'
 import Button from 'main_app/components/Button'
 
@@ -22,7 +24,7 @@ function NavBar ({
   const [initialized, setInitialized] = useState(false)
 
   useEffect(() => {
-    if (atScrollTop !== null) setInitialized(true)
+    if (atScrollTop !== null && !IS_STATIC_RENDERER) setInitialized(true)
   }, [atScrollTop])
 
   return (

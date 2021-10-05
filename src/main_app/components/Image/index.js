@@ -5,12 +5,12 @@ import { fill, limitFit } from '@cloudinary/url-gen/actions/resize'
 import { vectorize } from '@cloudinary/url-gen/actions/effect'
 import isString from 'lodash/isString'
 import isFunction from 'lodash/isFunction'
+import isEmpty from 'lodash/isEmpty'
 import classNames from 'classnames'
 
 import { IS_DEVELOPMENT, BASE_URL, IS_STATIC_RENDERER } from 'main_app/constants.js'
 
 import classes from './styles.module.scss'
-import { isEmpty } from 'lodash'
 
 const cloudinaryDenylistRegex = /(?:^(?!https:\/\/).*\.?(?:svg)?$|.*\.?(?:svg)$)/i
 const cloudinary = new Cloudinary({
