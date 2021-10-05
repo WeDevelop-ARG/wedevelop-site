@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useFormikContext } from 'formik'
+import { useFormikContext } from 'formik/dist/formik.esm'
 import useIsMounting from './useIsMounting'
 
 function SetFormikValue ({ name, value, ignoreOnMount }) {

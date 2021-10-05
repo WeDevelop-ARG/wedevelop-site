@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import classnames from 'classnames'
-import { useField } from 'formik'
+import { useField } from 'formik/dist/formik.esm'
 import isEmpty from 'lodash/isEmpty'
 
 function useFieldWithErrorClassName (Field, errorClassName) {

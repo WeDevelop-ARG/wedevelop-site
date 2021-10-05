@@ -1,6 +1,6 @@
 import classnames from 'classnames'
 import { useLocation } from 'react-router-dom'
-import { Field } from 'formik'
+import { Field } from 'formik/dist/formik.esm'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'

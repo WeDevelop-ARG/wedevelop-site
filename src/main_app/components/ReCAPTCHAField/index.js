@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useFormikContext } from 'formik'
+import { useFormikContext } from 'formik/dist/formik.esm'
 import { IS_STATIC_RENDERER, RECAPTCHA_SITE_KEY } from 'main_app/constants'
 import isFunction from 'lodash/isFunction'
 import { useMemo } from 'react'

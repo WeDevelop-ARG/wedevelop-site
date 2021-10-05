@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { useField } from 'formik'
+import { useField } from 'formik/dist/formik.esm'
 import CreatableSelect from 'react-select/creatable'
 
 function FormikSelect ({ name, options, placeholder }) {

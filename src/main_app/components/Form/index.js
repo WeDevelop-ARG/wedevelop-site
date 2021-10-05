@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { Formik, Form as FormikForm } from 'formik'
+import { Formik, Form as FormikForm } from 'formik/dist/formik.esm'
 
 function Form ({
   onSubmit,
