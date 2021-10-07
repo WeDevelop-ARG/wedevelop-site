@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import StepWizard from 'react-step-wizard'
 
+import FormProgress from './ProgressBar'
 import ControlButtons from './ControlButtons'
 
 import classes from './styles.module.scss'
@@ -26,6 +27,7 @@ function MultiForm () {
         onStepChange={onStepChange}
         initialStep={1}
         isLazyMount
+        nav={<FormProgress />}
         instance={setInstance}
         className={classes.stepWizardContainer}
       >
