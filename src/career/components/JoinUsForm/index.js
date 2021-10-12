@@ -1,12 +1,13 @@
 import { useState, useCallback } from 'react'
+import isNil from 'lodash/isNil'
 import classnames from 'classnames'
 import { Field, ErrorMessage } from 'formik'
-import { InputGroup } from 'react-bootstrap'
-import { isNil } from 'lodash'
+import InputGroup from 'react-bootstrap/InputGroup'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
 import SVGIcon from 'main_app/components/SVGIcon'
+import Image from 'main_app/components/Image'
 import FileInput from './FileInput'
 import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
@@ -153,6 +154,33 @@ const skillOptions = [{
 }, {
   value: 'JMETER',
   label: 'Jmeter'
+}, {
+  value: 'HEADHUNTING',
+  label: 'Headhunting'
+}, {
+  value: 'IT_RECRUITMENT',
+  label: 'IT Recruitment'
+}, {
+  value: 'TECH_RECRUITING',
+  label: 'Technical Recruiting'
+}, {
+  value: 'STRATEGIC_PLANNING',
+  label: 'Strategic Planning'
+}, {
+  value: 'TALENT_ACQUISITION',
+  label: 'Talent Acquisition'
+}, {
+  value: 'SOURCING',
+  label: 'Sourcing'
+}, {
+  value: 'JOB_POSTING',
+  label: 'Job Posting'
+}, {
+  value: 'ATS_MANAGEMENT',
+  label: 'ATS Management'
+}, {
+  value: 'CLIENT_ORIENTATION',
+  label: 'Client Orientation'
 }]
 
 function JoinUsForm () {
@@ -172,7 +200,7 @@ function JoinUsForm () {
   }, [])
 
   return (
-    <section>
+    <section className={classes.joinUsSection}>
       <p className={classes.subheadingText}>Join Us</p>
       <h2 className={classes.titleText}>Let’s grow together</h2>
       <hr className={classes.horizontalBar} />
@@ -276,7 +304,7 @@ function JoinUsForm () {
       <div className={classes.filledCircle} aria-hidden='true' />
       <div className={classes.emptyCircle} aria-hidden='true' />
       <div className={classes.smallBlurCircle} aria-hidden='true' />
-      <img src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
       <div className={classes.halfCircle}>
         <SVGIcon name='home/services/half_circle' />
       </div>

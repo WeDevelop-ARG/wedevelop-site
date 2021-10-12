@@ -2,14 +2,15 @@ import { useCallback } from 'react'
 import { useRouteMatch, useHistory } from 'react-router-dom'
 
 import ContactModal from 'main_app/components/ContactModal'
+import PictureWall from 'main_app/components/PictureWall'
 
 import Hero from './hero'
 import Details from './details'
+import OurProcess from './ourProcess'
 import Benefits from './benefits'
 import Schedule from './schedule'
 import WebDevDetails from './details/components/WebDevDetails'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
-import PictureWall from 'main_app/components/PictureWall'
 
 import photo from 'assets/services/web-services.svg'
 import icon from 'assets/services/icon-web-development.svg'
@@ -50,6 +51,7 @@ function WebDevelopment () {
           <WebDevDetails contactPagePath={contactPagePath} />
         </Details>
       </section>
+      <OurProcess />
       <Benefits className={classes.sectionContainer} service='web-development' />
       <Schedule
         className={classes.sectionContainer}

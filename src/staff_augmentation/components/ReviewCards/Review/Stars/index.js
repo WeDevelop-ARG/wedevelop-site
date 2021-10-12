@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import times from 'lodash/times'
 
 import SVGIcon from 'main_app/components/SVGIcon'
 
@@ -7,7 +7,7 @@ import classes from './styles.module.scss'
 function Stars ({ starsNumber }) {
   return (
     <div className={classes.starIcons}>
-      {_.times(starsNumber).map((_, index) => (
+      {times(starsNumber).map((_, index) => (
         <SVGIcon
           key={index}
           name='staff_augmentation/star'

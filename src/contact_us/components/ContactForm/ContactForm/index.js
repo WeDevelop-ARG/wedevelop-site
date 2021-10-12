@@ -1,7 +1,6 @@
 import Form from 'main_app/components/Form'
 import { useCallback } from 'react'
 import * as Yup from 'yup'
-import axios from 'axios'
 
 import { MAILER_URL } from 'main_app/constants'
 
@@ -45,7 +44,14 @@ function ContactForm ({ initialValues, ...props }) {
     }
 
     try {
-      await axios.post(MAILER_URL, data)
+      await fetch(MAILER_URL, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
       window.alert('Message sent successfully')
     } catch (_) {
       window.alert('An error occurred while sending your message.\n\nPlease contact us at info@wedevelop.me')

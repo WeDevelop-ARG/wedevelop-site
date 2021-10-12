@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import classnames from 'classnames'
 import { HashLink } from 'react-router-hash-link'
-import { Dropdown } from 'react-bootstrap'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 import Button from 'main_app/components/Button'
 import useMediaQuery from 'utils/use_media_query'
@@ -13,6 +13,8 @@ import DropdownIcon from 'assets/nav_bar/dropdown_icon.svg'
 import DropdownIconWhite from 'assets/nav_bar/dropdown_icon_white.svg'
 
 import classes from './styles.module.scss'
+import Image from 'main_app/components/Image'
+import { useCallback } from 'react'
 
 function MainMenu ({
   isOpen,
@@ -26,9 +28,14 @@ function MainMenu ({
   const buttonVariant = useMemo(() => {
     if (isVariant(variant, 'light')) return 'dark'
   }, [variant])
+  const handleClick = useCallback((e) => {
+    if (e.target.closest('a') !== null || e.target.closest('button') !== null) {
+      onRequestClose()
+    }
+  }, [onRequestClose])
 
   return (
-    <ul className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
+    <ul onClick={handleClick} className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li
         className={classnames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/services')
@@ -39,7 +46,7 @@ function MainMenu ({
             as={Button}
             variant='link'
             className={classes.servicesDropdownToggle}
-            iconRight={<img src={dropdownIconURL} alt='' />}
+            iconRight={<Image src={dropdownIconURL} alt='' />}
           >
             Services
           </Dropdown.Toggle>

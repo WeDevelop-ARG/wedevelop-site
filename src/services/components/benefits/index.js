@@ -9,6 +9,7 @@ import iconAgile from 'assets/services/icon-agile.svg'
 import background from 'assets/services/background-key-featured-benefits.png'
 
 import classes from './benefits.module.scss'
+import Image from 'main_app/components/Image'
 
 function Benefits ({ service, className }) {
   const isWebDev = service === 'web-development'
@@ -31,7 +32,7 @@ function Benefits ({ service, className }) {
         {isWebDev && <DecorationWebDev />}
         {isStaff && <DecorationStaff />}
       </section>
-      <img className={classes.background} src={background} alt='' />
+      <Image className={classes.background} src={background} alt='' />
     </>
   )
 }

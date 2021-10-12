@@ -2,18 +2,18 @@ import { useState, useCallback } from 'react'
 import { useRouteMatch } from 'react-router'
 
 import Article from 'main_app/components/Article'
+import AvailableDevs from './components/AvailableDevs'
+import BackgroundContainer from './components/BackgroundContainer'
 import Footer from './components/Footer'
+import FreeQuoteModal from './components/FreeQuoteModal'
+import Header from './components/Header'
+import HireTopTalent from './components/HireTopTalent'
+import NavBar from './components/NavBar'
+import PictureWall from 'main_app/components/PictureWall'
+import ReviewCards from './components/ReviewCards'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
-import Header from './components/Header'
-import ReviewCards from './components/ReviewCards'
-import GrowToday from './components/GrowToday'
-import AvailableDevs from './components/AvailableDevs'
-import FreeQuoteModal from './components/FreeQuoteModal'
-import HireTopTalent from './components/HireTopTalent'
-import BackgroundContainer from './components/BackgroundContainer'
-import PictureWall from 'main_app/components/PictureWall'
 import SimpleSteps from 'services/components/simpleSteps'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
@@ -34,6 +34,11 @@ function LandingPage () {
 
   return (
     <>
+      <NavBar
+        landingName={landing.header.landingName}
+        handleModal={handleModalOpen}
+        backgroundColor={landing.header.backgroundColor}
+      />
       <Article>
         <Header
           landingName={landing.header.landingName}
@@ -52,16 +57,16 @@ function LandingPage () {
           handleModal={handleModalOpen}
         />
         <BackgroundContainer backgroundURL={landing.backgrounds.firstBackground} />
+        {landing.availableDevs &&
+          <AvailableDevs
+            subtitle={landing.availableDevs.subtitle}
+            title={landing.availableDevs.title}
+            description={landing.availableDevs.description}
+            devs={landing.availableDevs.devs}
+            buttonText={landing.availableDevs.buttonText}
+            handleModal={handleModalOpen}
+          />}
         <SimpleSteps />
-        <GrowToday
-          subheadingText={landing.growToday.subtitle}
-          titleText={landing.growToday.title}
-          descriptionText={landing.growToday.description}
-          contentText={landing.growToday.content}
-          buttonText={landing.growToday.buttonText}
-          handleModal={handleModalOpen}
-        />
-        <BackgroundContainer backgroundURL={landing.backgrounds.secondBackground} />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}
@@ -70,12 +75,6 @@ function LandingPage () {
           buttonText={landing.HireTopTalent.buttonText}
           handleModal={handleModalOpen}
         />
-        <BackgroundContainer backgroundURL={landing.backgrounds.thirdBackground} />
-        {landing.availableDevs &&
-          <AvailableDevs
-            title={landing.availableDevs.title}
-            devs={landing.availableDevs.devs}
-          />}
       </Article>
       <PictureWall />
       <Footer variant='light' />

@@ -6,6 +6,7 @@ import ClutchWidget from 'main_app/components/ClutchWidget'
 import imgHeader from 'assets/home/header/background.png'
 
 import classes from './styles.module.scss'
+import Image from 'main_app/components/Image'
 
 function Header (props, ref) {
   return (
@@ -41,7 +42,14 @@ function Header (props, ref) {
         <ClutchWidget className={classes.clutchWidget} variant='dark' />
       </div>
       <div className={classes.decorationWrapper}>
-        <img className={classes.imgHeader} src={imgHeader} alt='' />
+        <Image
+          src={imgHeader}
+          alt=''
+          loading='eager'
+          objectFit='cover'
+          position='bottom'
+          placeholderColor='#333'
+        />
         <div className={classes.halfCircle}>
           <SVGIcon name='home/header/half_circle' />
         </div>

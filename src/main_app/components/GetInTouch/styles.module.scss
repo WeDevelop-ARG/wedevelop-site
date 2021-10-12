@@ -3,6 +3,13 @@
 
 .getInTouch {
   position: relative;
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+  @include for-desktop-up {
+    padding-top: var(--rootContentMinPadding);
+    padding-bottom: var(--rootContentMinPadding);
+  }
 }
 
 .sectionContent {
@@ -50,16 +57,13 @@
 }
 
 %dotsPattern {
-  width: 15vw;
   position: absolute;
-  top: 90px;
-  display: none;
+  width: 250px;
 
   @include for-desktop-up {
-    display: block;
+    width: 15vw;
 
     @media screen and (min-width: 1024px) and (max-width: 1230px) {
-      top: 100px;
       width: 12vw;
     }
   }
@@ -67,19 +71,33 @@
 
 .leftPattern {
   @extend %dotsPattern;
-  left: 5vw;
+  top: 40px;
+  left: calc(50% - 125px);
+  
+  @include for-desktop-up {
+    top: 90px;
+    left: 5vw;
 
-  @media screen and (min-width: 1024px) and (max-width: 1230px) {
-    left: 3vw;
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      left: 3vw;
+    }
   }
 }
 
 .rightPattern {
   @extend %dotsPattern;
-  right: 5vw;
+  bottom: 40px;
+  right: calc(50% - 125px);
+  
+  @include for-desktop-up {
+    top: 90px;
+    bottom: auto;
+    right: 5vw;
 
-  @media screen and (min-width: 1024px) and (max-width: 1230px) {
-    right: 3vw;
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      top: 100px;
+      right: 3vw;
+    }
   }
 }
 

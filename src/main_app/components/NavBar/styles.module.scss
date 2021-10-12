@@ -20,15 +20,20 @@
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  transition:
-    all 150ms linear,
-    backdrop-filter 0ms,
-    padding-left 0ms,
-    padding-right 0ms
-  ;
+  visibility: hidden;
 
   &.hidden {
     display: none;
+  }
+
+  &.initialized {
+    visibility: visible;
+    transition:
+      all 150ms linear,
+      backdrop-filter 0ms,
+      padding-left 0ms,
+      padding-right 0ms
+    ;
   }
 
   &.atTop, &.menuOpen {

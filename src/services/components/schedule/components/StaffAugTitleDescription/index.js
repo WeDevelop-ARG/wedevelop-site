@@ -9,7 +9,7 @@ function StaffAugTitleDescription () {
     <>
       <h2 className={classes.title}>
         <span>Hire your new</span>
-        <TextLoop delay={1500} className={classes.textLoop}>
+        <TextLoop delay={750} interval={1500} className={classes.textLoop}>
           {roleList.map(str => <div key={str} className={classes.role}>{str}</div>)}
         </TextLoop>
         <span>now!</span>

@@ -77,13 +77,6 @@
   border: none;
 }
 
-.imgHeader {
-  object-fit: cover;
-  object-position: center bottom;
-  width: 100%;
-  height: 99%;
-}
-
 .halfCircle {
   position: absolute;
   top: 110px;
@@ -276,7 +269,7 @@
 
 .scrollTextMobile {
   @extend .scrollText;
-  
+
   @include for-desktop-up {
     display: none;
   }

@@ -6,6 +6,7 @@ import EmptyCircle from 'assets/services/empty-circle-left.svg'
 import CircleLine from 'assets/services/circle-line.svg'
 import classes from './staffDetails.module.scss'
 import BlurDot from 'assets/services/blur-dot.svg'
+import Image from 'main_app/components/Image'
 
 function StaffDetails() {
   const servicesList = useStaffDetails()
@@ -19,12 +20,12 @@ function StaffDetails() {
         </div>
       ))}
     </div>
-      <img className={classes.decoPattern} src={Pattern} alt='' />
-      <img className={classes.decoCircle} src={Circle} alt='' />
-      <img className={classes.decoEmptyCircle} src={EmptyCircle} alt='' />
-      <img className={classes.decoFilledCircle} src={FilledCircle} alt='' />
-      <img className={classes.decoCircleLine} src={CircleLine} alt='' />
-      <img className={classes.decoBlur} src={BlurDot} alt='' />
+      <Image className={classes.decoPattern} src={Pattern} alt='' />
+      <Image className={classes.decoCircle} src={Circle} alt='' />
+      <Image className={classes.decoEmptyCircle} src={EmptyCircle} alt='' />
+      <Image className={classes.decoFilledCircle} src={FilledCircle} alt='' />
+      <Image className={classes.decoCircleLine} src={CircleLine} alt='' />
+      <Image className={classes.decoBlur} src={BlurDot} alt='' />
     </>
   )
 }
