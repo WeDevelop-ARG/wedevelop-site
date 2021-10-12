@@ -14,23 +14,28 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <% if (process.env.REACT_APP_ENVIRONMENT === 'production') { %>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-53CPLS8');
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <script>
+      if (navigator.userAgent !== 'ReactSnap') {
+        var st = document.createElement('link')
+
+        st.rel = 'stylesheet'
+        st.type = 'text/css'
+        st.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'
+
+        document.head.appendChild(st)
+      }
     </script>
-    <!-- End Google Tag Manager -->
-    <% } %>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <% if (process.env.NODE_ENV === 'production') { %>
+    <% if (process.env.REACT_APP_ENVIRONMENT === 'production') { %>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53CPLS8"
@@ -38,24 +43,73 @@
       </iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <script>window.IS_PRODUCTION_ENVIRONMENT = true</script>
     <% } %>
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
-      if (window.cookieconsent) {
-        window.cookieconsent.initialise({
-          "palette": {
-            "popup": {
-              "background": "#f7f9fc",
-              "text": "#363636"
-            },
-            "button": {
-              "background": "#4776e6",
-              "text": "#ffffff"
-            }
-          },
-          "theme": "edgeless"
-        });
-      }
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event:'gtm.js' })
+      ;(function () {
+        var IS_STATIC_RENDERER = navigator.userAgent === 'ReactSnap'
+        var WAIT_TIME_BEFORE_APPEND = 3000
+
+        document.addEventListener('DOMContentLoaded', function () {
+          if (IS_STATIC_RENDERER) return undefined
+
+          loadCookieConsent()
+
+          if (window.IS_PRODUCTION_ENVIRONMENT) {
+            loadGoogleTagManager()
+          }
+        })
+
+        function loadGoogleTagManager () {
+          var sc = document.createElement('script')
+
+          sc.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-53CPLS8'
+          sc.async = true
+          sc.defer = true
+
+          setTimeout(function () {
+            document.head.appendChild(sc)
+          }, WAIT_TIME_BEFORE_APPEND)
+        }
+
+        function loadCookieConsent () {
+          var sc = document.createElement('script')
+          var st = document.createElement('link')
+
+          sc.src = 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js'
+          sc.dataset.cfasync = 'false'
+          sc.async = 'true'
+          sc.defer = 'true'
+
+          st.rel = 'stylesheet'
+          st.type = 'text/css'
+          st.href = 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css'
+
+          sc.addEventListener('load', function () {
+            if (!window.cookieconsent) return undefined
+
+            window.cookieconsent.initialise({
+              "palette": {
+                "popup": {
+                  "background": "#f7f9fc",
+                  "text": "#363636"
+                },
+                "button": {
+                  "background": "#4776e6",
+                  "text": "#ffffff"
+                }
+              },
+              "theme": "edgeless"
+            })
+          })
+
+          setTimeout(function () {
+            document.head.append(sc, st)
+          }, WAIT_TIME_BEFORE_APPEND)
+        }
+      })()
     </script>
   </body>
 </html>

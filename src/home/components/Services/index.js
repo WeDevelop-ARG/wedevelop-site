@@ -8,6 +8,7 @@ import useServicesOffered from '../../hooks/useServicesOffered'
 import pattern from 'assets/home/services/pattern.svg'
 
 import classes from './styles.module.scss'
+import Image from 'main_app/components/Image'
 
 function ServicesOffered () {
   const services = useServicesOffered()
@@ -62,11 +63,12 @@ function ServicesOffered () {
               </Button>
             </div>
           </div>
-          <img src={pattern} alt='' className={classes.patternRight} />
-          <img src={pattern} alt='' className={classes.patternLeft} />
+          <Image src={pattern} alt='' className={classes.patternRight} />
+          <Image src={pattern} alt='' className={classes.patternLeft} />
           <div className={classes.halfCircle}>
             <SVGIcon name='home/services/half_circle' />
           </div>
+          <div className={classes.smallHalfCircle} />
           <div className={classes.filledCircle} />
           <div className={classes.emptyCircle} />
           <div className={classes.smallCircle} />

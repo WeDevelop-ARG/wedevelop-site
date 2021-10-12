@@ -1,6 +1,7 @@
 import Review from './Review'
 import Button from 'main_app/components/Button'
 
+import Image from 'main_app/components/Image'
 import DotsPattern from 'assets/staff_augmentation/dots_pattern.svg'
 
 import classes from './styles.module.scss'
@@ -34,15 +35,13 @@ function ReviewCards ({
         }
       </div>
       <Button
-        smooth
-        isAnchor
         variant='primary'
         className={classes.freeQuoteButton}
         onClick={handleModal}
       >
         {buttonText}
       </Button>
-      <img src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
       <div className={classes.filledCircle} aria-hidden='true' />
       <div className={classes.emptyCircle} aria-hidden='true' />
       <div className={classes.smallBlurredCircle} aria-hidden='true' />

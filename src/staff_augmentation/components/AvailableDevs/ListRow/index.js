@@ -2,6 +2,7 @@ import Button from 'main_app/components/Button'
 
 import getBackgroundColor from '../use_background_colors'
 import RightArrow from 'assets/hire_developers/right_arrow.svg'
+import Image from 'main_app/components/Image'
 
 import classes from './styles.module.scss'
 
@@ -14,12 +15,12 @@ function ListRow ({
   devRate,
   handleModal
 }) {
-  const btnRightArrow = (<img src={RightArrow} alt='' />)
+  const btnRightArrow = <Image src={RightArrow} alt='' />
 
   return (
     <>
       <div className={classes.devImgName}>
-        <img src={devImgURL} alt='' className={classes.profileImg} />
+        <Image src={devImgURL} alt='' className={classes.profileImg} />
         <p>{devName}</p>
       </div>
       <div className={classes.roleTech}>

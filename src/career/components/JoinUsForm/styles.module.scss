@@ -5,6 +5,11 @@ $grayColor: #363636;
 $required: #F00;
 $attachColor: #377DFF;
 
+.joinUsSection {
+  position: relative;
+  overflow: hidden;
+}
+
 .form {
   display: flex;
   flex-direction: column;

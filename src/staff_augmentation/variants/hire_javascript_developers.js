@@ -2,19 +2,19 @@ import BgHireDevelopers from 'assets/hire_developers/backgrounds/bg_hire_develop
 
 import defaultContent from './default_content'
 
-const hireDevelopers = {
+const hireJavascriptDevelopers = {
   ...defaultContent,
-  pathName: 'hire-developers',
+  pathName: 'hire-javascript-developers',
   metadata: {
     title: 'IT Staffing Agency',
-    description: 'Hire Developers and Development Teams.'
+    description: 'Hire Javascript Developers.'
   },
   header: {
     landingName: <>hire developers</>,
-    title: <>Hire Developers and Development Teams</>,
+    title: <>Hire Javascript Developers</>,
     description: (
       <>
-        <p>Hire Top Web Developers without the hassles.</p>
+        <p>Hire Javascript Developers without the hassles.</p>
       </>
     ),
     sideImageURL: BgHireDevelopers,
@@ -24,12 +24,12 @@ const hireDevelopers = {
     ...defaultContent.freeQuoteForm,
     formHeader: {
       subtitle: 'Get profiles',
-      title: 'Get Developer Profiles',
-      description: 'Fill out the form and Get Developer Profiles and Developer Rates.'
+      title: 'Get Javascript Developer Profiles',
+      description: 'Fill out the form and Get Javascript Developer Profiles and Rates.'
     },
-    formOrigin: 'hire-developers',
+    formOrigin: 'hire-javascript-developers',
     formButtonText: 'Get profiles and rates'
   }
 }
 
-export default hireDevelopers
+export default hireJavascriptDevelopers

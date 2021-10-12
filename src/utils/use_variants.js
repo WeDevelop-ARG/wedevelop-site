@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import classnames from 'classnames'
-import { isFunction, uniq } from 'lodash'
+import isFunction from 'lodash/isFunction'
+import uniq from 'lodash/uniq'
 
 function useVariants (classes, variants = '', { prefix = '', defaults = {} } = {}) {
   if (Array.isArray(variants)) {

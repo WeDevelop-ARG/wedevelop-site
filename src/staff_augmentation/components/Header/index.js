@@ -1,11 +1,12 @@
 import { useState, useCallback } from 'react'
 
 import ClutchWidget from 'main_app/components/ClutchWidget'
+import ConfirmationMessage from '../ConfirmationMessage'
+import FreeQuoteForm from '../FreeQuoteForm'
+import Image from 'main_app/components/Image'
+import Logo from 'main_app/components/Logo'
 import Modal from 'main_app/components/Modal'
 import SVGIcon from 'main_app/components/SVGIcon'
-import Logo from 'main_app/components/Logo'
-import FreeQuoteForm from '../FreeQuoteForm'
-import ConfirmationMessage from '../ConfirmationMessage'
 
 import classes from './styles.module.scss'
 
@@ -30,7 +31,7 @@ function Header ({
         <div className={classes.wrapper}>
           <div className={classes.presentationContainer}>
             <div className={classes.logoContainer}><Logo variant='white' /></div>
-            <div className={classes.tagNameContainer}><span className={classes.tagName} style={{ backgroundColor: backgroundColor }}>{landingName}</span></div>
+            <div className={classes.tagNameContainer}><span className={classes.tagName} style={{ backgroundColor }}>{landingName}</span></div>
             <h1 className={classes.titleText}>{title}</h1>
             <div className={classes.description}>{description}</div>
             <div className={classes.clutchCircle}>
@@ -41,6 +42,7 @@ function Header ({
           </div>
           <div id='get-free-quote' className={classes.formContainer}>
             <FreeQuoteForm
+              noAutofocus
               onSubmitFinished={handleSubmitFinished}
               formHeader={freeQuoteForm.formHeader}
               fixedFields={freeQuoteForm.formCustomizations.fixedFields}
@@ -52,7 +54,15 @@ function Header ({
           </div>
         </div>
         <div className={classes.decorationWrapper}>
-          <img className={classes.imgHeader} src={sideImageURL} alt='' />
+          <Image
+            objectFit='cover'
+            position='bottom'
+            loading='eager'
+            placeholderColor='#333'
+            className={classes.imgHeader}
+            src={sideImageURL}
+            alt=''
+          />
         </div>
         <div className={classes.pattern}>
           <SVGIcon name='home/header/pattern' />
