@@ -1,0 +1,72 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.listCards {
+  --repeat: auto-fit;
+
+  @include for-desktop-up {
+    --repeat: 3;
+  }
+
+  list-style: none;
+  padding-left: 0px;
+  display: grid;
+  grid-template-columns: repeat(var(--repeat), minmax(250px, 1fr));
+  column-gap: 20px;
+  row-gap: 30px;
+  margin: auto;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  padding: 10px;
+  display: flex;
+  cursor: pointer;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(66.27deg, #6b67e9 11.76%, #8224e3 89.05%) border-box;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+input[type="radio"]:hover {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(66.27deg, #6b67e9 11.76%, #8224e3 89.05%);
+}
+
+input[type="radio"]:checked {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(66.27deg, #6b67e9 11.76%, #8224e3 89.05%);
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  position: relative;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  top: -20px;
+  left: 225px;
+  background-image: url(../../../assets/career/check.svg);
+}
+
+label {
+  position: absolute;
+  margin: 20px;
+  cursor: pointer;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
