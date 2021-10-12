@@ -11,6 +11,7 @@ import Image from 'main_app/components/Image'
 import FileInput from './FileInput'
 import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
+import RadioButtonsCards from '../../../staff_augmentation/components/RadioButtonsCards'
 
 import FormLogic from './FormLogic'
 import FormikSelect from './FormikSelect/index'
@@ -183,6 +184,34 @@ const skillOptions = [{
   label: 'Client Orientation'
 }]
 
+const serviceType = [{
+  key: '1',
+  value: 'Staff Augmentation'
+},
+{
+  key: '2',
+  value: 'Autonomous Team'
+},
+{
+  key: '3',
+  value: 'Other'
+}
+]
+
+const startingDate = [{
+  key: '1',
+  value: 'Inmmediately'
+},
+{
+  key: '2',
+  value: '2-4 weeks'
+},
+{
+  key: '3',
+  value: 'I don’t know'
+}
+]
+
 function JoinUsForm () {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
@@ -208,90 +237,11 @@ function JoinUsForm () {
         onSubmitFinished={onSubmitFinished}
         className={classes.form}
       >
-        <label className={classes.labels}>
-          <span>*</span>{' '}First Name
-          <Field
-            as={InputWithError}
-            type='text'
-            name='firstName'
-            className={classes.inputStyles}
-          />
-        </label>
-        <label className={classes.labels}>
-          <span>*</span>{' '}Last Name
-          <Field
-            as={InputWithError}
-            type='text'
-            name='lastName'
-            className={classes.inputStyles}
-          />
-        </label>
-        <label className={classes.labels}>
-          <span>*</span>{' '}Email
-          <Field
-            as={InputWithError}
-            type='email'
-            name='email'
-            className={classes.inputStyles}
-          />
-        </label>
-        <label className={classes.labels}>
-          <span>*</span>{' '}Skills
-          <FormikSelect
-            name='skills'
-            options={skillOptions}
-            placeholder='Select your skills'
-          />
-          <ErrorMessage name='skills' component='div' className={classes.errorMessage} />
-        </label>
-        <label className={classes.labels}>
-          Intended Remuneration (monthly)
-          <InputGroup className={classes.remunerationGroup}>
-            <InputGroup.Text className={classes.currency}>$</InputGroup.Text>
-            <Field
-              as={InputWithError}
-              type='text'
-              name='remuneration'
-              placeholder='0.0'
-              className={classes.remuneration}
-            />
-          </InputGroup>
-        </label>
-        <label className={classes.labels}>
-          In one sentence, tell us what makes you unique
-          <Field
-            as={TextAreaWithError}
-            name='message'
-            maxLength='200'
-            className={classnames(classes.inputStyles, classes.textarea)}
-          />
-        </label>
-        <label className={classes.fileUploadField}>
-          Resume/CV
-          <Field
-            name='resume'
-            component={FileInput}
-            aria-hidden='true'
-          />
-          <div className={classes.field}>
-            <SVGIcon name='career/clip' className={classes.clip} />
-            <Field name='resume'>
-              {(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
-            </Field>
-          </div>
-          <ErrorMessage name='resume' component='div' className={classes.errorMessage} />
-        </label>
-        <ReCAPTCHAField name='recaptchaToken' />
-        {isSubmitted && error && (
-          <p className={classes.submitError}>
-            Oops! An error occurred and we couldn't receive your application. Please try again later.
-          </p>
-        )}
-        {isSubmitted && !error && (
-          <p className={classes.submitSuccessful}>
-            Your application has been received successfully. We'll contact you soon.
-          </p>
-        )}
+        <RadioButtonsCards
+          label='Radio Topic'
+          name='sericeOption'
+          options={serviceType}
+        />
         <div className={classes.buttonContainer}>
           <SubmitButton
             variant='primary'
@@ -301,17 +251,6 @@ function JoinUsForm () {
           </SubmitButton>
         </div>
       </FormLogic>
-      <div className={classes.filledCircle} aria-hidden='true' />
-      <div className={classes.emptyCircle} aria-hidden='true' />
-      <div className={classes.smallBlurCircle} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
-      <div className={classes.halfCircle}>
-        <SVGIcon name='home/services/half_circle' />
-      </div>
-      <div className={classes.leftSmallBlurCircle} />
-      <div className={classes.leftFilledCircle} />
-      <div className={classes.leftEmptyCircle} />
-      <div className={classes.leftSmallCircle} />
     </section>
   )
 }

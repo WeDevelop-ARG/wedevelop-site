@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 import uploadFile from 'service_providers/firebase/uploadFile'
 
 import { CAREER_FORM_PROCESSOR_URL } from 'main_app/constants'
+import { yupToFormErrors } from 'formik'
 
 const initialValues = {
   firstName: '',
@@ -16,7 +17,8 @@ const initialValues = {
   remuneration: '',
   recaptchaToken: '',
   resume: null,
-  skills: []
+  skills: [],
+  radioOption: ''
 }
 const MAX_FILE_SIZE = 20 * 1024 * 1024 // 20 MB
 const SUPPORTED_FILES = [
@@ -39,7 +41,8 @@ const schemaShape = {
   recaptchaToken: Yup.string().required('Please confirm you\'re not a robot.'),
   resume: Yup.mixed()
     .test('fileSize', 'Maximum file size allowed: 20MB.', value => isNil(value) || value.size <= MAX_FILE_SIZE)
-    .test('fileType', 'Supported formats: PDF, Word, ODT.', value => isNil(value) || SUPPORTED_FILES.includes(value?.type))
+    .test('fileType', 'Supported formats: PDF, Word, ODT.', value => isNil(value) || SUPPORTED_FILES.includes(value?.type)),
+  radioOption: Yup.string().required()
 }
 
 function FormLogic ({ onSubmitFinished, ...props }) {
