@@ -1,9 +1,11 @@
-import { useMemo } from 'react'
-import classnames from 'classnames'
+import { useMemo, useCallback, useState } from 'react'
+import classNames from 'classnames'
 import { HashLink } from 'react-router-hash-link'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 import Button from 'main_app/components/Button'
+import Image from 'main_app/components/Image'
+
 import useMediaQuery from 'utils/use_media_query'
 import { isVariant } from 'utils/use_variants'
 
@@ -13,8 +15,6 @@ import DropdownIcon from 'assets/nav_bar/dropdown_icon.svg'
 import DropdownIconWhite from 'assets/nav_bar/dropdown_icon_white.svg'
 
 import classes from './styles.module.scss'
-import Image from 'main_app/components/Image'
-import { useCallback } from 'react'
 
 function MainMenu ({
   isOpen,
@@ -24,29 +24,41 @@ function MainMenu ({
   contactPagePath = '/contact'
 }) {
   const isTabletDown = useMediaQuery(forTabletDown)
-  const dropdownIconURL = isVariant(variant, 'light') || isTabletDown ? DropdownIconWhite : DropdownIcon
+  const dropdownIconURL = isVariant(variant, 'light') && !isTabletDown ? DropdownIconWhite : DropdownIcon
   const buttonVariant = useMemo(() => {
     if (isVariant(variant, 'light')) return 'dark'
   }, [variant])
   const handleClick = useCallback((e) => {
-    if (e.target.closest('a') !== null || e.target.closest('button') !== null) {
+    const buttonOrAnchor = e.target.closest('a') ?? e.target.closest('button')
+
+    if (buttonOrAnchor !== null && buttonOrAnchor.dataset.closeMenuOnClick !== 'false') {
       onRequestClose()
     }
   }, [onRequestClose])
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
 
   return (
-    <ul onClick={handleClick} className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
+    <ul onClick={handleClick} className={classNames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li
-        className={classnames(classes.navItem, { [classes.hidden]: isTabletDown }, {
+        className={classNames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/services')
         })}
       >
-        <Dropdown className={classnames({ [classes.hidden]: isTabletDown })}>
+        <Dropdown show={isServicesDropdownOpen} onToggle={setIsServicesDropdownOpen}>
           <Dropdown.Toggle
             as={Button}
             variant='link'
-            className={classes.servicesDropdownToggle}
-            iconRight={<Image src={dropdownIconURL} alt='' />}
+            className={classNames(classes.servicesDropdownToggle, {
+              [classes.open]: isServicesDropdownOpen
+            })}
+            data-close-menu-on-click='false'
+            iconRight={
+              <Image
+                src={dropdownIconURL}
+                alt=''
+                className={classes.iconRight}
+              />
+            }
           >
             Services
           </Dropdown.Toggle>
@@ -71,46 +83,8 @@ function MainMenu ({
           </Dropdown.Menu>
         </Dropdown>
       </li>
-      {isTabletDown && (
-        <>
-          <li className={classnames(classes.navItem, {
-            [classes.active]: window.location.pathname.startsWith('/services')
-          })}
-          >
-            <Dropdown>
-              <Dropdown.Toggle
-                as={Button}
-                variant='link'
-                className={classes.servicesDropdownToggle}
-                iconRight={<img src={DropdownIcon} alt='' className={classes.iconRight} />}
-              >
-                Services
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu className={classes.dropdownMenu}>
-                <Dropdown.Item
-                  as={HashLink}
-                  to='/services/web-development#top'
-                  smooth
-                  className={classes.dropdownItem}
-                >
-                  Web Development
-                </Dropdown.Item>
-                <Dropdown.Item
-                  as={HashLink}
-                  to='/services/staff-augmentation#top'
-                  smooth
-                  className={classes.dropdownItem}
-                >
-                  Staff Augmentation
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </li>
-        </>
-      )}
       <li
-        className={classnames(classes.navItem, {
+        className={classNames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/about-us')
         })}
       >
@@ -118,22 +92,18 @@ function MainMenu ({
           About Us
         </HashLink>
       </li>
-      <li
-        className={classnames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/testimonials')
-        })}
-      >
-        <HashLink to='/#testimonials'>
+      <li className={classes.navItem}>
+        <HashLink to='/#testimonials' smooth>
           Testimonials
         </HashLink>
       </li>
-      <li className={classnames(classes.navItem)}>
+      <li className={classNames(classes.navItem)}>
         <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
           Blog
         </a>
       </li>
       <li
-        className={classnames(classes.navItem, {
+        className={classNames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/career')
         })}
       >

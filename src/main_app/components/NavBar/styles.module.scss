@@ -75,8 +75,8 @@
   background: none;
   border: 0;
   padding: 7px 10px;
-  width: 47px;
-  height: 32px;
+  width: fit-content;
+  height: fit-content;
   display: flex;
   cursor: pointer;
 
@@ -90,7 +90,7 @@
 
  .open {
     width: 27px;
-    height: 18px;
+    height: auto;
 
     &.white {
       --primaryColor: #{$secondaryColor};
@@ -99,10 +99,8 @@
 
   .close {
     width: 24px;
-    height: 24px;
+    height: auto;
     z-index: 1;
-    margin-right: -15px;
-    margin-top: -5px;
   }
 }
 
