@@ -1,0 +1,97 @@
+.image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image.cover {
+  background-size: cover;
+}
+
+.image.contain,
+.image.auto {
+  background-size: contain;
+}
+
+.image.top {
+  background-position: top;
+}
+
+.image.right {
+  background-position: right;
+}
+
+.image.bottom {
+  background-position: bottom;
+}
+
+.image.left {
+  background-position: left;
+}
+
+.image.top_left {
+  background-position: top left;
+}
+
+.image.top_right {
+  background-position: top right;
+}
+
+.image.bottom_left {
+  background-position: bottom left;
+}
+
+.image.bottom_right {
+  background-position: bottom right;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  & > .image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.container.cover > .image {
+  object-fit: cover;
+}
+
+.container.contain > .image,
+.container.auto > .image {
+  object-fit: contain;
+}
+
+.container.top > .image {
+  object-position: top;
+}
+
+.container.right > .image {
+  object-position: right;
+}
+
+.container.bottom > .image {
+  object-position: bottom;
+}
+
+.container.left > .image {
+  object-position: left;
+}
+
+.container.top_left > .image {
+  object-position: top left;
+}
+
+.container.top_right > .image {
+  object-position: top right;
+}
+
+.container.bottom_left > .image {
+  object-position: bottom left;
+}
+
+.container.bottom_right > .image {
+  object-position: bottom right;
+}

@@ -1,4 +1,4 @@
-import { identity } from 'lodash'
+import identity from 'lodash/identity'
 import { useEffect, useMemo } from 'react'
 
 function useElementClass (element, classOrClasses) {

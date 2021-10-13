@@ -1,33 +1,66 @@
 import { useEffect, useRef, useState } from 'react'
 import { useFormikContext } from 'formik'
-import { RECAPTCHA_SITE_KEY } from 'main_app/constants'
-import { isFunction } from 'lodash'
+import { IS_STATIC_RENDERER, RECAPTCHA_SITE_KEY } from 'main_app/constants'
+import isFunction from 'lodash/isFunction'
+import { useMemo } from 'react'
+
+const RECAPTCHA_URL = 'https://www.google.com/recaptcha/api.js?onload=RECAPTCHA_LOAD_HANDLER&render=explicit'
+
+let recaptchaLoadListeners = []
+
+window.RECAPTCHA_LOAD_HANDLER = () => {
+  recaptchaLoadListeners.forEach(l => l())
+}
+
+function loadRecaptcha (onPossiblyLoaded) {
+  if (IS_STATIC_RENDERER) return undefined
+  recaptchaLoadListeners.push(onPossiblyLoaded)
+
+  if (isRecaptchaScriptPresent()) {
+    return onPossiblyLoaded()
+  }
+
+  var sc = document.createElement('script')
+
+  sc.src = RECAPTCHA_URL
+  sc.async = true
+  sc.defer = true
+
+  sc.addEventListener('load', () => {
+    onPossiblyLoaded()
+  })
+
+  setTimeout(function () {
+    if (isRecaptchaScriptPresent()) return onPossiblyLoaded()
+    document.head.appendChild(sc)
+  }, 3000)
+}
+
+function isRecaptchaScriptPresent () {
+  return document.head.querySelector(`script[src="${RECAPTCHA_URL}"]`) !== null
+}
 
 function ReCAPTCHAField ({ name, className }) {
   const containerRef = useRef()
   const widgetIdRef = useRef()
-  const { setFieldValue, setTouched, values } = useFormikContext()
+  const { setFieldValue, setTouched, values, touched } = useFormikContext()
   const [grecaptcha, setGrecaptcha] = useState()
+  const formTouched = useMemo(() => Object.values(touched).some(v => v === true), [touched])
   const value = values[name]
 
   useEffect(() => {
-    let interval = null
-    let timeout = null
-    const tryFindReCAPTCHA = () => {
-      if (window.grecaptcha && isFunction(window.grecaptcha.render)) {
-        setGrecaptcha(window.grecaptcha)
-        clearInterval(interval)
-        clearTimeout(timeout)
-      }
+    if (!formTouched && !isFunction(window.grecaptcha?.render)) {
+      return undefined
     }
 
-    interval = setInterval(tryFindReCAPTCHA, 500)
-    timeout = setTimeout(() => {
-      clearInterval(interval)
-      console.error('Could not find ReCAPTCHA in the global scope')
-    }, 10000)
-    tryFindReCAPTCHA()
-  }, [])
+    let initialized = false
+    loadRecaptcha(() => {
+      if (!initialized && isFunction(window.grecaptcha?.render)) {
+        initialized = true
+        setGrecaptcha(window.grecaptcha)
+      }
+    })
+  }, [formTouched])
 
   useEffect(() => {
     if (!value && widgetIdRef.current) {

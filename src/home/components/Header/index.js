@@ -6,6 +6,7 @@ import ClutchWidget from 'main_app/components/ClutchWidget'
 import imgHeader from 'assets/home/header/background.png'
 
 import classes from './styles.module.scss'
+import Image from 'main_app/components/Image'
 
 function Header (props, ref) {
   return (
@@ -22,6 +23,16 @@ function Header (props, ref) {
           <br />experiences to clients and users all over the world.
         </p>
         <hr className={classes.divider} />
+        <HashLink to='#services' smooth className={classes.arrowMobile}>
+          <SVGIcon name='home/header/arrow' />
+          <div className={classes.scrollTextMobile}>scroll down</div>
+        </HashLink>
+        <div className={classes.clutchCircleMobile}>
+          <ClutchWidget className={classes.clutchWidget} variant='dark' />
+          <div className={classes.filledCircleMobile} />
+          <div className={classes.emptyCircleMobile} />
+          <div className={classes.smallCircleMobile} />
+        </div>
       </div>
       <HashLink to='#services' smooth className={classes.arrow}>
         <SVGIcon name='home/header/arrow' />
@@ -31,7 +42,14 @@ function Header (props, ref) {
         <ClutchWidget className={classes.clutchWidget} variant='dark' />
       </div>
       <div className={classes.decorationWrapper}>
-        <img className={classes.imgHeader} src={imgHeader} alt='' />
+        <Image
+          src={imgHeader}
+          alt=''
+          loading='eager'
+          objectFit='cover'
+          position='bottom'
+          placeholderColor='#333'
+        />
         <div className={classes.halfCircle}>
           <SVGIcon name='home/header/half_circle' />
         </div>

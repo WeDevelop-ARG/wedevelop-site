@@ -4,7 +4,8 @@
   display: flex;
 
   @include for-phone-only {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    padding-bottom: 20px;
   }
 }
 
@@ -15,6 +16,11 @@
 .descriptionText {
   font-weight: 300;
   line-height: 150%;
+
+  @include for-phone-only {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 }
 
 .list {
@@ -37,6 +43,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
+  margin-bottom: 20px;
 }
 
 .listItem::before {
@@ -44,24 +51,54 @@
   margin-right: 15px;
 }
 
-.decoPattern {
-  left: 3vw;
-  position: absolute;
-  top: -7vh;
-  z-index: -1;
+.getInTouchBtn {
+  @include for-phone-only {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 60px);
+  }
 
-  @include for-tablet-down {
-    display: none;
+  @include for-desktop-up {
+    margin-top: 20px;
+  }
+}
+
+.decoPattern {
+  position: absolute;
+  z-index: -1;
+  transform: rotate(90deg);
+  width: 100px;
+  height: 197px;
+  top: 0;
+  left: -95px;
+
+  @include for-desktop-up {
+    transform: rotate(0deg);
+    width: initial;
+    height: initial;
+    top: -10%;
+    left: 2vw;
   }
 }
 
 .decoCircle {
-  left: 2vw;
   position: absolute;
-  top: 40vh;
   z-index: -1;
+  width: 209px;
+  height: 202px;
+  right: -96px;
+  bottom: 3%;
 
-  @include for-tablet-down {
-    display: none;
+  @include for-tablet-up {
+    right: auto;
+    bottom: -8%;
+    left: 6%;
+  }
+
+  @include for-desktop-up {
+    width: initial;
+    height: initial;
+    bottom: -34%;
+    left: 2vw;
   }
 }

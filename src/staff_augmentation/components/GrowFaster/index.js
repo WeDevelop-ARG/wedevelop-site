@@ -1,4 +1,5 @@
 import Button from 'main_app/components/Button'
+import Image from 'main_app/components/Image'
 import pattern from '../../../assets/home/services/pattern.svg'
 
 import classes from './styles.module.scss'
@@ -14,7 +15,7 @@ function GrowFaster ({
 }) {
   return (
     <>
-      <img className={classes.imgHeader} src={imageURL} alt='' />
+      <Image className={classes.imgHeader} src={imageURL} alt='' />
       <section id='grow-today' className={classes.growFaster}>
         <div className={classes.growFasterContainer}>
           <div className={classes.sectionHeader}>
@@ -39,7 +40,7 @@ function GrowFaster ({
         <div className={classes.emptyCircle} />
         <div className={classes.smallBlurRightCircle} />
         <div className={classes.filledBigCircle} />
-        <img src={pattern} alt='' className={classes.patternRight} />
+        <Image src={pattern} alt='' className={classes.patternRight} />
       </section>
     </>
   )

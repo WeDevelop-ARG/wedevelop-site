@@ -12,7 +12,7 @@ const root = document.getElementById('root')
 root.classList.add(classes.root)
 
 if (root.hasChildNodes()) {
-  ReactDOM.hydrate(<App />, root)
+  ReactDOM.hydrate(<App hydrated />, root)
 } else {
   ReactDOM.render(<App />, root)
 }
