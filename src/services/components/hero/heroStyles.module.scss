@@ -150,6 +150,25 @@
   }
 }
 
+.staffDecoPatternMobile {
+  position: absolute;
+  bottom: 22%;
+  left: 0;
+  z-index: -1;
+
+  @media screen and (min-width: 450px) {
+    bottom: 19%;
+  }
+
+  @include for-tablet-up {
+    bottom: 19%;
+  }
+
+  @include for-desktop-up {
+    display: none;
+  }
+}
+
 .webDevDecoEmptyCircle {
   position: absolute;
   top: 25%;
@@ -205,3 +224,13 @@
   }
 }
 
+.staffDecoCircleMobile {
+  position: absolute;
+  top: 7%;
+  right: 0;
+  z-index: -1;
+
+  @include for-desktop-up {
+    display: none;
+  }
+}

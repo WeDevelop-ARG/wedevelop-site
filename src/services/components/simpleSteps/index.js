@@ -1,8 +1,11 @@
-import React from 'react'
-import Step from './components/Step'
-import { useStep } from './components/hooks/useStep'
-import classes from './simpleSteps.module.scss'
 import classNames from 'classnames'
+
+import Step from './components/Step'
+
+import { useStep } from './components/hooks/useStep'
+import SemicirclesMobile from 'assets/services/three_simple_steps/semicircles_mobile.svg'
+
+import classes from './simpleSteps.module.scss'
 
 function SimpleSteps ({ className }) {
   const steps = useStep()
@@ -20,6 +23,7 @@ function SimpleSteps ({ className }) {
           />
         ))}
       </div>
+      <img src={SemicirclesMobile} className={classes.semicirclesMobile} alt='' aria-hidden />
     </section>
   )
 }

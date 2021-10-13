@@ -1,6 +1,11 @@
+import { useMemo } from 'react'
+
 import Benefit from './components/Benefit'
 import DecorationWebDev from './components/DecorationWebDev'
 import DecorationStaff from './components/DecorationStaff'
+
+import Image from 'main_app/components/Image'
+
 import iconCostReduction from 'assets/services/icon-cost-reduction.svg'
 import iconExperts from 'assets/services/icon-experts.svg'
 import iconTime from 'assets/services/icon-time.svg'
@@ -9,11 +14,13 @@ import iconAgile from 'assets/services/icon-agile.svg'
 import background from 'assets/services/background-key-featured-benefits.png'
 
 import classes from './benefits.module.scss'
-import Image from 'main_app/components/Image'
 
 function Benefits ({ service, className }) {
-  const isWebDev = service === 'web-development'
-  const isStaff = service === 'staff-augmentation'
+  const decoration = useMemo(() => {
+    if (service === 'staff-augmentation') return <DecorationStaff />
+    return <DecorationWebDev />
+  }, [service])
+
   return (
     <>
       <section className={className}>
@@ -29,8 +36,7 @@ function Benefits ({ service, className }) {
           <Benefit className={classes.benefit} image={iconRecruitmentCost} text='No recruitment cost' />
           <Benefit className={classes.benefit} image={iconAgile} text='Agile scale up/down' />
         </div>
-        {isWebDev && <DecorationWebDev />}
-        {isStaff && <DecorationStaff />}
+        {decoration}
       </section>
       <Image className={classes.background} src={background} alt='' />
     </>

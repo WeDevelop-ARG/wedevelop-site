@@ -6,7 +6,7 @@ import rightSemicircleMobile from 'assets/services/benefits/right_semicircle_mob
 import classes from './decoration.module.scss'
 import Image from 'main_app/components/Image'
 
-function DecorationWebDev() {
+function DecorationWebDev () {
   return (
     <>
       <Image className={classes.webDevPatternVertical} src={patternVertical} alt='' />

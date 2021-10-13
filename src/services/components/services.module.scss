@@ -10,9 +10,14 @@
     padding-top: var(--rootContentMinPadding);
     padding-bottom: var(--rootContentMinPadding);
   }
+
+  @include for-tablet-down {
+    overflow: hidden;
+  }
 }
 
 .serviceDetails {
+  position: relative;
   margin-top: -50px;
 
   @include for-tablet-up {
