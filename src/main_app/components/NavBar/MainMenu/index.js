@@ -25,9 +25,18 @@ function MainMenu ({
 }) {
   const isTabletDown = useMediaQuery(forTabletDown)
   const dropdownIconURL = isVariant(variant, 'light') && !isTabletDown ? DropdownIconWhite : DropdownIcon
-  const buttonVariant = useMemo(() => {
-    if (isVariant(variant, 'light')) return 'dark'
-  }, [variant])
+  const contactCTAVariant = useMemo(() => {
+    if (isTabletDown) return ['primary', 'dark']
+    if (isVariant(variant, 'transparent') && isVariant(variant, 'light')) {
+      return ['secondary', 'dark']
+    } else if (isVariant(variant, 'transparent') && !isVariant(variant, 'light')) {
+      return ['secondary', 'light']
+    } else if (isVariant('light')) {
+      return ['primary', 'dark']
+    }
+
+    return ['primary', 'light']
+  }, [variant, isTabletDown])
   const handleClick = useCallback((e) => {
     const buttonOrAnchor = e.target.closest('a') ?? e.target.closest('button')
 
@@ -115,7 +124,7 @@ function MainMenu ({
         <Button
           as={HashLink}
           isAnchor
-          variant={['primary', ...(isTabletDown ? ['dark'] : [buttonVariant])]}
+          variant={contactCTAVariant}
           to={contactPagePath}
           smooth
           className={classes.buttonTalk}

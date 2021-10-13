@@ -1,40 +1,37 @@
-import useVariants, { combineVariants, isVariant } from 'utils/use_variants'
-import SVGIcon from 'main_app/components/SVGIcon'
+import { combineVariants, isVariant } from 'utils/use_variants'
+import isologoWhite from 'assets/logo/isologo_white.svg'
+import isologoColor from 'assets/logo/isologo_color.svg'
+import fullLogoWhite from 'assets/logo/full_logo_white.svg'
+import fullLogoColor from 'assets/logo/full_logo_color.svg'
+import Image from './Image'
 
-function Logo ({ menuOpen, variant, mobile, className }) {
-  const variantPaths = {
-    white: 'logoWhiteFull',
-    color: 'logoBlueFull'
+function Logo ({ variant, ...props }) {
+  let logoSrc
+
+  if (!isVariant(variant, 'isologo')) {
+    variant = combineVariants('full', variant)
   }
-
-  const variantMobilePaths = {
-    white: 'onlyLogoWhite',
-    color: 'onlyLogoBlue'
-  }
-
-  const useVariant = useVariants(variantPaths, variant)
-  const useVariantMobile = useVariants(variantMobilePaths, variant)
 
   if (!isVariant(variant, 'white')) {
-    variant = combineVariants(variant, 'color')
+    variant = combineVariants('color', variant)
   }
 
-  const logoPath = () => {
-    if (menuOpen) return variantPaths.white
-
-    return useVariant
-  }
-
-  const logoMobilePath = () => {
-    if (menuOpen) return variantMobilePaths.color
-
-    return useVariantMobile
+  if (isVariant(variant, 'full') && isVariant(variant, 'white')) {
+    logoSrc = fullLogoWhite
+  } else if (isVariant(variant, 'full') && isVariant(variant, 'color')) {
+    logoSrc = fullLogoColor
+  } else if (isVariant(variant, 'isologo') && isVariant(variant, 'white')) {
+    logoSrc = isologoWhite
+  } else if (isVariant(variant, 'isologo') && isVariant(variant, 'color')) {
+    logoSrc = isologoColor
   }
 
   return (
-    <>
-      {mobile ? <SVGIcon name={logoMobilePath()} className={className} /> : <SVGIcon name={logoPath()} className={className} />}
-    </>
+    <Image
+      src={logoSrc}
+      alt='WeDevelop Logo'
+      {...props}
+    />
   )
 }
 

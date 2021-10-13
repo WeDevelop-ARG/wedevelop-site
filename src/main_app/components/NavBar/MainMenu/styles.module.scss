@@ -174,21 +174,6 @@
   }
 }
 
-%chevronLogo {
-  --primaryColor: #{$secondaryColor};
-  width: 7px;
-  height: 12px;
-}
-
-.chevronLeft {
-  @extend %chevronLogo;
-  transform: rotate(180deg);
-}
-
-.chevronRight {
-  @extend %chevronLogo;
-}
-
 .menuIcon {
   --primaryColor: #{$secondaryColor};
   --secondaryColor: #{$secondaryColor};
@@ -196,35 +181,9 @@
   height: 20px;
 }
 
-.buttonLink {
-  color: inherit;
-  font-size: inherit;
-}
-
-.whatAreYouLookingFor {
-  @extend .buttonLink;
-
-  @include for-desktop-up {
-    display: none;
-  }
-}
-
-.textList {
-  color: #363636;;
-  font-weight: 300;
-  font-size: 19px;
-  letter-spacing: 1px;
-  border-top: 2px solid $backgroundColor;
-  padding-top: 40px;
-  margin-top: 20px;
-  text-align: left;
-
-  @include for-desktop-up {
-    display: none;
-  }
-}
-
 .buttonTalk {
-  margin-top: 20px;
-  width: 100%;
+  @include for-tablet-down {
+    width: 100%;
+    margin-top: 20px;
+  }
 }

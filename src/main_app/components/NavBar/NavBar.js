@@ -34,6 +34,8 @@ function NavBar ({
   })
   const [initialized, setInitialized] = useState(false)
   const containerRef = useCombinedRefs(ref, observerRef)
+  const isDesktopUp = useMediaQuery(forDesktopUp)
+  const isTabletDown = useMediaQuery(forTabletDown)
 
   useEffect(() => {
     if (atScrollTop !== null && !IS_STATIC_RENDERER) setInitialized(true)
@@ -51,10 +53,19 @@ function NavBar ({
   }, [atScrollTop, variant])
 
   const logoVariant = useMemo(() => {
-    if (isVariant(variant, 'light')) return 'white'
+    let logoVariant
 
-    return 'color'
-  }, [variant])
+    if (isTabletDown) logoVariant = combineVariants(logoVariant, 'isologo')
+    else logoVariant = combineVariants(logoVariant, 'full')
+
+    if (!menuOpen && isVariant(variant, 'light')) {
+      logoVariant = combineVariants(logoVariant, 'white')
+    } else {
+      logoVariant = combineVariants(logoVariant, 'color')
+    }
+
+    return logoVariant
+  }, [variant, isTabletDown, menuOpen])
 
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
@@ -70,8 +81,6 @@ function NavBar ({
   const closeMenu = useCallback(() => {
     setMenuOpen(false)
   }, [])
-  const isDesktopUp = useMediaQuery(forDesktopUp)
-  const isTabletDown = useMediaQuery(forTabletDown)
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
@@ -93,10 +102,9 @@ function NavBar ({
         smooth
       >
         <Logo
-          menuOpen={menuOpen}
           variant={logoVariant}
-          mobile={isTabletDown}
           className={classes.logo}
+          loading='eager'
         />
       </HashLink>
       {!hideMenu && (

@@ -41,6 +41,12 @@
     padding-bottom: 0;
   }
 
+  @include for-desktop-up {
+    &.atTop .logoLink {
+      margin-top: -20px;
+    }
+  }
+
   &.menuOpen {
     --textColor: #363636;
   }
@@ -55,10 +61,6 @@
     right: 0;
     background-color: #FFFFFF;
   }
-
-  @include for-tablet-down {
-    left: -80px;
-  }
 }
 
 .logoLink:focus {
@@ -66,8 +68,8 @@
 }
 
 .logo {
-  width: 203px;
-  height: auto;
+  width: auto;
+  height: 40px;
 }
 
 .menuToggle {
