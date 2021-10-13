@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useMemo, useState } from 'react'
+import { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import classnames from 'classnames'
 import { HashLink } from 'react-router-hash-link'
 
@@ -7,8 +7,9 @@ import useElementClass from 'utils/use_element_class'
 import useVariants, { combineVariants, isVariant } from 'utils/use_variants'
 import useCombinedRefs from 'utils/use_combined_refs'
 import useMediaQuery from 'utils/use_media_query'
+import { IS_STATIC_RENDERER } from 'main_app/constants'
 
-import { forDesktopUp } from 'styles/media_queries'
+import { forDesktopUp, forTabletDown } from 'styles/media_queries'
 
 import SVGIcon from '../SVGIcon'
 
@@ -28,26 +29,43 @@ function NavBar ({
   const [menuOpen, setMenuOpen] = useState(false)
   const [atScrollTop, observerRef] = useOverlappingObserver({
     root: document.body,
-    ignoreHeight: true
+    ignoreHeight: true,
+    defaultValue: null
   })
+  const [initialized, setInitialized] = useState(false)
   const containerRef = useCombinedRefs(ref, observerRef)
+  const isDesktopUp = useMediaQuery(forDesktopUp)
+  const isTabletDown = useMediaQuery(forTabletDown)
+
+  useEffect(() => {
+    if (atScrollTop !== null && !IS_STATIC_RENDERER) setInitialized(true)
+  }, [atScrollTop])
 
   variant = useMemo(() => {
-    if (atScrollTop && variantAtScrollTop) return variantAtScrollTop
+    if (atScrollTop !== false && variantAtScrollTop) return variantAtScrollTop
 
     return variant
   }, [atScrollTop, variant, variantAtScrollTop])
   variant = useMemo(() => {
-    if (atScrollTop) return variant
+    if (atScrollTop !== false) return variant
 
     return combineVariants(variant, 'scroll')
   }, [atScrollTop, variant])
 
   const logoVariant = useMemo(() => {
-    if (isVariant(variant, 'light')) return 'white'
+    let logoVariant
 
-    return 'color'
-  }, [variant])
+    if (isTabletDown) logoVariant = combineVariants(logoVariant, 'isologo')
+    else logoVariant = combineVariants(logoVariant, 'full')
+
+    if (!menuOpen && isVariant(variant, 'light')) {
+      logoVariant = combineVariants(logoVariant, 'white')
+    } else {
+      logoVariant = combineVariants(logoVariant, 'color')
+    }
+
+    return logoVariant
+  }, [variant, isTabletDown, menuOpen])
 
   const variantClassNames = useVariants(classes, variant, {
     prefix: 'variant_',
@@ -63,7 +81,6 @@ function NavBar ({
   const closeMenu = useCallback(() => {
     setMenuOpen(false)
   }, [])
-  const isDesktopUp = useMediaQuery(forDesktopUp)
 
   useElementClass(document.getElementById('root'), classes.rootWithNavBar)
   useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
@@ -71,11 +88,12 @@ function NavBar ({
   return (
     <header
       ref={containerRef}
-      aria-hidden={!show}
+      aria-hidden={!show || !initialized}
       className={classnames(classes.header, variantClassNames, {
         [classes.menuOpen]: menuOpen,
         [classes.atTop]: atScrollTop,
-        [classes.hidden]: !show
+        [classes.hidden]: !show && initialized,
+        [classes.initialized]: initialized
       })}
     >
       <HashLink
@@ -84,9 +102,9 @@ function NavBar ({
         smooth
       >
         <Logo
-          menuOpen={menuOpen}
           variant={logoVariant}
           className={classes.logo}
+          loading='eager'
         />
       </HashLink>
       {!hideMenu && (

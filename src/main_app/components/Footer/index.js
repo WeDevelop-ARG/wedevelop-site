@@ -9,6 +9,7 @@ import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
 
 import pattern from 'assets/footer/pattern.svg'
+import Image from '../Image'
 
 function Footer ({ variant = 'dark', className }) {
   className = classnames(
@@ -20,11 +21,7 @@ function Footer ({ variant = 'dark', className }) {
     <footer className={className}>
       <div className={classes.listUs}>
         <ul className={classes.contact}>
-          <li>
-            <Logo
-              variant='dark'
-            />
-          </li>
+          <li><Logo /></li>
           <li><ClutchWidget className={classes.clutchWidget} variant='dark' /></li>
         </ul>
         <ul className={classes.contact}>
@@ -147,7 +144,7 @@ function Footer ({ variant = 'dark', className }) {
           </li>
         </ul>
       </div>
-      <img src={pattern} alt='' className={classes.pattern} />
+      <Image src={pattern} alt='' className={classes.pattern} />
     </footer>
   )
 }

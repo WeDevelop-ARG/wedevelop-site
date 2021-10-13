@@ -1,11 +1,12 @@
 import classnames from 'classnames'
+import Image from 'main_app/components/Image'
 
 import classes from './styles.module.scss'
 
 function BackgroundContainer ({ backgroundURL, className }) {
   return (
     <div className={classnames(classes.backgroundContainer, className)}>
-      <img src={backgroundURL} alt='' className={classes.backgroundImg} />
+      <Image src={backgroundURL} objectFit='auto' resize='auto-height' alt='' />
     </div>
   )
 }

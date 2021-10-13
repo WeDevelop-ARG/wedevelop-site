@@ -4,6 +4,7 @@
   position: relative;
   padding-top: 200px;
   padding-bottom: 200px;
+  overflow: hidden;
 
   @include for-desktop-up {
     padding-top: var(--rootContentMinPadding);

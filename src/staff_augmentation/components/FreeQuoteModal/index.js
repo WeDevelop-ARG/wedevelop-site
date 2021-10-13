@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react'
 
 import Modal from 'main_app/components/Modal'
-import FreeQuoteForm from '../FreeQuoteForm'
 import ConfirmationMessage from '../ConfirmationMessage'
+import FreeQuoteForm from '../FreeQuoteForm'
 
 import classes from './styles.module.scss'
 

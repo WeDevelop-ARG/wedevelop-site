@@ -1,8 +1,8 @@
 import ReactModal from 'react-modal'
 import classnames from 'classnames'
 
-import SVGIcon from 'main_app/components/SVGIcon'
 import Button from 'main_app/components/Button'
+import SVGIcon from 'main_app/components/SVGIcon'
 
 import classes from './styles.module.scss'
 

@@ -10,6 +10,7 @@
   min-height: 100vh;
   height: auto;
   overflow: hidden;
+  z-index: -1;
 
   @include for-tablet-up {
     padding-top: calc(250px + var(--rootContentMinPadding));
@@ -240,12 +241,6 @@
   max-width: 420px;
   width: 100%;
   height: auto;
-}
-
-.processDiagram {
-  width: inherit;
-  height: inherit;
-  object-fit: cover;
 }
 
 .background {

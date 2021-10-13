@@ -1,12 +1,12 @@
 import { useCallback } from 'react'
 import { useRouteMatch, useHistory } from 'react-router-dom'
 
-import NavBar from 'main_app/components/NavBar'
-import Footer from 'main_app/components/Footer'
 import Article from 'main_app/components/Article'
-import PictureWall from 'main_app/components/PictureWall'
 import ContactModal from 'main_app/components/ContactModal'
+import Footer from 'main_app/components/Footer'
 import JoinUsForm from './components/JoinUsForm'
+import NavBar from 'main_app/components/NavBar'
+import PictureWall from 'main_app/components/PictureWall'
 
 function Career () {
   const contactPagePath = '/career/contact'

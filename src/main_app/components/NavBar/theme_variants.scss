@@ -1,16 +1,5 @@
 @import '/src/styles/theme.scss';
 
-%logoLight {
-  --primaryColor: #{$secondaryColor};
-  --secondaryColor: #{$brandingColor};
-}
-
-%logoDark {
-  --primaryColor: url(#NavBarLogoGradient);
-  --secondaryColor: #{$secondaryColor};
-  --textColor: #{$textColor};
-}
-
 %menuToggleIconLight {
   --primaryColor: #{$secondaryColor};
 }
@@ -19,17 +8,9 @@
   --primaryColor: #{$textColor};
 }
 
-.logoGradientStop0 {
-  stop-color: $primaryGradient;
-}
-
-.logoGradientStop100 {
-  stop-color: $secondaryGradient;
-}
 
 .header, .variant_transparent, .variant_dark {
   --textColor: #{$textColor};
-  .logo { @extend %logoDark; }
   .menuToggle .open { @extend %menuToggleIconDark; }
 }
 
@@ -53,7 +34,6 @@
 
 .variant_light {
   --textColor: #{$secondaryColor};
-  .logo { @extend %logoLight; }
   .menuToggle .open { @extend %menuToggleIconLight; }
 }
 
@@ -62,6 +42,5 @@
 }
 
 .header.menuOpen {
-  .logo { @extend %logoDark; }
   .menuToggle .close { @extend %menuToggleIconLight; }
 }

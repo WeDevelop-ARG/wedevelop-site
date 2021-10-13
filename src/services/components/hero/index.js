@@ -2,6 +2,7 @@ import { HashLink } from 'react-router-hash-link'
 import { useHeroDecoration } from './hooks/useHeroDecoration'
 import Button from 'main_app/components/Button'
 import classes from './heroStyles.module.scss'
+import Image from 'main_app/components/Image'
 
 function Hero ({
   service,
@@ -28,7 +29,7 @@ function Hero ({
       <section className={className}>
         <div className={classes.container}>
           <div className={classes.contentContainer}>
-            <img className={classes.icon} src={icon} alt='' />
+            <Image className={classes.icon} src={icon} alt='' />
             <h2 className={classes.titleText}>{title}</h2>
             <p className={classes.descriptionText}>
               {description}
@@ -44,16 +45,16 @@ function Hero ({
               Get in Touch
             </Button>
           </div>
-          <img className={classes.photo} src={photo} alt='' />
+          <Image className={classes.photo} src={photo} alt='' loading='eager' />
         </div>
-        <img className={classes[decoClasses.circleDot]} src={CircleDot} alt='' aria-hidden />
-        <img className={classes[decoClasses.pattern]} src={Pattern} alt='' aria-hidden />
-        <img className={classes[decoClasses.circle]} src={Circle} alt='' aria-hidden />
-        <img className={classes[decoClasses.emptyCircle]} src={EmptyCircle} alt='' aria-hidden />
-        <img className={classes[decoClasses.patternMobile]} src={PatternMobile} alt='' aria-hidden />
-        <img className={classes[decoClasses.circleMobile]} src={CircleMobile} alt='' aria-hidden />
+        <Image className={classes[decoClasses.circleDot]} src={CircleDot} alt='' />
+        <Image className={classes[decoClasses.pattern]} src={Pattern} alt='' />
+        <Image className={classes[decoClasses.circle]} src={Circle} alt='' />
+        <Image className={classes[decoClasses.emptyCircle]} src={EmptyCircle} alt='' />
+        <Image className={classes[decoClasses.patternMobile]} src={PatternMobile} alt='' />
+        <Image className={classes[decoClasses.circleMobile]} src={CircleMobile} alt='' />
       </section>
-      <img className={classes.heroBackground} src={background} alt='' />
+      <Image className={classes.heroBackground} src={background} alt='' loading='eager' />
     </>
   )
 }

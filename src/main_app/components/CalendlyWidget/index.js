@@ -1,10 +1,9 @@
 import { useCallback, useMemo } from 'react'
 import { CalendlyEventListener, InlineWidget } from 'react-calendly'
-import axios from 'axios'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import useMediaQuery from 'utils/use_media_query'
-import { CALENDLY_DEFAULT_EVENT_URL, PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL } from 'main_app/constants'
+import { CALENDLY_DEFAULT_EVENT_URL, IS_STATIC_RENDERER, PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL } from 'main_app/constants'
 
 function CalendlyWidget ({ sourcePage }) {
   const isTablet = useMediaQuery('screen and (min-width: 725px)')
@@ -31,11 +30,20 @@ function CalendlyWidget ({ sourcePage }) {
       contactSource: sourcePage
     })
     try {
-      await axios.post(PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL, { calendlyInviteeURI })
+      await window.fetch(PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ calendlyInviteeURI })
+      })
     } catch (err) {
       console.error(err)
     }
   }, [sourcePage])
+
+  if (IS_STATIC_RENDERER) return null
 
   return (
     <>
