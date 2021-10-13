@@ -1,13 +1,17 @@
 import staffAugmentation from './staff_augmentation'
-import webDesigners from './web_designers'
 import webDevelopers from './web_developers'
+import webCoders from './web_coders'
+import webProgrammers from './web_programmers'
 import hireDevelopers from './hire_developers'
+import hireJavascriptDevelopers from './hire_javascript_developers'
 
 const variants = [
   staffAugmentation,
   webDevelopers,
-  webDesigners,
-  hireDevelopers
+  webCoders,
+  webProgrammers,
+  hireDevelopers,
+  hireJavascriptDevelopers
 ]
 
 export default variants

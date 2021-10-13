@@ -9,7 +9,6 @@
   padding: 63px 30px 0;
   list-style-type: none;
   margin: 0;
-  text-align: center;
 
   @include for-desktop-up {
     padding: 0;
@@ -18,26 +17,27 @@
   }
 
   & > li + li {
-    margin-top: 33px;
+    margin-top: 0;
 
     @include for-desktop-up {
-      margin: 0;
       margin-left: 40px;
     }
   }
 
-  & > li > *:not(.buttonTalk),
-  & > li .servicesDropdownToggle {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    outline: none;
-    color: var(--textColor);
+  & > li > *:not(.buttonTalk):not([class~="dropdown"]) {
+    @include for-tablet-down {
+      display: block;
+    }
+  }
 
-    @include for-desktop-up {
-      font-weight: inherit;
-      font-size: inherit;
-      line-height: inherit;
+  & > li > *:not(.buttonTalk):not([class~="dropdown"]),
+  & > li .servicesDropdownToggle {
+    color: var(--textColor);
+    outline: none;
+
+    @include for-tablet-down {
+      font-size: 19px;
+      line-height: 67px;
     }
 
     &:hover, &:focus {
@@ -49,53 +49,97 @@
 .servicesDropdownToggle {
   height: 100%;
 
-  & {
-    text-decoration: none !important;
+  .iconRight {
+    transition: transform 200ms ease-in-out;
+    width: 10px;
+    height: auto;
+  }
+
+  &.open .iconRight {
+    transform: rotate(180deg);
+  }
+
+  @include for-tablet-down {
+    width: 100%;
+    justify-content: space-between;
+
+    & > *:first-child {
+      margin-left: 0;
+    }
+
+    & > *:last-child {
+      margin-right: 0;
+    }
   }
 }
 
 .dropdownMenu {
   display: none;
-  top: 8px !important;
   pointer-events: all !important;
-  background: #FFFFFF;
-  border: 1px solid #E1E1E1;
-  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-  width: 210px;
 
   &[class~="show"] {
     display: block;
     opacity: 1 !important;
   }
+
+  @include for-tablet-down {
+    position: relative !important;
+    transform: none !important;
+  }
+
+  @include for-desktop-up {
+    top: 8px !important;
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    width: 210px;
+  }
 }
 
 .dropdownItem {
   display: block;
-  padding: 30px;
   font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-  color: #363636;
-  white-space: nowrap;
-  text-align: left;
 
-  &:hover,
-  &:focus {
-    text-decoration: none;
-    font-weight: 500;
-    background: linear-gradient(
-      270deg,
-      rgba(43, 212, 250, 0.05) 0%,
-      rgba(55, 125, 255, 0.05) 100%
-    );
+  @include for-tablet-down {
+    font-size: 19px;
+    line-height: 67px;
+    outline: none;
+    color: var(--textColor);
+    padding-left: 32px;
+  }
+
+  @include for-desktop-up {
+    font-size: 16px;
+    padding: 30px;
+    font-weight: 300;
+    line-height: 19px;
+    color: #363636;
+    white-space: nowrap;
+    text-align: left;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      font-weight: 500;
+      background: linear-gradient(
+        270deg,
+        rgba(43, 212, 250, 0.05) 0%,
+        rgba(55, 125, 255, 0.05) 100%
+      );
+    }
   }
 }
 
 .navItem {
   font-size: 14px;
   line-height: 17px;
+
+  @include for-tablet-down {
+    & + & {
+      border-top: 1px solid #E1E1E1;
+    }
+  }
 
   @include for-desktop-up {
     position: relative;
@@ -130,21 +174,6 @@
   }
 }
 
-%chevronLogo {
-  --primaryColor: #{$secondaryColor};
-  width: 7px;
-  height: 12px;
-}
-
-.chevronLeft {
-  @extend %chevronLogo;
-  transform: rotate(180deg);
-}
-
-.chevronRight {
-  @extend %chevronLogo;
-}
-
 .menuIcon {
   --primaryColor: #{$secondaryColor};
   --secondaryColor: #{$secondaryColor};
@@ -152,29 +181,9 @@
   height: 20px;
 }
 
-.buttonLink {
-  color: inherit;
-  font-size: inherit;
-}
-
-.whatAreYouLookingFor {
-  @extend .buttonLink;
-
-  @include for-desktop-up {
-    display: none;
-  }
-}
-
-.textList {
-  color: $secondaryColor;
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: 1px;
-  border-top: 2px solid $backgroundColor;
-  padding-top: 40px;
-  margin-top: 20px;
-
-  @include for-desktop-up {
-    display: none;
+.buttonTalk {
+  @include for-tablet-down {
+    width: 100%;
+    margin-top: 20px;
   }
 }

@@ -16,9 +16,11 @@ function Hero ({
 }) {
   const {
     Pattern,
+    PatternMobile,
     CircleDot,
     EmptyCircle,
     Circle,
+    CircleMobile,
     decoClasses
   } = useHeroDecoration(service)
 
@@ -43,14 +45,16 @@ function Hero ({
               Get in Touch
             </Button>
           </div>
-          <Image className={classes.photo} src={photo} alt='' />
+          <Image className={classes.photo} src={photo} alt='' loading='eager' />
         </div>
         <Image className={classes[decoClasses.circleDot]} src={CircleDot} alt='' />
         <Image className={classes[decoClasses.pattern]} src={Pattern} alt='' />
         <Image className={classes[decoClasses.circle]} src={Circle} alt='' />
         <Image className={classes[decoClasses.emptyCircle]} src={EmptyCircle} alt='' />
+        <Image className={classes[decoClasses.patternMobile]} src={PatternMobile} alt='' />
+        <Image className={classes[decoClasses.circleMobile]} src={CircleMobile} alt='' />
       </section>
-      <Image className={classes.heroBackground} src={background} alt='' />
+      <Image className={classes.heroBackground} src={background} alt='' loading='eager' />
     </>
   )
 }

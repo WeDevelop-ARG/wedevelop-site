@@ -21,11 +21,7 @@ function Footer ({ variant = 'dark', className }) {
     <footer className={className}>
       <div className={classes.listUs}>
         <ul className={classes.contact}>
-          <li>
-            <Logo
-              variant='dark'
-            />
-          </li>
+          <li><Logo /></li>
           <li><ClutchWidget className={classes.clutchWidget} variant='dark' /></li>
         </ul>
         <ul className={classes.contact}>

@@ -21,6 +21,7 @@ function WebDevDetails ({ contactPagePath }) {
             smooth
             isAnchor
             variant='primary'
+            className={classes.getInTouchBtn}
           >
             Get in Touch
           </Button>

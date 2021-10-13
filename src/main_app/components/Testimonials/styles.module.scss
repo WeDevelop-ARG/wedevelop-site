@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-top: 60px;
+  padding-top: 79px;
   padding-bottom: 100px;
   overflow: hidden;
 }
@@ -23,7 +23,7 @@
   letter-spacing: 3px;
   color: rgba($color: #363636, $alpha: 0.5);
   font-size: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 27px;
   text-transform: uppercase;
 }
 
@@ -244,7 +244,10 @@
   left: 150px;
 
   @include for-tablet-down {
-    display: none;
+    top: 31px;
+    width: 140px;
+    height: 140px;
+    left: -98px;
   }
 }
 
@@ -257,7 +260,10 @@
   left: 72px;
 
   @include for-tablet-down {
-    display: none;
+    top: 16px;
+    left: -88px;
+    height: 153px;
+    width: 142px;
   }
 }
 
@@ -271,7 +277,10 @@
   left: 60px;
 
   @include for-tablet-down {
-    display: none;
+    top: 30px;
+    left: 24px;
+    width: 10px;
+    height: 10px;
   }
 }
 
