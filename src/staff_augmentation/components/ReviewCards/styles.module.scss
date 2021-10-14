@@ -75,7 +75,7 @@ $textColor: #363636;
     @media screen and (min-width: 746px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       margin: 0 auto;
-      overflow: auto;
+      overflow: visible;
     }
   }
 }
