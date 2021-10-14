@@ -6,7 +6,7 @@ import ControlButtons from './ControlButtons'
 
 import classes from './styles.module.scss'
 
-function MultiForm () {
+function MultiForm ({ handleModalOpen }) {
   const [formState, updateFormState] = useState({
     form: {}
   })
@@ -45,7 +45,7 @@ function MultiForm () {
         <div>Step 12</div>
         <div>Step 13</div>
       </StepWizard>
-      {SW && <ControlButtons SW={SW} />}
+      {SW && <ControlButtons SW={SW} handleModalOpen={handleModalOpen} />}
     </>
   )
 }
