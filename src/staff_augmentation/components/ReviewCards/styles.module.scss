@@ -69,7 +69,7 @@ $textColor: #363636;
   grid-template-columns: repeat(4, 250px);
   gap: 50px;
   justify-content: start;
-  overflow: scroll;
+  overflow-x: auto;
 
   @include for-tablet-up {
     @media screen and (min-width: 746px) {
