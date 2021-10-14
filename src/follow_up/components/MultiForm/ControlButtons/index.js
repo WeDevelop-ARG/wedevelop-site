@@ -5,32 +5,14 @@ import LeftArrow from 'assets/follow_up/left_arrow.svg'
 
 import classes from './styles.module.scss'
 
-function ControlButtons ({ SW }) {
-  const { currentStep, previousStep, nextStep } = SW
+function ControlButtons ({ SW, currentStep }) {
+  const { previousStep, nextStep, totalSteps } = SW
   const btnLeftArrow = <Image src={LeftArrow} alt='' />
-  const renderRightButton = () => {
-    if (currentStep === 13) {
-      return (
-        <Button
-          className={classes.nextButton}
-        >
-          Done
-        </Button>
-      )
-    }
-
-    return (
-      <Button
-        onClick={nextStep}
-        className={classes.nextButton}
-      >
-        Next
-      </Button>
-    )
-  }
+  const canGoback = currentStep > 1
+  const isFinalStep = currentStep === totalSteps
   return (
     <div className={classes.controlButtonsContainer}>
-      {(currentStep > 1) &&
+      {canGoback &&
         <Button
           variant='icon'
           iconLeft={btnLeftArrow}
@@ -39,7 +21,19 @@ function ControlButtons ({ SW }) {
         >
           Back
         </Button>}
-      {renderRightButton()}
+      {!isFinalStep &&
+        <Button
+          onClick={nextStep}
+          className={classes.nextButton}
+        >
+          Next
+        </Button>}
+      {isFinalStep &&
+        <Button
+          className={classes.nextButton}
+        >
+          Done
+        </Button>}
     </div>
   )
 }
