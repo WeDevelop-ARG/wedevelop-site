@@ -4,7 +4,7 @@ import classes from './styles.module.scss'
 
 function Footer () {
   return (
-    <section id='follow-up-footer' className={classes.footer}>
+    <footer id='follow-up-footer' className={classes.footer}>
       <ul className={classes.branding}>
         <li>
           <HashLink to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
@@ -16,7 +16,7 @@ function Footer () {
           © 2021 WeDevelop LLC. All rights reserved.
         </li>
       </ul>
-    </section>
+    </footer>
   )
 }
 
