@@ -7,7 +7,7 @@ import ControlButtons from './ControlButtons'
 
 import classes from './styles.module.scss'
 
-function MultiForm () {
+function MultiForm ({ handleModalOpen }) {
   const [stepWizardInstance, setStepWizardInstance] = useState()
   const [currentStep, setCurrentStep] = useState()
 
@@ -47,6 +47,7 @@ function MultiForm () {
         <ControlButtons
           SW={stepWizardInstance}
           currentStep={fullCurrentStep}
+          handleModalOpen={handleModalOpen}
         />}
     </>
   )

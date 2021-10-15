@@ -5,7 +5,7 @@ import LeftArrow from 'assets/follow_up/left_arrow.svg'
 
 import classes from './styles.module.scss'
 
-function ControlButtons ({ SW, currentStep }) {
+function ControlButtons ({ SW, currentStep, handleModalOpen }) {
   const { previousStep, nextStep, totalSteps } = SW
   const btnLeftArrow = <Image src={LeftArrow} alt='' />
   const canGoback = currentStep > 1
@@ -31,6 +31,7 @@ function ControlButtons ({ SW, currentStep }) {
       {isFinalStep &&
         <Button
           className={classes.nextButton}
+          onClick={handleModalOpen}
         >
           Done
         </Button>}
