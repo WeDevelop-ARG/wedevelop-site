@@ -23,11 +23,11 @@ function FollowUp () {
         </div>
         <Image src={FollowUpMobileBackground} alt='' className={classes.mobileBackground} />
         <Footer />
-        <img src={FollowUpBackground} alt='' className={classes.background} aria-hidden />
+        <Image src={FollowUpBackground} alt='' className={classes.background} />
         <div className={classes.filledCircle} aria-hidden />
         <div className={classes.emptyCircle} aria-hidden />
         <div className={classes.blurCircle} aria-hidden />
-        <img src={DotsPattern} alt='' className={classes.leftDotsPattern} aria-hidden />
+        <Image src={DotsPattern} alt='' className={classes.leftDotsPattern} />
       </section>
     </>
   )
