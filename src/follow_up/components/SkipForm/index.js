@@ -10,6 +10,7 @@ import FormLogic from './FormLogic'
 import classes from './styles.module.scss'
 
 function SkipForm ({
+  clientName,
   onSubmitFinished,
   noAutofocus
 }) {
@@ -23,7 +24,7 @@ function SkipForm ({
   return (
     <>
       <div className={classes.formHeader}>
-        <h2 className={classes.titleText}>Thanks Jhon for your time!</h2>
+        <h2 className={classes.titleText}>Thanks {clientName} for your time!</h2>
         <p className={classes.descriptionText}>You'll be connected to our founders soon</p>
         <hr className={classes.horizontalBar} />
       </div>

@@ -12,6 +12,10 @@
   @include for-tablet-down {
     justify-content: center;
     max-height: 100vh;
-    overflow: scroll;
+    overflow-y: auto;
+  }
+
+  @include for-phone-only {
+    padding: 84px 30px 30px;
   }
 }

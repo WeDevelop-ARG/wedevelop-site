@@ -6,6 +6,7 @@ import SkipForm from '../SkipForm'
 import classes from './styles.module.scss'
 
 function SkipModal ({
+  clientName,
   isModalOpen,
   setModalOpen
 }) {
@@ -25,7 +26,10 @@ function SkipModal ({
       onRequestClose={handleModalClose}
       className={classes.skipModal}
     >
-      <SkipForm onSubmitFinished={handleSubmitFinished} />
+      <SkipForm
+        clientName={clientName}
+        onSubmitFinished={handleSubmitFinished}
+      />
     </Modal>
   )
 }
