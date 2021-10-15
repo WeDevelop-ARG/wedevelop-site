@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
+import isUndefined from 'lodash/isUndefined'
 import StepWizard from 'react-step-wizard'
 
 import FormProgress from './ProgressBar'
@@ -9,6 +10,14 @@ import classes from './styles.module.scss'
 function MultiForm () {
   const [stepWizardInstance, setStepWizardInstance] = useState()
   const [currentStep, setCurrentStep] = useState()
+
+  const fullCurrentStep = useMemo(() => {
+    if (!stepWizardInstance) return undefined
+    if (isUndefined(currentStep)) return stepWizardInstance.currentStep
+
+    return currentStep
+  }, [stepWizardInstance, currentStep])
+
   return (
     <>
       <StepWizard
@@ -37,7 +46,7 @@ function MultiForm () {
       {stepWizardInstance &&
         <ControlButtons
           SW={stepWizardInstance}
-          currentStep={currentStep}
+          currentStep={fullCurrentStep}
         />}
     </>
   )
