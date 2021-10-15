@@ -1,6 +1,5 @@
 <svg id="full" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="url(#paint0_linear)"/>
-  <path d="M9.8509 14.5984L7.05472 11.8022L6.10254 12.7477L9.8509 16.4961L17.8975 8.4495L16.952 7.50403L9.8509 14.5984Z" fill="white"/>
+  <path d="M9.8509 14.5984L7.05472 11.8022L6.10254 12.7477L9.8509 16.4961L17.8975 8.4495L16.952 7.50403L9.8509 14.5984Z" fill="url(#paint0_linear)"/>
   <defs>
     <linearGradient id="paint0_linear" x1="-0.071558" y1="14.5953" x2="22.308" y2="4.75858" gradientUnits="userSpaceOnUse">
       <stop stop-color="#6B67E9"/>
