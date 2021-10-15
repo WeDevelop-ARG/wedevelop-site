@@ -1,21 +1,29 @@
 @import '/src/styles/media_queries.scss';
 
-.webDevPatternVertical {
-  left: 5vw;
+%decoStyles {
   position: absolute;
-  top: 0;
   z-index: -1;
+}
+
+.webDevPatternVertical {
+  @extend %decoStyles;
+  left: 5vw;
+  top: 0;
+  bottom: auto;
 
   @include for-tablet-down {
-    display: none;
+    width: 100px;
+    height: 197px;
+    top: auto;
+    bottom: 2%;
+    left: -48px;
   }
 }
 
 .webDevPatternHorizontal {
-  position: absolute;
+  @extend %decoStyles;  
   right: 0;
-  top: 40vh;
-  z-index: -1;
+  bottom: 10%;
 
   @include for-tablet-down {
     display: none;
@@ -23,21 +31,41 @@
 }
 
 .webDevCircles {
+  @extend %decoStyles;
   left: 5vw;
-  position: absolute;
-  top: 50vh;
-  z-index: -1;
+  bottom: 0;
 
   @include for-tablet-down {
     display: none;
   }
 }
 
+.webDevLeftSemicircleMobile {
+  @extend %decoStyles;
+  display: none;
+
+  @include for-tablet-down {
+    display: block;
+    top: 6%;
+    left: 0;
+  }
+}
+
+.webDevRightSemicircleMobile {
+  @extend %decoStyles;
+  display: none;
+
+  @include for-tablet-down {
+    display: block;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 .staffCircleLeft {
+  @extend %decoStyles;
   left: 0;
-  position: absolute;
   top: 0;
-  z-index: -1;
 
   @include for-tablet-down {
     display: none;
@@ -45,10 +73,9 @@
 }
 
 .staffCircleLine {
-  right: 2vw;
-  position: absolute;
-  top: 40vh;
-  z-index: -1;
+  @extend %decoStyles;
+  right: 9%;
+  bottom: 7%;
 
   @include for-tablet-down {
     display: none;
@@ -56,10 +83,9 @@
 }
 
 .staffCircleRight {
-  right: 10vh;
-  position: absolute;
-  top: 40vh;
-  z-index: -1;
+  @extend %decoStyles;
+  right: 15%;
+  bottom: 12%;
 
   @include for-tablet-down {
     display: none;
@@ -67,10 +93,9 @@
 }
 
 .staffBlurSmallDot {
-  right: 3vw;
-  position: absolute;
-  top: 53vh;
-  z-index: -1;
+  @extend %decoStyles;
+  right: 8%;
+  bottom: 10%;
 
   @include for-tablet-down {
     display: none;
@@ -78,12 +103,34 @@
 }
 
 .staffPatternHorizontal {
-  right: 0;
-  position: absolute;
+  @extend %decoStyles;
+  right: 5%;
   top: 0;
-  z-index: -1;
 
   @include for-tablet-down {
+    width: 197px;
+    height: 100px;
+    top: auto;
+    right: auto;
+    bottom: 5%;
+    left: -95px;
+    transform: rotate(90deg)
+  }
+}
+
+.staffPatternVertical {
+  @extend %decoStyles;
+  
+  @include for-desktop-up {
     display: none;
+  }
+
+  @include for-tablet-down {
+    display: block;
+    width: 197px;
+    height: 100px;
+    top: 50%;
+    right: -90px;
+    transform: rotate(90deg);
   }
 }

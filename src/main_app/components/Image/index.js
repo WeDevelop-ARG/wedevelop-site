@@ -2,15 +2,15 @@ import { useMemo, useState, useRef, useEffect } from 'react'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { format, dpr, quality } from '@cloudinary/url-gen/actions/delivery'
 import { fill, limitFit } from '@cloudinary/url-gen/actions/resize'
+import { vectorize } from '@cloudinary/url-gen/actions/effect'
 import isString from 'lodash/isString'
 import isFunction from 'lodash/isFunction'
+import isEmpty from 'lodash/isEmpty'
 import classNames from 'classnames'
 
 import { IS_DEVELOPMENT, BASE_URL, IS_STATIC_RENDERER } from 'main_app/constants.js'
 
 import classes from './styles.module.scss'
-import { isEmpty } from 'lodash'
-import { vectorize } from '@cloudinary/url-gen/actions/effect'
 
 const cloudinaryDenylistRegex = /(?:^(?!https:\/\/).*\.?(?:svg)?$|.*\.?(?:svg)$)/i
 const cloudinary = new Cloudinary({
@@ -22,6 +22,11 @@ function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resiz
   if (resize === 'auto-width') {
     width = undefined
   } else if (resize === 'auto-height') {
+    height = undefined
+  }
+
+  if (isPlaceholder) {
+    width = 300
     height = undefined
   }
 
@@ -102,6 +107,7 @@ export default function Image ({
   className,
   width,
   height,
+  placeholderColor,
   ...props
 }) {
   if (IS_DEVELOPMENT && !isString(alt)) {
@@ -109,6 +115,8 @@ export default function Image ({
   }
 
   const [optimizedSrc, setOptimizedSrc] = useState()
+  const [backgroundSrc, setBackgroundSrc] = useState()
+  const [backgroundColor, setBackgroundColor] = useState(placeholderColor)
   const containerRef = useRef()
   src = useMemo(() => !src ? src : (new URL(src, BASE_URL)).href, [src])
   const isOptimizationDenied = useMemo(() => cloudinaryDenylistRegex.test(src), [src])
@@ -117,7 +125,15 @@ export default function Image ({
     if (isOptimizationDenied) return setOptimizedSrc(src)
 
     const img = new window.Image()
-    img.onload = () => { if (img.src !== null) setOptimizedSrc(img.src) }
+    img.onload = () => {
+      if (img.src !== null) {
+        setOptimizedSrc(previousSrc => {
+          setBackgroundSrc(previousSrc)
+
+          return img.src
+        })
+      }
+    }
 
     let lastSize
     const onResize = () => {
@@ -150,7 +166,19 @@ export default function Image ({
       src={optimizedSrc}
       alt={alt}
       loading='lazy'
-      className={objectFit === 'cover' ? undefined : className}
+      onLoad={() => {
+        setBackgroundSrc(undefined)
+        setBackgroundColor(undefined)
+      }}
+      className={classNames(classes.image, {
+        [className]: !objectFit || objectFit === 'none',
+        [classes[objectFit]]: !isEmpty(classes[objectFit]),
+        [classes[position]]: !isEmpty(classes[position])
+      })}
+      style={{
+        backgroundColor: backgroundColor && !backgroundSrc ? backgroundColor : undefined,
+        backgroundImage: backgroundSrc ? `url(${backgroundSrc})` : undefined
+      }}
       {...props}
     />
   )

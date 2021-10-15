@@ -14,10 +14,23 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://www.google.com" />
     <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <script>
+      if (navigator.userAgent !== 'ReactSnap') {
+        var st = document.createElement('link')
+
+        st.rel = 'stylesheet'
+        st.type = 'text/css'
+        st.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'
+
+        document.head.appendChild(st)
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,8 +52,6 @@
         var IS_STATIC_RENDERER = navigator.userAgent === 'ReactSnap'
         var WAIT_TIME_BEFORE_APPEND = 3000
 
-        if (!IS_STATIC_RENDERER) loadGoogleFonts()
-
         document.addEventListener('DOMContentLoaded', function () {
           if (IS_STATIC_RENDERER) return undefined
 
@@ -50,16 +61,6 @@
             loadGoogleTagManager()
           }
         })
-
-        function loadGoogleFonts () {
-          var st = document.createElement('link')
-
-          st.rel = 'stylesheet'
-          st.type = 'text/css'
-          st.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'
-
-          document.head.appendChild(st)
-        }
 
         function loadGoogleTagManager () {
           var sc = document.createElement('script')

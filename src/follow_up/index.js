@@ -5,6 +5,7 @@ import Intro from './components/Intro'
 import MultiForm from './components/MultiForm'
 import Footer from './components/Footer'
 import SkipModal from './components/SkipModal'
+import Image from 'main_app/components/Image'
 
 import FollowUpBackground from 'assets/follow_up/background.png'
 import FollowUpMobileBackground from 'assets/follow_up/mobile_background.png'
@@ -17,6 +18,8 @@ function FollowUp () {
   const handleModalOpen = useCallback(() => {
     setModalOpen(true)
   }, [])
+  // TODO: Obtener nombre del cliente desde los datos guardados con Free Quote Form y pasarlo al componente Intro como prop.
+  const provisionalName = 'Jhon'
   return (
     <>
       <Navbar
@@ -24,20 +27,21 @@ function FollowUp () {
       />
       <section className={classes.followUpContainer}>
         <div className={classes.stepsContainer}>
-          <Intro />
+          <Intro clientName={provisionalName} />
           <MultiForm
             handleModalOpen={handleModalOpen}
           />
         </div>
-        <img src={FollowUpMobileBackground} alt='' className={classes.mobileBackground} aria-hidden />
+        <Image src={FollowUpMobileBackground} alt='' className={classes.mobileBackground} />
         <Footer />
-        <img src={FollowUpBackground} alt='' className={classes.background} aria-hidden />
+        <Image src={FollowUpBackground} alt='' className={classes.background} />
         <div className={classes.filledCircle} aria-hidden />
         <div className={classes.emptyCircle} aria-hidden />
         <div className={classes.blurCircle} aria-hidden />
-        <img src={DotsPattern} alt='' className={classes.leftDotsPattern} aria-hidden />
+        <Image src={DotsPattern} alt='' className={classes.leftDotsPattern} />
       </section>
       <SkipModal
+        clientName={provisionalName}
         isModalOpen={isModalOpen}
         setModalOpen={setModalOpen}
       />

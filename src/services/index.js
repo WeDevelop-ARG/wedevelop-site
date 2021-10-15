@@ -11,10 +11,7 @@ import StaffAugmentation from './components/StaffAugmentation'
 function Services () {
   return (
     <>
-      <NavBar
-        variant={['solid', 'dark']}
-        variantAtScrollTop={['transparent', 'dark']}
-      />
+      <NavBar variant={['solid', 'dark']} />
       <Article>
         <Switch>
           <Route

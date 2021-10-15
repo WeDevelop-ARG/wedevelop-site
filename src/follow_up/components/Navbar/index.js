@@ -19,14 +19,13 @@ function NavBar ({ handleModalOpen }) {
         smooth
       >
         <Logo
-          variant='color'
-          mobile={isTabletDown}
+          variant={isTabletDown ? 'isologo' : 'color'}
           className={classes.logo}
         />
       </HashLink>
       <nav className={classes.menu}>
         <Button
-          variant={['secondary', ...(isTabletDown ? ['light'] : ['dark'])]}
+          variant={['secondary', isTabletDown ? 'light' : 'dark']}
           className={classes.skipButton}
           onClick={handleModalOpen}
         >

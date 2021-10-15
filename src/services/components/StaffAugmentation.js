@@ -18,7 +18,6 @@ import icon from 'assets/services/icon-staff-augmentation.svg'
 import background from 'assets/services/background-staff-augmentation.png'
 
 import classes from './services.module.scss'
-import classNames from 'classnames'
 
 function StaffAugmentation () {
   usePageMetadata({
@@ -46,15 +45,15 @@ function StaffAugmentation () {
         title={<>Staff <br />Augmentation</>}
         description='Expand your team with our skilled experts who can scale up your development speed, quality and substantially cut down your costs.'
       />
-      <section className={classNames(classes.sectionContainer, classes.serviceDetails)}>
+      <section className={classes.serviceDetails}>
         <Details
           subTitle='Get your dream team of highly skilled professionals'
         >
           <StaffDetails />
         </Details>
       </section>
-      <SimpleSteps className={classes.sectionContainer} />
-      <Benefits className={classes.sectionContainer} />
+      <SimpleSteps />
+      <Benefits className={classes.sectionContainer} service='staff-augmentation' />
       <Schedule
         className={classes.sectionContainer}
         contactPagePath={contactPagePath}

@@ -23,6 +23,16 @@ function Header (props, ref) {
           <br />experiences to clients and users all over the world.
         </p>
         <hr className={classes.divider} />
+        <HashLink to='#services' smooth className={classes.arrowMobile}>
+          <SVGIcon name='home/header/arrow' />
+          <div className={classes.scrollTextMobile}>scroll down</div>
+        </HashLink>
+        <div className={classes.clutchCircleMobile}>
+          <ClutchWidget className={classes.clutchWidget} variant='dark' />
+          <div className={classes.filledCircleMobile} />
+          <div className={classes.emptyCircleMobile} />
+          <div className={classes.smallCircleMobile} />
+        </div>
       </div>
       <HashLink to='#services' smooth className={classes.arrow}>
         <SVGIcon name='home/header/arrow' />
@@ -38,7 +48,7 @@ function Header (props, ref) {
           loading='eager'
           objectFit='cover'
           position='bottom'
-          className={classes.imgHeader}
+          placeholderColor='#333'
         />
         <div className={classes.halfCircle}>
           <SVGIcon name='home/header/half_circle' />

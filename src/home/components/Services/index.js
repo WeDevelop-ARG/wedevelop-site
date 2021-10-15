@@ -68,6 +68,7 @@ function ServicesOffered () {
           <div className={classes.halfCircle}>
             <SVGIcon name='home/services/half_circle' />
           </div>
+          <div className={classes.smallHalfCircle} />
           <div className={classes.filledCircle} />
           <div className={classes.emptyCircle} />
           <div className={classes.smallCircle} />

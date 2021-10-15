@@ -9,7 +9,7 @@ function Step ({ className, number, title, description }) {
         <h3 className={classes.number}>{number}</h3>
       </div>
       <h3>{title}</h3>
-      <p>{description}</p>
+      <p className={classes.description}>{description}</p>
     </div>
   )
 }
