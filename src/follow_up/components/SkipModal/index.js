@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useCallback } from 'react'
 
 import Modal from 'main_app/components/Modal'
 import SkipForm from '../SkipForm'
@@ -8,18 +8,18 @@ import classes from './styles.module.scss'
 function SkipModal ({
   clientName,
   isModalOpen,
-  setModalOpen
+  setModalOpen,
+  setOpenConfirmation
 }) {
-  const [isSubmitted, setIsSubmitted] = useState(false)
   const handleSubmitFinished = useCallback(() => {
-    setIsSubmitted(true)
+    setOpenConfirmation(true)
     setModalOpen(false)
-  }, [setModalOpen])
+  }, [setModalOpen, setOpenConfirmation])
 
   const handleModalClose = useCallback(() => {
+    setOpenConfirmation(true)
     setModalOpen(false)
-    setIsSubmitted(false)
-  }, [setModalOpen])
+  }, [setModalOpen, setOpenConfirmation])
   return (
     <Modal
       isOpen={isModalOpen}

@@ -5,6 +5,7 @@ import Intro from './components/Intro'
 import MultiForm from './components/MultiForm'
 import Footer from './components/Footer'
 import SkipModal from './components/SkipModal'
+import ConfirmationModal from './components/ConfirmationModal'
 import Image from 'main_app/components/Image'
 
 import FollowUpBackground from 'assets/follow_up/background.png'
@@ -14,6 +15,7 @@ import DotsPattern from 'assets/follow_up/dots_pattern.svg'
 import classes from './styles.module.scss'
 
 function FollowUp () {
+  const [isConfirmationOpen, setConfirmationOpen] = useState(false)
   const [isModalOpen, setModalOpen] = useState(false)
   const handleModalOpen = useCallback(() => {
     setModalOpen(true)
@@ -44,6 +46,11 @@ function FollowUp () {
         clientName={provisionalName}
         isModalOpen={isModalOpen}
         setModalOpen={setModalOpen}
+        setOpenConfirmation={setConfirmationOpen}
+      />
+      <ConfirmationModal
+        isConfirmationOpen={isConfirmationOpen}
+        setConfirmationOpen={setConfirmationOpen}
       />
     </>
   )
