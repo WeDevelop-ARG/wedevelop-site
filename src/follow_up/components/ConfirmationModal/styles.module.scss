@@ -11,11 +11,16 @@
 
   @include for-tablet-down {
     justify-content: center;
-    min-height: 100vh;
+    max-height: 100vh;
     overflow-y: auto;
   }
 
+  @include for-tablet-up {
+    height: auto;
+  }
+
   @include for-phone-only {
+    min-height: 100vh;
     padding: 30px;
   }
 }

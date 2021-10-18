@@ -2,6 +2,22 @@
 
 .container {
   padding: 0 15px;
+
+  @include for-phone-only {
+    margin-top: 100px;
+  }
+
+  @include for-tablet-down {
+    @media screen and (orientation: landscape) {
+      margin-top: 300px;
+    }
+  }
+
+  @include for-desktop-up {
+    @media screen and (orientation: landscape) {
+      margin-top: 0;
+    }
+  }
 }
 
 .confirmationBadge {
