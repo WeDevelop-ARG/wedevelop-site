@@ -15,8 +15,9 @@ function RadioButtonIconCards ({ options, name }) {
             value={option.value}
             className={classes.card}
           >
-            <Image src={option.urlIcon} alt='' className={classes.urlIcon} />
-            <h3 className={classes.textCard}>{option.label}</h3>
+            {option.icon && <div className={classes.icon}>{option.icon}</div>}
+            {option.iconURL && <Image src={option.iconURL} alt='' className={classes.icon} />}
+            <span className={classes.textCard}>{option.label}</span>
           </RadioButtonCard>
         </li>
       ))}

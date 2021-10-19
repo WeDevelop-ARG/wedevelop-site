@@ -13,7 +13,7 @@ function RadioButtonList ({ options, name }) {
             value={option.value}
             className={classes.card}
           >
-            <div className={classes.label}>{option.label}</div>
+            <span className={classes.label}>{option.label}</span>
           </RadioButton>
         </li>
       ))}

@@ -13,7 +13,7 @@ function RadioButtonTextCards ({ options, name }) {
             value={option.value}
             className={classes.card}
           >
-            <h3 className={classes.textCard}>{option.label}</h3>
+            <span className={classes.textCard}>{option.label}</span>
           </RadioButtonCard>
         </li>
       ))}
