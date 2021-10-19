@@ -24,6 +24,7 @@ function Career () {
       />
       <Article>
         <JoinUsForm />
+        <PictureWall />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
