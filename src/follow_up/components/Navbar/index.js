@@ -8,7 +8,7 @@ import { forTabletDown } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
 
-function NavBar () {
+function NavBar ({ handleModalOpen }) {
   const isTabletDown = useMediaQuery(forTabletDown)
 
   return (
@@ -27,6 +27,7 @@ function NavBar () {
         <Button
           variant={['secondary', isTabletDown ? 'light' : 'dark']}
           className={classes.skipButton}
+          onClick={handleModalOpen}
         >
           Skip
         </Button>
