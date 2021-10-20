@@ -18,7 +18,10 @@ function CountrySelect ({ name, placeholder }) {
       searchable='true'
       placeholder={placeholder}
       searchPlaceholder='Search a country'
-      selectButtonClassName={classnames((fieldValue ? classes.textCountry : classes.textCountrySelect), classes.countrySelect)}
+      selectButtonClassName={classnames(classes.countrySelect, {
+        [classes.textCountry]: fieldValue,
+        [classes.textCountrySelect]: !fieldValue
+      })}
       onBlur={() => setTouched(true)}
     />
   )
