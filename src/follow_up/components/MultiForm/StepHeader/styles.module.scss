@@ -1,0 +1,37 @@
+@import '/src/styles/media_queries.scss';
+
+$grayColor: #363636;
+$yellowColor: #FFC331;
+
+.sectionHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.titleText {
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.descriptionText {
+  width: 100%;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  color: rgba($color: $grayColor, $alpha: 0.5);
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: $yellowColor;
+  margin: 20px 0px 50px;
+  border: none;
+
+  @include for-tablet-up {
+    margin: 20px 0px 60px;
+  }
+}
