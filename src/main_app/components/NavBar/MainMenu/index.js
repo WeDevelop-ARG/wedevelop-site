@@ -1,9 +1,11 @@
-import { useMemo } from 'react'
-import classnames from 'classnames'
+import { useMemo, useCallback, useState } from 'react'
+import classNames from 'classnames'
 import { HashLink } from 'react-router-hash-link'
-import { Dropdown } from 'react-bootstrap'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 import Button from 'main_app/components/Button'
+import Image from 'main_app/components/Image'
+
 import useMediaQuery from 'utils/use_media_query'
 import { isVariant } from 'utils/use_variants'
 
@@ -22,24 +24,50 @@ function MainMenu ({
   contactPagePath = '/contact'
 }) {
   const isTabletDown = useMediaQuery(forTabletDown)
-  const dropdownIconURL = isVariant(variant, 'light') || isTabletDown ? DropdownIconWhite : DropdownIcon
-  const buttonVariant = useMemo(() => {
-    if (isVariant(variant, 'light')) return 'dark'
-  }, [variant])
+  const dropdownIconURL = isVariant(variant, 'light') && !isTabletDown ? DropdownIconWhite : DropdownIcon
+  const contactCTAVariant = useMemo(() => {
+    if (isTabletDown) return ['primary', 'dark']
+    if (isVariant(variant, 'transparent') && isVariant(variant, 'light')) {
+      return ['secondary', 'dark']
+    } else if (isVariant(variant, 'transparent') && !isVariant(variant, 'light')) {
+      return ['secondary', 'light']
+    } else if (isVariant('light')) {
+      return ['primary', 'dark']
+    }
+
+    return ['primary', 'light']
+  }, [variant, isTabletDown])
+  const handleClick = useCallback((e) => {
+    const buttonOrAnchor = e.target.closest('a') ?? e.target.closest('button')
+
+    if (buttonOrAnchor !== null && buttonOrAnchor.dataset.closeMenuOnClick !== 'false') {
+      onRequestClose()
+    }
+  }, [onRequestClose])
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
 
   return (
-    <ul className={classnames(classes.menu, className, { [classes.hidden]: !isOpen })}>
+    <ul onClick={handleClick} className={classNames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li
-        className={classnames(classes.navItem, {
+        className={classNames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/services')
         })}
       >
-        <Dropdown className={classnames({ [classes.hidden]: isTabletDown })}>
+        <Dropdown show={isServicesDropdownOpen} onToggle={setIsServicesDropdownOpen}>
           <Dropdown.Toggle
             as={Button}
             variant='link'
-            className={classes.servicesDropdownToggle}
-            iconRight={<img src={dropdownIconURL} alt='' />}
+            className={classNames(classes.servicesDropdownToggle, {
+              [classes.open]: isServicesDropdownOpen
+            })}
+            data-close-menu-on-click='false'
+            iconRight={
+              <Image
+                src={dropdownIconURL}
+                alt=''
+                className={classes.iconRight}
+              />
+            }
           >
             Services
           </Dropdown.Toggle>
@@ -65,7 +93,7 @@ function MainMenu ({
         </Dropdown>
       </li>
       <li
-        className={classnames(classes.navItem, {
+        className={classNames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/about-us')
         })}
       >
@@ -73,8 +101,18 @@ function MainMenu ({
           About Us
         </HashLink>
       </li>
+      <li className={classes.navItem}>
+        <HashLink to='/#testimonials' smooth>
+          Testimonials
+        </HashLink>
+      </li>
+      <li className={classNames(classes.navItem)}>
+        <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
+          Blog
+        </a>
+      </li>
       <li
-        className={classnames(classes.navItem, {
+        className={classNames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/career')
         })}
       >
@@ -82,36 +120,11 @@ function MainMenu ({
           Careers
         </HashLink>
       </li>
-      <li className={classnames(classes.navItem)}>
-        <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
-          Blog
-        </a>
-      </li>
-      {isTabletDown && (
-        <>
-          <li className={classnames(classes.textList)}>
-            Our Services
-          </li>
-          <li className={classes.navItem}>
-            <HashLink to='/services/web-development#top'>
-              Web Development
-            </HashLink>
-          </li>
-          <li className={classes.navItem}>
-            <HashLink to='/services/staff-augmentation#top'>
-              Staff Augmentation
-            </HashLink>
-          </li>
-        </>
-      )}
-      <li className={classnames(classes.textList)}>
-        Let's talk and work together
-      </li>
       <li>
         <Button
           as={HashLink}
           isAnchor
-          variant={['secondary', ...(isTabletDown ? ['dark'] : [buttonVariant])]}
+          variant={contactCTAVariant}
           to={contactPagePath}
           smooth
           className={classes.buttonTalk}

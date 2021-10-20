@@ -18,7 +18,8 @@ function FreeQuoteForm ({
   customFields,
   formOrigin,
   formButtonText,
-  formDisclaimer
+  formDisclaimer,
+  noAutofocus
 }) {
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
@@ -60,7 +61,7 @@ function FreeQuoteForm ({
           name='name'
           placeholder={fixedFields.name.placeholder}
           className={classes.inputStyles}
-          autoFocus
+          autoFocus={noAutofocus !== true}
         />
         <Field
           as={InputWithError}

@@ -6,17 +6,20 @@
   position: relative;
   padding-top: calc(375px + var(--rootContentMinPadding));
   padding-bottom: calc(50px + var(--rootContentMinPadding));
-  margin: 0 0 50px;
+  margin: -200px 0 50px;
   min-height: 100vh;
   height: auto;
+  overflow: hidden;
+  z-index: -1;
 
   @include for-tablet-up {
     padding-top: calc(250px + var(--rootContentMinPadding));
+    margin-top: -100px;
   }
 
   @include for-desktop-up {
     padding-bottom: calc(75px + var(--rootContentMinPadding));
-    margin: 150px 0 50px;
+    margin-top: 75px;
   }
 }
 
@@ -43,6 +46,7 @@
 }
 
 .titleText {
+  font-size: 32px;
   text-align: center;
 
   @include for-desktop-up {
@@ -239,12 +243,6 @@
   height: auto;
 }
 
-.processDiagram {
-  width: inherit;
-  height: inherit;
-  object-fit: cover;
-}
-
 .background {
   background-image: url('../../../assets/services/web_dev_our_process/background.svg');
   background-repeat: no-repeat;
@@ -259,20 +257,26 @@
 }
 
 .dotsPatternRight {
-  width: 166px;
-  height: 377px;
-  top: 5vw;
+  width: 100px;
+  height: 187px;
+  right: -41px;
+  top: 22%;
   position: absolute;
-  right: 2vw;
   z-index: -1;
 
-  @media screen and (min-width: 1024px) and (max-width: 1200px) {
-    width: 136px;
-    height: 347px;
-    top: 3vw;
+  @include for-tablet-up {
+    top: 26%;
   }
 
-  @include for-tablet-down {
-    display: none;
+  @include for-desktop-up {
+    width: 166px;
+    height: 377px;
+    top: 7%;
+    right: 2vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+      width: 136px;
+      height: 347px;
+    }
   }
 }

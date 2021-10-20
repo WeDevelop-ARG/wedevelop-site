@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cloudinary/url-gen": "^1.0.0",
+    "@loadable/component": "^5.15.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
-    "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
     "classnames": "^2.2.6",
     "firebase": "^9.0.1",
@@ -19,6 +20,7 @@
     "react-dom": "^17.0.1",
     "react-flags-select": "^2.1.2",
     "react-modal": "^3.13.1",
+    "react-prerendered-component": "^1.2.4",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.4.0",
     "react-scripts": "4.0.3",
@@ -46,12 +48,16 @@
   "reactSnap": {
     "skipThirdPartyRequests": true,
     "http2PushManifest": true,
+    "asyncScriptTags": true,
+    "inlineCss": true,
     "include": [
       "/privacy-policy",
       "/staff-augmentation",
       "/web-developers",
-      "/web-designers",
       "/hire-developers",
+      "/web-coders",
+      "/hire-javascript-developers",
+      "/web-programmers",
       "/about-us",
       "/career"
     ]

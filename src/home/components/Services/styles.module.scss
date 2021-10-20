@@ -131,13 +131,18 @@
 }
 
 .patternRight {
+  position: absolute;
 
   @include for-tablet-down {
-    display: none;
+    display: flex;
+    width: 63px;
+    height: 250px;
+    top: 220px;
+    right: 0px;
+    object-fit: cover;  
   }
 
   @include for-desktop-up {
-    position: absolute;
     right: 70px;
     padding-top: 160px;
   }
@@ -201,6 +206,13 @@
   opacity: 0.3;
   filter: blur(1px);
   background: #EAEAEA;
+
+  @include for-tablet-down {
+    display: flex;
+    top: 20px;
+    left: -54px;
+    z-index: -1;
+  }
 }
 
 .emptyCircle {
@@ -213,6 +225,29 @@
   border: 2px solid;
   border-color: #E1E1E1;
   background: none;
+
+  @include for-tablet-down {
+    display: flex;
+    top: 27px;
+    left: -64px;
+    z-index: -1;
+  }
+}
+
+.smallHalfCircle {
+  @extend .circle;
+
+  @include for-tablet-down {
+    display: block;
+    border-style: dashed;
+    width: 150px;
+    height: 150px;
+    border-color: #E1E1E1;
+    border-width: 0.38px;
+    left: -72px;
+    top: 9px;
+    z-index: -1;
+  }
 }
 
 .smallCircle {
@@ -224,4 +259,11 @@
   opacity: 0.3;
   filter: blur(1.5px);
   background: #8224E3;
+
+  @include for-tablet-down {
+    display: block;
+    top: 122px;
+    left: 54px;
+    z-index: -1;
+  }
 }

@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import classnames from 'classnames'
-import { isFunction, uniq } from 'lodash'
+import isFunction from 'lodash/isFunction'
+import uniq from 'lodash/uniq'
 
 function useVariants (classes, variants = '', { prefix = '', defaults = {} } = {}) {
   if (Array.isArray(variants)) {
@@ -33,6 +34,8 @@ function combineVariants (...variants) {
   let result = []
 
   for (let variant of variants) {
+    if (!variant) continue
+
     if (!Array.isArray(variant)) {
       variant = [variant]
     }
