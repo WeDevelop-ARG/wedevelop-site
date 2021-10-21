@@ -1,6 +1,10 @@
+import { ErrorMessage } from 'formik'
+
 import StepHeader from '../../StepHeader'
 import RadioButtonTextCards from 'main_app/components/RadioButtonTextCards'
 import FormLogic from './FormLogic'
+
+import classes from '../styles.module.scss'
 
 function StartingDate () {
   const startingDate = [{
@@ -32,6 +36,7 @@ function StartingDate () {
           name='startingDate'
           options={startingDate}
         />
+        <ErrorMessage name='startingDate' component='div' className={classes.errorMessage} />
       </FormLogic>
     </section>
   )

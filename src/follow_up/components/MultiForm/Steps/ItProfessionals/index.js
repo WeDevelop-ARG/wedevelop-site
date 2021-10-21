@@ -1,3 +1,5 @@
+import { ErrorMessage } from 'formik'
+
 import StepHeader from '../../StepHeader'
 import RadioButtonIconCards from 'main_app/components/RadioButtonIconCards'
 import FormLogic from './FormLogic'
@@ -6,6 +8,8 @@ import { ReactComponent as Only1 } from 'assets/follow_up/form/only1.svg'
 import { ReactComponent as TwoTo5 } from 'assets/follow_up/form/2_to_5.svg'
 import { ReactComponent as MoreThan5 } from 'assets/follow_up/form/more_than_5.svg'
 import { ReactComponent as InterrogationMark } from 'assets/follow_up/form/interrogation_mark.svg'
+
+import classes from '../styles.module.scss'
 
 function ItProfessionals () {
   const itProfessionals = [{
@@ -45,6 +49,7 @@ function ItProfessionals () {
           name='itProfessionals'
           options={itProfessionals}
         />
+        <ErrorMessage name='itProfessionals' component='div' className={classes.errorMessage} />
       </FormLogic>
     </section>
   )

@@ -1,6 +1,11 @@
+import { ErrorMessage } from 'formik'
+
 import StepHeader from '../../StepHeader'
 import RadioButtonTextCards from 'main_app/components/RadioButtonTextCards'
 import FormLogic from './FormLogic'
+
+import classes from '../styles.module.scss'
+import Button from 'main_app/components/Button'
 
 function ServiceType () {
   const serviceType = [{
@@ -32,6 +37,12 @@ function ServiceType () {
           name='serviceType'
           options={serviceType}
         />
+        <ErrorMessage name='serviceType' component='div' className={classes.errorMessage} />
+        <Button
+          variant='secondary'
+        >
+          Save
+        </Button>
       </FormLogic>
     </section>
   )

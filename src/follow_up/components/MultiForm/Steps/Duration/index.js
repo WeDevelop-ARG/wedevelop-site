@@ -1,6 +1,10 @@
+import { ErrorMessage } from 'formik'
+
 import StepHeader from '../../StepHeader'
 import RadioButtonList from 'main_app/components/RadioButtonList'
 import FormLogic from './FormLogic'
+
+import classes from '../styles.module.scss'
 
 function Duration () {
   const duration = [{
@@ -40,6 +44,7 @@ function Duration () {
           name='duration'
           options={duration}
         />
+        <ErrorMessage name='duration' component='div' className={classes.errorMessage} />
       </FormLogic>
     </section>
   )

@@ -1,6 +1,10 @@
+import { ErrorMessage } from 'formik'
+
 import StepHeader from '../../StepHeader'
 import RadioButtonList from 'main_app/components/RadioButtonList'
 import FormLogic from './FormLogic'
+
+import classes from '../styles.module.scss'
 
 function Budget () {
   const budget = [{
@@ -36,6 +40,7 @@ function Budget () {
           name='budget'
           options={budget}
         />
+        <ErrorMessage name='budget' component='div' className={classes.errorMessage} />
       </FormLogic>
     </section>
   )
