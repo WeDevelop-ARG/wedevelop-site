@@ -1,11 +1,10 @@
 import { useState, useCallback } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import ClutchWidget from 'main_app/components/ClutchWidget'
-import ConfirmationMessage from '../ConfirmationMessage'
 import FreeQuoteForm from '../FreeQuoteForm'
 import Image from 'main_app/components/Image'
 import Logo from 'main_app/components/Logo'
-import Modal from 'main_app/components/Modal'
 import SVGIcon from 'main_app/components/SVGIcon'
 
 import classes from './styles.module.scss'
@@ -22,9 +21,9 @@ function Header ({
   const handleSubmitFinished = useCallback(() => {
     setIsSubmitted(true)
   }, [])
-  const handleModalClose = useCallback(() => {
-    setIsSubmitted(false)
-  }, [])
+
+  const history = useHistory()
+  if (isSubmitted) history.push('/follow-up')
   return (
     <>
       <section id='headerSection' className={classes.headerContainer}>
@@ -68,13 +67,6 @@ function Header ({
           <SVGIcon name='home/header/pattern' />
         </div>
       </section>
-      <Modal
-        isOpen={isSubmitted}
-        onRequestClose={handleModalClose}
-        contentLabel='Confirmation Message'
-      >
-        <ConfirmationMessage />
-      </Modal>
     </>
   )
 }
