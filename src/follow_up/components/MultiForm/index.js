@@ -4,6 +4,13 @@ import StepWizard from 'react-step-wizard'
 
 import FormProgress from './ProgressBar'
 import ControlButtons from './ControlButtons'
+import ServiceType from './Steps/ServiceType'
+import ItProfessionals from './Steps/ItProfessionals'
+import Duration from './Steps/Duration'
+import Budget from './Steps/Budget'
+import StartingDate from './Steps/StartingDate'
+import Technologies from './Steps/Technologies'
+import ScheduleCall from './Steps/ScheduleCall'
 
 import classes from './styles.module.scss'
 
@@ -29,19 +36,13 @@ function MultiForm ({ handleModalOpen }) {
         instance={setStepWizardInstance}
         className={classes.stepWizardContainer}
       >
-        <div hashKey='step-1'>Step 1</div>
-        <div hashKey='step-2'>Step 2</div>
-        <div hashKey='step-3'>Step 3</div>
-        <div hashKey='step-4'>Step 4</div>
-        <div hashKey='step-5'>Step 5</div>
-        <div hashKey='step-6'>Step 6</div>
-        <div hashKey='step-7'>Step 7</div>
-        <div hashKey='step-8'>Step 8</div>
-        <div hashKey='step-9'>Step 9</div>
-        <div hashKey='step-10'>Step 10</div>
-        <div hashKey='step-11'>Step 11</div>
-        <div hashKey='step-12'>Step 12</div>
-        <div hashKey='step-13'>Step 13</div>
+        <ServiceType hashKey='service-type' />
+        <ItProfessionals hashKey='it-professionals' />
+        <Duration hashKey='duration' />
+        <Budget hashKey='budget' />
+        <StartingDate hashKey='starting-date' />
+        <Technologies hashKey='technologies' />
+        <ScheduleCall hashKey='schedule-call' />
       </StepWizard>
       {stepWizardInstance &&
         <ControlButtons

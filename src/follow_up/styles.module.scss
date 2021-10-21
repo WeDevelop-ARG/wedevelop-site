@@ -29,7 +29,8 @@
   top: -1px;
   right: 0;
   width: 762px;
-  height: calc(100vh + 1px);
+  min-height: calc(100vh + 1px);
+  height: calc(100% + 1px);
   z-index: -1;
 
   @media screen and (min-width: 1024px) and (max-width: 1245px) {
