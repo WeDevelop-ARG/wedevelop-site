@@ -3,9 +3,9 @@ import * as Yup from 'yup'
 
 import Form from 'main_app/components/Form'
 
-const schema = Yup.object({
-  itProfessionals: Yup.string()
-})
+const schemaShape = {
+  itProfessionals: Yup.string().required('Select an option')
+}
 
 function FormLogic ({ initialValues, ...props }) {
   const handleSubmit = useCallback(async (values) => {
@@ -15,6 +15,8 @@ function FormLogic ({ initialValues, ...props }) {
       console.error(err)
     }
   }, [])
+
+  const schema = Yup.object(schemaShape).required()
 
   return (
     <Form

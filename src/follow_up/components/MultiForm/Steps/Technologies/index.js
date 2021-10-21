@@ -24,7 +24,7 @@ function Technologies () {
         <FormikSelect
           name='technologies'
           options={technologies}
-          placeholder='Select a technology'
+          placeholder='Select one or more required technologies'
         />
         <ErrorMessage name='technologies' component='div' className={classes.errorMessage} />
       </FormLogic>
