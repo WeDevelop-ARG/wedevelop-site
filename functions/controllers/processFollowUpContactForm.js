@@ -1,4 +1,3 @@
-const dayjs = require('dayjs')
 const { createDealNote, getDeal } = require('../services/hubspot')
 
 module.exports = exports = async function handleRequest (req, res) {
@@ -44,7 +43,7 @@ async function handlePostRequest (req, res) {
 
   const deal = await getDeal(tracingId)
 
-  if (dayjs().isAfter(dayjs(deal.createdAt).add(1, 'hour'))) {
+  if (!deal) {
     console.log('EXPIRED_FOLLOW_UP_CONTACT_FORM')
 
     return res.status(404).end()

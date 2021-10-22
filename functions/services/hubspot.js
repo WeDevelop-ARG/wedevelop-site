@@ -1,10 +1,23 @@
 const hubspot = require('@hubspot/api-client')
+const dayjs = require('dayjs')
 
 const { HUBSPOT_API_KEY, HUBSPOT_LANDING_DEAL_PIPELINE_STAGE, HUBSPOT_LANDING_DEAL_PIPELINE_NAME } = require('../constants')
 
 const hubspotClient = new hubspot.Client({
   apiKey: HUBSPOT_API_KEY
 })
+
+exports.getContact = async function getContact (contactId, idProperty) {
+  const response = await hubspotClient.crm.contacts.basicApi.getById(
+    contactId,
+    undefined,
+    undefined,
+    true,
+    idProperty
+  )
+
+  return response.body
+}
 
 exports.createContact = async function createContact ({ name, email } = {}) {
   const properties = {
@@ -18,16 +31,10 @@ exports.createContact = async function createContact ({ name, email } = {}) {
 }
 
 exports.createContactIfNotExists = async function upsertContact ({ name, email } = {}) {
-  const contactId = email
-  const properties = []
-  const associations = undefined
-  const archived = true
-  const idProperty = 'email'
-
   try {
-    const response = await hubspotClient.crm.contacts.basicApi.getById(contactId, properties, associations, archived, idProperty)
+    const contact = await exports.getContact(email, 'email')
 
-    return response.body.id
+    return contact.id
   } catch (err) {
     if (err.response && err.response.statusCode === 404) {
       return exports.createContact({ name, email })
@@ -35,10 +42,15 @@ exports.createContactIfNotExists = async function upsertContact ({ name, email }
   }
 }
 
-exports.getDeal = async function getDeal (dealId) {
-  const apiResponse = await hubspotClient.crm.deals.basicApi.getById(dealId)
+exports.getDeal = async function getDeal (dealId, { considerExpiredAfterSeconds = 3600 } = {}) {
+  const apiResponse = await hubspotClient.crm.deals.basicApi.getById(dealId, undefined, ['contact'])
+  const deal = apiResponse.body
 
-  return apiResponse.body
+  if (considerExpiredAfterSeconds > 0 && dayjs().isAfter(dayjs(deal.createdAt).add(considerExpiredAfterSeconds, 'seconds'))) {
+    return undefined
+  }
+
+  return deal
 }
 
 exports.createDeal = async function createDeal (contactId, { name } = {}) {
@@ -50,7 +62,18 @@ exports.createDeal = async function createDeal (contactId, { name } = {}) {
   const SimplePublicObjectInput = { properties }
   const apiResponse = await hubspotClient.crm.deals.basicApi.create(SimplePublicObjectInput)
 
+  await exports.associateDealToContact(apiResponse.body.id, contactId)
+
   return apiResponse.body.id
+}
+
+exports.associateDealToContact = async function associateDealToContact (dealId, contactId) {
+  await hubspotClient.crm.deals.associationsApi.create(
+    dealId,
+    'contact',
+    contactId,
+    'deal_to_contact'
+  )
 }
 
 exports.createDealNote = async function createDealNote (dealId, { body } = {}) {
@@ -62,6 +85,30 @@ exports.createDealNote = async function createDealNote (dealId, { body } = {}) {
       associations: { dealIds: [dealId] },
       metadata: { body },
       json: true
+    }
+  })
+}
+
+exports.createContactMeeting = async function createContactMeeting (contactId, {
+  startTime,
+  endTime,
+  title,
+  description,
+  internalNotes
+} = {}) {
+  await hubspotClient.apiRequest({
+    method: 'POST',
+    path: '/engagements/v1/engagements',
+    body: {
+      engagement: { active: true, type: 'MEETING' },
+      associations: { contactIds: [contactId] },
+      metadata: {
+        body: description,
+        startTime: dayjs(startTime).valueOf(),
+        endTime: dayjs(endTime).valueOf(),
+        title,
+        internalMeetingNotes: internalNotes
+      }
     }
   })
 }
