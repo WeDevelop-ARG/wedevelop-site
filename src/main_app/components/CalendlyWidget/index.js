@@ -24,6 +24,7 @@ function CalendlyWidget ({ sourcePage, hideText }) {
   }, [sourcePage])
   const handleScheduledEvent = useCallback(async (e) => {
     const calendlyInviteeURI = e.data.payload.invitee.uri
+    const calendlyEventURI = e.data.payload.event.uri
     logAnalyticsEvent({
       event: 'contact',
       contactType: 'calendly',
@@ -36,7 +37,7 @@ function CalendlyWidget ({ sourcePage, hideText }) {
           Accept: 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ calendlyInviteeURI })
+        body: JSON.stringify({ calendlyInviteeURI, calendlyEventURI })
       })
     } catch (err) {
       console.error(err)
