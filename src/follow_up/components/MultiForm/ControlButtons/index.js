@@ -1,12 +1,12 @@
 import Button from 'main_app/components/Button'
+import SubmitButton from 'main_app/components/SubmitButton'
 import Image from 'main_app/components/Image'
 
 import LeftArrow from 'assets/follow_up/left_arrow.svg'
 
 import classes from './styles.module.scss'
 
-function ControlButtons ({ SW, currentStep, handleModalOpen }) {
-  const { previousStep, nextStep, totalSteps } = SW
+function ControlButtons ({ currentStep, previousStep, totalSteps, handleModal }) {
   const btnLeftArrow = <Image src={LeftArrow} alt='' />
   const canGoback = currentStep > 1
   const isFinalStep = currentStep === totalSteps
@@ -22,16 +22,17 @@ function ControlButtons ({ SW, currentStep, handleModalOpen }) {
           Back
         </Button>}
       {!isFinalStep &&
-        <Button
-          onClick={nextStep}
+        <SubmitButton
+          variant='primary'
           className={classes.nextButton}
         >
           Next
-        </Button>}
+        </SubmitButton>}
       {isFinalStep &&
         <Button
+          variant='primary'
+          onClick={handleModal}
           className={classes.nextButton}
-          onClick={handleModalOpen}
         >
           Done
         </Button>}
