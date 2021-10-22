@@ -1,7 +1,9 @@
+import { useCallback } from 'react'
 import { ErrorMessage } from 'formik'
 
 import StepHeader from '../../StepHeader'
 import RadioButtonIconCards from 'main_app/components/RadioButtonIconCards'
+import ControlButtons from '../../ControlButtons'
 import FormLogic from './FormLogic'
 
 import { ReactComponent as Only1 } from 'assets/follow_up/form/only1.svg'
@@ -11,7 +13,7 @@ import { ReactComponent as InterrogationMark } from 'assets/follow_up/form/inter
 
 import classes from '../styles.module.scss'
 
-function ItProfessionals () {
+function ItProfessionals ({ currentStep, previousStep, nextStep, totalSteps }) {
   const itProfessionals = [{
     value: 'Only 1',
     label: 'Only 1',
@@ -35,6 +37,9 @@ function ItProfessionals () {
   const initialValues = {
     itProfessionals: ''
   }
+  const onSubmitFinished = useCallback(() => {
+    nextStep()
+  }, [nextStep])
 
   return (
     <section>
@@ -44,12 +49,18 @@ function ItProfessionals () {
       />
       <FormLogic
         initialValues={initialValues}
+        onSubmitFinished={onSubmitFinished}
       >
         <RadioButtonIconCards
           name='itProfessionals'
           options={itProfessionals}
         />
         <ErrorMessage name='itProfessionals' component='div' className={classes.errorMessage} />
+        <ControlButtons
+          currentStep={currentStep}
+          previousStep={previousStep}
+          totalSteps={totalSteps}
+        />
       </FormLogic>
     </section>
   )

@@ -1,7 +1,8 @@
 import StepHeader from '../../StepHeader'
+import ControlButtons from '../../ControlButtons'
 import CalendlyWidget from 'main_app/components/CalendlyWidget'
 
-function ScheduleCall () {
+function ScheduleCall ({ currentStep, previousStep, totalSteps, skipModal }) {
   return (
     <section>
       <StepHeader
@@ -11,6 +12,12 @@ function ScheduleCall () {
       <div>
         <CalendlyWidget sourcePage='follow-up' hideText />
       </div>
+      <ControlButtons
+        currentStep={currentStep}
+        previousStep={previousStep}
+        totalSteps={totalSteps}
+        handleModal={skipModal}
+      />
     </section>
   )
 }

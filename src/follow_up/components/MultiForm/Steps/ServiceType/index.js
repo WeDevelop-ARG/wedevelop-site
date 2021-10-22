@@ -1,12 +1,14 @@
+import { useCallback } from 'react'
 import { ErrorMessage } from 'formik'
 
 import StepHeader from '../../StepHeader'
 import RadioButtonTextCards from 'main_app/components/RadioButtonTextCards'
+import ControlButtons from '../../ControlButtons'
 import FormLogic from './FormLogic'
 
 import classes from '../styles.module.scss'
 
-function ServiceType () {
+function ServiceType ({ currentStep, nextStep, totalSteps }) {
   const serviceType = [{
     value: 'Staff Augmentation',
     label: 'Staff Augmentation'
@@ -22,6 +24,9 @@ function ServiceType () {
   const initialValues = {
     serviceType: ''
   }
+  const onSubmitFinished = useCallback(() => {
+    nextStep()
+  }, [nextStep])
 
   return (
     <section>
@@ -31,12 +36,17 @@ function ServiceType () {
       />
       <FormLogic
         initialValues={initialValues}
+        onSubmitFinished={onSubmitFinished}
       >
         <RadioButtonTextCards
           name='serviceType'
           options={serviceType}
         />
         <ErrorMessage name='serviceType' component='div' className={classes.errorMessage} />
+        <ControlButtons
+          currentStep={currentStep}
+          totalSteps={totalSteps}
+        />
       </FormLogic>
     </section>
   )
