@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import Modal from 'main_app/components/Modal'
-import ConfirmationMessage from '../ConfirmationMessage'
 import FreeQuoteForm from '../FreeQuoteForm'
 
 import classes from './styles.module.scss'
@@ -16,28 +16,13 @@ function FreeQuoteModal ({
     setIsSubmitted(true)
   }, [])
 
+  const history = useHistory()
+  if (isSubmitted) history.push('/follow-up')
+
   const handleModalClose = useCallback(() => {
     setModalOpen(false)
     setIsSubmitted(false)
   }, [setModalOpen])
-
-  const renderModalContent = (isSubmitted) => {
-    if (isSubmitted) {
-      return (<ConfirmationMessage />)
-    } else {
-      return (
-        <FreeQuoteForm
-          onSubmitFinished={handleSubmitFinished}
-          formHeader={freeQuoteForm.formHeader}
-          fixedFields={freeQuoteForm.formCustomizations.fixedFields}
-          customFields={freeQuoteForm.formCustomizations.customFields}
-          formButtonText={freeQuoteForm.formButtonText}
-          formOrigin={freeQuoteForm.formOrigin}
-          formDisclaimer={freeQuoteForm.formDisclaimer}
-        />
-      )
-    }
-  }
 
   return (
     <Modal
@@ -45,9 +30,15 @@ function FreeQuoteModal ({
       onRequestClose={handleModalClose}
       className={classes.freeQuoteModal}
     >
-      {
-        renderModalContent(isSubmitted)
-      }
+      <FreeQuoteForm
+        onSubmitFinished={handleSubmitFinished}
+        formHeader={freeQuoteForm.formHeader}
+        fixedFields={freeQuoteForm.formCustomizations.fixedFields}
+        customFields={freeQuoteForm.formCustomizations.customFields}
+        formButtonText={freeQuoteForm.formButtonText}
+        formOrigin={freeQuoteForm.formOrigin}
+        formDisclaimer={freeQuoteForm.formDisclaimer}
+      />
     </Modal>
   )
 }
