@@ -9,18 +9,22 @@
   left: 0;
   right: 0;
   z-index: 10;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 
   @include for-desktop-up {
-    background: transparent;
-    padding: 45px 80px 10px 170px !important;
-    box-shadow: none;
+    padding: 20px 80px 20px 170px !important;
   }
 
   @include for-tablet-down {
-    background: #FFFFFF;
     padding: 20px 24px 10px !important;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   }
+}
+
+.atTop {
+  padding: 45px 80px 10px 170px !important;
+  background: transparent;
+  box-shadow: none;
 }
 
 .menu {
@@ -35,10 +39,6 @@
     padding: 12px 26px;
     font-size: 19px;
   }
-}
-
-.logoLink:focus {
-  outline: auto;
 }
 
 .logo {
