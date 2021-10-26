@@ -113,6 +113,15 @@ function MainMenu ({
       </li>
       <li
         className={classNames(classes.navItem, {
+          [classes.active]: window.location.pathname.startsWith('/portfolio')
+        })}
+      >
+        <HashLink to='/portfolio#top'>
+          Portfolio
+        </HashLink>
+      </li>
+      <li
+        className={classNames(classes.navItem, {
           [classes.active]: window.location.pathname.startsWith('/career')
         })}
       >
