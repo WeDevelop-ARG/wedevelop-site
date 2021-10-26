@@ -1,6 +1,3 @@
-import { useState, useCallback } from 'react'
-import { useHistory } from 'react-router-dom'
-
 import ClutchWidget from 'main_app/components/ClutchWidget'
 import FreeQuoteForm from '../FreeQuoteForm'
 import Image from 'main_app/components/Image'
@@ -17,13 +14,6 @@ function Header ({
   sideImageURL,
   backgroundColor
 }) {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const handleSubmitFinished = useCallback(() => {
-    setIsSubmitted(true)
-  }, [])
-
-  const history = useHistory()
-  if (isSubmitted) history.push('/follow-up')
   return (
     <>
       <section id='headerSection' className={classes.headerContainer}>
@@ -42,7 +32,6 @@ function Header ({
           <div id='get-free-quote' className={classes.formContainer}>
             <FreeQuoteForm
               noAutofocus
-              onSubmitFinished={handleSubmitFinished}
               formHeader={freeQuoteForm.formHeader}
               fixedFields={freeQuoteForm.formCustomizations.fixedFields}
               customFields={freeQuoteForm.formCustomizations.customFields}

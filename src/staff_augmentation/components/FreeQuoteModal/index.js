@@ -1,5 +1,4 @@
-import { useState, useCallback } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useCallback } from 'react'
 
 import Modal from 'main_app/components/Modal'
 import FreeQuoteForm from '../FreeQuoteForm'
@@ -11,17 +10,8 @@ function FreeQuoteModal ({
   setModalOpen,
   freeQuoteForm
 }) {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const handleSubmitFinished = useCallback(() => {
-    setIsSubmitted(true)
-  }, [])
-
-  const history = useHistory()
-  if (isSubmitted) history.push('/follow-up')
-
   const handleModalClose = useCallback(() => {
     setModalOpen(false)
-    setIsSubmitted(false)
   }, [setModalOpen])
 
   return (
@@ -31,7 +21,6 @@ function FreeQuoteModal ({
       className={classes.freeQuoteModal}
     >
       <FreeQuoteForm
-        onSubmitFinished={handleSubmitFinished}
         formHeader={freeQuoteForm.formHeader}
         fixedFields={freeQuoteForm.formCustomizations.fixedFields}
         customFields={freeQuoteForm.formCustomizations.customFields}

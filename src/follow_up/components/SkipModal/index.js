@@ -6,6 +6,7 @@ import SkipForm from '../SkipForm'
 import classes from './styles.module.scss'
 
 function SkipModal ({
+  tracingId,
   clientName,
   isModalOpen,
   setModalOpen,
@@ -27,6 +28,7 @@ function SkipModal ({
       className={classes.skipModal}
     >
       <SkipForm
+        tracingId={tracingId}
         clientName={clientName}
         onSubmitFinished={handleSubmitFinished}
       />

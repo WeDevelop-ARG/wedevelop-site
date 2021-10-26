@@ -1,5 +1,5 @@
 const { isValidCalendlyURL, getCalendlyAPICallResult } = require('../services/calendly')
-const { createContactIfNotExists, createContactMeeting } = require('../services/hubspot')
+const { createContactIfNotExists, createMeeting } = require('../services/hubspot')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
@@ -24,7 +24,7 @@ function handleOptionsRequest (req, res) {
 }
 
 async function handlePostRequest (req, res) {
-  const { calendlyInviteeURI, calendlyEventURI } = req.body
+  const { calendlyInviteeURI, calendlyEventURI, followUpTracingId } = req.body
 
   if (!isValidCalendlyURL(calendlyInviteeURI) || !isValidCalendlyURL(calendlyEventURI)) {
     return res.status(401).end()
@@ -38,7 +38,9 @@ async function handlePostRequest (req, res) {
     email: invitee.email
   })
 
-  await createContactMeeting(contactId, {
+  await createMeeting({
+    contactId,
+    dealId: followUpTracingId,
     startTime: event.start_time,
     endTime: event.end_time,
     title: event.name,

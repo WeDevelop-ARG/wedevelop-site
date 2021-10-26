@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { ErrorMessage } from 'formik'
 
 import StepHeader from '../../StepHeader'
@@ -13,7 +12,7 @@ import { ReactComponent as InterrogationMark } from 'assets/follow_up/form/inter
 
 import classes from '../styles.module.scss'
 
-function ItProfessionals ({ currentStep, previousStep, nextStep, totalSteps }) {
+function ItProfessionals ({ currentStep, previousStep, onSubmit, totalSteps }) {
   const itProfessionals = [{
     value: 'Only 1',
     label: 'Only 1',
@@ -35,11 +34,9 @@ function ItProfessionals ({ currentStep, previousStep, nextStep, totalSteps }) {
     icon: <InterrogationMark />
   }]
   const initialValues = {
+    stepName: 'IT Professionals',
     itProfessionals: ''
   }
-  const onSubmitFinished = useCallback(() => {
-    nextStep()
-  }, [nextStep])
 
   return (
     <section>
@@ -49,7 +46,7 @@ function ItProfessionals ({ currentStep, previousStep, nextStep, totalSteps }) {
       />
       <FormLogic
         initialValues={initialValues}
-        onSubmitFinished={onSubmitFinished}
+        onSubmit={onSubmit}
       >
         <RadioButtonIconCards
           name='itProfessionals'

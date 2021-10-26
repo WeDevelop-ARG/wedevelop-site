@@ -1,4 +1,8 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useMemo } from 'react'
+import { useHistory } from 'react-router'
+
+import { FOLLOW_UP_CONTACT_PROCESSOR_URL } from 'main_app/constants'
+import NotFound from 'not_found'
 
 import Navbar from './components/Navbar'
 import Intro from './components/Intro'
@@ -15,13 +19,42 @@ import DotsPattern from 'assets/follow_up/dots_pattern.svg'
 import classes from './styles.module.scss'
 
 function FollowUp () {
+  const history = useHistory()
   const [isConfirmationOpen, setConfirmationOpen] = useState(false)
   const [isModalOpen, setModalOpen] = useState(false)
+  const [notFound, setNotFound] = useState(false)
+  const [contact, setContact] = useState()
   const handleModalOpen = useCallback(() => {
     setModalOpen(true)
   }, [])
-  // TODO: Obtener nombre del cliente desde los datos guardados con Free Quote Form y pasarlo al componente Intro como prop.
-  const provisionalName = 'Jhon'
+  const tracingId = useMemo(() => {
+    return (new URLSearchParams(history.location.search)).get('tracingId')
+  }, [history.location.search])
+
+  useEffect(() => {
+    let unmounted = false
+    const url = new URL(FOLLOW_UP_CONTACT_PROCESSOR_URL)
+    url.searchParams.set('tracingId', tracingId)
+
+    fetch(url.href)
+      .then(async response => {
+        if (unmounted) return undefined
+        if (response.status >= 300) {
+          setNotFound(true)
+        } else {
+          const contact = await response.json()
+          setContact({ ...contact, name: `${contact.firstName ?? ''} ${contact.lastName ?? ''}` })
+        }
+      })
+
+    return () => {
+      unmounted = true
+    }
+  }, [tracingId])
+
+  if (notFound) return <NotFound />
+  if (!contact) return null
+
   return (
     <>
       <Navbar
@@ -29,9 +62,11 @@ function FollowUp () {
       />
       <section className={classes.followUpContainer}>
         <div className={classes.stepsContainer}>
-          <Intro clientName={provisionalName} />
+          <Intro clientName={contact?.name} />
           <MultiForm
             handleModalOpen={handleModalOpen}
+            tracingId={tracingId}
+            contact={contact}
           />
         </div>
         <Image src={FollowUpMobileBackground} alt='' className={classes.mobileBackground} />
@@ -43,7 +78,8 @@ function FollowUp () {
         <Image src={DotsPattern} alt='' className={classes.leftDotsPattern} />
       </section>
       <SkipModal
-        clientName={provisionalName}
+        tracingId={tracingId}
+        clientName={contact?.name}
         isModalOpen={isModalOpen}
         setModalOpen={setModalOpen}
         setOpenConfirmation={setConfirmationOpen}

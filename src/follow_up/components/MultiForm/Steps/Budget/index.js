@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { ErrorMessage } from 'formik'
 
 import StepHeader from '../../StepHeader'
@@ -8,7 +7,7 @@ import FormLogic from './FormLogic'
 
 import classes from '../styles.module.scss'
 
-function Budget ({ currentStep, previousStep, nextStep, totalSteps }) {
+function Budget ({ currentStep, previousStep, onSubmit, totalSteps }) {
   const budget = [{
     value: 'Under $10k',
     label: 'Under $10k '
@@ -26,11 +25,9 @@ function Budget ({ currentStep, previousStep, nextStep, totalSteps }) {
     label: 'Variable'
   }]
   const initialValues = {
+    stepName: 'Budget',
     budget: ''
   }
-  const onSubmitFinished = useCallback(() => {
-    nextStep()
-  }, [nextStep])
 
   return (
     <section>
@@ -40,7 +37,7 @@ function Budget ({ currentStep, previousStep, nextStep, totalSteps }) {
       />
       <FormLogic
         initialValues={initialValues}
-        onSubmitFinished={onSubmitFinished}
+        onSubmit={onSubmit}
       >
         <RadioButtonList
           name='budget'

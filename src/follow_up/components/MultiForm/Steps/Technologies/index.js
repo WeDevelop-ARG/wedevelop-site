@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { ErrorMessage } from 'formik'
 
 import StepHeader from '../../StepHeader'
@@ -10,14 +9,12 @@ import useSkillOptions from 'main_app/components/useSkillOptions'
 
 import classes from '../styles.module.scss'
 
-function Technologies ({ currentStep, previousStep, nextStep, totalSteps }) {
+function Technologies ({ currentStep, previousStep, onSubmit, totalSteps }) {
   const technologies = useSkillOptions()
   const initialValues = {
+    stepName: 'Technologies',
     technologies: []
   }
-  const onSubmitFinished = useCallback(() => {
-    nextStep()
-  }, [nextStep])
 
   return (
     <section>
@@ -26,7 +23,7 @@ function Technologies ({ currentStep, previousStep, nextStep, totalSteps }) {
       />
       <FormLogic
         initialValues={initialValues}
-        onSubmitFinished={onSubmitFinished}
+        onSubmit={onSubmit}
       >
         <FormikSelect
           name='technologies'

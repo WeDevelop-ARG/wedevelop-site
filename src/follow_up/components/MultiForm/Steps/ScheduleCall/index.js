@@ -2,7 +2,7 @@ import StepHeader from '../../StepHeader'
 import ControlButtons from '../../ControlButtons'
 import CalendlyWidget from 'main_app/components/CalendlyWidget'
 
-function ScheduleCall ({ currentStep, previousStep, totalSteps, skipModal }) {
+function ScheduleCall ({ currentStep, previousStep, totalSteps, skipModal, tracingId, contact }) {
   return (
     <section>
       <StepHeader
@@ -10,7 +10,15 @@ function ScheduleCall ({ currentStep, previousStep, totalSteps, skipModal }) {
         description='We look forward to learning how WeDevelop can help you and your business'
       />
       <div>
-        <CalendlyWidget sourcePage='follow-up' hideText />
+        {contact && (
+          <CalendlyWidget
+            sourcePage='follow-up'
+            hideText
+            onFinish={skipModal}
+            followUpTracingId={tracingId}
+            prefill={contact}
+          />
+        )}
       </div>
       <ControlButtons
         currentStep={currentStep}

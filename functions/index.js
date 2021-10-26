@@ -5,11 +5,11 @@ const processStaffAugmentationFormSubmit = require('./controllers/processStaffAu
 const processCareerFormSubmit = require('./controllers/processCareerFormSubmit')
 const processInitialLandingContactForm = require('./controllers/processInitialLandingContactForm')
 const processFollowUpContactForm = require('./controllers/processFollowUpContactForm')
-const getFollowUpContactName = require('./controllers/getFollowUpContactName')
+const getFollowUpContact = require('./controllers/getFollowUpContact')
 
 exports.processCalendlyEventInvitee = functions.https.onRequest(processCalendlyEventInvitee)
 exports.processStaffAugmentationFormSubmit = functions.https.onRequest(processStaffAugmentationFormSubmit)
 exports.processCareerFormSubmit = functions.https.onRequest(processCareerFormSubmit)
 exports.processInitialLandingContactForm = functions.https.onRequest(processInitialLandingContactForm)
 exports.processFollowUpContactForm = functions.https.onRequest(processFollowUpContactForm)
-exports.getFollowUpContactName = functions.https.onRequest(getFollowUpContactName)
+exports.getFollowUpContact = functions.https.onRequest(getFollowUpContact)

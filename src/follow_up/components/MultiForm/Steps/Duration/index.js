@@ -1,4 +1,3 @@
-import { useCallback } from 'react'
 import { ErrorMessage } from 'formik'
 
 import StepHeader from '../../StepHeader'
@@ -8,7 +7,7 @@ import FormLogic from './FormLogic'
 
 import classes from '../styles.module.scss'
 
-function Duration ({ currentStep, previousStep, nextStep, totalSteps }) {
+function Duration ({ currentStep, previousStep, onSubmit, totalSteps }) {
   const duration = [{
     value: 'Less than 3 months',
     label: 'Less than 3 months'
@@ -30,11 +29,9 @@ function Duration ({ currentStep, previousStep, nextStep, totalSteps }) {
     label: 'I don\'t know'
   }]
   const initialValues = {
+    stepName: 'Duration',
     duration: ''
   }
-  const onSubmitFinished = useCallback(() => {
-    nextStep()
-  }, [nextStep])
 
   return (
     <section>
@@ -44,7 +41,7 @@ function Duration ({ currentStep, previousStep, nextStep, totalSteps }) {
       />
       <FormLogic
         initialValues={initialValues}
-        onSubmitFinished={onSubmitFinished}
+        onSubmit={onSubmit}
       >
         <RadioButtonList
           name='duration'

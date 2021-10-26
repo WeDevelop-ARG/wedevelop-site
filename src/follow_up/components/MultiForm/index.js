@@ -1,4 +1,7 @@
 import StepWizard from 'react-step-wizard'
+import { useCallback, useRef } from 'react'
+
+import { FOLLOW_UP_FORM_PROCESSOR_URL } from 'main_app/constants'
 
 import FormProgress from './ProgressBar'
 import ServiceType from './Steps/ServiceType'
@@ -11,7 +14,25 @@ import ScheduleCall from './Steps/ScheduleCall'
 
 import classes from './styles.module.scss'
 
-function MultiForm ({ handleModalOpen }) {
+function MultiForm ({ handleModalOpen, tracingId, contact }) {
+  const stepWizardInstance = useRef()
+  const handleFormSubmit = useCallback(async values => {
+    try {
+      await fetch(FOLLOW_UP_FORM_PROCESSOR_URL, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          tracingId,
+          ...values
+        })
+      })
+      stepWizardInstance.current.nextStep()
+    } catch (err) {
+      console.error(err)
+      alert('An error ocurred saving your information, please try again or wait until a representative gets in contact with you.')
+    }
+  }, [tracingId])
+
   return (
     <>
       <StepWizard
@@ -19,16 +40,19 @@ function MultiForm ({ handleModalOpen }) {
         isHashEnabled
         nav={<FormProgress />}
         className={classes.stepWizardContainer}
+        instance={instance => { stepWizardInstance.current = instance }}
       >
-        <ServiceType hashKey='service-type' />
-        <ItProfessionals hashKey='it-professionals' />
-        <Duration hashKey='duration' />
-        <Budget hashKey='budget' />
-        <StartingDate hashKey='starting-date' />
-        <Technologies hashKey='technologies' />
+        <ServiceType hashKey='service-type' onSubmit={handleFormSubmit} />
+        <ItProfessionals hashKey='it-professionals' onSubmit={handleFormSubmit} />
+        <Duration hashKey='duration' onSubmit={handleFormSubmit} />
+        <Budget hashKey='budget' onSubmit={handleFormSubmit} />
+        <StartingDate hashKey='starting-date' onSubmit={handleFormSubmit} />
+        <Technologies hashKey='technologies' onSubmit={handleFormSubmit} />
         <ScheduleCall
           hashKey='schedule-call'
+          tracingId={tracingId}
           skipModal={handleModalOpen}
+          contact={contact}
         />
       </StepWizard>
     </>

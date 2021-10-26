@@ -35,6 +35,7 @@ async function handlePostRequest (req, res) {
 
   res.status(200).json({
     firstName: contact.properties.firstname,
-    lastName: contact.properties.lastname
+    lastName: contact.properties.lastname,
+    email: contact.properties.email
   })
 }

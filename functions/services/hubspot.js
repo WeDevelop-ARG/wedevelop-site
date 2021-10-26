@@ -89,19 +89,26 @@ exports.createDealNote = async function createDealNote (dealId, { body } = {}) {
   })
 }
 
-exports.createContactMeeting = async function createContactMeeting (contactId, {
+exports.createMeeting = async function createMeeting ({
+  contactId,
+  dealId,
   startTime,
   endTime,
   title,
   description,
   internalNotes
 } = {}) {
+  const associations = {}
+
+  if (contactId) associations.contactIds = [contactId]
+  if (dealId) associations.dealIds = [dealId]
+
   await hubspotClient.apiRequest({
     method: 'POST',
     path: '/engagements/v1/engagements',
     body: {
       engagement: { active: true, type: 'MEETING' },
-      associations: { contactIds: [contactId] },
+      associations,
       metadata: {
         body: description,
         startTime: dayjs(startTime).valueOf(),
