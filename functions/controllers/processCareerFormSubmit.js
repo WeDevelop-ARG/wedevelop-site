@@ -36,6 +36,7 @@ async function handlePostRequest (req, res) {
     lastName,
     email,
     skills,
+    country,
     remuneration,
     message,
     resume: resumePath,
@@ -55,6 +56,7 @@ async function handlePostRequest (req, res) {
 
   const applicantDetails = `
     - Skills: ${skills}
+    - Country: ${country}
     - Intended remuneration (monthly): ${remuneration}
     - About me: ${message}
     - Resume: ${resume}
@@ -104,6 +106,7 @@ async function handlePostRequest (req, res) {
     lastName: lastName,
     email: email,
     skills: skills,
+    country: country,
     remuneration: remuneration,
     message: message,
     resume: resume
