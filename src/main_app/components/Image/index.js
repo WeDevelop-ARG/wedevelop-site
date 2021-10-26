@@ -12,11 +12,26 @@ import { IS_DEVELOPMENT, BASE_URL, IS_STATIC_RENDERER } from 'main_app/constants
 
 import classes from './styles.module.scss'
 
-const cloudinaryDenylistRegex = /(?:^(?!https:\/\/).*\.?(?:svg)?$|.*\.?(?:svg)$)/i
+const cloudinaryDenylistExtensionsRegex = /\.?(?:svg)$/i
+const optimizationAllowedHostnames = ['wedevelop.me', 'testing.wedevelop.me']
 const cloudinary = new Cloudinary({
   cloud: { cloudName: 'wedevelop-site' }
 })
 const responsiveSizeStep = 200
+
+function isOptimizationDenied (url) {
+  try {
+    return (
+      cloudinaryDenylistExtensionsRegex.test(url) ||
+      !optimizationAllowedHostnames.includes(
+        (new URL(url)).hostname
+      )
+    )
+  } catch (err) {
+    console.error(err)
+    return true
+  }
+}
 
 function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resize, width, height }) {
   if (resize === 'auto-width') {
@@ -119,10 +134,9 @@ export default function Image ({
   const [backgroundColor, setBackgroundColor] = useState(placeholderColor)
   const containerRef = useRef()
   src = useMemo(() => !src ? src : (new URL(src, BASE_URL)).href, [src])
-  const isOptimizationDenied = useMemo(() => cloudinaryDenylistRegex.test(src), [src])
 
   useEffect(() => {
-    if (isOptimizationDenied) return setOptimizedSrc(src)
+    if (isOptimizationDenied(src)) return setOptimizedSrc(src)
 
     const img = new window.Image()
     img.onload = () => {
@@ -159,7 +173,7 @@ export default function Image ({
       img.src = null
       window.removeEventListener('resize', onResize, { passive: true })
     }
-  }, [src, objectFit, isOptimizationDenied, position, width, height, resize, props.loading])
+  }, [src, objectFit, position, width, height, resize, props.loading])
 
   const img = (
     <img
