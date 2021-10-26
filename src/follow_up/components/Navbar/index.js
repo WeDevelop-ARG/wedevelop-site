@@ -1,5 +1,3 @@
-import { HashLink } from 'react-router-hash-link'
-
 import Logo from 'main_app/components/Logo'
 import Button from 'main_app/components/Button'
 
@@ -13,16 +11,10 @@ function NavBar ({ handleModalOpen }) {
 
   return (
     <section id='follow-up-navbar' className={classes.navBar}>
-      <HashLink
-        to='#top'
-        className={classes.logoLink}
-        smooth
-      >
-        <Logo
-          variant={isTabletDown ? 'isologo' : 'color'}
-          className={classes.logo}
-        />
-      </HashLink>
+      <Logo
+        variant={isTabletDown ? 'isologo' : 'color'}
+        className={classes.logo}
+      />
       <nav className={classes.menu}>
         <Button
           variant={['secondary', isTabletDown ? 'light' : 'dark']}
