@@ -35,7 +35,7 @@ function FollowUp () {
     if (IS_STATIC_RENDERER) return undefined
 
     let unmounted = false
-    const url = new URL(FOLLOW_UP_CONTACT_PROCESSOR_URL, BASE_URL)
+    const url = new URL(FOLLOW_UP_CONTACT_PROCESSOR_URL, window.location.href)
     url.searchParams.set('tracingId', tracingId)
 
     fetch(url.href)
