@@ -4,7 +4,7 @@ function useStoryDetailVariantByName (name) {
   const { variants } = useStoryDetailVariants()
 
   return {
-    storyDetails: variants.find(({ pathName }) => pathName === name)
+    storyDetails: variants.find(({ urlName }) => urlName === name)
   }
 }
 
