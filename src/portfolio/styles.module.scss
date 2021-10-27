@@ -24,3 +24,14 @@
   margin: 32px auto 30px auto;
   border: none;
 }
+
+.projectCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  gap: 35px;
+  margin-bottom: 60px;
+
+  @include for-tablet-down {
+    grid-template-columns: repeat(auto-fill, minmax(380px, auto));
+  }
+}
