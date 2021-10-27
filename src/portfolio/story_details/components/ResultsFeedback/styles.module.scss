@@ -1,0 +1,73 @@
+@import '/src/styles/media_queries.scss';
+
+.resultsFeedback {
+  position: relative;
+  padding-top: 140px;
+  padding-bottom: 180px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.container {
+  padding: 0px 220px;
+
+  >.title {
+    font-size: 24px;
+    margin-bottom: 24px;
+
+    @include for-phone-only {
+      text-align: center;
+    }
+  }
+
+  >p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+  }
+
+  @include for-tablet-down {
+    padding: 0;
+  }
+}
+
+%circle {
+  position: absolute;
+  border-radius: 50%;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %circle;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  width: 278px;
+  height: 278px;
+  right: 5%;
+  bottom: 0;
+}
+
+.emptyCircle {
+  @extend %circle;
+  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  width: 278px;
+  height: 278px;
+  right: 6%;
+  bottom: 1%;
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 13px;
+  height: 13px;
+  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  filter: blur(6px);
+  right: 18%;
+  bottom: 18%;
+}
