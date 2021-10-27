@@ -1,10 +1,11 @@
-import { Switch } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import { prerenderedLazy } from 'utils/prerendered_lazy'
 
 import { LazyRoute } from './components/LazyRoute'
 
 import StaffAugmentationRoutes from 'staff_augmentation/routes'
+import PortfolioRoutes from 'portfolio/routes'
 
 const Landing = prerenderedLazy(() => import('home'))
 const NotFound = prerenderedLazy(() => import('not_found'))
@@ -13,7 +14,6 @@ const Services = prerenderedLazy(() => import('services'))
 const PrivacyPolicy = prerenderedLazy(() => import('privacy_policy'))
 const AboutUs = prerenderedLazy(() => import('about_us'))
 const Career = prerenderedLazy(() => import('career'))
-const Portfolio = prerenderedLazy(() => import('portfolio'))
 
 function Routes () {
   return (
@@ -36,9 +36,9 @@ function Routes () {
       <LazyRoute path='/career(/contact)?'>
         <Career />
       </LazyRoute>
-      <LazyRoute path='/portfolio(/contact)?'>
-        <Portfolio />
-      </LazyRoute>
+      <Route path='/portfolio'>
+        <PortfolioRoutes />
+      </Route>
       <StaffAugmentationRoutes>
         <LazyRoute path='/'>
           <NotFound />
