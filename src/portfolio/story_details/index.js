@@ -3,6 +3,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom'
 
 import NavBar from 'main_app/components/NavBar/NavBar'
 import Article from 'main_app/components/Article'
+import ResultsFeedback from './components/ResultsFeedback'
 import GetInTouch from 'main_app/components/GetInTouch'
 import PictureWall from 'main_app/components/PictureWall'
 import ContactModal from 'main_app/components/ContactModal'
@@ -12,6 +13,7 @@ import useStoryDetailVariantByName from './hooks/useStoryDetailVariantByName'
 
 function StoryDetails () {
   const { params } = useRouteMatch('/portfolio/:name')
+  console.log(params)
   const { storyDetails } = useStoryDetailVariantByName(params.name)
   console.log(storyDetails)
 
@@ -29,6 +31,11 @@ function StoryDetails () {
         variantAtScrollTop={['transparent', 'light']}
       />
       <Article>
+        <ResultsFeedback
+          title={storyDetails.results.title}
+          content={storyDetails.results.content}
+          imageURL={storyDetails.results.imageURL}
+        />
         <GetInTouch />
         <PictureWall contactPagePath={contactPagePath} />
       </Article>
