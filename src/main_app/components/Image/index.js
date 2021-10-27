@@ -8,7 +8,7 @@ import isFunction from 'lodash/isFunction'
 import isEmpty from 'lodash/isEmpty'
 import classNames from 'classnames'
 
-import { IS_DEVELOPMENT, BASE_URL, IS_STATIC_RENDERER } from 'main_app/constants.js'
+import { IS_DEVELOPMENT, IS_STATIC_RENDERER } from 'main_app/constants.js'
 
 import classes from './styles.module.scss'
 
@@ -24,7 +24,7 @@ function isOptimizationDenied (url) {
     return (
       cloudinaryDenylistExtensionsRegex.test(url) ||
       !optimizationAllowedHostnames.includes(
-        (new URL(url, BASE_URL)).hostname
+        (new URL(url, window.location.href)).hostname
       )
     )
   } catch (err) {
@@ -133,7 +133,7 @@ export default function Image ({
   const [backgroundSrc, setBackgroundSrc] = useState()
   const [backgroundColor, setBackgroundColor] = useState(placeholderColor)
   const containerRef = useRef()
-  src = useMemo(() => !src ? src : (new URL(src, BASE_URL)).href, [src])
+  src = useMemo(() => !src ? src : (new URL(src, window.location.href)).href, [src])
 
   useEffect(() => {
     if (isOptimizationDenied(src)) return setOptimizedSrc(src)
