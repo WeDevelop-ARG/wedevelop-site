@@ -24,7 +24,7 @@ function isOptimizationDenied (url) {
     return (
       cloudinaryDenylistExtensionsRegex.test(url) ||
       !optimizationAllowedHostnames.includes(
-        (new URL(url)).hostname
+        (new URL(url, BASE_URL)).hostname
       )
     )
   } catch (err) {
