@@ -18,7 +18,7 @@ function MultiForm ({ handleModalOpen, tracingId, contact }) {
   const stepWizardInstance = useRef()
   const handleFormSubmit = useCallback(async values => {
     try {
-      await fetch(FOLLOW_UP_FORM_PROCESSOR_URL, {
+      await window.fetch(FOLLOW_UP_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
@@ -29,7 +29,7 @@ function MultiForm ({ handleModalOpen, tracingId, contact }) {
       stepWizardInstance.current.nextStep()
     } catch (err) {
       console.error(err)
-      alert('An error ocurred saving your information, please try again or wait until a representative gets in contact with you.')
+      window.alert('An error ocurred saving your information, please try again or wait until a representative gets in contact with you.')
     }
   }, [tracingId])
 

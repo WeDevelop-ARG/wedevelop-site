@@ -23,7 +23,7 @@ function SkipForm ({
   )
   const onSubmit = useCallback(async values => {
     try {
-      await fetch(FOLLOW_UP_FORM_PROCESSOR_URL, {
+      await window.fetch(FOLLOW_UP_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({

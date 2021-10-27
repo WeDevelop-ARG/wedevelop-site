@@ -17,7 +17,7 @@ function FormLogic ({ initialValues, onSubmitFinished, formOrigin, ...props }) {
   const handleSubmit = useCallback(async (values) => {
     let tracingId
     try {
-      const response = await fetch(INITIAL_LANDING_FORM_PROCESSOR_URL, {
+      const response = await window.fetch(INITIAL_LANDING_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: {
           Accept: 'application/json',

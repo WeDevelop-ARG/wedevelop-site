@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useMemo } from 'react'
 import { useHistory } from 'react-router'
 
-import { BASE_URL, FOLLOW_UP_CONTACT_PROCESSOR_URL, IS_STATIC_RENDERER } from 'main_app/constants'
+import { FOLLOW_UP_CONTACT_PROCESSOR_URL, IS_STATIC_RENDERER } from 'main_app/constants'
 import NotFound from 'not_found'
 
 import Navbar from './components/Navbar'
@@ -38,7 +38,7 @@ function FollowUp () {
     const url = new URL(FOLLOW_UP_CONTACT_PROCESSOR_URL, window.location.href)
     url.searchParams.set('tracingId', tracingId)
 
-    fetch(url.href)
+    window.fetch(url.href)
       .then(async response => {
         if (unmounted) return undefined
         if (response.status >= 300) {
