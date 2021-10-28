@@ -3,6 +3,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom'
 
 import NavBar from 'main_app/components/NavBar/NavBar'
 import Article from 'main_app/components/Article'
+import Header from './components/Header'
 import TextImageGeneric from './components/TextImageGeneric'
 import GetInTouch from 'main_app/components/GetInTouch'
 import PictureWall from 'main_app/components/PictureWall'
@@ -31,6 +32,17 @@ function StoryDetails () {
         variantAtScrollTop={['transparent', 'light']}
       />
       <Article>
+        <Header
+          backgroundURL={storyDetails.header.backgroundURL}
+          logoURL={storyDetails.header.logoURL}
+          heading={storyDetails.header.heading}
+          title={storyDetails.header.title}
+          subtitle={storyDetails.header.subtitle}
+          tags={storyDetails.header.tags}
+          description={storyDetails.header.description}
+          websiteURL={storyDetails.header.websiteURL}
+          imageURL={storyDetails.header.imageURL}
+        />
         <TextImageGeneric
           title={storyDetails.challenge.title}
           content={storyDetails.challenge.content}
