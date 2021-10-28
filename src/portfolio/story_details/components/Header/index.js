@@ -1,5 +1,8 @@
 import Image from 'main_app/components/Image'
 
+import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
+import DotsPattern from 'assets/portfolio/dots_pattern.svg'
+
 import classes from './styles.module.scss'
 
 function Header ({
@@ -67,6 +70,16 @@ function Header ({
         src={imageURL}
         alt=''
         className={classes.bottomImg}
+      />
+      <Image
+        src={DecoCircles}
+        alt=''
+        className={classes.decoCircles}
+      />
+      <Image
+        src={DotsPattern}
+        alt=''
+        className={classes.dotsPattern}
       />
     </section>
   )

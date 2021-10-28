@@ -6,6 +6,7 @@ $grayColor: #363636;
   min-height: 100vh;
   position: relative;
   padding-top: 45% !important;
+  padding-bottom: 0;
 }
 
 .decorationWrapper {
@@ -113,6 +114,7 @@ $grayColor: #363636;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 5px;
   margin-bottom: 24px;
 
   .tag {
@@ -121,10 +123,6 @@ $grayColor: #363636;
     border-radius: 3px;
     font-size: 14px;
     font-weight: 500;
-  }
-
-  >.tag:not(:last-of-type) {
-    margin-right: 5px;
   }
 }
 
@@ -136,4 +134,21 @@ $grayColor: #363636;
 
 .bottomImg {
   width: 100%;
+}
+
+%decoElements {
+  position: absolute;
+  z-index: -1;
+}
+
+.dotsPattern {
+  @extend %decoElements;
+  top: 38vw;
+  right: 148px;
+}
+
+.decoCircles {
+  @extend %decoElements;
+  left: 74px;
+  bottom: 33vw;
 }
