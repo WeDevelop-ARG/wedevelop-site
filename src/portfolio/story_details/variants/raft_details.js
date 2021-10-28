@@ -6,9 +6,7 @@ const raftDetails = {
   urlName: 'raft_details',
   header: {
     backgroundURL: RaftHeader,
-    logoURL: ''
-  },
-  intro: {
+    logoURL: '',
     heading: 'Success Story',
     title: 'Raft',
     subtitle: 'A search engine for ferry booking.',
