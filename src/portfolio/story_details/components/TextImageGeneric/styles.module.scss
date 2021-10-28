@@ -1,9 +1,13 @@
 @import '/src/styles/media_queries.scss';
 
-.resultsFeedback {
+.sectionContainer {
   position: relative;
   padding-top: 140px;
   padding-bottom: 180px;
+
+  &.hideDeco {
+    padding-bottom: 110px;
+  }
 }
 
 .image {
