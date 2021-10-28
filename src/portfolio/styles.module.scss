@@ -7,9 +7,12 @@
   font-size: 10px;
   margin-bottom: 40px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .titleText {
+  text-align: center;
+
   @include for-desktop-up {
     font-weight: 600;
     font-size: 60px;

@@ -24,10 +24,7 @@
 }
 
 .shortDescription {
-  margin-top: 0px;
-  margin-bottom: 16px;
-  margin-left: 2.5px;
-  margin-right: -2.5px;
+  margin: 0px -2.5px 16px 2.5px;
   font-size: 15px;
   line-height: 18px;
 }
@@ -46,10 +43,6 @@
 .headerImage {
   width: 100%;
   height: 250px;
-
-  @include for-tablet-down {
-    height: 200px;
-  }
 }
 
 .projectName {
@@ -64,8 +57,7 @@
   font-size: 15px;
   line-height: 150%;
   opacity: 0.65;
-  margin-top: 16px;
-  margin-bottom: 19px;
+  margin: 16px 10px 19px 0px;
 }
 
 .knowMore {
@@ -81,5 +73,5 @@
 }
 
 .projectDetails {
-  padding: 0px 7px 33px 10px;
+  padding: 0px 21px 33px 10px;
 }
