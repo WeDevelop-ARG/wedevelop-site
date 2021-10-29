@@ -4,6 +4,8 @@
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   overflow: hidden;
+  background-color: #ffffff;
+  z-index: 1;
 }
 
 .logo {
@@ -24,7 +26,6 @@
 }
 
 .shortDescription {
-  margin: 0px -2.5px 16px 2.5px;
   font-size: 15px;
   line-height: 18px;
 }
@@ -38,6 +39,11 @@
   font-size: 10px;
   line-height: 12px;
   padding: 8px;
+  display: inline-block;
+}
+
+.tagsContainer {
+  margin-left: -3px;
 }
 
 .headerImage {
@@ -49,7 +55,6 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
-  margin-left: 2px;
 }
 
 .description {
@@ -57,7 +62,7 @@
   font-size: 15px;
   line-height: 150%;
   opacity: 0.65;
-  margin: 16px 10px 19px 0px;
+  margin: 16px 0px 19px 0px;
 }
 
 .knowMore {
@@ -73,5 +78,9 @@
 }
 
 .projectDetails {
-  padding: 0px 21px 33px 10px;
+  padding: 0px 24px 33px 24px;
+}
+
+.world {
+  margin-top: 6px;
 }

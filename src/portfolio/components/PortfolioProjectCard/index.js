@@ -1,5 +1,4 @@
 import { HashLink } from 'react-router-hash-link'
-import classNames from 'classnames'
 import Image from 'main_app/components/Image'
 
 import { ReactComponent as World } from 'assets/portfolio/world.svg'
@@ -10,25 +9,24 @@ import classes from './styles.module.scss'
 function PortfolioProjectCard ({
   coverImageURL,
   logoURL,
-  logoBackgroundColor,
+  logoBackground,
   externalWebsiteURL,
   projectName,
   shortDescription,
   tags,
   description,
-  detailsPagePath,
-  className
+  detailsPagePath
 }) {
   const logoStyleProp = {}
-  if (logoBackgroundColor.startsWith('#')) {
-    logoStyleProp.style = { backgroundColor: logoBackgroundColor }
+  if (logoBackground.startsWith('#')) {
+    logoStyleProp.style = { backgroundColor: logoBackground }
   } else {
-    logoStyleProp.style = { backgroundImage: logoBackgroundColor }
+    logoStyleProp.style = { backgroundImage: logoBackground }
   }
 
   return (
     <div
-      className={classNames(classes.container, className)}
+      className={classes.container}
     >
       <Image
         src={coverImageURL}
@@ -55,7 +53,7 @@ function PortfolioProjectCard ({
               href={externalWebsiteURL}
               target='_blank' rel='noopener noreferrer'
             >
-              <World role='presentation' />
+              <World role='presentation' className={classes.world} />
             </a>
           )}
         </div>
