@@ -13,8 +13,8 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEDEVELOP_SITE }}'
-          projectId: wedevelop-site
-          target: testing
+          projectId: wedevelop-site-testing
+          target: testing-2
           channelId: ${{ github.ref }}
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels

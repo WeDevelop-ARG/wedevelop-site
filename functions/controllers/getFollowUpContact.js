@@ -25,11 +25,14 @@ async function handlePostRequest (req, res) {
   const { tracingId } = req.query
 
   const deal = await getDeal(tracingId)
-  const contactId = deal?.associations?.contacts?.results?.[0]?.id
 
-  if (!contactId) {
+  if (!deal || !deal.associations || !deal.associations.contacts) {
     return res.status(404).end()
   }
+
+  const contactId = deal.associations.contacts.results[0].id
+
+  if (!contactId) return res.status(404).end()
 
   const contact = await getContact(contactId)
 

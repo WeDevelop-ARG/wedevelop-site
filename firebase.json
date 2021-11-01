@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "target": "testing",
+      "target": "testing-2",
       "public": "build",
       "cleanUrls": true,
       "ignore": [
