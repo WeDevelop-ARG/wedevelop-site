@@ -8,7 +8,7 @@ import isFunction from 'lodash/isFunction'
 import isEmpty from 'lodash/isEmpty'
 import classNames from 'classnames'
 
-import { IS_DEVELOPMENT, IS_STATIC_RENDERER } from 'main_app/constants.js'
+import { BASE_URL, IS_DEVELOPMENT, IS_PREVIEW_BUILD, IS_STATIC_RENDERER } from 'main_app/constants.js'
 
 import classes from './styles.module.scss'
 
@@ -22,9 +22,10 @@ const responsiveSizeStep = 200
 function isOptimizationDenied (url) {
   try {
     return (
+      IS_PREVIEW_BUILD ||
       cloudinaryDenylistExtensionsRegex.test(url) ||
       !optimizationAllowedHostnames.includes(
-        (new URL(url, window.location.href)).hostname
+        (new URL(url, BASE_URL)).hostname
       )
     )
   } catch (err) {
@@ -133,10 +134,10 @@ export default function Image ({
   const [backgroundSrc, setBackgroundSrc] = useState()
   const [backgroundColor, setBackgroundColor] = useState(placeholderColor)
   const containerRef = useRef()
-  src = useMemo(() => !src ? src : (new URL(src, window.location.href)).href, [src])
+  const fullURL = useMemo(() => !fullURL ? fullURL : (new URL(src, BASE_URL)).href, [src])
 
   useEffect(() => {
-    if (isOptimizationDenied(src)) return setOptimizedSrc(src)
+    if (isOptimizationDenied(fullURL)) return setOptimizedSrc(src)
 
     const img = new window.Image()
     img.onload = () => {
@@ -154,8 +155,8 @@ export default function Image ({
       const containerSize = getImageContainerSize(containerRef.current, { width, height })
 
       if (shouldLoadBiggerImage(lastSize, containerSize)) {
-        const image = createCloudinaryImage({ src, objectFit, position, resize, ...containerSize })
-        const placeholderImage = createCloudinaryImage({ isPlaceholder: true, src, objectFit, position, resize, ...containerSize })
+        const image = createCloudinaryImage({ src: fullURL, objectFit, position, resize, ...containerSize })
+        const placeholderImage = createCloudinaryImage({ isPlaceholder: true, src: fullURL, objectFit, position, resize, ...containerSize })
 
         if (props.loading !== 'eager' && !lastSize) {
           if (!IS_STATIC_RENDERER) setOptimizedSrc(image.toURL())
@@ -173,7 +174,7 @@ export default function Image ({
       img.src = null
       window.removeEventListener('resize', onResize, { passive: true })
     }
-  }, [src, objectFit, position, width, height, resize, props.loading])
+  }, [src, fullURL, objectFit, position, width, height, resize, props.loading])
 
   const img = (
     <img

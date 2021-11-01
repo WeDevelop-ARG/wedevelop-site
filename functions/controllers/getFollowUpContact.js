@@ -24,6 +24,10 @@ function handleOptionsRequest (req, res) {
 async function handlePostRequest (req, res) {
   const { tracingId } = req.query
 
+  if (!tracingId || tracingId === 'null' || tracingId === 'undefined') {
+    return res.status(400).end()
+  }
+
   const deal = await getDeal(tracingId)
 
   if (!deal || !deal.associations || !deal.associations.contacts) {
