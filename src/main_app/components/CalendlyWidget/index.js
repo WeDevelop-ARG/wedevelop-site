@@ -5,7 +5,7 @@ import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 import useMediaQuery from 'utils/use_media_query'
 import { CALENDLY_DEFAULT_EVENT_URL, IS_STATIC_RENDERER, PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL } from 'main_app/constants'
 
-function CalendlyWidget ({ sourcePage }) {
+function CalendlyWidget ({ sourcePage, hideText, followUpTracingId, onFinish, prefill }) {
   const isTablet = useMediaQuery('screen and (min-width: 725px)')
   const isDesktop = useMediaQuery('screen and (min-width: 1250px)')
   const height = useMemo(() => {
@@ -24,6 +24,7 @@ function CalendlyWidget ({ sourcePage }) {
   }, [sourcePage])
   const handleScheduledEvent = useCallback(async (e) => {
     const calendlyInviteeURI = e.data.payload.invitee.uri
+    const calendlyEventURI = e.data.payload.event.uri
     logAnalyticsEvent({
       event: 'contact',
       contactType: 'calendly',
@@ -36,12 +37,13 @@ function CalendlyWidget ({ sourcePage }) {
           Accept: 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ calendlyInviteeURI })
+        body: JSON.stringify({ calendlyInviteeURI, calendlyEventURI, followUpTracingId })
       })
+      onFinish()
     } catch (err) {
       console.error(err)
     }
-  }, [sourcePage])
+  }, [sourcePage, followUpTracingId, onFinish])
 
   if (IS_STATIC_RENDERER) return null
 
@@ -52,9 +54,10 @@ function CalendlyWidget ({ sourcePage }) {
           utm={utmValues}
           url={CALENDLY_DEFAULT_EVENT_URL}
           styles={{ position: 'relative', minWidth: '280px', height }}
+          prefill={prefill}
         />
       </CalendlyEventListener>
-      <p>or email us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>
+      {!hideText && <p>or email us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>}
     </>
   )
 }

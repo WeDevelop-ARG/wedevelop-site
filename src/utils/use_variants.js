@@ -34,6 +34,8 @@ function combineVariants (...variants) {
   let result = []
 
   for (let variant of variants) {
+    if (!variant) continue
+
     if (!Array.isArray(variant)) {
       variant = [variant]
     }

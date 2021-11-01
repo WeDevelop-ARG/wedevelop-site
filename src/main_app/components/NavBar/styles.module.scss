@@ -41,8 +41,14 @@
     padding-bottom: 0;
   }
 
+  @include for-desktop-up {
+    &.atTop .logoLink {
+      margin-top: -20px;
+    }
+  }
+
   &.menuOpen {
-    --textColor: #{$secondaryColor};
+    --textColor: #363636;
   }
 
   &.menuOpen::before {
@@ -53,7 +59,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: $textColor;
+    background-color: #FFFFFF;
   }
 }
 
@@ -62,8 +68,8 @@
 }
 
 .logo {
-  width: 203px;
-  height: auto;
+  width: auto;
+  height: 40px;
 }
 
 .menuToggle {
@@ -71,8 +77,8 @@
   background: none;
   border: 0;
   padding: 7px 10px;
-  width: 47px;
-  height: 32px;
+  width: fit-content;
+  height: fit-content;
   display: flex;
   cursor: pointer;
 
@@ -86,7 +92,7 @@
 
  .open {
     width: 27px;
-    height: 18px;
+    height: auto;
 
     &.white {
       --primaryColor: #{$secondaryColor};
@@ -94,14 +100,15 @@
   }
 
   .close {
-    width: 15px;
-    height: 15px;
+    width: 24px;
+    height: auto;
+    z-index: 1;
   }
 }
 
 .menu {
   position: fixed;
-  top: 63px;
+  top: 40px;
   left: 0;
   right: 0;
   bottom: 10px;

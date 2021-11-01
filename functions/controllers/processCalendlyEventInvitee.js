@@ -1,8 +1,5 @@
 const { isValidCalendlyURL, getCalendlyAPICallResult } = require('../services/calendly')
-const { addSubscriberToMailchimp, addTagsToMailchimpSubscriber } = require('../services/mailchimp')
-const { getMailchimpTags } = require('../services/getMailchimpTags')
-
-const { MAILCHIMP_DEFAULT_LIST_ID } = require('../constants')
+const { createContactIfNotExists, createMeeting } = require('../services/hubspot')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
@@ -27,26 +24,36 @@ function handleOptionsRequest (req, res) {
 }
 
 async function handlePostRequest (req, res) {
-  const { calendlyInviteeURI } = req.body
+  const { calendlyInviteeURI, calendlyEventURI, followUpTracingId } = req.body
 
-  if (!isValidCalendlyURL(calendlyInviteeURI)) {
+  if (!isValidCalendlyURL(calendlyInviteeURI) || !isValidCalendlyURL(calendlyEventURI)) {
     return res.status(401).end()
   }
 
   const { resource: invitee } = await getCalendlyAPICallResult(calendlyInviteeURI)
-  const subscriber = await addSubscriberToMailchimp({
-    listId: MAILCHIMP_DEFAULT_LIST_ID,
-    subscriber: {
-      firstName: invitee.name,
-      lastName: '',
-      email: invitee.email
-    }
+  const { resource: event } = await getCalendlyAPICallResult(calendlyEventURI)
+
+  const contactId = await createContactIfNotExists({
+    name: invitee.name || `${invitee.first_name} ${invitee.last_name}`,
+    email: invitee.email
   })
 
-  await addTagsToMailchimpSubscriber({
-    listId: MAILCHIMP_DEFAULT_LIST_ID,
-    subscriberId: subscriber.id,
-    tags: getMailchimpTags(invitee.tracking.utm_campaign)
+  await createMeeting({
+    contactId,
+    dealId: followUpTracingId,
+    startTime: event.start_time,
+    endTime: event.end_time,
+    title: event.name,
+    description: `<b>Meeting scheduled through WeDevelop's website</b><br /><br /><b>Questions and answers:</b><br />${
+      JSON.stringify(invitee.questions_and_answers)
+    }`,
+    internalNotes: `
+      <ul>
+        <li><b>Text Reminder Number:</b>${invitee.text_reminder_number}</li>
+        <li><b>Timezone:</b>${invitee.timezone}</li>
+        <li><b>Tracking:</b>${JSON.stringify(invitee.tracking)}</li>
+      </ul>
+    `
   })
 
   res.status(200).end()

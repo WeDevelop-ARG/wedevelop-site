@@ -25,3 +25,9 @@
     flex: 0 0 auto;
   }
 }
+
+@include for-phone-only {
+  .logoSkill {
+    margin-bottom: 50px;
+  }
+}

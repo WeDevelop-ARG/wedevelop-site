@@ -13,11 +13,20 @@
   text-transform: uppercase;
   color: #363636;
   opacity: 0.5;
+  margin-bottom: 32px;
+
+  @include for-tablet-down {
+    font-size: 10px;
+  }
 }
 
 .titleText {
   font-weight: 600;
   line-height: 100%;
+
+  @include for-tablet-down {
+    font-size: 32px;
+  }
 }
 
 .horizontalBar {
@@ -25,7 +34,7 @@
 	height: 10px;
 	background: #FFC331;
 	border: none;
-  margin: 40px auto;
+  margin: 32px auto 80px;
 }
 
 .benefitsContainer {
@@ -35,6 +44,11 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 675px;
+
+  @include for-phone-only {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
 .benefit {
@@ -45,6 +59,10 @@
   @include for-phone-only {
     width: 100%;
     flex: 1 0 100%;
+
+    &:not(:last-of-type) {
+      margin-bottom: 50px;
+    }
   }
 }
 

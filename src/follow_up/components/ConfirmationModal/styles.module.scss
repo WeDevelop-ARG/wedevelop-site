@@ -1,0 +1,26 @@
+@import '/src/styles/media_queries.scss';
+
+.confirmationModal {
+  max-width: 784px;
+  width: 100%;
+  padding: 50px 60px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+
+  @include for-tablet-down {
+    justify-content: center;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  @include for-tablet-up {
+    height: auto;
+  }
+
+  @include for-phone-only {
+    min-height: 100vh;
+    padding: 30px;
+  }
+}

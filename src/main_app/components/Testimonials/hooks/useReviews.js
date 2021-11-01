@@ -39,9 +39,9 @@ const reviews = [
 ]
 
 function useReviews () {
-    return {
-      reviews: reviews
-    }
+  return {
+    reviews: reviews
+  }
 }
 
 export default useReviews
