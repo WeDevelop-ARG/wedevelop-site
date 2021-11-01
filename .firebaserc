@@ -5,13 +5,14 @@
   "targets": {
     "wedevelop-site": {
       "hosting": {
-        "testing": [
-          "wedevelop-site"
-        ],
         "production": [
           "wedevelop-site-prod"
-        ],
-        "testing-2": [
+        ]
+      }
+    },
+    "wedevelop-site-testing": {
+      "hosting": {
+        "testing": [
           "wedevelop-site-testing"
         ]
       }
