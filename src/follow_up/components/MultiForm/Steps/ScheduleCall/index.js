@@ -24,7 +24,6 @@ function ScheduleCall ({ currentStep, previousStep, totalSteps, skipModal, traci
         currentStep={currentStep}
         previousStep={previousStep}
         totalSteps={totalSteps}
-        handleModal={skipModal}
       />
     </section>
   )

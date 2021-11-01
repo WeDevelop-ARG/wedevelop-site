@@ -6,7 +6,7 @@ import LeftArrow from 'assets/follow_up/left_arrow.svg'
 
 import classes from './styles.module.scss'
 
-function ControlButtons ({ currentStep, previousStep, totalSteps, handleModal }) {
+function ControlButtons ({ currentStep, previousStep, totalSteps }) {
   const btnLeftArrow = <Image src={LeftArrow} alt='' />
   const canGoback = currentStep > 1
   const isFinalStep = currentStep === totalSteps
@@ -28,14 +28,6 @@ function ControlButtons ({ currentStep, previousStep, totalSteps, handleModal })
         >
           Next
         </SubmitButton>}
-      {isFinalStep &&
-        <Button
-          variant='primary'
-          onClick={handleModal}
-          className={classes.nextButton}
-        >
-          Done
-        </Button>}
     </div>
   )
 }
