@@ -134,7 +134,7 @@ export default function Image ({
   const [backgroundSrc, setBackgroundSrc] = useState()
   const [backgroundColor, setBackgroundColor] = useState(placeholderColor)
   const containerRef = useRef()
-  const fullURL = useMemo(() => !fullURL ? fullURL : (new URL(src, BASE_URL)).href, [src])
+  const fullURL = useMemo(() => !src ? src : (new URL(src, BASE_URL)).href, [src])
 
   useEffect(() => {
     if (isOptimizationDenied(fullURL)) return setOptimizedSrc(src)
@@ -180,7 +180,7 @@ export default function Image ({
     <img
       src={optimizedSrc}
       alt={alt}
-      loading='lazy'
+      loading={props.loading}
       onLoad={() => {
         setBackgroundSrc(undefined)
         setBackgroundColor(undefined)
