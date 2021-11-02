@@ -28,10 +28,6 @@
   border: none;
 }
 
-.sectionStories {
-  position: relative;
-}
-
 .viewAll {
   font-weight: 600;
   font-size: 15px;
@@ -50,9 +46,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, auto));
   gap: 35px;
-  margin-bottom: 60px;
+  margin-bottom: -128px;
 
   @include for-tablet-down {
     grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    margin-bottom: 0px;
   }
 }
