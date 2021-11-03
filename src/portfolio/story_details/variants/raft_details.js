@@ -1,5 +1,9 @@
 const raftDetails = {
-  urlName: 'raft_details',
+  urlName: 'raft',
+  metadata: {
+    title: 'Story Details',
+    description: 'Story Details for RAFT'
+  },
   header: {
     backgroundURL: '',
     logoURL: ''
