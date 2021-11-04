@@ -1,0 +1,55 @@
+@import '/src/styles/media_queries.scss';
+
+%dotsPattern {
+  position: absolute;
+  width: 250px;
+
+  @include for-desktop-up {
+    width: 15vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      width: 12vw;
+    }
+  }
+}
+
+.leftPattern {
+  @extend %dotsPattern;
+  top: 40px;
+  left: calc(50% - 125px);
+  
+  @include for-desktop-up {
+    top: 45%;
+    left: 5vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      left: 3vw;
+    }
+  }
+}
+
+.rightPattern {
+  @extend %dotsPattern;
+  bottom: 40px;
+  right: calc(50% - 125px);
+  
+  @include for-desktop-up {
+    top: 45%;
+    bottom: auto;
+    right: 5vw;
+
+    @media screen and (min-width: 1024px) and (max-width: 1230px) {
+      right: 3vw;
+    }
+  }
+}
+
+@include for-tablet-down {
+  .leftPattern, .rightPattern {
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: static;
+  }
+}
