@@ -5,6 +5,8 @@ import NavBar from 'main_app/components/NavBar/NavBar'
 import Article from 'main_app/components/Article'
 import Header from './components/Header'
 import TextImageGeneric from './components/TextImageGeneric'
+import Testimonials from 'main_app/components/Testimonials'
+import TestimonialsDecoration from './components/TestimonialsDecoration'
 import GetInTouch from 'main_app/components/GetInTouch'
 import PictureWall from 'main_app/components/PictureWall'
 import ScrollTopButton from './components/ScrollTopButton'
@@ -46,6 +48,11 @@ function StoryDetails () {
           title={storyDetails.challenge.title}
           content={storyDetails.challenge.content}
           hideDecoration
+        />
+        <Testimonials
+          reviews={storyDetails.testimonials}
+          customDecorations={<TestimonialsDecoration />}
+          hideHeader
         />
         <TextImageGeneric
           title={storyDetails.results.title}
