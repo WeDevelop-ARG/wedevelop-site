@@ -7,6 +7,7 @@ import Header from './components/Header'
 import TextImageGeneric from './components/TextImageGeneric'
 import GetInTouch from 'main_app/components/GetInTouch'
 import PictureWall from 'main_app/components/PictureWall'
+import ScrollTopButton from './components/ScrollTopButton'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 
@@ -14,9 +15,7 @@ import useStoryDetailVariantByName from './hooks/useStoryDetailVariantByName'
 
 function StoryDetails () {
   const { params } = useRouteMatch('/portfolio/:name')
-  console.log(params)
   const { storyDetails } = useStoryDetailVariantByName(params.name)
-  console.log(storyDetails)
 
   const contactPagePath = `/portfolio/${params.name}/contact`
   const match = useRouteMatch(contactPagePath)
@@ -55,6 +54,7 @@ function StoryDetails () {
         />
         <GetInTouch />
         <PictureWall contactPagePath={contactPagePath} />
+        <ScrollTopButton />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
