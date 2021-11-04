@@ -1,15 +1,25 @@
+import { useMemo } from 'react'
+import isUndefined from 'lodash/isUndefined'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
-import useReviews from './hooks/useReviews'
+import Image from '../Image'
+import DefaultDecoration from './DefaultDecoration'
+
 import QuotationMark from 'assets/home/quotation_mark.svg'
-import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
-import Image from '../Image'
 
-function Testimonials ({ bottomImageURL, hideHeader = false }) {
-  const { reviews } = useReviews()
+function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
+  const isAutoplay = useMemo(() => {
+    if (reviews.length === 1) return false
+    return true
+  }, [reviews])
+  const decorations = useMemo(() => {
+    if (isUndefined(customDecorations)) return <DefaultDecoration />
+    return customDecorations
+  }, [customDecorations])
+
   return (
     <section id='testimonials' className={classes.testimonials}>
       {!hideHeader &&
@@ -25,7 +35,7 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
         <Slide
           duration={5000}
           transitionDuration={500}
-          autoplay
+          autoplay={isAutoplay}
           pauseOnHover
           indicators
           arrows={false}
@@ -57,15 +67,7 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
           ))}
         </Slide>
       </div>
-      <Image src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.middleLeftPattern} aria-hidden='true' />
-      <div className={classes.filledSmallCircle} aria-hidden='true' />
-      <div className={classes.emptySmallCircle} aria-hidden='true' />
-      <div className={classes.smallBlurLeftCircle} aria-hidden='true' />
-      <div className={classes.filledBigCircle} aria-hidden='true' />
-      <div className={classes.emptyBigCircle} aria-hidden='true' />
-      <div className={classes.smallCircle} aria-hidden='true' />
-      <div className={classes.smallBlurRightCircle} aria-hidden='true' />
+      {decorations}
     </section>
   )
 }
