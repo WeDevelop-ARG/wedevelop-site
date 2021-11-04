@@ -13,7 +13,7 @@ import Services from './components/Services'
 import Testimonials from 'main_app/components/Testimonials'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
-import TestimonialsBg from 'assets/home/testimonials_background_image.png'
+import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 
 function Landing () {
   usePageMetadata({
@@ -25,6 +25,7 @@ function Landing () {
   const handleClose = useCallback(() => {
     history.push('/')
   }, [history])
+  const { reviews } = useReviews()
 
   return (
     <>
@@ -36,7 +37,9 @@ function Landing () {
         <Header />
         <Services />
         <AboutUs />
-        <Testimonials bottomImageURL={TestimonialsBg} />
+        <Testimonials
+          reviews={reviews}
+        />
         <GetInTouch contactPagePath='/contact' />
         <PictureWall />
       </Article>
