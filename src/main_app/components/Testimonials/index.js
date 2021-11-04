@@ -37,7 +37,7 @@ function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
           transitionDuration={500}
           autoplay={isAutoplay}
           pauseOnHover
-          indicators
+          indicators={isAutoplay}
           arrows={false}
           className={classes.carousel}
         >
