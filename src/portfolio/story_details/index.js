@@ -1,19 +1,19 @@
 import { useCallback } from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
 
-import NavBar from 'main_app/components/NavBar/NavBar'
+import useStoryDetailVariantByName from './hooks/useStoryDetailVariantByName'
+
 import Article from 'main_app/components/Article'
-import Header from './components/Header'
-import TextImageGeneric from './components/TextImageGeneric'
-import Testimonials from 'main_app/components/Testimonials'
-import TestimonialsDecoration from './components/TestimonialsDecoration'
-import GetInTouch from 'main_app/components/GetInTouch'
-import PictureWall from 'main_app/components/PictureWall'
-import ScrollTopButton from './components/ScrollTopButton'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
-
-import useStoryDetailVariantByName from './hooks/useStoryDetailVariantByName'
+import GetInTouch from 'main_app/components/GetInTouch'
+import Header from './components/Header'
+import NavBar from 'main_app/components/NavBar/NavBar'
+import PictureWall from 'main_app/components/PictureWall'
+import ScrollTopButton from './components/ScrollTopButton'
+import Testimonials from 'main_app/components/Testimonials'
+import TestimonialsDecoration from './components/TestimonialsDecoration'
+import TextImageGeneric from './components/TextImageGeneric'
 
 function StoryDetails () {
   const { params } = useRouteMatch('/portfolio/:name')

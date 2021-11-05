@@ -3,8 +3,8 @@ import isUndefined from 'lodash/isUndefined'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
-import Image from '../Image'
 import DefaultDecoration from './DefaultDecoration'
+import Image from '../Image'
 
 import QuotationMark from 'assets/home/quotation_mark.svg'
 

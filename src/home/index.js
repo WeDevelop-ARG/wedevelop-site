@@ -1,6 +1,9 @@
 import { useCallback } from 'react'
 import { useRouteMatch, useHistory } from 'react-router-dom'
 
+import usePageMetadata from 'utils/marketing/use_page_metadata'
+import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
+
 import Article from 'main_app/components/Article'
 import AboutUs from './components/AboutUs'
 import ContactModal from 'main_app/components/ContactModal'
@@ -11,9 +14,6 @@ import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import Services from './components/Services'
 import Testimonials from 'main_app/components/Testimonials'
-
-import usePageMetadata from 'utils/marketing/use_page_metadata'
-import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 
 function Landing () {
   usePageMetadata({

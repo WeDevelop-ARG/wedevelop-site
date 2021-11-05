@@ -2,14 +2,14 @@
 
 %dotsPattern {
   position: absolute;
-  width: 250px;
+  width: 15vw;
 
-  @include for-desktop-up {
-    width: 15vw;
+  @media screen and (min-width: 1024px) and (max-width: 1230px) {
+    width: 12vw;
+  }
 
-    @media screen and (min-width: 1024px) and (max-width: 1230px) {
-      width: 12vw;
-    }
+  @include for-tablet-down {
+    display: none !important;
   }
 }
 
