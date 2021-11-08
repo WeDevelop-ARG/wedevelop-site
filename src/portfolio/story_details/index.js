@@ -34,6 +34,7 @@ function StoryDetails () {
       <NavBar
         variant={['solid', 'dark']}
         variantAtScrollTop={['transparent', 'light']}
+        contactPagePath={contactPagePath}
       />
       <Article>
         <Header
@@ -68,8 +69,8 @@ function StoryDetails () {
           content={storyDetails.results.content}
           imageURL={storyDetails.results.imageURL}
         />
-        <GetInTouch />
-        <PictureWall contactPagePath={contactPagePath} />
+        <GetInTouch contactPagePath={contactPagePath} />
+        <PictureWall />
         <ScrollTopButton />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
