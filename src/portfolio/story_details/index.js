@@ -13,9 +13,7 @@ import useStoryDetailVariantByName from './hooks/useStoryDetailVariantByName'
 
 function StoryDetails () {
   const { params } = useRouteMatch('/portfolio/:name')
-  console.log(params)
   const { storyDetails } = useStoryDetailVariantByName(params.name)
-  console.log(storyDetails)
 
   const contactPagePath = `/portfolio/${params.name}/contact`
   const match = useRouteMatch(contactPagePath)
