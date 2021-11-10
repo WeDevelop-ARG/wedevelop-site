@@ -2,6 +2,7 @@ import Image from 'main_app/components/Image'
 
 import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
 import DotsPattern from 'assets/portfolio/dots_pattern.svg'
+import WorldIcon from 'assets/portfolio/world.svg'
 
 import classes from './styles.module.scss'
 
@@ -30,7 +31,8 @@ function Header ({
           <figure className={classes.logoBackground}>
             <Image
               src={logoURL}
-              alt='LOGO'
+              alt=''
+              objectFit='contain'
               className={classes.logoImg}
             />
           </figure>
@@ -47,7 +49,7 @@ function Header ({
             className={classes.websiteLink}
           >
             Website
-            <img src='' alt='' className={classes.worldIcon} />
+            <Image src={WorldIcon} alt='' className={classes.worldIcon} />
           </a>
         </div>
         <hr className={classes.horizontalBar} />

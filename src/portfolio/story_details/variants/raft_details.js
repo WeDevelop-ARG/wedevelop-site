@@ -1,4 +1,5 @@
 import RaftHeader from 'assets/portfolio/raft/header_background.png'
+import RaftLogo from 'assets/portfolio/raft/raft_logo.png'
 import RaftReservations from 'assets/portfolio/raft/raft_reservations.png'
 import RaftOverview from 'assets/portfolio/raft/raft_overview.png'
 
@@ -10,7 +11,7 @@ const raftDetails = {
   },
   header: {
     backgroundURL: RaftHeader,
-    logoURL: '',
+    logoURL: RaftLogo,
     heading: 'Success Story',
     title: 'Raft',
     subtitle: 'A search engine for ferry booking.',
