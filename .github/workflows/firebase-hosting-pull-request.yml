@@ -9,12 +9,14 @@ jobs:
         if: startsWith(github.head_ref, 'feature/') == false
       - run: npm ci && npm run build-testing
         if: startsWith(github.head_ref, 'feature/') == false
+        env:
+          REACT_APP_PREVIEW_BUILD: pull_request
       - uses: FirebaseExtended/action-hosting-deploy@v0
         if: startsWith(github.head_ref, 'feature/') == false
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEDEVELOP_SITE }}'
-          projectId: wedevelop-site
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEDEVELOP_SITE_TESTING }}'
+          projectId: wedevelop-site-testing
           target: testing
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels

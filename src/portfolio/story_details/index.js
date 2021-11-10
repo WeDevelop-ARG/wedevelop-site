@@ -11,12 +11,16 @@ import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 
 import useStoryDetailVariantByName from './hooks/useStoryDetailVariantByName'
+import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 function StoryDetails () {
   const { params } = useRouteMatch('/portfolio/:name')
-  console.log(params)
   const { storyDetails } = useStoryDetailVariantByName(params.name)
-  console.log(storyDetails)
+
+  usePageMetadata({
+    title: storyDetails.metadata.title,
+    description: storyDetails.metadata.description
+  })
 
   const contactPagePath = `/portfolio/${params.name}/contact`
   const match = useRouteMatch(contactPagePath)
@@ -53,7 +57,7 @@ function StoryDetails () {
           content={storyDetails.results.content}
           imageURL={storyDetails.results.imageURL}
         />
-        <GetInTouch />
+        <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall contactPagePath={contactPagePath} />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}

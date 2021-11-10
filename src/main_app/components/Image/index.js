@@ -8,15 +8,31 @@ import isFunction from 'lodash/isFunction'
 import isEmpty from 'lodash/isEmpty'
 import classNames from 'classnames'
 
-import { IS_DEVELOPMENT, BASE_URL, IS_STATIC_RENDERER } from 'main_app/constants.js'
+import { BASE_URL, IS_DEVELOPMENT, IS_PREVIEW_BUILD, IS_STATIC_RENDERER } from 'main_app/constants.js'
 
 import classes from './styles.module.scss'
 
-const cloudinaryDenylistRegex = /(?:^(?!https:\/\/).*\.?(?:svg)?$|.*\.?(?:svg)$)/i
+const cloudinaryDenylistExtensionsRegex = /\.?(?:svg)$/i
+const optimizationAllowedHostnames = ['wedevelop.me', 'testing.wedevelop.me']
 const cloudinary = new Cloudinary({
   cloud: { cloudName: 'wedevelop-site' }
 })
 const responsiveSizeStep = 200
+
+function isOptimizationDenied (url) {
+  try {
+    return (
+      IS_PREVIEW_BUILD ||
+      cloudinaryDenylistExtensionsRegex.test(url) ||
+      !optimizationAllowedHostnames.includes(
+        (new URL(url, BASE_URL)).hostname
+      )
+    )
+  } catch (err) {
+    console.error(err)
+    return true
+  }
+}
 
 function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resize, width, height }) {
   if (resize === 'auto-width') {
@@ -118,11 +134,10 @@ export default function Image ({
   const [backgroundSrc, setBackgroundSrc] = useState()
   const [backgroundColor, setBackgroundColor] = useState(placeholderColor)
   const containerRef = useRef()
-  src = useMemo(() => !src ? src : (new URL(src, BASE_URL)).href, [src])
-  const isOptimizationDenied = useMemo(() => cloudinaryDenylistRegex.test(src), [src])
+  const fullURL = useMemo(() => !src ? src : (new URL(src, BASE_URL)).href, [src])
 
   useEffect(() => {
-    if (isOptimizationDenied) return setOptimizedSrc(src)
+    if (isOptimizationDenied(fullURL)) return setOptimizedSrc(src)
 
     const img = new window.Image()
     img.onload = () => {
@@ -140,8 +155,8 @@ export default function Image ({
       const containerSize = getImageContainerSize(containerRef.current, { width, height })
 
       if (shouldLoadBiggerImage(lastSize, containerSize)) {
-        const image = createCloudinaryImage({ src, objectFit, position, resize, ...containerSize })
-        const placeholderImage = createCloudinaryImage({ isPlaceholder: true, src, objectFit, position, resize, ...containerSize })
+        const image = createCloudinaryImage({ src: fullURL, objectFit, position, resize, ...containerSize })
+        const placeholderImage = createCloudinaryImage({ isPlaceholder: true, src: fullURL, objectFit, position, resize, ...containerSize })
 
         if (props.loading !== 'eager' && !lastSize) {
           if (!IS_STATIC_RENDERER) setOptimizedSrc(image.toURL())
@@ -159,13 +174,13 @@ export default function Image ({
       img.src = null
       window.removeEventListener('resize', onResize, { passive: true })
     }
-  }, [src, objectFit, isOptimizationDenied, position, width, height, resize, props.loading])
+  }, [src, fullURL, objectFit, position, width, height, resize, props.loading])
 
   const img = (
     <img
       src={optimizedSrc}
       alt={alt}
-      loading='lazy'
+      loading={props.loading}
       onLoad={() => {
         setBackgroundSrc(undefined)
         setBackgroundColor(undefined)

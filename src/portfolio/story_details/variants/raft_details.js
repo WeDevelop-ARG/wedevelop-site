@@ -3,7 +3,11 @@ import RaftReservations from 'assets/portfolio/raft/raft_reservations.png'
 import RaftOverview from 'assets/portfolio/raft/raft_overview.png'
 
 const raftDetails = {
-  urlName: 'raft_details',
+  urlName: 'raft',
+  metadata: {
+    title: 'Story Details',
+    description: 'Story Details for RAFT'
+  },
   header: {
     backgroundURL: RaftHeader,
     logoURL: '',

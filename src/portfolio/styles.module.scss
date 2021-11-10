@@ -5,11 +5,14 @@
   letter-spacing: 3px;
   color: rgba($color: #363636, $alpha: 0.5);
   font-size: 10px;
-  margin-bottom: 40px;
   text-transform: uppercase;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .titleText {
+  text-align: center;
+
   @include for-desktop-up {
     font-weight: 600;
     font-size: 60px;
@@ -23,4 +26,117 @@
   background: #ffc331;
   margin: 32px auto 30px auto;
   border: none;
+}
+
+.projectCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  gap: 35px;
+  margin-bottom: 60px;
+
+  @include for-tablet-down {
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+  }
+}
+
+%dotsPattern {
+  position: absolute;
+  z-index: -1;
+
+  @include for-desktop-up {
+    width: 277px;
+  }
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.topRightPattern {
+  @extend %dotsPattern;
+  top: 6%;
+  right: 63px;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+.filledCircle {
+  @extend %circle;
+  background: rgba($color: #eaeaea, $alpha: 0.3);
+  width: 309px;
+  height: 309px;
+  top: 180px;
+  left: -112px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  border: 0.5px solid rgba($color: #363636, $alpha: 0.2);
+  width: 310px;
+  height: 310px;
+  top: 168px;
+  left: -86px;
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 10px;
+  height: 10px;
+  background-color: rgba($color: #8224e3, $alpha: 0.5);
+  filter: blur(4px);
+  top: 204px;
+  left: 166px;
+}
+
+.bottomFilledCircle {
+  @extend %circle;
+  background: rgba($color: #eaeaea, $alpha: 0.3);
+  width: 309px;
+  height: 309px;
+  bottom: 0px;
+  right: 56px;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.bottomEmptyCircle {
+  @extend %circle;
+  border: 0.5px solid rgba($color: #363636, $alpha: 0.2);
+  width: 310px;
+  height: 310px;
+  bottom: 0px;
+  right: 31px;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.bottomSmallBlurCircle {
+  @extend %circle;
+  width: 10px;
+  height: 10px;
+  background-color: rgba($color: #8224e3, $alpha: 0.5);
+  filter: blur(4px);
+  bottom: 45px;
+  right: 66px;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.talk {
+  text-align: center;
+  margin: auto;
+}
+
+.sectionPortfolio {
+  position: relative;
 }
