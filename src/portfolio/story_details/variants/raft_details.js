@@ -1,3 +1,7 @@
+import RaftHeader from 'assets/portfolio/raft/header_background.png'
+import RaftReservations from 'assets/portfolio/raft/raft_reservations.png'
+import RaftOverview from 'assets/portfolio/raft/raft_overview.png'
+
 const raftDetails = {
   urlName: 'raft',
   metadata: {
@@ -5,7 +9,7 @@ const raftDetails = {
     description: 'Story Details for RAFT'
   },
   header: {
-    backgroundURL: '',
+    backgroundURL: RaftHeader,
     logoURL: ''
   },
   intro: {
@@ -18,8 +22,8 @@ const raftDetails = {
       'Staff Augmentation'
     ],
     description: 'Ferry transportation is a pretty niche industry, and there is no search engine or metada platform for it, either globally or in specific countries, so we had to build much of it on our own.',
-    websiteURL: '',
-    imageURL: ''
+    websiteURL: 'https://raftcroatia.com/',
+    imageURL: RaftReservations
   },
   challenge: {
     title: 'Challenge',
@@ -72,7 +76,7 @@ const raftDetails = {
         </p>
       </>
     ),
-    imageURL: ''
+    imageURL: RaftOverview
   }
 }
 

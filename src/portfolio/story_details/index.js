@@ -3,6 +3,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom'
 
 import NavBar from 'main_app/components/NavBar/NavBar'
 import Article from 'main_app/components/Article'
+import TextImageGeneric from './components/TextImageGeneric'
 import GetInTouch from 'main_app/components/GetInTouch'
 import PictureWall from 'main_app/components/PictureWall'
 import ContactModal from 'main_app/components/ContactModal'
@@ -34,6 +35,16 @@ function StoryDetails () {
         variantAtScrollTop={['transparent', 'light']}
       />
       <Article>
+        <TextImageGeneric
+          title={storyDetails.challenge.title}
+          content={storyDetails.challenge.content}
+          hideDecoration
+        />
+        <TextImageGeneric
+          title={storyDetails.results.title}
+          content={storyDetails.results.content}
+          imageURL={storyDetails.results.imageURL}
+        />
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall contactPagePath={contactPagePath} />
       </Article>
