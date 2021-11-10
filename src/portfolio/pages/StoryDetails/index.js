@@ -42,6 +42,7 @@ function StoryDetails () {
       <NavBar
         variant={['solid', 'dark']}
         variantAtScrollTop={['transparent', 'light']}
+        contactPagePath={contactPagePath}
       />
       <Article>
         <Header
