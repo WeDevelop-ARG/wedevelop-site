@@ -1,11 +1,11 @@
-import RaftBackground from 'assets/portfolio/raft-background.png'
-import TrainWithBackground from 'assets/portfolio/trainwith-background.png'
-import CopaBackground from 'assets/portfolio/copa-background.png'
-import BallwizBackground from 'assets/portfolio/ballwiz-background.png'
-import LogoBallwiz from 'assets/portfolio/logo-ballwiz.svg'
-import LogoRaft from 'assets/portfolio/logo-raft.png'
-import LogoTrainWith from 'assets/portfolio/logo-trainwith.png'
-import LogoCopa from 'assets/portfolio/logo-copa.svg'
+import RaftBackground from 'assets/portfolio/raft/resume_background.png'
+import TrainWithBackground from 'assets/portfolio/train_with/resume_background.png'
+import CopaBackground from 'assets/portfolio/copa/resume_background.png'
+import BallwizBackground from 'assets/portfolio/ballwiz/resume_background.png'
+import LogoBallwiz from 'assets/portfolio/ballwiz/ballwiz_logo.svg'
+import LogoRaft from 'assets/portfolio/raft/raft_logo.png'
+import LogoTrainWith from 'assets/portfolio/train_with/train_with_logo.png'
+import LogoCopa from 'assets/portfolio/copa/copa_logo.svg'
 
 const projectCards = [{
   id: '1',
