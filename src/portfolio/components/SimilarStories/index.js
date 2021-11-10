@@ -1,19 +1,17 @@
 import { HashLink } from 'react-router-hash-link'
 
 import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
-import useProjectCards from '../PortfolioProjectCard/hooks/useProjectCards'
+
 import Image from 'main_app/components/Image'
-import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
 
 import Arrow from 'assets/portfolio/arrow.svg'
-import similarStories from 'assets/portfolio/similarStories_bg.png'
+
+import { useSimilarStories } from '../../hooks/useSimilarStories'
 
 import classes from './styles.module.scss'
 
-function SimilarStories () {
-  const n = 3
-  const websiteURL = window.location.href
-  const projectCards = useProjectCards().filter(projectCard => projectCard.externalWebsiteURL !== websiteURL)
+function SimilarStories ({ storyName }) {
+  const { similarStories } = useSimilarStories({ amount: 3, storyName })
 
   return (
     <>
@@ -22,21 +20,28 @@ function SimilarStories () {
           <p className={classes.subheadingText}>success stories</p>
           <h2 className={classes.titleText}>Similar stories to read</h2>
           <hr className={classes.horizontalBar} />
-          <HashLink smooth to={projectCards.detailsPagePath} className={classes.viewAll}>
+          <HashLink smooth to='/portfolio' className={classes.viewAll}>
             View All
             <Image src={Arrow} alt='' className={classes.arrow} />
           </HashLink>
         </div>
         <div className={classes.projectCards}>
-          {projectCards.slice(0, n).map(({ id, ...props }) => (
+          {similarStories.map(story => (
             <PortfolioProjectCard
-              key={id}
-              {...props}
+              key={story.urlName}
+              coverImageURL={story.resume.headerImageURL}
+              description={story.header.description}
+              detailsPagePath={`/portfolio/${story.urlName}`}
+              externalWebsiteURL={story.header.websiteURL}
+              logoBackground={story.header.logoBackground}
+              logoURL={story.header.logoURL}
+              projectName={story.header.title}
+              shortDescription={story.header.subtitle}
+              tags={story.header.tags}
             />
           ))}
         </div>
       </section>
-      <BackgroundContainer backgroundURL={similarStories} />
     </>
   )
 }

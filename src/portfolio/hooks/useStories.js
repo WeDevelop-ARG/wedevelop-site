@@ -1,7 +1,7 @@
-import variants from '../variants'
+import { stories } from '../stories'
 
 function useStoryDetailVariants () {
-  return { variants }
+  return { stories }
 }
 
 export default useStoryDetailVariants
