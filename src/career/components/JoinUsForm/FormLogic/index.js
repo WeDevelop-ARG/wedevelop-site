@@ -4,6 +4,8 @@ import isNil from 'lodash/isNil'
 import isFunction from 'lodash/isFunction'
 import * as Yup from 'yup'
 
+import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
+
 import uploadFile from 'service_providers/firebase/uploadFile'
 
 import { CAREER_FORM_PROCESSOR_URL } from 'main_app/constants'
@@ -54,6 +56,11 @@ function FormLogic ({ onSubmitFinished, ...props }) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ ...values, resume: path })
+      })
+      logAnalyticsEvent({
+        event: 'join-us-form-submit',
+        contactType: 'careers-form',
+        source: 'careers'
       })
       actions.resetForm()
     } catch (err) {
