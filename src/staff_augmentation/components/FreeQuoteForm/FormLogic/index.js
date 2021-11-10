@@ -4,7 +4,7 @@ import isFunction from 'lodash/isFunction'
 import * as Yup from 'yup'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
-import { STAFF_AUGMENTATION_FORM_PROCESSOR_URL } from 'main_app/constants'
+import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
 
 const schemaShape = {
   name: Yup.string().required(),
@@ -13,13 +13,14 @@ const schemaShape = {
   recaptchaToken: Yup.string().required()
 }
 
-function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin, ...props }) {
+function FormLogic ({ initialValues, onSubmitFinished, formOrigin, ...props }) {
   const handleSubmit = useCallback(async (values) => {
+    let tracingId
     try {
-      await fetch(STAFF_AUGMENTATION_FORM_PROCESSOR_URL, {
+      const response = await window.fetch(INITIAL_LANDING_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ ...values, formOrigin })
@@ -29,18 +30,14 @@ function FormLogic ({ initialValues, customFields, onSubmitFinished, formOrigin,
         contactType: 'free-quote-form',
         source: formOrigin
       })
+      const responseJSON = await response.json()
+      tracingId = responseJSON.tracingId
     } catch (err) {
       console.error(err)
     }
 
-    if (isFunction(onSubmitFinished)) onSubmitFinished()
+    if (isFunction(onSubmitFinished)) onSubmitFinished(tracingId)
   }, [onSubmitFinished, formOrigin])
-
-  customFields?.forEach(({ name, required }) => {
-    let validator = Yup.string()
-    if (required) validator = validator.required()
-    schemaShape[name] = validator
-  })
 
   const schema = Yup.object(schemaShape).required()
 
