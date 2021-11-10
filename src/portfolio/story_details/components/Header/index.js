@@ -55,16 +55,14 @@ function Header ({
         <hr className={classes.horizontalBar} />
         <h3 className={classes.subtitle}>{subtitle}</h3>
         <div className={classes.tagsContainer}>
-          {tags.map((tag) => {
-            return (
-              <span
-                key={tag}
-                className={classes.tag}
-              >
-                {tag}
-              </span>
-            )
-          })}
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className={classes.tag}
+            >
+              {tag}
+            </span>
+          ))}
         </div>
         <p className={classes.description}>{description}</p>
       </div>
