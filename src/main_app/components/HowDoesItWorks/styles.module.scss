@@ -1,0 +1,145 @@
+@import '/src/styles/media_queries.scss';
+
+$grayColor: #363636;
+
+.container {
+  background-image: url('../../../assets/how_does_it_works/background/how_does_it_works_background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  padding-top: calc(275px + var(--rootContentMinPadding));
+  padding-bottom: calc(75px + var(--rootContentMinPadding));
+  position: relative;
+
+  @include for-tablet-up {
+    padding-top: calc(250px + var(--rootContentMinPadding));
+    margin-top: -100px;
+  }
+
+  @include for-desktop-up {
+    padding-top: calc(175px + var(--rootContentMinPadding));
+    padding-bottom: calc(75px + var(--rootContentMinPadding));
+    padding-left: 136px;
+    padding-right: 136px;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subheading {
+  font-weight: 500;
+  letter-spacing: 1em;
+  color: rgba($color: $grayColor, $alpha: 0.5);
+  font-size: 10px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+
+  @include for-tablet-up {
+    font-size: 13px;
+  }
+}
+
+.title {
+  font-size: 32px;
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+  }
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 32px 0px 85px;
+  border: none;
+}
+
+.stepsContainer {
+  position: relative;
+}
+
+.remarkContainer {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  max-width: 310px;
+  width: 100%;
+  position: absolute;
+  right: -25%;
+  top: 43%;
+  transform: rotate(90deg);
+
+  @include for-tablet-up {
+    display: flex;
+    right: -5%;
+  }
+  
+  @include for-desktop-up {
+    margin: 0 auto;
+    position: static;
+    transform: rotate(0deg);
+  }
+}
+
+.remark {
+  max-width: 190px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  text-align: center;
+  color: rgba($color: $grayColor, $alpha: 0.5);
+}
+
+.curvedArrow {
+  width: 400px;
+
+  @media screen and (min-width: 500px) {
+    width: 450px;
+  }
+
+  @include for-desktop-up {
+    width: inherit;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 70px;
+
+  @include for-desktop-up {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0;
+  }
+}
+
+.step {
+  max-width: 300px;
+  width: 100%;
+}
+
+.arrows {
+  transform: rotate(90deg);
+  
+  @include for-desktop-up {
+    margin: 90px auto auto;
+    transform: rotate(0deg);
+
+    @media screen and (max-width: 1534px) {
+      display: none;
+    }
+  }
+}

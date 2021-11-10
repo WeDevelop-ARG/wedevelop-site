@@ -1,0 +1,14 @@
+@import '/src/styles/media_queries.scss';
+
+.title {
+  font-size: 24px;
+  margin: 20px auto 30px;
+}
+
+.column {
+  text-align: center;
+}
+
+.description {
+  color: rgba($color: #363636, $alpha: .5)
+}
