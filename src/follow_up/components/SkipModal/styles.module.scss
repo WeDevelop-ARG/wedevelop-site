@@ -1,0 +1,21 @@
+@import '/src/styles/media_queries.scss';
+
+.skipModal {
+  max-width: 784px;
+  width: 100%;
+  padding: 84px 60px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+
+  @include for-tablet-down {
+    justify-content: center;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  @include for-phone-only {
+    padding: 84px 30px 30px;
+  }
+}
