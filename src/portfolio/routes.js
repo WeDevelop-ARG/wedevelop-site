@@ -3,22 +3,22 @@ import { Switch, useRouteMatch } from 'react-router'
 
 import { prerenderedLazy } from 'utils/prerendered_lazy'
 
-import useStoryDetailVariants from './story_details/hooks/useStoryDetailVariants'
+import useStories from './hooks/useStories'
 
-const Portfolio = prerenderedLazy(() => import('./index'))
-const StoryDetailPage = prerenderedLazy(() => import('./story_details'))
+const Portfolio = prerenderedLazy(() => import('./pages/Portfolio'))
+const StoryDetailPage = prerenderedLazy(() => import('./pages/StoryDetails'))
 const NotFound = prerenderedLazy(() => import('not_found'))
 
 function PortfolioRoutes ({ children }) {
   const { path } = useRouteMatch()
-  const { variants } = useStoryDetailVariants()
+  const { stories } = useStories()
 
   return (
     <Switch>
       <LazyRoute exact path={`${path}(/contact)?`}>
         <Portfolio />
       </LazyRoute>
-      {variants.map(({ urlName }) => (
+      {stories.map(({ urlName }) => (
         <LazyRoute exact path={`${path}/${urlName}(/contact)?`} key={urlName}>
           <StoryDetailPage />
         </LazyRoute>

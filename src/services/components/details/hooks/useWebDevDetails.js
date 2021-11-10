@@ -29,10 +29,10 @@ const DescriptionText = () => {
     <>
       <p className={classes.descriptionText}>
         <strong>Agile Web Development, no waste</strong>, continuous improvement, collaboration, and respect for people.
-        </p>
+      </p>
       <p className={classes.descriptionText}>
         Whether you need a new website, a web portal to help your employees, or an app to automate processes, our developers have the expertise and experience to build it rapidly and aligned to your vision.
-        </p>
+      </p>
     </>
   )
 }

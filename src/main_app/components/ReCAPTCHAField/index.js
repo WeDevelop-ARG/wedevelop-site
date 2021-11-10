@@ -1,12 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useMemo } from 'react'
 import { useFormikContext } from 'formik'
 import { IS_STATIC_RENDERER, RECAPTCHA_SITE_KEY } from 'main_app/constants'
 import isFunction from 'lodash/isFunction'
-import { useMemo } from 'react'
 
 const RECAPTCHA_URL = 'https://www.google.com/recaptcha/api.js?onload=RECAPTCHA_LOAD_HANDLER&render=explicit'
 
-let recaptchaLoadListeners = []
+const recaptchaLoadListeners = []
 
 window.RECAPTCHA_LOAD_HANDLER = () => {
   recaptchaLoadListeners.forEach(l => l())
@@ -20,7 +19,7 @@ function loadRecaptcha (onPossiblyLoaded) {
     return onPossiblyLoaded()
   }
 
-  var sc = document.createElement('script')
+  const sc = document.createElement('script')
 
   sc.src = RECAPTCHA_URL
   sc.async = true
