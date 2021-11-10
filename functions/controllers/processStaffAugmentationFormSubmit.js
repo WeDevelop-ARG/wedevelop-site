@@ -1,3 +1,4 @@
+const { error } = require('../services/logging')
 const {
   addSubscriberToMailchimp,
   addTagsToMailchimpSubscriber,
@@ -18,7 +19,7 @@ module.exports = exports = async function handleRequest (req, res) {
       default: res.status(405).end()
     }
   } catch (err) {
-    console.error(err)
+    error(err)
     res.status(500).end()
   }
 }

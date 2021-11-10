@@ -8,15 +8,20 @@ const hubspotClient = new hubspot.Client({
 })
 
 exports.getContact = async function getContact (contactId, idProperty) {
-  const response = await hubspotClient.crm.contacts.basicApi.getById(
-    contactId,
-    undefined,
-    undefined,
-    true,
-    idProperty
-  )
+  try {
+    const response = await hubspotClient.crm.contacts.basicApi.getById(
+      contactId,
+      undefined,
+      undefined,
+      true,
+      idProperty
+    )
 
-  return response.body
+    return response.body
+  } catch (err) {
+    if (err.response && err.response.statusCode === 404) return undefined
+    throw err
+  }
 }
 
 exports.createContact = async function createContact ({ name, email } = {}) {
@@ -31,26 +36,31 @@ exports.createContact = async function createContact ({ name, email } = {}) {
 }
 
 exports.createContactIfNotExists = async function upsertContact ({ name, email } = {}) {
-  try {
-    const contact = await exports.getContact(email, 'email')
+  // try {
+  //   const contact = await exports.getContact(email, 'email')
 
-    return contact.id
-  } catch (err) {
-    if (err.response && err.response.statusCode === 404) {
+  //   return contact.id
+  // } catch (err) {
+  //   if (err.response && err.response.statusCode === 404) {
       return exports.createContact({ name, email })
-    }
-  }
+  //   }
+  // }
 }
 
 exports.getDeal = async function getDeal (dealId, { considerExpiredAfterSeconds = 3600 } = {}) {
-  const apiResponse = await hubspotClient.crm.deals.basicApi.getById(dealId, undefined, ['contact'])
-  const deal = apiResponse.body
+  try {
+    const apiResponse = await hubspotClient.crm.deals.basicApi.getById(dealId, undefined, ['contact'])
+    const deal = apiResponse.body
 
-  if (considerExpiredAfterSeconds > 0 && dayjs().isAfter(dayjs(deal.createdAt).add(considerExpiredAfterSeconds, 'seconds'))) {
-    return undefined
+    if (considerExpiredAfterSeconds > 0 && dayjs().isAfter(dayjs(deal.createdAt).add(considerExpiredAfterSeconds, 'seconds'))) {
+      return undefined
+    }
+
+    return deal
+  } catch (err) {
+    if (err.response && err.response.statusCode === 404) return undefined
+    throw err
   }
-
-  return deal
 }
 
 exports.createDeal = async function createDeal (contactId, { name } = {}) {

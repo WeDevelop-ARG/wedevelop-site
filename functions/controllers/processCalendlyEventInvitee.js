@@ -1,3 +1,4 @@
+const { error } = require('../services/logging')
 const { isValidCalendlyURL, getCalendlyAPICallResult } = require('../services/calendly')
 const { createContactIfNotExists, createMeeting } = require('../services/hubspot')
 
@@ -11,7 +12,7 @@ module.exports = exports = async function handleRequest (req, res) {
       default: res.status(405).end()
     }
   } catch (err) {
-    console.error(err)
+    error(err)
     res.status(500).end()
   }
 }

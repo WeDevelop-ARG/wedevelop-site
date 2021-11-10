@@ -1,3 +1,4 @@
+const { error } = require('../services/logging')
 const { createDealNote, getDeal } = require('../services/hubspot')
 
 module.exports = exports = async function handleRequest (req, res) {
@@ -9,7 +10,7 @@ module.exports = exports = async function handleRequest (req, res) {
       default: res.status(405).end()
     }
   } catch (err) {
-    console.error(err)
+    error(err)
     res.status(500).end()
   }
 }

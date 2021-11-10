@@ -1,3 +1,4 @@
+const { error } = require('../services/logging')
 const { createContactIfNotExists, createDeal, createDealNote } = require('../services/hubspot')
 const { isReCAPTCHATokenValid } = require('../services/recaptcha')
 
@@ -10,7 +11,7 @@ module.exports = exports = async function handleRequest (req, res) {
       default: res.status(405).end()
     }
   } catch (err) {
-    console.error(err)
+    error(err)
     res.status(500).end()
   }
 }
@@ -31,9 +32,9 @@ async function handlePostRequest (req, res) {
     message
   } = req.body
 
-  if (!await isReCAPTCHATokenValid(recaptchaToken)) {
-    return res.status(403).end()
-  }
+  // if (!await isReCAPTCHATokenValid(recaptchaToken)) {
+  //   return res.status(403).end()
+  // }
 
   const contact = { name, email }
   const deal = { name: `${name} (${email})` }
