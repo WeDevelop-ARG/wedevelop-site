@@ -1,0 +1,137 @@
+@import '/src/styles/media_queries.scss';
+
+.followUpContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  overflow: hidden;
+
+  @include for-desktop-up {
+    padding: 150px 170px 24px;
+  }
+
+  @include for-tablet-down {
+    padding: 109px 24px 18px;
+  }
+}
+
+.stepsContainer {
+  max-width: 640px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.background {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 762px;
+  min-height: calc(100vh + 1px);
+  height: calc(100% + 1px);
+  z-index: -1;
+
+  @media screen and (min-width: 1024px) and (max-width: 1245px) {
+    right: -325px;
+  }  
+
+  @media screen and (min-width: 1246px) and (max-width: 1430px) {
+    right: -225px;
+  }
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.mobileBackground {
+  @include for-desktop-up {
+    display: none;
+  }
+
+  @include for-tablet-down {
+    display: block;
+    width: 100vw;
+    margin-bottom: 25px;
+    margin-left: -24px;
+  }
+}
+
+%decoElements {
+  position: absolute;
+  z-index: -1;
+}
+
+%circles {
+  border-radius: 50%;
+}
+
+.leftDotsPattern {
+  @extend %decoElements;
+  width: 327px;
+  height: 166px;
+  transform: rotate(-90deg);
+  bottom: 13%;
+  left: -150px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %decoElements;
+  @extend %circles;
+  width: 322px;
+  height: 322px;
+  background: rgba($color: #EAEAEA, $alpha: .3);
+  top: -177px;
+  left: 35%;
+
+  @include for-tablet-down {
+    width: 172px;
+    height: 172px;
+    top: 28%;
+    right: -99px;
+    left: auto;
+  }
+}
+
+.emptyCircle {
+  @extend %decoElements;
+  @extend %circles;
+  width: 322px;
+  height: 322px;
+  border: .5px solid rgba($color: #363636, $alpha: .2);
+  top: -162px;
+  left: 36%;
+
+  @include for-tablet-down {
+    width: 172px;
+    height: 172px;
+    top: 27%;
+    right: -85px;
+    left: auto;
+  }
+}
+
+.blurCircle {
+  @extend %decoElements;
+  @extend %circles;
+  width: 15px;
+  height: 15px;
+  background: rgba($color: #8224E3, $alpha: .3);
+  filter: blur(3px);
+  top: 101px;
+  left: 50%;
+
+  @include for-tablet-down {
+    width: 8px;
+    height: 8px;
+    top: 29%;
+    right: 58px;
+    left: auto;
+  }
+}

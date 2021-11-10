@@ -12,7 +12,7 @@ function loadClutch (onPossiblyLoaded) {
     return onPossiblyLoaded()
   }
 
-  var sc = document.createElement('script')
+  const sc = document.createElement('script')
 
   sc.src = CLUTCH_URL
   sc.async = true

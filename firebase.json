@@ -9,12 +9,28 @@
         "**/.*",
         "**/node_modules/**"
       ],
-      "rewrites": [
-        {
-          "source": "/**/*.html",
-          "destination": "/200.html"
-        }
-      ],
+      "rewrites": [{
+        "source": "/**/*.html",
+        "destination": "/200.html"
+      }, {
+        "source": "/fn/processCalendlyEventInvitee",
+        "function": "processCalendlyEventInvitee"
+      }, {
+        "source": "/fn/processStaffAugmentationFormSubmit",
+        "function": "processStaffAugmentationFormSubmit"
+      }, {
+        "source": "/fn/processCareerFormSubmit",
+        "function": "processCareerFormSubmit"
+      }, {
+        "source": "/fn/processInitialLandingContactForm",
+        "function": "processInitialLandingContactForm"
+      }, {
+        "source": "/fn/processFollowUpContactForm",
+        "function": "processFollowUpContactForm"
+      }, {
+        "source": "/fn/getFollowUpContact",
+        "function": "getFollowUpContact"
+      }],
       "redirects": [
         {
           "source": "/storage/:path*",
@@ -52,12 +68,28 @@
         "**/.*",
         "**/node_modules/**"
       ],
-      "rewrites": [
-        {
-          "source": "/**/*.html",
-          "destination": "/200.html"
-        }
-      ],
+      "rewrites": [{
+        "source": "/**/*.html",
+        "destination": "/200.html"
+      }, {
+        "source": "/fn/processCalendlyEventInvitee",
+        "function": "processCalendlyEventInvitee"
+      }, {
+        "source": "/fn/processStaffAugmentationFormSubmit",
+        "function": "processStaffAugmentationFormSubmit"
+      }, {
+        "source": "/fn/processCareerFormSubmit",
+        "function": "processCareerFormSubmit"
+      }, {
+        "source": "/fn/processInitialLandingContactForm",
+        "function": "processInitialLandingContactForm"
+      }, {
+        "source": "/fn/processFollowUpContactForm",
+        "function": "processFollowUpContactForm"
+      }, {
+        "source": "/fn/getFollowUpContact",
+        "function": "getFollowUpContact"
+      }],
       "redirects": [
         {
           "source": "/storage/:path*",
