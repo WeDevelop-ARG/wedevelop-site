@@ -47,10 +47,10 @@ function FormLogic ({ onSubmitFinished, ...props }) {
     let error
     try {
       const path = values.resume && await uploadFile(values.resume)
-      await fetch(CAREER_FORM_PROCESSOR_URL, {
+      await window.fetch(CAREER_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ ...values, resume: path })
