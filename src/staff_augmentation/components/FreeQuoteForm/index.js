@@ -1,6 +1,7 @@
-import { Fragment } from 'react'
+import { Fragment, useCallback } from 'react'
 import classnames from 'classnames'
 import { Field } from 'formik'
+import { useHistory } from 'react-router'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
@@ -12,15 +13,17 @@ import FormLogic from './FormLogic'
 import classes from './styles.module.scss'
 
 function FreeQuoteForm ({
-  onSubmitFinished,
   formHeader,
   fixedFields,
-  customFields,
   formOrigin,
   formButtonText,
   formDisclaimer,
   noAutofocus
 }) {
+  const history = useHistory()
+  const handleSubmitFinished = useCallback(tracingId => {
+    history.push('/follow-up?tracingId=' + tracingId)
+  }, [history])
   const TextAreaWithError = useFieldWithErrorClassName(
     Textarea,
     classes.fieldWithError
@@ -36,10 +39,6 @@ function FreeQuoteForm ({
     recaptchaToken: ''
   }
 
-  customFields?.forEach(({ name, initialValue = '' }) => {
-    initialValues[name] = initialValue
-  })
-
   return (
     <>
       <div className={classes.formHeader}>
@@ -51,8 +50,7 @@ function FreeQuoteForm ({
       <FormLogic
         initialValues={initialValues}
         formOrigin={formOrigin}
-        customFields={customFields}
-        onSubmitFinished={onSubmitFinished}
+        onSubmitFinished={handleSubmitFinished}
         className={classes.form}
       >
         <Field
@@ -70,19 +68,6 @@ function FreeQuoteForm ({
           placeholder={fixedFields.email.placeholder}
           className={classes.inputStyles}
         />
-        {customFields?.map(({ label, name, placeholder }) => (
-          <Fragment key={name}>
-            <label key={name} className={classes.fieldLabel}>{label}</label>
-            <Field
-              key={name}
-              as={InputWithError}
-              type='text'
-              name={name}
-              placeholder={placeholder}
-              className={classes.inputStyles}
-            />
-          </Fragment>
-        ))}
         <label className={classes.fieldLabel}>{fixedFields.message.label}</label>
         <Field
           as={TextAreaWithError}

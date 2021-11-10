@@ -1,0 +1,89 @@
+@import '/src/styles/media_queries.scss';
+
+$grayColor: #363636;
+
+.formHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.titleText {
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  font-size: 14px;
+  color: rgba($color: $grayColor, $alpha: 0.5);
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 20px 0px 38px;
+  border: none;
+}
+
+.form {
+  @include for-desktop-up {
+    width: 100%;
+  }
+}
+
+.fieldLabel {
+  font-weight: 300;
+  font-size: 14px;
+  color:rgba($color: #000000, $alpha: 0.65);
+}
+
+.inputStyles {
+  border: rgba($color: #363636, $alpha: 0.12) 1px solid;
+  border-radius: 4px;
+  padding: 10px 16px;
+  width: 100%;
+  height: 37px;
+  font-size: inherit;
+  transition: all ease-in-out 150ms;
+  outline: none;
+  margin: 12px 0 32px;
+
+  &:focus {
+    border-color: rgba($color: #000000, $alpha: 1.0);
+    border-width: 1px;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    color: rgba($color: #707070, $alpha: 1);
+  }
+}
+
+.fieldWithError {
+  border-color: #F00;
+}
+
+.textarea {
+  resize: none;
+  height: 93px;
+  font-family: inherit;
+  margin: 12px 0 auto;
+}
+
+.buttonContainer {
+  display: flex;
+  margin: auto;
+  width: 100%;
+}
+
+.buttonStyles {
+  margin: 24px 0px auto auto;
+  width: 120px;
+}

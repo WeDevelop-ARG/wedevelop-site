@@ -14,6 +14,7 @@ const Services = prerenderedLazy(() => import('services'))
 const PrivacyPolicy = prerenderedLazy(() => import('privacy_policy'))
 const AboutUs = prerenderedLazy(() => import('about_us'))
 const Career = prerenderedLazy(() => import('career'))
+const FollowUp = prerenderedLazy(() => import('follow_up'))
 
 function Routes () {
   return (
@@ -39,6 +40,9 @@ function Routes () {
       <Route path='/portfolio'>
         <PortfolioRoutes />
       </Route>
+      <LazyRoute path='/follow-up'>
+        <FollowUp />
+      </LazyRoute>
       <StaffAugmentationRoutes>
         <LazyRoute path='/'>
           <NotFound />

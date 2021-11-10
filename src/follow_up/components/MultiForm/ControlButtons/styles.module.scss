@@ -1,0 +1,18 @@
+@import '/src/styles/media_queries.scss';
+
+.controlButtonsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 65px 0px 45px;
+}
+
+.prevButton {
+  font-size: 16px;
+  padding: 10px 0px;
+}
+
+.nextButton {
+  font-size: 16px;
+  padding: 10px 20px;
+}
