@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import TextImageGeneric from '../components/TextImageGeneric'
 import GetInTouch from 'main_app/components/GetInTouch'
 import PictureWall from 'main_app/components/PictureWall'
+import ScrollTopButton from '../components/ScrollTopButton'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 
@@ -61,6 +62,7 @@ function StoryDetails () {
         <GetInTouch contactPagePath={contactPagePath} />
         <SimilarStories storyName={params.name} />
         <PictureWall contactPagePath={contactPagePath} />
+        <ScrollTopButton />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />

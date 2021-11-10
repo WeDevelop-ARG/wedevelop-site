@@ -1,0 +1,29 @@
+@import '/src/styles/media_queries.scss';
+
+.scrollTopButton {
+  width: 55px;
+  height: 55px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #377DFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: fixed;
+  right: 40px;
+  bottom: 30px;
+  border: none;
+  outline: none;
+
+  @include for-tablet-up {
+    width: 76px;
+    height: 76px;
+    padding: 27px;
+    right: 50px;
+    bottom: 40px;
+  }
+
+  @include for-desktop-up {
+    right: 100px;
+    bottom: 60px;
+  }
+}
