@@ -1,0 +1,34 @@
+@import '/src/styles/media_queries.scss';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & > * {
+    margin: auto 0;
+  }
+
+  .branding {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0px;
+    font-size: 10px;
+
+    @include for-desktop-up {
+      margin: auto 0;
+    }
+
+    @include for-tablet-down {
+      margin: 0 auto;
+    }
+  }
+
+  .privacyPolicy {
+    color: #363636;
+  }
+
+  .pleca {
+    margin: 0px 10px;
+  }
+}
