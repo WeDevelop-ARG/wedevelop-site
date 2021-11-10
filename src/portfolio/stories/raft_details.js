@@ -2,6 +2,7 @@ import RaftHeader from 'assets/portfolio/raft/header_background.png'
 import RaftLogo from 'assets/portfolio/raft/raft_logo.png'
 import RaftReservations from 'assets/portfolio/raft/raft_reservations.png'
 import RaftOverview from 'assets/portfolio/raft/raft_overview.png'
+import TestimonialsImage from 'assets/portfolio/raft/testimonials_default_image.png'
 import RaftResumeBackground from 'assets/portfolio/raft/resume_background.png'
 
 const raftDetails = {
@@ -49,13 +50,13 @@ const raftDetails = {
       </>
     )
   },
-  testimonial: {
-    profileImageURL: '',
+  testimonials: [{
+    profileImageURL: TestimonialsImage,
     name: 'Kerry Hebert',
     quote: '“WeDevelop was resourceful, unafraid of problems and bockers, creative, professional, and fast.”',
     position: 'QA Manager',
     company: 'HSBC'
-  },
+  }],
   results: {
     title: 'Results & Feedback',
     content: (

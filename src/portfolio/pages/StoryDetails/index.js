@@ -1,19 +1,25 @@
 import { useCallback } from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
 
-import NavBar from 'main_app/components/NavBar/NavBar'
+
 import Article from 'main_app/components/Article'
-import Header from '../components/Header'
-import TextImageGeneric from '../components/TextImageGeneric'
-import GetInTouch from 'main_app/components/GetInTouch'
-import PictureWall from 'main_app/components/PictureWall'
-import ScrollTopButton from '../components/ScrollTopButton'
+import ClutchWidget from 'main_app/components/ClutchWidget'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
-
-import useStoryByName from '../hooks/useStoryByName'
-import usePageMetadata from 'utils/marketing/use_page_metadata'
+import GetInTouch from 'main_app/components/GetInTouch'
+import Header from '../../components/Header'
+import NavBar from 'main_app/components/NavBar/NavBar'
+import PictureWall from 'main_app/components/PictureWall'
+import ScrollTopButton from '../../components/ScrollTopButton'
 import SimilarStories from 'portfolio/components/SimilarStories'
+import Testimonials from 'main_app/components/Testimonials'
+import TestimonialsDecoration from '../../components/TestimonialsDecoration'
+import TextImageGeneric from '../../components/TextImageGeneric'
+
+import useStoryByName from '../../hooks/useStoryByName'
+import usePageMetadata from 'utils/marketing/use_page_metadata'
+
+import classes from './styles.module.scss'
 
 function StoryDetails () {
   const { params } = useRouteMatch('/portfolio/:name')
@@ -54,6 +60,17 @@ function StoryDetails () {
           content={storyDetails.challenge.content}
           hideDecoration
         />
+        <Testimonials
+          reviews={storyDetails.testimonials}
+          customDecorations={<TestimonialsDecoration />}
+          hideHeader
+        />
+        <section className={classes.clutchContainer}>
+          <ClutchWidget
+            variant='dark'
+            className={classes.clutchWidget}
+          />
+        </section>
         <TextImageGeneric
           title={storyDetails.results.title}
           content={storyDetails.results.content}
