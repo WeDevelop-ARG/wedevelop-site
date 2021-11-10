@@ -58,7 +58,7 @@ function FormLogic ({ onSubmitFinished, ...props }) {
         body: JSON.stringify({ ...values, resume: path })
       })
       logAnalyticsEvent({
-        event: 'join-us-form-sumit',
+        event: 'join-us-form-submit',
         contactType: 'careers-form',
         source: 'careers'
       })
