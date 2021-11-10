@@ -1,3 +1,11 @@
+import raftDetails from './raft_details'
+
+export const stories = [
+  raftDetails
+]
+
+/* TODO: usar la siguiente información para las historias que faltan armar
+
 import RaftBackground from 'assets/portfolio/raft/resume_background.png'
 import TrainWithBackground from 'assets/portfolio/train_with/resume_background.png'
 import CopaBackground from 'assets/portfolio/copa/resume_background.png'
@@ -80,9 +88,4 @@ const projectCards = [{
   detailsPagePath: ''
 }
 ]
-
-function useProjectCards () {
-  return projectCards
-}
-
-export default useProjectCards
+*/

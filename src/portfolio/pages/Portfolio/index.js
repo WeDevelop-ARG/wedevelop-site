@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
 import { useRouteMatch, useHistory } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link'
 
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
@@ -8,15 +7,14 @@ import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import Image from 'main_app/components/Image'
 import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
-import useProjectCards from './components/PortfolioProjectCard/hooks/useProjectCards'
-import Button from 'main_app/components/Button'
+import useStories from '../../hooks/useStories'
 
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
 function Portfolio () {
-  const projectCards = useProjectCards()
+  const { stories } = useStories()
   const contactPagePath = '/portfolio/contact'
   const match = useRouteMatch(contactPagePath)
   const history = useHistory()
@@ -39,23 +37,20 @@ function Portfolio () {
             <hr className={classes.horizontalBar} />
           </div>
           <div className={classes.projectCards}>
-            {projectCards.map(({ id, ...props }) => (
+            {stories.map(story => (
               <PortfolioProjectCard
-                key={id}
-                {...props}
+                key={story.urlName}
+                coverImageURL={story.resume.headerImageURL}
+                description={story.header.description}
+                detailsPagePath={`/portfolio/${story.urlName}`}
+                externalWebsiteURL={story.header.websiteURL}
+                logoBackground={story.header.logoBackground}
+                logoURL={story.header.logoURL}
+                projectName={story.header.title}
+                shortDescription={story.header.subtitle}
+                tags={story.header.tags}
               />
             ))}
-          </div>
-          <div className={classes.talk}>
-            <Button
-              as={HashLink}
-              to='/'
-              smooth
-              isAnchor
-              variant='secondary'
-            >
-              View All
-            </Button>
           </div>
           <Image src={DotsPattern} alt='' className={classes.topRightPattern} />
           <div className={classes.filledCircle} />
