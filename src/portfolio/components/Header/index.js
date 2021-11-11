@@ -2,6 +2,7 @@ import Image from 'main_app/components/Image'
 
 import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
 import DotsPattern from 'assets/portfolio/dots_pattern.svg'
+import ProjectLogo from '../ProjectLogo'
 import WorldIcon from 'assets/portfolio/world.svg'
 
 import classes from './styles.module.scss'
@@ -28,14 +29,7 @@ function Header ({
           className={classes.headerBackground}
         />
         <div className={classes.logoContainer}>
-          <figure className={classes.logoBackground}>
-            <Image
-              src={logoURL}
-              alt=''
-              objectFit='contain'
-              className={classes.logoImg}
-            />
-          </figure>
+          <ProjectLogo logoURL={logoURL} />
         </div>
       </div>
       <div className={classes.content}>

@@ -37,31 +37,6 @@ $grayColor: #363636;
   width: 100%;
 }
 
-.logoBackground {
-  display: flex;
-  width: 100px;
-  height: 100px;
-  margin: 0;
-  background: #FFFFFF;
-  border-radius: 50%;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  position: absolute;
-  top: -75px;
-  left: calc(50% - 50px);
-
-  @include for-tablet-up {
-    width: 164px;
-    height: 164px;
-    top: -120px;
-    left: calc(50% - 82px);
-  }
-}
-
-.logoImg {
-  margin: auto;
-}
-
 .content {
   width: 100%;
   padding: 0px 220px;

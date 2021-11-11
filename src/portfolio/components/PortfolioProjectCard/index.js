@@ -3,6 +3,7 @@ import Image from 'main_app/components/Image'
 
 import { ReactComponent as World } from 'assets/portfolio/world.svg'
 import Arrow from 'assets/portfolio/arrow.svg'
+import ProjectLogo from '../ProjectLogo'
 
 import classes from './styles.module.scss'
 
@@ -36,10 +37,9 @@ function PortfolioProjectCard ({
         placeholderColor='#FFF'
         className={classes.headerImage}
       />
-      <Image
-        src={logoURL}
-        alt={projectName}
-        objectFit='contain'
+      <ProjectLogo
+        logoURL={logoURL}
+        projectName={projectName}
         className={classes.logo}
         {...logoStyleProp}
       />
