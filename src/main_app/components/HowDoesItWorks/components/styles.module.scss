@@ -1,5 +1,11 @@
 @import '/src/styles/media_queries.scss';
 
+.icon {
+  @include for-desktop-up {
+    display: none;
+  }
+}
+
 .title {
   font-size: 24px;
   margin: 20px auto 30px;

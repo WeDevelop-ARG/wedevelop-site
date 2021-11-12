@@ -12,7 +12,7 @@ $grayColor: #363636;
   position: relative;
 
   @include for-tablet-up {
-    padding-top: calc(250px + var(--rootContentMinPadding));
+    padding-top: calc(275px + var(--rootContentMinPadding));
     margin-top: -100px;
   }
 
@@ -68,19 +68,23 @@ $grayColor: #363636;
 }
 
 .remarkContainer {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 310px;
   width: 100%;
   position: absolute;
-  right: -25%;
-  top: 43%;
+  left: 40%;
+  top: 42%;
   transform: rotate(90deg);
+
+  @media screen and (min-width: 450px) {
+    left: 50%;
+  }
 
   @include for-tablet-up {
     display: flex;
-    right: -5%;
+    left: 60%;
   }
   
   @include for-desktop-up {
@@ -98,17 +102,17 @@ $grayColor: #363636;
   line-height: 14px;
   text-align: center;
   color: rgba($color: $grayColor, $alpha: 0.5);
+
+  @include for-phone-only {
+    margin-bottom: 5px;
+  }
 }
 
 .curvedArrow {
   width: 400px;
 
-  @media screen and (min-width: 500px) {
-    width: 450px;
-  }
-
   @include for-desktop-up {
-    width: inherit;
+    display: none;
   }
 }
 
@@ -118,28 +122,42 @@ $grayColor: #363636;
   justify-content: space-around;
   align-items: center;
   gap: 70px;
+  
+  @include for-phone-only {
+    margin-left: -25px;
+  }
 
   @include for-desktop-up {
     flex-direction: row;
     align-items: baseline;
-    gap: 0;
+    gap: 25px;
+    margin: 0 -3%;
   }
 }
 
 .step {
   max-width: 300px;
   width: 100%;
+
+  @include for-phone-only {
+    width: 250px;
+  }
 }
 
 .arrows {
   transform: rotate(90deg);
   
   @include for-desktop-up {
-    margin: 90px auto auto;
-    transform: rotate(0deg);
+    display: none;
+  }
+}
 
-    @media screen and (max-width: 1534px) {
-      display: none;
-    }
+.desktopSteps {
+  display: none;
+
+  @include for-desktop-up {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
