@@ -6,7 +6,7 @@ const { addDataToFirestore } = require('../services/firestore')
 const { isReCAPTCHATokenValid } = require('../services/recaptcha')
 const { sendEmail } = require('../services/sendEmail')
 
-const { MAILCHIMP_CAREER_LIST_ID, CONTACT_FORM_DESTINATION_EMAIL } = require('../constants')
+const { MAILCHIMP_CAREER_LIST_ID, CAREER_FORM_DESTINATION_EMAILS } = require('../constants')
 const { getDownloadURLForPath } = require('../services/storage')
 
 module.exports = exports = async function handleRequest (req, res) {
@@ -70,12 +70,14 @@ async function handlePostRequest (req, res) {
     - Email: ${email} ${applicantDetails}
   `
 
+  const to = Array.isArray(CAREER_FORM_DESTINATION_EMAILS) ? CAREER_FORM_DESTINATION_EMAILS.map(email => ({ email })) : [CAREER_FORM_DESTINATION_EMAILS]
+
   const data = {
     personalizations: [{
-      to: [{ email: CONTACT_FORM_DESTINATION_EMAIL }],
+      to,
       subject: 'New application from WeDevelop site'
     }],
-    from: { email: CONTACT_FORM_DESTINATION_EMAIL },
+    from: to[0],
     content: [{
       type: 'text/plain',
       value: emailMessage
