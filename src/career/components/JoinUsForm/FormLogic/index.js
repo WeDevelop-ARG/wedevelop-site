@@ -49,7 +49,7 @@ function FormLogic ({ onSubmitFinished, ...props }) {
     let error
     try {
       const path = values.resume && await uploadFile(values.resume)
-      await window.fetch(CAREER_FORM_PROCESSOR_URL, {
+      const response = await window.fetch(CAREER_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -57,6 +57,7 @@ function FormLogic ({ onSubmitFinished, ...props }) {
         },
         body: JSON.stringify({ ...values, resume: path })
       })
+      if (!response?.ok) throw new Error('Response not successful')
       logAnalyticsEvent({
         event: 'join-us-form-submit',
         contactType: 'careers-form',
