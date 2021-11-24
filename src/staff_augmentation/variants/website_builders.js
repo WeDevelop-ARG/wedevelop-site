@@ -24,7 +24,7 @@ const websiteBuilders = {
     ...defaultContent.freeQuoteForm,
     formHeader: {
       subtitle: 'Get in touch',
-      title: 'Get Wesite Builders profiles',
+      title: 'Get Website Builders profiles',
       description: 'Fill out the form and receive a list of vetted Website Builders.'
     },
     formOrigin: 'website-builders',
