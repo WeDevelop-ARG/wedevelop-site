@@ -140,6 +140,14 @@ export default function Image ({
     if (isOptimizationDenied(fullURL)) return setOptimizedSrc(src)
 
     const img = new window.Image()
+    img.onerror = (err) => {
+      console.warn("Failed to load image", err)
+      setOptimizedSrc(previousSrc => {
+        setBackgroundSrc(previousSrc)
+
+        return src
+      })
+    }
     img.onload = () => {
       if (img.src !== null) {
         setOptimizedSrc(previousSrc => {
