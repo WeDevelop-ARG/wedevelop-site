@@ -5,7 +5,7 @@ import webProgrammers from './web_programmers'
 import hireDevelopers from './hire_developers'
 import hireJavascriptDevelopers from './hire_javascript_developers'
 import hireNetDevelopers from './hire_net_developers'
-import websiteBuilders from './web_developers copy'
+import websiteBuilders from './website_builders'
 
 const variants = [
   staffAugmentation,
