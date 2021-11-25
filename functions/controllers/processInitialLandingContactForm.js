@@ -1,5 +1,4 @@
 const { createContactIfNotExists, createDeal, createDealNote } = require('../services/hubspot')
-const { isReCAPTCHATokenValid } = require('../services/recaptcha')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
@@ -26,14 +25,9 @@ async function handlePostRequest (req, res) {
   const {
     name,
     email,
-    recaptchaToken,
     formOrigin,
     message
   } = req.body
-
-  if (!await isReCAPTCHATokenValid(recaptchaToken)) {
-    return res.status(403).end()
-  }
 
   const contact = { name, email }
   const deal = { name: `${name} (${email})` }
