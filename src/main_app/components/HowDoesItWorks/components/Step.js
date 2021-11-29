@@ -1,13 +1,16 @@
 import classNames from 'classnames'
 
-import Image from 'main_app/components/Image'
+import useMediaQuery from 'utils/use_media_query'
+
+import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
 
 function Step ({ className, icon, title, description }) {
+  const isDesktopUp = useMediaQuery(forDesktopUp)
   return (
     <div className={classNames(classes.column, className)}>
-      <Image src={icon} alt='' className={classes.icon} />
+      {!isDesktopUp && icon}
       <h3 className={classes.title}>{title}</h3>
       <p className={classes.description}>{description}</p>
     </div>
