@@ -1,7 +1,6 @@
 import { useCallback } from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
 
-
 import Article from 'main_app/components/Article'
 import ClutchWidget from 'main_app/components/ClutchWidget'
 import ContactModal from 'main_app/components/ContactModal'
