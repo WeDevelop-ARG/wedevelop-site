@@ -8,13 +8,12 @@ import Footer from './components/Footer'
 import FreeQuoteModal from './components/FreeQuoteModal'
 import Header from './components/Header'
 import HireTopTalent from './components/HireTopTalent'
+import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import NavBar from './components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import ReviewCards from './components/ReviewCards'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
-
-import SimpleSteps from 'services/components/simpleSteps'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
@@ -66,7 +65,7 @@ function LandingPage () {
             buttonText={landing.availableDevs.buttonText}
             handleModal={handleModalOpen}
           />}
-        <SimpleSteps />
+        <HowDoesItWorks />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}

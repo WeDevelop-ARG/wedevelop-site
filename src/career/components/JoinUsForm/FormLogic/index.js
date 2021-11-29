@@ -4,6 +4,8 @@ import isNil from 'lodash/isNil'
 import isFunction from 'lodash/isFunction'
 import * as Yup from 'yup'
 
+import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
+
 import uploadFile from 'service_providers/firebase/uploadFile'
 
 import { CAREER_FORM_PROCESSOR_URL } from 'main_app/constants'
@@ -47,13 +49,19 @@ function FormLogic ({ onSubmitFinished, ...props }) {
     let error
     try {
       const path = values.resume && await uploadFile(values.resume)
-      await window.fetch(CAREER_FORM_PROCESSOR_URL, {
+      const response = await window.fetch(CAREER_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ ...values, resume: path })
+      })
+      if (!response?.ok) throw new Error('Response not successful')
+      logAnalyticsEvent({
+        event: 'join-us-form-submit',
+        contactType: 'careers-form',
+        source: 'careers'
       })
       actions.resetForm()
     } catch (err) {

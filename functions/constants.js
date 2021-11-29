@@ -11,6 +11,7 @@ exports.MAILCHIMP_CAREER_LIST_ID = config.mailchimp.career_list_id
 
 exports.SENDGRID_API_KEY = config.sendgrid.api_key
 exports.CONTACT_FORM_DESTINATION_EMAIL = config.contact_form.destination_email
+exports.CAREER_FORM_DESTINATION_EMAILS = config.career_form.destination_emails
 
 exports.RECAPTCHA_SECRET_KEY = config.recaptcha.secret_key
 
