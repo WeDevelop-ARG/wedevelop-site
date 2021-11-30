@@ -13,7 +13,7 @@ const steps = [
   {
     id: 2,
     icon: <SelectionIcon />,
-    title: 'Selection & Screening',
+    title: 'Screening & Selection',
     description: 'We’ll get back to you within 1-2 hours to refine the Job description and present you some profiles from our Talent Pool.'
   },
   {
