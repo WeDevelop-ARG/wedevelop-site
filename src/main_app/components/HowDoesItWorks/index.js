@@ -5,9 +5,9 @@ import Step from './components/Step'
 
 import { useStep } from './components/hooks/useStep'
 
+import DesktopSteps from 'assets/how_does_it_works/steps.svg'
 import { ReactComponent as Arrow } from 'assets/how_does_it_works/arrows/horizontal_arrow.svg'
 import { ReactComponent as CurvedArrow } from 'assets/how_does_it_works/arrows/curved_arrow.svg'
-import DesktopSteps from 'assets/how_does_it_works/steps.svg'
 
 import classes from './styles.module.scss'
 
