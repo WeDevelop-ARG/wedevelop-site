@@ -40,9 +40,9 @@ function FullSizeCTA ({
           {ctaText}
         </Button>
       </div>
-      <Image src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.leftPattern} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.rightPattern} aria-hidden='true' />
+      <Image src={DotsPattern} alt='' className={classes.topRightPattern} />
+      <Image src={DotsPattern} alt='' className={classes.leftPattern} />
+      <Image src={DotsPattern} alt='' className={classes.rightPattern} />
       <div className={classes.shapes}>
         <div className={classes.emptyCircle} />
         <div className={classes.filledBigCircle} />
