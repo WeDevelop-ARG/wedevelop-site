@@ -9,7 +9,6 @@ import GetInTouch from 'main_app/components/GetInTouch'
 import Header from '../../components/Header'
 import NavBar from 'main_app/components/NavBar/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
-import ScrollTopButton from '../../components/ScrollTopButton'
 import SimilarStories from 'portfolio/components/SimilarStories'
 import Testimonials from 'main_app/components/Testimonials'
 import TestimonialsDecoration from '../../components/TestimonialsDecoration'
@@ -79,7 +78,6 @@ function StoryDetails () {
         <GetInTouch contactPagePath={contactPagePath} />
         <SimilarStories storyName={params.name} />
         <PictureWall contactPagePath={contactPagePath} />
-        <ScrollTopButton />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
