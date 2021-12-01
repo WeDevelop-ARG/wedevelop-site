@@ -5,6 +5,7 @@ import Article from 'main_app/components/Article'
 import AvailableDevs from './components/AvailableDevs'
 import BackgroundContainer from './components/BackgroundContainer'
 import Footer from './components/Footer'
+import FullSizeCTA from './components/FullSizeCTA'
 import FreeQuoteModal from './components/FreeQuoteModal'
 import Header from './components/Header'
 import HireTopTalent from './components/HireTopTalent'
@@ -73,6 +74,13 @@ function LandingPage () {
           reviews={landing.reviews.reviews}
           buttonText={landing.reviews.buttonText}
           handleModal={handleModalOpen}
+        />
+        <FullSizeCTA
+          title={landing.fullSizeCTA.title}
+          subTitle={landing.fullSizeCTA.subTitle}
+          ctaText={landing.fullSizeCTA.ctaText}
+          ctaToPath={landing.fullSizeCTA.ctaToPath}
+          description={landing.fullSizeCTA.description}
         />
       </Article>
       <PictureWall />
