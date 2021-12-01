@@ -19,7 +19,7 @@ function Header ({
       <section id='headerSection' className={classes.headerContainer}>
         <div className={classes.wrapper}>
           <div className={classes.presentationContainer}>
-            <div className={classes.logoContainer}><Logo variant='white' /></div>
+            <div className={classes.logoContainer}><Logo variant='white' className={classes.landingLogo} /></div>
             <div className={classes.tagNameContainer}><span className={classes.tagName} style={{ backgroundColor }}>{landingName}</span></div>
             <h1 className={classes.titleText}>{title}</h1>
             <div className={classes.description}>{description}</div>
