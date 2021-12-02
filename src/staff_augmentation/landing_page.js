@@ -5,6 +5,7 @@ import Article from 'main_app/components/Article'
 import AvailableDevs from './components/AvailableDevs'
 import BackgroundContainer from './components/BackgroundContainer'
 import Footer from './components/Footer'
+import FullSizeCTA from './components/FullSizeCTA'
 import FreeQuoteModal from './components/FreeQuoteModal'
 import Header from './components/Header'
 import HireTopTalent from './components/HireTopTalent'
@@ -47,12 +48,12 @@ function LandingPage () {
           sideImageURL={landing.header.sideImageURL}
           backgroundColor={landing.header.backgroundColor}
         />
-        <ReviewCards
-          subtitle={landing.reviews.subtitle}
-          title={landing.reviews.title}
-          description={landing.reviews.description}
-          reviews={landing.reviews.reviews}
-          buttonText={landing.reviews.buttonText}
+        <HireTopTalent
+          subheadingText={landing.HireTopTalent.subtitle}
+          titleText={landing.HireTopTalent.title}
+          descriptionText={landing.HireTopTalent.description}
+          contentText={landing.HireTopTalent.content}
+          buttonText={landing.HireTopTalent.buttonText}
           handleModal={handleModalOpen}
         />
         <BackgroundContainer backgroundURL={landing.backgrounds.firstBackground} />
@@ -66,13 +67,20 @@ function LandingPage () {
             handleModal={handleModalOpen}
           />}
         <HowDoesItWorks />
-        <HireTopTalent
-          subheadingText={landing.HireTopTalent.subtitle}
-          titleText={landing.HireTopTalent.title}
-          descriptionText={landing.HireTopTalent.description}
-          contentText={landing.HireTopTalent.content}
-          buttonText={landing.HireTopTalent.buttonText}
+        <ReviewCards
+          subtitle={landing.reviews.subtitle}
+          title={landing.reviews.title}
+          description={landing.reviews.description}
+          reviews={landing.reviews.reviews}
+          buttonText={landing.reviews.buttonText}
           handleModal={handleModalOpen}
+        />
+        <FullSizeCTA
+          title={landing.fullSizeCTA.title}
+          subTitle={landing.fullSizeCTA.subTitle}
+          ctaText={landing.fullSizeCTA.ctaText}
+          ctaToPath={landing.fullSizeCTA.ctaToPath}
+          description={landing.fullSizeCTA.description}
         />
       </Article>
       <PictureWall />

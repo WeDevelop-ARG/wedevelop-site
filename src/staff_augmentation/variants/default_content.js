@@ -105,6 +105,13 @@ const defaultContent = {
     ),
     buttonText: 'Get In Touch'
   },
+  fullSizeCTA: {
+    title: 'Ready to grow your IT Staff?',
+    subTitle: 'GET YOUR QUOTE NOW',
+    ctaText: 'Get a Free Quote',
+    ctaToPath: '#top',
+    description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
+  },
   backgrounds: {
     firstBackground: WeDevLaptops,
     secondBackground: BookLaptop
