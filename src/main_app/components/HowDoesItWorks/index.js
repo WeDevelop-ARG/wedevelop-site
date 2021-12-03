@@ -17,7 +17,7 @@ function HowDoesItWorks ({ className }) {
     <section className={classNames(classes.container, className)}>
       <div className={classes.sectionHeader}>
         <p className={classes.subheading}>Screening Process</p>
-        <h2 className={classes.title}>How it works?</h2>
+        <h2 className={classes.title}>How it works</h2>
         <hr className={classes.horizontalBar} />
       </div>
       <div className={classes.stepsContainer}>
