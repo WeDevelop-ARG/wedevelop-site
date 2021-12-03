@@ -13,14 +13,14 @@
   text-align: center;
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: -400px;
+  margin-top: -300px;
 
   @include for-tablet-up {
-    margin-top: -300px;
+    margin-top: -200px;
   }
 
   @include for-desktop-up {
-    margin-top: -200px;
+    margin-top:0px;
   }
 }
 
@@ -40,17 +40,26 @@
 
   @include for-desktop-up {
     height: 800px;
-    padding-bottom: 186px;
+    padding-bottom: 130px;
   }
 
-  @include for-big-desktop-up {
-    height: 830px;
-    padding-bottom: 50px;
+  @media screen and (min-width: 1500px) and (max-width: 1649px) {
+    padding-bottom: 100px;
+  }
+
+  @media screen and (min-width: 1650px) and (max-width: 1799px) {
+    padding-bottom: 70px;
   }
 
   @media screen and (min-width: 1024px) and (max-width: 1230px) {
     padding-bottom: 98px;
   }
+
+  @include for-big-desktop-up {
+    height: 830px;
+    padding-bottom: 25px;
+  }
+
 }
 
 .subheadingText {
@@ -101,13 +110,13 @@
 
 .topRightPattern {
   @extend %dotsPattern;
-  margin-top: -300px;
+  bottom: 10%;
   left: 0;
 }
 
 %circle {
   border-radius: 50%;
-  position: relative;
+  position: absolute;
 
   @include for-tablet-down {
     display: none;
@@ -116,11 +125,11 @@
 
 .filledBigCircle {
   @extend %circle;
-  width: 200px;
-  height: 200px;
+  width: 243px;
+  height: 243px;
   background: rgba($color: #EAEAEA, $alpha: 0.3);
-  margin-top: -224px;
-  margin-left: 963px;
+  top: 19%;
+  right: 76px;
 
   @media screen and (min-width: 1024px) and (max-width: 1230px) {
     display: none;
@@ -129,12 +138,12 @@
 
 .emptyCircle {
   @extend %circle;
-  width: 229px;
-  height: 230px;
+  width: 284px;
+  height: 284px;
   border: .5px solid rgba($color: #363636, $alpha: 0.2);
   opacity: 0.5;
-  margin-top: -681px;
-  margin-left: 939px;
+  top: 18%;
+  right: 70px;
 
   @media screen and (min-width: 1024px) and (max-width: 1230px) {
     display: none;
@@ -143,12 +152,12 @@
 
 .smallBlurRightCircle {
   @extend %circle;
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
   background-color: rgba($color: #8224E3, $alpha: 0.5);
   filter: blur(3px);
-  margin-top: 15px;
-  margin-left: 974px;
+  top: 46%;
+  right: 313px;
   opacity: 0.7;
 
   @media screen and (min-width: 1024px) and (max-width: 1230px) {

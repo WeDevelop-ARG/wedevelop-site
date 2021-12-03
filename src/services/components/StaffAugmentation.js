@@ -6,8 +6,8 @@ import PictureWall from 'main_app/components/PictureWall'
 
 import Hero from './hero'
 import Details from './details'
+import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import StaffDetails from './details/components/StaffDetails'
-import SimpleSteps from './simpleSteps'
 import Benefits from './benefits'
 import Schedule from './schedule'
 
@@ -52,7 +52,7 @@ function StaffAugmentation () {
           <StaffDetails />
         </Details>
       </section>
-      <SimpleSteps />
+      <HowDoesItWorks />
       <Benefits className={classes.sectionContainer} service='staff-augmentation' />
       <Schedule
         className={classes.sectionContainer}

@@ -44,8 +44,10 @@
     "build-production": "ncp .production_env .env.production && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy-functions": "firebase deploy --only functions --project wedevelop-site",
-    "deploy-functions-testing": "firebase deploy --only functions --project wedevelop-site-testing"
+    "deploy-functions-production": "firebase deploy --only functions --project wedevelop-site",
+    "deploy-functions-testing": "firebase deploy --only functions --project wedevelop-site-testing",
+    "deploy-hosting-production": "firebase deploy --project wedevelop-site --only hosting:production",
+    "deploy-hosting-testing": "firebase deploy --project wedevelop-site-testing --only hosting:testing"
   },
   "reactSnap": {
     "skipThirdPartyRequests": true,
