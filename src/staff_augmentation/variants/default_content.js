@@ -110,7 +110,7 @@ const defaultContent = {
     subTitle: 'GET YOUR QUOTE NOW',
     ctaText: 'Get a Free Quote',
     ctaToPath: '#top',
-    description: 'Vitae habitant blandit adipiscing porta, Nulla tortor, eu consectetur nunc.'
+    description: 'At WeDevelop, we help you expand your IT staff so you can complete projects faster and save money by the hour.'
   },
   backgrounds: {
     firstBackground: WeDevLaptops,

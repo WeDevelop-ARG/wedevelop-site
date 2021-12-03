@@ -17,7 +17,7 @@ function HowDoesItWorks ({ className }) {
     <section className={classNames(classes.container, className)}>
       <div className={classes.sectionHeader}>
         <p className={classes.subheading}>Screening Process</p>
-        <h2 className={classes.title}>How does it work?</h2>
+        <h2 className={classes.title}>How it works?</h2>
         <hr className={classes.horizontalBar} />
       </div>
       <div className={classes.stepsContainer}>
@@ -27,7 +27,7 @@ function HowDoesItWorks ({ className }) {
         </div>
         <Image src={DesktopSteps} alt='' className={classes.desktopSteps} />
         <div className={classes.row}>
-          {steps && steps.map(({ id, icon, title, description, arrow }, index) => {
+          {steps && steps.map(({ id, icon, title, description }, index) => {
             const isLast = (steps.length - 1) === index
             return (
               <>
