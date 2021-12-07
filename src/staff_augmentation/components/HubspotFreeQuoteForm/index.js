@@ -44,13 +44,15 @@ function isHubSpotScriptPresent () {
 
 let counter = 0
 
-function HubspotFreeQuoteForm ({ region, portalId, formId, onSubmit }) {
+function HubspotFreeQuoteForm ({ region, portalId, formId, onSubmit, onLoadingStateChange }) {
   const containerRef = useRef()
   useEffect(() => {
     const container = containerRef.current
 
     loadHubSpot(() => {
       if (!isFunction(window.hbspt?.forms?.create)) return undefined
+
+      onLoadingStateChange?.(true)
 
       const id = `hr-landing-hubspot-free-quote-form-${counter++}`
 
@@ -63,14 +65,19 @@ function HubspotFreeQuoteForm ({ region, portalId, formId, onSubmit }) {
         formId,
         target: `#${id}`,
         inlineMessage: 'Thank you for getting in touch! We\'ll contact you soon',
+        onFormReady: () => {
+          onLoadingStateChange?.(false)
+        },
         onFormSubmit: $form => {
           values = {
             name: $form.find('input[name="firstname"]').val(),
             email: $form.find('input[name="email"]').val(),
             message: $form.find('textarea[name="message"]').val()
           }
+          onLoadingStateChange?.(true)
         },
         onFormSubmitted: () => {
+          onLoadingStateChange?.(false)
           onSubmit?.(values)
         }
       })
@@ -84,7 +91,7 @@ function HubspotFreeQuoteForm ({ region, portalId, formId, onSubmit }) {
         )
       }
     }
-  }, [onSubmit, region, portalId, formId])
+  }, [onSubmit, region, portalId, formId, onLoadingStateChange])
 
   return (
     <div ref={containerRef} />
