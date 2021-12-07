@@ -18,6 +18,7 @@ function FreeQuoteForm ({
   const handleSubmitFinished = useCallback(async values => {
     let tracingId
     try {
+      setIsLoading(true)
       const response = await window.fetch(INITIAL_LANDING_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: {
@@ -36,6 +37,8 @@ function FreeQuoteForm ({
       history.push('/follow-up?tracingId=' + tracingId)
     } catch (error) {
       console.log(error)
+    } finally {
+      setIsLoading(false)
     }
   }, [history, formOrigin])
 
