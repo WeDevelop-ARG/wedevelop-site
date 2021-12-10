@@ -1,13 +1,12 @@
 import { useCallback } from 'react'
 import { useRouteMatch, useHistory } from 'react-router-dom'
 
-import ContactModal from 'main_app/components/ContactModal'
-import PictureWall from 'main_app/components/PictureWall'
-
-import Hero from './hero'
-import Details from './details'
-import OurProcess from './ourProcess'
 import Benefits from './benefits'
+import ContactModal from 'main_app/components/ContactModal'
+import Details from './details'
+import Hero from './hero'
+import OurProcess from './ourProcess'
+import PictureWall from 'main_app/components/PictureWall'
 import Schedule from './schedule'
 import WebDevDetails from './details/components/WebDevDetails'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
