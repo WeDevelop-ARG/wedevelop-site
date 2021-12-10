@@ -5,9 +5,8 @@ import { INITIAL_LANDING_FORM_PROCESSOR_URL, LANDING_FREE_QUOTE_HUBSPOT_FORM_FOR
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import HubspotFreeQuoteForm from '../HubspotFreeQuoteForm'
-
-import classes from './styles.module.scss'
 import LoaderSpinner from 'main_app/components/LoaderSpinner'
+import classes from './styles.module.scss'
 
 function FreeQuoteForm ({
   formHeader,
