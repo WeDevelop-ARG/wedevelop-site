@@ -81,6 +81,7 @@ function LandingPage () {
           ctaText={landing.fullSizeCTA.ctaText}
           ctaToPath={landing.fullSizeCTA.ctaToPath}
           description={landing.fullSizeCTA.description}
+          handleModal={handleModalOpen}
         />
       </Article>
       <PictureWall />
