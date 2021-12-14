@@ -3,10 +3,11 @@ import {
   Route
 } from 'react-router-dom'
 import Article from 'main_app/components/Article'
-import NavBar from 'main_app/components/NavBar'
 import Footer from 'main_app/components/Footer'
-import WebDevelopment from './components/WebDevelopment'
+import NavBar from 'main_app/components/NavBar'
 import StaffAugmentation from './components/StaffAugmentation'
+import WebDevelopment from './components/WebDevelopment'
+
 
 function Services () {
   return (

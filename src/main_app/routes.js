@@ -17,7 +17,7 @@ const FollowUp = prerenderedLazy(() => import('follow_up'))
 
 function Routes () {
   return (
-    <Switch>
+    <Switch> 
       <LazyRoute exact path={['/', '/contact']}>
         <Landing />
       </LazyRoute>
