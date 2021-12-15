@@ -89,6 +89,19 @@ exports.createDealNote = async function createDealNote (dealId, { body } = {}) {
   })
 }
 
+exports.createContactNote = async function createContactNote (contactId, { body } = {}) {
+  await hubspotClient.apiRequest({
+    method: 'POST',
+    path: '/engagements/v1/engagements',
+    body: {
+      engagement: { active: true, type: 'NOTE' },
+      associations: { contactIds: [contactId] },
+      metadata: { body },
+      json: true
+    }
+  })
+}
+
 exports.createMeeting = async function createMeeting ({
   contactId,
   dealId,
