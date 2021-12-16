@@ -14,7 +14,7 @@ const offshoreWebDevelopment = {
     title: <>Top notch <b>Offshore Web Development</b></>,
     description: (
       <>
-        <p>Hire Offshore Web Development without the hassles.</p>
+        <p>Hire Offshore Web Developers without the hassles.</p>
       </>
     ),
     sideImageURL: BgWebDevelopers,
