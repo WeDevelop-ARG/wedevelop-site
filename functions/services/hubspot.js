@@ -113,7 +113,7 @@ exports.createMeeting = async function createMeeting ({
 } = {}) {
   const associations = {}
 
-  if (contactId) associations.contactIds = [contactId]
+  associations.contactIds = Array.isArray(contactId) ? contactId : [contactId]
   if (dealId) associations.dealIds = [dealId]
 
   await hubspotClient.apiRequest({

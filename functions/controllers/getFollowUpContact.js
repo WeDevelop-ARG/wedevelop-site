@@ -1,4 +1,4 @@
-const { getDeal, getContact } = require('../services/hubspot')
+const { getContact } = require('../services/hubspot')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
@@ -28,17 +28,9 @@ async function handlePostRequest (req, res) {
     return res.status(400).end()
   }
 
-  const deal = await getDeal(tracingId)
+  const contact = await getContact(tracingId)
 
-  if (!deal || !deal.associations || !deal.associations.contacts) {
-    return res.status(404).end()
-  }
-
-  const contactId = deal.associations.contacts.results[0].id
-
-  if (!contactId) return res.status(404).end()
-
-  const contact = await getContact(contactId)
+  if (!contact) return res.status(404).end()
 
   res.status(200).json({
     firstName: contact.properties.firstname,

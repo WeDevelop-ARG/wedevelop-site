@@ -39,7 +39,7 @@ async function handlePostRequest (req, res) {
   })
 
   await createMeeting({
-    contactId: followUpTracingId ?? contactId,
+    contactId: [followUpTracingId, contactId],
     startTime: event.start_time,
     endTime: event.end_time,
     title: event.name,
