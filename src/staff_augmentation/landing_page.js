@@ -17,10 +17,13 @@ import ReviewCards from './components/ReviewCards'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
+import { isUndefined } from 'lodash-es'
+import ExperimentalHeader from './components/ExperimentalHeader'
 
 function LandingPage () {
-  const { params } = useRouteMatch('/:name')
-  const { landing } = useLandingVariantByName(params.name)
+  const { params } = useRouteMatch('/:name/:experimental?')
+  const isExperimental = !isUndefined(params.experimental)
+  const { landing } = useLandingVariantByName(params.name, isExperimental)
 
   usePageMetadata({
     title: landing.metadata.title,
@@ -40,14 +43,26 @@ function LandingPage () {
         backgroundColor={landing.header.backgroundColor}
       />
       <Article>
-        <Header
-          landingName={landing.header.landingName}
-          title={landing.header.title}
-          description={landing.header.description}
-          freeQuoteForm={landing.freeQuoteForm}
-          sideImageURL={landing.header.sideImageURL}
-          backgroundColor={landing.header.backgroundColor}
-        />
+        {isExperimental && (
+          <ExperimentalHeader
+            landingName={landing.header.landingName}
+            title={landing.header.title}
+            description={landing.header.description}
+            freeQuoteForm={landing.freeQuoteForm}
+            sideImageURL={landing.header.sideImageURL}
+            backgroundColor={landing.header.backgroundColor}
+          />
+        )}
+        {!isExperimental && (
+          <Header
+            landingName={landing.header.landingName}
+            title={landing.header.title}
+            description={landing.header.description}
+            freeQuoteForm={landing.freeQuoteForm}
+            sideImageURL={landing.header.sideImageURL}
+            backgroundColor={landing.header.backgroundColor}
+          />
+        )}
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}

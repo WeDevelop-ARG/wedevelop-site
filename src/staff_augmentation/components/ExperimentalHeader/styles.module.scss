@@ -1,0 +1,257 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.headerContainer {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  padding-bottom: 180px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @include for-tablet-up {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.presentationContainer {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 40px;
+
+  @include for-tablet-up {
+    margin-bottom: auto;
+  }
+}
+
+.landingLogo {
+  max-width: 345px;
+  width: 100%;
+  height: auto;
+}
+
+.titleText {
+  width: 100%;
+  letter-spacing: -0.3px;
+  line-height: 57px;
+  font-size: 42px;
+  color: #FFFFFF;
+  font-weight: 300;
+  text-align: center;
+
+  @include for-tablet-up {
+    text-align: left;
+    font-size: 42px;
+    line-height: 60px;
+  }
+
+  @include for-desktop-up {
+    font-size: 52px;
+    margin-bottom: 30px;
+  }
+
+  > b {
+    font-weight: 700;
+  }
+}
+
+.description > p {
+  letter-spacing: -0.3px;
+  font-size: 24px;
+  line-height: 29px;
+  opacity: 0.7;
+  color: #FFFFFF;
+  font-weight: 300;
+  text-align: center;
+
+  @include for-tablet-up {
+    text-align: left;
+  }
+}
+
+.formContainer {
+  border: 3px solid #ffffff;
+  background: #ffffff;
+  padding: 40px 32px;
+  border-radius: 5px;
+  align-items: flex-start;
+
+  @include for-tablet-up {
+    margin-top: -40px;
+    margin-left: 75px;
+  }
+}
+
+.formDisclaimer {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  right: 0;
+
+  @include for-tablet-up {
+    width: 280px;
+  }
+
+  >p {
+    font-size: 12px;
+    color: rgba($color: #363636, $alpha: 1.0);
+    line-height: 32px;
+    margin: auto 0px auto auto;
+
+    @include for-tablet-up {
+      margin: auto;
+    }
+  }
+}
+
+.visualsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px;
+}
+
+.entrepreneurLaptop {
+  display: none;
+  height: auto;
+
+  @include for-tablet-up {
+    display: block;
+    width: 343px;
+    margin-bottom: 20px;
+  }
+
+  @include for-desktop-up {
+    width: 455px;
+    margin-bottom: 10px;
+  }
+}
+
+.widgetsContainer {
+  display: flex;
+
+  @include for-phone-only {
+    margin: auto;
+    margin-top: 12px;
+  }
+
+  @include for-tablet-up {
+    justify-content: flex-end;
+  }
+}
+
+.clutchWidget {
+  margin: auto 20px auto 0px;
+
+  @include for-tablet-up {
+    margin: auto 25px;
+  }
+
+  @include for-desktop-up {
+    margin: auto 50px;
+  }
+}
+
+.imgHeader > img {
+  object-position: center bottom;
+}
+
+.decorationWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  z-index: -1;
+}
+
+.rectangle {
+  position: absolute;
+  background: #FFFFFF;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.filled {
+  @extend .rectangle;
+  width: 400px;
+  height: 235px;
+  top: calc(-12% + 10px);
+  right: -28px;
+  opacity: 0.1;
+  filter: blur(2px);
+  background: #EAEAEA;
+  z-index: -1;
+}
+
+.emptyRectangle {
+  @extend .rectangle;
+  width: 400px;
+  height: 239px;
+  top: calc(18% - 50px);
+  left: 0;
+  opacity: 0.2;
+  border: 2px solid;
+  border-color: #E1E1E1;
+  background: none;
+  z-index: -1;
+}
+
+.clutchCircle {
+  @extend .rectangle;
+  width: 210px;
+  height: 210px;
+  top: 70px;
+  right: 10px;
+  filter: drop-shadow(0px -4.42367px 8.84734px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid;
+  border-color: #ffffff;
+  z-index: 2;
+  display: flex;
+  position: relative;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.clutchWidget {
+  margin: auto;
+}
+
+.pattern {
+  position: absolute;
+  top: 20px;
+  left: 630px;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.tagName {
+  border-radius: 3px;
+  padding: 4px 20px;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.tagNameContainer {
+  margin-top: 60px;
+  margin-bottom: 32px;
+}
+
+.logoContainer {
+  margin-top: -30px;
+}

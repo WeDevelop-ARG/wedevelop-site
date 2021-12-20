@@ -7,6 +7,7 @@ import hireJavascriptDevelopers from './hire_javascript_developers'
 import hireNetDevelopers from './hire_net_developers'
 import websiteBuilders from './website_builders'
 import offshoreWebDevelopment from './offshore_web_development'
+import experimentalStaffAugmentation from './experimental/staff_augmentation'
 
 const variants = [
   staffAugmentation,
@@ -17,7 +18,8 @@ const variants = [
   hireJavascriptDevelopers,
   hireNetDevelopers,
   websiteBuilders,
-  offshoreWebDevelopment
+  offshoreWebDevelopment,
+  experimentalStaffAugmentation
 ]
 
 export default variants

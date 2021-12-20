@@ -8,12 +8,12 @@ import useLandingVariants from './hooks/useLandingVariants'
 const LandingPage = prerenderedLazy(() => import('./landing_page'))
 
 function Routes ({ children }) {
-  const { variants } = useLandingVariants()
+  const { variants  } = useLandingVariants()
 
   return (
     <Switch>
       {variants.map(({ pathName }) => (
-        <LazyRoute exact path={`/${pathName}`} key={pathName}>
+        <LazyRoute path={`/${pathName}/:experimental?`} key={pathName}>
           <LandingPage />
         </LazyRoute>
       ))}

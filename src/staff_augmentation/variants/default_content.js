@@ -4,6 +4,7 @@ import BookLaptop from 'assets/web_developers/backgrounds/book_laptop.png'
 
 const defaultContent = {
   pathName: '',
+  isExperimental: false,
   metadata: {
     title: 'Web Development Agency',
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
