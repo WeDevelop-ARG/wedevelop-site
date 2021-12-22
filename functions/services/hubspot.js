@@ -1,6 +1,6 @@
 const hubspot = require('@hubspot/api-client')
 const dayjs = require('dayjs')
-const { compact } = require('lodash-es')
+const { compact } = require('lodash')
 
 const { HUBSPOT_API_KEY, HUBSPOT_LANDING_DEAL_PIPELINE_STAGE, HUBSPOT_LANDING_DEAL_PIPELINE_NAME } = require('../constants')
 

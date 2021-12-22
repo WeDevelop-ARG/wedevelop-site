@@ -1,4 +1,4 @@
-const { compact, uniq } = require('lodash-es')
+const { compact, uniq } = require('lodash')
 const { isValidCalendlyURL, getCalendlyAPICallResult } = require('../services/calendly')
 const { createContactIfNotExists, createMeeting } = require('../services/hubspot')
 
