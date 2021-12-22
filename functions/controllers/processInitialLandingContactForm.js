@@ -1,4 +1,4 @@
-const { createContactIfNotExists, createDeal, createDealNote } = require('../services/hubspot')
+const { createContactIfNotExists, createContactNote } = require('../services/hubspot')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
@@ -36,8 +36,7 @@ async function handlePostRequest (req, res) {
   console.log('INITIAL_LANDING_CONTACT_FORM', JSON.stringify({ contact, deal, note }))
 
   const contactId = await createContactIfNotExists(contact)
-  const dealId = await createDeal(contactId, deal)
-  await createDealNote(dealId, note)
+  await createContactNote(contactId, note)
 
-  return res.status(200).json({ tracingId: dealId })
+  return res.status(200).json({ tracingId: contactId })
 }

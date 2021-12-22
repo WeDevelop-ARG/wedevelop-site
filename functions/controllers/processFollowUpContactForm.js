@@ -1,4 +1,4 @@
-const { createDealNote, getDeal } = require('../services/hubspot')
+const { getContact, createContactNote } = require('../services/hubspot')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
@@ -41,14 +41,14 @@ async function handlePostRequest (req, res) {
 
   console.log('FOLLOW_UP_CONTACT_FORM', JSON.stringify({ tracingId, message }))
 
-  const deal = await getDeal(tracingId)
+  const contact = await getContact(tracingId)
 
-  if (!deal) {
+  if (!contact) {
     console.log('EXPIRED_FOLLOW_UP_CONTACT_FORM')
 
     return res.status(404).end()
   } else {
-    await createDealNote(tracingId, { body: message })
+    await createContactNote(tracingId, { body: message })
 
     return res.status(200).end()
   }

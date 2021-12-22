@@ -1,5 +1,6 @@
 const hubspot = require('@hubspot/api-client')
 const dayjs = require('dayjs')
+const { compact } = require('lodash')
 
 const { HUBSPOT_API_KEY, HUBSPOT_LANDING_DEAL_PIPELINE_STAGE, HUBSPOT_LANDING_DEAL_PIPELINE_NAME } = require('../constants')
 
@@ -89,6 +90,19 @@ exports.createDealNote = async function createDealNote (dealId, { body } = {}) {
   })
 }
 
+exports.createContactNote = async function createContactNote (contactId, { body } = {}) {
+  await hubspotClient.apiRequest({
+    method: 'POST',
+    path: '/engagements/v1/engagements',
+    body: {
+      engagement: { active: true, type: 'NOTE' },
+      associations: { contactIds: [contactId] },
+      metadata: { body },
+      json: true
+    }
+  })
+}
+
 exports.createMeeting = async function createMeeting ({
   contactId,
   dealId,
@@ -100,7 +114,7 @@ exports.createMeeting = async function createMeeting ({
 } = {}) {
   const associations = {}
 
-  if (contactId) associations.contactIds = [contactId]
+  associations.contactIds = Array.isArray(contactId) ? contactId : [contactId]
   if (dealId) associations.dealIds = [dealId]
 
   await hubspotClient.apiRequest({
@@ -108,7 +122,7 @@ exports.createMeeting = async function createMeeting ({
     path: '/engagements/v1/engagements',
     body: {
       engagement: { active: true, type: 'MEETING' },
-      associations,
+      associations: compact(associations),
       metadata: {
         body: description,
         startTime: dayjs(startTime).valueOf(),
