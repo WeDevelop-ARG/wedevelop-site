@@ -1,5 +1,6 @@
 const hubspot = require('@hubspot/api-client')
 const dayjs = require('dayjs')
+const { compact } = require('lodash-es')
 
 const { HUBSPOT_API_KEY, HUBSPOT_LANDING_DEAL_PIPELINE_STAGE, HUBSPOT_LANDING_DEAL_PIPELINE_NAME } = require('../constants')
 
@@ -121,7 +122,7 @@ exports.createMeeting = async function createMeeting ({
     path: '/engagements/v1/engagements',
     body: {
       engagement: { active: true, type: 'MEETING' },
-      associations,
+      associations: compact(associations),
       metadata: {
         body: description,
         startTime: dayjs(startTime).valueOf(),

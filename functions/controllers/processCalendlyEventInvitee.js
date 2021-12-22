@@ -1,3 +1,4 @@
+const { compact, uniq } = require('lodash-es')
 const { isValidCalendlyURL, getCalendlyAPICallResult } = require('../services/calendly')
 const { createContactIfNotExists, createMeeting } = require('../services/hubspot')
 
@@ -39,7 +40,7 @@ async function handlePostRequest (req, res) {
   })
 
   await createMeeting({
-    contactId: [followUpTracingId, contactId],
+    contactId: compact(uniq([followUpTracingId, contactId])),
     startTime: event.start_time,
     endTime: event.end_time,
     title: event.name,
