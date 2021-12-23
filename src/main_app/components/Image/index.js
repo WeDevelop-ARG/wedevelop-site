@@ -2,7 +2,7 @@ import { useMemo, useState, useRef, useEffect } from 'react'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { format, dpr, quality } from '@cloudinary/url-gen/actions/delivery'
 import { fill, limitFit } from '@cloudinary/url-gen/actions/resize'
-import { vectorize } from '@cloudinary/url-gen/actions/effect'
+import { blur } from '@cloudinary/url-gen/actions/effect'
 import isString from 'lodash/isString'
 import isFunction from 'lodash/isFunction'
 import isEmpty from 'lodash/isEmpty'
@@ -20,6 +20,8 @@ const cloudinary = new Cloudinary({
 const responsiveSizeStep = 200
 
 function isOptimizationDenied (url) {
+  if(IS_PREVIEW_BUILD) return false
+
   try {
     return (
       IS_PREVIEW_BUILD ||
@@ -75,12 +77,7 @@ function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resiz
 
   if (isPlaceholder) {
     image.effect(
-      vectorize()
-        .numOfColors(3)
-        .detailsLevel(0.3)
-        .despeckleLevel(75)
-        .paths(25)
-        .cornersLevel(50)
+      blur(500)
     )
   }
 
