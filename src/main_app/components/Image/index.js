@@ -43,11 +43,6 @@ function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resiz
     height = undefined
   }
 
-  if (isPlaceholder) {
-    width = 300
-    height = undefined
-  }
-
   const image = cloudinary.image(src)
 
   image.setDeliveryType('fetch')
