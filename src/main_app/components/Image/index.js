@@ -20,7 +20,7 @@ const cloudinary = new Cloudinary({
 const responsiveSizeStep = 200
 
 function isOptimizationDenied (url) {
-  if(IS_PREVIEW_BUILD) return false
+  if(IS_PREVIEW_BUILD) return cloudinaryDenylistExtensionsRegex.test(url)
 
   try {
     return (
@@ -52,7 +52,7 @@ function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resiz
 
   image.setDeliveryType('fetch')
   image.delivery(quality('auto'))
-  image.delivery(format(isPlaceholder ? 'svg' : 'auto'))
+  image.delivery(format('auto'))
   image.delivery(dpr('auto'))
 
   let resizeAction
