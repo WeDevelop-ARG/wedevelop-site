@@ -77,7 +77,7 @@ function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resiz
 
   if (isPlaceholder) {
     image.effect(
-      blur(1500)
+      blur(2000)
     )
   }
 
