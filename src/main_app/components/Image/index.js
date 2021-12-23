@@ -20,8 +20,6 @@ const cloudinary = new Cloudinary({
 const responsiveSizeStep = 200
 
 function isOptimizationDenied (url) {
-  if(IS_PREVIEW_BUILD) return cloudinaryDenylistExtensionsRegex.test(url)
-
   try {
     return (
       IS_PREVIEW_BUILD ||
@@ -154,15 +152,15 @@ export default function Image ({
     const onResize = () => {
       const containerSize = getImageContainerSize(containerRef.current, { width, height })
 
-      if (shouldLoadBiggerImage(lastSize, containerSize)) {
+      if (shouldLoadBiggerImage(lastSize, containerSize) && !IS_STATIC_RENDERER) {
         const image = createCloudinaryImage({ src: fullURL, objectFit, position, resize, ...containerSize })
         const placeholderImage = createCloudinaryImage({ isPlaceholder: true, src: fullURL, objectFit, position, resize, ...containerSize })
 
         if (props.loading !== 'eager' && !lastSize) {
-          if (!IS_STATIC_RENDERER) setOptimizedSrc(image.toURL())
+          setOptimizedSrc(image.toURL())
         } else {
           if (!lastSize) setOptimizedSrc(placeholderImage.toURL())
-          if (!IS_STATIC_RENDERER) img.src = image.toURL()
+          img.src = image.toURL()
         }
         lastSize = containerSize
       }
