@@ -68,7 +68,10 @@
       "/about-us",
       "/career",
       "/follow-up",
-      "/offshore-web-development"
+      "/offshore-web-development",
+      "/nearshore-net-developers",
+      "/web-development-outsourcing",
+      "/nearshore-web-development"
     ]
   },
   "eslintConfig": {
