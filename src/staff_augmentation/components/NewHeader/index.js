@@ -10,13 +10,16 @@ import classes from './styles.module.scss'
 import Button from 'main_app/components/Button'
 import { useState } from 'react'
 import ScheduleCallModal from '../ScheduleCallModal'
+import ScheduleFormModal from '../ScheduleFormModal'
 
 export default function NewHeader({ landingName, backgroundColor, title, description }) {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isCallModalOpen, setIsCallModalOpen] = useState(false)
+  const [isFormModalOpen, setIsFormModalOpen] = useState(false)
 
   return (
     <>
-      <ScheduleCallModal isModalOpen={isModalOpen} setModalOpen={setIsModalOpen} />
+      <ScheduleCallModal isModalOpen={isCallModalOpen} setModalOpen={setIsCallModalOpen} />
+      <ScheduleFormModal isModalOpen={isFormModalOpen} setModalOpen={setIsFormModalOpen} />
       <Image src={HeaderBackground} alt='' className={classes.background} />
       <section id='headerSection' className={classes.headerContainer}>
         <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
@@ -50,11 +53,15 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
             </q>
           </div>
           <div className={classes.shapeTriangle} />
-          <Button className={classes.scheduleButton} onClick={() => setIsModalOpen(true)}>
+          <Button className={classes.scheduleButton} onClick={() => setIsCallModalOpen(true)}>
             Schedule a call
           </Button>
           <p className={classes.alternativeSchedule}>
-            Or, use <Button variant="link" className={classes.scheduleFormButton}>this form</Button> to tell us about your needs.
+            Or, use{' '} 
+            <Button variant="link" className={classes.scheduleFormButton} onClick={() => setIsFormModalOpen(true)}>
+              this form
+            </Button> 
+            {' '}to tell us about your needs.
           </p>
         </div>
         <div className={classes.meetingWrapper}>
