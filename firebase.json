@@ -9,36 +9,28 @@
         "**/.*",
         "**/node_modules/**"
       ],
-      "rewrites": [
-        {
-          "source": "/**/*.html",
-          "destination": "/200.html"
-        },
-        {
-          "source": "/fn/processCalendlyEventInvitee",
-          "function": "processCalendlyEventInvitee"
-        },
-        {
-          "source": "/fn/processStaffAugmentationFormSubmit",
-          "function": "processStaffAugmentationFormSubmit"
-        },
-        {
-          "source": "/fn/processCareerFormSubmit",
-          "function": "processCareerFormSubmit"
-        },
-        {
-          "source": "/fn/processInitialLandingContactForm",
-          "function": "processInitialLandingContactForm"
-        },
-        {
-          "source": "/fn/processFollowUpContactForm",
-          "function": "processFollowUpContactForm"
-        },
-        {
-          "source": "/fn/getFollowUpContact",
-          "function": "getFollowUpContact"
-        }
-      ],
+      "rewrites": [{
+        "source": "/**/*.html",
+        "destination": "/200.html"
+      }, {
+        "source": "/fn/processCalendlyEventInvitee",
+        "function": "processCalendlyEventInvitee"
+      }, {
+        "source": "/fn/processStaffAugmentationFormSubmit",
+        "function": "processStaffAugmentationFormSubmit"
+      }, {
+        "source": "/fn/processCareerFormSubmit",
+        "function": "processCareerFormSubmit"
+      }, {
+        "source": "/fn/processInitialLandingContactForm",
+        "function": "processInitialLandingContactForm"
+      }, {
+        "source": "/fn/processFollowUpContactForm",
+        "function": "processFollowUpContactForm"
+      }, {
+        "source": "/fn/getFollowUpContact",
+        "function": "getFollowUpContact"
+      }],
       "redirects": [
         {
           "source": "/storage/:path*",
@@ -62,240 +54,6 @@
             {
               "key": "Cache-Control",
               "value": "public, max-age=31536000, immutable"
-            }
-          ]
-        },
-        {
-          "source": "/404.html",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/css/8.d998db13.chunk.css>;rel=preload;as=style,</static/css/main.98fcde24.chunk.css>;rel=preload;as=style,</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/css/20.20d8d39f.chunk.css>;rel=preload;as=style,</static/js/20.cbff8f37.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/web-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/privacy-policy",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/css/8.d998db13.chunk.css>;rel=preload;as=style,</static/css/main.98fcde24.chunk.css>;rel=preload;as=style,</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/css/19.a6210054.chunk.css>;rel=preload;as=style,</static/js/19.4b036333.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/staff-augmentation",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/hire-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/hire-javascript-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/web-coders",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/hire-net-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/website-builders",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/career",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/2.9106d09a.chunk.js>;rel=preload;as=script,</static/js/18.7e345511.chunk.js>;rel=preload;as=script,</static/js/11.7c6359a6.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/about-us",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/5.bdf8c2b5.chunk.js>;rel=preload;as=script,</static/js/3.7950c69a.chunk.js>;rel=preload;as=script,</static/js/17.8f5ebc53.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/web-programmers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/follow-up",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/css/8.d998db13.chunk.css>;rel=preload;as=style,</static/css/main.98fcde24.chunk.css>;rel=preload;as=style,</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/2.9106d09a.chunk.js>;rel=preload;as=script,</static/css/9.0f458549.chunk.css>;rel=preload;as=style,</static/js/9.31c1aad1.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/offshore-web-development",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/nearshore-net-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/web-development-outsourcing",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/nearshore-web-development",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/5.bdf8c2b5.chunk.js>;rel=preload;as=script,</static/js/3.7950c69a.chunk.js>;rel=preload;as=script,</static/js/16.eb487c78.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/5.bdf8c2b5.chunk.js>;rel=preload;as=script,</static/js/3.7950c69a.chunk.js>;rel=preload;as=script,</static/js/16.eb487c78.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/services/web-development",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/12.18c5a37a.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/13.92ddb9ca.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/services/staff-augmentation",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/12.18c5a37a.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/13.92ddb9ca.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/storage/WeDevelop-Brochure.pdf",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/css/8.d998db13.chunk.css>;rel=preload;as=style,</static/css/main.98fcde24.chunk.css>;rel=preload;as=style,</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/css/20.20d8d39f.chunk.css>;rel=preload;as=style,</static/js/20.cbff8f37.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/career/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/2.9106d09a.chunk.js>;rel=preload;as=script,</static/js/18.7e345511.chunk.js>;rel=preload;as=script,</static/js/11.7c6359a6.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/about-us/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/5.bdf8c2b5.chunk.js>;rel=preload;as=script,</static/js/3.7950c69a.chunk.js>;rel=preload;as=script,</static/js/17.8f5ebc53.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/services/web-development/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/12.18c5a37a.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/13.92ddb9ca.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/services/staff-augmentation/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/12.18c5a37a.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/13.92ddb9ca.chunk.js>;rel=preload;as=script"
             }
           ]
         }
@@ -310,36 +68,28 @@
         "**/.*",
         "**/node_modules/**"
       ],
-      "rewrites": [
-        {
-          "source": "/**/*.html",
-          "destination": "/200.html"
-        },
-        {
-          "source": "/fn/processCalendlyEventInvitee",
-          "function": "processCalendlyEventInvitee"
-        },
-        {
-          "source": "/fn/processStaffAugmentationFormSubmit",
-          "function": "processStaffAugmentationFormSubmit"
-        },
-        {
-          "source": "/fn/processCareerFormSubmit",
-          "function": "processCareerFormSubmit"
-        },
-        {
-          "source": "/fn/processInitialLandingContactForm",
-          "function": "processInitialLandingContactForm"
-        },
-        {
-          "source": "/fn/processFollowUpContactForm",
-          "function": "processFollowUpContactForm"
-        },
-        {
-          "source": "/fn/getFollowUpContact",
-          "function": "getFollowUpContact"
-        }
-      ],
+      "rewrites": [{
+        "source": "/**/*.html",
+        "destination": "/200.html"
+      }, {
+        "source": "/fn/processCalendlyEventInvitee",
+        "function": "processCalendlyEventInvitee"
+      }, {
+        "source": "/fn/processStaffAugmentationFormSubmit",
+        "function": "processStaffAugmentationFormSubmit"
+      }, {
+        "source": "/fn/processCareerFormSubmit",
+        "function": "processCareerFormSubmit"
+      }, {
+        "source": "/fn/processInitialLandingContactForm",
+        "function": "processInitialLandingContactForm"
+      }, {
+        "source": "/fn/processFollowUpContactForm",
+        "function": "processFollowUpContactForm"
+      }, {
+        "source": "/fn/getFollowUpContact",
+        "function": "getFollowUpContact"
+      }],
       "redirects": [
         {
           "source": "/storage/:path*",
@@ -363,240 +113,6 @@
             {
               "key": "Cache-Control",
               "value": "public, max-age=31536000, immutable"
-            }
-          ]
-        },
-        {
-          "source": "/404.html",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/css/8.d998db13.chunk.css>;rel=preload;as=style,</static/css/main.98fcde24.chunk.css>;rel=preload;as=style,</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/css/20.20d8d39f.chunk.css>;rel=preload;as=style,</static/js/20.cbff8f37.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/web-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/privacy-policy",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/css/8.d998db13.chunk.css>;rel=preload;as=style,</static/css/main.98fcde24.chunk.css>;rel=preload;as=style,</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/css/19.a6210054.chunk.css>;rel=preload;as=style,</static/js/19.4b036333.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/staff-augmentation",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/hire-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/hire-javascript-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/web-coders",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/hire-net-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/website-builders",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/career",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/2.9106d09a.chunk.js>;rel=preload;as=script,</static/js/18.7e345511.chunk.js>;rel=preload;as=script,</static/js/11.7c6359a6.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/about-us",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/5.bdf8c2b5.chunk.js>;rel=preload;as=script,</static/js/3.7950c69a.chunk.js>;rel=preload;as=script,</static/js/17.8f5ebc53.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/web-programmers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/follow-up",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/css/8.d998db13.chunk.css>;rel=preload;as=style,</static/css/main.98fcde24.chunk.css>;rel=preload;as=style,</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/2.9106d09a.chunk.js>;rel=preload;as=script,</static/css/9.0f458549.chunk.css>;rel=preload;as=style,</static/js/9.31c1aad1.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/offshore-web-development",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/nearshore-net-developers",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/web-development-outsourcing",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/nearshore-web-development",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/10.3566bb00.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/14.b645827a.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/5.bdf8c2b5.chunk.js>;rel=preload;as=script,</static/js/3.7950c69a.chunk.js>;rel=preload;as=script,</static/js/16.eb487c78.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/5.bdf8c2b5.chunk.js>;rel=preload;as=script,</static/js/3.7950c69a.chunk.js>;rel=preload;as=script,</static/js/16.eb487c78.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/services/web-development",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/12.18c5a37a.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/13.92ddb9ca.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/services/staff-augmentation",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/12.18c5a37a.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/13.92ddb9ca.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/storage/WeDevelop-Brochure.pdf",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/css/8.d998db13.chunk.css>;rel=preload;as=style,</static/css/main.98fcde24.chunk.css>;rel=preload;as=style,</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/css/20.20d8d39f.chunk.css>;rel=preload;as=style,</static/js/20.cbff8f37.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/career/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/2.9106d09a.chunk.js>;rel=preload;as=script,</static/js/18.7e345511.chunk.js>;rel=preload;as=script,</static/js/11.7c6359a6.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/about-us/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/5.bdf8c2b5.chunk.js>;rel=preload;as=script,</static/js/3.7950c69a.chunk.js>;rel=preload;as=script,</static/js/17.8f5ebc53.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/services/web-development/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/12.18c5a37a.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/13.92ddb9ca.chunk.js>;rel=preload;as=script"
-            }
-          ]
-        },
-        {
-          "source": "/services/staff-augmentation/contact",
-          "headers": [
-            {
-              "key": "Link",
-              "value": "</static/js/8.f63520ca.chunk.js>;rel=preload;as=script,</static/js/main.cade504b.chunk.js>;rel=preload;as=script,</static/js/0.96b0924a.chunk.js>;rel=preload;as=script,</static/js/1.e095725b.chunk.js>;rel=preload;as=script,</static/js/12.18c5a37a.chunk.js>;rel=preload;as=script,</static/js/4.2f8aaf8f.chunk.js>;rel=preload;as=script,</static/js/13.92ddb9ca.chunk.js>;rel=preload;as=script"
             }
           ]
         }
