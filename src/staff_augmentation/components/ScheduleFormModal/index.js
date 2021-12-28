@@ -16,7 +16,8 @@ import { isNil } from 'lodash'
 export default function ScheduleFormModal({
   isModalOpen,
   setModalOpen,
-  onScheduleMeetingClick
+  onScheduleMeetingClick,
+  onSubmit
 }) {
   const InputWithError = useFieldWithErrorClassName(
     'input',
@@ -54,10 +55,12 @@ export default function ScheduleFormModal({
         contactType: 'free-quote-form',
         source: 'schedule-meeting-form'
       })
+
+      onSubmit?.()
     } catch(err) {
       console.error(err)
     }
-  }, [])
+  }, [onSubmit])
 
   return (
     <ContactPopupModal 

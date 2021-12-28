@@ -1,27 +1,25 @@
-import CalendlyWidget from 'main_app/components/CalendlyWidget'
+import Button from 'main_app/components/Button'
 import ContactPopupModal from '../ContactPopupModal'
 
-export default function ScheduleCallModal({
+export default function ScheduleSuccessModal({
   isModalOpen,
   setModalOpen,
-  onSubmit
 }) {
   return (
     <ContactPopupModal 
       isModalOpen={isModalOpen}
       setModalOpen={setModalOpen}
-      title='Schedule a 15 minute consultation'
-      label="If we can help in any way, please don't hesitate to set a time to meet or talk, or leave your details and we'll get back to you."
+      title='Thank you for reaching out.'
+      label="You'll be receiving an email with the information you submitted. One of our representatives will be in touch in no time."
       sidebarContent={
         <span>
           You'll be connected to one of our Account Managers and we'll offer our help to make your life easier.
         </span>
       }
     >
-      <CalendlyWidget 
-        hideText
-        onFinish={() => onSubmit?.()}
-      />
+      <Button onClick={() => setModalOpen(false)}>
+        Continue
+      </Button>
     </ContactPopupModal>
   )
 }
