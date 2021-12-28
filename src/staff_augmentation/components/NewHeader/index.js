@@ -3,7 +3,9 @@ import HeaderBackground from 'assets/staff_augmentation/backgrounds/blue_gradien
 import Image from 'main_app/components/Image'
 import WeDevelopCEO from 'assets/staff_augmentation/wedevelop_ceo.png'
 import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
-
+import DotsPattern from 'assets/staff_augmentation/white_dots_pattern.svg'
+import DecorationElements from 'assets/staff_augmentation/deco_elements.svg'
+import BlurredDecorationElements from 'assets/staff_augmentation/blurred_deco_elements.svg'
 import classes from './styles.module.scss'
 import Button from 'main_app/components/Button'
 
@@ -12,6 +14,9 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
     <>
       <Image src={HeaderBackground} alt='' className={classes.background} />
       <section id='headerSection' className={classes.headerContainer}>
+        <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
+        <Image src={DecorationElements} alt='' className={classes.decorationElementsPattern} />
+        <Image src={BlurredDecorationElements} alt='' className={classes.blurredDecorationElements} />
         <div>
           <Image src={WeDevelopLogo} className={classes.imageLogo} />
           <div className={classes.tagNameContainer}>

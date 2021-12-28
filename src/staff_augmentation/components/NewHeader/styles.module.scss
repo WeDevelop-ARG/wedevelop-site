@@ -11,6 +11,25 @@
   z-index: -10;
 }
 
+.dotsPattern {
+  position: absolute;
+  left: 77%;
+  top: 5%;
+}
+
+.decorationElementsPattern {
+  position: absolute;
+  left: 38%;
+  top: 30%;
+  transform: scale(1.10);
+}
+
+.blurredDecorationElements {
+  position: absolute;
+  left: 15%;
+  top: 22%;
+}
+
 .imageLogo {
   width: 65%;
 }
@@ -51,9 +70,11 @@
 }
 
 .subTitle {
-  font-weight: normal;
-  font-size: 24px;
-  color: rgba(255, 255, 255, 0.7);
+  > * {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+  }
 }
 
 .separator {
@@ -159,7 +180,7 @@
 .meetingContainer {
   background-color: #fff;
   padding: 61px 70px 29px 70px;
-  margin-top: 100px;
+  margin-top: 80px;
   border-radius: 5px;
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
 }
