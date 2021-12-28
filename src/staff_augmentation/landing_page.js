@@ -17,6 +17,7 @@ import ReviewCards from './components/ReviewCards'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
+import { ContactPopupProvider } from './components/ContactPopupModal/Context'
 
 function LandingPage () {
   const { params } = useRouteMatch('/:name')
@@ -33,7 +34,7 @@ function LandingPage () {
   }, [])
 
   return (
-    <>
+    <ContactPopupProvider>
       <NavBar
         landingName={landing.header.landingName}
         handleModal={handleModalOpen}
@@ -90,7 +91,7 @@ function LandingPage () {
         setModalOpen={setModalOpen}
         freeQuoteForm={landing.freeQuoteForm}
       />
-    </>
+    </ContactPopupProvider>
   )
 }
 

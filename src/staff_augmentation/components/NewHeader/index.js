@@ -8,18 +8,14 @@ import DecorationElements from 'assets/staff_augmentation/deco_elements.svg'
 import BlurredDecorationElements from 'assets/staff_augmentation/blurred_deco_elements.svg'
 import classes from './styles.module.scss'
 import Button from 'main_app/components/Button'
-import { useState } from 'react'
-import ScheduleCallModal from '../ScheduleCallModal'
-import ScheduleFormModal from '../ScheduleFormModal'
+import ContactPopupContext from '../ContactPopupModal/Context'
+import { useContext } from 'react'
 
 export default function NewHeader({ landingName, backgroundColor, title, description }) {
-  const [isCallModalOpen, setIsCallModalOpen] = useState(false)
-  const [isFormModalOpen, setIsFormModalOpen] = useState(false)
+  const { setCallModalOpen, setFormModalOpen } = useContext(ContactPopupContext)
 
   return (
     <>
-      <ScheduleCallModal isModalOpen={isCallModalOpen} setModalOpen={setIsCallModalOpen} />
-      <ScheduleFormModal isModalOpen={isFormModalOpen} setModalOpen={setIsFormModalOpen} />
       <Image src={HeaderBackground} alt='' className={classes.background} />
       <section id='headerSection' className={classes.headerContainer}>
         <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
@@ -53,12 +49,12 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
             </q>
           </div>
           <div className={classes.shapeTriangle} />
-          <Button className={classes.scheduleButton} onClick={() => setIsCallModalOpen(true)}>
+          <Button className={classes.scheduleButton} onClick={() => setCallModalOpen(true)}>
             Schedule a call
           </Button>
           <p className={classes.alternativeSchedule}>
             Or, use{' '} 
-            <Button variant="link" className={classes.scheduleFormButton} onClick={() => setIsFormModalOpen(true)}>
+            <Button variant="link" className={classes.scheduleFormButton} onClick={() => setFormModalOpen(true)}>
               this form
             </Button> 
             {' '}to tell us about your needs.
