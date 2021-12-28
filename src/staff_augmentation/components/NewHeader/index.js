@@ -8,14 +8,30 @@ import DecorationElements from 'assets/staff_augmentation/deco_elements.svg'
 import BlurredDecorationElements from 'assets/staff_augmentation/blurred_deco_elements.svg'
 import classes from './styles.module.scss'
 import Button from 'main_app/components/Button'
-import ContactPopupContext from '../ContactPopupModal/Context'
-import { useContext } from 'react'
+import { useState, useCallback } from 'react'
+import ScheduleCallModal from '../ScheduleCallModal'
+import ScheduleFormModal from '../ScheduleFormModal'
 
 export default function NewHeader({ landingName, backgroundColor, title, description }) {
-  const { setCallModalOpen, setFormModalOpen } = useContext(ContactPopupContext)
+  const [isCallModalOpen, setCallModalOpen] = useState(false)
+  const [isFormModalOpen, setFormModalOpen] = useState(false)
+
+  const switchToCallModal = useCallback(() => {
+    setFormModalOpen(false)
+    setCallModalOpen(true)
+  }, [])
 
   return (
     <>
+      <ScheduleCallModal 
+        isModalOpen={isCallModalOpen} 
+        setModalOpen={setCallModalOpen} 
+      />
+      <ScheduleFormModal 
+        isModalOpen={isFormModalOpen} 
+        setModalOpen={setFormModalOpen} 
+        onScheduleMeetingClick={switchToCallModal}
+      />
       <Image src={HeaderBackground} alt='' className={classes.background} />
       <section id='headerSection' className={classes.headerContainer}>
         <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
