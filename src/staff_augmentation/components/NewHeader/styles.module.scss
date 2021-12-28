@@ -1,0 +1,197 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 !important;
+  margin: 0;
+  width: 100%;
+  z-index: -10;
+}
+
+.imageLogo {
+  width: 65%;
+}
+
+.headerContainer {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 90px;
+}
+
+.tagName {
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 4px 20px;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.rightSideContainer {
+  align-self: center;
+}
+
+.tagNameContainer {
+  margin-top: 60px;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 72px;
+  color: #fff;
+}
+
+.subTitle {
+  font-weight: normal;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.separator {
+  margin: 32px 0;
+  width: 100px;
+  height: 10px;
+  background-color: #FFC331;
+}
+
+.clutchWidget {
+  margin: auto;
+}
+
+.rectangle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.clutchRectangle {
+  @extend .rectangle;
+  border-radius: 5px;
+  width: 330px;
+  height: 110px;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  display: flex;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -8px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.3);
+  }
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.quoteContainer {
+  position: relative;
+  border-radius: 9px;
+  background-color: #fff;
+  width: 100%;
+  padding: 100px 26px 35px 26px;
+}
+
+.quote {
+  display: block;
+  color: #363636;
+  text-align: center;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 36px;
+
+  &::before, &::after {
+    content: "";
+  }
+}
+
+.avatarContainer {
+  top: 0;
+  left: 50%;
+  position: absolute;
+  background-color: rgba(234, 234, 234, 0.5);
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+  transform: translate(-50%, -70%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #6B67E9;
+  }
+}
+
+.avatar {
+  margin: 8px 8px;
+}
+
+.meetingWrapper {
+  margin-left: -90px;
+  margin-right: -90px;
+  grid-column: 1 / span 2;
+  filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.2));
+}
+
+.meetingContainer {
+  background-color: #fff;
+  padding: 61px 70px 29px 70px;
+  margin-top: 100px;
+  border-radius: 5px;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+}
+
+.meetingTitle {
+  color: #377DFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.meeting {
+  line-height: 20px;
+}
+
+.scheduleButton {
+  box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 49px;
+  width: 100%;
+  font-size: 24px;
+}
+
+.alternativeSchedule {
+  font-size: 18px;
+  margin-top: 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.scheduleFormButton {
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}

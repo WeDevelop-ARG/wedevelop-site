@@ -34,7 +34,7 @@ function isClutchScriptPresent () {
   return document.head.querySelector(`script[src="${CLUTCH_URL}"]`) !== null
 }
 
-function ClutchWidget ({ className, variant = 'light' }) {
+function ClutchWidget ({ className, variant = 'light', width = 192, height = 45 }) {
   const extraProps = {}
 
   if (variant === 'light') {
@@ -56,8 +56,8 @@ function ClutchWidget ({ className, variant = 'light' }) {
       className={classnames('clutch-widget', className)}
       data-url='https://widget.clutch.co'
       data-widget-type='2'
-      data-height='45'
-      style={{ width: '192px', height: '45px' }}
+      data-height={height.toString()}
+      style={{ width: `${width}px`, height: `${height}px` }}
       data-clutchcompany-id='810049'
       data-primary-color='#FFC331'
       {...extraProps}
