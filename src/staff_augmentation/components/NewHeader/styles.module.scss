@@ -128,7 +128,7 @@
   border-radius: 9px;
   background-color: #fff;
   width: 100%;
-  padding: 100px 26px 35px 26px;
+  padding: 100px 26px 89px 26px;
 }
 
 .quote {
@@ -142,6 +142,15 @@
   &::before, &::after {
     content: "";
   }
+}
+
+.shapeTriangle {
+  margin: 0 auto;
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #fff;
 }
 
 .avatarContainer {

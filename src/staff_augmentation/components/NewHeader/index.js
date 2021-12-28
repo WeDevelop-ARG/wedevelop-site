@@ -44,6 +44,7 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
               more about our Staff Augmentation Services? 
             </q>
           </div>
+          <div className={classes.shapeTriangle} />
           <Button className={classes.scheduleButton}>
             Schedule a call
           </Button>
