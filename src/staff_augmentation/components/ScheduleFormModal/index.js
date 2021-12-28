@@ -6,7 +6,12 @@ import ContactPopupModal from '../ContactPopupModal'
 import classes from './styles.module.scss'
 import ScheduleForm from '../ScheduleForm'
 import SubmitButton from 'main_app/components/SubmitButton'
+import FileInput from 'career/components/JoinUsForm/FileInput'
 import uploadFile from 'service_providers/firebase/uploadFile'
+import SVGIcon from 'main_app/components/SVGIcon'
+import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
+import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
+import { isNil } from 'lodash'
 
 export default function ScheduleFormModal({
   isModalOpen,
@@ -22,8 +27,36 @@ export default function ScheduleFormModal({
     classes.fieldWithError
   )
 
-  const handleFormSubmit = useCallback(() => {
+  const handleFormSubmit = useCallback(async(values) => {
+    try {
+      let filePath
+      if(!isNil(values.filesAttached)) {
+        filePath = await uploadFile(values.filesAttached)
+      }
 
+      await window.fetch(INITIAL_LANDING_FORM_PROCESSOR_URL, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+          name: values.fullName,
+          email: values.email,
+          company: values.company ?? '',
+          message: values.details,
+          filePath: filePath ?? '',
+          formOrigin: 'schedule-meeting-form'
+        })
+      })
+      logAnalyticsEvent({
+        event: 'contact',
+        contactType: 'free-quote-form',
+        source: 'schedule-meeting-form'
+      })
+    } catch(err) {
+      console.error(err)
+    }
   }, [])
 
   return (
@@ -49,7 +82,7 @@ export default function ScheduleFormModal({
           <Field
             as={InputWithError}
             type='text'
-            name='firstName'
+            name='fullName'
             className={classes.inputStyles}
           />
         </label>
@@ -75,9 +108,21 @@ export default function ScheduleFormModal({
           <span>*</span>{' '}What can we do for you?
           <Field
             as={TextAreaWithError}
+            type='text'
             name='details'
             className={classes.textAreaStyles}
           />
+        </label>
+        <label className={classes.fileUploadField}>
+          <Field
+            name='filesAttached'
+            component={FileInput}
+            aria-hidden='true'
+          />
+          <div className={classes.field}>
+            <SVGIcon name='career/clip' className={classes.clip} />
+            <p className={classes.fileUploadLabel}>Attach</p>
+          </div>
         </label>
         <div className={classes.buttonContainer}>
           <SubmitButton

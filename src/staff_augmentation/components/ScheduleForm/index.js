@@ -7,26 +7,19 @@ const initialValues = {
   email: '',
   company: '',
   details: '',
-  filesAttached: []
+  filesAttached: null
 }
 const MAX_FILE_SIZE = 20 * 1024 * 1024 // 20 MB
-const SUPPORTED_FILES = [
-  'application/pdf',
-  'application/msword',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  'application/vnd.oasis.opendocument.text'
-]
 
 const schemaShape = {
-  firstName: Yup.string().required(),
+  fullName: Yup.string().required(),
   email: Yup.string().email().required(),
   company: Yup.string().optional(),
   details: Yup.string().required(),
-  filesAttached: Yup.array().of(
-    Yup.mixed()
-    .test('fileSize', 'Maximum file size allowed: 20MB.', value => isNil(value) || value.size <= MAX_FILE_SIZE)
-    .test('fileType', 'Supported formats: PDF, Word, ODT.', value => isNil(value) || SUPPORTED_FILES.includes(value?.type))
-  ).optional()
+  filesAttached: Yup.mixed()
+    .test('fileSize', 'Maximum file size allowed: 20MB.', value => {
+      return isNil(value) || value?.size <= MAX_FILE_SIZE
+    })
 }
 
 export default function ScheduleForm ({ onSubmit, ...props }) {
