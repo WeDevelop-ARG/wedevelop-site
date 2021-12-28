@@ -40,19 +40,12 @@ function LandingPage () {
         backgroundColor={landing.header.backgroundColor}
       />
       <Article>
-        {/* <Header
-          landingName={landing.header.landingName}
-          title={landing.header.title}
-          description={landing.header.description}
-          freeQuoteForm={landing.freeQuoteForm}
-          sideImageURL={landing.header.sideImageURL}
-          backgroundColor={landing.header.backgroundColor}
-        /> */}
         <NewHeader 
           landingName={landing.header.landingName}
           title={landing.header.title}
           description={landing.header.description}
           backgroundColor={landing.header.backgroundColor}
+          freeQuoteForm={landing.freeQuoteForm}
         />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}

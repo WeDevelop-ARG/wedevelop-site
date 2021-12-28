@@ -1,0 +1,48 @@
+.rightSideContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  z-index: 5;
+  margin-top: auto;
+}
+
+.modalDecoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modalDotsPattern {
+  position: absolute;
+  right: 10%;
+}
+
+.whatsNext {
+  align-self: flex-end;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: right;
+}
+
+.rightSideText {
+  align-self: flex-end;
+  color: #fff;
+  text-align: right;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 32px 0 32px auto;
+  max-width: 60%;
+}
+
+.avatars {
+  display: flex;
+  justify-content: flex-end;
+
+  > * {
+    margin-left: -35px;
+  }
+}
