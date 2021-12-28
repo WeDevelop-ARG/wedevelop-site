@@ -171,7 +171,11 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid #6B67E9;
+    background: linear-gradient(to right, #6B67E9, #8224E3);
+    padding: 1px;
+    border-radius:50%;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
   }
 }
 
