@@ -1,0 +1,100 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 !important;
+  margin: 0;
+  width: 100%;
+  z-index: -10;
+}
+
+.dotsPattern {
+  position: absolute;
+  left: 20%;
+  top: 55%;
+}
+
+.decorationElementsPattern {
+  position: absolute;
+  left: 38%;
+  top: 30%;
+  transform: scale(1.10);
+}
+
+.blurredDecorationElements {
+  position: absolute;
+  left: 20%;
+  top: 22%;
+}
+
+.headerContainer {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.successMessageContainer {
+  margin: 100px auto 0 auto;
+  max-width: 80%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 83px 62px;
+}
+
+.thumbsUpIcon {
+  display: block;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 72px;
+  text-align: center;
+
+  .bold {
+    font-weight: bold;
+  }
+}
+
+.paragraph {
+  color: rgba(36, 36, 36, 0.7);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 42px;
+}
+
+.separator {
+  background-color: #FFC331;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100px;
+  height: 10px;
+}
+
+.meetingWrapper {
+  filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.2));
+}
+
+.meetingContainer {
+  background-color: #fff;
+  padding: 61px 70px 29px 70px;
+  border-radius: 5px;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+}
+
+.meeting {
+  font-size: 16px;
+}
+
+.hurry {
+  background: linear-gradient(66.27deg, #6B67E9 11.76%, #8224E3 89.05%);
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}

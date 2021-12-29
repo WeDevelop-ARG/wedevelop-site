@@ -11,18 +11,19 @@ import Button from 'main_app/components/Button'
 import { useState, useCallback } from 'react'
 import ScheduleCallModal from '../ScheduleCallModal'
 import ScheduleFormModal from '../ScheduleFormModal'
-import ScheduleSuccessModal from '../ScheduleSuccessModal'
+import { useHistory } from 'react-router-dom'
 
 export default function NewHeader({ landingName, backgroundColor, title, description }) {
   const [isCallModalOpen, setCallModalOpen] = useState(false)
   const [isFormModalOpen, setFormModalOpen] = useState(false)
-  const [isSuccessModalOpen, setSuccessModalOpen] = useState(false)
+  const history = useHistory()
 
   const onSuccess = useCallback(() => {
+    const redirectUrl = isCallModalOpen ? '/success/confirm' : '/success/confirm?scheduleCall=1'
     setCallModalOpen(false)
     setFormModalOpen(false)
-    setSuccessModalOpen(true)
-  }, [])
+    history.push(redirectUrl)
+  }, [history, isCallModalOpen])
 
   const switchToCallModal = useCallback(() => {
     setFormModalOpen(false)
@@ -31,10 +32,6 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
 
   return (
     <>
-      <ScheduleSuccessModal 
-        isModalOpen={isSuccessModalOpen}
-        setModalOpen={setSuccessModalOpen}
-      />
       <ScheduleCallModal 
         isModalOpen={isCallModalOpen} 
         setModalOpen={setCallModalOpen} 

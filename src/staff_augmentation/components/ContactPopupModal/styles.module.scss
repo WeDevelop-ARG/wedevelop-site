@@ -8,15 +8,16 @@
   max-width: 100%;
   padding: 45px 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column !important;
   justify-content: space-between;
 
   @include for-tablet-up {
     padding: 45px;
     max-height: 95vh;
     max-width: 95vw;
-    width: 100%;
+    width: 100% !important;
     height: 100%;
+    flex-direction: row !important;
   }
 }
 
