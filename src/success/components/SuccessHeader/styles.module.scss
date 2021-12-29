@@ -9,12 +9,19 @@
   margin: 0;
   width: 100%;
   z-index: -10;
+  min-height: 100vh;
+  object-fit: cover;
 }
 
 .dotsPattern {
   position: absolute;
-  left: 20%;
+  left: 2%;
   top: 55%;
+
+  @include for-tablet-up {
+    left: 20%;
+    top: 55%;
+  }
 }
 
 .decorationElementsPattern {
@@ -38,11 +45,16 @@
 }
 
 .successMessageContainer {
-  margin: 100px auto 0 auto;
+  margin: 20px auto 0 auto;
   max-width: 80%;
   background-color: #fff;
   border-radius: 8px;
-  padding: 83px 62px;
+  padding: 40px 24px;
+
+  @include for-tablet-up {
+    margin: 100px auto 0 auto;
+    padding: 83px 62px;
+  }
 }
 
 .thumbsUpIcon {
@@ -51,10 +63,15 @@
 }
 
 .title {
-  font-size: 60px;
+  font-size: 30px;
   font-weight: 300;
-  line-height: 72px;
+  line-height: 36px;
   text-align: center;
+
+  @include for-tablet-up {
+    font-size: 60px;
+    line-height: 72px;
+  }
 
   .bold {
     font-weight: bold;
@@ -89,7 +106,14 @@
 }
 
 .meeting {
+  margin: 10px 0;
   font-size: 16px;
+  display: block;
+
+  @include for-tablet-up {
+    margin: 0;
+    display: inline;
+  }
 }
 
 .hurry {
@@ -97,4 +121,9 @@
   background-clip: text;
   color: transparent;
   font-weight: bold;
+  display: block;
+
+  @include for-tablet-up {
+    display: inline;
+  }
 }
