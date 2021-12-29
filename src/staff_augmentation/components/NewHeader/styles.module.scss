@@ -9,29 +9,57 @@
   margin: 0;
   width: 100%;
   z-index: -10;
+  min-height: 1400px;
+  object-fit: cover;
+
+  @include for-tablet-up {
+    min-height: 100vh;
+  }
 }
 
 .dotsPattern {
   position: absolute;
-  left: 77%;
-  top: 5%;
+  left: 55%;
+  top: 30%;
+
+  @include for-tablet-up {
+    left: 77%;
+    top: 5%;
+  }
 }
 
 .decorationElementsPattern {
   position: absolute;
-  left: 38%;
+  left: 10%;
   top: 30%;
-  transform: scale(1.10);
+
+  @include for-tablet-up {
+    left: 38%;
+    top: 30%;
+    transform: scale(1.10);
+  }
 }
 
 .blurredDecorationElements {
   position: absolute;
-  left: 15%;
-  top: 22%;
+  left: 6%;
+  top: 8%;
+
+  @include for-tablet-up {
+    left: 15%;
+    top: 22%;
+  }
 }
 
 .imageLogo {
-  width: 65%;
+  display: block;
+  margin: 0 auto;
+  width: inherit;
+  
+  @include for-tablet-up {
+    margin: 0;
+    width: 65%;
+  }
 }
 
 .headerContainer {
@@ -39,9 +67,14 @@
   position: relative;
   padding-top: 90px;
   padding-bottom: 90px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 90px;
+  display: flex;
+  flex-direction: column;
+
+  @include for-tablet-up {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 90px;
+  }
 }
 
 .tagName {
@@ -54,34 +87,64 @@
 }
 
 .rightSideContainer {
-  align-self: center;
+  align-self: flex-start;
+  margin-top: 150px;
+
+  @include for-tablet-up {
+    margin-top: 0;
+    align-self: center;
+  }
 }
 
 .tagNameContainer {
-  margin-top: 60px;
-  margin-bottom: 32px;
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+
+  @include for-tablet-up {
+    margin-top: 60px;
+    margin-bottom: 32px;
+    justify-content: flex-start;
+  }
 }
 
 .title {
-  font-size: 60px;
+  font-size: 36px;
   font-weight: normal;
-  line-height: 72px;
+  line-height: 40px;
   color: #fff;
+  text-align: center;
+
+  @include for-tablet-up {
+    text-align: left;
+    font-size: 60px;
+    line-height: 72px;
+  }
 }
 
 .subTitle {
   > * {
-    font-size: 24px;
+    font-size: 18px;
+    text-align: center;
     color: rgba(255, 255, 255, 0.7);
     font-weight: normal;
+
+    @include for-tablet-up {
+      font-size: 24px;
+      text-align: left;
+    }
   }
 }
 
 .separator {
-  margin: 32px 0;
+  margin: 0 auto;
   width: 100px;
   height: 10px;
   background-color: #FFC331;
+
+  @include for-tablet-up {
+    margin: 32px 0;
+  }
 }
 
 .clutchWidget {
@@ -106,6 +169,7 @@
   z-index: 2;
   display: flex;
   position: relative;
+  margin: 0 auto;
 
   &::before {
     content: "";
@@ -118,7 +182,19 @@
     border: 1px solid rgba(225, 225, 225, 0.3);
   }
 
+  @include for-tablet-up {
+    margin: 0;
+  }
+}
+
+.hideOnPhone {
   @include for-phone-only {
+    display: none;
+  }
+}
+
+.hideOnTabletUp {
+  @include for-tablet-up {
     display: none;
   }
 }
@@ -184,10 +260,14 @@
 }
 
 .meetingWrapper {
-  margin-left: -90px;
-  margin-right: -90px;
+  margin: 0;
   grid-column: 1 / span 2;
   filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.2));
+
+  @include for-tablet-up {
+    margin-left: -90px;
+    margin-right: -90px;
+  }
 }
 
 .meetingContainer {

@@ -26,9 +26,14 @@
 
 .decorationElementsPattern {
   position: absolute;
-  left: 38%;
-  top: 30%;
-  transform: scale(1.10);
+  left: 15%;
+  top: 15%;
+
+  @include for-tablet-up {
+    left: 38%;
+    top: 30%;
+    transform: scale(1.10);
+  }
 }
 
 .blurredDecorationElements {

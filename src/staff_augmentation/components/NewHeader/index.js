@@ -12,6 +12,7 @@ import { useState, useCallback } from 'react'
 import ScheduleCallModal from '../ScheduleCallModal'
 import ScheduleFormModal from '../ScheduleFormModal'
 import { useHistory } from 'react-router-dom'
+import classNames from 'classnames'
 
 export default function NewHeader({ landingName, backgroundColor, title, description }) {
   const [isCallModalOpen, setCallModalOpen] = useState(false)
@@ -58,8 +59,11 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
           <h1 className={classes.title}>{title}</h1>
           <h2 className={classes.subTitle}>{description}</h2>
           <div className={classes.separator} />
-          <div className={classes.clutchRectangle}>
-            <ClutchWidget className={classes.clutchWidget} variant='light' />
+          <div className={classNames(classes.clutchRectangle, classes.hideOnPhone)}>
+            <ClutchWidget 
+              className={classes.clutchWidget} 
+              variant='light' 
+            />
             <div className={classes.filledCircle} />
             <div className={classes.emptyCircle} />
           </div>
@@ -86,6 +90,14 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
             </Button> 
             {' '}to tell us about your needs.
           </p>
+          <div className={classNames(classes.clutchRectangle, classes.hideOnTabletUp)}>
+            <ClutchWidget 
+              className={classes.clutchWidget} 
+              variant='light' 
+            />
+            <div className={classes.filledCircle} />
+            <div className={classes.emptyCircle} />
+          </div>
         </div>
         <div className={classes.meetingWrapper}>
           <div className={classes.meetingContainer}>
