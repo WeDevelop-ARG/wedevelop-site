@@ -2,6 +2,8 @@ import { useCallback } from 'react'
 import classes from './styles.module.scss'
 import Modal from 'main_app/components/Modal'
 import SidebarModal from '../SidebarModal'
+import useMediaQuery from 'utils/use_media_query'
+import { forTabletUp } from 'styles/media_queries'
 
 export default function ContactPopupModal({
   isModalOpen,
@@ -11,6 +13,7 @@ export default function ContactPopupModal({
   sidebarContent,
   children
 }) {
+  const isTablet = useMediaQuery(forTabletUp)
   const handleModalClose = useCallback(() => {
     setModalOpen(false)
   }, [setModalOpen])
@@ -20,7 +23,7 @@ export default function ContactPopupModal({
       isOpen={isModalOpen}
       onRequestClose={handleModalClose}
       className={classes.modal}
-      whiteCloseButton
+      iconName={isTablet ? 'x_shape_white' : 'x_shape'}
     >
       <div className={classes.leftSideContent}>
         <p className={classes.getInTouch}>Get in Touch</p>

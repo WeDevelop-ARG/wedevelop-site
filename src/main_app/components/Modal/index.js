@@ -12,7 +12,7 @@ function Modal ({
   isOpen,
   onRequestClose,
   contentLabel,
-  whiteCloseButton = false,
+  iconName = 'x_shape'
 }) {
   return (
     <ReactModal
@@ -27,7 +27,7 @@ function Modal ({
       shouldCloseOnOverlayClick
     >
       <Button variant='icon' onClick={onRequestClose} className={classes.close}>
-        <SVGIcon name={whiteCloseButton ? 'staff_augmentation/x_shape_white' : 'staff_augmentation/x_shape'} />
+        <SVGIcon name={`staff_augmentation/${iconName}`} />
       </Button>
       {children}
     </ReactModal>
