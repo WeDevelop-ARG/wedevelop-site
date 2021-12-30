@@ -1,7 +1,9 @@
-import { useEffect } from 'react'
-import classnames from 'classnames'
+import { useEffect, useRef, useCallback, useState } from 'react'
+import classNames from 'classnames'
 import isFunction from 'lodash/isFunction'
 import { IS_STATIC_RENDERER } from 'main_app/constants'
+import { useMutationObserver } from 'utils/use_mutation_observer'
+import classes from './styles.module.scss'
 
 const CLUTCH_URL = 'https://widget.clutch.co/static/js/widget.js'
 
@@ -36,6 +38,14 @@ function isClutchScriptPresent () {
 
 function ClutchWidget ({ className, variant = 'light', width = 192, height = 45 }) {
   const extraProps = {}
+  const widgetRef = useRef()
+  const [hasLoaded, setHasLoaded] = useState(false)
+
+  const onMutationObserved = useCallback(() => {
+    setHasLoaded(true)
+  }, [])
+
+  useMutationObserver(widgetRef, onMutationObserved)
 
   if (variant === 'light') {
     extraProps['data-darkbg'] = true
@@ -53,13 +63,19 @@ function ClutchWidget ({ className, variant = 'light', width = 192, height = 45 
 
   return (
     <div
-      className={classnames('clutch-widget', className)}
+      className={classNames(
+        'clutch-widget', 
+        classes.clutchWidget, 
+        { [classes.loaded]: hasLoaded }, 
+        className
+      )}
       data-url='https://widget.clutch.co'
       data-widget-type='2'
       data-height={height.toString()}
       style={{ width: `${width}px`, height: `${height}px` }}
       data-clutchcompany-id='810049'
       data-primary-color='#FFC331'
+      ref={widgetRef}
       {...extraProps}
     />
   )

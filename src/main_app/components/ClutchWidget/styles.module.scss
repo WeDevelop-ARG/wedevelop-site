@@ -1,0 +1,8 @@
+.clutchWidget {
+  opacity: 0;
+  transition: opacity 1.5s ease-in .5s;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
