@@ -4,6 +4,7 @@ import AvatarNahuel from 'assets/staff_augmentation/members/nahuel.png'
 import AvatarFederica from 'assets/staff_augmentation/members/federica.png'
 import AvatarRicardo from 'assets/staff_augmentation/members/ricardo.png'
 import { ReactComponent as ModalShape } from 'assets/staff_augmentation/modal_shape.svg'
+import { ReactComponent as MobileModalShape } from 'assets/staff_augmentation/mobile_modal_shape.svg'
 import ModalDotsPattern from 'assets/staff_augmentation/modal_dots_pattern.svg'
 import Image from 'main_app/components/Image'
 
@@ -13,6 +14,7 @@ export default function SidebarModal({ className, content }) {
   return (
     <aside className={containerClass}>
       <ModalShape className={classes.modalDecoration} />
+      <MobileModalShape className={classes.mobileDecoration} />
       <Image src={ModalDotsPattern} className={classes.modalDotsPattern} />
       <div className={classes.content}>
         <p className={classes.whatsNext}>What's next?</p>

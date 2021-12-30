@@ -3,16 +3,14 @@
 .modal {
   position: relative;
   overflow-x: auto;
-  overflow-y: hidden;
   max-height: 100%;
   max-width: 100%;
-  padding: 45px 10px;
+  padding: 0;
   display: flex;
   flex-direction: column !important;
   justify-content: space-between;
 
   @include for-tablet-up {
-    padding: 45px;
     max-height: 95vh;
     max-width: 95vw;
     width: 100% !important;
@@ -39,6 +37,7 @@
 
 .leftSideContent {
   flex-grow: 1;
+  padding: 35px;
 }
 
 .separator {
@@ -56,6 +55,10 @@
 }
 
 .sidebar {
-  width: 500px;
-  flex-shrink: 0;
+  width: 100%;
+
+  @include for-tablet-up {
+    width: 500px;
+    flex-shrink: 0;
+  }
 }

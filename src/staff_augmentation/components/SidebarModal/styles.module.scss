@@ -1,18 +1,45 @@
+@import "/src/styles/media_queries.scss";
+
 .rightSideContent {
-  display: flex;
-  flex-direction: column;
+  text-align: right;
+  height: 100%;
+  position: relative;
 }
 
 .content {
-  z-index: 5;
-  margin-top: auto;
+  position: absolute;
+
+  @include for-phone-only {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @include for-tablet-up {
+    bottom: 0;
+    right: 20px; 
+  }
 }
 
 .modalDecoration {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top right;
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.mobileDecoration {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @include for-tablet-up {
+    display: none;
+  }
 }
 
 .modalDotsPattern {
@@ -21,26 +48,37 @@
 }
 
 .whatsNext {
-  align-self: flex-end;
   font-size: 24px;
   font-weight: bold;
   color: #fff;
-  text-align: right;
+  text-align: center;
+
+  @include for-tablet-up {
+    text-align: right;
+  }
 }
 
 .rightSideText {
-  align-self: flex-end;
   color: #fff;
-  text-align: right;
   font-size: 16px;
   line-height: 24px;
   margin: 32px 0 32px auto;
-  max-width: 60%;
+  width: 100%;
+  text-align: center;
+
+  @include for-tablet-up {
+    text-align: right;
+    max-width: 60%;
+  }
 }
 
 .avatars {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+
+  @include for-tablet-up {
+    justify-content: flex-end;
+  }
 
   > * {
     margin-left: -35px;
