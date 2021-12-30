@@ -46,6 +46,7 @@ function LandingPage () {
           description={landing.header.description}
           backgroundColor={landing.header.backgroundColor}
           freeQuoteForm={landing.freeQuoteForm}
+          quote={landing.header.quote}
         />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}

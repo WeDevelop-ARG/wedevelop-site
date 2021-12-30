@@ -17,6 +17,11 @@ const webDevelopmentOutsourcing = {
         <p>Outsource web development without the hassles.</p>
       </>
     ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Web Development Outsourcing</b>? 
+      </>
+    ),
     sideImageURL: BgWebDevelopers,
     backgroundColor: '#361989'
   },

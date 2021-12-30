@@ -17,6 +17,11 @@ const offshoreWebDevelopment = {
         <p>Hire Offshore Web Developers without the hassles.</p>
       </>
     ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Offshore Web Development</b>? 
+      </>
+    ),
     sideImageURL: BgWebDevelopers,
     backgroundColor: '#361989'
   },

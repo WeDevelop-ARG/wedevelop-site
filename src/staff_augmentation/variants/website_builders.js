@@ -17,6 +17,11 @@ const websiteBuilders = {
         <p>Hire Website Builders without the hassles.</p>
       </>
     ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Website Builder Services</b>? 
+      </>
+    ),
     sideImageURL: BgWebDevelopers,
     backgroundColor: '#361989'
   },

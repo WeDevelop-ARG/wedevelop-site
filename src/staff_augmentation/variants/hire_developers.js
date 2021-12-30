@@ -17,6 +17,11 @@ const hireDevelopers = {
         <p>Hire Top Web Developers without the hassles.</p>
       </>
     ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Development Services</b>? 
+      </>
+    ),
     sideImageURL: BgHireDevelopers,
     backgroundColor: '#8224E3'
   },

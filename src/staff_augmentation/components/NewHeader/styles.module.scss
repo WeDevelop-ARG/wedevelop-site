@@ -215,6 +215,12 @@
   font-weight: normal;
   line-height: 36px;
 
+  > b {
+    background: linear-gradient(90deg, #6B67E9 11.76%, #8224E3 89.05%);
+    background-clip: text;
+    color: transparent;
+  }
+
   &::before, &::after {
     content: "";
   }

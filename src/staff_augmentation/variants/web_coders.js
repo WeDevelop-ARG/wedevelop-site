@@ -17,6 +17,11 @@ const webCoders = {
         <p>Hire Web Coders without the hassles.</p>
       </>
     ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Web Coders Services</b>? 
+      </>
+    ),
     sideImageURL: BgWebCoders,
     backgroundColor: '#361989'
   },

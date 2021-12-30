@@ -14,7 +14,7 @@ import ScheduleFormModal from '../ScheduleFormModal'
 import { useHistory } from 'react-router-dom'
 import classNames from 'classnames'
 
-export default function NewHeader({ landingName, backgroundColor, title, description }) {
+export default function NewHeader({ landingName, backgroundColor, title, description, quote = '' }) {
   const [isCallModalOpen, setCallModalOpen] = useState(false)
   const [isFormModalOpen, setFormModalOpen] = useState(false)
   const history = useHistory()
@@ -74,9 +74,7 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
               <Image src={WeDevelopCEO} className={classes.avatar} />
             </div>
             <q className={classes.quote}> 
-              {/* TODO: Add to prop */}
-              Are you interested to learn 
-              more about our Staff Augmentation Services? 
+              {quote}
             </q>
           </div>
           <div className={classes.shapeTriangle} />
