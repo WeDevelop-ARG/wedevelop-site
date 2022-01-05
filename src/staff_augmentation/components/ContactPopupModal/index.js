@@ -3,7 +3,7 @@ import classes from './styles.module.scss'
 import Modal from 'main_app/components/Modal'
 import SidebarModal from '../SidebarModal'
 import useMediaQuery from 'utils/use_media_query'
-import { forTabletUp } from 'styles/media_queries'
+import { forDesktopUp } from 'styles/media_queries'
 
 export default function ContactPopupModal({
   isModalOpen,
@@ -13,7 +13,7 @@ export default function ContactPopupModal({
   sidebarContent,
   children
 }) {
-  const isTablet = useMediaQuery(forTabletUp)
+  const isDesktop = useMediaQuery(forDesktopUp)
   const handleModalClose = useCallback(() => {
     setModalOpen(false)
   }, [setModalOpen])
@@ -23,7 +23,7 @@ export default function ContactPopupModal({
       isOpen={isModalOpen}
       onRequestClose={handleModalClose}
       className={classes.modal}
-      iconName={isTablet ? 'x_shape_white' : 'x_shape'}
+      iconName={isDesktop ? 'x_shape_white' : 'x_shape'}
     >
       <div className={classes.leftSideContent}>
         <p className={classes.getInTouch}>Get in Touch</p>
@@ -32,8 +32,8 @@ export default function ContactPopupModal({
         <div className={classes.separator} />
         {children}
       </div>
-      <SidebarModal 
-        className={classes.sidebar} 
+      <SidebarModal
+        className={classes.sidebar}
         content={sidebarContent}
       />
     </Modal>

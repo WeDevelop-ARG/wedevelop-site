@@ -6,14 +6,15 @@
   max-height: 100%;
   max-width: 100%;
   padding: 0;
-  display: flex;
-  flex-direction: column !important;
-  justify-content: space-between;
+  width: 100% !important;
+  border-radius: 6.63px;
+  display: block;
 
-  @include for-tablet-up {
+  @include for-desktop-up {
+    display: flex;
+    justify-content: space-between;
     max-height: 95vh;
     max-width: 95vw;
-    width: 100% !important;
     height: 100%;
     flex-direction: row !important;
   }
@@ -38,6 +39,7 @@
 .leftSideContent {
   flex-grow: 1;
   padding: 35px;
+  z-index: 1;
 }
 
 .separator {
@@ -57,7 +59,7 @@
 .sidebar {
   width: 100%;
 
-  @include for-tablet-up {
+  @include for-desktop-up {
     width: 500px;
     flex-shrink: 0;
   }

@@ -17,7 +17,8 @@ export default function ScheduleFormModal({
   isModalOpen,
   setModalOpen,
   onScheduleMeetingClick,
-  onSubmit
+  onSubmit,
+  formOrigin
 }) {
   const InputWithError = useFieldWithErrorClassName(
     'input',
@@ -41,29 +42,29 @@ export default function ScheduleFormModal({
           Accept: 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           name: values.fullName,
           email: values.email,
           company: values.company ?? '',
           message: values.details,
           filePath: filePath ?? '',
-          formOrigin: 'schedule-meeting-form'
+          formOrigin
         })
       })
       logAnalyticsEvent({
         event: 'contact',
         contactType: 'free-quote-form',
-        source: 'schedule-meeting-form'
+        source: formOrigin
       })
 
       onSubmit?.()
     } catch(err) {
       console.error(err)
     }
-  }, [onSubmit])
+  }, [onSubmit, formOrigin])
 
   return (
-    <ContactPopupModal 
+    <ContactPopupModal
       isModalOpen={isModalOpen}
       setModalOpen={setModalOpen}
       title="We'd love hear from you"

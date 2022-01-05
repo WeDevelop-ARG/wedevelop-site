@@ -1,23 +1,31 @@
 @import "/src/styles/media_queries.scss";
 
 .rightSideContent {
-  text-align: right;
-  height: 100%;
-  position: relative;
+  z-index: 0;
+
+  @include for-tablet-down {
+    position: relative;
+    padding-top: 250px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+  }
+
+  @include for-desktop-up {
+    position: relative;
+    position: sticky;
+    top: 0;
+    text-align: right;
+    height: 100%;
+  }
 }
 
 .content {
-  position: absolute;
-
-  @include for-phone-only {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  @include for-tablet-up {
-    bottom: 0;
-    right: 20px; 
+  @include for-desktop-up {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
   }
 }
 
@@ -27,24 +35,29 @@
   object-fit: cover;
   object-position: top right;
 
-  @include for-phone-only {
+  @include for-tablet-down {
     display: none;
   }
 }
 
 .mobileDecoration {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  z-index: -1;
 
-  @include for-tablet-up {
+  @include for-desktop-up {
     display: none;
   }
 }
 
 .modalDotsPattern {
   position: absolute;
-  right: 10%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 }
 
 .whatsNext {
@@ -53,7 +66,7 @@
   color: #fff;
   text-align: center;
 
-  @include for-tablet-up {
+  @include for-desktop-up {
     text-align: right;
   }
 }
@@ -66,7 +79,7 @@
   width: 100%;
   text-align: center;
 
-  @include for-tablet-up {
+  @include for-desktop-up {
     text-align: right;
     max-width: 60%;
   }
@@ -76,7 +89,7 @@
   display: flex;
   justify-content: center;
 
-  @include for-tablet-up {
+  @include for-desktop-up {
     justify-content: flex-end;
   }
 

@@ -14,7 +14,7 @@ import ScheduleFormModal from '../ScheduleFormModal'
 import { useHistory } from 'react-router-dom'
 import classNames from 'classnames'
 
-export default function NewHeader({ landingName, backgroundColor, title, description, quote = '' }) {
+export default function NewHeader({ freeQuoteForm, landingName, backgroundColor, title, description, quote = '' }) {
   const [isCallModalOpen, setCallModalOpen] = useState(false)
   const [isFormModalOpen, setFormModalOpen] = useState(false)
   const history = useHistory()
@@ -33,16 +33,17 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
 
   return (
     <>
-      <ScheduleCallModal 
-        isModalOpen={isCallModalOpen} 
-        setModalOpen={setCallModalOpen} 
+      <ScheduleCallModal
+        isModalOpen={isCallModalOpen}
+        setModalOpen={setCallModalOpen}
         onSubmit={onSuccess}
       />
-      <ScheduleFormModal 
-        isModalOpen={isFormModalOpen} 
-        setModalOpen={setFormModalOpen} 
+      <ScheduleFormModal
+        isModalOpen={isFormModalOpen}
+        setModalOpen={setFormModalOpen}
         onScheduleMeetingClick={switchToCallModal}
         onSubmit={onSuccess}
+        formOrigin={freeQuoteForm.formOrigin}
       />
       <Image src={HeaderBackground} alt='' className={classes.background} />
       <section id='headerSection' className={classes.headerContainer}>
@@ -60,9 +61,9 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
           <h2 className={classes.subTitle}>{description}</h2>
           <div className={classes.separator} />
           <div className={classNames(classes.clutchRectangle, classes.hideOnPhone)}>
-            <ClutchWidget 
-              className={classes.clutchWidget} 
-              variant='light' 
+            <ClutchWidget
+              className={classes.clutchWidget}
+              variant='light'
             />
             <div className={classes.filledCircle} />
             <div className={classes.emptyCircle} />
@@ -73,7 +74,7 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
             <div className={classes.avatarContainer}>
               <Image src={WeDevelopCEO} className={classes.avatar} />
             </div>
-            <q className={classes.quote}> 
+            <q className={classes.quote}>
               {quote}
             </q>
           </div>
@@ -82,16 +83,16 @@ export default function NewHeader({ landingName, backgroundColor, title, descrip
             Schedule a call
           </Button>
           <p className={classes.alternativeSchedule}>
-            Or, use{' '} 
+            Or, use{' '}
             <Button variant="link" className={classes.scheduleFormButton} onClick={() => setFormModalOpen(true)}>
               this form
-            </Button> 
+            </Button>
             {' '}to tell us about your needs.
           </p>
           <div className={classNames(classes.clutchRectangle, classes.hideOnTabletUp)}>
-            <ClutchWidget 
-              className={classes.clutchWidget} 
-              variant='light' 
+            <ClutchWidget
+              className={classes.clutchWidget}
+              variant='light'
             />
             <div className={classes.filledCircle} />
             <div className={classes.emptyCircle} />

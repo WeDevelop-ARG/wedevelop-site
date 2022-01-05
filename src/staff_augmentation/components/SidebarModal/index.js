@@ -7,13 +7,39 @@ import { ReactComponent as ModalShape } from 'assets/staff_augmentation/modal_sh
 import { ReactComponent as MobileModalShape } from 'assets/staff_augmentation/mobile_modal_shape.svg'
 import ModalDotsPattern from 'assets/staff_augmentation/modal_dots_pattern.svg'
 import Image from 'main_app/components/Image'
+import { useEffect, useRef } from 'react'
+import useMediaQuery from 'utils/use_media_query'
+import { forDesktopUp } from 'styles/media_queries'
 
 export default function SidebarModal({ className, content }) {
   const containerClass = classNames(classes.rightSideContent, className)
+  const isDesktopUp = useMediaQuery(forDesktopUp)
+  const desktopShapeRef = useRef()
+  const containerRef = useRef()
+
+  useEffect(() => {
+    if (!isDesktopUp) {
+      containerRef.current.style.width = 'auto'
+      return undefined
+    }
+
+    const listener = () => {
+      containerRef.current.style.width = `${
+        desktopShapeRef.current.getBoundingClientRect().width
+      }px`
+    }
+
+    window.addEventListener('resize', listener, { passive: true })
+    listener()
+
+    return () => {
+      window.removeEventListener('resize', listener, { passive: true })
+    }
+  }, [isDesktopUp])
 
   return (
-    <aside className={containerClass}>
-      <ModalShape className={classes.modalDecoration} />
+    <aside ref={containerRef} className={containerClass}>
+      <ModalShape ref={desktopShapeRef} className={classes.modalDecoration} />
       <MobileModalShape className={classes.mobileDecoration} />
       <Image src={ModalDotsPattern} className={classes.modalDotsPattern} />
       <div className={classes.content}>
