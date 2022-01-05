@@ -20,6 +20,11 @@ const staffAugmentation = {
         <p>Fast, without the hassles.</p>
       </>
     ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Staff Augmentation Services</b>? 
+      </>
+    ),
     sideImageURL: BgStaffAugmentation,
     backgroundColor: '#377DFF'
   },

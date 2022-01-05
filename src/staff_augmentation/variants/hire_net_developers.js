@@ -17,6 +17,11 @@ const hireNetDevelopers = {
         <p>Hire .NET Developers without the hassles.</p>
       </>
     ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>.NET Development Services</b>? 
+      </>
+    ),
     sideImageURL: BgHireDevelopers,
     backgroundColor: '#8224E3'
   },

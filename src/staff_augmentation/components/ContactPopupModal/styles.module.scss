@@ -1,0 +1,66 @@
+@import '/src/styles/media_queries.scss';
+
+.modal {
+  position: relative;
+  overflow-x: auto;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0;
+  width: 100% !important;
+  border-radius: 6.63px;
+  display: block;
+
+  @include for-desktop-up {
+    display: flex;
+    justify-content: space-between;
+    max-height: 95vh;
+    max-width: 95vw;
+    height: 100%;
+    flex-direction: row !important;
+  }
+}
+
+.getInTouch {
+  color: #363636;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+}
+
+.scheduleTitle {
+  font-weight: bold;
+  font-size: 39px;
+}
+
+.subTitle {
+  color: rgba(54, 54, 54, 0.5);
+}
+
+.leftSideContent {
+  flex-grow: 1;
+  padding: 35px;
+  z-index: 1;
+}
+
+.separator {
+  background-color: #FFC331;
+  max-width: 132px;
+  height: 14px;
+  margin: 10px 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.sidebar {
+  width: 100%;
+
+  @include for-desktop-up {
+    width: 500px;
+    flex-shrink: 0;
+  }
+}

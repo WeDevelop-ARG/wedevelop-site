@@ -26,12 +26,14 @@ async function handlePostRequest (req, res) {
     name,
     email,
     formOrigin,
-    message
+    filePath,
+    message,
+    company
   } = req.body
 
   const contact = { name, email }
   const deal = { name: `${name} (${email})` }
-  const note = { body: `<b>Sent from:</b> ${formOrigin}<br/><b>Message:</b><br/><br/>${message}` }
+  const note = { body: `<b>Sent from:</b> ${formOrigin}<br/><b>Company:</b>${company}<br/><b>File Path:</b>${filePath}<b>Message:</b><br/><br/>${message}` }
 
   console.log('INITIAL_LANDING_CONTACT_FORM', JSON.stringify({ contact, deal, note }))
 

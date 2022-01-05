@@ -7,10 +7,10 @@ import BackgroundContainer from './components/BackgroundContainer'
 import Footer from './components/Footer'
 import FullSizeCTA from './components/FullSizeCTA'
 import FreeQuoteModal from './components/FreeQuoteModal'
-import Header from './components/Header'
 import HireTopTalent from './components/HireTopTalent'
 import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import NavBar from './components/NavBar'
+import NewHeader from './components/NewHeader'
 import PictureWall from 'main_app/components/PictureWall'
 import ReviewCards from './components/ReviewCards'
 
@@ -40,13 +40,13 @@ function LandingPage () {
         backgroundColor={landing.header.backgroundColor}
       />
       <Article>
-        <Header
+        <NewHeader 
           landingName={landing.header.landingName}
           title={landing.header.title}
           description={landing.header.description}
-          freeQuoteForm={landing.freeQuoteForm}
-          sideImageURL={landing.header.sideImageURL}
           backgroundColor={landing.header.backgroundColor}
+          freeQuoteForm={landing.freeQuoteForm}
+          quote={landing.header.quote}
         />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
