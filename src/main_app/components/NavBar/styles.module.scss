@@ -42,7 +42,7 @@
   }
 
   @include for-desktop-up {
-    &.atTop .logoLink {
+    &.atTop:not(.hideMenu) .logoLink {
       margin-top: -20px;
     }
   }

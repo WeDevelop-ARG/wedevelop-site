@@ -1,9 +1,12 @@
 import { useCallback } from 'react'
-import classes from './styles.module.scss'
-import Modal from 'main_app/components/Modal'
-import SidebarModal from '../SidebarModal'
+
 import useMediaQuery from 'utils/use_media_query'
 import { forDesktopUp } from 'styles/media_queries'
+
+import Modal from 'main_app/components/Modal'
+import SidebarModal from '../SidebarModal'
+
+import classes from './styles.module.scss'
 
 export default function ContactPopupModal({
   isModalOpen,

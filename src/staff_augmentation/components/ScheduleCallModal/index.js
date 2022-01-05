@@ -1,5 +1,5 @@
-import CalendlyWidget from 'main_app/components/CalendlyWidget'
 import ContactPopupModal from '../ContactPopupModal'
+import CalendlyWidget from 'main_app/components/CalendlyWidget'
 
 export default function ScheduleCallModal({
   isModalOpen,
@@ -7,7 +7,7 @@ export default function ScheduleCallModal({
   onSubmit
 }) {
   return (
-    <ContactPopupModal 
+    <ContactPopupModal
       isModalOpen={isModalOpen}
       setModalOpen={setModalOpen}
       title='Schedule a 15 minute consultation'
@@ -18,7 +18,7 @@ export default function ScheduleCallModal({
         </span>
       }
     >
-      <CalendlyWidget 
+      <CalendlyWidget
         hideText
         onFinish={() => onSubmit?.()}
       />

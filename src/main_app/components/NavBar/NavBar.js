@@ -92,6 +92,7 @@ function NavBar ({
       className={classnames(classes.header, variantClassNames, {
         [classes.menuOpen]: menuOpen,
         [classes.atTop]: atScrollTop,
+        [classes.hideMenu]: hideMenu,
         [classes.hidden]: !show && initialized,
         [classes.initialized]: initialized
       })}

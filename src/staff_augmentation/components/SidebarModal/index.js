@@ -1,15 +1,19 @@
-import classes from './styles.module.scss'
+import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
+
 import AvatarNahuel from 'assets/staff_augmentation/members/nahuel.png'
 import AvatarFederica from 'assets/staff_augmentation/members/federica.png'
 import AvatarRicardo from 'assets/staff_augmentation/members/ricardo.png'
 import { ReactComponent as ModalShape } from 'assets/staff_augmentation/modal_shape.svg'
 import { ReactComponent as MobileModalShape } from 'assets/staff_augmentation/mobile_modal_shape.svg'
 import ModalDotsPattern from 'assets/staff_augmentation/modal_dots_pattern.svg'
+
 import Image from 'main_app/components/Image'
-import { useEffect, useRef } from 'react'
+
 import useMediaQuery from 'utils/use_media_query'
 import { forDesktopUp } from 'styles/media_queries'
+
+import classes from './styles.module.scss'
 
 export default function SidebarModal({ className, content }) {
   const containerClass = classNames(classes.rightSideContent, className)
