@@ -22,7 +22,6 @@ export default function NewHeader({ freeQuoteForm, landingName, backgroundColor,
   const shouldUseBiggerClutch = useMediaQuery('screen and (min-width: 1550px)')
   const [isClutchLoaded, setIsClutchLoaded] = useState(false)
   const handleClutchLoaded = useCallback(() => {
-    console.log('CLUTCH LOADED')
     setIsClutchLoaded(true)
   }, [])
   const clutch = (
@@ -91,7 +90,7 @@ export default function NewHeader({ freeQuoteForm, landingName, backgroundColor,
             <div className={classes.quoteContainer}>
               <div className={classes.avatarContainer}>
                 <div className={classes.avatarImageContainer}>
-                  <Image src={WeDevelopCEO} alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
+                  <Image src={WeDevelopCEO} objectFit='cover' alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
                 </div>
               </div>
               <q className={classes.quote}>
