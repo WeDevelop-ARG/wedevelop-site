@@ -23,6 +23,7 @@ function isOptimizationDenied (url) {
   try {
     return (
       IS_PREVIEW_BUILD ||
+      typeof url !== 'string' ||
       cloudinaryDenylistExtensionsRegex.test(url) ||
       !optimizationAllowedHostnames.includes(
         (new URL(url, BASE_URL)).hostname
