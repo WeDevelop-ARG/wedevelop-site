@@ -1,4 +1,5 @@
 const { createContactIfNotExists, createContactNote } = require('../services/hubspot')
+const { getDownloadURLForPath } = require('../services/storage')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
