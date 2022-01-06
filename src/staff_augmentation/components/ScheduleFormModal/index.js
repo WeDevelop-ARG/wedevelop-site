@@ -68,7 +68,7 @@ export default function ScheduleFormModal({
       isModalOpen={isModalOpen}
       setModalOpen={setModalOpen}
       title="We'd love hear from you"
-      label="Get Custom Solutions, Recommendations, Resumes, or, Estimates. Confidentiality & Same Day Response Guaranteed!"
+      label="Get Custom Solutions, Recommendations, Resumes, or Estimates. Confidentiality & Same Day Response Guaranteed!"
       sidebarContent={
         <span>
           One of our Account Managers will contact you shortly. <br /><br />
@@ -87,6 +87,7 @@ export default function ScheduleFormModal({
             as={InputWithError}
             type='text'
             name='fullName'
+            autoFocus
             className={classes.inputStyles}
           />
         </label>

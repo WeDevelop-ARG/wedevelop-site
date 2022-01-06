@@ -205,6 +205,10 @@ export default function Image ({
           [classes[position]]: !isEmpty(classes[position]),
           [className]: !isEmpty(className)
         })}
+        style={{
+          width: typeof width === 'number' ? width : undefined,
+          height: typeof height === 'number' ? height : undefined
+        }}
       >
         {img}
       </div>

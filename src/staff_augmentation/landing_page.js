@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useRouteMatch } from 'react-router'
 
 import Article from 'main_app/components/Article'
@@ -18,6 +18,8 @@ import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
+import classes from './styles.module.scss'
+
 function LandingPage () {
   const { params } = useRouteMatch('/:name')
   const { landing } = useLandingVariantByName(params.name)
@@ -26,6 +28,14 @@ function LandingPage () {
     title: landing.metadata.title,
     description: landing.metadata.description
   })
+
+  useEffect(() => {
+    document.getElementById('root').classList.add(classes.root)
+
+    return () => {
+      document.getElementById('root').classList.remove(classes.root)
+    }
+  }, [])
 
   const [isModalOpen, setModalOpen] = useState(false)
   const handleModalOpen = useCallback(() => {
@@ -40,7 +50,7 @@ function LandingPage () {
         backgroundColor={landing.header.backgroundColor}
       />
       <Article>
-        <NewHeader 
+        <NewHeader
           landingName={landing.header.landingName}
           title={landing.header.title}
           description={landing.header.description}

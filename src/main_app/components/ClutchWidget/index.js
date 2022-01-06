@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import isFunction from 'lodash/isFunction'
 import { IS_STATIC_RENDERER } from 'main_app/constants'
@@ -34,7 +34,8 @@ function isClutchScriptPresent () {
   return document.head.querySelector(`script[src="${CLUTCH_URL}"]`) !== null
 }
 
-function ClutchWidget ({ className, variant = 'light', width = 192, height = 45 }) {
+function ClutchWidget ({ className, variant = 'light', height, verticalAlign, onLoad }) {
+  const containerRef = useRef()
   const extraProps = {}
 
   if (variant === 'light') {
@@ -51,13 +52,75 @@ function ClutchWidget ({ className, variant = 'light', width = 192, height = 45 
     })
   }, [])
 
+  useEffect(() => {
+    let container = containerRef.current
+    let iframe
+    const rescaleContainer = ({ isLoad } = {}) => {
+      if (iframe && typeof height === 'number') {
+        container.style.transform = `scale(${height / container.offsetHeight})`
+      }
+
+      if (isLoad && isFunction(onLoad)) {
+        try {
+          let loadCalled = false
+          let timeout
+          const callLoad = () => {
+            if (loadCalled) return undefined
+            loadCalled = true
+            clearTimeout(timeout)
+            iframe.removeEventListener('load', callLoad)
+            onLoad()
+          }
+          iframe.addEventListener('load', callLoad)
+          timeout = setTimeout(callLoad, 3000)
+        } catch (e) {}
+      }
+    }
+    const iframeObserver = new MutationObserver(rescaleContainer)
+
+    const handleIframe = () => {
+      let isLoad = !iframe
+
+      iframe = container.querySelector('iframe')
+      isLoad = isLoad && iframe
+
+      if (iframe) {
+        iframeObserver.observe(iframe, {
+          attributeFilter: ['style']
+        })
+      }
+
+      rescaleContainer({ isLoad })
+    }
+
+    handleIframe()
+
+    const containerObserver = new MutationObserver(handleIframe)
+
+    containerObserver.observe(container, {
+      childList: true
+    })
+
+    return () => {
+      container.style.transform = ''
+      iframeObserver.disconnect()
+      containerObserver.disconnect()
+    }
+  }, [height, onLoad])
+
   return (
     <div
+      ref={containerRef}
       className={classnames('clutch-widget', className)}
+      style={{
+        height: 'fit-content',
+        display: 'inline-block',
+        transformOrigin: `0 ${verticalAlign === 'center' ? '50%' : 0}`,
+        transformBox: 'fill-box'
+      }}
       data-url='https://widget.clutch.co'
       data-widget-type='2'
-      data-height={height.toString()}
-      style={{ width: `${width}px`, height: `${height}px` }}
+      data-expandifr='true'
       data-clutchcompany-id='810049'
       data-primary-color='#FFC331'
       {...extraProps}

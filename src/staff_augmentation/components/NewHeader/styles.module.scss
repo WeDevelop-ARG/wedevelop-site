@@ -1,20 +1,31 @@
 @import "/src/styles/theme.scss";
 @import "/src/styles/media_queries.scss";
 
-.background {
+.headerContainer {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.backgroundContainer {
   position: absolute;
   top: 0;
+  bottom: 10%;
   left: 0;
-  padding: 0 !important;
-  margin: 0;
-  width: 100%;
-  z-index: -10;
-  min-height: 1400px;
-  object-fit: cover;
+  right: 0;
+  z-index: -1;
 
   @include for-desktop-up {
-    min-height: 1000px;
+    bottom: 15%;
   }
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
 }
 
 .dotsPattern {
@@ -65,18 +76,26 @@
   }
 }
 
-.headerContainer {
-  min-height: 100vh;
-  position: relative;
-  padding-top: 90px;
-  padding-bottom: 90px;
-  display: flex;
-  flex-direction: column;
+.columnsContainer {
+  @include for-desktop-up {
+    display: flex;
+  }
+}
+
+.leftSideContainer {
+  flex-grow: 1;
+  margin-right: 8%;
+}
+
+.rightSideContainer {
+  align-self: flex-start;
+  margin-top: 150px;
 
   @include for-desktop-up {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 90px;
+    width: 41%;
+    flex-shrink: 0;
+    margin-top: 0;
+    align-self: center;
   }
 }
 
@@ -89,23 +108,13 @@
   text-transform: uppercase;
 }
 
-.rightSideContainer {
-  align-self: flex-start;
-  margin-top: 150px;
-
-  @include for-desktop-up {
-    margin-top: 0;
-    align-self: center;
-  }
-}
-
 .tagNameContainer {
   margin: 12px 0;
   display: flex;
   justify-content: center;
 
   @include for-desktop-up {
-    margin-top: 60px;
+    margin-top: clamp(10px, 1.3vw, 60px);
     margin-bottom: 32px;
     justify-content: flex-start;
   }
@@ -121,7 +130,17 @@
   @include for-desktop-up {
     text-align: left;
     font-size: 60px;
-    line-height: 72px;
+    line-height: 62px;
+  }
+
+  @media screen and (max-width: 1550px) {
+    font-size: 55px;
+    line-height: 58px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    font-size: 50px;
+    line-height: 55px;
   }
 }
 
@@ -135,6 +154,10 @@
     @include for-desktop-up {
       font-size: 24px;
       text-align: left;
+    }
+
+    @media screen and (max-width: 1550px) {
+      font-size: 19px;
     }
   }
 }
@@ -150,10 +173,6 @@
   }
 }
 
-.clutchWidget {
-  margin: auto;
-}
-
 .rectangle {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.1);
@@ -163,16 +182,25 @@
   }
 }
 
+.clutchWidget {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .clutchRectangle {
   @extend .rectangle;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
   border-radius: 5px;
-  width: 330px;
-  height: 110px;
+  width: 200px;
+  height: 70px;
   box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.1);
   z-index: 2;
   display: flex;
   position: relative;
   margin: 0 auto;
+  margin-top: 27px;
+  padding: 5px;
 
   &::before {
     content: "";
@@ -186,9 +214,19 @@
     border: 1px solid rgba(225, 225, 225, 0.3);
   }
 
+  @media screen and (min-width: 1550px) {
+    margin-top: 0;
+    width: 330px;
+    height: 110px;
+  }
+
   @include for-desktop-up {
     margin: 0;
   }
+}
+
+.visuallyHidden {
+  opacity: 0;
 }
 
 .hideOnPhone {
@@ -242,20 +280,30 @@
 .avatarContainer {
   top: 0;
   left: 50%;
+  transform: translate(-50%, -70%);
   position: absolute;
   background-color: rgba(234, 234, 234, 0.5);
   border-radius: 50%;
-  width: 175px;
-  height: 175px;
-  transform: translate(-50%, -70%);
+  width: 98px;
+  height: 98px;
+
+  @media screen and (min-width: 1250px) {
+    width: 137px;
+    height: 137px;
+  }
+
+  @media screen and (min-width: 1550px) {
+    width: 175px;
+    height: 175px;
+  }
 
   &::before {
     content: "";
     position: absolute;
-    top: -4px;
-    left: -20px;
-    width: 100%;
-    height: 100%;
+    top: -2%;
+    left: -7%;
+    width: 95%;
+    height: 95%;
     border-radius: 50%;
     background: linear-gradient(to right, #6B67E9, #8224E3);
     padding: 1px;
@@ -265,29 +313,42 @@
   }
 }
 
+.avatarImageContainer {
+  position: relative;
+  top: 10%;
+  left: 8%;
+  width: 83%;
+  height: 83%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 .avatar {
-  margin: 8px 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .meetingWrapper {
   margin: 0;
-  grid-column: 1 / span 2;
   filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.2));
 
   @include for-desktop-up {
-    margin-left: -90px;
-    margin-right: -90px;
+    margin-left: -70px;
+    margin-right: -70px;
   }
 }
 
 .meetingContainer {
   background-color: #fff;
-  padding: 61px 70px 29px 70px;
+  padding: 62px 25px 25px 25px;
   border-radius: 5px;
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+  margin-top: 60px;
 
-  @include for-tablet-down {
-    margin-top: 60px;
+  @include for-desktop-up {
+    padding: 45px 70px 29px 70px;
+    margin-top: 45px;
   }
 }
 
@@ -300,6 +361,7 @@
 
 .meeting {
   line-height: 20px;
+  margin: 0;
 }
 
 .scheduleButton {

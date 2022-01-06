@@ -52,9 +52,9 @@ export default function SidebarModal({ className, content }) {
           {content}
         </p>
         <div className={classes.avatars}>
-          <Image src={AvatarRicardo} alt="Ricardo's avatar" />
-          <Image src={AvatarFederica} alt="Federica's avatar" />
-          <Image src={AvatarNahuel} alt="Nahuel's avatar" />
+          <Image src={AvatarRicardo} width={89} resize='auto-height' objectFit='cover' alt="Ricardo's avatar" />
+          <Image src={AvatarFederica} width={89} resize='auto-height' objectFit='cover' alt="Federica's avatar" />
+          <Image src={AvatarNahuel} width={89} resize='auto-height' objectFit='cover' alt="Nahuel's avatar" />
         </div>
       </div>
     </aside>

@@ -13,11 +13,31 @@ import ScheduleCallModal from '../ScheduleCallModal'
 import ScheduleFormModal from '../ScheduleFormModal'
 import { useHistory } from 'react-router-dom'
 import classNames from 'classnames'
+import useMediaQuery from 'utils/use_media_query'
 
 export default function NewHeader({ freeQuoteForm, landingName, backgroundColor, title, description, quote = '' }) {
   const [isCallModalOpen, setCallModalOpen] = useState(false)
   const [isFormModalOpen, setFormModalOpen] = useState(false)
   const history = useHistory()
+  const shouldUseBiggerClutch = useMediaQuery('screen and (min-width: 1550px)')
+  const [isClutchLoaded, setIsClutchLoaded] = useState(false)
+  const handleClutchLoaded = useCallback(() => {
+    console.log('CLUTCH LOADED')
+    setIsClutchLoaded(true)
+  }, [])
+  const clutch = (
+    <div className={classNames(classes.clutchRectangle, { [classes.visuallyHidden]: !isClutchLoaded })}>
+      <ClutchWidget
+        className={classes.clutchWidget}
+        onLoad={handleClutchLoaded}
+        verticalAlign='center'
+        variant='light'
+        height={shouldUseBiggerClutch ? 73 : undefined}
+      />
+      <div className={classes.filledCircle} />
+      <div className={classes.emptyCircle} />
+    </div>
+  )
 
   const onSuccess = useCallback(() => {
     const redirectUrl = isCallModalOpen ? '/success/confirm' : '/success/confirm?scheduleCall=1'
@@ -45,57 +65,53 @@ export default function NewHeader({ freeQuoteForm, landingName, backgroundColor,
         onSubmit={onSuccess}
         formOrigin={freeQuoteForm.formOrigin}
       />
-      <Image src={HeaderBackground} alt='' className={classes.background} />
       <section id='headerSection' className={classes.headerContainer}>
+        <div className={classes.backgroundContainer}>
+          <Image src={HeaderBackground} alt='' className={classes.background} />
+        </div>
         <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
         <Image src={DecorationElements} alt='' className={classes.decorationElementsPattern} />
         <Image src={BlurredDecorationElements} alt='' className={classes.blurredDecorationElements} />
-        <div>
-          <Image src={WeDevelopLogo} className={classes.imageLogo} />
-          <div className={classes.tagNameContainer}>
-            <span className={classes.tagName} style={{ backgroundColor }}>
-              {landingName}
-            </span>
-          </div>
-          <h1 className={classes.title}>{title}</h1>
-          <h2 className={classes.subTitle}>{description}</h2>
-          <div className={classes.separator} />
-          <div className={classNames(classes.clutchRectangle, classes.hideOnPhone)}>
-            <ClutchWidget
-              className={classes.clutchWidget}
-              variant='light'
-            />
-            <div className={classes.filledCircle} />
-            <div className={classes.emptyCircle} />
-          </div>
-        </div>
-        <div className={classes.rightSideContainer}>
-          <div className={classes.quoteContainer}>
-            <div className={classes.avatarContainer}>
-              <Image src={WeDevelopCEO} className={classes.avatar} />
+        <div className={classes.columnsContainer}>
+          <div className={classes.leftSideContainer}>
+            <Image src={WeDevelopLogo} alt='WeDevelop logo' className={classes.imageLogo} />
+            <div className={classes.tagNameContainer}>
+              <span className={classes.tagName} style={{ backgroundColor }}>
+                {landingName}
+              </span>
             </div>
-            <q className={classes.quote}>
-              {quote}
-            </q>
+            <h1 className={classes.title}>{title}</h1>
+            <h2 className={classes.subTitle}>{description}</h2>
+            <div className={classes.separator} />
+            <div className={classes.hideOnPhone}>
+              {clutch}
+            </div>
           </div>
-          <div className={classes.shapeTriangle} />
-          <Button className={classes.scheduleButton} onClick={() => setCallModalOpen(true)}>
-            Schedule a call
-          </Button>
-          <p className={classes.alternativeSchedule}>
-            Or, use{' '}
-            <Button variant="link" className={classes.scheduleFormButton} onClick={() => setFormModalOpen(true)}>
-              this form
+          <div className={classes.rightSideContainer}>
+            <div className={classes.quoteContainer}>
+              <div className={classes.avatarContainer}>
+                <div className={classes.avatarImageContainer}>
+                  <Image src={WeDevelopCEO} alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
+                </div>
+              </div>
+              <q className={classes.quote}>
+                {quote}
+              </q>
+            </div>
+            <div className={classes.shapeTriangle} />
+            <Button className={classes.scheduleButton} onClick={() => setCallModalOpen(true)}>
+              Schedule a call
             </Button>
-            {' '}to tell us about your needs.
-          </p>
-          <div className={classNames(classes.clutchRectangle, classes.hideOnTabletUp)}>
-            <ClutchWidget
-              className={classes.clutchWidget}
-              variant='light'
-            />
-            <div className={classes.filledCircle} />
-            <div className={classes.emptyCircle} />
+            <p className={classes.alternativeSchedule}>
+              Or, use{' '}
+              <Button variant="link" className={classes.scheduleFormButton} onClick={() => setFormModalOpen(true)}>
+                this form
+              </Button>
+              {' '}to tell us about your needs.
+            </p>
+            <div className={classes.hideOnTabletUp}>
+              {clutch}
+            </div>
           </div>
         </div>
         <div className={classes.meetingWrapper}>
