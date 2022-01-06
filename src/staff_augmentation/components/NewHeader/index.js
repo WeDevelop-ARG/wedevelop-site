@@ -15,7 +15,7 @@ import { useHistory } from 'react-router-dom'
 import classNames from 'classnames'
 import useMediaQuery from 'utils/use_media_query'
 
-export default function NewHeader({ freeQuoteForm, landingName, backgroundColor, title, description, quote = '' }) {
+export default function NewHeader ({ freeQuoteForm, landingName, backgroundColor, title, description, quote = '' }) {
   const [isCallModalOpen, setCallModalOpen] = useState(false)
   const [isFormModalOpen, setFormModalOpen] = useState(false)
   const history = useHistory()
@@ -82,7 +82,7 @@ export default function NewHeader({ freeQuoteForm, landingName, backgroundColor,
             <h1 className={classes.title}>{title}</h1>
             <h2 className={classes.subTitle}>{description}</h2>
             <div className={classes.separator} />
-            <div className={classes.hideOnPhone}>
+            <div className={classes.hideOnTabletDown}>
               {clutch}
             </div>
           </div>
@@ -103,12 +103,12 @@ export default function NewHeader({ freeQuoteForm, landingName, backgroundColor,
             </Button>
             <p className={classes.alternativeSchedule}>
               Or, use{' '}
-              <Button variant="link" className={classes.scheduleFormButton} onClick={() => setFormModalOpen(true)}>
+              <Button variant='link' className={classes.scheduleFormButton} onClick={() => setFormModalOpen(true)}>
                 this form
               </Button>
               {' '}to tell us about your needs.
             </p>
-            <div className={classes.hideOnTabletUp}>
+            <div className={classes.hideOnDesktopUp}>
               {clutch}
             </div>
           </div>

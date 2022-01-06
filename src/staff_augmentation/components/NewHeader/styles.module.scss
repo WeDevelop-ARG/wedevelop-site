@@ -6,6 +6,7 @@
   position: relative;
   padding-top: 90px;
   padding-bottom: 90px;
+  overflow-x: hidden;
 }
 
 .backgroundContainer {
@@ -84,7 +85,10 @@
 
 .leftSideContainer {
   flex-grow: 1;
-  margin-right: 8%;
+
+  @include for-desktop-up {
+    margin-right: 8%;
+  }
 }
 
 .rightSideContainer {
@@ -126,6 +130,7 @@
   line-height: 40px;
   color: #fff;
   text-align: center;
+  word-break: break-word;
 
   @include for-desktop-up {
     text-align: left;
@@ -229,13 +234,13 @@
   opacity: 0;
 }
 
-.hideOnPhone {
+.hideOnTabletDown {
   @include for-tablet-down {
     display: none;
   }
 }
 
-.hideOnTabletUp {
+.hideOnDesktopUp {
   @include for-desktop-up {
     display: none;
   }
@@ -256,6 +261,7 @@
   font-size: 30px;
   font-weight: normal;
   line-height: 36px;
+  word-break: break-word;
 
   > b {
     background: linear-gradient(90deg, #6B67E9 11.76%, #8224E3 89.05%);
