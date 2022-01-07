@@ -13,6 +13,7 @@ import webDevelopmentOutsourcing from './web_development_outsourcing'
 import nearshoreSoftwareOutsourcing from './nearshore_software_outsourcing'
 import devOps from './devops'
 import itOutsourcing from './it_outsourcing'
+import itStaffing from './it_staffing'
 
 const variants = [
   staffAugmentation,
@@ -29,7 +30,8 @@ const variants = [
   webDevelopmentOutsourcing,
   nearshoreSoftwareOutsourcing,
   devOps,
-  itOutsourcing
+  itOutsourcing,
+  itStaffing
 ]
 
 export default variants
