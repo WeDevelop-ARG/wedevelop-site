@@ -10,11 +10,19 @@ const nearshoreNetDevelopers = {
     description: 'Hire .NET Developers.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>hire developers</>,
     title: <>Hire Nearshore .NET Developers</>,
     description: (
       <>
         <p>Hire Nearshore .NET Developers without the hassles.</p>
+      </>
+    ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>.NET Development Services</b>? 
       </>
     ),
     sideImageURL: BgHireDevelopers,

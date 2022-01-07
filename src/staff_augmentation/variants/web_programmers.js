@@ -10,11 +10,19 @@ const webProgrammers = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>web programmers</>,
     title: <>Top notch <b>Web Programmers</b></>,
     description: (
       <>
         <p>Hire Web Programmers without the hassles.</p>
+      </>
+    ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Web Programming Services</b>? 
       </>
     ),
     sideImageURL: BgWebProgrammers,

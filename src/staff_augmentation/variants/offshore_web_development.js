@@ -10,11 +10,19 @@ const offshoreWebDevelopment = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>offshore web development</>,
     title: <>Top notch <b>Offshore Web Development</b></>,
     description: (
       <>
         <p>Hire Offshore Web Developers without the hassles.</p>
+      </>
+    ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Offshore Web Development</b>? 
       </>
     ),
     sideImageURL: BgWebDevelopers,

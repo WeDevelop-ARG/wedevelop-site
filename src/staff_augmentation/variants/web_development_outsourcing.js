@@ -10,11 +10,19 @@ const webDevelopmentOutsourcing = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>web development outsourcing</>,
     title: <>Top notch <b>Web Development Outsourcing</b></>,
     description: (
       <>
         <p>Outsource web development without the hassles.</p>
+      </>
+    ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Web Development Outsourcing</b>? 
       </>
     ),
     sideImageURL: BgWebDevelopers,

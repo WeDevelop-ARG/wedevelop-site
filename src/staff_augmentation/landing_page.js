@@ -1,22 +1,25 @@
-import { useState, useCallback } from 'react'
-import { useRouteMatch } from 'react-router'
+import { useState, useCallback, useEffect } from 'react'
+import { useRouteMatch, useHistory } from 'react-router'
 
 import Article from 'main_app/components/Article'
 import AvailableDevs from './components/AvailableDevs'
 import BackgroundContainer from './components/BackgroundContainer'
 import Footer from './components/Footer'
 import FullSizeCTA from './components/FullSizeCTA'
-import FreeQuoteModal from './components/FreeQuoteModal'
-import Header from './components/Header'
 import HireTopTalent from './components/HireTopTalent'
 import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import NavBar from './components/NavBar'
+import NewHeader from './components/NewHeader'
 import PictureWall from 'main_app/components/PictureWall'
 import ReviewCards from './components/ReviewCards'
+import ScheduleCallModal from './components/ScheduleCallModal'
+import ScheduleFormModal from './components/ScheduleFormModal'
 
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
+
+import classes from './styles.module.scss'
 
 function LandingPage () {
   const { params } = useRouteMatch('/:name')
@@ -27,26 +30,54 @@ function LandingPage () {
     description: landing.metadata.description
   })
 
-  const [isModalOpen, setModalOpen] = useState(false)
-  const handleModalOpen = useCallback(() => {
-    setModalOpen(true)
+  useEffect(() => {
+    document.getElementById('root').classList.add(classes.root)
+
+    return () => {
+      document.getElementById('root').classList.remove(classes.root)
+    }
+  }, [])
+
+  const [isCallModalOpen, setCallModalOpen] = useState(false)
+  const [isFormModalOpen, setFormModalOpen] = useState(false)
+  const history = useHistory()
+
+  const onSuccess = useCallback(() => {
+    const redirectUrl = isCallModalOpen ? '/success/confirm' : '/success/confirm?scheduleCall=1'
+    setCallModalOpen(false)
+    setFormModalOpen(false)
+    history.push(redirectUrl)
+  }, [history, isCallModalOpen])
+  const switchToCallModal = useCallback(() => {
+    setFormModalOpen(false)
+    setCallModalOpen(true)
+  }, [])
+  const handleScheduleMeetingCTAClick = useCallback(() => {
+    setCallModalOpen(true)
+  }, [])
+  const handleContactCTAClick = useCallback(() => {
+    setFormModalOpen(true)
   }, [])
 
   return (
     <>
       <NavBar
         landingName={landing.header.landingName}
-        handleModal={handleModalOpen}
+        handleModal={handleScheduleMeetingCTAClick}
         backgroundColor={landing.header.backgroundColor}
+        ctaDescription={landing.header.navBar.ctaDescription}
+        buttonLabel={landing.header.navBar.buttonLabel}
       />
       <Article>
-        <Header
+        <NewHeader
           landingName={landing.header.landingName}
           title={landing.header.title}
           description={landing.header.description}
-          freeQuoteForm={landing.freeQuoteForm}
-          sideImageURL={landing.header.sideImageURL}
           backgroundColor={landing.header.backgroundColor}
+          freeQuoteForm={landing.freeQuoteForm}
+          quote={landing.header.quote}
+          onContactCTAClick={handleContactCTAClick}
+          onScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
         />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
@@ -54,7 +85,7 @@ function LandingPage () {
           descriptionText={landing.HireTopTalent.description}
           contentText={landing.HireTopTalent.content}
           buttonText={landing.HireTopTalent.buttonText}
-          handleModal={handleModalOpen}
+          handleModal={handleContactCTAClick}
         />
         <BackgroundContainer backgroundURL={landing.backgrounds.firstBackground} />
         {landing.availableDevs &&
@@ -64,16 +95,16 @@ function LandingPage () {
             description={landing.availableDevs.description}
             devs={landing.availableDevs.devs}
             buttonText={landing.availableDevs.buttonText}
-            handleModal={handleModalOpen}
+            handleModal={handleContactCTAClick}
           />}
-        <HowDoesItWorks />
+        {landing.hideHowDoesItWork || <HowDoesItWorks />}
         <ReviewCards
-          subtitle={landing.reviews.subtitle}
-          title={landing.reviews.title}
-          description={landing.reviews.description}
-          reviews={landing.reviews.reviews}
-          buttonText={landing.reviews.buttonText}
-          handleModal={handleModalOpen}
+          subtitle={landing.reviewsHeading.subtitle}
+          title={landing.reviewsHeading.title}
+          description={landing.reviewsHeading.description}
+          reviews={landing.reviews}
+          buttonText={landing.reviewsHeading.buttonText}
+          handleModal={handleContactCTAClick}
         />
         <FullSizeCTA
           title={landing.fullSizeCTA.title}
@@ -81,15 +112,22 @@ function LandingPage () {
           ctaText={landing.fullSizeCTA.ctaText}
           ctaToPath={landing.fullSizeCTA.ctaToPath}
           description={landing.fullSizeCTA.description}
-          handleModal={handleModalOpen}
+          handleModal={handleContactCTAClick}
         />
       </Article>
       <PictureWall />
       <Footer variant='light' />
-      <FreeQuoteModal
-        isModalOpen={isModalOpen}
-        setModalOpen={setModalOpen}
-        freeQuoteForm={landing.freeQuoteForm}
+      <ScheduleCallModal
+        isModalOpen={isCallModalOpen}
+        setModalOpen={setCallModalOpen}
+        onSubmit={onSuccess}
+      />
+      <ScheduleFormModal
+        isModalOpen={isFormModalOpen}
+        setModalOpen={setFormModalOpen}
+        onScheduleMeetingClick={switchToCallModal}
+        onSubmit={onSuccess}
+        formOrigin={landing.freeQuoteForm.formOrigin}
       />
     </>
   )

@@ -23,6 +23,7 @@ function isOptimizationDenied (url) {
   try {
     return (
       IS_PREVIEW_BUILD ||
+      typeof url !== 'string' ||
       cloudinaryDenylistExtensionsRegex.test(url) ||
       !optimizationAllowedHostnames.includes(
         (new URL(url, BASE_URL)).hostname
@@ -124,7 +125,7 @@ export default function Image ({
   const [backgroundSrc, setBackgroundSrc] = useState()
   const [backgroundColor, setBackgroundColor] = useState(placeholderColor)
   const containerRef = useRef()
-  const fullURL = useMemo(() => !src ? src : (new URL(src, BASE_URL)).href, [src])
+  const fullURL = useMemo(() => (!src || typeof src !== 'string') ? src : (new URL(src, BASE_URL)).href, [src])
 
   useEffect(() => {
     if (isOptimizationDenied(fullURL)) return setOptimizedSrc(src)
@@ -205,6 +206,10 @@ export default function Image ({
           [classes[position]]: !isEmpty(classes[position]),
           [className]: !isEmpty(className)
         })}
+        style={{
+          width: typeof width === 'number' ? width : undefined,
+          height: typeof height === 'number' ? height : undefined
+        }}
       >
         {img}
       </div>

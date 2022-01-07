@@ -12,12 +12,20 @@ const staffAugmentation = {
     description: 'Add the right Talent for your time in no time. Get a free quote in the next hour!'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>staff augmentation</>,
     title: <>The <b>right IT Staff Augmentation</b> agency</>,
     description: (
       <>
         <p>Get access to the top Software Engineers in Latin America.</p>
         <p>Fast, without the hassles.</p>
+      </>
+    ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Staff Augmentation Services</b>? 
       </>
     ),
     sideImageURL: BgStaffAugmentation,
