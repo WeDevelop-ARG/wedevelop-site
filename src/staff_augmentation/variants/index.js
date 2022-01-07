@@ -15,6 +15,7 @@ import devOps from './devops'
 import itOutsourcing from './it_outsourcing'
 import itStaffing from './it_staffing'
 import mobile from './mobile'
+import softwareDevelopment from './software_development'
 
 const variants = [
   staffAugmentation,
@@ -33,7 +34,8 @@ const variants = [
   devOps,
   itOutsourcing,
   itStaffing,
-  mobile
+  mobile,
+  softwareDevelopment
 ]
 
 export default variants
