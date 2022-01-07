@@ -10,6 +10,9 @@ const nearshoreWebDevelopment = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>nearshore web development</>,
     title: <>Top notch <b>Nearshore Web Development</b></>,
     description: (

@@ -10,6 +10,9 @@ const hireNetDevelopers = {
     description: 'Hire .NET Developers.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>hire developers</>,
     title: <>Hire .NET Developers</>,
     description: (

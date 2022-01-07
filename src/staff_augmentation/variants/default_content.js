@@ -17,7 +17,11 @@ const defaultContent = {
       </>
     ),
     sideImageURL: DefaultBackground,
-    backgroundColor: '#361989'
+    backgroundColor: '#361989',
+    navBar: {
+      ctaDescription: 'Sign Up to Get Rates & Available Staff Details',
+      buttonLabel: 'Get in touch'
+    }
   },
   freeQuoteForm: {
     formHeader: {

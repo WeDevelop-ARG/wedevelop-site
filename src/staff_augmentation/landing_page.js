@@ -65,6 +65,8 @@ function LandingPage () {
         landingName={landing.header.landingName}
         handleModal={handleScheduleMeetingCTAClick}
         backgroundColor={landing.header.backgroundColor}
+        ctaDescription={landing.header.navBar.ctaDescription}
+        buttonLabel={landing.header.navBar.buttonLabel}
       />
       <Article>
         <NewHeader

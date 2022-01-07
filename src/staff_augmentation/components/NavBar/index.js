@@ -14,7 +14,9 @@ import classes from './styles.module.scss'
 function NavBar ({
   landingName,
   handleModal,
-  backgroundColor
+  backgroundColor,
+  ctaDescription,
+  buttonLabel
 }) {
   const [atScrollTop, observerRef] = useOverlappingObserver({
     root: document.body,
@@ -48,14 +50,14 @@ function NavBar ({
       <nav className={classes.menu}>
         <div className={classes.bubble}>
           <span className={classes.tagName} style={{ color: backgroundColor }}>{landingName}</span>
-          <p className={classes.descriptionText}>Sign Up to Get Rates & Available Staff Details</p>
+          <p className={classes.descriptionText}>{ctaDescription}</p>
         </div>
         <Button
           variant='primary'
           className={classes.freeQuoteButton}
           onClick={handleModal}
         >
-          Get a Free Quote
+          {buttonLabel}
         </Button>
       </nav>
     </header>

@@ -12,6 +12,9 @@ const staffAugmentation = {
     description: 'Add the right Talent for your time in no time. Get a free quote in the next hour!'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>staff augmentation</>,
     title: <>The <b>right IT Staff Augmentation</b> agency</>,
     description: (

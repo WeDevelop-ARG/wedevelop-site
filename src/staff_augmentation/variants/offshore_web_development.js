@@ -10,6 +10,9 @@ const offshoreWebDevelopment = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>offshore web development</>,
     title: <>Top notch <b>Offshore Web Development</b></>,
     description: (

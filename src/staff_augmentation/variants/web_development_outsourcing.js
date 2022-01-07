@@ -10,6 +10,9 @@ const webDevelopmentOutsourcing = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>web development outsourcing</>,
     title: <>Top notch <b>Web Development Outsourcing</b></>,
     description: (
