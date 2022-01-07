@@ -73,7 +73,13 @@
       "/nearshore-net-developers",
       "/web-development-outsourcing",
       "/nearshore-web-development",
-      "/success/confirm"
+      "/success/confirm",
+      "/nearshore-software-outsourcing",
+      "/devops",
+      "/it-outsourcing",
+      "/it-staffing",
+      "/mobile",
+      "/software-development"
     ]
   },
   "eslintConfig": {
