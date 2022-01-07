@@ -97,7 +97,7 @@ function LandingPage () {
             buttonText={landing.availableDevs.buttonText}
             handleModal={handleContactCTAClick}
           />}
-        <HowDoesItWorks />
+        {landing.hideHowDoesItWork || <HowDoesItWorks />}
         <ReviewCards
           subtitle={landing.reviews.subtitle}
           title={landing.reviews.title}
