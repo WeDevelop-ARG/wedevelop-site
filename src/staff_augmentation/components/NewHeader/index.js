@@ -1,24 +1,31 @@
-import ClutchWidget from 'main_app/components/ClutchWidget'
+import { useState, useCallback } from 'react'
+import classNames from 'classnames'
+
 import HeaderBackground from 'assets/staff_augmentation/backgrounds/blue_gradient_background.svg'
-import Image from 'main_app/components/Image'
 import WeDevelopCEO from 'assets/staff_augmentation/wedevelop_ceo.png'
-import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
 import DotsPattern from 'assets/staff_augmentation/white_dots_pattern.svg'
+import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
 import DecorationElements from 'assets/staff_augmentation/deco_elements.svg'
 import BlurredDecorationElements from 'assets/staff_augmentation/blurred_deco_elements.svg'
-import classes from './styles.module.scss'
-import Button from 'main_app/components/Button'
-import { useState, useCallback } from 'react'
-import ScheduleCallModal from '../ScheduleCallModal'
-import ScheduleFormModal from '../ScheduleFormModal'
-import { useHistory } from 'react-router-dom'
-import classNames from 'classnames'
+
 import useMediaQuery from 'utils/use_media_query'
 
-export default function NewHeader ({ freeQuoteForm, landingName, backgroundColor, title, description, quote = '' }) {
-  const [isCallModalOpen, setCallModalOpen] = useState(false)
-  const [isFormModalOpen, setFormModalOpen] = useState(false)
-  const history = useHistory()
+import Button from 'main_app/components/Button'
+import ClutchWidget from 'main_app/components/ClutchWidget'
+import Image from 'main_app/components/Image'
+
+import classes from './styles.module.scss'
+
+export default function NewHeader ({
+  freeQuoteForm,
+  landingName,
+  backgroundColor,
+  title,
+  description,
+  onScheduleMeetingCTAClick,
+  onContactCTAClick,
+  quote = ''
+}) {
   const shouldUseBiggerClutch = useMediaQuery('screen and (min-width: 1550px)')
   const [isClutchLoaded, setIsClutchLoaded] = useState(false)
   const handleClutchLoaded = useCallback(() => {
@@ -38,32 +45,8 @@ export default function NewHeader ({ freeQuoteForm, landingName, backgroundColor
     </div>
   )
 
-  const onSuccess = useCallback(() => {
-    const redirectUrl = isCallModalOpen ? '/success/confirm' : '/success/confirm?scheduleCall=1'
-    setCallModalOpen(false)
-    setFormModalOpen(false)
-    history.push(redirectUrl)
-  }, [history, isCallModalOpen])
-
-  const switchToCallModal = useCallback(() => {
-    setFormModalOpen(false)
-    setCallModalOpen(true)
-  }, [])
-
   return (
     <>
-      <ScheduleCallModal
-        isModalOpen={isCallModalOpen}
-        setModalOpen={setCallModalOpen}
-        onSubmit={onSuccess}
-      />
-      <ScheduleFormModal
-        isModalOpen={isFormModalOpen}
-        setModalOpen={setFormModalOpen}
-        onScheduleMeetingClick={switchToCallModal}
-        onSubmit={onSuccess}
-        formOrigin={freeQuoteForm.formOrigin}
-      />
       <section id='headerSection' className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
           <Image src={HeaderBackground} alt='' className={classes.background} />
@@ -98,12 +81,12 @@ export default function NewHeader ({ freeQuoteForm, landingName, backgroundColor
               </q>
             </div>
             <div className={classes.shapeTriangle} />
-            <Button className={classes.scheduleButton} onClick={() => setCallModalOpen(true)}>
+            <Button className={classes.scheduleButton} onClick={onScheduleMeetingCTAClick}>
               Schedule a call
             </Button>
             <p className={classes.alternativeSchedule}>
               Or, use{' '}
-              <Button variant='link' className={classes.scheduleFormButton} onClick={() => setFormModalOpen(true)}>
+              <Button variant='link' className={classes.scheduleFormButton} onClick={onContactCTAClick}>
                 this form
               </Button>
               {' '}to tell us about your needs.
