@@ -10,6 +10,9 @@ const nearshoreNetDevelopers = {
     description: 'Hire .NET Developers.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>hire developers</>,
     title: <>Hire Nearshore .NET Developers</>,
     description: (

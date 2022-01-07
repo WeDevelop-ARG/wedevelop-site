@@ -65,6 +65,8 @@ function LandingPage () {
         landingName={landing.header.landingName}
         handleModal={handleScheduleMeetingCTAClick}
         backgroundColor={landing.header.backgroundColor}
+        ctaDescription={landing.header.navBar.ctaDescription}
+        buttonLabel={landing.header.navBar.buttonLabel}
       />
       <Article>
         <NewHeader
@@ -95,13 +97,13 @@ function LandingPage () {
             buttonText={landing.availableDevs.buttonText}
             handleModal={handleContactCTAClick}
           />}
-        <HowDoesItWorks />
+        {landing.hideHowDoesItWork || <HowDoesItWorks />}
         <ReviewCards
-          subtitle={landing.reviews.subtitle}
-          title={landing.reviews.title}
-          description={landing.reviews.description}
-          reviews={landing.reviews.reviews}
-          buttonText={landing.reviews.buttonText}
+          subtitle={landing.reviewsHeading.subtitle}
+          title={landing.reviewsHeading.title}
+          description={landing.reviewsHeading.description}
+          reviews={landing.reviews}
+          buttonText={landing.reviewsHeading.buttonText}
           handleModal={handleContactCTAClick}
         />
         <FullSizeCTA

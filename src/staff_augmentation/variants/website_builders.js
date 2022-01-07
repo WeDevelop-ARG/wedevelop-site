@@ -10,6 +10,9 @@ const websiteBuilders = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>website builders</>,
     title: <>Top notch <b>Website Builders</b></>,
     description: (
