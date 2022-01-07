@@ -49,45 +49,45 @@ const defaultContent = {
     formButtonText: 'Get Web Developer profiles',
     formDisclaimer: 'We typically reply every email within an hour.'
   },
-  reviews: {
+  reviewsHeading: {
     subtitle: 'Customers reviews',
     title: 'Here\'s what our customers say about our Staffing services',
     description: '',
-    reviews: [{
-      id: '1',
-      quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
-      stars: 5,
-      project: {
-        type: 'App Development',
-        company: 'Online Fitness Company'
-      }
-    }, {
-      id: '2',
-      quote: 'They’re willing to engage with a problem to figure it out rather than waiting to be told what to do.',
-      stars: 5,
-      project: {
-        type: 'Software Development',
-        company: 'Sports Betting Startup'
-      }
-    }, {
-      id: '3',
-      quote: 'The project cost about half of what it would have had we hired local engineers.',
-      stars: 5,
-      project: {
-        type: 'Web App Development',
-        company: 'Loan Company'
-      }
-    }, {
-      id: '4',
-      quote: 'WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.',
-      stars: 5,
-      project: {
-        type: 'Product Development',
-        company: 'Ferry Booking Platform'
-      }
-    }],
     buttonText: 'Get a Free Quote'
   },
+  reviews: [{
+    id: '1',
+    quote: 'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
+    stars: 5,
+    project: {
+      type: 'App Development',
+      company: 'Online Fitness Company'
+    }
+  }, {
+    id: '2',
+    quote: 'They’re willing to engage with a problem to figure it out rather than waiting to be told what to do.',
+    stars: 5,
+    project: {
+      type: 'Software Development',
+      company: 'Sports Betting Startup'
+    }
+  }, {
+    id: '3',
+    quote: 'The project cost about half of what it would have had we hired local engineers.',
+    stars: 5,
+    project: {
+      type: 'Web App Development',
+      company: 'Loan Company'
+    }
+  }, {
+    id: '4',
+    quote: 'WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.',
+    stars: 5,
+    project: {
+      type: 'Product Development',
+      company: 'Ferry Booking Platform'
+    }
+  }],
   HireTopTalent: {
     subtitle: 'white-glove service',
     title: '3 reasons to choose WeDevelop',

@@ -99,11 +99,11 @@ function LandingPage () {
           />}
         {landing.hideHowDoesItWork || <HowDoesItWorks />}
         <ReviewCards
-          subtitle={landing.reviews.subtitle}
-          title={landing.reviews.title}
-          description={landing.reviews.description}
-          reviews={landing.reviews.reviews}
-          buttonText={landing.reviews.buttonText}
+          subtitle={landing.reviewsHeading.subtitle}
+          title={landing.reviewsHeading.title}
+          description={landing.reviewsHeading.description}
+          reviews={landing.reviews}
+          buttonText={landing.reviewsHeading.buttonText}
           handleModal={handleContactCTAClick}
         />
         <FullSizeCTA
