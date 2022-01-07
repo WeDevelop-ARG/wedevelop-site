@@ -12,7 +12,7 @@ import ThumbsUpIcon from 'assets/success/thumbs_up.svg'
 
 import classes from './styles.module.scss'
 
-export default function SuccessHeader({ displayScheduleCallHint = false }) {
+export default function SuccessHeader ({ displayScheduleCallHint = false }) {
   const [isCallModalOpen, setCallModalOpen] = useState(false)
 
   const onSuccess = useCallback(() => {
@@ -45,7 +45,7 @@ export default function SuccessHeader({ displayScheduleCallHint = false }) {
           <div className={classes.meetingContainer}>
             <span className={classes.hurry}>In a hurry?</span>
             <span className={classes.meeting}>
-               Please don't hesitate to set a time to meet or talk, or leave your details and we'll get back to you.
+              Please don't hesitate to set a time to meet or talk, or leave your details and we'll get back to you.
               <Button className={classes.meetingButton} onClick={() => setCallModalOpen(true)}>Schedule a call</Button>
             </span>
           </div>
