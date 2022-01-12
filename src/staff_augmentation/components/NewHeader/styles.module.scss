@@ -151,18 +151,18 @@
 
 .subTitle {
   > * {
-    font-size: 18px;
+    font-size: 17px;
     text-align: center;
     color: rgba(255, 255, 255, 0.7);
     font-weight: normal;
 
     @include for-desktop-up {
-      font-size: 24px;
+      font-size: 23px;
       text-align: left;
     }
 
     @media screen and (max-width: 1550px) {
-      font-size: 19px;
+      font-size: 18px;
     }
   }
 }
@@ -258,7 +258,7 @@
   display: block;
   color: #363636;
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: normal;
   line-height: 36px;
   word-break: break-word;
