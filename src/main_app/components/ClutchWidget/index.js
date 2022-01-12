@@ -34,7 +34,7 @@ function isClutchScriptPresent () {
   return document.head.querySelector(`script[src="${CLUTCH_URL}"]`) !== null
 }
 
-function ClutchWidget ({ className, variant = 'light', height, verticalAlign, onLoad }) {
+function ClutchWidget ({ className, variant = 'light', height, verticalAlign, horizontalAlign, onLoad }) {
   const containerRef = useRef()
   const extraProps = {}
 
@@ -57,7 +57,14 @@ function ClutchWidget ({ className, variant = 'light', height, verticalAlign, on
     let iframe
     const rescaleContainer = ({ isLoad } = {}) => {
       if (iframe && typeof height === 'number') {
-        container.style.transform = `scale(${height / container.offsetHeight})`
+        const scale = height / container.offsetHeight
+        let transform = `scale(${scale})`
+
+        if (horizontalAlign === 'center') {
+          transform = `translateX(-${(187 / 2) * scale}px) ${transform}`
+        }
+
+        container.style.transform = transform
       }
 
       if (isLoad && isFunction(onLoad)) {
@@ -106,7 +113,7 @@ function ClutchWidget ({ className, variant = 'light', height, verticalAlign, on
       iframeObserver.disconnect()
       containerObserver.disconnect()
     }
-  }, [height, onLoad])
+  }, [height, onLoad, horizontalAlign])
 
   return (
     <div
@@ -116,7 +123,9 @@ function ClutchWidget ({ className, variant = 'light', height, verticalAlign, on
         height: 'fit-content',
         display: 'inline-block',
         transformOrigin: `0 ${verticalAlign === 'center' ? '50%' : 0}`,
-        transformBox: 'fill-box'
+        transformBox: 'fill-box',
+        left: `${horizontalAlign === 'center' && typeof height === 'number' ? 50 : 0}%`,
+        position: horizontalAlign === 'center' && typeof height === 'number' ? 'relative' : undefined
       }}
       data-url='https://widget.clutch.co'
       data-widget-type='2'
