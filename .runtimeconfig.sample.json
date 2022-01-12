@@ -23,6 +23,7 @@
   "hubspot": {
     "api_key": "",
     "landing_deal_pipeline_name": "",
-    "landing_deal_pipeline_stage": ""
+    "landing_deal_pipeline_stage": "",
+    "blog_newsletter_id": ""
   }
 }
