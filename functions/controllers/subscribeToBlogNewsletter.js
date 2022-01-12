@@ -1,6 +1,5 @@
 const { BLOG_NEWSLETTER_ID } = require('../constants')
-const { createContactIfNotExists } = require('../services/hubspot')
-const { subscribeContactToNewsletter } = require('../services/subscribeContactToNewsletter')
+const { createContactIfNotExists, subscribeContactToNewsletter } = require('../services/hubspot')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
