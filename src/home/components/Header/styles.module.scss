@@ -19,6 +19,18 @@
   bottom: -4px;
   left: 0;
   z-index: -1;
+
+  & .decoration, & .clutchDecoration {
+    transition: opacity ease-in-out 250ms;
+  }
+
+  &.placeholderLoading .decoration {
+    opacity: 0;
+  }
+
+  &.clutchLoading .clutchDecoration {
+    opacity: 0;
+  }
 }
 
 .content {
@@ -182,6 +194,11 @@
   border-color: #ffffff;
   z-index: 2;
   display: flex;
+  transition: opacity ease-in-out 250ms;
+
+  &.loading {
+    opacity: 0;
+  }
 
   @include for-tablet-down {
     display: none;
@@ -190,6 +207,11 @@
 
 .clutchCircleMobile {
   @extend .circle;
+  transition: opacity ease-in-out 250ms;
+
+  &.loading {
+    opacity: 0;
+  }
 
   @include for-desktop-up {
     display: none;

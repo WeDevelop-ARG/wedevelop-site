@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 
 import SVGIcon from 'main_app/components/SVGIcon'
@@ -7,8 +7,20 @@ import imgHeader from 'assets/home/header/background.png'
 
 import classes from './styles.module.scss'
 import Image from 'main_app/components/Image'
+import classNames from 'classnames'
 
 function Header (props, ref) {
+  const [isPlaceholderLoading, setIsPlaceholderLoading] = useState(true)
+  const [isClutchLoading, setIsClutchLoading] = useState(true)
+
+  const clutch = (
+    <ClutchWidget
+      className={classes.clutchWidget}
+      variant='dark'
+      onLoad={() => setIsClutchLoading(false)}
+    />
+  )
+
   return (
     <section ref={ref} className={classes.headerContainer}>
       <div className={classes.content}>
@@ -27,8 +39,10 @@ function Header (props, ref) {
           <SVGIcon name='home/header/arrow' />
           <div className={classes.scrollTextMobile}>scroll down</div>
         </HashLink>
-        <div className={classes.clutchCircleMobile}>
-          <ClutchWidget className={classes.clutchWidget} variant='dark' />
+        <div className={classNames(classes.clutchCircleMobile, {
+          [classes.loading]: isClutchLoading
+        })}>
+          {clutch}
           <div className={classes.filledCircleMobile} />
           <div className={classes.emptyCircleMobile} />
           <div className={classes.smallCircleMobile} />
@@ -38,27 +52,33 @@ function Header (props, ref) {
         <SVGIcon name='home/header/arrow' />
         <div className={classes.scrollText}>scroll down</div>
       </HashLink>
-      <div className={classes.clutchCircle}>
-        <ClutchWidget className={classes.clutchWidget} variant='dark' />
+      <div className={classNames(classes.clutchCircle, {
+        [classes.loading]: isClutchLoading
+      })}>
+        {clutch}
       </div>
-      <div className={classes.decorationWrapper}>
+      <div className={classNames(classes.decorationWrapper, {
+        [classes.placeholderLoading]: isPlaceholderLoading,
+        [classes.clutchLoading]: isClutchLoading
+      })}>
         <Image
           src={imgHeader}
           alt=''
           loading='eager'
           objectFit='cover'
           position='bottom'
-          placeholderColor='#333'
+          placeholderColor='#000'
+          onPlaceholderImageLoad={() => setIsPlaceholderLoading(false)}
         />
-        <div className={classes.halfCircle}>
+        <div className={classNames(classes.halfCircle, classes.decoration)}>
           <SVGIcon name='home/header/half_circle' />
         </div>
-        <div className={classes.pattern}>
+        <div className={classNames(classes.pattern, classes.decoration)}>
           <SVGIcon name='home/header/pattern' />
         </div>
-        <div className={classes.filledCircle} />
-        <div className={classes.emptyCircle} />
-        <div className={classes.smallCircle} />
+        <div className={classNames(classes.filledCircle, classes.clutchDecoration)} />
+        <div className={classNames(classes.emptyCircle, classes.clutchDecoration)} />
+        <div className={classNames(classes.smallCircle, classes.clutchDecoration)} />
       </div>
     </section>
   )
