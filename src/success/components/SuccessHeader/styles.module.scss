@@ -108,6 +108,11 @@
 }
 
 .meetingContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
   background-color: #fff;
   padding: 61px 70px 29px 70px;
   border-radius: 5px;
@@ -135,4 +140,8 @@
   @include for-tablet-up {
     display: inline;
   }
+}
+
+.meetingButton {
+  font-size: 16px;
 }

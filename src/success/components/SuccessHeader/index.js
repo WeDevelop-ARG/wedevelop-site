@@ -46,8 +46,8 @@ export default function SuccessHeader ({ displayScheduleCallHint = false }) {
             <span className={classes.hurry}>In a hurry?</span>
             <span className={classes.meeting}>
               Please don't hesitate to set a time to meet or talk, or leave your details and we'll get back to you.
-              <Button className={classes.meetingButton} onClick={() => setCallModalOpen(true)}>Schedule a call</Button>
             </span>
+            <Button className={classes.meetingButton} onClick={() => setCallModalOpen(true)}>Schedule a call</Button>
           </div>
         </div>
       )}
