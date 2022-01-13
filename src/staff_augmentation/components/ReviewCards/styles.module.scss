@@ -10,6 +10,7 @@ $textColor: #363636;
   padding-top: calc(125px + var(--rootContentMinPadding));
   padding-bottom: 65px;
   overflow: hidden;
+  z-index: 1;
 }
 
 .sectionHeader {
