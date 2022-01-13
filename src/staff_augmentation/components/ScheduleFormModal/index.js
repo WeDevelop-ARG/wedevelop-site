@@ -1,5 +1,5 @@
 import Button from 'main_app/components/Button'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { Field } from 'formik'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 import ContactPopupModal from '../ContactPopupModal'
@@ -29,11 +29,20 @@ export default function ScheduleFormModal ({
     classes.fieldWithError
   )
 
+  const [fileUploadProgress, setFileUploadProgress] = useState()
+  const [fileUploadError, setFileUploadError] = useState()
+
   const handleFormSubmit = useCallback(async (values) => {
     try {
       let filePath
       if (!isNil(values.filesAttached)) {
-        filePath = await uploadFile(values.filesAttached)
+        try {
+          filePath = await uploadFile(values.filesAttached, setFileUploadProgress)
+          setFileUploadProgress(undefined)
+        } catch (error) {
+          setFileUploadError(error)
+          throw error
+        }
       }
 
       await window.fetch(INITIAL_LANDING_FORM_PROCESSOR_URL, {
