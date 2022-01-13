@@ -13,7 +13,7 @@ import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 import { isNil } from 'lodash'
 
-export default function ScheduleFormModal({
+export default function ScheduleFormModal ({
   isModalOpen,
   setModalOpen,
   onScheduleMeetingClick,
@@ -29,10 +29,10 @@ export default function ScheduleFormModal({
     classes.fieldWithError
   )
 
-  const handleFormSubmit = useCallback(async(values) => {
+  const handleFormSubmit = useCallback(async (values) => {
     try {
       let filePath
-      if(!isNil(values.filesAttached)) {
+      if (!isNil(values.filesAttached)) {
         filePath = await uploadFile(values.filesAttached)
       }
 
@@ -58,7 +58,7 @@ export default function ScheduleFormModal({
       })
 
       onSubmit?.()
-    } catch(err) {
+    } catch (err) {
       console.error(err)
     }
   }, [onSubmit, formOrigin])
@@ -68,7 +68,7 @@ export default function ScheduleFormModal({
       isModalOpen={isModalOpen}
       setModalOpen={setModalOpen}
       title="We'd love hear from you"
-      label="Get Custom Solutions, Recommendations, Resumes, or Estimates. Confidentiality & Same Day Response Guaranteed!"
+      label='Get Custom Solutions, Recommendations, Resumes, or Estimates. Confidentiality & Same Day Response Guaranteed!'
       sidebarContent={
         <span>
           One of our Account Managers will contact you shortly. <br /><br />

@@ -1,16 +1,40 @@
 @import "/src/styles/theme.scss";
 @import "/src/styles/media_queries.scss";
 
-.background {
+.headerContainer {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 90px !important;
+  padding-bottom: 90px;
+  overflow-x: hidden;
+
+  @include for-desktop-up {
+    padding-top: 45px !important;
+
+    @media screen and (min-height: 850px) {
+      padding-top: 90px !important;
+    }
+  }
+}
+
+.backgroundContainer {
   position: absolute;
   top: 0;
+  bottom: 10%;
   left: 0;
-  padding: 0 !important;
-  margin: 0;
+  right: 0;
+  z-index: -1;
+
+  @include for-desktop-up {
+    bottom: 15%;
+  }
+}
+
+.background {
   width: 100%;
-  z-index: -10;
-  min-height: 100vh;
+  height: 100%;
   object-fit: cover;
+  object-position: bottom;
 }
 
 .dotsPattern {
@@ -18,38 +42,32 @@
   left: 2%;
   top: 55%;
   z-index: -1;
+  transform: rotate(90deg);
 
   @include for-tablet-up {
-    left: 20%;
+    left: 10%;
     top: 55%;
   }
 }
 
 .decorationElementsPattern {
   position: absolute;
-  left: 15%;
+  right: 15%;
   top: 15%;
   z-index: -1;
 
   @include for-tablet-up {
-    left: 38%;
-    top: 30%;
+    right: 18%;
+    top: 5%;
     transform: scale(1.10);
   }
 }
 
 .blurredDecorationElements {
   position: absolute;
-  left: 20%;
+  left: 15%;
   top: 22%;
   z-index: -1;
-}
-
-.headerContainer {
-  min-height: 100vh;
-  position: relative;
-  padding-top: 90px;
-  padding-bottom: 90px;
 }
 
 .successMessageContainer {
@@ -60,7 +78,7 @@
   padding: 40px 24px;
 
   @include for-tablet-up {
-    margin: 100px auto 0 auto;
+    margin: 50px auto 0 auto;
     padding: 83px 62px;
   }
 }
@@ -103,15 +121,31 @@
 }
 
 .meetingWrapper {
-  margin-top: -100px;
+  margin-top: 0;
   filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.2));
+
+  @include for-desktop-up {
+    margin-left: -70px;
+    margin-right: -70px;
+  }
 }
 
 .meetingContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
   background-color: #fff;
   padding: 61px 70px 29px 70px;
   border-radius: 5px;
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+  margin-top: 60px;
+
+  @include for-desktop-up {
+    padding: 45px 20px 29px 20px;
+    margin-top: 45px;
+  }
 }
 
 .meeting {
@@ -135,4 +169,8 @@
   @include for-tablet-up {
     display: inline;
   }
+}
+
+.meetingButton {
+  font-size: 16px;
 }

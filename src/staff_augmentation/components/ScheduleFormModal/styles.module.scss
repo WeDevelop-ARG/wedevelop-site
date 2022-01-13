@@ -74,6 +74,10 @@ $attachColor: #377DFF;
     display: flex;
     align-items: center;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .fileUploadLabel {

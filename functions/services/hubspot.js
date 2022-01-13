@@ -133,3 +133,17 @@ exports.createMeeting = async function createMeeting ({
     }
   })
 }
+
+exports.subscribeContactToNewsletter = async function ({
+  emailAddress,
+  subscriptionId
+} = {}) {
+  await hubspotClient.apiRequest({
+    method: 'POST',
+    path: '/communication-preferences/v3/subscribe',
+    body: {
+      emailAddress,
+      subscriptionId
+    }
+  })
+}

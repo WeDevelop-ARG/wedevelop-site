@@ -98,7 +98,7 @@
   @include for-desktop-up {
     width: 41%;
     flex-shrink: 0;
-    margin-top: 0;
+    margin-top: 50px;
     align-self: center;
   }
 }
@@ -151,18 +151,18 @@
 
 .subTitle {
   > * {
-    font-size: 18px;
+    font-size: 17px;
     text-align: center;
     color: rgba(255, 255, 255, 0.7);
     font-weight: normal;
 
     @include for-desktop-up {
-      font-size: 24px;
+      font-size: 23px;
       text-align: left;
     }
 
     @media screen and (max-width: 1550px) {
-      font-size: 19px;
+      font-size: 18px;
     }
   }
 }
@@ -258,7 +258,7 @@
   display: block;
   color: #363636;
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: normal;
   line-height: 36px;
   word-break: break-word;
@@ -321,8 +321,8 @@
 
 .avatarImageContainer {
   position: relative;
-  top: 10%;
-  left: 8%;
+  top: 7%;
+  left: 5%;
   width: 83%;
   height: 83%;
   border-radius: 50%;
@@ -372,7 +372,7 @@
 
 .scheduleButton {
   box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
-  margin-top: 49px;
+  margin-top: 35px;
   width: 100%;
   font-size: 24px;
 }

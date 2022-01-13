@@ -115,6 +115,7 @@ export default function Image ({
   width,
   height,
   placeholderColor,
+  onPlaceholderImageLoad,
   ...props
 }) {
   if (IS_DEVELOPMENT && !isString(alt)) {
@@ -122,13 +123,19 @@ export default function Image ({
   }
 
   const [optimizedSrc, setOptimizedSrc] = useState()
+  const [isLoadingPlaceholder, setIsLoadingPlaceholder] = useState(false)
   const [backgroundSrc, setBackgroundSrc] = useState()
   const [backgroundColor, setBackgroundColor] = useState(placeholderColor)
   const containerRef = useRef()
   const fullURL = useMemo(() => (!src || typeof src !== 'string') ? src : (new URL(src, BASE_URL)).href, [src])
 
   useEffect(() => {
-    if (isOptimizationDenied(fullURL)) return setOptimizedSrc(src)
+    if (isOptimizationDenied(fullURL)) {
+      setIsLoadingPlaceholder(true)
+      setOptimizedSrc(src)
+
+      return undefined
+    }
 
     const img = new window.Image()
     img.onerror = (err) => {
@@ -160,7 +167,10 @@ export default function Image ({
         if (props.loading !== 'eager' && !lastSize) {
           setOptimizedSrc(image.toURL())
         } else {
-          if (!lastSize) setOptimizedSrc(placeholderImage.toURL())
+          if (!lastSize) {
+            setOptimizedSrc(placeholderImage.toURL())
+            setIsLoadingPlaceholder(true)
+          }
           img.src = image.toURL()
         }
         lastSize = containerSize
@@ -183,6 +193,11 @@ export default function Image ({
       onLoad={() => {
         setBackgroundSrc(undefined)
         setBackgroundColor(undefined)
+
+        if (isLoadingPlaceholder && isFunction(onPlaceholderImageLoad)) {
+          setIsLoadingPlaceholder(false)
+          onPlaceholderImageLoad()
+        }
       }}
       className={classNames(classes.image, {
         [className]: !objectFit || objectFit === 'none',
