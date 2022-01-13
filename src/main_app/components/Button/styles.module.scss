@@ -110,6 +110,17 @@ $darkTextBorder: #FFFFFF;
   text-align: left;
 }
 
+.variant_focus-scale {
+  border: none;
+  outline: none;
+
+  &:hover, &:focus {
+    transform: scale(103%);
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+  }
+}
+
 .iconLeft, .iconRight {
   display: flex;
   align-items: center;
