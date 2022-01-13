@@ -37,8 +37,9 @@ export default function NewHeader ({
         className={classes.clutchWidget}
         onLoad={handleClutchLoaded}
         verticalAlign='center'
+        horizontalAlign='center'
         variant='light'
-        height={shouldUseBiggerClutch ? 73 : undefined}
+        height={shouldUseBiggerClutch ? 55 : undefined}
       />
       <div className={classes.filledCircle} />
       <div className={classes.emptyCircle} />
