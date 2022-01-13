@@ -82,12 +82,12 @@ export default function NewHeader ({
               </q>
             </div>
             <div className={classes.shapeTriangle} />
-            <Button className={classes.scheduleButton} onClick={onScheduleMeetingCTAClick}>
+            <Button className={classes.scheduleButton} onClick={onScheduleMeetingCTAClick} variant={['primary', 'focus-scale']}>
               Schedule a call
             </Button>
             <p className={classes.alternativeSchedule}>
               Or, use{' '}
-              <Button variant='link' className={classes.scheduleFormButton} onClick={onContactCTAClick}>
+              <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onContactCTAClick}>
                 this form
               </Button>
               {' '}to tell us about your needs.
