@@ -35,6 +35,8 @@ export default function ScheduleFormModal ({
   const [fileUploadError, setFileUploadError] = useState()
 
   const handleFormSubmit = useCallback(async (values) => {
+    setFileUploadError(undefined)
+
     try {
       let filePath
       if (!isNil(values.filesAttached)) {
