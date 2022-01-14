@@ -10,11 +10,19 @@ const websiteBuilders = {
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>website builders</>,
     title: <>Top notch <b>Website Builders</b></>,
     description: (
       <>
         <p>Hire Website Builders without the hassles.</p>
+      </>
+    ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>Website Builder Services</b>? 
       </>
     ),
     sideImageURL: BgWebDevelopers,

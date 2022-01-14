@@ -2,7 +2,7 @@ import { useMemo, useState, useRef, useEffect } from 'react'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { format, dpr, quality } from '@cloudinary/url-gen/actions/delivery'
 import { fill, limitFit } from '@cloudinary/url-gen/actions/resize'
-import { vectorize } from '@cloudinary/url-gen/actions/effect'
+import { blur } from '@cloudinary/url-gen/actions/effect'
 import isString from 'lodash/isString'
 import isFunction from 'lodash/isFunction'
 import isEmpty from 'lodash/isEmpty'
@@ -23,6 +23,7 @@ function isOptimizationDenied (url) {
   try {
     return (
       IS_PREVIEW_BUILD ||
+      typeof url !== 'string' ||
       cloudinaryDenylistExtensionsRegex.test(url) ||
       !optimizationAllowedHostnames.includes(
         (new URL(url, BASE_URL)).hostname
@@ -41,16 +42,11 @@ function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resiz
     height = undefined
   }
 
-  if (isPlaceholder) {
-    width = 300
-    height = undefined
-  }
-
   const image = cloudinary.image(src)
 
   image.setDeliveryType('fetch')
   image.delivery(quality('auto'))
-  image.delivery(format(isPlaceholder ? 'svg' : 'auto'))
+  image.delivery(format('auto'))
   image.delivery(dpr('auto'))
 
   let resizeAction
@@ -75,12 +71,7 @@ function createCloudinaryImage ({ src, objectFit, isPlaceholder, position, resiz
 
   if (isPlaceholder) {
     image.effect(
-      vectorize()
-        .numOfColors(3)
-        .detailsLevel(0.3)
-        .despeckleLevel(75)
-        .paths(25)
-        .cornersLevel(50)
+      blur(2000)
     )
   }
 
@@ -124,6 +115,7 @@ export default function Image ({
   width,
   height,
   placeholderColor,
+  onPlaceholderImageLoad,
   ...props
 }) {
   if (IS_DEVELOPMENT && !isString(alt)) {
@@ -131,13 +123,19 @@ export default function Image ({
   }
 
   const [optimizedSrc, setOptimizedSrc] = useState()
+  const [isLoadingPlaceholder, setIsLoadingPlaceholder] = useState(false)
   const [backgroundSrc, setBackgroundSrc] = useState()
   const [backgroundColor, setBackgroundColor] = useState(placeholderColor)
   const containerRef = useRef()
-  const fullURL = useMemo(() => !src ? src : (new URL(src, BASE_URL)).href, [src])
+  const fullURL = useMemo(() => (!src || typeof src !== 'string') ? src : (new URL(src, BASE_URL)).href, [src])
 
   useEffect(() => {
-    if (isOptimizationDenied(fullURL)) return setOptimizedSrc(src)
+    if (isOptimizationDenied(fullURL)) {
+      setIsLoadingPlaceholder(true)
+      setOptimizedSrc(src)
+
+      return undefined
+    }
 
     const img = new window.Image()
     img.onerror = (err) => {
@@ -162,15 +160,18 @@ export default function Image ({
     const onResize = () => {
       const containerSize = getImageContainerSize(containerRef.current, { width, height })
 
-      if (shouldLoadBiggerImage(lastSize, containerSize)) {
+      if (shouldLoadBiggerImage(lastSize, containerSize) && !IS_STATIC_RENDERER) {
         const image = createCloudinaryImage({ src: fullURL, objectFit, position, resize, ...containerSize })
         const placeholderImage = createCloudinaryImage({ isPlaceholder: true, src: fullURL, objectFit, position, resize, ...containerSize })
 
         if (props.loading !== 'eager' && !lastSize) {
-          if (!IS_STATIC_RENDERER) setOptimizedSrc(image.toURL())
+          setOptimizedSrc(image.toURL())
         } else {
-          if (!lastSize) setOptimizedSrc(placeholderImage.toURL())
-          if (!IS_STATIC_RENDERER) img.src = image.toURL()
+          if (!lastSize) {
+            setOptimizedSrc(placeholderImage.toURL())
+            setIsLoadingPlaceholder(true)
+          }
+          img.src = image.toURL()
         }
         lastSize = containerSize
       }
@@ -192,6 +193,11 @@ export default function Image ({
       onLoad={() => {
         setBackgroundSrc(undefined)
         setBackgroundColor(undefined)
+
+        if (isLoadingPlaceholder && isFunction(onPlaceholderImageLoad)) {
+          setIsLoadingPlaceholder(false)
+          onPlaceholderImageLoad()
+        }
       }}
       className={classNames(classes.image, {
         [className]: !objectFit || objectFit === 'none',
@@ -215,6 +221,10 @@ export default function Image ({
           [classes[position]]: !isEmpty(classes[position]),
           [className]: !isEmpty(className)
         })}
+        style={{
+          width: typeof width === 'number' ? width : undefined,
+          height: typeof height === 'number' ? height : undefined
+        }}
       >
         {img}
       </div>

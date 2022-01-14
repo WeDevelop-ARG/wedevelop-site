@@ -6,6 +6,7 @@ const processCareerFormSubmit = require('./controllers/processCareerFormSubmit')
 const processInitialLandingContactForm = require('./controllers/processInitialLandingContactForm')
 const processFollowUpContactForm = require('./controllers/processFollowUpContactForm')
 const getFollowUpContact = require('./controllers/getFollowUpContact')
+const subscribeToBlogNewsletter = require('./controllers/subscribeToBlogNewsletter')
 
 exports.processCalendlyEventInvitee = functions.https.onRequest(processCalendlyEventInvitee)
 exports.processStaffAugmentationFormSubmit = functions.https.onRequest(processStaffAugmentationFormSubmit)
@@ -13,3 +14,4 @@ exports.processCareerFormSubmit = functions.https.onRequest(processCareerFormSub
 exports.processInitialLandingContactForm = functions.https.onRequest(processInitialLandingContactForm)
 exports.processFollowUpContactForm = functions.https.onRequest(processFollowUpContactForm)
 exports.getFollowUpContact = functions.https.onRequest(getFollowUpContact)
+exports.subscribeToBlogNewsletter = functions.https.onRequest(subscribeToBlogNewsletter)

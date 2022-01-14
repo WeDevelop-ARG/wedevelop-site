@@ -10,11 +10,19 @@ const hireJavascriptDevelopers = {
     description: 'Hire Javascript Developers.'
   },
   header: {
+    navBar: {
+      ...defaultContent.header.navBar
+    },
     landingName: <>hire developers</>,
     title: <>Hire Javascript Developers</>,
     description: (
       <>
         <p>Hire Javascript Developers without the hassles.</p>
+      </>
+    ),
+    quote: (
+      <>
+        Are you interested to learn more about our <b>JavaScript Development Services</b>? 
       </>
     ),
     sideImageURL: BgHireDevelopers,

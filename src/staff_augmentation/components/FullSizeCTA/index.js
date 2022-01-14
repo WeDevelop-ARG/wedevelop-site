@@ -31,8 +31,6 @@ function FullSizeCTA ({
         </p>
         <hr className={classes.horizontalBar} />
         <Button
-          smooth
-          isAnchor
           variant='primary'
           className={classes.buttonTalk}
           onClick={handleModal}

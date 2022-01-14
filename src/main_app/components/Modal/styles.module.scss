@@ -38,6 +38,7 @@
   position: absolute;
   top: 13px;
   right: 8px;
+  z-index: 10;
 
   @include for-tablet-up {
     top: 19px;

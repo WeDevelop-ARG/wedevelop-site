@@ -1,0 +1,176 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.headerContainer {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 90px !important;
+  padding-bottom: 90px;
+  overflow-x: hidden;
+
+  @include for-desktop-up {
+    padding-top: 45px !important;
+
+    @media screen and (min-height: 850px) {
+      padding-top: 90px !important;
+    }
+  }
+}
+
+.backgroundContainer {
+  position: absolute;
+  top: 0;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  @include for-desktop-up {
+    bottom: 15%;
+  }
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.dotsPattern {
+  position: absolute;
+  left: 2%;
+  top: 55%;
+  z-index: -1;
+  transform: rotate(90deg);
+
+  @include for-tablet-up {
+    left: 10%;
+    top: 55%;
+  }
+}
+
+.decorationElementsPattern {
+  position: absolute;
+  right: 15%;
+  top: 15%;
+  z-index: -1;
+
+  @include for-tablet-up {
+    right: 18%;
+    top: 5%;
+    transform: scale(1.10);
+  }
+}
+
+.blurredDecorationElements {
+  position: absolute;
+  left: 15%;
+  top: 22%;
+  z-index: -1;
+}
+
+.successMessageContainer {
+  margin: 20px auto 0 auto;
+  max-width: 80%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px 24px;
+
+  @include for-tablet-up {
+    margin: 50px auto 0 auto;
+    padding: 83px 62px;
+  }
+}
+
+.thumbsUpIcon {
+  display: block;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 36px;
+  text-align: center;
+
+  @include for-tablet-up {
+    font-size: 60px;
+    line-height: 72px;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+}
+
+.paragraph {
+  color: rgba(36, 36, 36, 0.7);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 42px;
+}
+
+.separator {
+  background-color: #FFC331;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100px;
+  height: 10px;
+}
+
+.meetingWrapper {
+  margin-top: 0;
+  filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.2));
+
+  @include for-desktop-up {
+    margin-left: -70px;
+    margin-right: -70px;
+  }
+}
+
+.meetingContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  background-color: #fff;
+  padding: 61px 70px 29px 70px;
+  border-radius: 5px;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+  margin-top: 60px;
+
+  @include for-desktop-up {
+    padding: 45px 20px 29px 20px;
+    margin-top: 45px;
+  }
+}
+
+.meeting {
+  margin: 10px 0;
+  font-size: 16px;
+  display: block;
+
+  @include for-tablet-up {
+    margin: 0;
+    display: inline;
+  }
+}
+
+.hurry {
+  background: linear-gradient(66.27deg, #6B67E9 11.76%, #8224E3 89.05%);
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  display: block;
+
+  @include for-tablet-up {
+    display: inline;
+  }
+}
+
+.meetingButton {
+  font-size: 16px;
+}

@@ -19,6 +19,7 @@
     "react-calendly": "^1.3.1",
     "react-dom": "^17.0.1",
     "react-flags-select": "^2.1.2",
+    "react-loader-spinner": "^4.0.0",
     "react-modal": "^3.13.1",
     "react-prerendered-component": "^1.2.4",
     "react-router-dom": "^5.2.0",
@@ -48,7 +49,8 @@
     "deploy-functions-production": "firebase deploy --only functions --project wedevelop-site",
     "deploy-functions-testing": "firebase deploy --only functions --project wedevelop-site-testing",
     "deploy-hosting-production": "firebase deploy --project wedevelop-site --only hosting:production",
-    "deploy-hosting-testing": "firebase deploy --project wedevelop-site-testing --only hosting:testing"
+    "deploy-hosting-testing": "firebase deploy --project wedevelop-site-testing --only hosting:testing",
+    "cleanup-deploy-build": "rimraf -rf firebase.json.backup .env.production build node_modules/.cache"
   },
   "reactSnap": {
     "skipThirdPartyRequests": true,
@@ -68,7 +70,18 @@
       "/about-us",
       "/portfolio",
       "/career",
-      "/follow-up"
+      "/follow-up",
+      "/offshore-web-development",
+      "/nearshore-net-developers",
+      "/web-development-outsourcing",
+      "/nearshore-web-development",
+      "/success/confirm",
+      "/nearshore-software-outsourcing",
+      "/devops",
+      "/it-outsourcing",
+      "/it-staffing",
+      "/mobile",
+      "/software-development"
     ]
   },
   "eslintConfig": {

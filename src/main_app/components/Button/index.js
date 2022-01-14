@@ -50,7 +50,9 @@ const variants = PropTypes.oneOf([
   'secondary',
   'dark',
   'link',
-  'icon'
+  'icon',
+  'light',
+  'focus-scale'
 ])
 
 Button.propTypes = {

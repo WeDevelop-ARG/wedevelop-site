@@ -1,4 +1,5 @@
-const { createContactIfNotExists, createDeal, createDealNote } = require('../services/hubspot')
+const { createContactIfNotExists, createContactNote } = require('../services/hubspot')
+const { getDownloadURLForPath } = require('../services/storage')
 
 module.exports = exports = async function handleRequest (req, res) {
   res.set('Access-Control-Allow-Origin', '*')
@@ -22,22 +23,30 @@ function handleOptionsRequest (req, res) {
 }
 
 async function handlePostRequest (req, res) {
-  const {
+  let {
     name,
     email,
     formOrigin,
-    message
+    filePath,
+    message,
+    company
   } = req.body
 
   const contact = { name, email }
   const deal = { name: `${name} (${email})` }
-  const note = { body: `<b>Sent from:</b> ${formOrigin}<br/><b>Message:</b><br/><br/>${message}` }
+
+  try {
+    filePath = await getDownloadURLForPath(filePath)
+  } catch (err) {
+    console.error('Could not get Download URL for path', filePath)
+  }
+
+  const note = { body: `<b>Sent from:</b> ${formOrigin}<br/><b>Company:</b>${company}<br/><b>File:</b>${filePath}<br/><b>Message:</b><br/><br/>${message}` }
 
   console.log('INITIAL_LANDING_CONTACT_FORM', JSON.stringify({ contact, deal, note }))
 
   const contactId = await createContactIfNotExists(contact)
-  const dealId = await createDeal(contactId, deal)
-  await createDealNote(dealId, note)
+  await createContactNote(contactId, note)
 
-  return res.status(200).json({ tracingId: dealId })
+  return res.status(200).json({ tracingId: contactId })
 }
