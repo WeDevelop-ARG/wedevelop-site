@@ -7,7 +7,7 @@ export default function ErrorUploadingFile ({ retryButtonProps }) {
   return (
     <label className={classes.fileUploadField}>
       <div className={classes.field}>
-        <SVGIcon name='career/errorUploadingFile' />
+        <SVGIcon name='career/errorUploadingFile' alt='' className={classes.errorUploadingFile} />
         <p className={classes.fileUploadLabel}>Something went wrong trying to upload your file.</p>
         <Button variant='link' className={classes.tryAgain} {...retryButtonProps}>
           Try again
@@ -15,5 +15,4 @@ export default function ErrorUploadingFile ({ retryButtonProps }) {
       </div>
     </label>
   )
-  // TODO: Agregar props para Try again
 }

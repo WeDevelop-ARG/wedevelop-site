@@ -12,6 +12,10 @@
   flex-grow: 1;
 }
 
+.successUploaded {
+  flex-shrink: 0;
+}
+
 .fileUploadLabel {
   font-size: 15px;
   margin: 0 5px 0 10px;
