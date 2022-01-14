@@ -137,13 +137,14 @@ export default function ScheduleFormModal ({
               aria-hidden='true'
             >
               <div className={classes.field}>
-                <SVGIcon name='career/clip' className={classes.clip} />
+                <SVGIcon name='career/clip' className={classes.clip} alt='' />
                 <p className={classes.fileUploadLabel}>Attach</p>
               </div>
             </Field>
           </label>}
         {(!isUndefined(fileUploadProgress) && isUndefined(fileUploadError)) &&
           <UploadingFile
+            inputName='filesAttached'
             currentProgress={fileUploadProgress}
           />}
         {!isUndefined(fileUploadError) &&
