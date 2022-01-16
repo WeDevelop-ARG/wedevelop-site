@@ -1,4 +1,7 @@
-//TODO: Revisar styles para mobile
+@import '/src/styles/theme.scss';
+
+$backgroundColor: #c4c4c4;
+$progresBackgroundColor: #7cae54;
 
 .fileUploadField {
   margin: 10px 0;
@@ -18,7 +21,6 @@
   font-size: 15px;
   margin-bottom: 0;
   margin-left: 15px;
-  color: #363636;
   line-height: 18px;
   letter-spacing: -0.3px;
 }
@@ -27,20 +29,20 @@
   display: flex;
   width: 100%;
   height: 2px;
-  background-color: #c4c4c4;
+  background-color: $backgroundColor;
   overflow: hidden;
   border-radius: 2px;
 
-  >div{
+  > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    color: #fff;
+    color: $secondaryColor;
     text-align: center;
     white-space: nowrap;
-    background-color: #7cae54;
-    transition: width .6s ease;
+    background-color: $progresBackgroundColor;
+    transition: width 0.6s ease;
     border-radius: 2px;
   }
 }

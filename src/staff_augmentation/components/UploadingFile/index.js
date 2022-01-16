@@ -16,7 +16,11 @@ export default function UploadingFile ({ currentProgress, inputName }) {
   return (
     <label className={classes.fileUploadField}>
       <div className={classes.field}>
-        <SVGIcon name='career/uploadingFile' alt='' className={classes.uploadingFile} />
+        <SVGIcon
+          name='career/uploadingFile'
+          alt=''
+          className={classes.uploadingFile}
+        />
         <p className={classes.fileUploadLabel}>{name}</p>
       </div>
       <ProgressBar now={progressPercentage} className={classes.progress} />
