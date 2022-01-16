@@ -1,3 +1,5 @@
+$fileUploadLabelColor: #7cae54;
+
 .field {
   padding: 10px 0;
   display: flex;
@@ -19,7 +21,7 @@
 .fileUploadLabel {
   font-size: 15px;
   margin: 0 5px 0 10px;
-  color: #7CAE54;
+  color: $fileUploadLabelColor;
   line-height: 18px;
   letter-spacing: -0.3px;
 }
