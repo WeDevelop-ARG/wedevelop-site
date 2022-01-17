@@ -1,12 +1,9 @@
 import Button from 'main_app/components/Button'
-import DotsPattern from '../../../assets/home/dots_pattern.svg'
-
 import classes from './styles.module.scss'
 import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
-import Image from 'main_app/components/Image'
 
-function FullSizeCTA ({
+function FullSizeCTA({
   title,
   subTitle,
   ctaText,
@@ -26,9 +23,7 @@ function FullSizeCTA ({
       <div className={classes.sectionContent}>
         <p className={classes.subheadingText}>{subTitle}</p>
         <h2 className={classes.titleText}>{title}</h2>
-        <p className={classes.descriptionText}>
-          {description}
-        </p>
+        <p className={classes.descriptionText}>{description}</p>
         <hr className={classes.horizontalBar} />
         <Button
           variant='primary'
@@ -37,14 +32,6 @@ function FullSizeCTA ({
         >
           {ctaText}
         </Button>
-      </div>
-      <Image src={DotsPattern} alt='' className={classes.topRightPattern} />
-      <Image src={DotsPattern} alt='' className={classes.leftPattern} />
-      <Image src={DotsPattern} alt='' className={classes.rightPattern} />
-      <div className={classes.shapes}>
-        <div className={classes.emptyCircle} />
-        <div className={classes.filledBigCircle} />
-        <div className={classes.smallBlurRightCircle} />
       </div>
     </section>
   )
