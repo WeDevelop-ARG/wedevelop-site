@@ -132,6 +132,7 @@ $attachColor: #377DFF;
     align-items: center;
     color: rgba($color: $attachColor, $alpha: 1.0);
     cursor: pointer;
+    flex-grow: 1;
   }
 }
 

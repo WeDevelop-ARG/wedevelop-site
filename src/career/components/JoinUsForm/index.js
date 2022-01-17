@@ -133,19 +133,19 @@ function JoinUsForm () {
                 Attach
               </div>
             </Field>}
+          {(!isUndefined(fileUploadProgress) && isUndefined(fileUploadError)) &&
+            <UploadingFile
+              inputName='resume'
+              currentProgress={fileUploadProgress}
+            />}
+          {!isUndefined(fileUploadError) &&
+            <ErrorUploadingFile
+              retryButtonProps={{
+                type: 'submit'
+              }}
+            />}
           <ErrorMessage name='resume' component='div' className={classes.errorMessage} />
         </label>
-        {(!isUndefined(fileUploadProgress) && isUndefined(fileUploadError)) &&
-          <UploadingFile
-            inputName='resume'
-            currentProgress={fileUploadProgress}
-          />}
-        {!isUndefined(fileUploadError) &&
-          <ErrorUploadingFile
-            retryButtonProps={{
-              type: 'submit'
-            }}
-          />}
         <ReCAPTCHAField name='recaptchaToken' />
         {isSubmitted && error && (
           <p className={classes.submitError}>

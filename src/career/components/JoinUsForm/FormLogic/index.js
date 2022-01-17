@@ -46,6 +46,7 @@ const schemaShape = {
 
 function FormLogic ({ onSubmitFinished, setFileUploadProgress, setFileUploadError, ...props }) {
   const handleSubmit = useCallback(async (values, actions) => {
+    setFileUploadError(undefined)
     let error
     try {
       let path
