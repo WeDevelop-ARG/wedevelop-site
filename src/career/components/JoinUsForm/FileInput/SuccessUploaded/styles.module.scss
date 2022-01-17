@@ -1,18 +1,27 @@
-.fileUploadField {
-  margin: 10px 0;
+$fileUploadLabelColor: #7cae54;
 
-  > .field {
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-  }
+.field {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+}
+
+.deleteFieldMessage {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.successUploaded {
+  flex-shrink: 0;
 }
 
 .fileUploadLabel {
   font-size: 15px;
-  margin-bottom: 0;
-  margin-left: 15px;
-  color: #7CAE54;
+  margin: 0 5px 0 10px;
+  color: $fileUploadLabelColor;
   line-height: 18px;
   letter-spacing: -0.3px;
 }
@@ -22,5 +31,11 @@
   font-size: 14px;
   line-height: 17px;
   opacity: 0.5;
-  margin: 0px 5px;
+  margin: 0;
+}
+
+.deleteButton {
+  padding: 0;
+  flex-shrink: 0;
+  cursor: pointer;
 }

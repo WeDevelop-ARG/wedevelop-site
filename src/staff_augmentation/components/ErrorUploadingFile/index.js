@@ -1,27 +1,24 @@
-import { Field } from 'formik'
 import SVGIcon from 'main_app/components/SVGIcon'
 import Button from 'main_app/components/Button'
-import FileInput from 'career/components/JoinUsForm/FileInput'
 
 import classes from './styles.module.scss'
 
-export default function ErrorUploadingFile() {
-  
+export default function ErrorUploadingFile ({ retryButtonProps }) {
   return (
-  <label className={classes.fileUploadField}>
-    <Field
-      name='filesAttached'
-      component={FileInput}
-      aria-hidden='true'
-    />
-      <div className={classes.field}>
-        <SVGIcon name='career/errorUploadingFile' />
-        <p className={classes.fileUploadLabel}>Something went wrong trying to upload your file.</p>
-        <Button variant='link' className={classes.tryAgain} onClick={''}>
-          Try again
-        </Button>
+    <div className={classes.field}>
+      <div className={classes.errorUploadingMessage}>
+        <SVGIcon
+          name='career/errorUploadingFile'
+          alt=''
+          className={classes.errorUploadingFile}
+        />
+        <p className={classes.fileUploadLabel}>
+          Something went wrong trying to upload your file.
+        </p>
       </div>
-  </label>
+      <Button variant='link' className={classes.tryAgain} {...retryButtonProps}>
+        Try again
+      </Button>
+    </div>
   )
-  //TODO: Agregar props para Try again
 }

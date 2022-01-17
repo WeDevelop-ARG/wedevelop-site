@@ -1,16 +1,31 @@
+import Button from 'main_app/components/Button'
 import SVGIcon from 'main_app/components/SVGIcon'
 import classes from './styles.module.scss'
 
-export default function SuccessUploaded(file) {
-
+export default function SuccessUploaded ({
+  fileName,
+  fileSize,
+  handleDeleteFile
+}) {
+  const fileSizeInKb = (fileSize / 1000).toFixed(2)
   return (
-    <label className={classes.fileUploadField}>
-      <div className={classes.field}>
-        <SVGIcon name='career/successUploaded' />
-        <p className={classes.fileUploadLabel}>{file.name}</p>
-        <p className={classes.size}>{file.size}</p>
+    <div className={classes.field}>
+      <div className={classes.deleteFieldMessage}>
+        <SVGIcon
+          name='career/successUploaded'
+          alt=''
+          className={classes.successUploaded}
+        />
+        <p className={classes.fileUploadLabel}>{fileName}</p>
+        <p className={classes.size}>({fileSizeInKb}kB)</p>
       </div>
-    </label>
+      <Button
+        variant='icon'
+        className={classes.deleteButton}
+        onClick={handleDeleteFile}
+      >
+        <SVGIcon name='career/deleteFile' alt='' />
+      </Button>
+    </div>
   )
-  //TODO: Agregar "eliminar" y hacer que funcione
 }
