@@ -9,6 +9,7 @@ $tryAgainColor: #377dff;
   justify-content: space-between;
   align-items: center;
   cursor: default;
+  flex-grow: 1;
 
   @include for-phone-only {
     flex-flow: row wrap;
