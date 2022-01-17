@@ -1,0 +1,29 @@
+.fileUploadField {
+  margin: 10px 0;
+
+  > .field {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.fileUploadLabel {
+  font-size: 15px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  color: #E34242;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+}
+
+.tryAgain {
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+  text-decoration-line: underline;
+  color: #377DFF;
+  padding-left: 200px;
+  font-family: Inter;
+  font-weight: 500;
+}

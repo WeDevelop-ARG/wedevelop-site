@@ -12,6 +12,8 @@ import SVGIcon from 'main_app/components/SVGIcon'
 import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 import { isNil } from 'lodash'
+import UploadingFile from 'staff_augmentation/components/UploadingFile'
+import ErrorUploadingFile from 'staff_augmentation/components/ErrorUploadingFile'
 
 export default function ScheduleFormModal ({
   isModalOpen,
@@ -138,6 +140,8 @@ export default function ScheduleFormModal ({
             <p className={classes.fileUploadLabel}>Attach</p>
           </div>
         </label>
+        <UploadingFile />
+        <ErrorUploadingFile />
         <div className={classes.buttonContainer}>
           <SubmitButton
             variant='primary'
