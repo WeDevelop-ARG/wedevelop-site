@@ -1,7 +1,13 @@
+import injobDetails from './injob_details'
+import monedaDetails from './moneda_details'
 import raftDetails from './raft_details'
+import drCannabisDetails from './drCannabis_details'
 
 export const stories = [
-  raftDetails
+  raftDetails,
+  injobDetails,
+  monedaDetails,
+  drCannabisDetails
 ]
 
 /* TODO: usar la siguiente información para las historias que faltan armar
