@@ -1,7 +1,9 @@
 import raftDetails from './raft_details'
+import trainWithDetails from './trainWith_details'
 
 export const stories = [
-  raftDetails
+  raftDetails,
+  trainWithDetails
 ]
 
 /* TODO: usar la siguiente información para las historias que faltan armar

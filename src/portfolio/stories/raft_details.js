@@ -22,11 +22,10 @@ const raftDetails = {
     title: 'Raft',
     subtitle: 'A search engine for ferry booking.',
     tags: [
-      'E-commerce',
-      'Web Responsive',
-      'Staff Augmentation'
+      'Travel',
+      'Booking'
     ],
-    description: 'Ferry transportation is a pretty niche industry, and there is no search engine or metada platform for it, either globally or in specific countries, so we had to build much of it on our own.',
+    description: 'RAFT Croatia is a search engine for ferry bookings. RAFT’s mission is to make transportation between the islands and coastal cities of Croatia seamless, and stress free.',
     websiteURL: 'https://raftcroatia.com/',
     imageURL: RaftReservations
   },
@@ -35,17 +34,10 @@ const raftDetails = {
     content: (
       <>
         <p>
-          Ferry transportation is a pretty niche industry, and there is no search engine
-          or metada platform for it, either globally or in specific countries, so we had
-          to build much of it on our own.
+          Ferry transportation is a pretty niche industry, and there is no search engine or metadata platform for it, either globally or in specific countries, so we had to build much of it on our own.
         </p>
         <p>
-          Malesuada habitant massa euismod porttitor aliquet diam ac eleifend. Elementum
-          ut morbi non ornare. Facilisis ut enim lorem vel id et posuere. Posuere in consectetur
-          fermentum purus hendrerit faucibus donec auctor. Pellentesque vitae facilisis
-          non sem quis tellus amet. Massa mauris non volutpat praesent et pellentesque
-          velit. Senectus id lectus commodo molestie elementum. Proin tristique at justo
-          vivamus blandit feugiat purus condimentum. Malesuada massa id fermentum pretium sit nec.
+          We needed to design and implement platforms and tools both for passengers to buy ferry tickets and for ferry companies to manage their routes and operate their business in an easy way.
         </p>
       </>
     )
@@ -53,32 +45,55 @@ const raftDetails = {
   testimonials: [{
     profileImageURL: TestimonialsImage,
     name: 'Kerry Hebert',
-    quote: '“WeDevelop was resourceful, unafraid of problems and bockers, creative, professional, and fast.”',
-    position: 'QA Manager',
+    quote: '“WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.”',
+    position: 'CEO RAFT',
     company: 'HSBC'
   }],
-  results: {
-    title: 'Results & Feedback',
+  solution: {
+    title: 'The solution',
     content: (
       <>
-        <p>
-          We just said that hiring a Web Developer was a simple solution, but that’s not
-          entirely true. Web Development is a complex process involving a great deal of
-          skill, a high degree of professionalism, a touch of artistic creativity, and
-          some exposure to the craft. Although there are countless Web Development companies,
-          freelancers, and contractors, finding a developer that fits the bill can still be a challenge.
-        </p>
-        <p>
-          Hiring a poor developer will consequently result in an inferior product. You
-          might actually end up losing money by running a weak web platform on top of
-          whatever it cost to develop. For instance, given that most online traffic comes
-          from mobile devices, user experience is a key performance factor for websites
-          and web apps. If the developer ignores crucial web performance attributes such
-          as responsive design, loading speed, visual appeal, and SEO capabilities, the
-          resulting site will miss out on countless business opportunities and lose badly
-          to competitors. Business-wise, such a site would be worse than just a waste of
-          money, time, and effort.
-        </p>
+        <h2>RAFT Croatin Online</h2>
+        <ul>
+          <li>
+            Online Ferry Tickets Booking<br />
+            Ability to search trips (one-way, round-trip, or multi-stop trips) and book them online.
+          </li>
+          <li>
+            Integration with Payment Gateways<br />
+            Integration with Stripe and local payment gateways.
+          </li>
+          <li>
+            My account section<br />
+            Allow the customer to create an account and access their information, see their trips, reschedule or cancel trips.
+          </li>
+          <li>
+            Active communication channels with customers<br />
+            We integrated with SMS and Email providers to send notifications and other relevant information to the customers (booking confirmations, changes on schedule, etc).          </li>
+        </ul>
+        <h2>Biz Portal</h2>
+        <ul>
+          <li>
+            POS - Point Of Sales<br />
+            A tool for the Ferry companies to sell their tickets online, using RAFT’s POS.
+          </li>
+          <li>
+            Employee management<br />
+            Enables the Ferry companies to manage their employees’ access to the platform in a secure and efficient manner.
+          </li>
+          <li>
+            Multiple POS Locations<br />
+            As Ferry companies have different POS locations, the RAFT platform allows them to indicate the location they’re selling from.
+          </li>
+          <li>
+            Ticket printing<br />
+            Print paper Ferry tickets with a custom layout.
+          </li>
+          <li>
+            Reporting<br />
+            Multiple reporting views to maximize the businesses productivity and revenue through the platform.
+          </li>
+        </ul>
       </>
     ),
     imageURL: RaftOverview
