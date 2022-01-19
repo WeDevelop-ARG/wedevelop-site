@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import isFunction from 'lodash-es/isFunction'
+import isFunction from 'lodash/isFunction'
 
 import { IS_STATIC_RENDERER } from 'main_app/constants'
 
