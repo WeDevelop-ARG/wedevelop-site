@@ -47,13 +47,12 @@
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({ 'gtm.start': new Date().getTime(), event:'gtm.js' })
       ;(function () {
-        var interactionEvents = ['click', 'keypress', 'mousemove', 'pointermove', 'scroll', 'touchmove', 'wheel']
         var IS_STATIC_RENDERER = navigator.userAgent === 'ReactSnap'
         var WAIT_TIME_BEFORE_APPEND = 3000
 
-        for (var i = 0; i < interactionEvents.length; ++i) {
-          window.addEventListener(interactionEvents[i], loadAfterInteraction, { passive: true })
-        }
+        window.addEventListener('mousemove', loadAfterInteraction, { passive: true })
+        window.addEventListener('pointermove', loadAfterInteraction, { passive: true })
+        window.addEventListener('scroll', loadAfterInteraction, { passive: true })
 
         document.addEventListener('DOMContentLoaded', function () {
           if (IS_STATIC_RENDERER) return undefined
@@ -64,9 +63,9 @@
         })
 
         function loadAfterInteraction () {
-          for (var i = 0; i < interactionEvents.length; ++i) {
-            window.removeEventListener(interactionEvents[i], loadAfterInteraction, { passive: true })
-          }
+          window.removeEventListener('mousemove', loadAfterInteraction, { passive: true })
+          window.removeEventListener('pointermove', loadAfterInteraction, { passive: true })
+          window.removeEventListener('scroll', loadAfterInteraction, { passive: true })
 
           if (IS_STATIC_RENDERER) return undefined
 
