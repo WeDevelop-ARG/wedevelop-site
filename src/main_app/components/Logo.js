@@ -5,7 +5,7 @@ import fullLogoWhite from 'assets/logo/full_logo_white.svg'
 import fullLogoColor from 'assets/logo/full_logo_color.svg'
 import Image from './Image'
 
-function Logo ({ variant, ...props }) {
+function Logo ({ variant, width, height, ...props }) {
   let logoSrc
 
   if (!isVariant(variant, 'isologo')) {
@@ -30,6 +30,8 @@ function Logo ({ variant, ...props }) {
     <Image
       src={logoSrc}
       alt='WeDevelop Logo'
+      width={width ?? (isVariant(variant, 'isologo') ? '64' : '225')}
+      height={height ?? (isVariant(variant, 'isologo') ? '64' : '51')}
       {...props}
     />
   )
