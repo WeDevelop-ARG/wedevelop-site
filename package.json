@@ -42,6 +42,7 @@
     "add-http2-push-headers": "ncp firebase.json firebase.json.backup && node ./add_http2_push_headers.js",
     "build-sitemap": "react-snap-sitemap --base-url=$REACT_APP_BASE_URL/",
     "build-testing": "ncp .testing_env .env.production && npm run build",
+    "build-preview": "REACT_APP_PREVIEW_BUILD=preview npm run build-testing",
     "build-production": "ncp .production_env .env.production && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -49,7 +50,8 @@
     "deploy-functions-testing": "firebase deploy --only functions --project wedevelop-site-testing",
     "deploy-hosting-production": "firebase deploy --project wedevelop-site --only hosting:production",
     "deploy-hosting-testing": "firebase deploy --project wedevelop-site-testing --only hosting:testing",
-    "cleanup-deploy-build": "rimraf -rf firebase.json.backup .env.production build node_modules/.cache"
+    "cleanup-deploy-build": "rimraf -rf firebase.json.backup .env.production build node_modules/.cache",
+    "deploy-hosting-preview": "firebase hosting:channel:deploy --project wedevelop-site-testing --only testing"
   },
   "reactSnap": {
     "skipThirdPartyRequests": true,
