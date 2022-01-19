@@ -116,6 +116,7 @@ export default function Image ({
   height,
   placeholderColor,
   onPlaceholderImageLoad,
+  loading = 'lazy',
   ...props
 }) {
   if (IS_DEVELOPMENT && !isString(alt)) {
@@ -164,7 +165,7 @@ export default function Image ({
         const image = createCloudinaryImage({ src: fullURL, objectFit, position, resize, ...containerSize })
         const placeholderImage = createCloudinaryImage({ isPlaceholder: true, src: fullURL, objectFit, position, resize, ...containerSize })
 
-        if (props.loading !== 'eager' && !lastSize) {
+        if (loading !== 'eager' && !lastSize) {
           setOptimizedSrc(image.toURL())
         } else {
           if (!lastSize) {
@@ -183,13 +184,13 @@ export default function Image ({
       img.src = null
       window.removeEventListener('resize', onResize, { passive: true })
     }
-  }, [src, fullURL, objectFit, position, width, height, resize, props.loading])
+  }, [src, fullURL, objectFit, position, width, height, resize, loading])
 
   const img = (
     <img
       src={optimizedSrc}
       alt={alt}
-      loading={props.loading}
+      loading={loading}
       onLoad={() => {
         setBackgroundSrc(undefined)
         setBackgroundColor(undefined)
