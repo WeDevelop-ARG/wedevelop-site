@@ -209,6 +209,8 @@ export default function Image ({
         backgroundColor: backgroundColor && !backgroundSrc ? backgroundColor : undefined,
         backgroundImage: backgroundSrc ? `url(${backgroundSrc})` : undefined
       }}
+      width={(!objectFit || objectFit === 'none') && width ? width : undefined}
+      height={(!objectFit || objectFit === 'none') && height ? height : undefined}
       {...props}
     />
   )

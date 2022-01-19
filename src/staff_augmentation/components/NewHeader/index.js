@@ -30,12 +30,12 @@ export default function NewHeader ({
         <div className={classes.backgroundContainer}>
           <HeaderBackground preserveAspectRatio='xMidYMax slice' className={classes.background} />
         </div>
-        <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
-        <Image src={DecorationElements} alt='' className={classes.decorationElementsPattern} />
-        <Image src={BlurredDecorationElements} alt='' className={classes.blurredDecorationElements} />
+        <Image src={DotsPattern} alt='' loading='eager' className={classes.dotsPattern} />
+        <Image src={DecorationElements} alt='' loading='eager' className={classes.decorationElementsPattern} />
+        <Image src={BlurredDecorationElements} alt='' loading='eager' className={classes.blurredDecorationElements} />
         <div className={classes.columnsContainer}>
           <div className={classes.leftSideContainer}>
-            <Image src={WeDevelopLogo} alt='WeDevelop logo' className={classes.imageLogo} />
+            <Image src={WeDevelopLogo} alt='WeDevelop logo' width='225' height='51' loading='eager' className={classes.imageLogo} />
             <div className={classes.tagNameContainer}>
               <span className={classes.tagName} style={{ backgroundColor }}>
                 {landingName}

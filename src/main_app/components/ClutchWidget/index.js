@@ -27,7 +27,7 @@ function loadClutch (onPossiblyLoaded) {
       onPossiblyLoaded()
     }
     document.head.appendChild(sc)
-  }, 1500)
+  }, 3000)
 }
 
 function isClutchScriptPresent () {
