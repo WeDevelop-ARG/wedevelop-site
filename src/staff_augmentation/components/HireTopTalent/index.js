@@ -1,8 +1,10 @@
 import Button from 'main_app/components/Button'
+import Image from 'main_app/components/Image'
+import DotsPattern from 'assets/staff_augmentation/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
-function HireTopTalent ({
+function HireTopTalent({
   subheadingText,
   titleText,
   descriptionText,
@@ -26,10 +28,14 @@ function HireTopTalent ({
             {buttonText}
           </Button>
         </div>
-        <div className={classes.sectionContent}>
-          {contentText}
-        </div>
+        <div className={classes.sectionContent}>{contentText}</div>
       </div>
+      <Image
+        src={DotsPattern}
+        alt=''
+        className={classes.topLeftDotsPattern}
+        aria-hidden='true'
+      />
     </section>
   )
 }

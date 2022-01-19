@@ -7,22 +7,12 @@ $grayColor: #363636;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  padding-top: calc(275px + var(--rootContentMinPadding));
-  padding-bottom: calc(75px + var(--rootContentMinPadding));
   position: relative;
 
-  @include for-tablet-up {
-    padding-top: calc(275px + var(--rootContentMinPadding));
-    margin-top: -100px;
-  }
-
   @include for-desktop-up {
-    padding-top: calc(175px + var(--rootContentMinPadding));
-    padding-bottom: calc(75px + var(--rootContentMinPadding));
     padding-left: 136px;
     padding-right: 136px;
     margin-top: 0;
-    margin-bottom: 50px;
   }
 }
 
@@ -58,7 +48,7 @@ $grayColor: #363636;
 .horizontalBar {
   width: 100px;
   height: 10px;
-  background: #FFC331;
+  background: #ffc331;
   margin: 32px 0px 85px;
   border: none;
 }
@@ -69,7 +59,7 @@ $grayColor: #363636;
 
 .remarkContainer {
   display: none;
-  
+
   @include for-desktop-up {
     display: flex;
     flex-direction: column;
@@ -127,7 +117,7 @@ $grayColor: #363636;
 
 .arrows {
   transform: rotate(90deg);
-  
+
   @include for-desktop-up {
     display: none;
   }
