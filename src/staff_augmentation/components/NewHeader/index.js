@@ -55,7 +55,7 @@ export default function NewHeader ({
             <div className={classes.quoteContainer}>
               <div className={classes.avatarContainer}>
                 <div className={classes.avatarImageContainer}>
-                  <Image src={WeDevelopCEO} objectFit='cover' alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
+                  <Image src={WeDevelopCEO} loading='eager' objectFit='cover' alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
                 </div>
               </div>
               <q className={classes.quote}>
