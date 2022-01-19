@@ -43,6 +43,7 @@
     "add-http2-push-headers": "ncp firebase.json firebase.json.backup && node ./add_http2_push_headers.js",
     "build-sitemap": "react-snap-sitemap --base-url=$REACT_APP_BASE_URL/",
     "build-testing": "ncp .testing_env .env.production && npm run build",
+    "build-preview": "REACT_APP_PREVIEW_BUILD=preview npm run build-testing",
     "build-production": "ncp .production_env .env.production && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

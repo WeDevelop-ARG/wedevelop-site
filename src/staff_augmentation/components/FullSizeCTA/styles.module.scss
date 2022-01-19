@@ -4,24 +4,11 @@
 .getInTouch {
   position: relative;
   overflow: hidden;
-  background-image: url(../../../assets/staff_augmentation/getYourQuoteNow.png);
-  background-repeat: no-repeat;
-  background-position: 0 center;
-  background-size: cover;
   min-height: 56vw;
-  margin-bottom: 50px;
   text-align: center;
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: -300px;
-
-  @include for-tablet-up {
-    margin-top: -200px;
-  }
-
-  @include for-desktop-up {
-    margin-top:0px;
-  }
+  margin-top: -380px;
 }
 
 .sectionContent {
@@ -32,34 +19,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 75px;
-
-  @include for-tablet-up {
-    padding-bottom: 120px;
-  }
-
-  @include for-desktop-up {
-    height: 800px;
-    padding-bottom: 130px;
-  }
-
-  @media screen and (min-width: 1500px) and (max-width: 1649px) {
-    padding-bottom: 100px;
-  }
-
-  @media screen and (min-width: 1650px) and (max-width: 1799px) {
-    padding-bottom: 70px;
-  }
-
-  @media screen and (min-width: 1024px) and (max-width: 1230px) {
-    padding-bottom: 98px;
-  }
-
-  @include for-big-desktop-up {
-    height: 830px;
-    padding-bottom: 25px;
-  }
-
+  padding-bottom: 100px;
 }
 
 .subheadingText {
@@ -72,7 +32,6 @@
 }
 
 .titleText {
-
   @include for-desktop-up {
     font-weight: 600;
     font-size: 60px;
@@ -90,7 +49,7 @@
 .horizontalBar {
   width: 100px;
   height: 10px;
-  background: #FFC331;
+  background: #ffc331;
   margin: 40px auto;
   border: none;
 }
@@ -127,7 +86,7 @@
   @extend %circle;
   width: 243px;
   height: 243px;
-  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  background: rgba($color: #eaeaea, $alpha: 0.3);
   top: 19%;
   right: 76px;
 
@@ -140,7 +99,7 @@
   @extend %circle;
   width: 284px;
   height: 284px;
-  border: .5px solid rgba($color: #363636, $alpha: 0.2);
+  border: 0.5px solid rgba($color: #363636, $alpha: 0.2);
   opacity: 0.5;
   top: 18%;
   right: 70px;
@@ -154,7 +113,7 @@
   @extend %circle;
   width: 13px;
   height: 13px;
-  background-color: rgba($color: #8224E3, $alpha: 0.5);
+  background-color: rgba($color: #8224e3, $alpha: 0.5);
   filter: blur(3px);
   top: 46%;
   right: 313px;

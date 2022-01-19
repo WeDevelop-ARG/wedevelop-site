@@ -15,7 +15,7 @@ import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
 
-export default function SidebarModal({ className, content }) {
+export default function SidebarModal ({ className, content }) {
   const containerClass = classNames(classes.rightSideContent, className)
   const isDesktopUp = useMediaQuery(forDesktopUp)
   const desktopShapeRef = useRef()
@@ -45,7 +45,7 @@ export default function SidebarModal({ className, content }) {
     <aside ref={containerRef} className={containerClass}>
       <ModalShape ref={desktopShapeRef} className={classes.modalDecoration} />
       <MobileModalShape className={classes.mobileDecoration} />
-      <Image src={ModalDotsPattern} className={classes.modalDotsPattern} />
+      <Image src={ModalDotsPattern} className={classes.modalDotsPattern} alt='' />
       <div className={classes.content}>
         <p className={classes.whatsNext}>What's next?</p>
         <p className={classes.rightSideText}>
