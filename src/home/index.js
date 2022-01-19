@@ -21,7 +21,6 @@ function Landing () {
   //   title: 'A Human-Centered Company that Gets Things Done',
   //   description: 'We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
   // })
-
   const {route, pathname} = useRouter()
 
   console.log(route,pathname)

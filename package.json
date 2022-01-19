@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "next start",
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "prebuild": "rimraf build",
     "build": "NODE_ENV=production next build && react-snap && rimraf ./build/storage",
     "postbuild": "npm run add-http2-push-headers && dotenv -e .env.production npm run build-sitemap",

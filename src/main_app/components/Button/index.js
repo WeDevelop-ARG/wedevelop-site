@@ -17,6 +17,7 @@ const Button = forwardRef(({
   iconRight,
   ...props
 }, ref) => {
+  console.log('BOTON')
   if (ButtonComponent === 'button') type = type ?? 'button'
 
   className = classnames(
@@ -37,9 +38,11 @@ const Button = forwardRef(({
       ref={ref}
       {...props}
     >
+      <>
       {iconLeft && <div className={classes.iconLeft}>{iconLeft}</div>}
       <span>{children}</span>
       {iconRight && <div className={classes.iconRight}>{iconRight}</div>}
+      </>
     </ButtonComponent>
   )
 })

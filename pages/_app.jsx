@@ -7,6 +7,7 @@ import { NavBar, NavBarContextProvider } from '../src/main_app/components/NavBar
 setupGlobalDeveloperHints()
 setPageTitlePrefix('WeDevelop - ')
 
+
 function MyApp ({ Component, pageProps }) {
   return (
     <NavBarContextProvider>

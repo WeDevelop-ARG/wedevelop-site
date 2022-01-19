@@ -36,8 +36,10 @@ function Header (props, ref) {
         </p>
         <hr className={classes.divider} />
         <Link href='#services' smooth className={classes.arrowMobile}>
+          <>
           <SVGIcon name='home/header/arrow' />
           <div className={classes.scrollTextMobile}>scroll down</div>
+          </>
         </Link>
         <div className={classNames(classes.clutchCircleMobile, {
           [classes.loading]: isClutchLoading
@@ -49,8 +51,10 @@ function Header (props, ref) {
         </div>
       </div>
       <Link href='#services' smooth className={classes.arrow}>
+        <>
         <SVGIcon name='home/header/arrow' />
         <div className={classes.scrollText}>scroll down</div>
+        </>
       </Link>
       <div className={classNames(classes.clutchCircle, {
         [classes.loading]: isClutchLoading
