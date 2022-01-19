@@ -67,7 +67,7 @@ function PortfolioProjectCard ({
           {description}
         </p>
         <HashLink smooth to={detailsPagePath} className={classes.knowMore}>
-          Know More
+          Read More
           <Image src={Arrow} alt='' className={classes.arrow} />
         </HashLink>
       </div>
