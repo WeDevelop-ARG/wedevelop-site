@@ -1,0 +1,42 @@
+$fileUploadLabelColor: #7cae54;
+
+.field {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+  flex-grow: 1;
+}
+
+.deleteFieldMessage {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.successUploaded {
+  flex-shrink: 0;
+}
+
+.fileUploadLabel {
+  font-size: 15px;
+  margin: 0 5px 0 10px;
+  color: $fileUploadLabelColor;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+}
+
+.size {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.deleteButton {
+  padding: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+}
