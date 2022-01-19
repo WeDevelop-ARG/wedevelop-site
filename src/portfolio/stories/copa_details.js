@@ -62,7 +62,7 @@ const copaDetails = {
     name: 'Kerry Hebert',
     quote: '“They helped us to create member portals with different gamification opportunities that also helped us monetize on a different level. We\'re extremely excited about WeDevelop.”',
     position: 'General Manager',
-    company: 'HSBC'
+    company: 'Soccer Training Center'
   }],
   results: {
     title: 'The Solution',

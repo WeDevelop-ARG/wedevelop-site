@@ -43,14 +43,7 @@ const raftDetails = {
       </>
     )
   },
-  // TODO: Remove Testimonials section from this story.
-  testimonials: [{
-    profileImageURL: 'TestimonialsImage',
-    name: 'Kerry Hebert',
-    quote: '“WeDevelop was resourceful, unafraid of problems and bockers, creative, professional, and fast.”',
-    position: 'QA Manager',
-    company: 'HSBC'
-  }],
+  testimonials: [],
   results: {
     title: 'The Solution',
     content: (
