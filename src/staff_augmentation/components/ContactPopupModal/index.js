@@ -8,7 +8,7 @@ import SidebarModal from '../SidebarModal'
 
 import classes from './styles.module.scss'
 
-export default function ContactPopupModal({
+export default function ContactPopupModal ({
   isModalOpen,
   setModalOpen,
   title,
