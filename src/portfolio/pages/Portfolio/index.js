@@ -47,7 +47,7 @@ function Portfolio () {
                 key={story.urlName}
                 coverImageURL={story.resume.headerImageURL}
                 description={story.header.description}
-                detailsPagePath={`/portfolio/${story.urlName}`}
+                detailsPagePath={`/portfolio/${story.urlName}#top`}
                 externalWebsiteURL={story.header.websiteURL}
                 logoBackground={story.header.logoBackground}
                 logoURL={story.header.logoURL}
