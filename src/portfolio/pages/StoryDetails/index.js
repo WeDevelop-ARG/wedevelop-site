@@ -1,5 +1,6 @@
 import { useCallback } from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
+import { isEmpty } from 'lodash'
 
 import Article from 'main_app/components/Article'
 import ClutchWidget from 'main_app/components/ClutchWidget'
@@ -59,17 +60,20 @@ function StoryDetails () {
           content={storyDetails.challenge.content}
           hideDecoration
         />
-        <Testimonials
-          reviews={storyDetails.testimonials}
-          customDecorations={<TestimonialsDecoration />}
-          hideHeader
-        />
-        <section className={classes.clutchContainer}>
-          <ClutchWidget
-            variant='dark'
-            className={classes.clutchWidget}
-          />
-        </section>
+        {!isEmpty(storyDetails.testimonials) &&
+          <>
+            <Testimonials
+              reviews={storyDetails.testimonials}
+              customDecorations={<TestimonialsDecoration />}
+              hideHeader
+            />
+            <section className={classes.clutchContainer}>
+              <ClutchWidget
+                variant='dark'
+                className={classes.clutchWidget}
+              />
+            </section>
+          </>}
         <TextImageGeneric
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}
