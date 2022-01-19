@@ -44,7 +44,7 @@ const raftDetails = {
     )
   },
   testimonials: [],
-  results: {
+  solution: {
     title: 'The Solution',
     content: (
       <>

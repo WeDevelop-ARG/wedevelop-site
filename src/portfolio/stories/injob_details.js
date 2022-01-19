@@ -50,7 +50,7 @@ const injobDetails = {
       company: 'InJob Online'
     }
   ],
-  results: {
+  solution: {
     title: 'The Solution',
     content: (
       <>

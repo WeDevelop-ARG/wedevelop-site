@@ -71,9 +71,9 @@ function StoryDetails () {
           />
         </section>
         <TextImageGeneric
-          title={storyDetails.results.title}
-          content={storyDetails.results.content}
-          imageURL={storyDetails.results.imageURL}
+          title={storyDetails.solution.title}
+          content={storyDetails.solution.content}
+          imageURL={storyDetails.solution.imageURL}
         />
         <GetInTouch contactPagePath={contactPagePath} />
         <SimilarStories storyName={params.name} />

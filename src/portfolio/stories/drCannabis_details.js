@@ -5,7 +5,7 @@ import DrCannabisOverview from 'assets/portfolio/dr_cannabis/dr_cannabis_overvie
 import ResumeBackground from 'assets/portfolio/dr_cannabis/resume_background.png'
 
 const drCannabisDetails = {
-  urlName: 'DrCannabis',
+  urlName: 'dr-cannabis',
   metadata: {
     title: 'Story Details',
     description: 'Story Details for DRCANNABIS'
@@ -46,7 +46,7 @@ const drCannabisDetails = {
     )
   },
   testimonials: [],
-  results: {
+  solution: {
     title: 'The Solution',
     content: (
       <>

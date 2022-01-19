@@ -53,7 +53,7 @@ const monedaDetails = {
       company: 'Moneda Lending'
     }
   ],
-  results: {
+  solution: {
     title: 'The Solution',
     content: (
       <>
