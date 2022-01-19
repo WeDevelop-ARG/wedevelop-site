@@ -50,7 +50,8 @@
     "deploy-functions-testing": "firebase deploy --only functions --project wedevelop-site-testing",
     "deploy-hosting-production": "firebase deploy --project wedevelop-site --only hosting:production",
     "deploy-hosting-testing": "firebase deploy --project wedevelop-site-testing --only hosting:testing",
-    "cleanup-deploy-build": "rimraf -rf firebase.json.backup .env.production build node_modules/.cache"
+    "cleanup-deploy-build": "rimraf -rf firebase.json.backup .env.production build node_modules/.cache",
+    "deploy-hosting-preview": "firebase hosting:channel:deploy --project wedevelop-site-testing --only testing"
   },
   "reactSnap": {
     "skipThirdPartyRequests": true,
