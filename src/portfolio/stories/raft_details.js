@@ -17,7 +17,7 @@ const raftDetails = {
   header: {
     backgroundURL: RaftHeader,
     logoURL: RaftLogo,
-    logoBackground: '#000000',
+    logoBackground: '#FFFFFF',
     heading: 'Success Story',
     title: 'Raft',
     subtitle: 'A search engine for ferry booking.',
