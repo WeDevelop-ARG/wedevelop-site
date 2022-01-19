@@ -55,7 +55,7 @@ const ballwizDetails = {
     position: 'Founder',
     company: 'Sports Betting Startup'
   }],
-  results: {
+  solution: {
     title: 'The Solution',
     content: (
       <>

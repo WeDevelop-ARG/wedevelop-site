@@ -64,7 +64,7 @@ const copaDetails = {
     position: 'General Manager',
     company: 'Soccer Training Center'
   }],
-  results: {
+  solution: {
     title: 'The Solution',
     content: (
       <>
