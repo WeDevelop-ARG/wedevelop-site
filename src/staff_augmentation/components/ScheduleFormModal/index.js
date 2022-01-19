@@ -4,14 +4,16 @@ import { Field } from 'formik'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 import ContactPopupModal from '../ContactPopupModal'
 import classes from './styles.module.scss'
+import ErrorUploadingFile from 'staff_augmentation/components/ErrorUploadingFile'
 import ScheduleForm from '../ScheduleForm'
 import SubmitButton from 'main_app/components/SubmitButton'
 import FileInput from 'career/components/JoinUsForm/FileInput'
 import uploadFile from 'service_providers/firebase/uploadFile'
+import UploadingFile from 'staff_augmentation/components/UploadingFile'
 import SVGIcon from 'main_app/components/SVGIcon'
 import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
-import { isNil } from 'lodash'
+import { isNil, isUndefined } from 'lodash'
 
 export default function ScheduleFormModal ({
   isModalOpen,
@@ -33,6 +35,8 @@ export default function ScheduleFormModal ({
   const [fileUploadError, setFileUploadError] = useState()
 
   const handleFormSubmit = useCallback(async (values) => {
+    setFileUploadError(undefined)
+
     try {
       let filePath
       if (!isNil(values.filesAttached)) {
@@ -127,17 +131,30 @@ export default function ScheduleFormModal ({
             className={classes.textAreaStyles}
           />
         </label>
-        <label className={classes.fileUploadField}>
-          <Field
-            name='filesAttached'
-            component={FileInput}
-            aria-hidden='true'
-          />
-          <div className={classes.field}>
-            <SVGIcon name='career/clip' className={classes.clip} />
-            <p className={classes.fileUploadLabel}>Attach</p>
-          </div>
-        </label>
+        {(isUndefined(fileUploadProgress) && isUndefined(fileUploadError)) &&
+          <label className={classes.fileUploadField}>
+            <Field
+              name='filesAttached'
+              component={FileInput}
+              aria-hidden='true'
+            >
+              <div className={classes.field}>
+                <SVGIcon name='career/clip' className={classes.clip} alt='' />
+                <p className={classes.fileUploadLabel}>Attach</p>
+              </div>
+            </Field>
+          </label>}
+        {(!isUndefined(fileUploadProgress) && isUndefined(fileUploadError)) &&
+          <UploadingFile
+            inputName='filesAttached'
+            currentProgress={fileUploadProgress}
+          />}
+        {!isUndefined(fileUploadError) &&
+          <ErrorUploadingFile
+            retryButtonProps={{
+              type: 'submit'
+            }}
+          />}
         <div className={classes.buttonContainer}>
           <SubmitButton
             variant='primary'

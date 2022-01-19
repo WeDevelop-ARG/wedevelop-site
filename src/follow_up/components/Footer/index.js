@@ -13,7 +13,7 @@ function Footer () {
         </li>
         <li className={classes.pleca}>|</li>
         <li className={classes.copyright}>
-          © 2021 WeDevelop LLC. All rights reserved.
+          © 2022 WeDevelop LLC. All rights reserved.
         </li>
       </ul>
     </footer>

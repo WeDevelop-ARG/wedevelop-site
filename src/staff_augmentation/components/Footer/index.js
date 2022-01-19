@@ -7,7 +7,7 @@ import classes from './styles.module.scss'
 import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
 
-function Footer ({ variant = 'dark', className }) {
+function Footer({ variant = 'dark', className }) {
   className = classnames(
     classes.containerStyle,
     useVariants(classes, variant, { prefix: 'variant_' }),
@@ -16,15 +16,16 @@ function Footer ({ variant = 'dark', className }) {
   return (
     <footer className={className}>
       <div className={classes.contact}>
-        <Logo
-          variant='dark'
-        />
+        <Logo variant='dark' />
       </div>
       <div className={classes.listUs}>
         <ul className={classes.contact}>
           <li className={classes.contactContentContainer}>
             <SVGIcon name='footer/email' className={classes.iconStyles} />
-            <a href='mailto:info@wedevelop.me' className={classes.contactContent}>
+            <a
+              href='mailto:info@wedevelop.me'
+              className={classes.contactContent}
+            >
               info@wedevelop.me
             </a>
           </li>
@@ -43,31 +44,59 @@ function Footer ({ variant = 'dark', className }) {
         </ul>
         <ul className={classes.branding}>
           <li>
-            <HashLink to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+            <HashLink
+              to='/privacy-policy#top'
+              smooth
+              className={classes.privacyPolicy}
+            >
               Privacy&nbsp;Policy
             </HashLink>
           </li>
           <li className={classes.pleca}>|</li>
           <li className={classes.copyright}>
-            © 2021 WeDevelop LLC. All rights reserved.
+            © 2022 WeDevelop LLC. All rights reserved.
           </li>
         </ul>
       </div>
       <div className={classes.socials}>
         <ul className={classes.socialNetworks}>
           <li>
-            <a href='https://www.linkedin.com/company/wedevelop-arg' target='_blank' rel='noreferrer'>
-              <SVGIcon name='footer/linked_in' title={'WeDevelop\'s LinkedIn'} className={classes.iconSocialNetworks} />
+            <a
+              href='https://www.linkedin.com/company/wedevelop-arg'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <SVGIcon
+                name='footer/linked_in'
+                title={"WeDevelop's LinkedIn"}
+                className={classes.iconSocialNetworks}
+              />
             </a>
           </li>
           <li>
-            <a href='https://facebook.com/WeDevelop-101618141565362' target='_blank' rel='noreferrer'>
-              <SVGIcon name='footer/facebook' title={'WeDevelop\'s Facebook'} className={classes.iconSocialNetworks} />
+            <a
+              href='https://facebook.com/WeDevelop-101618141565362'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <SVGIcon
+                name='footer/facebook'
+                title={"WeDevelop's Facebook"}
+                className={classes.iconSocialNetworks}
+              />
             </a>
           </li>
           <li>
-            <a href='https://www.instagram.com/wedevelop.me' target='_blank' rel='noreferrer'>
-              <SVGIcon name='footer/instagram' title={'WeDevelop\'s Instagram'} className={classes.iconSocialNetworks} />
+            <a
+              href='https://www.instagram.com/wedevelop.me'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <SVGIcon
+                name='footer/instagram'
+                title={"WeDevelop's Instagram"}
+                className={classes.iconSocialNetworks}
+              />
             </a>
           </li>
         </ul>

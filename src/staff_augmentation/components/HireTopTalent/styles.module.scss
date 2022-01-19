@@ -2,9 +2,8 @@
 
 .hireTopTalent {
   display: flex;
-  padding-top: calc(125px + var(--rootContentMinPadding));
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 70px;
 
   @include for-tablet-up {
     padding: auto;
@@ -55,7 +54,6 @@
 }
 
 .titleText {
-
   @include for-desktop-up {
     font-weight: 600;
     font-size: 60px;
@@ -72,7 +70,7 @@
 .horizontalBar {
   width: 100px;
   height: 10px;
-  background: #FFC331;
+  background: #ffc331;
   border: none;
 
   @include for-tablet-up {
@@ -89,10 +87,15 @@
   flex-direction: column;
   justify-content: center;
 
-  >ul {
+  hr {
+    border: 1px solid #e1e1e1;
+    margin: 20px 0px 20px -25px;
+  }
+
+  > ul {
     margin: 0px;
 
-    >li {
+    > li {
       font-size: 18px;
 
       @include for-desktop-up {
@@ -100,7 +103,7 @@
       }
     }
 
-    >li:not(:last-of-type) {
+    > li:not(:last-of-type) {
       margin-bottom: 20px;
     }
   }
@@ -111,11 +114,32 @@
 
   @include for-phone-only {
     position: absolute;
-    bottom: 35px;
+    bottom: 15px;
   }
-  
+
   @include for-tablet-up {
     margin-top: 35px;
     margin-right: 0px;
   }
+}
+
+%dotsPattern {
+  width: 350px;
+  position: absolute;
+  z-index: -1;
+  transform: rotate(90deg);
+
+  @media screen and (min-width: 1025px) and (max-width: 1250px) {
+    width: 237px;
+  }
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.topLeftDotsPattern {
+  @extend %dotsPattern;
+  top: 119px;
+  left: -55px;
 }
