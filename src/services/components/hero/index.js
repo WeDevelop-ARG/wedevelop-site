@@ -37,7 +37,7 @@ function Hero ({
             <hr className={classes.horizontalBar} />
             <Button
               as={Link}
-              to={contactPagePath}
+              href={contactPagePath}
               smooth
               isAnchor
               variant='primary'

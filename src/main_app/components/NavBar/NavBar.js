@@ -17,6 +17,7 @@ import MainMenu from './MainMenu'
 import Logo from '../Logo'
 
 import classes from './styles.module.scss'
+import { isUndefined } from 'lodash'
 
 function NavBar ({
   variant,
@@ -82,8 +83,10 @@ function NavBar ({
     setMenuOpen(false)
   }, [])
 
-  useElementClass(document.getElementById('root'), classes.rootWithNavBar)
-  useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
+  if(!isUndefined(globalThis.document)){
+    useElementClass(document.getElementById('root'), classes.rootWithNavBar)
+    useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
+  }
 
   return (
     <header
@@ -98,7 +101,7 @@ function NavBar ({
       })}
     >
       <Link
-        to={pathLogo}
+        href={pathLogo}
         className={classes.logoLink}
         smooth
       >

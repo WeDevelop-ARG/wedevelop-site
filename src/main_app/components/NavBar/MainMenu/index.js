@@ -50,7 +50,7 @@ function MainMenu ({
     <ul onClick={handleClick} className={classNames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/services')
+          [classes.active]: globalThis.window?.location.pathname.startsWith('/services')
         })}
       >
         <Dropdown show={isServicesDropdownOpen} onToggle={setIsServicesDropdownOpen}>
@@ -75,7 +75,7 @@ function MainMenu ({
           <Dropdown.Menu className={classes.dropdownMenu}>
             <Dropdown.Item
               as={Link}
-              to='/services/web-development#top'
+              href='/services/web-development#top'
               smooth
               className={classes.dropdownItem}
             >
@@ -83,7 +83,7 @@ function MainMenu ({
             </Dropdown.Item>
             <Dropdown.Item
               as={Link}
-              to='/services/staff-augmentation#top'
+              href='/services/staff-augmentation#top'
               smooth
               className={classes.dropdownItem}
             >
@@ -94,15 +94,15 @@ function MainMenu ({
       </li>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/about-us')
+          [classes.active]: globalThis.window?.location.pathname.startsWith('/about-us')
         })}
       >
-        <Link to='/about-us#top'>
+        <Link href='/about-us#top'>
           About Us
         </Link>
       </li>
       <li className={classes.navItem}>
-        <Link to='/#testimonials' smooth>
+        <Link href='/#testimonials' smooth>
           Testimonials
         </Link>
       </li>
@@ -113,10 +113,10 @@ function MainMenu ({
       </li>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/career')
+          [classes.active]: globalThis.window?.location.pathname.startsWith('/career')
         })}
       >
-        <Link to='/career#top'>
+        <Link href='/career#top'>
           Careers
         </Link>
       </li>
@@ -125,7 +125,7 @@ function MainMenu ({
           as={Link}
           isAnchor
           variant={contactCTAVariant}
-          to={contactPagePath}
+          href={contactPagePath}
           smooth
           className={classes.buttonTalk}
           onClick={onRequestClose}

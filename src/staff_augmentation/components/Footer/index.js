@@ -43,7 +43,7 @@ function Footer ({ variant = 'dark', className }) {
         </ul>
         <ul className={classes.branding}>
           <li>
-            <Link to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+            <Link href='/privacy-policy#top' smooth className={classes.privacyPolicy}>
               Privacy&nbsp;Policy
             </Link>
           </li>

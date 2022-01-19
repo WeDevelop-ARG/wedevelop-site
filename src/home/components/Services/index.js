@@ -31,7 +31,7 @@ function ServicesOffered () {
               photo,
               path
             }) => (
-              <Link to={path} smooth className={classes.serviceBox} key={id}>
+              <Link href={path} smooth className={classes.serviceBox} key={id}>
                 <li>
                   <Service
                     photo={photo}
@@ -54,7 +54,7 @@ function ServicesOffered () {
             <div className={classes.talk}>
               <Button
                 as={Link}
-                to='/contact'
+                href='/contact'
                 smooth
                 isAnchor
                 variant='primary'

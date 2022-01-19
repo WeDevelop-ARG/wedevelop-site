@@ -22,7 +22,7 @@ function ConfirmationMessage () {
         <p>In the meantime, you'll be redirected to our website, so you get to know us better &#128521;</p>
         <Button
           as={Link}
-          to='/'
+          href='/'
           smooth
           variant='primary'
           className={classes.goWebsiteButton}

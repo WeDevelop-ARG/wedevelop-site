@@ -47,7 +47,7 @@ function AboutUs () {
         </div>
         <Button
           as={Link}
-          to='/contact'
+          href='/contact'
           smooth
           isAnchor
           variant='primary'

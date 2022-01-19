@@ -39,7 +39,7 @@ function NavBar ({
       })}
     >
       <Link
-        to='#top'
+        href='#top'
         className={classes.logoLink}
         smooth
       >

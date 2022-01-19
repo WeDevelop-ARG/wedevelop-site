@@ -35,7 +35,7 @@ function Header (props, ref) {
           <br />experiences to clients and users all over the world.
         </p>
         <hr className={classes.divider} />
-        <Link to='#services' smooth className={classes.arrowMobile}>
+        <Link href='#services' smooth className={classes.arrowMobile}>
           <SVGIcon name='home/header/arrow' />
           <div className={classes.scrollTextMobile}>scroll down</div>
         </Link>
@@ -48,7 +48,7 @@ function Header (props, ref) {
           <div className={classes.smallCircleMobile} />
         </div>
       </div>
-      <Link to='#services' smooth className={classes.arrow}>
+      <Link href='#services' smooth className={classes.arrow}>
         <SVGIcon name='home/header/arrow' />
         <div className={classes.scrollText}>scroll down</div>
       </Link>

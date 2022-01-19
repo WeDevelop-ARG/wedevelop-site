@@ -32,7 +32,7 @@ function NotFound () {
               as={Link}
               isAnchor
               variant='secondary'
-              to='/#top'
+              href='/#top'
               smooth
             >
               Let's head back to earth

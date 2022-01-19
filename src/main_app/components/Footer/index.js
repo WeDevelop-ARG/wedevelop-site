@@ -27,12 +27,12 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.contact}>
           <li><p className={classes.titleContainer}>company</p></li>
           <li className={classes.contactContentContainer}>
-            <Link to='/about-us#top' smooth className={classes.contactContent}>
+            <Link href='/about-us#top' smooth className={classes.contactContent}>
               About Us
             </Link>
           </li>
           <li className={classes.contactContentContainer}>
-            <Link to='/career#top' smooth className={classes.contactContent}>
+            <Link href='/career#top' smooth className={classes.contactContent}>
               Careers
             </Link>
           </li>
@@ -45,12 +45,12 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.contact}>
           <li><p className={classes.titleContainer}>services</p></li>
           <li className={classes.contactContentContainer}>
-            <Link to='/services/web-development#top' smooth className={classes.contactContent}>
+            <Link href='/services/web-development#top' smooth className={classes.contactContent}>
               Web Development
             </Link>
           </li>
           <li className={classes.contactContentContainer}>
-            <Link to='/services/staff-augmentation#top' smooth className={classes.contactContent}>
+            <Link href='/services/staff-augmentation#top' smooth className={classes.contactContent}>
               Staff Augmentation
             </Link>
           </li>
@@ -117,7 +117,7 @@ function Footer ({ variant = 'dark', className }) {
       <div className={classes.socials}>
         <ul className={classes.branding}>
           <li>
-            <Link to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+            <Link href='/privacy-policy#top' smooth className={classes.privacyPolicy}>
               Privacy&nbsp;Policy
             </Link>
           </li>

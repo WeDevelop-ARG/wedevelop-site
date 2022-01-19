@@ -17,7 +17,7 @@ function WebDevDetails ({ contactPagePath }) {
           <DescriptionText />
           <Button
             as={Link}
-            to={contactPagePath}
+            href={contactPagePath}
             smooth
             isAnchor
             variant='primary'
