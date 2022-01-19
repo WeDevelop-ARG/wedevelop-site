@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import isUndefined from 'lodash/isUndefined'
+import { isUndefined, isEmpty } from 'lodash'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
@@ -48,17 +48,18 @@ function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
                 <blockquote className={classes.quote}>{review.quote}</blockquote>
                 <Image src={QuotationMark} alt='' className={classes.closeQuote} />
               </div>
-              <div className={classes.profileImgContainer}>
-                <Image
-                  src={review.profileImageURL}
-                  objectFit='cover'
-                  alt={`Profile of ${review.name}`}
-                  title={review.name}
-                  className={classes.profileImg}
-                />
-                <div className={classes.filledProfileCircle} aria-hidden='true' />
-                <div className={classes.emptyProfileCircle} aria-hidden='true' />
-              </div>
+              {!isEmpty(review.profileImageURL) &&
+                <div className={classes.profileImgContainer}>
+                  <Image
+                    src={review.profileImageURL}
+                    objectFit='cover'
+                    alt={`Profile of ${review.name}`}
+                    title={review.name}
+                    className={classes.profileImg}
+                  />
+                  <div className={classes.filledProfileCircle} aria-hidden='true' />
+                  <div className={classes.emptyProfileCircle} aria-hidden='true' />
+                </div>}
               <figcaption className={classes.profileData}>
                 <p>{review.name}</p>
                 <p><strong>{review.position}, {review.company}</strong></p>
