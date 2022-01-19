@@ -1,6 +1,6 @@
 import Stars from './Stars'
 
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 import QuotationMark from 'assets/staff_augmentation/quotation_mark.png'
 
 import classes from './styles.module.scss'

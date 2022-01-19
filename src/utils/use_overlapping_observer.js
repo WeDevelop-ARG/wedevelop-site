@@ -1,3 +1,4 @@
+import { isUndefined } from 'lodash'
 import { IS_STATIC_RENDERER } from 'main_app/constants'
 import { useState, useLayoutEffect, useMemo } from 'react'
 import { area, intersect, intersection } from 'rectangles'
@@ -90,6 +91,8 @@ function getRectangleCoordinates ({
 }
 
 function buildViewportElement () {
+  if(isUndefined(globalThis.document)) return undefined
+
   const rootRect = document.documentElement.getBoundingClientRect()
 
   return buildRootRectangleElement({

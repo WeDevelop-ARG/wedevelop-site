@@ -6,7 +6,7 @@ import QuotationMark from 'assets/home/quotation_mark.svg'
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
-import Image from '../Image'
+import Image from 'next/image'
 
 function Testimonials ({ bottomImageURL, hideHeader = false }) {
   const { reviews } = useReviews()

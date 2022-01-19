@@ -1,6 +1,6 @@
 import ClutchWidget from 'main_app/components/ClutchWidget'
 import FreeQuoteForm from '../FreeQuoteForm'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 import Logo from 'main_app/components/Logo'
 import SVGIcon from 'main_app/components/SVGIcon'
 

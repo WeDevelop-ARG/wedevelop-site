@@ -1,5 +1,6 @@
 import { useCallback } from 'react'
-import { useRouteMatch, useHistory } from 'react-router-dom'
+import { Router,useRouter } from 'next/router'
+
 
 import AboutUs from './components/AboutUs'
 import Article from 'main_app/components/Article'
@@ -16,15 +17,18 @@ import usePageMetadata from 'utils/marketing/use_page_metadata'
 import TestimonialsBg from 'assets/home/testimonials_background_image.png'
 
 function Landing () {
-  usePageMetadata({
-    title: 'A Human-Centered Company that Gets Things Done',
-    description: 'We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
-  })
-  const match = useRouteMatch('/contact')
-  const history = useHistory()
+  // usePageMetadata({
+  //   title: 'A Human-Centered Company that Gets Things Done',
+  //   description: 'We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
+  // })
+
+  const {route, pathname} = useRouter()
+
+  console.log(route,pathname)
+
   const handleClose = useCallback(() => {
-    history.push('/')
-  }, [history])
+    Router.push('/')
+  }, [])
 
   return (
     <>
@@ -40,7 +44,7 @@ function Landing () {
         <GetInTouch contactPagePath='/contact' />
         <PictureWall />
       </Article>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
+      {pathname === '/contact' && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
     </>
   )

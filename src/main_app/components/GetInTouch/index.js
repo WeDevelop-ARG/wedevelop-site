@@ -1,11 +1,11 @@
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import Button from 'main_app/components/Button'
 
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
-import Image from '../Image'
+import Image from 'next/image'
 
 function GetInTouch ({ contactPagePath }) {
   return (
@@ -20,7 +20,7 @@ function GetInTouch ({ contactPagePath }) {
           </p>
           <hr className={classes.horizontalBar} />
           <Button
-            as={HashLink}
+            as={Link}
             to={contactPagePath}
             smooth
             isAnchor

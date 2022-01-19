@@ -1,12 +1,12 @@
 import { forwardRef, useState } from 'react'
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import SVGIcon from 'main_app/components/SVGIcon'
 import ClutchWidget from 'main_app/components/ClutchWidget'
 import imgHeader from 'assets/home/header/background.png'
 
 import classes from './styles.module.scss'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 import classNames from 'classnames'
 
 function Header (props, ref) {
@@ -35,10 +35,10 @@ function Header (props, ref) {
           <br />experiences to clients and users all over the world.
         </p>
         <hr className={classes.divider} />
-        <HashLink to='#services' smooth className={classes.arrowMobile}>
+        <Link to='#services' smooth className={classes.arrowMobile}>
           <SVGIcon name='home/header/arrow' />
           <div className={classes.scrollTextMobile}>scroll down</div>
-        </HashLink>
+        </Link>
         <div className={classNames(classes.clutchCircleMobile, {
           [classes.loading]: isClutchLoading
         })}>
@@ -48,10 +48,10 @@ function Header (props, ref) {
           <div className={classes.smallCircleMobile} />
         </div>
       </div>
-      <HashLink to='#services' smooth className={classes.arrow}>
+      <Link to='#services' smooth className={classes.arrow}>
         <SVGIcon name='home/header/arrow' />
         <div className={classes.scrollText}>scroll down</div>
-      </HashLink>
+      </Link>
       <div className={classNames(classes.clutchCircle, {
         [classes.loading]: isClutchLoading
       })}>

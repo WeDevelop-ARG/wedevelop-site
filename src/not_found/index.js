@@ -1,4 +1,4 @@
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
@@ -29,7 +29,7 @@ function NotFound () {
             <h2>Houston, we have a problem!</h2>
             <p>The page you're looking for is lost in cyberspace...</p>
             <Button
-              as={HashLink}
+              as={Link}
               isAnchor
               variant='secondary'
               to='/#top'

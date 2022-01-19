@@ -25,10 +25,10 @@ function LandingPage () {
   const { params } = useRouteMatch('/:name')
   const { landing } = useLandingVariantByName(params.name)
 
-  usePageMetadata({
-    title: landing.metadata.title,
-    description: landing.metadata.description
-  })
+  // usePageMetadata({
+  //   title: landing.metadata.title,
+  //   description: landing.metadata.description
+  // })
 
   useEffect(() => {
     document.getElementById('root').classList.add(classes.root)

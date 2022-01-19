@@ -24,7 +24,7 @@ export const CALENDLY_DEFAULT_EVENT_URL = process.env.REACT_APP_CALENDLY_DEFAULT
 export const IS_DEVELOPMENT = ENVIRONMENT === 'development'
 export const IS_TESTING = ENVIRONMENT === 'testing'
 export const IS_PRODUCTION = ENVIRONMENT === 'production'
-export const IS_STATIC_RENDERER = navigator.userAgent === 'ReactSnap'
+export const IS_STATIC_RENDERER = true
 export const IS_PREVIEW_BUILD = !!process.env.REACT_APP_PREVIEW_BUILD
 export const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY
 export const LANDING_FREE_QUOTE_HUBSPOT_FORM_REGION = process.env.REACT_APP_LANDING_FREE_QUOTE_HUBSPOT_FORM_REGION

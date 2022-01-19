@@ -1,3 +1,4 @@
+import { isUndefined } from 'lodash'
 import { IS_PRODUCTION } from 'main_app/constants'
 import { useEffect } from 'react'
 
@@ -5,7 +6,7 @@ let isMetadataSet = false
 let setMetadataTimeout = null
 
 export function setupGlobalDeveloperHints () {
-  if (IS_PRODUCTION) return undefined
+  if (IS_PRODUCTION || isUndefined(globalThis.window)) return undefined
 
   window.addEventListener('popstate', handleNavigation)
   window.history.pushState = (f => function pushState () {

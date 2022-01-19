@@ -1,7 +1,7 @@
 import Review from './Review'
 import Button from 'main_app/components/Button'
 
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 import DotsPattern from 'assets/staff_augmentation/dots_pattern.svg'
 
 import classes from './styles.module.scss'

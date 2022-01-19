@@ -1,5 +1,4 @@
 import { useCallback } from 'react'
-import { useRouteMatch, useHistory } from 'react-router-dom'
 
 import Article from 'main_app/components/Article'
 import ContactModal from 'main_app/components/ContactModal'
@@ -7,14 +6,15 @@ import Footer from 'main_app/components/Footer'
 import JoinUsForm from './components/JoinUsForm'
 import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
+import { Router } from 'next/router'
 
 function Career () {
   const contactPagePath = '/career/contact'
-  const match = useRouteMatch(contactPagePath)
-  const history = useHistory()
+  const { pathname } = useRouter()
+  
   const handleClose = useCallback(() => {
-    history.push('/career')
-  }, [history])
+    Router.push('/career')
+  }, [])
 
   return (
     <>
@@ -26,7 +26,7 @@ function Career () {
         <JoinUsForm />
         <PictureWall />
       </Article>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
+      {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
     </>
   )

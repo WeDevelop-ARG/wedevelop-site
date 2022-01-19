@@ -1,4 +1,4 @@
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import Button from 'main_app/components/Button'
 import WebDevTitleDescription from './components/WebDevTitleDescription'
@@ -6,7 +6,7 @@ import StaffAugTitleDescription from './components/StaffAugTitleDescription'
 
 import patternHorizontal from 'assets/services/dots-pattern-horizontal.svg'
 import classes from './schedule.module.scss'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 function Schedule ({ contactPagePath, className, service }) {
   const renderTitleDescription = (service) => {
@@ -21,7 +21,7 @@ function Schedule ({ contactPagePath, className, service }) {
           {renderTitleDescription(service)}
           <hr className={classes.horizontalBar} />
           <Button
-            as={HashLink}
+            as={Link}
             to={contactPagePath}
             smooth
             isAnchor

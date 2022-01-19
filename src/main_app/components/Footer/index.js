@@ -1,4 +1,4 @@
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import SVGIcon from '../SVGIcon'
 import ClutchWidget from 'main_app/components/ClutchWidget'
@@ -9,7 +9,7 @@ import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
 
 import pattern from 'assets/footer/pattern.svg'
-import Image from '../Image'
+import Image from 'next/image'
 
 function Footer ({ variant = 'dark', className }) {
   className = classnames(
@@ -27,14 +27,14 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.contact}>
           <li><p className={classes.titleContainer}>company</p></li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/about-us#top' smooth className={classes.contactContent}>
+            <Link to='/about-us#top' smooth className={classes.contactContent}>
               About Us
-            </HashLink>
+            </Link>
           </li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/career#top' smooth className={classes.contactContent}>
+            <Link to='/career#top' smooth className={classes.contactContent}>
               Careers
-            </HashLink>
+            </Link>
           </li>
           <li className={classes.contactContentContainer}>
             <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
@@ -45,14 +45,14 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.contact}>
           <li><p className={classes.titleContainer}>services</p></li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/services/web-development#top' smooth className={classes.contactContent}>
+            <Link to='/services/web-development#top' smooth className={classes.contactContent}>
               Web Development
-            </HashLink>
+            </Link>
           </li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/services/staff-augmentation#top' smooth className={classes.contactContent}>
+            <Link to='/services/staff-augmentation#top' smooth className={classes.contactContent}>
               Staff Augmentation
-            </HashLink>
+            </Link>
           </li>
         </ul>
         <ul className={classes.contact}>
@@ -117,9 +117,9 @@ function Footer ({ variant = 'dark', className }) {
       <div className={classes.socials}>
         <ul className={classes.branding}>
           <li>
-            <HashLink to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+            <Link to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
               Privacy&nbsp;Policy
-            </HashLink>
+            </Link>
           </li>
           <li className={classes.pleca}>|</li>
           <li className={classes.copyright}>

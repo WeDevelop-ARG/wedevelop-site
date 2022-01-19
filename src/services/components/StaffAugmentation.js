@@ -1,5 +1,4 @@
 import { useCallback } from 'react'
-import { useRouteMatch, useHistory } from 'react-router-dom'
 
 import Benefits from './benefits'
 import ContactModal from 'main_app/components/ContactModal'
@@ -17,23 +16,23 @@ import icon from 'assets/services/icon-staff-augmentation.svg'
 import background from 'assets/services/background-staff-augmentation.png'
 
 import classes from './services.module.scss'
+import { Router, useRouter } from 'next/router'
 
 function StaffAugmentation () {
-  usePageMetadata({
-    title: 'Staff Augmentation',
-    description: 'A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
-  })
+  // usePageMetadata({
+  //   title: 'Staff Augmentation',
+  //   description: 'A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
+  // })
   const SERVICE_NAME = 'staff-augmentation'
   const contactPagePath = '/services/staff-augmentation/contact'
-  const match = useRouteMatch(contactPagePath)
-  const history = useHistory()
+  const { pathname } = useRouter()
   const handleClose = useCallback(() => {
-    history.push('/services/staff-augmentation')
-  }, [history])
+    Router.push('/services/staff-augmentation')
+  }, [])
 
   return (
     <>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
+      {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       <Hero
         service={SERVICE_NAME}
         className={classes.sectionContainer}

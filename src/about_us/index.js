@@ -1,5 +1,4 @@
 import { useCallback } from 'react'
-import { useRouteMatch, useHistory } from 'react-router-dom'
 
 import Article from 'main_app/components/Article'
 import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
@@ -19,18 +18,19 @@ import AgileBook from 'assets/home/agile_book.png'
 import WedevelopTeam from 'assets/home/wedevelop_team.png'
 import WorkCoffee from 'assets/about_us/testimonials/work_cofee.png'
 import { forTabletDown } from 'styles/media_queries'
+import { Router, useRouter } from 'next/router'
 
 function AboutUs () {
-  usePageMetadata({
-    title: 'About Us',
-    description: 'Founded in 2019, WeDevelop is a Web Development and IT Staff Augmentation agency. Meet us.'
-  })
+  // usePageMetadata({
+  //   title: 'About Us',
+  //   description: 'Founded in 2019, WeDevelop is a Web Development and IT Staff Augmentation agency. Meet us.'
+  // })
   const contactPagePath = '/about-us/contact'
-  const match = useRouteMatch(contactPagePath)
-  const history = useHistory()
+  const {pathname} = useRouter()
   const handleClose = useCallback(() => {
-    history.push('/about-us')
+    Router.push('/about-us')
   }, [history])
+
   const isTabletDown = useMediaQuery(forTabletDown)
   const renderTestimonials = () => {
     if (isTabletDown) return <Testimonials hideHeader />
@@ -54,7 +54,7 @@ function AboutUs () {
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
+      {contactPagePath === pathname && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
     </>
   )

@@ -1,5 +1,5 @@
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 import pattern from '../../../assets/home/services/pattern.svg'
 
 import classes from './styles.module.scss'

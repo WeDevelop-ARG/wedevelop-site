@@ -1,6 +1,6 @@
 import { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import classnames from 'classnames'
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import useElementClass from 'utils/use_element_class'
@@ -28,7 +28,7 @@ function NavBar ({
 }, ref) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [atScrollTop, observerRef] = useOverlappingObserver({
-    root: document.body,
+    root: globalThis.document?.body,
     ignoreHeight: true,
     defaultValue: null
   })
@@ -97,7 +97,7 @@ function NavBar ({
         [classes.initialized]: initialized
       })}
     >
-      <HashLink
+      <Link
         to={pathLogo}
         className={classes.logoLink}
         smooth
@@ -107,7 +107,7 @@ function NavBar ({
           className={classes.logo}
           loading='eager'
         />
-      </HashLink>
+      </Link>
       {!hideMenu && (
         <nav className={classes.nav}>
           <button

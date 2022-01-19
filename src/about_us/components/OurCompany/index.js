@@ -1,6 +1,6 @@
 import PeopleWorking from 'assets/about_us/our_company/people_working.png'
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 import classes from './styles.module.scss'
 

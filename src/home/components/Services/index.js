@@ -1,4 +1,4 @@
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import SVGIcon from 'main_app/components/SVGIcon'
 import Button from 'main_app/components/Button'
@@ -8,7 +8,7 @@ import useServicesOffered from '../../hooks/useServicesOffered'
 import pattern from 'assets/home/services/pattern.svg'
 
 import classes from './styles.module.scss'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 function ServicesOffered () {
   const services = useServicesOffered()
@@ -31,7 +31,7 @@ function ServicesOffered () {
               photo,
               path
             }) => (
-              <HashLink to={path} smooth className={classes.serviceBox} key={id}>
+              <Link to={path} smooth className={classes.serviceBox} key={id}>
                 <li>
                   <Service
                     photo={photo}
@@ -43,7 +43,7 @@ function ServicesOffered () {
                   />
                   <p className={classes.link}>Learn More <SVGIcon name='home/services/arrow' className={classes.arrow} /></p>
                 </li>
-              </HashLink>
+              </Link>
             ))}
           </ul>
           <Skills />
@@ -53,7 +53,7 @@ function ServicesOffered () {
             </p>
             <div className={classes.talk}>
               <Button
-                as={HashLink}
+                as={Link}
                 to='/contact'
                 smooth
                 isAnchor

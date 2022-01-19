@@ -1,8 +1,8 @@
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 import { useHeroDecoration } from './hooks/useHeroDecoration'
 import Button from 'main_app/components/Button'
 import classes from './heroStyles.module.scss'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 function Hero ({
   service,
@@ -36,7 +36,7 @@ function Hero ({
             </p>
             <hr className={classes.horizontalBar} />
             <Button
-              as={HashLink}
+              as={Link}
               to={contactPagePath}
               smooth
               isAnchor

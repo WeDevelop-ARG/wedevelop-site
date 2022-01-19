@@ -10,7 +10,7 @@ import MultiForm from './components/MultiForm'
 import Footer from './components/Footer'
 import SkipModal from './components/SkipModal'
 import ConfirmationModal from './components/ConfirmationModal'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 import FollowUpBackground from 'assets/follow_up/background.png'
 import FollowUpMobileBackground from 'assets/follow_up/mobile_background.png'

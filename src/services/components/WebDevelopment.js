@@ -1,5 +1,4 @@
 import { useCallback } from 'react'
-import { useRouteMatch, useHistory } from 'react-router-dom'
 
 import Benefits from './benefits'
 import ContactModal from 'main_app/components/ContactModal'
@@ -16,23 +15,23 @@ import icon from 'assets/services/icon-web-development.svg'
 import background from 'assets/services/web-development-background.png'
 
 import classes from './services.module.scss'
+import { Router, useRouter } from 'next/router'
 
 function WebDevelopment () {
-  usePageMetadata({
-    title: 'Agile Web Development',
-    description: 'We create high-quality Digital Products through our Agile Web Development services, delivering meaningful experiences to clients and users all over the world.'
-  })
+  // usePageMetadata({
+  //   title: 'Agile Web Development',
+  //   description: 'We create high-quality Digital Products through our Agile Web Development services, delivering meaningful experiences to clients and users all over the world.'
+  // })
   const SERVICE_NAME = 'web-development'
   const contactPagePath = '/services/web-development/contact'
-  const match = useRouteMatch(contactPagePath)
-  const history = useHistory()
+  const { pathname } = useRouter()
   const handleClose = useCallback(() => {
-    history.push('/services/web-development')
-  }, [history])
+    Router.push('/services/web-development')
+  }, [])
 
   return (
     <>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
+      {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       <Hero
         service={SERVICE_NAME}
         className={classes.sectionContainer}

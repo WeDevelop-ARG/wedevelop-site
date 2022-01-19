@@ -1,10 +1,9 @@
 import { useMemo, useCallback, useState } from 'react'
 import classNames from 'classnames'
-import { HashLink } from 'react-router-hash-link'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 import useMediaQuery from 'utils/use_media_query'
 import { isVariant } from 'utils/use_variants'
@@ -13,6 +12,7 @@ import { forTabletDown } from 'styles/media_queries'
 
 import DropdownIcon from 'assets/nav_bar/dropdown_icon.svg'
 import DropdownIconWhite from 'assets/nav_bar/dropdown_icon_white.svg'
+import Link from 'next/link'
 
 import classes from './styles.module.scss'
 
@@ -74,7 +74,7 @@ function MainMenu ({
 
           <Dropdown.Menu className={classes.dropdownMenu}>
             <Dropdown.Item
-              as={HashLink}
+              as={Link}
               to='/services/web-development#top'
               smooth
               className={classes.dropdownItem}
@@ -82,7 +82,7 @@ function MainMenu ({
               Web Development
             </Dropdown.Item>
             <Dropdown.Item
-              as={HashLink}
+              as={Link}
               to='/services/staff-augmentation#top'
               smooth
               className={classes.dropdownItem}
@@ -97,14 +97,14 @@ function MainMenu ({
           [classes.active]: window.location.pathname.startsWith('/about-us')
         })}
       >
-        <HashLink to='/about-us#top'>
+        <Link to='/about-us#top'>
           About Us
-        </HashLink>
+        </Link>
       </li>
       <li className={classes.navItem}>
-        <HashLink to='/#testimonials' smooth>
+        <Link to='/#testimonials' smooth>
           Testimonials
-        </HashLink>
+        </Link>
       </li>
       <li className={classNames(classes.navItem)}>
         <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
@@ -116,13 +116,13 @@ function MainMenu ({
           [classes.active]: window.location.pathname.startsWith('/career')
         })}
       >
-        <HashLink to='/career#top'>
+        <Link to='/career#top'>
           Careers
-        </HashLink>
+        </Link>
       </li>
       <li>
         <Button
-          as={HashLink}
+          as={Link}
           isAnchor
           variant={contactCTAVariant}
           to={contactPagePath}

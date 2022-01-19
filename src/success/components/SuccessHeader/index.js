@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 import ScheduleCallModal from 'staff_augmentation/components/ScheduleCallModal'
 
 import HeaderBackground from 'assets/staff_augmentation/backgrounds/blue_gradient_background.svg'

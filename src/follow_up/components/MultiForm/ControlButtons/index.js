@@ -1,6 +1,6 @@
 import Button from 'main_app/components/Button'
 import SubmitButton from 'main_app/components/SubmitButton'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 import LeftArrow from 'assets/follow_up/left_arrow.svg'
 

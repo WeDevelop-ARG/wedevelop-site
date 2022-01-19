@@ -1,12 +1,12 @@
 import { useWebDevDetails } from '../hooks/useWebDevDetails'
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 import Button from 'main_app/components/Button'
 
 import Pattern from 'assets/services/dots-pattern.svg'
 import Circle from 'assets/services/details-web-deco-circle.svg'
 
 import classes from './webDevDetails.module.scss'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 function WebDevDetails ({ contactPagePath }) {
   const { servicesList, DescriptionText } = useWebDevDetails()
@@ -16,7 +16,7 @@ function WebDevDetails ({ contactPagePath }) {
         <div className={classes.columnLeft}>
           <DescriptionText />
           <Button
-            as={HashLink}
+            as={Link}
             to={contactPagePath}
             smooth
             isAnchor

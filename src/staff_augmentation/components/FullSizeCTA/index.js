@@ -4,7 +4,7 @@ import DotsPattern from '../../../assets/home/dots_pattern.svg'
 import classes from './styles.module.scss'
 import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 function FullSizeCTA ({
   title,

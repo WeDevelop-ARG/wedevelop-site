@@ -8,7 +8,7 @@ import { ReactComponent as ModalShape } from 'assets/staff_augmentation/modal_sh
 import { ReactComponent as MobileModalShape } from 'assets/staff_augmentation/mobile_modal_shape.svg'
 import ModalDotsPattern from 'assets/staff_augmentation/modal_dots_pattern.svg'
 
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 import useMediaQuery from 'utils/use_media_query'
 import { forDesktopUp } from 'styles/media_queries'

@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import classNames from 'classnames'
 
-import Image from '../Image'
+import Image from 'next/image'
 import Step from './components/Step'
 
 import { useStep } from './components/hooks/useStep'

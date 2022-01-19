@@ -1,4 +1,4 @@
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import classes from './styles.module.scss'
 
@@ -7,9 +7,9 @@ function Footer () {
     <footer id='follow-up-footer' className={classes.footer}>
       <ul className={classes.branding}>
         <li>
-          <HashLink to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+          <Link to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
             Privacy&nbsp;Policy
-          </HashLink>
+          </Link>
         </li>
         <li className={classes.pleca}>|</li>
         <li className={classes.copyright}>

@@ -15,7 +15,7 @@ function usePageMetadata ({
   imagePath = undefined,
   imageURL
 }) {
-  useDeveloperMetadataHints({ url, title, description, imagePath })
+ // useDeveloperMetadataHints({ url, title, description, imagePath })
 
   imageURL = useMemo(() => (
     imageURL || (imagePath && (new URL(imagePath, url)).href)

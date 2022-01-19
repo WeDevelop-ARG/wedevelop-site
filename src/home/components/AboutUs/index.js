@@ -1,7 +1,7 @@
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 import SmilingFace from 'assets/home/smiling_face.svg'
 import CuriousHead from 'assets/home/curious_head.svg'
@@ -46,7 +46,7 @@ function AboutUs () {
           </div>
         </div>
         <Button
-          as={HashLink}
+          as={Link}
           to='/contact'
           smooth
           isAnchor

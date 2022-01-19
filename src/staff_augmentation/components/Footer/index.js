@@ -1,4 +1,4 @@
-import { HashLink } from 'react-router-hash-link'
+import Link from 'next/link'
 
 import SVGIcon from 'main_app/components/SVGIcon'
 import Logo from 'main_app/components/Logo'
@@ -43,9 +43,9 @@ function Footer ({ variant = 'dark', className }) {
         </ul>
         <ul className={classes.branding}>
           <li>
-            <HashLink to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+            <Link to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
               Privacy&nbsp;Policy
-            </HashLink>
+            </Link>
           </li>
           <li className={classes.pleca}>|</li>
           <li className={classes.copyright}>

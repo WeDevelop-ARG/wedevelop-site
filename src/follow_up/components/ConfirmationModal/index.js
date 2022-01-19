@@ -1,20 +1,19 @@
 import { useCallback } from 'react'
-import { useHistory } from 'react-router-dom'
 
 import Modal from 'main_app/components/Modal'
 import ConfirmationMessage from '../ConfirmationMessage'
 
 import classes from './styles.module.scss'
+import { Router } from 'next/router'
 
 function SkipModal ({
   isConfirmationOpen,
   setConfirmationOpen
 }) {
-  const history = useHistory()
   const handleConfirmationClose = useCallback(() => {
     setConfirmationOpen(false)
-    history.push('/')
-  }, [setConfirmationOpen, history])
+    Router.push('/')
+  }, [setConfirmationOpen])
   return (
     <Modal
       isOpen={isConfirmationOpen}

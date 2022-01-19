@@ -12,7 +12,7 @@ import useMediaQuery from 'utils/use_media_query'
 
 import Button from 'main_app/components/Button'
 import ClutchWidget from 'main_app/components/ClutchWidget'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 import classes from './styles.module.scss'
 

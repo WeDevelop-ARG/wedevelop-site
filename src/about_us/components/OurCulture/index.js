@@ -7,7 +7,7 @@ import workplace from 'assets/home/workplace.svg'
 import excellence from 'assets/home/excellence.svg'
 import alwaysBeLearning from 'assets/home/always_be_learning.svg'
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 import classes from './styles.module.scss'
 

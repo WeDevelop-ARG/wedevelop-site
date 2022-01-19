@@ -4,7 +4,7 @@ import circles from 'assets/services/benefits-deco-circles.svg'
 import leftSemicircleMobile from 'assets/services/benefits/left_semicircle_mobile.svg'
 import rightSemicircleMobile from 'assets/services/benefits/right_semicircle_mobile.svg'
 import classes from './decoration.module.scss'
-import Image from 'main_app/components/Image'
+import Image from 'next/image'
 
 function DecorationWebDev () {
   return (
