@@ -6,6 +6,7 @@ import Article from 'main_app/components/Article'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import Image from 'main_app/components/Image'
+import PortfolioHeader from 'portfolio/components/PortfolioHeader'
 import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
 import useStories from '../../hooks/useStories'
 
@@ -26,15 +27,14 @@ function Portfolio () {
     <>
       <NavBar
         variant={['solid', 'dark']}
-        variantAtScrollTop={['transparent', 'dark']}
+        variantAtScrollTop={['solid', 'dark']}
         contactPagePath={contactPagePath}
       />
       <Article>
+        <PortfolioHeader />
         <section id='portfolio' className={classes.sectionPortfolio}>
           <div>
-            <p className={classes.subheadingText}>success stories</p>
             <h2 className={classes.titleText}>Our Portfolio</h2>
-            <hr className={classes.horizontalBar} />
           </div>
           <div className={classes.projectCards}>
             {stories.map(story => (
