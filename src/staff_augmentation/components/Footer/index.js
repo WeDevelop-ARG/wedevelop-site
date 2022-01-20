@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
 
 import SVGIcon from 'main_app/components/SVGIcon'
 import Logo from 'main_app/components/Logo'
@@ -43,9 +43,9 @@ function Footer ({ variant = 'dark', className }) {
         </ul>
         <ul className={classes.branding}>
           <li>
-            <Link href='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+            <InternalLink href='/privacy-policy#top' smooth className={classes.privacyPolicy}>
               Privacy&nbsp;Policy
-            </Link>
+            </InternalLink>
           </li>
           <li className={classes.pleca}>|</li>
           <li className={classes.copyright}>

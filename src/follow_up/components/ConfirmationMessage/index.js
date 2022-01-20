@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
+
 
 import Button from 'main_app/components/Button'
 import Image from 'next/image'
@@ -21,7 +22,7 @@ function ConfirmationMessage () {
       <div className={classes.redirectToWebsite}>
         <p>In the meantime, you'll be redirected to our website, so you get to know us better &#128521;</p>
         <Button
-          as={Link}
+          as={InternalLink}
           href='/'
           smooth
           variant='primary'

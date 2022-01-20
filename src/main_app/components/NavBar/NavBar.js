@@ -1,6 +1,6 @@
 import { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import classnames from 'classnames'
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import useElementClass from 'utils/use_element_class'
@@ -100,7 +100,7 @@ function NavBar ({
         [classes.initialized]: initialized
       })}
     >
-      <Link
+      <InternalLink
         href={pathLogo}
         className={classes.logoLink}
         smooth
@@ -110,7 +110,7 @@ function NavBar ({
           className={classes.logo}
           loading='eager'
         />
-      </Link>
+      </InternalLink>
       {!hideMenu && (
         <nav className={classes.nav}>
           <button

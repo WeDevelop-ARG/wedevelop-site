@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
+
 import { useHeroDecoration } from './hooks/useHeroDecoration'
 import Button from 'main_app/components/Button'
 import classes from './heroStyles.module.scss'
@@ -36,7 +37,7 @@ function Hero ({
             </p>
             <hr className={classes.horizontalBar} />
             <Button
-              as={Link}
+              as={InternalLink}
               href={contactPagePath}
               smooth
               isAnchor

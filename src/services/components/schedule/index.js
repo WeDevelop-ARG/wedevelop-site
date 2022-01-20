@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
+
 
 import Button from 'main_app/components/Button'
 import WebDevTitleDescription from './components/WebDevTitleDescription'
@@ -21,7 +22,7 @@ function Schedule ({ contactPagePath, className, service }) {
           {renderTitleDescription(service)}
           <hr className={classes.horizontalBar} />
           <Button
-            as={Link}
+            as={InternalLink}
             href={contactPagePath}
             smooth
             isAnchor

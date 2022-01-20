@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
 
 import SVGIcon from 'main_app/components/SVGIcon'
 import Button from 'main_app/components/Button'
@@ -31,7 +31,7 @@ function ServicesOffered () {
               photo,
               path
             }) => (
-              <Link href={path} smooth className={classes.serviceBox} key={id}>
+              <InternalLink href={path} smooth className={classes.serviceBox} key={id}>
                 <li>
                   <Service
                     photo={photo}
@@ -43,7 +43,7 @@ function ServicesOffered () {
                   />
                   <p className={classes.link}>Learn More <SVGIcon name='home/services/arrow' className={classes.arrow} /></p>
                 </li>
-              </Link>
+              </InternalLink>
             ))}
           </ul>
           <Skills />
@@ -53,7 +53,7 @@ function ServicesOffered () {
             </p>
             <div className={classes.talk}>
               <Button
-                as={Link}
+                as={InternalLink}
                 href='/contact'
                 smooth
                 isAnchor

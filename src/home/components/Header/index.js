@@ -1,5 +1,5 @@
 import { forwardRef, useState } from 'react'
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
 
 import SVGIcon from 'main_app/components/SVGIcon'
 import ClutchWidget from 'main_app/components/ClutchWidget'
@@ -35,12 +35,12 @@ function Header (props, ref) {
           <br />experiences to clients and users all over the world.
         </p>
         <hr className={classes.divider} />
-        <Link href='#services' smooth className={classes.arrowMobile}>
+        <InternalLink href='#services' smooth className={classes.arrowMobile}>
           <>
           <SVGIcon name='home/header/arrow' />
           <div className={classes.scrollTextMobile}>scroll down</div>
           </>
-        </Link>
+        </InternalLink>
         <div className={classNames(classes.clutchCircleMobile, {
           [classes.loading]: isClutchLoading
         })}>
@@ -50,12 +50,12 @@ function Header (props, ref) {
           <div className={classes.smallCircleMobile} />
         </div>
       </div>
-      <Link href='#services' smooth className={classes.arrow}>
+      <InternalLink href='#services' smooth className={classes.arrow}>
         <>
         <SVGIcon name='home/header/arrow' />
         <div className={classes.scrollText}>scroll down</div>
         </>
-      </Link>
+      </InternalLink>
       <div className={classNames(classes.clutchCircle, {
         [classes.loading]: isClutchLoading
       })}>

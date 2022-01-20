@@ -17,7 +17,6 @@ const Button = forwardRef(({
   iconRight,
   ...props
 }, ref) => {
-  console.log('BOTON')
   if (ButtonComponent === 'button') type = type ?? 'button'
 
   className = classnames(

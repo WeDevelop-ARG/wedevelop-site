@@ -12,9 +12,9 @@ import { forTabletDown } from 'styles/media_queries'
 
 import DropdownIcon from 'assets/nav_bar/dropdown_icon.svg'
 import DropdownIconWhite from 'assets/nav_bar/dropdown_icon_white.svg'
-import Link from 'next/link'
 
 import classes from './styles.module.scss'
+import InternalLink from 'main_app/components/InternalLink'
 
 function MainMenu ({
   isOpen,
@@ -74,7 +74,7 @@ function MainMenu ({
 
           <Dropdown.Menu className={classes.dropdownMenu}>
             <Dropdown.Item
-              as={Link}
+              as={InternalLink}
               href='/services/web-development#top'
               smooth
               className={classes.dropdownItem}
@@ -82,7 +82,7 @@ function MainMenu ({
               Web Development
             </Dropdown.Item>
             <Dropdown.Item
-              as={Link}
+              as={InternalLink}
               href='/services/staff-augmentation#top'
               smooth
               className={classes.dropdownItem}
@@ -97,14 +97,14 @@ function MainMenu ({
           [classes.active]: globalThis.window?.location.pathname.startsWith('/about-us')
         })}
       >
-        <Link href='/about-us#top'>
+        <InternalLink href='/about-us#top'>
           About Us
-        </Link>
+        </InternalLink>
       </li>
       <li className={classes.navItem}>
-        <Link href='/#testimonials' smooth>
+        <InternalLink href='/#testimonials' smooth>
           Testimonials
-        </Link>
+        </InternalLink>
       </li>
       <li className={classNames(classes.navItem)}>
         <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
@@ -116,13 +116,13 @@ function MainMenu ({
           [classes.active]: globalThis.window?.location.pathname.startsWith('/career')
         })}
       >
-        <Link href='/career#top'>
+        <InternalLink href='/career#top'>
           Careers
-        </Link>
+        </InternalLink>
       </li>
       <li>
         <Button
-          as={Link}
+          as={InternalLink}
           isAnchor
           variant={contactCTAVariant}
           href={contactPagePath}

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
 
 import classes from './styles.module.scss'
 
@@ -7,9 +7,9 @@ function Footer () {
     <footer id='follow-up-footer' className={classes.footer}>
       <ul className={classes.branding}>
         <li>
-          <Link href='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+          <InternalLink href='/privacy-policy#top' smooth className={classes.privacyPolicy}>
             Privacy&nbsp;Policy
-          </Link>
+          </InternalLink>
         </li>
         <li className={classes.pleca}>|</li>
         <li className={classes.copyright}>

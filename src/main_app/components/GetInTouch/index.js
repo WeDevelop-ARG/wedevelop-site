@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
+
 
 import Button from 'main_app/components/Button'
 
@@ -20,7 +21,7 @@ function GetInTouch ({ contactPagePath }) {
           </p>
           <hr className={classes.horizontalBar} />
           <Button
-            as={Link}
+            as={InternalLink}
             href={contactPagePath}
             smooth
             isAnchor

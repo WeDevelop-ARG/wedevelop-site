@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
+
 
 import Button from 'main_app/components/Button'
 import Image from 'next/image'
@@ -46,7 +47,7 @@ function AboutUs () {
           </div>
         </div>
         <Button
-          as={Link}
+          as={InternalLink}
           href='/contact'
           smooth
           isAnchor

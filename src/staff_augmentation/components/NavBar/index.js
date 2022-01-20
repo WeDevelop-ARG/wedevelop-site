@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
 import classnames from 'classnames'
 
 import { IS_STATIC_RENDERER } from 'main_app/constants'
@@ -38,7 +38,7 @@ function NavBar ({
         [classes.initialized]: initialized
       })}
     >
-      <Link
+      <InternalLink
         href='#top'
         className={classes.logoLink}
         smooth
@@ -46,7 +46,7 @@ function NavBar ({
         <Logo
           className={classes.logo}
         />
-      </Link>
+      </InternalLink>
       <nav className={classes.menu}>
         <div className={classes.bubble}>
           <span className={classes.tagName} style={{ color: backgroundColor }}>{landingName}</span>

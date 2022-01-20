@@ -1,5 +1,5 @@
 import { useWebDevDetails } from '../hooks/useWebDevDetails'
-import Link from 'next/link'
+import InternalLink from 'main_app/components/InternalLink'
 import Button from 'main_app/components/Button'
 
 import Pattern from 'assets/services/dots-pattern.svg'
@@ -16,7 +16,7 @@ function WebDevDetails ({ contactPagePath }) {
         <div className={classes.columnLeft}>
           <DescriptionText />
           <Button
-            as={Link}
+            as={InternalLink}
             href={contactPagePath}
             smooth
             isAnchor
