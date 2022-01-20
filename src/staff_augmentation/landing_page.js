@@ -1,17 +1,11 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, Suspense } from 'react'
 import { useRouteMatch, useHistory } from 'react-router'
 
+import { prerenderedLazy } from 'utils/prerendered_lazy'
+
 import Article from 'main_app/components/Article'
-import AvailableDevs from './components/AvailableDevs'
-import BackgroundContainer from './components/BackgroundContainer'
-import Footer from './components/Footer'
-import FullSizeCTA from './components/FullSizeCTA'
-import HireTopTalent from './components/HireTopTalent'
-import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import NavBar from './components/NavBar'
 import NewHeader from './components/NewHeader'
-import PictureWall from 'main_app/components/PictureWall'
-import ReviewCards from './components/ReviewCards'
 import ScheduleCallModal from './components/ScheduleCallModal'
 import ScheduleFormModal from './components/ScheduleFormModal'
 
@@ -21,7 +15,11 @@ import useLandingVariantByName from './hooks/useLandingVariantByName'
 
 import classes from './styles.module.scss'
 
+const LandingPageContent = prerenderedLazy(() => import('./landing_page_content'))
+const interactionEvents = ['click', 'keypress', 'mousemove', 'pointermove', 'scroll', 'touchmove', 'wheel']
+
 function LandingPage () {
+  const [showContent, setShowContent] = useState(false)
   const { params } = useRouteMatch('/:name')
   const { landing } = useLandingVariantByName(params.name)
 
@@ -31,9 +29,23 @@ function LandingPage () {
   // })
 
   useEffect(() => {
+    const showContent = () => {
+      setShowContent(true)
+      for (const event of interactionEvents) {
+        window.removeEventListener(event, showContent, { passive: true })
+      }
+    }
+
+    for (const event of interactionEvents) {
+      window.addEventListener(event, showContent, { passive: true })
+    }
+
     document.getElementById('root').classList.add(classes.root)
 
     return () => {
+      for (const event of interactionEvents) {
+        window.removeEventListener(event, showContent, { passive: true })
+      }
       document.getElementById('root').classList.remove(classes.root)
     }
   }, [])
@@ -79,44 +91,15 @@ function LandingPage () {
           onContactCTAClick={handleContactCTAClick}
           onScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
         />
-        <HireTopTalent
-          subheadingText={landing.HireTopTalent.subtitle}
-          titleText={landing.HireTopTalent.title}
-          descriptionText={landing.HireTopTalent.description}
-          contentText={landing.HireTopTalent.content}
-          buttonText={landing.HireTopTalent.buttonText}
-          handleModal={handleContactCTAClick}
-        />
-        <BackgroundContainer backgroundURL={landing.backgrounds.firstBackground} />
-        {landing.availableDevs &&
-          <AvailableDevs
-            subtitle={landing.availableDevs.subtitle}
-            title={landing.availableDevs.title}
-            description={landing.availableDevs.description}
-            devs={landing.availableDevs.devs}
-            buttonText={landing.availableDevs.buttonText}
-            handleModal={handleContactCTAClick}
-          />}
-        {landing.hideHowDoesItWork || <HowDoesItWorks />}
-        <ReviewCards
-          subtitle={landing.reviewsHeading.subtitle}
-          title={landing.reviewsHeading.title}
-          description={landing.reviewsHeading.description}
-          reviews={landing.reviews}
-          buttonText={landing.reviewsHeading.buttonText}
-          handleModal={handleContactCTAClick}
-        />
-        <FullSizeCTA
-          title={landing.fullSizeCTA.title}
-          subTitle={landing.fullSizeCTA.subTitle}
-          ctaText={landing.fullSizeCTA.ctaText}
-          ctaToPath={landing.fullSizeCTA.ctaToPath}
-          description={landing.fullSizeCTA.description}
-          handleModal={handleContactCTAClick}
-        />
       </Article>
-      <PictureWall />
-      <Footer variant='light' />
+      <Suspense fallback={null}>
+        {showContent && (
+          <LandingPageContent
+            landing={landing}
+            handleContactCTAClick={handleContactCTAClick}
+          />
+        )}
+      </Suspense>
       <ScheduleCallModal
         isModalOpen={isCallModalOpen}
         setModalOpen={setCallModalOpen}

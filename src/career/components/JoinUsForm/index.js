@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import isNil from 'lodash/isNil'
+import isUndefined from 'lodash/isUndefined'
 import classnames from 'classnames'
 import { Field, ErrorMessage } from 'formik'
 import InputGroup from 'react-bootstrap/InputGroup'
@@ -11,6 +11,8 @@ import Image from 'next/image'
 import FormikSelect from 'main_app/components/FormikSelect'
 import FileInput from './FileInput'
 import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
+import UploadingFile from 'staff_augmentation/components/UploadingFile'
+import ErrorUploadingFile from 'staff_augmentation/components/ErrorUploadingFile'
 import useSkillOptions from 'main_app/components/useSkillOptions'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
@@ -30,8 +32,12 @@ function JoinUsForm () {
     'input',
     classes.fieldWithError
   )
+
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState()
+  const [fileUploadProgress, setFileUploadProgress] = useState()
+  const [fileUploadError, setFileUploadError] = useState()
+
   const onSubmitFinished = useCallback((err) => {
     setIsSubmitted(true)
     setError(err)
@@ -45,6 +51,8 @@ function JoinUsForm () {
       <FormLogic
         onSubmitFinished={onSubmitFinished}
         className={classes.form}
+        setFileUploadProgress={setFileUploadProgress}
+        setFileUploadError={setFileUploadError}
       >
         <label className={classes.labels}>
           <span>*</span>{' '}First Name
@@ -113,18 +121,29 @@ function JoinUsForm () {
           />
         </label>
         <label className={classes.fileUploadField}>
-          Resume/CV
-          <Field
-            name='resume'
-            component={FileInput}
-            aria-hidden='true'
-          />
-          <div className={classes.field}>
-            <SVGIcon name='career/clip' className={classes.clip} />
-            <Field name='resume'>
-              {(props) => isNil(props.meta.value) ? 'Attach' : '1 file selected'}
-            </Field>
-          </div>
+          <span className={classes.fileUploadLabel}>Resume/CV</span>
+          {(isUndefined(fileUploadProgress) && isUndefined(fileUploadError)) &&
+            <Field
+              name='resume'
+              component={FileInput}
+              aria-hidden='true'
+            >
+              <div className={classes.field}>
+                <SVGIcon name='career/clip' className={classes.clip} alt='' />
+                Attach
+              </div>
+            </Field>}
+          {(!isUndefined(fileUploadProgress) && isUndefined(fileUploadError)) &&
+            <UploadingFile
+              inputName='resume'
+              currentProgress={fileUploadProgress}
+            />}
+          {!isUndefined(fileUploadError) &&
+            <ErrorUploadingFile
+              retryButtonProps={{
+                type: 'submit'
+              }}
+            />}
           <ErrorMessage name='resume' component='div' className={classes.errorMessage} />
         </label>
         <ReCAPTCHAField name='recaptchaToken' />

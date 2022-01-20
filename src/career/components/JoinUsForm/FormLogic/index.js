@@ -44,11 +44,22 @@ const schemaShape = {
     .test('fileType', 'Supported formats: PDF, Word, ODT.', value => isNil(value) || SUPPORTED_FILES.includes(value?.type))
 }
 
-function FormLogic ({ onSubmitFinished, ...props }) {
+function FormLogic ({ onSubmitFinished, setFileUploadProgress, setFileUploadError, ...props }) {
   const handleSubmit = useCallback(async (values, actions) => {
+    setFileUploadError(undefined)
     let error
     try {
-      const path = values.resume && await uploadFile(values.resume)
+      let path
+      if (!isNil(values.resume)) {
+        try {
+          path = values.resume && await uploadFile(values.resume, setFileUploadProgress)
+          setFileUploadProgress(undefined)
+        } catch (error) {
+          setFileUploadError(error)
+          throw error
+        }
+      }
+
       const response = await window.fetch(CAREER_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: {
@@ -70,7 +81,7 @@ function FormLogic ({ onSubmitFinished, ...props }) {
     }
 
     if (isFunction(onSubmitFinished)) onSubmitFinished(error)
-  }, [onSubmitFinished])
+  }, [onSubmitFinished, setFileUploadProgress, setFileUploadError])
 
   const schema = Yup.object(schemaShape).required()
 

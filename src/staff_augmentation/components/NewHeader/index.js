@@ -1,20 +1,17 @@
-import { useState, useCallback } from 'react'
-import classNames from 'classnames'
+import { useState } from 'react'
 
-import HeaderBackground from 'assets/staff_augmentation/backgrounds/blue_gradient_background.svg'
+import { ReactComponent as HeaderBackground } from 'assets/staff_augmentation/backgrounds/blue_gradient_background.svg'
 import WeDevelopCEO from 'assets/staff_augmentation/wedevelop_ceo.png'
 import DotsPattern from 'assets/staff_augmentation/white_dots_pattern.svg'
 import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
 import DecorationElements from 'assets/staff_augmentation/deco_elements.svg'
 import BlurredDecorationElements from 'assets/staff_augmentation/blurred_deco_elements.svg'
 
-import useMediaQuery from 'utils/use_media_query'
-
 import Button from 'main_app/components/Button'
-import ClutchWidget from 'main_app/components/ClutchWidget'
-import Image from 'next/image'
+import ClutchRectangle from 'main_app/components/ClutchRectangle'
 
 import classes from './styles.module.scss'
+import Image from 'next/image'
 
 export default function NewHeader ({
   freeQuoteForm,
@@ -26,38 +23,19 @@ export default function NewHeader ({
   onContactCTAClick,
   quote = ''
 }) {
-  const shouldUseBiggerClutch = useMediaQuery('screen and (min-width: 1550px)')
   const [isClutchLoaded, setIsClutchLoaded] = useState(false)
-  const handleClutchLoaded = useCallback(() => {
-    setIsClutchLoaded(true)
-  }, [])
-  const clutch = (
-    <div className={classNames(classes.clutchRectangle, { [classes.visuallyHidden]: !isClutchLoaded })}>
-      <ClutchWidget
-        className={classes.clutchWidget}
-        onLoad={handleClutchLoaded}
-        verticalAlign='center'
-        horizontalAlign='center'
-        variant='light'
-        height={shouldUseBiggerClutch ? 55 : undefined}
-      />
-      <div className={classes.filledCircle} />
-      <div className={classes.emptyCircle} />
-    </div>
-  )
-
   return (
     <>
       <section id='headerSection' className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
-          <Image src={HeaderBackground} alt='' className={classes.background} />
+          <HeaderBackground preserveAspectRatio='xMidYMax slice' className={classes.background} />
         </div>
-        <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
-        <Image src={DecorationElements} alt='' className={classes.decorationElementsPattern} />
-        <Image src={BlurredDecorationElements} alt='' className={classes.blurredDecorationElements} />
+        <Image src={DotsPattern} alt='' loading='eager' className={classes.dotsPattern} />
+        <Image src={DecorationElements} alt='' loading='eager' className={classes.decorationElementsPattern} />
+        <Image src={BlurredDecorationElements} alt='' loading='eager' className={classes.blurredDecorationElements} />
         <div className={classes.columnsContainer}>
           <div className={classes.leftSideContainer}>
-            <Image src={WeDevelopLogo} alt='WeDevelop logo' className={classes.imageLogo} />
+            <Image src={WeDevelopLogo} alt='WeDevelop logo' width='225' height='51' loading='eager' className={classes.imageLogo} />
             <div className={classes.tagNameContainer}>
               <span className={classes.tagName} style={{ backgroundColor }}>
                 {landingName}
@@ -67,14 +45,17 @@ export default function NewHeader ({
             <h2 className={classes.subTitle}>{description}</h2>
             <div className={classes.separator} />
             <div className={classes.hideOnTabletDown}>
-              {clutch}
+              <ClutchRectangle
+                isClutchLoaded={isClutchLoaded}
+                setIsClutchLoaded={setIsClutchLoaded}
+              />
             </div>
           </div>
           <div className={classes.rightSideContainer}>
             <div className={classes.quoteContainer}>
               <div className={classes.avatarContainer}>
                 <div className={classes.avatarImageContainer}>
-                  <Image src={WeDevelopCEO} objectFit='cover' alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
+                  <Image src={WeDevelopCEO} loading='eager' objectFit='cover' alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
                 </div>
               </div>
               <q className={classes.quote}>
@@ -93,7 +74,10 @@ export default function NewHeader ({
               {' '}to tell us about your needs.
             </p>
             <div className={classes.hideOnDesktopUp}>
-              {clutch}
+              <ClutchRectangle
+                isClutchLoaded={isClutchLoaded}
+                setIsClutchLoaded={setIsClutchLoaded}
+              />
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { forwardRef, useState } from 'react'
 import InternalLink from 'main_app/components/InternalLink'
 
 import SVGIcon from 'main_app/components/SVGIcon'
-import ClutchWidget from 'main_app/components/ClutchWidget'
+import ClutchRectangle from 'main_app/components/ClutchRectangle'
 import imgHeader from 'assets/home/header/background.png'
 
 import classes from './styles.module.scss'
@@ -11,15 +11,7 @@ import classNames from 'classnames'
 
 function Header (props, ref) {
   const [isPlaceholderLoading, setIsPlaceholderLoading] = useState(true)
-  const [isClutchLoading, setIsClutchLoading] = useState(true)
-
-  const clutch = (
-    <ClutchWidget
-      className={classes.clutchWidget}
-      variant='dark'
-      onLoad={() => setIsClutchLoading(false)}
-    />
-  )
+  const [isClutchLoaded, setIsClutchLoaded] = useState(false)
 
   return (
     <section ref={ref} className={classes.headerContainer}>
@@ -36,35 +28,37 @@ function Header (props, ref) {
         </p>
         <hr className={classes.divider} />
         <InternalLink href='#services' smooth className={classes.arrowMobile}>
-          <>
           <SVGIcon name='home/header/arrow' />
           <div className={classes.scrollTextMobile}>scroll down</div>
-          </>
         </InternalLink>
-        <div className={classNames(classes.clutchCircleMobile, {
-          [classes.loading]: isClutchLoading
-        })}>
-          {clutch}
-          <div className={classes.filledCircleMobile} />
-          <div className={classes.emptyCircleMobile} />
-          <div className={classes.smallCircleMobile} />
+        <div className={classNames(classes.clutchRectangleMobile, {
+          [classes.loading]: !isClutchLoaded
+        })}
+        >
+          <ClutchRectangle
+            isClutchLoaded={isClutchLoaded}
+            setIsClutchLoaded={setIsClutchLoaded}
+          />
         </div>
       </div>
       <InternalLink href='#services' smooth className={classes.arrow}>
-        <>
         <SVGIcon name='home/header/arrow' />
         <div className={classes.scrollText}>scroll down</div>
-        </>
       </InternalLink>
-      <div className={classNames(classes.clutchCircle, {
-        [classes.loading]: isClutchLoading
-      })}>
-        {clutch}
+      <div className={classNames(classes.clutchRectangle, {
+        [classes.loading]: !isClutchLoaded
+      })}
+      >
+        <ClutchRectangle
+          isClutchLoaded={isClutchLoaded}
+          setIsClutchLoaded={setIsClutchLoaded}
+        />
       </div>
       <div className={classNames(classes.decorationWrapper, {
         [classes.placeholderLoading]: isPlaceholderLoading,
-        [classes.clutchLoading]: isClutchLoading
-      })}>
+        [classes.clutchLoading]: !isClutchLoaded
+      })}
+      >
         <Image
           src={imgHeader}
           alt=''
@@ -80,9 +74,6 @@ function Header (props, ref) {
         <div className={classNames(classes.pattern, classes.decoration)}>
           <SVGIcon name='home/header/pattern' />
         </div>
-        <div className={classNames(classes.filledCircle, classes.clutchDecoration)} />
-        <div className={classNames(classes.emptyCircle, classes.clutchDecoration)} />
-        <div className={classNames(classes.smallCircle, classes.clutchDecoration)} />
       </div>
     </section>
   )

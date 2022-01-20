@@ -1,0 +1,51 @@
+@import '/src/styles/media_queries.scss';
+
+$fileUploadLabelColor: #e34242;
+$tryAgainColor: #377dff;
+
+.field {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+  flex-grow: 1;
+
+  @include for-phone-only {
+    flex-flow: row wrap;
+  }
+}
+
+.errorUploadingMessage {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.errorUploadingFile {
+  flex-shrink: 0;
+}
+
+.fileUploadLabel {
+  font-size: 15px;
+  color: $fileUploadLabelColor;
+  margin-bottom: 0;
+  margin-left: 20px;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+}
+
+.tryAgain {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 15px;
+  color: $tryAgainColor;
+  text-decoration: underline;
+  margin-bottom: 2px;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+
+  @include for-phone-only {
+    line-height: 45px;
+  }
+}

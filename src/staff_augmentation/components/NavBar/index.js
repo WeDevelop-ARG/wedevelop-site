@@ -43,9 +43,7 @@ function NavBar ({
         className={classes.logoLink}
         smooth
       >
-        <Logo
-          className={classes.logo}
-        />
+        <Logo width='203' height='46' />
       </InternalLink>
       <nav className={classes.menu}>
         <div className={classes.bubble}>
