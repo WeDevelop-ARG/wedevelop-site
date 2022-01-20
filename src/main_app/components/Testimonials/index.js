@@ -1,4 +1,5 @@
 import { Slide } from 'react-slideshow-image'
+import Image from 'next/image'
 import 'react-slideshow-image/dist/styles.css'
 
 import useReviews from './hooks/useReviews'
@@ -6,7 +7,7 @@ import QuotationMark from 'assets/home/quotation_mark.svg'
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
-import Image from 'next/image'
+import WrappedImage from '../WrappedImage'
 
 function Testimonials ({ bottomImageURL, hideHeader = false }) {
   const { reviews } = useReviews()
@@ -34,14 +35,17 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
           {reviews.map((review) => (
             <figure key={review.id} className={classes.slide}>
               <div className={classes.quoteContainer}>
-                <Image src={QuotationMark} alt='' className={classes.openQuote} />
+                <WrappedImage src={QuotationMark} alt='' layout='fill' className={classes.openQuote} />
                 <blockquote className={classes.quote}>{review.quote}</blockquote>
-                <Image src={QuotationMark} alt='' className={classes.closeQuote} />
+                <WrappedImage src={QuotationMark} alt='' layout='fill' className={classes.closeQuote} />
               </div>
               <div className={classes.profileImgContainer}>
-                <Image
+                <WrappedImage
                   src={review.profileImageURL}
                   objectFit='cover'
+                  layout='fixed'
+                  width='115'
+                  height='115'
                   alt={`Profile of ${review.name}`}
                   title={review.name}
                   className={classes.profileImg}
@@ -57,8 +61,8 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
           ))}
         </Slide>
       </div>
-      <Image src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.middleLeftPattern} aria-hidden='true' />
+      <WrappedImage src={DotsPattern} alt='' layout='fill' className={classes.topRightPattern} aria-hidden='true' />
+      <WrappedImage src={DotsPattern} alt='' layout='fill' className={classes.middleLeftPattern} aria-hidden='true' />
       <div className={classes.filledSmallCircle} aria-hidden='true' />
       <div className={classes.emptySmallCircle} aria-hidden='true' />
       <div className={classes.smallBlurLeftCircle} aria-hidden='true' />
