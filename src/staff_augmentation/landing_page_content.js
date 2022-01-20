@@ -52,7 +52,7 @@ export default function LandingPageContent ({
         />
       </Article>
       <PictureWall />
-      <Footer variant='light' />
+      <Footer />
     </>
   )
 }

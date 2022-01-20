@@ -41,7 +41,7 @@ function Landing () {
         <PictureWall />
       </Article>
       {pathname === '/contact' && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer variant='light' />
+      <Footer />
     </>
   )
 }

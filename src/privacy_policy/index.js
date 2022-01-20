@@ -2,17 +2,15 @@ import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Footer from 'main_app/components/Footer'
 
-import usePageMetadata from 'utils/marketing/use_page_metadata'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 function PrivacyPolicy() {
-  usePageMetadata({
-    title: 'Privacy Policy',
-    description:
-      'Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service.'
-  })
-
   return (
     <>
+      <PageMetadata
+        title='Privacy Policy'
+        description='Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service.'
+      />
       <NavBar
         variant={['solid', 'dark']}
         variantAtScrollTop={['transparent', 'dark']}
@@ -492,7 +490,7 @@ function PrivacyPolicy() {
           </ul>
         </section>
       </Article>
-      <Footer variant='light' />
+      <Footer />
     </>
   )
 }

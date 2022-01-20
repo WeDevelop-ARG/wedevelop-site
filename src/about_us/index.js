@@ -55,7 +55,7 @@ function AboutUs () {
         <PictureWall />
       </Article>
       {contactPagePath === pathname && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer variant='light' />
+      <Footer />
     </>
   )
 }

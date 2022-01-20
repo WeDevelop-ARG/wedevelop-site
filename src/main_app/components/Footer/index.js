@@ -16,12 +16,12 @@ import Facebook from 'assets/footer/facebook.svg'
 import Instagram from 'assets/footer/instagram.svg'
 import LinkedIn from 'assets/footer/linked_in.svg'
 
-function Footer ({ variant = 'dark', className }) {
+function Footer ({ className }) {
   className = classnames(
     classes.containerStyle,
-    useVariants(classes, variant, { prefix: 'variant_' }),
     className
   )
+
   return (
     <footer className={className}>
       <div className={classes.listUs}>
@@ -122,7 +122,7 @@ function Footer ({ variant = 'dark', className }) {
       <div className={classes.socials}>
         <ul className={classes.branding}>
           <li>
-            <InternalLink href='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+            <InternalLink href='/privacy-policy' className={classes.privacyPolicy}>
               Privacy&nbsp;Policy
             </InternalLink>
           </li>

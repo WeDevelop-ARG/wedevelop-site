@@ -33,7 +33,7 @@ function NotFound () {
               as={InternalLink}
               isAnchor
               variant='secondary'
-              href='/#top'
+              href='/'
               smooth
             >
               Let's head back to earth

@@ -47,14 +47,7 @@
     flex-direction: column;
     height: 500px;
   }
-}
 
-.variant_dark {
-  background-color: $textColor;
-  color: $secondaryColor;
-}
-
-.variant_light {
   @extend .backgroundDown;
   background-color: #ffffff;
 

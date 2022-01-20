@@ -11,7 +11,7 @@ import { Router } from 'next/router'
 function Career () {
   const contactPagePath = '/career/contact'
   const { pathname } = useRouter()
-  
+
   const handleClose = useCallback(() => {
     Router.push('/career')
   }, [])
@@ -27,7 +27,7 @@ function Career () {
         <PictureWall />
       </Article>
       {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer variant='light' />
+      <Footer />
     </>
   )
 }

@@ -25,7 +25,7 @@ function NavBar ({
   variant,
   variantAtScrollTop,
   show = true,
-  pathLogo = '/#top',
+  pathLogo = '/',
   hideMenu = false,
   contactPagePath = '/contact'
 }, ref) {

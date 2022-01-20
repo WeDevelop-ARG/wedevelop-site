@@ -20,7 +20,7 @@ export default function SuccessConfirm () {
       <Article>
         <SuccessHeader displayScheduleCallHint={displayScheduleCallHint} />
       </Article>
-      <Footer variant='light' />
+      <Footer />
     </>
   )
 }

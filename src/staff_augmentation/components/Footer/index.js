@@ -45,7 +45,7 @@ function Footer({ variant = 'dark', className }) {
         <ul className={classes.branding}>
           <li>
             <InternalLink
-              to='/privacy-policy#top'
+              to='/privacy-policy'
               smooth
               className={classes.privacyPolicy}
             >

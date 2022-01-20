@@ -7,7 +7,7 @@ function Footer () {
     <footer id='follow-up-footer' className={classes.footer}>
       <ul className={classes.branding}>
         <li>
-          <InternalLink href='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+          <InternalLink href='/privacy-policy' className={classes.privacyPolicy}>
             Privacy&nbsp;Policy
           </InternalLink>
         </li>

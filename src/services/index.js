@@ -27,7 +27,7 @@ function Services () {
           />
         </Switch>
       </Article>
-      <Footer variant='light' />
+      <Footer />
     </>
   )
 }
