@@ -1,5 +1,8 @@
 import { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import classnames from 'classnames'
+import { isUndefined } from 'lodash'
+import Image from 'next/image'
+
 import InternalLink from 'main_app/components/InternalLink'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
@@ -10,13 +13,13 @@ import useMediaQuery from 'utils/use_media_query'
 
 import { forDesktopUp, forTabletDown } from 'styles/media_queries'
 
-import SVGIcon from '../SVGIcon'
-
 import MainMenu from './MainMenu'
 import Logo from '../Logo'
 
+import CloseX from 'assets/nav_bar/close_x.svg'
+import HamburguerMenu from 'assets/nav_bar/hamburguer_menu.svg'
+
 import classes from './styles.module.scss'
-import { isUndefined } from 'lodash'
 
 function NavBar ({
   variant,
@@ -105,7 +108,7 @@ function NavBar ({
       >
         <Logo
           variant={logoVariant}
-          className={classes.logo}
+          height='40'
           loading='eager'
         />
       </InternalLink>
@@ -113,18 +116,17 @@ function NavBar ({
         <nav className={classes.nav}>
           <button
             type='button'
+            layout='fixed'
             onClick={toggleMenu}
             className={classes.menuToggle}
           >
-            {menuOpen && <SVGIcon name='nav_bar/close_x' className={classes.close} />}
+            {menuOpen && <Image src={CloseX} layout='fixed' width='24' height='24' />}
             {!menuOpen &&
-              <SVGIcon
-                name='nav_bar/hamburguer_menu'
-                className={
-                  classnames(classes.open, {
-                    [classes.white]: isVariant(variant, 'light')
-                  })
-                }
+              <Image
+                src={HamburguerMenu}
+                layout='fixed'
+                width='27'
+                height='27'
               />}
           </button>
           <MainMenu

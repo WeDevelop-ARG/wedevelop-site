@@ -26,6 +26,14 @@ function Logo ({ variant, width, height, ...props }) {
     logoSrc = isologoColor
   }
 
+  if (width && !height) {
+    if (isVariant(variant, 'isologo')) height = width
+    else height = width * (51 / 225)
+  } else if (height && !width) {
+    if (isVariant(variant, 'isologo')) width = height
+    else width = height * (225 / 51)
+  }
+
   return (
     <Image
       src={logoSrc}
