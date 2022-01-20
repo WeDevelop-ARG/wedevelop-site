@@ -16,14 +16,8 @@
 
     <link rel="preconnect" href="https://res.cloudinary.com" />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://js.hsforms.net" />
-    <link rel="dns-prefetch" href="https://js.hsforms.net" />
-    <link rel="preconnect" href="https://code.jquery.com" />
-    <link rel="dns-prefetch" href="https://code.jquery.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <script>
       if (navigator.userAgent !== 'ReactSnap') {
         var st = document.createElement('link')
@@ -49,22 +43,30 @@
     <!-- End Google Tag Manager (noscript) -->
     <script>window.IS_PRODUCTION_ENVIRONMENT = true</script>
     <% } %>
-    <script>
+    <script async defer>
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({ 'gtm.start': new Date().getTime(), event:'gtm.js' })
       ;(function () {
         var IS_STATIC_RENDERER = navigator.userAgent === 'ReactSnap'
         var WAIT_TIME_BEFORE_APPEND = 3000
 
+        window.addEventListener('scroll', loadAfterInteraction, { passive: true })
+
         document.addEventListener('DOMContentLoaded', function () {
           if (IS_STATIC_RENDERER) return undefined
-
-          loadCookieConsent()
 
           if (window.IS_PRODUCTION_ENVIRONMENT) {
             loadGoogleTagManager()
           }
         })
+
+        function loadAfterInteraction () {
+          window.removeEventListener('scroll', loadAfterInteraction, { passive: true })
+
+          if (IS_STATIC_RENDERER) return undefined
+
+          loadCookieConsent()
+        }
 
         function loadGoogleTagManager () {
           var sc = document.createElement('script')
@@ -109,9 +111,7 @@
             })
           })
 
-          setTimeout(function () {
-            document.head.append(sc, st)
-          }, WAIT_TIME_BEFORE_APPEND)
+          document.head.append(sc, st)
         }
       })()
     </script>

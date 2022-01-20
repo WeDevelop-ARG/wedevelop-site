@@ -69,11 +69,11 @@
 .imageLogo {
   display: block;
   margin: 0 auto;
-  width: inherit;
 
   @include for-desktop-up {
     margin: 0;
-    width: 65%;
+    width: 65% !important;
+    height: auto;
   }
 }
 

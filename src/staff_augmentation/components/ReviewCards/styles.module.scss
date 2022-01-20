@@ -10,12 +10,20 @@ $textColor: #363636;
   padding-bottom: 50px;
   overflow: hidden;
   z-index: 1;
-  background-image: url(../../../assets/staff_augmentation/backgrounds/customers_reviews.png);
-  background-repeat: no-repeat;
-  background-position: 0 center;
-  background-size: cover;
   min-height: 56vw;
   text-align: center;
+  padding-top: 50px;
+}
+
+.background {
+  position: absolute;
+  width: calc(100% + var(--rootContentHorizontalPadding));
+  height: 100%;
+  object-fit: fill;
+  object-position: 0 0;
+  z-index: -1;
+  left: calc(-1 * var(--rootContentHorizontalPadding));
+  top: 0;
 }
 
 .sectionHeader {
@@ -99,7 +107,7 @@ $textColor: #363636;
   z-index: -1;
   transform: rotate(180deg);
 
-  @media screen and (min-width: 1025px) and (max-width: 1250px) {
+  @media screen and (max-width: 1250px) {
     width: 237px;
   }
 
@@ -110,11 +118,11 @@ $textColor: #363636;
 
 .topLeftDotsPattern {
   @extend %dotsPattern;
-  top: 80px;
+  top: 90px;
   left: 75px;
 
-  @media screen and (min-width: 1025px) and (max-width: 1200px) {
-    top: 60px;
+  @media screen and (max-width: 1250px) {
+    top: 110px;
   }
 }
 

@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { isNil } from 'lodash'
+import isNil from 'lodash/isNil'
 import SuccessUploaded from './SuccessUploaded'
 
 function FileInput ({ form, field, children }) {
