@@ -61,7 +61,7 @@ function ServicesOffered () {
               <Button
                 as={InternalLink}
                 href='/contact'
-                smooth
+                link={{ scroll: false }}
                 isAnchor
                 variant='primary'
               >
@@ -69,11 +69,9 @@ function ServicesOffered () {
               </Button>
             </div>
           </div>
-          <Image src={pattern} alt='' className={classes.patternRight} />
-          <Image src={pattern} alt='' className={classes.patternLeft} />
-          <div className={classes.halfCircle}>
-            <Image src={HalfCircle} layout='fixed' />
-          </div>
+          <WrappedImage src={pattern} alt='' className={classes.patternRight} />
+          <WrappedImage src={pattern} alt='' className={classes.patternLeft} />
+          <WrappedImage src={HalfCircle} alt='' layout='fixed' className={classes.halfCircle} />
           <div className={classes.smallHalfCircle} />
           <div className={classes.filledCircle} />
           <div className={classes.emptyCircle} />
