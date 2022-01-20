@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@cloudinary/url-gen": "^1.0.0",
-    "@loadable/component": "^5.15.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
@@ -28,7 +26,6 @@
     "react-slideshow-image": "^3.5.0",
     "react-step-wizard": "^5.3.9",
     "react-text-loop": "^2.3.0",
-    "rectangles": "^0.0.4",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.0",
     "yup": "^0.32.9"
@@ -53,43 +50,6 @@
     "cleanup-deploy-build": "rimraf -rf firebase.json.backup .env.production build node_modules/.cache",
     "deploy-hosting-preview": "firebase hosting:channel:deploy --project wedevelop-site-testing --only testing"
   },
-  "reactSnap": {
-    "skipThirdPartyRequests": true,
-    "http2PushManifest": true,
-    "asyncScriptTags": true,
-    "inlineCss": true,
-    "include": [
-      "/privacy-policy",
-      "/staff-augmentation",
-      "/web-developers",
-      "/hire-developers",
-      "/web-coders",
-      "/hire-javascript-developers",
-      "/hire-net-developers",
-      "/website-builders",
-      "/web-programmers",
-      "/about-us",
-      "/career",
-      "/follow-up",
-      "/offshore-web-development",
-      "/nearshore-net-developers",
-      "/web-development-outsourcing",
-      "/nearshore-web-development",
-      "/success/confirm",
-      "/nearshore-software-outsourcing",
-      "/devops",
-      "/it-outsourcing",
-      "/it-staffing",
-      "/mobile",
-      "/software-development"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -103,14 +63,10 @@
     ]
   },
   "devDependencies": {
-    "@fudohq/react-snap-sitemap": "^0.1.5",
     "dotenv-cli": "^4.0.0",
     "firebase-tools": "^9.5.0",
-    "import-glob-loader": "^1.1.0",
     "ncp": "^2.0.0",
-    "react-snap": "^1.23.0",
     "rimraf": "^3.0.2",
-    "sass": "^1.32.8",
     "standard": "^16.0.3"
   }
 }
