@@ -10,10 +10,10 @@ import classes from './styles.module.scss'
 function PictureWall () {
   return (
     <div className={classes.pictureWall}>
-      <Image src={Picture1} alt='' objectFit='auto' position='bottom' resize='auto-height' />
-      <Image src={Picture2} alt='' objectFit='auto' position='bottom' resize='auto-height' />
-      <Image src={Picture3} alt='' objectFit='auto' position='bottom' resize='auto-height' />
-      <Image src={Picture4} alt='' objectFit='auto' position='bottom' resize='auto-height' />
+      <Image src={Picture1} alt='' layout='responsive' position='bottom' />
+      <Image src={Picture2} alt='' layout='responsive' position='bottom' />
+      <Image src={Picture3} alt='' layout='responsive' position='bottom' />
+      <Image src={Picture4} alt='' layout='responsive' position='bottom' />
     </div>
   )
 }

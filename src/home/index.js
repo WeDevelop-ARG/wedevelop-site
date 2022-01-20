@@ -1,8 +1,8 @@
 import { useCallback } from 'react'
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
-import AboutUs from './components/AboutUs'
 import Article from 'main_app/components/Article'
+import AboutUs from './components/AboutUs'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
