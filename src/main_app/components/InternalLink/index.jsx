@@ -1,10 +1,10 @@
 import Link from "next/link"
 
 export default function InternalLink (props) {
-  const { href, ...rest } = props
+  const { href, link = {}, ...rest } = props
 
   return (
-    <Link href={href}>
+    <Link href={href} {...link}>
       <a {...rest}>
         {props.children}
       </a>

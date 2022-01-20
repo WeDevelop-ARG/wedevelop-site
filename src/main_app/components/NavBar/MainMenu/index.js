@@ -75,16 +75,14 @@ function MainMenu ({
           <Dropdown.Menu className={classes.dropdownMenu}>
             <Dropdown.Item
               as={InternalLink}
-              href='/services/web-development#top'
-              smooth
+              href='/services/web-development'
               className={classes.dropdownItem}
             >
               Web Development
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
-              href='/services/staff-augmentation#top'
-              smooth
+              href='/services/staff-augmentation'
               className={classes.dropdownItem}
             >
               Staff Augmentation
@@ -97,7 +95,7 @@ function MainMenu ({
           [classes.active]: globalThis.window?.location.pathname.startsWith('/about-us')
         })}
       >
-        <InternalLink href='/about-us#top'>
+        <InternalLink href='/about-us'>
           About Us
         </InternalLink>
       </li>
@@ -116,7 +114,7 @@ function MainMenu ({
           [classes.active]: globalThis.window?.location.pathname.startsWith('/career')
         })}
       >
-        <InternalLink href='/career#top'>
+        <InternalLink href='/career'>
           Careers
         </InternalLink>
       </li>
@@ -126,9 +124,11 @@ function MainMenu ({
           isAnchor
           variant={contactCTAVariant}
           href={contactPagePath}
-          smooth
           className={classes.buttonTalk}
           onClick={onRequestClose}
+          link={{
+            scroll: false
+          }}
         >
           Get in Touch
         </Button>
