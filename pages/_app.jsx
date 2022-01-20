@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
 
-import { setPageTitlePrefix } from '../src/utils/marketing/use_page_metadata'
+import { setPageTitlePrefix } from '../src/utils/marketing/PageMetadata'
 import { setupGlobalDeveloperHints } from '../src/utils/marketing/developer_hints'
 import { NavBar, NavBarContextProvider } from '../src/main_app/components/NavBar'
 import { BASE_URL, ENVIRONMENT, IS_PRODUCTION } from '../src/main_app/constants'

@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
-import { Router,useRouter } from 'next/router'
-
+import { Router, useRouter } from 'next/router'
 
 import AboutUs from './components/AboutUs'
 import Article from 'main_app/components/Article'
@@ -13,24 +12,22 @@ import PictureWall from 'main_app/components/PictureWall'
 import Services from './components/Services'
 import Testimonials from 'main_app/components/Testimonials'
 
-import usePageMetadata from 'utils/marketing/use_page_metadata'
+import PageMetadata from 'utils/marketing/PageMetadata'
 import TestimonialsBg from 'assets/home/testimonials_background_image.png'
 
 function Landing () {
-  // usePageMetadata({
-  //   title: 'A Human-Centered Company that Gets Things Done',
-  //   description: 'We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
-  // })
-  const {route, pathname} = useRouter()
-
-  console.log(route,pathname)
+  const { pathname, push } = useRouter()
 
   const handleClose = useCallback(() => {
-    Router.push('/')
-  }, [])
+    push('/')
+  }, [push])
 
   return (
     <>
+      <PageMetadata
+        title='A Human-Centered Company that Gets Things Done'
+        description='We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
+      />
       <NavBar
         variant={['solid', 'dark']}
         variantAtScrollTop={['transparent', 'light']}
