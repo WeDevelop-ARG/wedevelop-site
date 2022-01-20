@@ -54,13 +54,14 @@ function StoryDetails () {
           description={storyDetails.header.description}
           websiteURL={storyDetails.header.websiteURL}
           imageURL={storyDetails.header.imageURL}
+          logoBackground={storyDetails.header.logoBackground}
         />
         <TextImageGeneric
           title={storyDetails.challenge.title}
           content={storyDetails.challenge.content}
           hideDecoration
         />
-        {!isEmpty(storyDetails.testimonials) &&
+        {!isEmpty(storyDetails.testimonials) && (
           <>
             <Testimonials
               reviews={storyDetails.testimonials}
@@ -68,12 +69,10 @@ function StoryDetails () {
               hideHeader
             />
             <section className={classes.clutchContainer}>
-              <ClutchWidget
-                variant='dark'
-                className={classes.clutchWidget}
-              />
+              <ClutchWidget variant='dark' className={classes.clutchWidget} />
             </section>
-          </>}
+          </>
+        )}
         <TextImageGeneric
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}
