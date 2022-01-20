@@ -27,6 +27,9 @@ function NavBar ({
   hideMenu = false,
   contactPagePath = '/contact'
 }, ref) {
+
+  console.log(variant, variantAtScrollTop,show)
+
   const [menuOpen, setMenuOpen] = useState(false)
   const [atScrollTop, observerRef] = useOverlappingObserver({
     root: globalThis.document?.body,
@@ -84,7 +87,7 @@ function NavBar ({
   }, [])
 
   if(!isUndefined(globalThis.document)){
-    useElementClass(document.getElementById('root'), classes.rootWithNavBar)
+    useElementClass(document.getElementById('__next'), classes.rootWithNavBar)
     useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
   }
 
