@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
 import { useFormikContext } from 'formik'
-import { IS_STATIC_RENDERER, RECAPTCHA_SITE_KEY } from 'main_app/constants'
+import { RECAPTCHA_SITE_KEY } from 'main_app/constants'
 import isFunction from 'lodash/isFunction'
 
 const RECAPTCHA_URL = 'https://www.google.com/recaptcha/api.js?onload=RECAPTCHA_LOAD_HANDLER&render=explicit'
@@ -12,7 +12,6 @@ window.RECAPTCHA_LOAD_HANDLER = () => {
 }
 
 function loadRecaptcha (onPossiblyLoaded) {
-  if (IS_STATIC_RENDERER) return undefined
   recaptchaLoadListeners.push(onPossiblyLoaded)
 
   if (isRecaptchaScriptPresent()) {

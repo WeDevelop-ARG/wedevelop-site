@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm ci && npm run build-testing
         env:
-          REACT_APP_PREVIEW_BUILD: feature
+          NEXT_PUBLIC_PREVIEW_BUILD: feature
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

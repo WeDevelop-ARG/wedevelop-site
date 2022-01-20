@@ -7,7 +7,6 @@ import useElementClass from 'utils/use_element_class'
 import useVariants, { combineVariants, isVariant } from 'utils/use_variants'
 import useCombinedRefs from 'utils/use_combined_refs'
 import useMediaQuery from 'utils/use_media_query'
-import { IS_STATIC_RENDERER } from 'main_app/constants'
 
 import { forDesktopUp, forTabletDown } from 'styles/media_queries'
 
@@ -42,7 +41,7 @@ function NavBar ({
   const isTabletDown = useMediaQuery(forTabletDown)
 
   useEffect(() => {
-    if (atScrollTop !== null && !IS_STATIC_RENDERER) setInitialized(true)
+    if (atScrollTop !== null) setInitialized(true)
   }, [atScrollTop])
 
   variant = useMemo(() => {

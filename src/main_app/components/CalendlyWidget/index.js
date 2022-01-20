@@ -3,7 +3,7 @@ import { CalendlyEventListener, InlineWidget } from 'react-calendly'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import useMediaQuery from 'utils/use_media_query'
-import { CALENDLY_DEFAULT_EVENT_URL, IS_STATIC_RENDERER, PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL } from 'main_app/constants'
+import { CALENDLY_DEFAULT_EVENT_URL, PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL } from 'main_app/constants'
 
 function CalendlyWidget ({ sourcePage, hideText, followUpTracingId, onFinish, prefill }) {
   const isTablet = useMediaQuery('screen and (min-width: 725px)')
@@ -44,8 +44,6 @@ function CalendlyWidget ({ sourcePage, hideText, followUpTracingId, onFinish, pr
       console.error(err)
     }
   }, [sourcePage, followUpTracingId, onFinish])
-
-  if (IS_STATIC_RENDERER) return null
 
   return (
     <>

@@ -10,7 +10,7 @@ jobs:
       - run: npm ci && npm run build-testing
         if: startsWith(github.head_ref, 'feature/') == false
         env:
-          REACT_APP_PREVIEW_BUILD: pull_request
+          NEXT_PUBLIC_PREVIEW_BUILD: pull_request
       - uses: FirebaseExtended/action-hosting-deploy@v0
         if: startsWith(github.head_ref, 'feature/') == false
         with:

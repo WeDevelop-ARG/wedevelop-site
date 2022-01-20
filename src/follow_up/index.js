@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useMemo } from 'react'
 import { useHistory } from 'react-router'
 
-import { FOLLOW_UP_CONTACT_PROCESSOR_URL, IS_STATIC_RENDERER } from 'main_app/constants'
+import { FOLLOW_UP_CONTACT_PROCESSOR_URL } from 'main_app/constants'
 import NotFound from 'not_found'
 
 import Navbar from './components/Navbar'
@@ -32,8 +32,6 @@ function FollowUp () {
   }, [history.location.search])
 
   useEffect(() => {
-    if (IS_STATIC_RENDERER) return undefined
-
     let unmounted = false
     const url = new URL(FOLLOW_UP_CONTACT_PROCESSOR_URL, window.location.href)
     url.searchParams.set('tracingId', tracingId)

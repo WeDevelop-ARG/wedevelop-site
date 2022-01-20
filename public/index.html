@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#2426e3">
-    <link rel="manifest" href="%REACT_APP_BASE_URL%/manifest.json" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%REACT_APP_BASE_URL%/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="%REACT_APP_BASE_URL%/logo32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="%REACT_APP_BASE_URL%/logo16.png">
-    <link rel="mask-icon" href="%REACT_APP_BASE_URL%/safari-pinned-tab.svg" color="#8224e3">
+    <link rel="manifest" href="%NEXT_PUBLIC_BASE_URL%/manifest.json" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%NEXT_PUBLIC_BASE_URL%/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="%NEXT_PUBLIC_BASE_URL%/logo32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%NEXT_PUBLIC_BASE_URL%/logo16.png">
+    <link rel="mask-icon" href="%NEXT_PUBLIC_BASE_URL%/safari-pinned-tab.svg" color="#8224e3">
     <title>WeDevelop</title>
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <% if (process.env.REACT_APP_ENVIRONMENT === 'production') { %>
+    <% if (process.env.NEXT_PUBLIC_ENVIRONMENT === 'production') { %>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53CPLS8"
@@ -47,14 +47,11 @@
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({ 'gtm.start': new Date().getTime(), event:'gtm.js' })
       ;(function () {
-        var IS_STATIC_RENDERER = navigator.userAgent === 'ReactSnap'
         var WAIT_TIME_BEFORE_APPEND = 3000
 
         window.addEventListener('scroll', loadAfterInteraction, { passive: true })
 
         document.addEventListener('DOMContentLoaded', function () {
-          if (IS_STATIC_RENDERER) return undefined
-
           if (window.IS_PRODUCTION_ENVIRONMENT) {
             loadGoogleTagManager()
           }
@@ -62,8 +59,6 @@
 
         function loadAfterInteraction () {
           window.removeEventListener('scroll', loadAfterInteraction, { passive: true })
-
-          if (IS_STATIC_RENDERER) return undefined
 
           loadCookieConsent()
         }

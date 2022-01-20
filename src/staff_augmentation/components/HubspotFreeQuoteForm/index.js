@@ -1,14 +1,10 @@
 import { useEffect, useRef } from 'react'
 import isFunction from 'lodash/isFunction'
 
-import { IS_STATIC_RENDERER } from 'main_app/constants'
-
 const HUBSPOT_URL = 'https://js.hsforms.net/forms/shell.js'
 const JQUERY_URL = 'https://code.jquery.com/jquery-3.6.0.min.js'
 
 function loadHubSpot (onPossiblyLoaded) {
-  if (IS_STATIC_RENDERER) return undefined
-
   if (isHubSpotScriptPresent()) {
     return onPossiblyLoaded()
   }

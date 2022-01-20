@@ -1,15 +1,12 @@
 import { useEffect, useRef } from 'react'
 import classnames from 'classnames'
 import isFunction from 'lodash/isFunction'
-import { IS_STATIC_RENDERER } from 'main_app/constants'
 
 const CLUTCH_URL = 'https://widget.clutch.co/static/js/widget.js'
 const interactionEvents = ['click', 'keypress', 'mousemove', 'pointermove', 'scroll', 'touchmove', 'wheel']
 let isWaitingForInteraction = false
 
 function loadClutch (onPossiblyLoaded) {
-  if (IS_STATIC_RENDERER) return undefined
-
   if (isClutchScriptPresent() || isWaitingForInteraction) {
     return onPossiblyLoaded()
   }
