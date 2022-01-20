@@ -24,6 +24,10 @@
     transition: opacity ease-in-out 250ms;
   }
 
+  &.placeholderLoading {
+    background: #000;
+  }
+
   &.placeholderLoading .decoration {
     opacity: 0;
   }

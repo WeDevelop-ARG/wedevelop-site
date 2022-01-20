@@ -1,5 +1,5 @@
 import { isUndefined } from 'lodash'
-import { useState, useLayoutEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { area, intersect, intersection } from 'rectangles'
 import useComponentDidMount from './use_component_did_mount'
 
@@ -27,7 +27,7 @@ function useOverlappingObserver ({
     return result
   }, [isOverlapping, targetRef, rootRef])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!didMount) return undefined
 
     const calculateOverlap = () => {

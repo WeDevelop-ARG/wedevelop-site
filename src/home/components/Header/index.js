@@ -1,16 +1,20 @@
 import { forwardRef, useState } from 'react'
-import InternalLink from 'main_app/components/InternalLink'
-
-import SVGIcon from 'main_app/components/SVGIcon'
-import ClutchRectangle from 'main_app/components/ClutchRectangle'
-import imgHeader from 'assets/home/header/background.png'
-
-import classes from './styles.module.scss'
 import Image from 'next/image'
 import classNames from 'classnames'
 
+import InternalLink from 'main_app/components/InternalLink'
+
+import ClutchRectangle from 'main_app/components/ClutchRectangle'
+
+import imgHeader from 'assets/home/header/background.png'
+import Arrow from 'assets/home/header/arrow.svg'
+import HalfCircle from 'assets/home/header/half_circle.svg'
+import Pattern from 'assets/home/header/pattern.svg'
+
+import classes from './styles.module.scss'
+
 function Header (props, ref) {
-  const [isPlaceholderLoading, setIsPlaceholderLoading] = useState(true)
+  const [isBackgroundLoading, setIsBackgroundLoading] = useState(true)
   const [isClutchLoaded, setIsClutchLoaded] = useState(false)
 
   return (
@@ -27,8 +31,8 @@ function Header (props, ref) {
           <br />experiences to clients and users all over the world.
         </p>
         <hr className={classes.divider} />
-        <InternalLink href='#services' smooth className={classes.arrowMobile}>
-          <SVGIcon name='home/header/arrow' />
+        <InternalLink href='#services' className={classes.arrowMobile}>
+          <Image src={Arrow} layout='fixed' />
           <div className={classes.scrollTextMobile}>scroll down</div>
         </InternalLink>
         <div className={classNames(classes.clutchRectangleMobile, {
@@ -42,7 +46,7 @@ function Header (props, ref) {
         </div>
       </div>
       <InternalLink href='#services' smooth className={classes.arrow}>
-        <SVGIcon name='home/header/arrow' />
+        <Image src={Arrow} layout='fixed' />
         <div className={classes.scrollText}>scroll down</div>
       </InternalLink>
       <div className={classNames(classes.clutchRectangle, {
@@ -55,24 +59,25 @@ function Header (props, ref) {
         />
       </div>
       <div className={classNames(classes.decorationWrapper, {
-        [classes.placeholderLoading]: isPlaceholderLoading,
+        [classes.placeholderLoading]: isBackgroundLoading,
         [classes.clutchLoading]: !isClutchLoaded
       })}
       >
         <Image
           src={imgHeader}
           alt=''
+          layout='fill'
           loading='eager'
           objectFit='cover'
-          position='bottom'
-          placeholderColor='#000'
-          onPlaceholderImageLoad={() => setIsPlaceholderLoading(false)}
+          objectPosition='bottom'
+          placeholder='blur'
+          onLoadingComplete={() => setIsBackgroundLoading(false)}
         />
         <div className={classNames(classes.halfCircle, classes.decoration)}>
-          <SVGIcon name='home/header/half_circle' />
+          <Image src={HalfCircle} layout='fixed' />
         </div>
         <div className={classNames(classes.pattern, classes.decoration)}>
-          <SVGIcon name='home/header/pattern' />
+          <Image src={Pattern} layout='fixed' />
         </div>
       </div>
     </section>

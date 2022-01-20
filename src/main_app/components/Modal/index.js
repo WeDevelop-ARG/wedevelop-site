@@ -1,8 +1,10 @@
 import ReactModal from 'react-modal'
 import classnames from 'classnames'
+import Image from 'next/image'
 
 import Button from 'main_app/components/Button'
-import SVGIcon from 'main_app/components/SVGIcon'
+
+import XShape from 'assets/staff_augmentation/x_shape.svg'
 
 import classes from './styles.module.scss'
 
@@ -12,13 +14,13 @@ function Modal ({
   isOpen,
   onRequestClose,
   contentLabel,
-  iconName = 'x_shape'
+  icon = XShape
 }) {
   return (
     <ReactModal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      appElement={document.getElementById('root')}
+      appElement={globalThis.document?.getElementById('__next')}
       bodyOpenClassName={classes.bodyModalOpen}
       className={classnames(classes.modal, className)}
       overlayClassName={classes.overlay}
@@ -27,7 +29,7 @@ function Modal ({
       shouldCloseOnOverlayClick
     >
       <Button variant='icon' onClick={onRequestClose} className={classes.close}>
-        <SVGIcon name={`staff_augmentation/${iconName}`} />
+        <Image src={icon} />
       </Button>
       {children}
     </ReactModal>
