@@ -100,7 +100,7 @@ function MainMenu ({
         </InternalLink>
       </li>
       <li className={classes.navItem}>
-        <InternalLink href='/#testimonials' smooth>
+        <InternalLink href='/#testimonials'>
           Testimonials
         </InternalLink>
       </li>
