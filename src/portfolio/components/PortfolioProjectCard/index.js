@@ -1,9 +1,14 @@
+import { useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
+import classNames from 'classnames'
+
+import Button from 'main_app/components/Button'
 import Image from 'main_app/components/Image'
+import ProjectLogo from '../ProjectLogo'
 
 import { ReactComponent as World } from 'assets/portfolio/world.svg'
-import Arrow from 'assets/portfolio/arrow.svg'
-import ProjectLogo from '../ProjectLogo'
+import { ReactComponent as BlueArrow } from 'assets/portfolio/arrow.svg'
+import { ReactComponent as WhiteArrow } from 'assets/portfolio/white_horizontal_arrow.svg'
 
 import classes from './styles.module.scss'
 
@@ -24,10 +29,13 @@ function PortfolioProjectCard ({
   } else {
     logoStyleProp.style = { backgroundImage: logoBackground }
   }
+  const [isOnHover, setIsOnHover] = useState(false)
 
   return (
     <div
       className={classes.container}
+      onMouseOver={() => setIsOnHover(true)}
+      onMouseOut={() => setIsOnHover(false)}
     >
       <Image
         src={coverImageURL}
@@ -66,10 +74,18 @@ function PortfolioProjectCard ({
         <p className={classes.description}>
           {description}
         </p>
-        <HashLink smooth to={detailsPagePath} className={classes.knowMore}>
+        <Button
+          as={HashLink}
+          to={detailsPagePath}
+          smooth
+          variant={isOnHover ? 'primary' : 'link'}
+          iconRight={isOnHover ? <WhiteArrow /> : <BlueArrow />}
+          className={classNames(classes.readMore, {
+            [classes.readMoreWhite]: isOnHover
+          })}
+        >
           Read More
-          <Image src={Arrow} alt='' className={classes.arrow} />
-        </HashLink>
+        </Button>
       </div>
     </div>
   )
