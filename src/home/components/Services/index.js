@@ -1,14 +1,18 @@
+import Image from 'next/image'
+
 import InternalLink from 'main_app/components/InternalLink'
 
-import SVGIcon from 'main_app/components/SVGIcon'
 import Button from 'main_app/components/Button'
 import Skills from '../Skills'
 import Service from '../Service'
 import useServicesOffered from '../../hooks/useServicesOffered'
+
 import pattern from 'assets/home/services/pattern.svg'
+import Arrow from 'assets/home/services/arrow.svg'
+import HalfCircle from 'assets/home/services/half_circle.svg'
 
 import classes from './styles.module.scss'
-import Image from 'next/image'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function ServicesOffered () {
   const services = useServicesOffered()
@@ -31,7 +35,7 @@ function ServicesOffered () {
               photo,
               path
             }) => (
-              <InternalLink href={path} smooth className={classes.serviceBox} key={id}>
+              <InternalLink href={path} className={classes.serviceBox} key={id}>
                 <li>
                   <Service
                     photo={photo}
@@ -41,7 +45,9 @@ function ServicesOffered () {
                   <Service
                     description={description}
                   />
-                  <p className={classes.link}>Learn More <SVGIcon name='home/services/arrow' className={classes.arrow} /></p>
+                  <p className={classes.link}>
+                    Learn More <WrappedImage src={Arrow} layout='fixed' className={classes.arrow} />
+                  </p>
                 </li>
               </InternalLink>
             ))}
@@ -66,7 +72,7 @@ function ServicesOffered () {
           <Image src={pattern} alt='' className={classes.patternRight} />
           <Image src={pattern} alt='' className={classes.patternLeft} />
           <div className={classes.halfCircle}>
-            <SVGIcon name='home/services/half_circle' />
+            <Image src={HalfCircle} layout='fixed' />
           </div>
           <div className={classes.smallHalfCircle} />
           <div className={classes.filledCircle} />
