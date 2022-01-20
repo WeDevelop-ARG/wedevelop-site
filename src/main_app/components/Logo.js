@@ -30,6 +30,7 @@ function Logo ({ variant, width, height, ...props }) {
     <Image
       src={logoSrc}
       alt='WeDevelop Logo'
+      layout='fixed'
       width={width ?? (isVariant(variant, 'isologo') ? '64' : '225')}
       height={height ?? (isVariant(variant, 'isologo') ? '64' : '51')}
       {...props}

@@ -19,7 +19,7 @@ function Landing () {
   const { pathname, push } = useRouter()
 
   const handleClose = useCallback(() => {
-    push('/')
+    push('/', undefined, { scroll: false, shallow: true })
   }, [push])
 
   return (

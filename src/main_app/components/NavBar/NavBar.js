@@ -26,9 +26,6 @@ function NavBar ({
   hideMenu = false,
   contactPagePath = '/contact'
 }, ref) {
-
-  console.log(variant, variantAtScrollTop,show)
-
   const [menuOpen, setMenuOpen] = useState(false)
   const [atScrollTop, observerRef] = useOverlappingObserver({
     root: globalThis.document?.body,
@@ -105,7 +102,6 @@ function NavBar ({
       <InternalLink
         href={pathLogo}
         className={classes.logoLink}
-        smooth
       >
         <Logo
           variant={logoVariant}
