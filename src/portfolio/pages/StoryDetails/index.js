@@ -14,13 +14,14 @@ import SimilarStories from 'portfolio/components/SimilarStories'
 import Testimonials from 'main_app/components/Testimonials'
 import TestimonialsDecoration from '../../components/TestimonialsDecoration'
 import TextImageGeneric from '../../components/TextImageGeneric'
+import TechStackContent from 'portfolio/components/TechStackContent'
 
 import useStoryByName from '../../hooks/useStoryByName'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import classes from './styles.module.scss'
 
-function StoryDetails () {
+function StoryDetails() {
   const { params } = useRouteMatch('/portfolio/:name')
   const { storyDetails } = useStoryByName(params.name)
 
@@ -60,7 +61,7 @@ function StoryDetails () {
           content={storyDetails.challenge.content}
           hideDecoration
         />
-        {!isEmpty(storyDetails.testimonials) &&
+        {!isEmpty(storyDetails.testimonials) && (
           <>
             <Testimonials
               reviews={storyDetails.testimonials}
@@ -68,18 +69,20 @@ function StoryDetails () {
               hideHeader
             />
             <section className={classes.clutchContainer}>
-              <ClutchWidget
-                variant='dark'
-                className={classes.clutchWidget}
-              />
+              <ClutchWidget variant='dark' className={classes.clutchWidget} />
             </section>
-          </>}
+          </>
+        )}
         <TextImageGeneric
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}
           imageURL={storyDetails.solution.imageURL}
         />
         <GetInTouch contactPagePath={contactPagePath} />
+        <TechStackContent
+          title={storyDetails.techStackContent.title}
+          content={storyDetails.techStackContent.content}
+        />
         <SimilarStories storyName={params.name} />
         <PictureWall contactPagePath={contactPagePath} />
       </Article>
