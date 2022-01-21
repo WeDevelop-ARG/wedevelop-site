@@ -14,7 +14,7 @@ import classes from './styles.module.scss'
 
 function NavBar ({ handleModalOpen }, ref) {
   const [atScrollTop, observerRef] = useOverlappingObserver({
-    root: document.body,
+    root: globalThis.document?.body,
     ignoreHeight: true,
     defaultValue: null
   })

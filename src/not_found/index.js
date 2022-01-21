@@ -1,23 +1,23 @@
 import InternalLink from 'main_app/components/InternalLink'
 
-
+import WrappedImage from 'main_app/components/WrappedImage'
 import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Button from 'main_app/components/Button'
-import SVGIcon from 'main_app/components/SVGIcon'
 
-import usePageMedatada from 'utils/marketing/use_page_metadata'
+import PageMetadata from 'utils/marketing/PageMetadata'
+
+import Astronaut from 'assets/not_found/astronaut.svg'
 
 import classes from './styles.module.scss'
 
 function NotFound () {
-  usePageMedatada({
-    title: '404 Not Found',
-    description: 'The page you\'re looking for was not found.'
-  })
-
   return (
     <>
+      <PageMetadata
+        title='404 Not Found'
+        description={'The page you\'re looking for was not found.'}
+      />
       <NavBar
         hideMenu
         variant={['solid', 'dark']}
@@ -34,12 +34,11 @@ function NotFound () {
               isAnchor
               variant='secondary'
               href='/'
-              smooth
             >
               Let's head back to earth
             </Button>
           </div>
-          <SVGIcon name='not_found/astronaut' className={classes.astronaut} />
+          <WrappedImage src={Astronaut} layout='intrinsic' className={classes.astronaut} />
         </section>
       </Article>
     </>

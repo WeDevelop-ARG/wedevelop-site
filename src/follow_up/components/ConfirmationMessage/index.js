@@ -7,12 +7,13 @@ import Image from 'next/image'
 import IsologoColor from 'assets/logo/isologo_color.svg'
 
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function ConfirmationMessage () {
   return (
     <div className={classes.container}>
       <div className={classes.confirmationBadge}>
-        <Image src={IsologoColor} alt='' className={classes.wedevLogo} />
+        <WrappedImage src={IsologoColor} layout='responsive' alt='' className={classes.wedevLogo} />
       </div>
       <div className={classes.messageSent}>
         <h2>We got it!</h2>
@@ -24,7 +25,6 @@ function ConfirmationMessage () {
         <Button
           as={InternalLink}
           href='/'
-          smooth
           variant='primary'
           className={classes.goWebsiteButton}
         >

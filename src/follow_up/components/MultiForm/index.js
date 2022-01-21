@@ -37,7 +37,6 @@ function MultiForm ({ handleModalOpen, tracingId, contact }) {
     <>
       <StepWizard
         isLazyMount
-        isHashEnabled
         nav={<FormProgress />}
         className={classes.stepWizardContainer}
         instance={instance => { stepWizardInstance.current = instance }}

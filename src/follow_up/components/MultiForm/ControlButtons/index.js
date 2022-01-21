@@ -7,7 +7,7 @@ import LeftArrow from 'assets/follow_up/left_arrow.svg'
 import classes from './styles.module.scss'
 
 function ControlButtons ({ currentStep, previousStep, totalSteps }) {
-  const btnLeftArrow = <Image src={LeftArrow} alt='' />
+  const btnLeftArrow = <Image src={LeftArrow} layout='fixed' alt='' />
   const canGoback = currentStep > 1
   const isFinalStep = currentStep === totalSteps
   return (
