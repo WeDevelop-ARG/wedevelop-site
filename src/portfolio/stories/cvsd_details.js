@@ -56,7 +56,7 @@ const raftDetails = {
           WeDevelop put their creative team to brainstorm ways to develop these solutions
           in a fast iterative way, so that a functional version could be delivered on time.
         </p>
-        <h3>About Software Development Methodology</h3>
+        <h4>About Software Development Methodology</h4>
         <p>
           Due to the need presented by the COVID in 2019 this internal product was developed
           to have a control of social distancing through computer vision with a frame processing

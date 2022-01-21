@@ -69,7 +69,7 @@ const trainWithDetails = {
           This project was a great challenge because nobody was prepared for this pandemic. Overnight,
           TrainWith’s business model had to be drastically adapted and so its software products.
         </p>
-        <h3>Adaptation of current platform</h3>
+        <h4>Adaptation of current platform</h4>
         <p>
           First, we focused on the main goal: turn TrainWith into a white-label product so that
           gyms and other fitness studios could release their branded apps to their clients.
@@ -82,7 +82,7 @@ const trainWithDetails = {
           Some new features were coded from scratch, following the Clean Code principles. This
           allowed us to migrate small parts of the system without causing any disruption to the UX.
         </p>
-        <h3>Migrating to a Web-based responsive streaming platform</h3>
+        <h4>Migrating to a Web-based responsive streaming platform</h4>
         <p>
           Once the platform was white-labeled and working properly, we switched our focus to
           the next bottleneck: the iOS App. The process for releasing new versions to the App

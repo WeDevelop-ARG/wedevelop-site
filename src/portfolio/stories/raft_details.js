@@ -53,7 +53,7 @@ const raftDetails = {
     title: 'The solution',
     content: (
       <>
-        <h3>RAFT Croatia Online</h3>
+        <h4>RAFT Croatia Online</h4>
         <ul>
           <li>
             Online Ferry Tickets Booking
@@ -80,7 +80,7 @@ const raftDetails = {
             </p>
           </li>
         </ul>
-        <h3>Biz Portal</h3>
+        <h4>Biz Portal</h4>
         <ul>
           <li>
             POS - Point Of Sales

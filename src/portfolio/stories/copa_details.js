@@ -79,7 +79,7 @@ const copaDetails = {
           WeDevelop put their creative team to brainstorm ways to develop these solutions
           in a fast iterative way, so that a functional version could be delivered on time.
         </p>
-        <h3>About Software Development Methodology</h3>
+        <h4>About Software Development Methodology</h4>
         <p>
           Meeting customers’ expectations in real life is not an easy task. In the best case
           scenario, one would have time to design and iterate basic User Experience aspects
@@ -113,7 +113,7 @@ const copaDetails = {
           their business. Release by release, their software grew and became a full facility management
           system with a lot of auxiliary tools, such as a Touchless Check-In System, Data Pipeline, and more.
         </p>
-        <h3>Software delivered</h3>
+        <h4>Software delivered</h4>
         <ul>
           <li>
             Backoffice
@@ -201,7 +201,7 @@ const copaDetails = {
             </ul>
           </li>
         </ul>
-        <h3>Usability Tests on site</h3>
+        <h4>Usability Tests on site</h4>
         <p>
           As COPA’s business grew, customers’ feedback became a high priority for everyone involved
           in the venture. WeDevelop conducted on-site usability testing to ensure the UI and UX of
