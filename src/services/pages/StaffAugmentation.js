@@ -18,6 +18,7 @@ import Footer from 'main_app/components/Footer'
 
 import classes from './services.module.scss'
 import { useRouter } from 'next/router'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 function StaffAugmentation () {
   // usePageMetadata({
@@ -33,6 +34,10 @@ function StaffAugmentation () {
 
   return (
     <>
+      <PageMetadata
+        title='Staff Augmentation'
+        description='A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
+      />
       <NavBar variant={['solid', 'dark']} />
       <Article>
         {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />} 
