@@ -46,6 +46,7 @@ function StoryDetails () {
       <Article>
         <Header
           backgroundURL={storyDetails.header.backgroundURL}
+          mobileBackgroundURL={storyDetails.header.mobileBackgroundURL}
           logoURL={storyDetails.header.logoURL}
           heading={storyDetails.header.heading}
           title={storyDetails.header.title}
