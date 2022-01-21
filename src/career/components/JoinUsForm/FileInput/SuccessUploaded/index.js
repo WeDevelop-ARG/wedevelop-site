@@ -1,5 +1,10 @@
 import Button from 'main_app/components/Button'
-import SVGIcon from 'main_app/components/SVGIcon'
+
+import WrappedImage from 'main_app/components/WrappedImage'
+
+import SuccessUploadedIcon from 'assets/career/successUploaded.svg'
+import DeleteFile from 'assets/career/deleteFile.svg'
+
 import classes from './styles.module.scss'
 
 export default function SuccessUploaded ({
@@ -11,8 +16,9 @@ export default function SuccessUploaded ({
   return (
     <div className={classes.field}>
       <div className={classes.deleteFieldMessage}>
-        <SVGIcon
-          name='career/successUploaded'
+        <WrappedImage
+          src={SuccessUploadedIcon}
+          layout='fixed'
           alt=''
           className={classes.successUploaded}
         />
@@ -24,7 +30,7 @@ export default function SuccessUploaded ({
         className={classes.deleteButton}
         onClick={handleDeleteFile}
       >
-        <SVGIcon name='career/deleteFile' alt='' />
+        <WrappedImage src={DeleteFile} layout='fixed' alt='' />
       </Button>
     </div>
   )

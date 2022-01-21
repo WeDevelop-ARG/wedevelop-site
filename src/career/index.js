@@ -1,4 +1,5 @@
 import { useCallback } from 'react'
+import { useRouter } from 'next/router'
 
 import Article from 'main_app/components/Article'
 import ContactModal from 'main_app/components/ContactModal'
@@ -6,15 +7,14 @@ import Footer from 'main_app/components/Footer'
 import JoinUsForm from './components/JoinUsForm'
 import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
-import { Router } from 'next/router'
 
 function Career () {
   const contactPagePath = '/career/contact'
-  const { pathname } = useRouter()
+  const { pathname, push } = useRouter()
 
   const handleClose = useCallback(() => {
-    Router.push('/career')
-  }, [])
+    push('/career', undefined, { shallow: true, scroll: false })
+  }, [push])
 
   return (
     <>
