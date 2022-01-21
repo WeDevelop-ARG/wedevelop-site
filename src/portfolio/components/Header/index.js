@@ -1,7 +1,11 @@
+import { HashLink } from 'react-router-hash-link'
+
 import useMediaQuery from 'utils/use_media_query'
 
+import Button from 'main_app/components/Button'
 import Image from 'main_app/components/Image'
 
+import { ReactComponent as WhiteBackwardArrow } from 'assets/portfolio/white_backward_arrow.svg'
 import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
 import DotsPattern from 'assets/portfolio/dots_pattern.svg'
 import ProjectLogo from '../ProjectLogo'
@@ -28,6 +32,16 @@ function Header ({
   return (
     <section className={classes.headerContainer}>
       <div className={classes.decorationWrapper}>
+        <Button
+          as={HashLink}
+          to='/portfolio'
+          smooth
+          variant='link'
+          iconLeft={<WhiteBackwardArrow />}
+          className={classes.backToList}
+        >
+          Back to list
+        </Button>
         <Image
           src={isDesktopUp ? backgroundURL : mobileBackgroundURL}
           alt=''

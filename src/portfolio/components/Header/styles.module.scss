@@ -24,6 +24,15 @@ $grayColor: #363636;
   }
 }
 
+.backToList {
+  position: absolute;
+  top: 80px;
+  left: var(--rootContentHorizontalPadding);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
 .decorationWrapper {
   position: absolute;
   top: 0;
@@ -82,10 +91,7 @@ $grayColor: #363636;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none !important;
-  background: linear-gradient(90deg, #6B67E9 100%, #8224E3 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #377dff;
 }
 
 .worldIcon {
