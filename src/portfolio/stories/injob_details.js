@@ -1,3 +1,4 @@
+import InjobMobileHeader from 'assets/portfolio/injob/mobile_header_background.png'
 import InjobHeader from 'assets/portfolio/injob/header_background.png'
 import InjobLogo from 'assets/portfolio/injob/injob_logo.png'
 import InjobCoworking from 'assets/portfolio/injob/injob_coworking.png'
@@ -16,6 +17,7 @@ const injobDetails = {
   },
   header: {
     backgroundURL: InjobHeader,
+    mobileBackgroundURL: InjobMobileHeader,
     logoURL: InjobLogo,
     logoBackground: '#FFFFFF',
     heading: 'Success Story',

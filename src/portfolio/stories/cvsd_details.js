@@ -1,4 +1,5 @@
 import CvsdResumeBackground from 'assets/portfolio/cvsd/resume_background.png'
+import CvsdMobileHeader from 'assets/portfolio/cvsd/mobile_header_background.png'
 import CvsdHeader from 'assets/portfolio/cvsd/header_background.png'
 import CvsdLogo from 'assets/portfolio/cvsd/cvsd_logo.png'
 import CvsdLobby from 'assets/portfolio/cvsd/cvsd_lobby.png'
@@ -15,6 +16,7 @@ const raftDetails = {
   },
   header: {
     backgroundURL: CvsdHeader,
+    mobileBackgroundURL: CvsdMobileHeader,
     logoURL: CvsdLogo,
     logoBackground: '#000000',
     heading: 'Success Story',
