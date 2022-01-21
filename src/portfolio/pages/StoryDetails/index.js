@@ -79,9 +79,9 @@ function StoryDetails () {
           content={storyDetails.solution.content}
           imageURL={storyDetails.solution.imageURL}
         />
-        <GetInTouch contactPagePath={contactPagePath} />
         <SimilarStories storyName={params.name} />
-        <PictureWall contactPagePath={contactPagePath} />
+        <GetInTouch contactPagePath={contactPagePath} />
+        <PictureWall />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
