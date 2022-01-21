@@ -17,7 +17,7 @@ function NavBar ({
   buttonLabel
 }) {
   const [atScrollTop, observerRef] = useOverlappingObserver({
-    root: document.body,
+    root: globalThis.document?.body,
     ignoreHeight: true,
     defaultValue: null
   })
@@ -39,7 +39,6 @@ function NavBar ({
       <InternalLink
         href='#top'
         className={classes.logoLink}
-        smooth
       >
         <Logo width='203' height='46' />
       </InternalLink>

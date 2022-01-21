@@ -1,6 +1,6 @@
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
 import DotsPattern from 'assets/staff_augmentation/dots_pattern.svg'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
 
@@ -30,8 +30,9 @@ function HireTopTalent({
         </div>
         <div className={classes.sectionContent}>{contentText}</div>
       </div>
-      <Image
+      <WrappedImage
         src={DotsPattern}
+        layout='fixed'
         alt=''
         className={classes.topLeftDotsPattern}
         aria-hidden='true'

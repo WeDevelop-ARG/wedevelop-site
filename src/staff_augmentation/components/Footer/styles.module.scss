@@ -55,20 +55,9 @@
     flex-direction: column;
     height: 500px;
   }
-}
 
-.variant_dark {
-  background-color: $textColor;
-  color: $secondaryColor;
-}
-
-.variant_light {
   @extend .backgroundDown;
   background-color: #ffffff;
-
-  .iconStyles {
-    --primaryColor: #{$textColor};
-  }
 
   %contactLinksColor {
     color: $textColor;
@@ -141,8 +130,6 @@
 }
 
 .iconStyles {
-  --primaryColor: #{$secondaryColor};
-  width: 15px;
   margin-right: 10px;
 }
 
@@ -177,7 +164,7 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-  
+
   @include for-desktop-up {
     flex-basis: 100%;
   }

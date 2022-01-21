@@ -1,7 +1,6 @@
 import { useState, useCallback, useEffect, Suspense } from 'react'
-import { useRouteMatch, useHistory } from 'react-router'
-
-import { prerenderedLazy } from 'utils/prerendered_lazy'
+import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
 
 import Article from 'main_app/components/Article'
 import NavBar from './components/NavBar'
@@ -9,24 +8,20 @@ import NewHeader from './components/NewHeader'
 import ScheduleCallModal from './components/ScheduleCallModal'
 import ScheduleFormModal from './components/ScheduleFormModal'
 
-import usePageMetadata from 'utils/marketing/use_page_metadata'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
 
 import classes from './styles.module.scss'
 
-const LandingPageContent = prerenderedLazy(() => import('./landing_page_content'))
+const LandingPageContent = dynamic(() => import('./landing_page_content'))
+
 const interactionEvents = ['click', 'keypress', 'mousemove', 'pointermove', 'scroll', 'touchmove', 'wheel']
 
-function LandingPage () {
+function LandingPage ({ landingName }) {
   const [showContent, setShowContent] = useState(false)
-  const { params } = useRouteMatch('/:name')
-  const { landing } = useLandingVariantByName(params.name)
-
-  // usePageMetadata({
-  //   title: landing.metadata.title,
-  //   description: landing.metadata.description
-  // })
+  const { landing } = useLandingVariantByName(landingName)
+  const { push } = useRouter()
 
   useEffect(() => {
     const showContent = () => {
@@ -40,26 +35,25 @@ function LandingPage () {
       window.addEventListener(event, showContent, { passive: true })
     }
 
-    document.getElementById('root').classList.add(classes.root)
+    document.getElementById('__next').classList.add(classes.root)
 
     return () => {
       for (const event of interactionEvents) {
         window.removeEventListener(event, showContent, { passive: true })
       }
-      document.getElementById('root').classList.remove(classes.root)
+      document.getElementById('__next').classList.remove(classes.root)
     }
   }, [])
 
   const [isCallModalOpen, setCallModalOpen] = useState(false)
   const [isFormModalOpen, setFormModalOpen] = useState(false)
-  const history = useHistory()
 
   const onSuccess = useCallback(() => {
     const redirectUrl = isCallModalOpen ? '/success/confirm' : '/success/confirm?scheduleCall=1'
     setCallModalOpen(false)
     setFormModalOpen(false)
-    history.push(redirectUrl)
-  }, [history, isCallModalOpen])
+    push(redirectUrl)
+  }, [push, isCallModalOpen])
   const switchToCallModal = useCallback(() => {
     setFormModalOpen(false)
     setCallModalOpen(true)
@@ -71,8 +65,14 @@ function LandingPage () {
     setFormModalOpen(true)
   }, [])
 
+  if (!landing) return null
+
   return (
     <>
+      <PageMetadata
+        title={landing.metadata.title}
+        description={landing.metadata.description}
+      />
       <NavBar
         landingName={landing.header.landingName}
         handleModal={handleScheduleMeetingCTAClick}
@@ -92,14 +92,12 @@ function LandingPage () {
           onScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
         />
       </Article>
-      <Suspense fallback={null}>
-        {showContent && (
-          <LandingPageContent
-            landing={landing}
-            handleContactCTAClick={handleContactCTAClick}
-          />
-        )}
-      </Suspense>
+      {showContent && (
+        <LandingPageContent
+          landing={landing}
+          handleContactCTAClick={handleContactCTAClick}
+        />
+      )}
       <ScheduleCallModal
         isModalOpen={isCallModalOpen}
         setModalOpen={setCallModalOpen}

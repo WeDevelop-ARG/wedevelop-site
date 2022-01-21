@@ -5,6 +5,7 @@ import RightArrow from 'assets/hire_developers/right_arrow.svg'
 import Image from 'next/image'
 
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function ListRow ({
   devImgURL,
@@ -20,7 +21,7 @@ function ListRow ({
   return (
     <>
       <div className={classes.devImgName}>
-        <Image src={devImgURL} alt='' className={classes.profileImg} />
+        <WrappedImage layout='fill' src={devImgURL} alt='' className={classes.profileImg} />
         <p>{devName}</p>
       </div>
       <div className={classes.roleTech}>

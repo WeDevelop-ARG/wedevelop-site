@@ -9,7 +9,10 @@ module.exports = {
     config.module.rules.push({
       test: /\.component\.svg$/i,
       use: [{
-        loader: '@svgr/webpack'
+        loader: '@svgr/webpack',
+        options: {
+          ref: true
+        }
       }]
     })
 
