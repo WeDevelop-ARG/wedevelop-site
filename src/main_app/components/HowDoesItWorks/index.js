@@ -1,14 +1,14 @@
 import { Fragment } from 'react'
 import classNames from 'classnames'
 
-import Image from 'next/image'
 import Step from './components/Step'
 
 import { useStep } from './components/hooks/useStep'
 
 import DesktopSteps from 'assets/how_does_it_works/steps.svg'
-import { ReactComponent as Arrow } from 'assets/how_does_it_works/arrows/horizontal_arrow.svg'
+import Arrow from 'assets/how_does_it_works/arrows/horizontal_arrow.component.svg'
 
+import WrappedImage from '../WrappedImage'
 import classes from './styles.module.scss'
 
 function HowDoesItWorks ({ className }) {
@@ -24,7 +24,7 @@ function HowDoesItWorks ({ className }) {
         <div className={classes.remarkContainer}>
           <p className={classes.remark}>We’ll send you  more profiles on a daily basis</p>
         </div>
-        <Image src={DesktopSteps} alt='' className={classes.desktopSteps} />
+        <WrappedImage layout='responsive' src={DesktopSteps} alt='' className={classes.desktopSteps} />
         <div className={classes.row}>
           {steps && steps.map(({ id, icon, title, description }, index) => {
             const isLast = (steps.length - 1) === index

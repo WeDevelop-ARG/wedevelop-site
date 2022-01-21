@@ -1,6 +1,5 @@
 import classnames from 'classnames'
 import WrappedImage from 'main_app/components/WrappedImage'
-import Image from 'next/image'
 
 import classes from './styles.module.scss'
 

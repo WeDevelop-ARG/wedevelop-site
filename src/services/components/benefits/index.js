@@ -14,6 +14,7 @@ import iconAgile from 'assets/services/icon-agile.svg'
 import background from 'assets/services/background-key-featured-benefits.png'
 
 import classes from './benefits.module.scss'
+import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
 
 function Benefits ({ service, className }) {
   const decoration = useMemo(() => {
@@ -38,7 +39,7 @@ function Benefits ({ service, className }) {
         </div>
         {decoration}
       </section>
-      <Image className={classes.background} src={background} alt='' />
+      <BackgroundContainer className={classes.background} backgroundURL={background} alt='' />
     </>
   )
 }

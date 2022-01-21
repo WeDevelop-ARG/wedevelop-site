@@ -1,4 +1,6 @@
 import InternalLink from 'main_app/components/InternalLink'
+import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import { useHeroDecoration } from './hooks/useHeroDecoration'
 import Button from 'main_app/components/Button'
@@ -46,16 +48,16 @@ function Hero ({
               Get in Touch
             </Button>
           </div>
-          <Image className={classes.photo} src={photo} alt='' loading='eager' />
+          <WrappedImage layout='responsive' className={classes.photo} src={photo} alt='' loading='eager' />
         </div>
-        <Image className={classes[decoClasses.circleDot]} src={CircleDot} alt='' />
-        <Image className={classes[decoClasses.pattern]} src={Pattern} alt='' />
-        <Image className={classes[decoClasses.circle]} src={Circle} alt='' />
-        <Image className={classes[decoClasses.emptyCircle]} src={EmptyCircle} alt='' />
-        <Image className={classes[decoClasses.patternMobile]} src={PatternMobile} alt='' />
-        <Image className={classes[decoClasses.circleMobile]} src={CircleMobile} alt='' />
+        <WrappedImage className={classes[decoClasses.circleDot]} src={CircleDot} alt='' />
+        <WrappedImage className={classes[decoClasses.pattern]} src={Pattern} alt='' />
+        <WrappedImage className={classes[decoClasses.circle]} src={Circle} alt='' />
+        <WrappedImage className={classes[decoClasses.emptyCircle]} src={EmptyCircle} alt='' />
+        <WrappedImage className={classes[decoClasses.patternMobile]} src={PatternMobile} alt='' />
+        <WrappedImage className={classes[decoClasses.circleMobile]} src={CircleMobile} alt='' />
       </section>
-      <Image className={classes.heroBackground} src={background} alt='' loading='eager' />
+      <BackgroundContainer className={classes.heroBackground} backgroundURL={background} alt='' loading='eager' />
     </>
   )
 }

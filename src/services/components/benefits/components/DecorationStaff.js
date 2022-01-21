@@ -5,18 +5,18 @@ import BlurSmallDot from 'assets/services/blur-small.svg'
 import PatternHorizontal from 'assets/services/dots-pattern-horizontal.svg'
 import RightSemicircleMobile from 'assets/services/benefits/right_semicircle_mobile.svg'
 import classes from './decoration.module.scss'
-import Image from 'next/image'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function DecorationStaff () {
   return (
     <>
-      <Image className={classes.staffCircleLine} src={CircleLine} alt='' />
-      <Image className={classes.staffCircleLeft} src={CircleLeft} alt='' />
-      <Image className={classes.staffCircleRight} src={CircleRight} alt='' />
-      <Image className={classes.staffBlurSmallDot} src={BlurSmallDot} alt='' />
-      <Image className={classes.staffPatternHorizontal} src={PatternHorizontal} alt='' />
-      <Image className={classes.staffPatternVertical} src={PatternHorizontal} alt='' />
-      <Image className={classes.webDevRightSemicircleMobile} src={RightSemicircleMobile} alt='' />
+      <WrappedImage className={classes.staffCircleLine} src={CircleLine} alt='' />
+      <WrappedImage className={classes.staffCircleLeft} src={CircleLeft} alt='' />
+      <WrappedImage className={classes.staffCircleRight} src={CircleRight} alt='' />
+      <WrappedImage className={classes.staffBlurSmallDot} src={BlurSmallDot} alt='' />
+      <WrappedImage className={classes.staffPatternHorizontal} src={PatternHorizontal} alt='' />
+      <WrappedImage className={classes.staffPatternVertical} src={PatternHorizontal} alt='' />
+      <WrappedImage className={classes.webDevRightSemicircleMobile} src={RightSemicircleMobile} alt='' />
     </>
   )
 }

@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 export default function SuccessConfirm () {
   const { query } = useRouter()
 
-  console.log(query)
   const displayScheduleCallHint = new URLSearchParams(query).get('scheduleCall') === '1'
 
   return (

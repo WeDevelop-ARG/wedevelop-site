@@ -10,8 +10,6 @@ $grayColor: #363636;
   position: relative;
 
   @include for-desktop-up {
-    padding-left: 136px;
-    padding-right: 136px;
     margin-top: 0;
   }
 }
