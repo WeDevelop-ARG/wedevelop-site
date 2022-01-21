@@ -43,6 +43,40 @@
     margin-bottom: 24px;
   }
 
+  > ul {
+    > li {
+      list-style: url('../../../assets/portfolio/first_level_list_item.svg');
+      font-size: 16px;
+      font-weight: 500;
+      padding-left: 13px;
+
+      > p {
+        font-size: 16px;
+        font-weight: 300;
+        margin-top: 5px;
+        margin-bottom: 24px;
+      }
+
+      > ul {
+        > li {
+          list-style: url('../../../assets/portfolio/second_level_list_item.svg');
+          font-size: 12px;
+          font-weight: 300;
+          text-transform: uppercase;
+          padding-left: 10px;
+
+          > p {
+            font-size: 16px;
+            font-weight: 300;
+            margin-top: 5px;
+            margin-bottom: 16px;
+            text-transform: none;
+          }
+        }
+      }
+    }
+  }
+
   @include for-tablet-down {
     padding: 0;
   }
