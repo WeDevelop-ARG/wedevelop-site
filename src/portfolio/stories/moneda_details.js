@@ -4,6 +4,10 @@ import MonedaLending from 'assets/portfolio/moneda/moneda_lending.png'
 import MonedaOverview from 'assets/portfolio/moneda/moneda_overview.png'
 import TestimonialsImage from 'assets/portfolio/moneda/testimonials_default_image.png'
 import MonedaResumeBackground from 'assets/portfolio/moneda/resume_background.png'
+import SmartContracts from 'assets/portfolio/tech_stack/smartcontracts.svg'
+import Solidity from 'assets/portfolio/tech_stack/solidity.svg'
+import Node from 'assets/portfolio/tech_stack/node.svg'
+import React from 'assets/portfolio/tech_stack/react.svg'
 
 const monedaDetails = {
   urlName: 'moneda',
@@ -71,7 +75,29 @@ const monedaDetails = {
     ),
     imageURL: MonedaOverview
   },
-  techStackContent: []
+  techStackContent: [],
+  techStackIcons: [
+    {
+      id: '1',
+      name: 'Smart Contracts',
+      photo: SmartContracts
+    },
+    {
+      id: '2',
+      name: 'Solidity',
+      photo: Solidity
+    },
+    {
+      id: '3',
+      name: 'Node.js',
+      photo: Node
+    },
+    {
+      id: '4',
+      name: 'React',
+      photo: React
+    }
+  ]
 }
 
 export default monedaDetails

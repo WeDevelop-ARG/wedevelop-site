@@ -4,6 +4,10 @@ import TrainWithLogo from 'assets/portfolio/train_with/train_with_logo.png'
 import TrainWithLiveClass from 'assets/portfolio/train_with/train_with_live_class.png'
 import TestimonialsImage from 'assets/portfolio/train_with/train_with_ceo.png'
 import TrainWithSelectClass from 'assets/portfolio/train_with/train_with_select_class.png'
+import Node from 'assets/portfolio/tech_stack/node.svg'
+import React from 'assets/portfolio/tech_stack/react.svg'
+import Agora from 'assets/portfolio/tech_stack/agora.svg'
+import Stripe from 'assets/portfolio/tech_stack/stripe.svg'
 
 const trainWithDetails = {
   urlName: 'train-with',
@@ -115,7 +119,29 @@ const trainWithDetails = {
     ),
     imageURL: TrainWithSelectClass
   },
-  techStackContent: []
+  techStackContent: [],
+  techStackIcons: [
+    {
+      id: '1',
+      name: 'Node.js',
+      photo: Node
+    },
+    {
+      id: '2',
+      name: 'React',
+      photo: React
+    },
+    {
+      id: '3',
+      name: 'Agora',
+      photo: Agora
+    },
+    {
+      id: '4',
+      name: 'Stripe',
+      photo: Stripe
+    }
+  ]
 }
 
 export default trainWithDetails

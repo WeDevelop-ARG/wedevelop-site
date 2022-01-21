@@ -4,6 +4,11 @@ import RaftLogo from 'assets/portfolio/raft/raft_logo.png'
 import RaftReservations from 'assets/portfolio/raft/raft_reservations.png'
 import TestimonialsImage from 'assets/portfolio/raft/raft_ceo.png'
 import RaftOverview from 'assets/portfolio/raft/raft_overview.png'
+import Node from 'assets/portfolio/tech_stack/node.svg'
+import React from 'assets/portfolio/tech_stack/react.svg'
+import GraphQL from 'assets/portfolio/tech_stack/graphql.svg'
+import AWS from 'assets/portfolio/tech_stack/aws.svg'
+import PostgreSQL from 'assets/portfolio/tech_stack/postgresql.svg'
 
 const raftDetails = {
   urlName: 'raft',
@@ -126,7 +131,34 @@ const raftDetails = {
     ),
     imageURL: RaftOverview
   },
-  techStackContent: []
+  techStackContent: [],
+  techStackIcons: [
+    {
+      id: '1',
+      name: 'Node.js',
+      photo: Node
+    },
+    {
+      id: '2',
+      name: 'React',
+      photo: React
+    },
+    {
+      id: '3',
+      name: 'GraphQL',
+      photo: GraphQL
+    },
+    {
+      id: '4',
+      name: 'AWS',
+      photo: AWS
+    },
+    {
+      id: '5',
+      name: 'PostgreSQL',
+      photo: PostgreSQL
+    }
+  ]
 }
 
 export default raftDetails
