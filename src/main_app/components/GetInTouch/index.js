@@ -27,7 +27,7 @@ function GetInTouch ({ contactPagePath }) {
             isAnchor
             variant='primary'
             className={classes.buttonTalk}
-            link={{ scroll: false }}
+            link={{ scroll: false, shallow: true }}
           >
             Get in Touch
           </Button>

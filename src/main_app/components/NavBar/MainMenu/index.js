@@ -126,9 +126,7 @@ function MainMenu ({
           href={contactPagePath}
           className={classes.buttonTalk}
           onClick={onRequestClose}
-          link={{
-            scroll: false
-          }}
+          link={{ scroll: false, shallow: true }}
         >
           Get in Touch
         </Button>
