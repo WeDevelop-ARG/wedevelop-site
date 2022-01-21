@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import InternalLink from 'main_app/components/InternalLink'
 import Button from 'main_app/components/Button'
 import WrappedImage from 'main_app/components/WrappedImage'

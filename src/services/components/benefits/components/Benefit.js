@@ -1,5 +1,4 @@
 import WrappedImage from 'main_app/components/WrappedImage'
-import Image from 'next/image'
 import classes from '../benefits.module.scss'
 
 function Benefit ({ className, image, text }) {

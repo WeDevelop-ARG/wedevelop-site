@@ -1,13 +1,11 @@
 import InternalLink from 'main_app/components/InternalLink'
 
-
 import Button from 'main_app/components/Button'
 import WebDevTitleDescription from './components/WebDevTitleDescription'
 import StaffAugTitleDescription from './components/StaffAugTitleDescription'
 
 import patternHorizontal from 'assets/services/dots-pattern-horizontal.svg'
 import classes from './schedule.module.scss'
-import Image from 'next/image'
 import WrappedImage from 'main_app/components/WrappedImage'
 
 function Schedule ({ contactPagePath, className, service }) {

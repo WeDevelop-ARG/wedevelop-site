@@ -22,7 +22,7 @@ const webDevelopers = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Web Development Services</b>? 
+        Are you interested to learn more about our <b>Web Development Services</b>?
       </>
     ),
     sideImageURL: BgWebDevelopers,

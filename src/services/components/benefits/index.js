@@ -4,8 +4,6 @@ import Benefit from './components/Benefit'
 import DecorationWebDev from './components/DecorationWebDev'
 import DecorationStaff from './components/DecorationStaff'
 
-import Image from 'next/image'
-
 import iconCostReduction from 'assets/services/icon-cost-reduction.svg'
 import iconExperts from 'assets/services/icon-experts.svg'
 import iconTime from 'assets/services/icon-time.svg'

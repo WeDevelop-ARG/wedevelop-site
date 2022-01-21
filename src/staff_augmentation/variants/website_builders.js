@@ -22,7 +22,7 @@ const websiteBuilders = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Website Builder Services</b>? 
+        Are you interested to learn more about our <b>Website Builder Services</b>?
       </>
     ),
     sideImageURL: BgWebDevelopers,

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import WrappedImage from 'main_app/components/WrappedImage'
 
 import SmilingFace from 'assets/home/smiling_face.svg'

@@ -1,6 +1,5 @@
 import { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import classnames from 'classnames'
-import { isUndefined } from 'lodash'
 import Image from 'next/image'
 
 import InternalLink from 'main_app/components/InternalLink'
@@ -85,10 +84,8 @@ function NavBar ({
     setMenuOpen(false)
   }, [])
 
-  if(!isUndefined(globalThis.document)){
-    useElementClass(document.getElementById('__next'), classes.rootWithNavBar)
-    useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
-  }
+  useElementClass(globalThis.document?.getElementById('__next'), classes.rootWithNavBar)
+  useElementClass(globalThis.document?.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
 
   return (
     <header
@@ -120,13 +117,14 @@ function NavBar ({
             onClick={toggleMenu}
             className={classes.menuToggle}
           >
-            {menuOpen && <Image src={CloseX} layout='fixed' width='24' height='24' />}
+            {menuOpen && <Image src={CloseX} layout='fixed' width='24' height='24' alt='Open menu' />}
             {!menuOpen &&
               <Image
                 src={HamburguerMenu}
                 layout='fixed'
                 width='27'
                 height='27'
+                alt='Open menu'
               />}
           </button>
           <MainMenu

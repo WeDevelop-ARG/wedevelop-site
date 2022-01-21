@@ -22,7 +22,7 @@ const webCoders = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Web Coders Services</b>? 
+        Are you interested to learn more about our <b>Web Coders Services</b>?
       </>
     ),
     sideImageURL: BgWebCoders,

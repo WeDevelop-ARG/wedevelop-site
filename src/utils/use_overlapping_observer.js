@@ -90,7 +90,7 @@ function getRectangleCoordinates ({
 }
 
 function buildViewportElement () {
-  if(isUndefined(globalThis.document)) return undefined
+  if (isUndefined(globalThis.document)) return undefined
 
   const rootRect = document.documentElement.getBoundingClientRect()
 

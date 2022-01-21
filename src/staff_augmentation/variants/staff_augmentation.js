@@ -25,7 +25,7 @@ const staffAugmentation = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Staff Augmentation Services</b>? 
+        Are you interested to learn more about our <b>Staff Augmentation Services</b>?
       </>
     ),
     sideImageURL: BgStaffAugmentation,

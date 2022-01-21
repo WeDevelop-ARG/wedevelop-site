@@ -4,7 +4,7 @@ import WrappedImage from 'main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
 
-function HireTopTalent({
+function HireTopTalent ({
   subheadingText,
   titleText,
   descriptionText,

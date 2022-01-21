@@ -4,7 +4,6 @@ import Logo from '../Logo'
 import WrappedImage from '../WrappedImage'
 
 import classes from './styles.module.scss'
-import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
 
 import Pattern from 'assets/footer/pattern.svg'

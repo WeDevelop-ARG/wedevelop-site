@@ -31,7 +31,7 @@ function WebDevelopment () {
 
   return (
     <>
-      <PageMetadata 
+      <PageMetadata
         title='Agile Web Development'
         description='We create high-quality Digital Products through our Agile Web Development services, delivering meaningful experiences to clients and users all over the world.'
       />

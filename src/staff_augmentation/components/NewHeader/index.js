@@ -30,7 +30,7 @@ export default function NewHeader ({
     <>
       <section id='headerSection' className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
-          <HeaderBackground preserveAspectRatio='xMidYMax slice' viewBox="0 0 1680 950" className={classes.background} />
+          <HeaderBackground preserveAspectRatio='xMidYMax slice' viewBox='0 0 1680 950' className={classes.background} />
         </div>
         <WrappedImage layout='fixed' src={DotsPattern} alt='' loading='eager' className={classes.dotsPattern} />
         <WrappedImage layout='fixed' src={DecorationElements} alt='' loading='eager' className={classes.decorationElementsPattern} />

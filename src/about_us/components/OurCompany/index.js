@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import PeopleWorking from 'assets/about_us/our_company/people_working.png'
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
 

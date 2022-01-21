@@ -3,7 +3,6 @@ import isUndefined from 'lodash/isUndefined'
 import classnames from 'classnames'
 import { Field, ErrorMessage } from 'formik'
 import InputGroup from 'react-bootstrap/InputGroup'
-import Image from 'next/image'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'

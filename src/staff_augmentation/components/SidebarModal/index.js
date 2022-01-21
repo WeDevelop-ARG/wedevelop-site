@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
-import Image from 'next/image'
 
 import AvatarNahuel from 'assets/staff_augmentation/members/nahuel.png'
 import AvatarFederica from 'assets/staff_augmentation/members/federica.png'
@@ -44,8 +43,8 @@ export default function SidebarModal ({ className, content }) {
 
   return (
     <aside ref={containerRef} className={containerClass}>
-      <ModalShape ref={desktopShapeRef} viewBox="0 0 514 899" className={classes.modalDecoration} />
-      <MobileModalShape viewBox="0 0 375 426" className={classes.mobileDecoration} />
+      <ModalShape ref={desktopShapeRef} viewBox='0 0 514 899' className={classes.modalDecoration} />
+      <MobileModalShape viewBox='0 0 375 426' className={classes.mobileDecoration} />
       <WrappedImage src={ModalDotsPattern} className={classes.modalDotsPattern} alt='' />
       <div className={classes.content}>
         <p className={classes.whatsNext}>What's next?</p>

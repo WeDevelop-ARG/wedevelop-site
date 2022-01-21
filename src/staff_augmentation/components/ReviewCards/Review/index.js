@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import Stars from './Stars'
 
 import WrappedImage from 'main_app/components/WrappedImage'

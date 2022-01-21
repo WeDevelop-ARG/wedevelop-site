@@ -148,7 +148,7 @@ export default function ScheduleFormModal ({
               aria-hidden='true'
             >
               <div className={classes.field}>
-                <Image layout='fixed' src={ClipIcon} layout='fixed' alt='' />
+                <Image layout='fixed' src={ClipIcon} alt='' />
                 <p className={classes.fileUploadLabel}>Attach</p>
               </div>
             </Field>

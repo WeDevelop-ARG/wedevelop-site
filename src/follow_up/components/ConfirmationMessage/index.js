@@ -1,8 +1,6 @@
 import InternalLink from 'main_app/components/InternalLink'
 
-
 import Button from 'main_app/components/Button'
-import Image from 'next/image'
 
 import IsologoColor from 'assets/logo/isologo_color.svg'
 

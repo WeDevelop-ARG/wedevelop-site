@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 import classes from './styles.module.scss'
 
-export default function WrappedImage ({ className, style, src, width, height, layout, ...props }) {
+export default function WrappedImage ({ className, style, src, width, height, layout, alt, ...props }) {
   let hasExplicitSize = false
 
-  if(src.width && src.height){
+  if (src.width && src.height) {
     hasExplicitSize = width || height
 
     if (width && !height) {
@@ -33,6 +33,7 @@ export default function WrappedImage ({ className, style, src, width, height, la
         height={layout === 'fixed' ? height : undefined}
         src={src}
         layout={layout}
+        alt={alt ?? ''}
         {...props}
       />
     </div>

@@ -23,10 +23,10 @@ import { useRouter } from 'next/router'
 function StaffAugmentation () {
   const SERVICE_NAME = 'staff-augmentation'
   const contactPagePath = '/services/staff-augmentation/contact'
-  const { pathname,push } = useRouter()
+  const { pathname, push } = useRouter()
   const handleClose = useCallback(() => {
     push('/services/staff-augmentation')
-  }, [])
+  }, [push])
 
   return (
     <>
@@ -36,7 +36,7 @@ function StaffAugmentation () {
       />
       <NavBar variant={['solid', 'dark']} />
       <Article>
-        {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />} 
+        {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
         <Hero
           service={SERVICE_NAME}
           className={classes.sectionContainer}

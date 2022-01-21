@@ -6,9 +6,7 @@ function Services () {
   return (
     <>
       <NavBar variant={['solid', 'dark']} />
-      <Article>
-    
-      </Article>
+      <Article />
       <Footer />
     </>
   )

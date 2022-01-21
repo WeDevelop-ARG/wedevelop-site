@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { setPageTitlePrefix } from '../src/utils/marketing/PageMetadata'
 import { setupGlobalDeveloperHints } from '../src/utils/marketing/developer_hints'
 import { NavBar, NavBarContextProvider } from '../src/main_app/components/NavBar'
-import { BASE_URL, ENVIRONMENT, IS_PRODUCTION } from '../src/main_app/constants'
+import { BASE_URL, IS_PRODUCTION } from '../src/main_app/constants'
 
 import '../src/styles/global.scss'
 import '../src/styles/root.scss'
@@ -23,7 +23,7 @@ function loadAfterInteraction () {
 function loadGoogleTagManager () {
   if (!IS_PRODUCTION) return undefined
 
-  var sc = document.createElement('script')
+  const sc = document.createElement('script')
 
   sc.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-53CPLS8'
   sc.async = true
@@ -35,8 +35,8 @@ function loadGoogleTagManager () {
 }
 
 function loadCookieConsent () {
-  var sc = document.createElement('script')
-  var st = document.createElement('link')
+  const sc = document.createElement('script')
+  const st = document.createElement('link')
 
   sc.src = 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js'
   sc.dataset.cfasync = 'false'
@@ -51,17 +51,17 @@ function loadCookieConsent () {
     if (!window.cookieconsent) return undefined
 
     window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#f7f9fc",
-          "text": "#363636"
+      palette: {
+        popup: {
+          background: '#f7f9fc',
+          text: '#363636'
         },
-        "button": {
-          "background": "#4776e6",
-          "text": "#ffffff"
+        button: {
+          background: '#4776e6',
+          text: '#ffffff'
         }
       },
-      "theme": "edgeless"
+      theme: 'edgeless'
     })
   })
 
@@ -71,7 +71,7 @@ function loadCookieConsent () {
 function MyApp ({ Component, pageProps }) {
   useEffect(() => {
     window.dataLayer = window.dataLayer || []
-    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event:'gtm.js' })
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
     window.addEventListener('scroll', loadAfterInteraction, { passive: true })
     document.addEventListener('DOMContentLoaded', loadGoogleTagManager)
   }, [])
@@ -103,10 +103,10 @@ function MyApp ({ Component, pageProps }) {
       {IS_PRODUCTION && (
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-53CPLS8"
-            height="0"
-            width="0"
-            style="display:none;visibility:hidden"
+            src='https://www.googletagmanager.com/ns.html?id=GTM-53CPLS8'
+            height='0'
+            width='0'
+            style='display:none;visibility:hidden'
           />
         </noscript>
       )}

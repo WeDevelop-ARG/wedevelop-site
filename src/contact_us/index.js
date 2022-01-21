@@ -3,16 +3,9 @@ import NavBar from 'main_app/components/NavBar'
 import CalendlyWidget from 'main_app/components/CalendlyWidget'
 import Footer from 'main_app/components/Footer'
 
-import usePageMetadata from 'utils/marketing/use_page_metadata'
-
 import classes from './styles.module.scss'
 
 function ContactUs () {
-  // usePageMetadata({
-  //   title: 'Get in touch',
-  //   description: 'Self schedule a call whenever works best for you, shot us an email, or call us if you prefer so. We look forward to hearing from you.'
-  // })
-
   return (
     <>
       <NavBar

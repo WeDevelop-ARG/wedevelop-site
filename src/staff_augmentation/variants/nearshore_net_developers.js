@@ -22,7 +22,7 @@ const nearshoreNetDevelopers = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>.NET Development Services</b>? 
+        Are you interested to learn more about our <b>.NET Development Services</b>?
       </>
     ),
     sideImageURL: BgHireDevelopers,

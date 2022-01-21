@@ -53,9 +53,9 @@ function FreeQuoteForm ({
         <p className={classes.descriptionText}>{formHeader.description}</p>
         <hr className={classes.horizontalBar} />
       </div>
-      <LoaderSpinner 
-        className={classes.loadingContainer} 
-        visible={isLoading} 
+      <LoaderSpinner
+        className={classes.loadingContainer}
+        visible={isLoading}
       />
       <HubspotFreeQuoteForm
         region={LANDING_FREE_QUOTE_HUBSPOT_FORM_REGION}

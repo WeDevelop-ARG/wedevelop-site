@@ -32,7 +32,7 @@ function Header (props, ref) {
         </p>
         <hr className={classes.divider} />
         <InternalLink href='#services' className={classes.arrowMobile}>
-          <Image src={Arrow} layout='fixed' />
+          <Image src={Arrow} layout='fixed' alt='' />
           <div className={classes.scrollTextMobile}>scroll down</div>
         </InternalLink>
         <div className={classNames(classes.clutchRectangleMobile, {
@@ -46,7 +46,7 @@ function Header (props, ref) {
         </div>
       </div>
       <InternalLink href='#services' smooth className={classes.arrow}>
-        <Image src={Arrow} layout='fixed' />
+        <Image src={Arrow} layout='fixed' alt='' />
         <div className={classes.scrollText}>scroll down</div>
       </InternalLink>
       <div className={classNames(classes.clutchRectangle, {
@@ -74,10 +74,10 @@ function Header (props, ref) {
           onLoadingComplete={() => setIsBackgroundLoading(false)}
         />
         <div className={classNames(classes.halfCircle, classes.decoration)}>
-          <Image src={HalfCircle} layout='fixed' />
+          <Image src={HalfCircle} layout='fixed' alt='' />
         </div>
         <div className={classNames(classes.pattern, classes.decoration)}>
-          <Image src={Pattern} layout='fixed' />
+          <Image src={Pattern} layout='fixed' alt='' />
         </div>
       </div>
     </section>

@@ -1,6 +1,5 @@
-import { useState, useCallback, useEffect, useMemo } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
 
 import { FOLLOW_UP_CONTACT_PROCESSOR_URL } from 'main_app/constants'
 import NotFound from 'not_found'

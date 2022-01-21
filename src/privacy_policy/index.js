@@ -4,7 +4,7 @@ import Footer from 'main_app/components/Footer'
 
 import PageMetadata from 'utils/marketing/PageMetadata'
 
-function PrivacyPolicy() {
+function PrivacyPolicy () {
   return (
     <>
       <PageMetadata

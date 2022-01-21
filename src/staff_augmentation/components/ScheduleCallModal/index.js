@@ -1,7 +1,7 @@
 import ContactPopupModal from '../ContactPopupModal'
 import CalendlyWidget from 'main_app/components/CalendlyWidget'
 
-export default function ScheduleCallModal({
+export default function ScheduleCallModal ({
   isModalOpen,
   setModalOpen,
   onSubmit

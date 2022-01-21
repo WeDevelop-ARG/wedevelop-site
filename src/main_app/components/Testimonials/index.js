@@ -1,5 +1,4 @@
 import { Slide } from 'react-slideshow-image'
-import Image from 'next/image'
 import 'react-slideshow-image/dist/styles.css'
 
 import useReviews from './hooks/useReviews'

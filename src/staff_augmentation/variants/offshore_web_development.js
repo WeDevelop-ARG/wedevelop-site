@@ -22,7 +22,7 @@ const offshoreWebDevelopment = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Offshore Web Development</b>? 
+        Are you interested to learn more about our <b>Offshore Web Development</b>?
       </>
     ),
     sideImageURL: BgWebDevelopers,

@@ -23,9 +23,13 @@ function loadClutch (onPossiblyLoaded) {
 
   isWaitingForInteraction = true
 
-  let removeEventListeners
+  const removeEventListeners = () => {
+    for (const event of interactionEvents) {
+      window.removeEventListener(event, appendScript, { passive: true })
+    }
+  }
 
-  const appendScript = () => {
+  function appendScript () {
     if (isClutchScriptPresent()) {
       onPossiblyLoaded()
     } else {
@@ -34,12 +38,6 @@ function loadClutch (onPossiblyLoaded) {
     }
 
     removeEventListeners?.()
-  }
-
-  removeEventListeners = () => {
-    for (const event of interactionEvents) {
-      window.removeEventListener(event, appendScript, { passive: true })
-    }
   }
 
   for (const event of interactionEvents) {
@@ -70,7 +68,7 @@ function ClutchWidget ({ className, variant = 'light', height, verticalAlign, ho
   }, [])
 
   useEffect(() => {
-    let container = containerRef.current
+    const container = containerRef.current
     let iframe
     const rescaleContainer = ({ isLoad } = {}) => {
       if (iframe && typeof height === 'number') {
@@ -87,16 +85,18 @@ function ClutchWidget ({ className, variant = 'light', height, verticalAlign, ho
       if (isLoad && isFunction(onLoad)) {
         try {
           let loadCalled = false
-          let timeout
-          const callLoad = () => {
+
+          iframe.addEventListener('load', callLoad)
+
+          const timeout = setTimeout(callLoad, 3000)
+
+          function callLoad () {
             if (loadCalled) return undefined
             loadCalled = true
             clearTimeout(timeout)
             iframe.removeEventListener('load', callLoad)
             onLoad()
           }
-          iframe.addEventListener('load', callLoad)
-          timeout = setTimeout(callLoad, 3000)
         } catch (e) {}
       }
     }

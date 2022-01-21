@@ -10,7 +10,6 @@ import LeftSemicirclesMobile from 'assets/services/staff_aug_details/left_semici
 import RightSemicirclesMobile from 'assets/services/staff_aug_details/right_semicircles_mobile.svg'
 
 import classes from './staffDetails.module.scss'
-import Image from 'next/image'
 import WrappedImage from 'main_app/components/WrappedImage'
 
 function StaffDetails () {

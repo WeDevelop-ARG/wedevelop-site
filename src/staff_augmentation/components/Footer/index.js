@@ -1,7 +1,4 @@
 import classnames from 'classnames'
-import Image from 'next/image'
-
-import useVariants from 'utils/use_variants'
 
 import InternalLink from 'main_app/components/InternalLink'
 
@@ -17,7 +14,7 @@ import InstagramIcon from 'assets/footer/instagram.svg'
 
 import classes from './styles.module.scss'
 
-function Footer({ className }) {
+function Footer ({ className }) {
   className = classnames(
     classes.containerStyle,
     className

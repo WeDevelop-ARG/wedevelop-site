@@ -5,7 +5,6 @@ import useMediaQuery from 'utils/use_media_query'
 import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
-import Image from 'next/image'
 
 function Step ({ className, icon, title, description }) {
   const isDesktopUp = useMediaQuery(forDesktopUp)

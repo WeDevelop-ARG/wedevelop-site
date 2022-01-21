@@ -1,7 +1,6 @@
 import { Fragment } from 'react'
 
 import Button from 'main_app/components/Button'
-import Image from 'next/image'
 import ListRow from './ListRow'
 import DotsPattern from 'assets/home/dots_pattern.svg'
 

@@ -1,13 +1,11 @@
 import InternalLink from 'main_app/components/InternalLink'
 
-
 import Button from 'main_app/components/Button'
 
 import DotsPattern from 'assets/home/dots_pattern.svg'
+import WrappedImage from '../WrappedImage'
 
 import classes from './styles.module.scss'
-import Image from 'next/image'
-import WrappedImage from '../WrappedImage'
 
 function GetInTouch ({ contactPagePath }) {
   return (

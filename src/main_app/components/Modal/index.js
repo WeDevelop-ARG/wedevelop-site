@@ -29,7 +29,7 @@ function Modal ({
       shouldCloseOnOverlayClick
     >
       <Button variant='icon' onClick={onRequestClose} className={classes.close}>
-        <Image src={icon} />
+        <Image src={icon} alt='Close' />
       </Button>
       {children}
     </ReactModal>

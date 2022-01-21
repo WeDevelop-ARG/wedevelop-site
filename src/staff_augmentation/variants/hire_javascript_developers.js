@@ -22,7 +22,7 @@ const hireJavascriptDevelopers = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>JavaScript Development Services</b>? 
+        Are you interested to learn more about our <b>JavaScript Development Services</b>?
       </>
     ),
     sideImageURL: BgHireDevelopers,
