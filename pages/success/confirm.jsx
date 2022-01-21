@@ -1,7 +1,7 @@
 import Article from 'main_app/components/Article'
 import Footer from 'main_app/components/Footer'
 import NavBar from 'main_app/components/NavBar'
-import SuccessHeader from './components/SuccessHeader'
+import SuccessHeader from '../../src/success/components/SuccessHeader'
 import { useRouter } from 'next/router'
 
 export default function SuccessConfirm () {
