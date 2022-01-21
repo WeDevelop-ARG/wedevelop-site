@@ -15,16 +15,12 @@ import icon from 'assets/services/icon-staff-augmentation.svg'
 import background from 'assets/services/background-staff-augmentation.png'
 import NavBar from 'main_app/components/NavBar'
 import Footer from 'main_app/components/Footer'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 import classes from './services.module.scss'
 import { useRouter } from 'next/router'
-import PageMetadata from 'utils/marketing/PageMetadata'
 
 function StaffAugmentation () {
-  // usePageMetadata({
-  //   title: 'Staff Augmentation',
-  //   description: 'A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
-  // })
   const SERVICE_NAME = 'staff-augmentation'
   const contactPagePath = '/services/staff-augmentation/contact'
   const { pathname,push } = useRouter()

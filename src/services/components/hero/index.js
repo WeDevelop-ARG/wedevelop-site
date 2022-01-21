@@ -5,7 +5,6 @@ import WrappedImage from 'main_app/components/WrappedImage'
 import { useHeroDecoration } from './hooks/useHeroDecoration'
 import Button from 'main_app/components/Button'
 import classes from './heroStyles.module.scss'
-import Image from 'next/image'
 
 function Hero ({
   service,
@@ -32,7 +31,7 @@ function Hero ({
       <section className={className}>
         <div className={classes.container}>
           <div className={classes.contentContainer}>
-            <Image className={classes.icon} src={icon} alt='' />
+            <WrappedImage className={classes.icon} src={icon} alt='' />
             <h2 className={classes.titleText}>{title}</h2>
             <p className={classes.descriptionText}>
               {description}
