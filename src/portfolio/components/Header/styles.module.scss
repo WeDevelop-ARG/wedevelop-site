@@ -5,19 +5,22 @@ $grayColor: #363636;
 .headerContainer {
   min-height: 100vh;
   position: relative;
-  padding-top: 55vw !important;
   padding-bottom: 0;
 
-  @include for-tablet-up {
-    padding-top: 52vw !important;
+  @include for-tablet-down {
+    padding-top: 82vw !important;
+  }
+
+  @include for-phone-only {
+    padding-top: 87vw !important;
   }
 
   @include for-desktop-up {
-    padding-top: 48vw !important;
+    padding-top: 20vw !important;
   }
 
   @include for-big-desktop-up {
-    padding-top: 45vw !important;
+    padding-top: 18vw !important;
   }
 }
 

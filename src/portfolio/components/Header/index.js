@@ -1,3 +1,5 @@
+import useMediaQuery from 'utils/use_media_query'
+
 import Image from 'main_app/components/Image'
 
 import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
@@ -5,10 +7,13 @@ import DotsPattern from 'assets/portfolio/dots_pattern.svg'
 import ProjectLogo from '../ProjectLogo'
 import WorldIcon from 'assets/portfolio/world.svg'
 
+import { forDesktopUp } from 'styles/media_queries'
+
 import classes from './styles.module.scss'
 
 function Header ({
   backgroundURL,
+  mobileBackgroundURL,
   logoURL,
   heading,
   title,
@@ -18,11 +23,13 @@ function Header ({
   websiteURL,
   imageURL
 }) {
+  const isDesktopUp = useMediaQuery(forDesktopUp)
+
   return (
     <section className={classes.headerContainer}>
       <div className={classes.decorationWrapper}>
         <Image
-          src={backgroundURL}
+          src={isDesktopUp ? backgroundURL : mobileBackgroundURL}
           alt=''
           loading='eager'
           placeholderColor='#333'
