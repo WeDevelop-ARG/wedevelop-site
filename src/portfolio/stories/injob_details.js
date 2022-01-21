@@ -83,7 +83,8 @@ const injobDetails = {
       </>
     ),
     imageURL: InjobOverview
-  }
+  },
+  techStackContent: []
 }
 
 export default injobDetails
