@@ -1,9 +1,12 @@
+import Image from 'main_app/components/Image'
+
 import CopaResumeBackground from 'assets/portfolio/copa/resume_background.png'
 import CopaHeader from 'assets/portfolio/copa/header_background.png'
 import CopaLogo from 'assets/portfolio/copa/copa_logo.svg'
 import CopaSignUp from 'assets/portfolio/copa/copa_signup.png'
 import TestimonialsImage from 'assets/portfolio/copa/copa_manager.png'
 import CopaFrontdesk from 'assets/portfolio/copa/copa_frontdesk.png'
+import CopaMethodology from 'assets/portfolio/copa/copa_methodology.png'
 
 const copaDetails = {
   urlName: 'copa',
@@ -99,7 +102,7 @@ const copaDetails = {
         <p>
           The methodology we followed was a nice mix of Agile with a Lean mindset.
         </p>
-        {/* TODO: Insert Methodology image here (with styles) */}
+        <Image src={CopaMethodology} alt='' objectFit='contain' position='center' />
         <p>
           Basically, we deployed every 2-week Sprint a very small but functional piece of software.
           We provided a small but highly talented cross-functional team that pushed on a sophisticated
