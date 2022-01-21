@@ -15,7 +15,7 @@ function SimilarStories ({ storyName }) {
 
   return (
     <>
-      <section id='stories'>
+      <section id='stories' className={classes.sectionContainer}>
         <div>
           <p className={classes.subheadingText}>success stories</p>
           <h2 className={classes.titleText}>Similar stories to read</h2>
