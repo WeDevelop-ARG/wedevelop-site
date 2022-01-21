@@ -32,21 +32,17 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "next start",
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "lint": "next lint -d pages -d src",
     "lint:fix": "npm run lint -- --fix",
-    "prebuild": "rimraf build",
-    "build": "NODE_ENV=production next build",
-    "build-testing": "ncp .testing_env .env.production && npm run build",
-    "build-production": "ncp .production_env .env.production && npm run build",
-    "test": "next test",
-    "eject": "next eject",
+    "build": "NODE_ENV=production next build && next export",
+    "build-testing": "ncp .env_testing .env.production && npm run build",
+    "build-production": "ncp .env_production .env.production && npm run build",
     "deploy-functions-production": "firebase deploy --only functions --project wedevelop-site",
     "deploy-functions-testing": "firebase deploy --only functions --project wedevelop-site-testing",
     "deploy-hosting-production": "firebase deploy --project wedevelop-site --only hosting:production",
     "deploy-hosting-testing": "firebase deploy --project wedevelop-site-testing --only hosting:testing",
-    "cleanup-deploy-build": "rimraf -rf firebase.json.backup .env.production build node_modules/.cache",
+    "cleanup-deploy-build": "rimraf -rf .env.production build node_modules/.cache .next out",
     "deploy-hosting-preview": "firebase hosting:channel:deploy --project wedevelop-site-testing --only testing"
   },
   "browserslist": {

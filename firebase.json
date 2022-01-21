@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "testing",
-      "public": "build",
+      "public": "out",
       "cleanUrls": true,
       "ignore": [
         "firebase.json",
@@ -10,9 +10,6 @@
         "**/node_modules/**"
       ],
       "rewrites": [{
-        "source": "/**/*.html",
-        "destination": "/200.html"
-      }, {
         "source": "/fn/processCalendlyEventInvitee",
         "function": "processCalendlyEventInvitee"
       }, {
@@ -52,7 +49,7 @@
           ]
         },
         {
-          "source": "/static/**",
+          "source": "/_next/static/**",
           "headers": [
             {
               "key": "Cache-Control",
@@ -64,7 +61,7 @@
     },
     {
       "target": "production",
-      "public": "build",
+      "public": "out",
       "cleanUrls": true,
       "ignore": [
         "firebase.json",
@@ -72,9 +69,6 @@
         "**/node_modules/**"
       ],
       "rewrites": [{
-        "source": "/**/*.html",
-        "destination": "/200.html"
-      }, {
         "source": "/fn/processCalendlyEventInvitee",
         "function": "processCalendlyEventInvitee"
       }, {
@@ -114,7 +108,7 @@
           ]
         },
         {
-          "source": "/static/**",
+          "source": "/_next/static/**",
           "headers": [
             {
               "key": "Cache-Control",
