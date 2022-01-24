@@ -22,7 +22,7 @@ import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import classes from './styles.module.scss'
 
-function StoryDetails() {
+function StoryDetails () {
   const { params } = useRouteMatch('/portfolio/:name')
   const { storyDetails } = useStoryByName(params.name)
 
@@ -75,8 +75,7 @@ function StoryDetails() {
             <section className={classes.clutchContainer}>
               <ClutchWidget variant='dark' className={classes.clutchWidget} />
             </section>
-          </>
-        )}
+          </>}
         <TextImageGeneric
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}
