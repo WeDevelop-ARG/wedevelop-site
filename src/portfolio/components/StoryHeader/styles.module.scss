@@ -5,16 +5,32 @@ $grayColor: #363636;
 .headerContainer {
   min-height: 100vh;
   position: relative;
-  padding-top: 23vw !important;
   padding-bottom: 0;
 
+  @include for-tablet-down {
+    padding-top: 82vw !important;
+  }
+
+  @include for-phone-only {
+    padding-top: 87vw !important;
+  }
+
   @include for-desktop-up {
-    padding-top: 21vw !important;
+    padding-top: 20vw !important;
   }
 
   @include for-big-desktop-up {
-    padding-top: 45vw !important;
+    padding-top: 18vw !important;
   }
+}
+
+.backToList {
+  position: absolute;
+  top: 80px;
+  left: var(--rootContentHorizontalPadding);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .decorationWrapper {
@@ -45,10 +61,11 @@ $grayColor: #363636;
 .content {
   width: 100%;
   padding: 0px 220px;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 
   @include for-tablet-down {
     padding: 0;
+    margin-bottom: 30px;
   }
 }
 

@@ -1,3 +1,4 @@
+import MonedaMobileHeader from 'assets/portfolio/moneda/mobile_header_background.png'
 import MonedaHeader from 'assets/portfolio/moneda/header_background.png'
 import MonedaLogo from 'assets/portfolio/moneda/moneda_logo.png'
 import MonedaLending from 'assets/portfolio/moneda/moneda_lending.png'
@@ -16,6 +17,7 @@ const monedaDetails = {
   },
   header: {
     backgroundURL: MonedaHeader,
+    mobileBackgroundURL: MonedaMobileHeader,
     logoURL: MonedaLogo,
     logoBackground: '#40CC8C',
     heading: 'Success Story',

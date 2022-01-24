@@ -1,5 +1,6 @@
 import BallwizResumeBackground from 'assets/portfolio/ballwiz/resume_background.png'
 import BallwizHeader from 'assets/portfolio/ballwiz/header_background.png'
+import BallwizMobileHeader from 'assets/portfolio/ballwiz/mobile_header_background.png'
 import BallwizLogo from 'assets/portfolio/ballwiz/ballwiz_logo.svg'
 import BallwizDashboard from 'assets/portfolio/ballwiz/ballwiz_dashboard.png'
 import BallwizSignUp from 'assets/portfolio/ballwiz/ballwiz_signup.png'
@@ -15,6 +16,7 @@ const ballwizDetails = {
   },
   header: {
     backgroundURL: BallwizHeader,
+    mobileBackgroundURL: BallwizMobileHeader,
     logoURL: BallwizLogo,
     logoBackground: '#000000',
     heading: 'Success Story',

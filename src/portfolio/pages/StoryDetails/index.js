@@ -35,6 +35,7 @@ function StoryDetails () {
   const handleClose = useCallback(() => {
     history.push(`/portfolio/${params.name}`)
   }, [history, params])
+  const withoutTestimonials = isEmpty(storyDetails.testimonials)
 
   return (
     <>
@@ -46,6 +47,7 @@ function StoryDetails () {
       <Article>
         <StoryHeader
           backgroundURL={storyDetails.header.backgroundURL}
+          mobileBackgroundURL={storyDetails.header.mobileBackgroundURL}
           logoURL={storyDetails.header.logoURL}
           heading={storyDetails.header.heading}
           title={storyDetails.header.title}
@@ -61,7 +63,7 @@ function StoryDetails () {
           content={storyDetails.challenge.content}
           hideDecoration
         />
-        {!isEmpty(storyDetails.testimonials) && (
+        {!withoutTestimonials &&
           <>
             <Testimonials
               reviews={storyDetails.testimonials}
@@ -77,6 +79,7 @@ function StoryDetails () {
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}
           imageURL={storyDetails.solution.imageURL}
+          withoutTestimonials={withoutTestimonials}
         />
         <GetInTouch contactPagePath={contactPagePath} />
         <SimilarStories storyName={params.name} />
