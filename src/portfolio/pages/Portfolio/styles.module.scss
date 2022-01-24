@@ -1,31 +1,25 @@
 @import "/src/styles/media_queries.scss";
 
-.subheadingText {
-  font-weight: 500;
-  letter-spacing: 3px;
-  color: rgba($color: #363636, $alpha: 0.5);
-  font-size: 10px;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.titleText {
-  text-align: center;
+.sectionPortfolio {
+  position: relative;
+  padding-top: 0;
+  margin-top: -40px;
 
   @include for-desktop-up {
-    font-weight: 600;
-    font-size: 60px;
-    margin-bottom: 10px;
+    margin-top: -75px;
   }
 }
 
-.horizontalBar {
-  width: 100px;
-  height: 10px;
-  background: #ffc331;
-  margin: 32px auto 30px auto;
-  border: none;
+.titleText {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 30px;
+
+  @include for-desktop-up {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
 }
 
 .projectCards {
@@ -135,8 +129,4 @@
 .talk {
   text-align: center;
   margin: auto;
-}
-
-.sectionPortfolio {
-  position: relative;
 }

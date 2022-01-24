@@ -7,7 +7,7 @@ import WorldIcon from 'assets/portfolio/world.svg'
 
 import classes from './styles.module.scss'
 
-function Header ({
+function StoryHeader ({
   backgroundURL,
   logoURL,
   heading,
@@ -79,4 +79,4 @@ function Header ({
   )
 }
 
-export default Header
+export default StoryHeader
