@@ -15,6 +15,7 @@ import Testimonials from 'main_app/components/Testimonials'
 import TestimonialsDecoration from '../../components/TestimonialsDecoration'
 import TextImageGeneric from '../../components/TextImageGeneric'
 import TechStackContent from 'portfolio/components/TechStackContent'
+import TechStackIcons from 'portfolio/components/TechStackIcons'
 
 import useStoryByName from '../../hooks/useStoryByName'
 import usePageMetadata from 'utils/marketing/use_page_metadata'
@@ -83,10 +84,15 @@ function StoryDetails() {
           withoutTestimonials={withoutTestimonials}
         />
         <GetInTouch contactPagePath={contactPagePath} />
-        <TechStackContent
-          title={storyDetails.techStackContent.title}
-          content={storyDetails.techStackContent.content}
-        />
+        {!isEmpty(storyDetails.techStackContent) && (
+          <TechStackContent
+            title={storyDetails.techStackContent.title}
+            content={storyDetails.techStackContent.content}
+          />
+        )}
+        {!isEmpty(storyDetails.techStackIcons) && (
+          <TechStackIcons icons={storyDetails.techStackIcons} />
+        )}
         <SimilarStories storyName={params.name} />
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />

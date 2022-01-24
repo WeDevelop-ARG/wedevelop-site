@@ -4,6 +4,12 @@ import BallwizMobileHeader from 'assets/portfolio/ballwiz/mobile_header_backgrou
 import BallwizLogo from 'assets/portfolio/ballwiz/ballwiz_logo.svg'
 import BallwizDashboard from 'assets/portfolio/ballwiz/ballwiz_dashboard.png'
 import BallwizSignUp from 'assets/portfolio/ballwiz/ballwiz_signup.png'
+import Node from 'assets/portfolio/tech_stack/node.svg'
+import React from 'assets/portfolio/tech_stack/react.svg'
+import GraphQL from 'assets/portfolio/tech_stack/graphql.svg'
+import AWS from 'assets/portfolio/tech_stack/aws.svg'
+import PostgreSQL from 'assets/portfolio/tech_stack/postgresql.svg'
+import Python from 'assets/portfolio/tech_stack/python.svg'
 
 const ballwizDetails = {
   urlName: 'ballwiz',
@@ -83,7 +89,39 @@ const ballwizDetails = {
     ),
     imageURL: BallwizSignUp
   },
-  techStackContent: []
+  techStackContent: [],
+  techStackIcons: [
+    {
+      id: '1',
+      name: 'Node.js',
+      photo: Node
+    },
+    {
+      id: '2',
+      name: 'React',
+      photo: React
+    },
+    {
+      id: '3',
+      name: 'GraphQL',
+      photo: GraphQL
+    },
+    {
+      id: '4',
+      name: 'AWS',
+      photo: AWS
+    },
+    {
+      id: '5',
+      name: 'PostgreSQL',
+      photo: PostgreSQL
+    },
+    {
+      id: '6',
+      name: 'Python',
+      photo: Python
+    }
+  ]
 }
 
 export default ballwizDetails

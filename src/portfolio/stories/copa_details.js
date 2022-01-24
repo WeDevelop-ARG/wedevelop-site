@@ -7,6 +7,11 @@ import CopaLogo from 'assets/portfolio/copa/copa_logo.svg'
 import CopaSignUp from 'assets/portfolio/copa/copa_signup.png'
 import TestimonialsImage from 'assets/portfolio/copa/copa_manager.png'
 import CopaFrontdesk from 'assets/portfolio/copa/copa_frontdesk.png'
+import Node from 'assets/portfolio/tech_stack/node.svg'
+import React from 'assets/portfolio/tech_stack/react.svg'
+import GraphQL from 'assets/portfolio/tech_stack/graphql.svg'
+import AWS from 'assets/portfolio/tech_stack/aws.svg'
+import PostgreSQL from 'assets/portfolio/tech_stack/postgresql.svg'
 import CopaMethodology from 'assets/portfolio/copa/copa_methodology.png'
 
 const copaDetails = {
@@ -239,7 +244,39 @@ const copaDetails = {
     ),
     imageURL: CopaFrontdesk
   },
-  techStackContent: []
+  techStackContent: [],
+  techStackIcons: [
+    {
+      id: '1',
+      name: 'Node.js',
+      photo: Node
+    },
+    {
+      id: '2',
+      name: 'React',
+      photo: React
+    },
+    {
+      id: '3',
+      name: 'GraphQL',
+      photo: GraphQL
+    },
+    {
+      id: '4',
+      name: 'AWS',
+      photo: AWS
+    },
+    {
+      id: '5',
+      name: 'PostgreSQL',
+      photo: PostgreSQL
+    },
+    {
+      id: '6',
+      name: 'React Native',
+      photo: React
+    }
+  ]
 }
 
 export default copaDetails

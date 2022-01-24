@@ -134,7 +134,8 @@ const cvsdDetails = {
         </ul>
       </>
     )
-  }
+  },
+  techStackIcons: []
 }
 
 export default cvsdDetails
