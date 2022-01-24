@@ -1,6 +1,7 @@
 import CvsdResumeBackground from 'assets/portfolio/cvsd/resume_background.png'
+import CvsdMobileHeader from 'assets/portfolio/cvsd/mobile_header_background.png'
 import CvsdHeader from 'assets/portfolio/cvsd/header_background.png'
-import CvsdLogo from 'assets/portfolio/cvsd/cvsd_logo.png'
+import CvsdLogo from 'assets/portfolio/cvsd/cvsd_logo.svg'
 import CvsdLobby from 'assets/portfolio/cvsd/cvsd_lobby.png'
 import CvsdAreaView from 'assets/portfolio/cvsd/cvsd_area_view.png'
 
@@ -15,6 +16,7 @@ const cvsdDetails = {
   },
   header: {
     backgroundURL: CvsdHeader,
+    mobileBackgroundURL: CvsdMobileHeader,
     logoURL: CvsdLogo,
     logoBackground: '#000000',
     heading: 'Success Story',
@@ -57,7 +59,7 @@ const cvsdDetails = {
           solutions in a fast iterative way, so that a functional version could
           be delivered on time.
         </p>
-        <h3>About Software Development Methodology</h3>
+        <h4>About Software Development Methodology</h4>
         <p>
           Due to the need presented by the COVID in 2019 this internal product
           was developed to have a control of social distancing through computer

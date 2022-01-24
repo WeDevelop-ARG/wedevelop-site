@@ -7,7 +7,7 @@ import ClutchWidget from 'main_app/components/ClutchWidget'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
-import Header from '../../components/Header'
+import StoryHeader from '../../components/StoryHeader'
 import NavBar from 'main_app/components/NavBar/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import SimilarStories from 'portfolio/components/SimilarStories'
@@ -37,6 +37,7 @@ function StoryDetails() {
   const handleClose = useCallback(() => {
     history.push(`/portfolio/${params.name}`)
   }, [history, params])
+  const withoutTestimonials = isEmpty(storyDetails.testimonials)
 
   return (
     <>
@@ -46,8 +47,9 @@ function StoryDetails() {
         contactPagePath={contactPagePath}
       />
       <Article>
-        <Header
+        <StoryHeader
           backgroundURL={storyDetails.header.backgroundURL}
+          mobileBackgroundURL={storyDetails.header.mobileBackgroundURL}
           logoURL={storyDetails.header.logoURL}
           heading={storyDetails.header.heading}
           title={storyDetails.header.title}
@@ -56,13 +58,14 @@ function StoryDetails() {
           description={storyDetails.header.description}
           websiteURL={storyDetails.header.websiteURL}
           imageURL={storyDetails.header.imageURL}
+          logoBackground={storyDetails.header.logoBackground}
         />
         <TextImageGeneric
           title={storyDetails.challenge.title}
           content={storyDetails.challenge.content}
           hideDecoration
         />
-        {!isEmpty(storyDetails.testimonials) && (
+        {!withoutTestimonials &&
           <>
             <Testimonials
               reviews={storyDetails.testimonials}
@@ -78,6 +81,7 @@ function StoryDetails() {
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}
           imageURL={storyDetails.solution.imageURL}
+          withoutTestimonials={withoutTestimonials}
         />
         <GetInTouch contactPagePath={contactPagePath} />
         {!isEmpty(storyDetails.techStackContent) && (
@@ -90,7 +94,8 @@ function StoryDetails() {
           <TechStackIcons icons={storyDetails.techStackIcons} />
         )}
         <SimilarStories storyName={params.name} />
-        <PictureWall contactPagePath={contactPagePath} />
+        <GetInTouch contactPagePath={contactPagePath} />
+        <PictureWall />
       </Article>
       {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />

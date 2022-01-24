@@ -4,11 +4,10 @@ import Image from 'main_app/components/Image'
 
 import classes from './styles.module.scss'
 
-function TextImageGeneric ({ title, content, imageURL, hideDecoration }) {
+function TextImageGeneric ({ title, content, imageURL, hideDecoration, withoutTestimonials }) {
   return (
     <section className={classnames(classes.sectionContainer, {
-      [classes.hideDeco]: hideDecoration,
-      [classes.removePadding]: !imageURL
+      [classes.removePadding]: !imageURL || withoutTestimonials || hideDecoration
     })}
     >
       <Image src={imageURL} alt='' className={classes.image} />

@@ -1,4 +1,5 @@
 import RaftResumeBackground from 'assets/portfolio/raft/resume_background.png'
+import RaftMobileHeader from 'assets/portfolio/raft/mobile_header_background.png'
 import RaftHeader from 'assets/portfolio/raft/header_background.png'
 import RaftLogo from 'assets/portfolio/raft/raft_logo.png'
 import RaftReservations from 'assets/portfolio/raft/raft_reservations.png'
@@ -21,6 +22,7 @@ const raftDetails = {
   },
   header: {
     backgroundURL: RaftHeader,
+    mobileBackgroundURL: RaftMobileHeader,
     logoURL: RaftLogo,
     logoBackground: '#FFFFFF',
     heading: 'Success Story',
@@ -63,7 +65,7 @@ const raftDetails = {
     title: 'The solution',
     content: (
       <>
-        <h3>RAFT Croatia Online</h3>
+        <h4>RAFT Croatia Online</h4>
         <ul>
           <li>
             Online Ferry Tickets Booking
@@ -92,7 +94,7 @@ const raftDetails = {
             </p>
           </li>
         </ul>
-        <h3>Biz Portal</h3>
+        <h4>Biz Portal</h4>
         <ul>
           <li>
             POS - Point Of Sales
