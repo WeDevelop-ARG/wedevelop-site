@@ -1,3 +1,4 @@
+import DrCannabisMobileHeader from 'assets/portfolio/dr_cannabis/mobile_header_background.png'
 import DrCannabisHeader from 'assets/portfolio/dr_cannabis/header_background.png'
 import DrCannabisLogo from 'assets/portfolio/dr_cannabis/dr_cannabis_logo.png'
 import Diagnostic from 'assets/portfolio/dr_cannabis/diagnostic.png'
@@ -15,6 +16,7 @@ const drCannabisDetails = {
   },
   header: {
     backgroundURL: DrCannabisHeader,
+    mobileBackgroundURL: DrCannabisMobileHeader,
     logoURL: DrCannabisLogo,
     logoBackground: '#DBF1E2',
     heading: 'Success Story',

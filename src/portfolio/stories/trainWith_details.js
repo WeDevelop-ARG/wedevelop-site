@@ -1,4 +1,5 @@
 import TrainWithResumeBackground from 'assets/portfolio/train_with/resume_background.png'
+import TrainWithMobileHeader from 'assets/portfolio/train_with/mobile_header_background.png'
 import TrainWithHeader from 'assets/portfolio/train_with/header_background.png'
 import TrainWithLogo from 'assets/portfolio/train_with/train_with_logo.png'
 import TrainWithLiveClass from 'assets/portfolio/train_with/train_with_live_class.png'
@@ -16,6 +17,7 @@ const trainWithDetails = {
   },
   header: {
     backgroundURL: TrainWithHeader,
+    mobileBackgroundURL: TrainWithMobileHeader,
     logoURL: TrainWithLogo,
     logoBackground: 'linear-gradient(93.58deg, #9194A1 2.39%, #959AA6 96.87%)',
     heading: 'Success Story',
@@ -75,7 +77,7 @@ const trainWithDetails = {
           this pandemic. Overnight, TrainWith’s business model had to be
           drastically adapted and so its software products.
         </p>
-        <h3>Adaptation of current platform</h3>
+        <h4>Adaptation of current platform</h4>
         <p>
           First, we focused on the main goal: turn TrainWith into a white-label
           product so that gyms and other fitness studios could release their
@@ -90,7 +92,7 @@ const trainWithDetails = {
           principles. This allowed us to migrate small parts of the system
           without causing any disruption to the UX.
         </p>
-        <h3>Migrating to a Web-based responsive streaming platform</h3>
+        <h4>Migrating to a Web-based responsive streaming platform</h4>
         <p>
           Once the platform was white-labeled and working properly, we switched
           our focus to the next bottleneck: the iOS App. The process for

@@ -1,9 +1,13 @@
+import Image from 'main_app/components/Image'
+
 import CopaResumeBackground from 'assets/portfolio/copa/resume_background.png'
+import CopaMobileHeader from 'assets/portfolio/copa/mobile_header_background.png'
 import CopaHeader from 'assets/portfolio/copa/header_background.png'
 import CopaLogo from 'assets/portfolio/copa/copa_logo.svg'
 import CopaSignUp from 'assets/portfolio/copa/copa_signup.png'
 import TestimonialsImage from 'assets/portfolio/copa/copa_manager.png'
 import CopaFrontdesk from 'assets/portfolio/copa/copa_frontdesk.png'
+import CopaMethodology from 'assets/portfolio/copa/copa_methodology.png'
 
 const copaDetails = {
   urlName: 'copa',
@@ -16,6 +20,7 @@ const copaDetails = {
   },
   header: {
     backgroundURL: CopaHeader,
+    mobileBackgroundURL: CopaMobileHeader,
     logoURL: CopaLogo,
     logoBackground: '#000000',
     heading: 'Success Story',
@@ -80,7 +85,7 @@ const copaDetails = {
           solutions in a fast iterative way, so that a functional version could
           be delivered on time.
         </p>
-        <h3>About Software Development Methodology</h3>
+        <h4>About Software Development Methodology</h4>
         <p>
           Meeting customers’ expectations in real life is not an easy task. In
           the best case scenario, one would have time to design and iterate
@@ -105,7 +110,7 @@ const copaDetails = {
           The methodology we followed was a nice mix of Agile with a Lean
           mindset.
         </p>
-        {/* TODO: Insert Methodology image here (with styles) */}
+        <Image src={CopaMethodology} alt='' objectFit='contain' position='center' />
         <p>
           Basically, we deployed every 2-week Sprint a very small but functional
           piece of software. We provided a small but highly talented
@@ -119,7 +124,7 @@ const copaDetails = {
           auxiliary tools, such as a Touchless Check-In System, Data Pipeline,
           and more.
         </p>
-        <h3>Software delivered</h3>
+        <h4>Software delivered</h4>
         <ul>
           <li>
             Backoffice
@@ -218,7 +223,7 @@ const copaDetails = {
             </ul>
           </li>
         </ul>
-        <h3>Usability Tests on site</h3>
+        <h4>Usability Tests on site</h4>
         <p>
           As COPA’s business grew, customers’ feedback became a high priority
           for everyone involved in the venture. WeDevelop conducted on-site
