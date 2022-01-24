@@ -7,7 +7,6 @@ import Image from 'main_app/components/Image'
 
 import { ReactComponent as WhiteBackwardArrow } from 'assets/portfolio/white_backward_arrow.svg'
 import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
-import DotsPattern from 'assets/portfolio/dots_pattern.svg'
 import ProjectLogo from '../ProjectLogo'
 import WorldIcon from 'assets/portfolio/world.svg'
 
@@ -88,7 +87,6 @@ function StoryHeader ({
       </div>
       <Image src={imageURL} alt='' className={classes.bottomImg} />
       <Image src={DecoCircles} alt='' className={classes.decoCircles} />
-      <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
     </section>
   )
 }

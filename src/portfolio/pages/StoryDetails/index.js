@@ -63,7 +63,6 @@ function StoryDetails () {
         <TextImageGeneric
           title={storyDetails.challenge.title}
           content={storyDetails.challenge.content}
-          hideDecoration
         />
         {!withoutTestimonials &&
           <>
@@ -82,7 +81,6 @@ function StoryDetails () {
           imageURL={storyDetails.solution.imageURL}
           withoutTestimonials={withoutTestimonials}
         />
-        <GetInTouch contactPagePath={contactPagePath} />
         {!isEmpty(storyDetails.techStackContent) && (
           <TechStackContent
             title={storyDetails.techStackContent.title}
