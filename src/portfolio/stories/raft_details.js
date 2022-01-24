@@ -1,4 +1,5 @@
 import RaftResumeBackground from 'assets/portfolio/raft/resume_background.png'
+import RaftMobileHeader from 'assets/portfolio/raft/mobile_header_background.png'
 import RaftHeader from 'assets/portfolio/raft/header_background.png'
 import RaftLogo from 'assets/portfolio/raft/raft_logo.png'
 import RaftReservations from 'assets/portfolio/raft/raft_reservations.png'
@@ -16,6 +17,7 @@ const raftDetails = {
   },
   header: {
     backgroundURL: RaftHeader,
+    mobileBackgroundURL: RaftMobileHeader,
     logoURL: RaftLogo,
     logoBackground: '#FFFFFF',
     heading: 'Success Story',

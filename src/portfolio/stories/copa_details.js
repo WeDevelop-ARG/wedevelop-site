@@ -1,6 +1,7 @@
 import Image from 'main_app/components/Image'
 
 import CopaResumeBackground from 'assets/portfolio/copa/resume_background.png'
+import CopaMobileHeader from 'assets/portfolio/copa/mobile_header_background.png'
 import CopaHeader from 'assets/portfolio/copa/header_background.png'
 import CopaLogo from 'assets/portfolio/copa/copa_logo.svg'
 import CopaSignUp from 'assets/portfolio/copa/copa_signup.png'
@@ -19,6 +20,7 @@ const copaDetails = {
   },
   header: {
     backgroundURL: CopaHeader,
+    mobileBackgroundURL: CopaMobileHeader,
     logoURL: CopaLogo,
     logoBackground: '#000000',
     heading: 'Success Story',

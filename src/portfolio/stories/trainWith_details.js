@@ -1,4 +1,5 @@
 import TrainWithResumeBackground from 'assets/portfolio/train_with/resume_background.png'
+import TrainWithMobileHeader from 'assets/portfolio/train_with/mobile_header_background.png'
 import TrainWithHeader from 'assets/portfolio/train_with/header_background.png'
 import TrainWithLogo from 'assets/portfolio/train_with/train_with_logo.png'
 import TrainWithLiveClass from 'assets/portfolio/train_with/train_with_live_class.png'
@@ -16,6 +17,7 @@ const trainWithDetails = {
   },
   header: {
     backgroundURL: TrainWithHeader,
+    mobileBackgroundURL: TrainWithMobileHeader,
     logoURL: TrainWithLogo,
     logoBackground: 'linear-gradient(93.58deg, #9194A1 2.39%, #959AA6 96.87%)',
     heading: 'Success Story',
