@@ -7,7 +7,7 @@ import ClutchWidget from 'main_app/components/ClutchWidget'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
-import Header from '../../components/Header'
+import StoryHeader from '../../components/StoryHeader'
 import NavBar from 'main_app/components/NavBar/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import SimilarStories from 'portfolio/components/SimilarStories'
@@ -45,7 +45,7 @@ function StoryDetails () {
         contactPagePath={contactPagePath}
       />
       <Article>
-        <Header
+        <StoryHeader
           backgroundURL={storyDetails.header.backgroundURL}
           mobileBackgroundURL={storyDetails.header.mobileBackgroundURL}
           logoURL={storyDetails.header.logoURL}
@@ -56,6 +56,7 @@ function StoryDetails () {
           description={storyDetails.header.description}
           websiteURL={storyDetails.header.websiteURL}
           imageURL={storyDetails.header.imageURL}
+          logoBackground={storyDetails.header.logoBackground}
         />
         <TextImageGeneric
           title={storyDetails.challenge.title}
@@ -70,12 +71,10 @@ function StoryDetails () {
               hideHeader
             />
             <section className={classes.clutchContainer}>
-              <ClutchWidget
-                variant='dark'
-                className={classes.clutchWidget}
-              />
+              <ClutchWidget variant='dark' className={classes.clutchWidget} />
             </section>
-          </>}
+          </>
+        )}
         <TextImageGeneric
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}

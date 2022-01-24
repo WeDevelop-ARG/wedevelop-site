@@ -15,7 +15,7 @@ import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
 
-function Header ({
+function StoryHeader ({
   backgroundURL,
   mobileBackgroundURL,
   logoURL,
@@ -25,10 +25,17 @@ function Header ({
   tags,
   description,
   websiteURL,
-  imageURL
+  imageURL,
+  logoBackground
 }) {
   const isDesktopUp = useMediaQuery(forDesktopUp)
 
+  const logoStyleProp = {}
+  if (logoBackground.startsWith('#')) {
+    logoStyleProp.style = { backgroundColor: logoBackground }
+  } else {
+    logoStyleProp.style = { backgroundImage: logoBackground }
+  }
   return (
     <section className={classes.headerContainer}>
       <div className={classes.decorationWrapper}>
@@ -50,7 +57,7 @@ function Header ({
           className={classes.headerBackground}
         />
         <div className={classes.logoContainer}>
-          <ProjectLogo logoURL={logoURL} />
+          <ProjectLogo logoURL={logoURL} {...logoStyleProp} />
         </div>
       </div>
       <div className={classes.content}>
@@ -71,33 +78,18 @@ function Header ({
         <h3 className={classes.subtitle}>{subtitle}</h3>
         <div className={classes.tagsContainer}>
           {tags.map((tag) => (
-            <span
-              key={tag}
-              className={classes.tag}
-            >
+            <span key={tag} className={classes.tag}>
               {tag}
             </span>
           ))}
         </div>
         <p className={classes.description}>{description}</p>
       </div>
-      <Image
-        src={imageURL}
-        alt=''
-        className={classes.bottomImg}
-      />
-      <Image
-        src={DecoCircles}
-        alt=''
-        className={classes.decoCircles}
-      />
-      <Image
-        src={DotsPattern}
-        alt=''
-        className={classes.dotsPattern}
-      />
+      <Image src={imageURL} alt='' className={classes.bottomImg} />
+      <Image src={DecoCircles} alt='' className={classes.decoCircles} />
+      <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
     </section>
   )
 }
 
-export default Header
+export default StoryHeader

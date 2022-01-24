@@ -47,6 +47,15 @@ $grayColor: #363636;
 .logoContainer {
   position: relative;
   width: 100%;
+  left: -254px;
+
+  @include for-tablet-down {
+    left: 0px;
+  }
+
+  img {
+    padding: 10px;
+  }
 }
 
 .content {
@@ -91,7 +100,10 @@ $grayColor: #363636;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none !important;
-  color: #377dff;
+  background: linear-gradient(90deg, #6b67e9 100%, #8224e3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .worldIcon {
@@ -105,7 +117,7 @@ $grayColor: #363636;
 .horizontalBar {
   width: 100px;
   height: 10px;
-  background: #FFC331;
+  background: #ffc331;
   margin: 32px 0px 40px;
   border: none;
 }
@@ -128,7 +140,7 @@ $grayColor: #363636;
 
   .tag {
     padding: 14px;
-    border: 1px solid #E1E1E1;
+    border: 1px solid #e1e1e1;
     border-radius: 3px;
     font-size: 14px;
     font-weight: 500;
