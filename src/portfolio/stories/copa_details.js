@@ -34,7 +34,7 @@ const copaDetails = {
     tags: ['Fitness', 'Custom'],
     description:
       'COPA Soccer Training Center utilizes advanced technology and sports science to offer a unique objective data-driven approach to training. Each area of their 110,000 square foot facility is designed... to enhance an athlete’s cognitive, physical, and technical development. They are dedicated to innovating tradition training and help take the game to the next level.',
-    websiteURL: '',
+    websiteURL: 'https://copastc.com/',
     imageURL: CopaSignUp
   },
   challenge: {
@@ -75,9 +75,9 @@ const copaDetails = {
   testimonials: [
     {
       profileImageURL: TestimonialsImage,
-      name: 'Kerry Hebert',
+      name: '',
       quote:
-        "“They helped us to create member portals with different gamification opportunities that also helped us monetize on a different level. We're extremely excited about WeDevelop.”",
+        '“They helped us to create member portals with different gamification opportunities that also helped us monetize on a different level. We\'re extremely excited about WeDevelop.”',
       position: 'General Manager',
       company: 'Soccer Training Center'
     }
