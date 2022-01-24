@@ -32,7 +32,7 @@ function Portfolio () {
     <>
       <NavBar
         variant={['solid', 'dark']}
-        variantAtScrollTop={['solid', 'dark']}
+        variantAtScrollTop={['transparent', 'light']}
         contactPagePath={contactPagePath}
       />
       <Article>
