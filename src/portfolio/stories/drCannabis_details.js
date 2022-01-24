@@ -74,7 +74,8 @@ const drCannabisDetails = {
       </>
     ),
     imageURL: DrCannabisOverview
-  }
+  },
+  techStackContent: []
 }
 
 export default drCannabisDetails

@@ -72,7 +72,8 @@ const monedaDetails = {
       </>
     ),
     imageURL: MonedaOverview
-  }
+  },
+  techStackContent: []
 }
 
 export default monedaDetails

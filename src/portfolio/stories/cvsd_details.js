@@ -5,7 +5,7 @@ import CvsdLogo from 'assets/portfolio/cvsd/cvsd_logo.svg'
 import CvsdLobby from 'assets/portfolio/cvsd/cvsd_lobby.png'
 import CvsdAreaView from 'assets/portfolio/cvsd/cvsd_area_view.png'
 
-const raftDetails = {
+const cvsdDetails = {
   urlName: 'cvsd',
   metadata: {
     title: 'Story Details',
@@ -93,7 +93,48 @@ const raftDetails = {
       </>
     ),
     imageURL: CvsdAreaView
+  },
+  techStackContent: {
+    title: 'Tech Stack',
+    content: (
+      <>
+        <ul>
+          <li>
+            It was deployed in a <b>serverless automated environment</b>
+          </li>
+          <li>
+            <b>Real time video frame processing</b>
+          </li>
+          <li>
+            <b>Statical analysis</b> of the extracted data
+          </li>
+          <li>
+            <b>Visualization of video streams</b> with information overlay
+          </li>
+          <li>
+            <b>Deployed in an environment severless</b> (App Engine) automated
+          </li>
+          <li>
+            <b>Deployed manual of NVIDIA Triton</b> (Al server) to solve the
+            problems of Google Cloud Al Platform.
+          </li>
+          <li>
+            <b>Development of AI models</b>, combining other pre-existing ones
+            with TensorFlow. Manual optimization of the same.
+          </li>
+          <li>
+            <b>
+              Google Cloud for all (App Engine, Al Platform, Compute Engine,
+              DNS, BD, PubSub, Storage, Cloud Build)
+            </b>
+          </li>
+          <li>
+            <b>Google Analytics.</b>
+          </li>
+        </ul>
+      </>
+    )
   }
 }
 
-export default raftDetails
+export default cvsdDetails
