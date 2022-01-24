@@ -12,7 +12,7 @@ import { ReactComponent as WhiteArrow } from 'assets/portfolio/white_horizontal_
 
 import classes from './styles.module.scss'
 
-function PortfolioProjectCard ({
+function PortfolioProjectCard({
   coverImageURL,
   logoURL,
   logoBackground,
@@ -30,7 +30,10 @@ function PortfolioProjectCard ({
     logoStyleProp.style = { backgroundImage: logoBackground }
   }
   const [isOnHover, setIsOnHover] = useState(false)
-
+  const cantidadCaracteres = 145
+  const index = description.substring(0, cantidadCaracteres).lastIndexOf(' ')
+  const newDescription = description.substring(0, index).concat('...')
+  
   return (
     <div
       className={classes.container}
@@ -52,14 +55,13 @@ function PortfolioProjectCard ({
         {...logoStyleProp}
       />
       <div className={classes.projectDetails}>
-        <div
-          className={classes.header}
-        >
+        <div className={classes.header}>
           <h3 className={classes.projectName}>{projectName}</h3>
           {externalWebsiteURL && (
             <a
               href={externalWebsiteURL}
-              target='_blank' rel='noopener noreferrer'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <World role='presentation' className={classes.world} />
             </a>
@@ -67,13 +69,13 @@ function PortfolioProjectCard ({
         </div>
         <p className={classes.shortDescription}>{shortDescription}</p>
         <div className={classes.tagsContainer}>
-          {tags.map(tag => (
-            <span className={classes.tag} key={tag}>{tag}</span>
+          {tags.map((tag) => (
+            <span className={classes.tag} key={tag}>
+              {tag}
+            </span>
           ))}
         </div>
-        <p className={classes.description}>
-          {description}
-        </p>
+        <p className={classes.description}>{newDescription}</p>
         <Button
           as={HashLink}
           to={detailsPagePath}
