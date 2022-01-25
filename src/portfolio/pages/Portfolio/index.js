@@ -1,15 +1,19 @@
 import { useCallback } from 'react'
 import { useRouteMatch, useHistory } from 'react-router-dom'
 
-import NavBar from 'main_app/components/NavBar'
-import Article from 'main_app/components/Article'
-import ContactModal from 'main_app/components/ContactModal'
-import Footer from 'main_app/components/Footer'
-import Image from 'main_app/components/Image'
-import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
 import useStories from '../../hooks/useStories'
 
-import DotsPattern from 'assets/home/dots_pattern.svg'
+import Article from 'main_app/components/Article'
+import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
+import ContactModal from 'main_app/components/ContactModal'
+import Footer from 'main_app/components/Footer'
+import GetInTouch from 'main_app/components/GetInTouch'
+import PictureWall from 'main_app/components/PictureWall'
+import PortfolioHeader from 'portfolio/components/PortfolioHeader'
+import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
+import NavBar from 'main_app/components/NavBar'
+
+import PortfolioImageSeparator from 'assets/portfolio/portfolio_image_separator.png'
 
 import classes from './styles.module.scss'
 
@@ -26,15 +30,14 @@ function Portfolio () {
     <>
       <NavBar
         variant={['solid', 'dark']}
-        variantAtScrollTop={['transparent', 'dark']}
+        variantAtScrollTop={['transparent', 'light']}
         contactPagePath={contactPagePath}
       />
       <Article>
+        <PortfolioHeader />
         <section id='portfolio' className={classes.sectionPortfolio}>
           <div>
-            <p className={classes.subheadingText}>success stories</p>
             <h2 className={classes.titleText}>Our Portfolio</h2>
-            <hr className={classes.horizontalBar} />
           </div>
           <div className={classes.projectCards}>
             {stories.map(story => (
@@ -42,7 +45,7 @@ function Portfolio () {
                 key={story.urlName}
                 coverImageURL={story.resume.headerImageURL}
                 description={story.header.description}
-                detailsPagePath={`/portfolio/${story.urlName}`}
+                detailsPagePath={`/portfolio/${story.urlName}#top`}
                 externalWebsiteURL={story.header.websiteURL}
                 logoBackground={story.header.logoBackground}
                 logoURL={story.header.logoURL}
@@ -52,7 +55,6 @@ function Portfolio () {
               />
             ))}
           </div>
-          <Image src={DotsPattern} alt='' className={classes.topRightPattern} />
           <div className={classes.filledCircle} />
           <div className={classes.emptyCircle} />
           <div className={classes.smallBlurCircle} />
@@ -61,6 +63,9 @@ function Portfolio () {
           <div className={classes.bottomSmallBlurCircle} />
           {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
         </section>
+        <BackgroundContainer backgroundURL={PortfolioImageSeparator} />
+        <GetInTouch contactPagePath={contactPagePath} />
+        <PictureWall />
       </Article>
       <Footer variant='light' />
     </>

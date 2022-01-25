@@ -5,20 +5,32 @@ $grayColor: #363636;
 .headerContainer {
   min-height: 100vh;
   position: relative;
-  padding-top: 55vw !important;
   padding-bottom: 0;
 
-  @include for-tablet-up {
-    padding-top: 52vw !important;
+  @include for-tablet-down {
+    padding-top: 82vw !important;
+  }
+
+  @include for-phone-only {
+    padding-top: 87vw !important;
   }
 
   @include for-desktop-up {
-    padding-top: 48vw !important;
+    padding-top: 20vw !important;
   }
 
   @include for-big-desktop-up {
-    padding-top: 45vw !important;
+    padding-top: 18vw !important;
   }
+}
+
+.backToList {
+  position: absolute;
+  top: 80px;
+  left: var(--rootContentHorizontalPadding);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .decorationWrapper {
@@ -35,15 +47,25 @@ $grayColor: #363636;
 .logoContainer {
   position: relative;
   width: 100%;
+  left: -254px;
+
+  @include for-tablet-down {
+    left: 0px;
+  }
+
+  img {
+    padding: 10px;
+  }
 }
 
 .content {
   width: 100%;
   padding: 0px 220px;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 
   @include for-tablet-down {
     padding: 0;
+    margin-bottom: 30px;
   }
 }
 
@@ -78,10 +100,7 @@ $grayColor: #363636;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none !important;
-  background: linear-gradient(90deg, #6B67E9 100%, #8224E3 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #377DFF;
 }
 
 .worldIcon {
@@ -95,7 +114,7 @@ $grayColor: #363636;
 .horizontalBar {
   width: 100px;
   height: 10px;
-  background: #FFC331;
+  background: #ffc331;
   margin: 32px 0px 40px;
   border: none;
 }
@@ -118,7 +137,7 @@ $grayColor: #363636;
 
   .tag {
     padding: 14px;
-    border: 1px solid #E1E1E1;
+    border: 1px solid #e1e1e1;
     border-radius: 3px;
     font-size: 14px;
     font-weight: 500;

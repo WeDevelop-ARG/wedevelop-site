@@ -1,8 +1,11 @@
+import DrCannabisMobileHeader from 'assets/portfolio/dr_cannabis/mobile_header_background.png'
 import DrCannabisHeader from 'assets/portfolio/dr_cannabis/header_background.png'
 import DrCannabisLogo from 'assets/portfolio/dr_cannabis/dr_cannabis_logo.png'
 import Diagnostic from 'assets/portfolio/dr_cannabis/diagnostic.png'
 import DrCannabisOverview from 'assets/portfolio/dr_cannabis/dr_cannabis_overview.png'
 import ResumeBackground from 'assets/portfolio/dr_cannabis/resume_background.png'
+import ReactNative from 'assets/portfolio/tech_stack/react.svg'
+import Firebase from 'assets/portfolio/tech_stack/firebase.svg'
 
 const drCannabisDetails = {
   urlName: 'dr-cannabis',
@@ -15,6 +18,7 @@ const drCannabisDetails = {
   },
   header: {
     backgroundURL: DrCannabisHeader,
+    mobileBackgroundURL: DrCannabisMobileHeader,
     logoURL: DrCannabisLogo,
     logoBackground: '#DBF1E2',
     heading: 'Success Story',
@@ -72,7 +76,20 @@ const drCannabisDetails = {
       </>
     ),
     imageURL: DrCannabisOverview
-  }
+  },
+  techStackContent: [],
+  techStackIcons: [
+    {
+      id: '1',
+      name: 'React Native Severless',
+      photo: ReactNative
+    },
+    {
+      id: '2',
+      name: 'Firebase',
+      photo: Firebase
+    }
+  ]
 }
 
 export default drCannabisDetails

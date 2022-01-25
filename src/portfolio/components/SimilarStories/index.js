@@ -1,8 +1,7 @@
 import { HashLink } from 'react-router-hash-link'
 
-import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
-
 import Image from 'main_app/components/Image'
+import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
 
 import Arrow from 'assets/portfolio/arrow.svg'
 
@@ -15,12 +14,12 @@ function SimilarStories ({ storyName }) {
 
   return (
     <>
-      <section id='stories'>
+      <section id='stories' className={classes.sectionContainer}>
         <div>
           <p className={classes.subheadingText}>success stories</p>
           <h2 className={classes.titleText}>Similar stories to read</h2>
           <hr className={classes.horizontalBar} />
-          <HashLink smooth to='/portfolio' className={classes.viewAll}>
+          <HashLink smooth to='/portfolio#top' className={classes.viewAll}>
             View All
             <Image src={Arrow} alt='' className={classes.arrow} />
           </HashLink>
@@ -31,7 +30,7 @@ function SimilarStories ({ storyName }) {
               key={story.urlName}
               coverImageURL={story.resume.headerImageURL}
               description={story.header.description}
-              detailsPagePath={`/portfolio/${story.urlName}`}
+              detailsPagePath={`/portfolio/${story.urlName}#top`}
               externalWebsiteURL={story.header.websiteURL}
               logoBackground={story.header.logoBackground}
               logoURL={story.header.logoURL}

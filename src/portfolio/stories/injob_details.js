@@ -1,9 +1,18 @@
+import InjobMobileHeader from 'assets/portfolio/injob/mobile_header_background.png'
 import InjobHeader from 'assets/portfolio/injob/header_background.png'
 import InjobLogo from 'assets/portfolio/injob/injob_logo.png'
 import InjobCoworking from 'assets/portfolio/injob/injob_coworking.png'
 import InjobOverview from 'assets/portfolio/injob/injob_overview.png'
 import TestimonialsImage from 'assets/portfolio/injob/testimonials_default_image.png'
 import InjobResumeBackground from 'assets/portfolio/injob/resume_background.png'
+import TypeScript from 'assets/portfolio/tech_stack/typescript.svg'
+import Node from 'assets/portfolio/tech_stack/node.svg'
+import React from 'assets/portfolio/tech_stack/react.svg'
+import GraphQL from 'assets/portfolio/tech_stack/graphql.svg'
+import PostgreSQL from 'assets/portfolio/tech_stack/postgresql.svg'
+import GoogleCloud from 'assets/portfolio/tech_stack/googlecloud.svg'
+import Firebase from 'assets/portfolio/tech_stack/firebase.svg'
+import Terraform from 'assets/portfolio/tech_stack/terraform.svg'
 
 const injobDetails = {
   urlName: 'injob',
@@ -16,6 +25,7 @@ const injobDetails = {
   },
   header: {
     backgroundURL: InjobHeader,
+    mobileBackgroundURL: InjobMobileHeader,
     logoURL: InjobLogo,
     logoBackground: '#FFFFFF',
     heading: 'Success Story',
@@ -83,7 +93,50 @@ const injobDetails = {
       </>
     ),
     imageURL: InjobOverview
-  }
+  },
+  techStackContent: [],
+  techStackIcons: [
+    {
+      id: '1',
+      name: 'TypeScript',
+      photo: TypeScript
+    },
+    {
+      id: '2',
+      name: 'Node.js',
+      photo: Node
+    },
+    {
+      id: '3',
+      name: 'React',
+      photo: React
+    },
+    {
+      id: '4',
+      name: 'GraphQL',
+      photo: GraphQL
+    },
+    {
+      id: '5',
+      name: 'PostgreSQL',
+      photo: PostgreSQL
+    },
+    {
+      id: '6',
+      name: 'Google Cloud',
+      photo: GoogleCloud
+    },
+    {
+      id: '7',
+      name: 'Firebase',
+      photo: Firebase
+    },
+    {
+      id: '8',
+      name: 'Terraform',
+      photo: Terraform
+    }
+  ]
 }
 
 export default injobDetails

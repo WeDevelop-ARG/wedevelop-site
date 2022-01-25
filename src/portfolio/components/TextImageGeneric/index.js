@@ -4,10 +4,9 @@ import Image from 'main_app/components/Image'
 
 import classes from './styles.module.scss'
 
-function TextImageGeneric ({ title, content, imageURL, hideDecoration }) {
+function TextImageGeneric ({ title, content, imageURL, hideDecoration, withoutTestimonials }) {
   return (
     <section className={classnames(classes.sectionContainer, {
-      [classes.hideDeco]: hideDecoration,
       [classes.removePadding]: !imageURL
     })}
     >
@@ -16,12 +15,6 @@ function TextImageGeneric ({ title, content, imageURL, hideDecoration }) {
         <h3 className={classes.title}>{title}</h3>
         {content}
       </div>
-      {!hideDecoration &&
-        <>
-          <div className={classes.filledCircle} aria-hidden />
-          <div className={classes.emptyCircle} aria-hidden />
-          <div className={classes.smallBlurCircle} aria-hidden />
-        </>}
     </section>
   )
 }
