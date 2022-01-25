@@ -1,0 +1,20 @@
+steps:
+- name: node:16.13.1-alpine
+  id: 'install'
+  waitFor: ['-']
+  entrypoint: 'npm'
+  args: ['ci']
+- name: node:14-alpine
+  id: 'build'
+  waitFor: ['install']
+  entrypoint: 'npm'
+  args: ['run','build-$_ENVIRONMENT']
+- name: node:14-alpine
+  id: 'deploy'
+  waitFor: ['build']
+  entrypoint: 'npm'
+  args: ['run','deploy-hosting-$_ENVIRONMENT']
+logsBucket: '$_LOGS_BUCKET'
+timeout: 2400s
+options:
+  logging: GCS_ONLY
