@@ -20,6 +20,7 @@
 .backup
 .firebase
 .env
+.env.local
 .runtimeconfig.json
 .env.production
 
