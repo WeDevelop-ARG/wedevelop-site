@@ -55,11 +55,11 @@ function StoryHeader ({
           placeholderColor='#333'
           className={classes.headerBackground}
         />
+      </div>
+      <div className={classes.content}>
         <div className={classes.logoContainer}>
           <ProjectLogo logoURL={logoURL} {...logoStyleProp} />
         </div>
-      </div>
-      <div className={classes.content}>
         <p className={classes.heading}>{heading}</p>
         <div className={classes.titleContainer}>
           <h2 className={classes.title}>{title}</h2>
