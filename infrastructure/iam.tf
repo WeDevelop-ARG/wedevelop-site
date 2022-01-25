@@ -30,14 +30,14 @@ resource "google_project_iam_member" "cloudbuild" {
   member  = "serviceAccount:${data.google_project.project.number}@cloudbuild.gserviceaccount.com"
 }
 
-resource "google_project_iam_member" "compute" {
-  depends_on = [google_project_service.service["compute.googleapis.com"]]
-  for_each = toset([
-    "roles/secretmanager.secretAccessor",
-    "roles/iam.serviceAccountTokenCreator"
-  ])
+# resource "google_project_iam_member" "compute" {
+#   depends_on = [google_project_service.service["compute.googleapis.com"]]
+#   for_each = toset([
+#     "roles/secretmanager.secretAccessor",
+#     "roles/iam.serviceAccountTokenCreator"
+#   ])
 
-  project = local.project_id
-  role    = each.key
-  member  = "serviceAccount:${data.google_project.project.number}-compute@developer.gserviceaccount.com"
-}
+#   project = local.project_id
+#   role    = each.key
+#   member  = "serviceAccount:${data.google_project.project.number}-compute@developer.gserviceaccount.com"
+# }
