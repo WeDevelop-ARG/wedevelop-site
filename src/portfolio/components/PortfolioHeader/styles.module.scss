@@ -1,34 +1,20 @@
-@import "/src/styles/media_queries.scss";
+@import '/src/styles/media_queries.scss';
 
 .headerContainer {
+  min-width: 100%;
   min-height: 100vh;
   position: relative;
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 140px;
   overflow-x: hidden;
 
-  @media screen and (min-height: 800px) {
-    min-height: 85vh;
-  }
-
-  @media screen and (min-height: 876px) {
-    min-height: 75vh;
-  }
-
-  @include for-tablet-up {
-    min-height: 60vh;
-
-    @media screen and (min-height: 1090px) {
-      min-height: 50vh;
-    }
+  @include for-tablet-down {
+    min-height: 50vh;
   }
 
   @include for-desktop-up {
     min-height: 85vh;
-
-    @media screen and (min-height: 850px) {
-      min-height: 80vh;
-    }
+    padding-bottom: 200px;
   }
 }
 
