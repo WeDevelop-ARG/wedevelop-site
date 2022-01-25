@@ -39,6 +39,7 @@
     "build-testing": "ncp .env_testing .env.production && npm run build",
     "build-demo": "ncp .env_testing .env.production && npm run build",
     "postbuild-testing": "mkdirp ./out/assets-testing && ncp ./out/_next ./out/assets-testing/_next && rimraf -rf ./out/_next",
+    "postbuild-demo": "mkdirp ./out/assets-testing && ncp ./out/_next ./out/assets-testing/_next && rimraf -rf ./out/_next",
     "build-production": "ncp .env_production .env.production && npm run build",
     "postbuild-production": "mkdirp ./out/assets-production && ncp ./out/_next ./out/assets-production/_next && rimraf -rf ./out/_next",
     "deploy-functions-production": "firebase deploy --only functions --project wedevelop-site",
