@@ -33,7 +33,7 @@ const injobDetails = {
     subtitle: 'A web platform to connect top talent with clients',
     tags: ['Marketplace'],
     description:
-      'Year by year the online and remote work keep increasing, and people keep figuring the benefits it has. So with InJob our client had the vision of increasing the power of freelancers and to make it easier for them and their clients to connect and work together.',
+      'The shift to online and remote work keeps accelerating year by year, connecting businesses with a wealth of benefits. So, with InJob, our client had the vision of increasing the power of freelancers and making it easier for them to connect and work together with clients.',
     websiteURL: 'https://injobonline.com/',
     imageURL: InjobCoworking
   },
@@ -42,10 +42,10 @@ const injobDetails = {
     content: (
       <>
         <p>
-          To develop a really easy and dynamic platform as a professional
-          ecosystem for the community of entrepreneurs, freelancers and clients
-          through a comprehensive connection, protection, management and
-          accessibility solution.
+          The challenge for this project was to develop an intuitive and dynamic platform.
+          This platform would be a professional ecosystem for the community of entrepreneurs,
+          freelancers, and clients, supporting comprehensive connection, protection, management,
+          and accessibility.
         </p>
       </>
     )
@@ -65,30 +65,27 @@ const injobDetails = {
     content: (
       <>
         <p>
-          We created a web-based platform that was developed and finished
-          successfully with our client, creating an environment where users can
-          find the best freelancers and carry out projects with the help of
-          efficient management tools and compatibility algorithms.
+          Together with our client, we created a web-based platform developed and finished
+          successfully. This provided an environment where users could find the best freelancers
+          and carry out projects, drawing upon efficient management tools and compatibility algorithms.
         </p>
         <p>
-          In the platform you can find projects, services, or freelancers. We
-          managed to allow the user to be either a client or a freelancer with
-          the same account, and can post either a pack of service or a project.
-          Also, it allows search and filtering by category, assessment or
-          location. We also allow the user to communicate in real time with
-          others with a live-chat feature.
+          Within the platform, users can find projects, services, or freelancers. We developed
+          an interface that allows users to act as either clients or freelancers within
+          the same account, working with both services and projects. Also, the platform
+          enables search and filtering by category, assessment, or location. Users can
+          communicate in real-time via a live chat feature.
         </p>
         <p>
-          All of this was achieved by applying an Agile methodology in which we
-          deployed and showed the client what we produce every 2-week Sprint, a
-          small but functional piece of software. That’s our metric: functional
-          software delivered.
+          All of this was achieved by applying an Agile methodology in which we had a small
+          but functional piece of software ready for deployment and client assessment after
+          every 2-week sprint. That’s our metric — functional software delivered.
         </p>
         <p>
-          We provided a cross-functional highly talented team that pushed on a
-          constant development cycle that allowed us to deliver consistently
-          every sprint. We had several meetings with the client so we check all
-          the time before moving forward to meet their needs and expectations.
+          We provided a cross-functional team of talented personnel, working on a constant
+          development cycle that allowed us to deliver consistently on every sprint. In
+          addition, we held frequent meetings with the client, assessing our progress before
+          moving forward to meet their needs and expectations.
         </p>
       </>
     ),
