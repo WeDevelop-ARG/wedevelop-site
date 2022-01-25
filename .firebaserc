@@ -16,6 +16,13 @@
           "wedevelop-site-testing"
         ]
       }
+    },
+    "wedevelop-site-demo": {
+      "hosting": {
+        "testing": [
+          "wedevelop-site-demo"
+        ]
+      }
     }
   }
 }
