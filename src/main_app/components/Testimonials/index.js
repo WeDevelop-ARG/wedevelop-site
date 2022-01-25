@@ -1,15 +1,25 @@
+import { useMemo } from 'react'
+import { isUndefined, isEmpty } from 'lodash'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
-import useReviews from './hooks/useReviews'
-import QuotationMark from 'assets/home/quotation_mark.svg'
-import DotsPattern from 'assets/home/dots_pattern.svg'
-
-import classes from './styles.module.scss'
+import DefaultDecoration from './DefaultDecoration'
 import Image from '../Image'
 
-function Testimonials ({ bottomImageURL, hideHeader = false }) {
-  const { reviews } = useReviews()
+import QuotationMark from 'assets/home/quotation_mark.svg'
+
+import classes from './styles.module.scss'
+
+function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
+  const isAutoplay = useMemo(() => {
+    if (reviews.length === 1) return false
+    return true
+  }, [reviews])
+  const decorations = useMemo(() => {
+    if (isUndefined(customDecorations)) return <DefaultDecoration />
+    return customDecorations
+  }, [customDecorations])
+
   return (
     <section id='testimonials' className={classes.testimonials}>
       {!hideHeader &&
@@ -25,9 +35,9 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
         <Slide
           duration={5000}
           transitionDuration={500}
-          autoplay
+          autoplay={isAutoplay}
           pauseOnHover
-          indicators
+          indicators={isAutoplay}
           arrows={false}
           className={classes.carousel}
         >
@@ -38,17 +48,18 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
                 <blockquote className={classes.quote}>{review.quote}</blockquote>
                 <Image src={QuotationMark} alt='' className={classes.closeQuote} />
               </div>
-              <div className={classes.profileImgContainer}>
-                <Image
-                  src={review.profileImageURL}
-                  objectFit='cover'
-                  alt={`Profile of ${review.name}`}
-                  title={review.name}
-                  className={classes.profileImg}
-                />
-                <div className={classes.filledProfileCircle} aria-hidden='true' />
-                <div className={classes.emptyProfileCircle} aria-hidden='true' />
-              </div>
+              {!isEmpty(review.profileImageURL) &&
+                <div className={classes.profileImgContainer}>
+                  <Image
+                    src={review.profileImageURL}
+                    objectFit='cover'
+                    alt={`Profile of ${review.name}`}
+                    title={review.name}
+                    className={classes.profileImg}
+                  />
+                  <div className={classes.filledProfileCircle} aria-hidden='true' />
+                  <div className={classes.emptyProfileCircle} aria-hidden='true' />
+                </div>}
               <figcaption className={classes.profileData}>
                 <p>{review.name}</p>
                 <p><strong>{review.position}, {review.company}</strong></p>
@@ -57,15 +68,7 @@ function Testimonials ({ bottomImageURL, hideHeader = false }) {
           ))}
         </Slide>
       </div>
-      <Image src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.middleLeftPattern} aria-hidden='true' />
-      <div className={classes.filledSmallCircle} aria-hidden='true' />
-      <div className={classes.emptySmallCircle} aria-hidden='true' />
-      <div className={classes.smallBlurLeftCircle} aria-hidden='true' />
-      <div className={classes.filledBigCircle} aria-hidden='true' />
-      <div className={classes.emptyBigCircle} aria-hidden='true' />
-      <div className={classes.smallCircle} aria-hidden='true' />
-      <div className={classes.smallBlurRightCircle} aria-hidden='true' />
+      {decorations}
     </section>
   )
 }
