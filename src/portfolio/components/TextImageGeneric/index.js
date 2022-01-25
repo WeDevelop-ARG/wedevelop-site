@@ -7,7 +7,7 @@ import classes from './styles.module.scss'
 function TextImageGeneric ({ title, content, imageURL, hideDecoration, withoutTestimonials }) {
   return (
     <section className={classnames(classes.sectionContainer, {
-      [classes.removePadding]: !imageURL || withoutTestimonials || hideDecoration
+      [classes.removePadding]: !imageURL
     })}
     >
       <Image src={imageURL} alt='' className={classes.image} />
@@ -15,12 +15,6 @@ function TextImageGeneric ({ title, content, imageURL, hideDecoration, withoutTe
         <h3 className={classes.title}>{title}</h3>
         {content}
       </div>
-      {!hideDecoration &&
-        <>
-          <div className={classes.filledCircle} aria-hidden />
-          <div className={classes.emptyCircle} aria-hidden />
-          <div className={classes.smallBlurCircle} aria-hidden />
-        </>}
     </section>
   )
 }

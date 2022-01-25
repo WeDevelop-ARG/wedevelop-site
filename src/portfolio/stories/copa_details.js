@@ -34,33 +34,39 @@ const copaDetails = {
     tags: ['Fitness', 'Custom'],
     description:
       'COPA Soccer Training Center utilizes advanced technology and sports science to offer a unique objective data-driven approach to training. Each area of their 110,000 square foot facility is designed... to enhance an athlete’s cognitive, physical, and technical development. They are dedicated to innovating tradition training and help take the game to the next level.',
-    websiteURL: '',
+    websiteURL: 'https://copastc.com/',
     imageURL: CopaSignUp
   },
   challenge: {
     title: 'The Challenge',
     content: (
       <>
-        <h3>Pre Opening</h3>
+        <h4>Pre Opening</h4>
         <ul>
           <li>
-            COPA STC needed to create a custom Backoffice solution to operate
-            their business and Members Portal.
+            <p>
+              COPA STC needed to create a custom Backoffice solution to operate
+              their business and Members Portal.
+            </p>
           </li>
           <li>
-            As their business grew fast, they needed to create a solution fast
-            to support the grand opening of their innovative 110,000 square foot
-            facility.
+            <p>
+              As their business grew fast, they needed to create a solution fast
+              to support the grand opening of their innovative 110,000 square foot
+              facility.
+            </p>
           </li>
-          <li>They only had 3 months to get these things done!</li>
+          <li><p>They only had 3 months to get these things done!</p></li>
         </ul>
-        <h3>Post Opening</h3>
+        <h4>Post Opening</h4>
         <ul>
           <li>
-            After successfully opening their facility, user’s feedback began to
-            flow rapidly. So, all the tools developed up to the opening point
-            continued this quick development iterations in order to meet COPA’s
-            customers’ expectations.
+            <p>
+              After successfully opening their facility, user’s feedback began to
+              flow rapidly. So, all the tools developed up to the opening point
+              continued this quick development iterations in order to meet COPA’s
+              customers’ expectations.
+            </p>
           </li>
         </ul>
       </>
@@ -69,9 +75,9 @@ const copaDetails = {
   testimonials: [
     {
       profileImageURL: TestimonialsImage,
-      name: 'Kerry Hebert',
+      name: '',
       quote:
-        "“They helped us to create member portals with different gamification opportunities that also helped us monetize on a different level. We're extremely excited about WeDevelop.”",
+        '“They helped us to create member portals with different gamification opportunities that also helped us monetize on a different level. We\'re extremely excited about WeDevelop.”',
       position: 'General Manager',
       company: 'Soccer Training Center'
     }

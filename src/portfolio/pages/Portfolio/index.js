@@ -8,13 +8,11 @@ import BackgroundContainer from 'staff_augmentation/components/BackgroundContain
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
-import Image from 'main_app/components/Image'
 import PortfolioHeader from 'portfolio/components/PortfolioHeader'
 import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
 
-import DotsPattern from 'assets/home/dots_pattern.svg'
 import PortfolioImageSeparator from 'assets/portfolio/portfolio_image_separator.png'
 
 import classes from './styles.module.scss'
@@ -32,7 +30,7 @@ function Portfolio () {
     <>
       <NavBar
         variant={['solid', 'dark']}
-        variantAtScrollTop={['solid', 'dark']}
+        variantAtScrollTop={['transparent', 'light']}
         contactPagePath={contactPagePath}
       />
       <Article>
@@ -57,7 +55,6 @@ function Portfolio () {
               />
             ))}
           </div>
-          <Image src={DotsPattern} alt='' className={classes.topRightPattern} />
           <div className={classes.filledCircle} />
           <div className={classes.emptyCircle} />
           <div className={classes.smallBlurCircle} />

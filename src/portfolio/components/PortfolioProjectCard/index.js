@@ -12,7 +12,7 @@ import { ReactComponent as WhiteArrow } from 'assets/portfolio/white_horizontal_
 
 import classes from './styles.module.scss'
 
-function PortfolioProjectCard({
+function PortfolioProjectCard ({
   coverImageURL,
   logoURL,
   logoBackground,
@@ -33,7 +33,6 @@ function PortfolioProjectCard({
   const cantidadCaracteres = 145
   const index = description.substring(0, cantidadCaracteres).lastIndexOf(' ')
   const newDescription = description.substring(0, index).concat('...')
-  
   return (
     <div
       className={classes.container}
