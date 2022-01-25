@@ -1,8 +1,7 @@
 import { HashLink } from 'react-router-hash-link'
 
-import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
-
 import Image from 'main_app/components/Image'
+import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
 
 import Arrow from 'assets/portfolio/arrow.svg'
 
