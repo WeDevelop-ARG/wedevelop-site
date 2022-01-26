@@ -14,7 +14,7 @@ import { ReactComponent as WhiteArrow } from 'assets/portfolio/white_horizontal_
 
 import classes from './styles.module.scss'
 
-function PortfolioProjectCard({
+function PortfolioProjectCard ({
   coverImageURL,
   logoURL,
   logoBackground,
@@ -67,6 +67,7 @@ function PortfolioProjectCard({
               href={externalWebsiteURL}
               target='_blank'
               rel='noopener noreferrer'
+              onClick={e => { e.stopPropagation() }}
             >
               <World role='presentation' className={classes.world} />
             </a>
