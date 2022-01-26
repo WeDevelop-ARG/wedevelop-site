@@ -8,7 +8,6 @@
   z-index: 1;
   text-decoration: none !important;
   color: #363636 !important;
-  cursor: default;
 
   &:hover,
   &:focus {
@@ -97,6 +96,7 @@
   font-size: 15px;
   line-height: 18px;
   color: #377dff;
+  pointer-events: none;
 }
 
 .readMoreWhite {
