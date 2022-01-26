@@ -78,9 +78,6 @@ function PortfolioProjectCard ({
         </div>
         <p className={classes.description}>{newDescription}</p>
         <Button
-          as={HashLink}
-          to={detailsPagePath}
-          smooth
           variant={isOnHover ? 'primary' : 'link'}
           iconRight={isOnHover ? <WhiteArrow /> : <BlueArrow />}
           className={classNames(classes.readMore, {
