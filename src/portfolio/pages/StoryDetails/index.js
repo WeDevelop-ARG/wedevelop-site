@@ -14,7 +14,7 @@ import StoryHeader from '../../components/StoryHeader'
 import Testimonials from 'main_app/components/Testimonials'
 import TestimonialsDecoration from '../../components/TestimonialsDecoration'
 import TextImageGeneric from '../../components/TextImageGeneric'
-import TechStackContent from 'portfolio/components/TechStackContent'
+import TechStackTexts from 'portfolio/components/TechStackTexts'
 import TechStackIcons from 'portfolio/components/TechStackIcons'
 
 import useStoryByName from '../../hooks/useStoryByName'
@@ -82,7 +82,7 @@ function StoryDetails () {
           withoutTestimonials={withoutTestimonials}
         />
         {!isEmpty(storyDetails.techStackContent) && (
-          <TechStackContent
+          <TechStackTexts
             title={storyDetails.techStackContent.title}
             content={storyDetails.techStackContent.content}
           />
