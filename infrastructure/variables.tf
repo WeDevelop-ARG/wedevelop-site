@@ -32,8 +32,8 @@ locals {
   environment   = terraform.workspace
   is_production = local.environment == var.production_environment_name
 
-  environment_domain_name       = "%{if !local.is_production}${local.environment}.%{endif}${var.base_domain_name}"
   project_id                    = "${var.project_id_prefix}%{if !local.is_production}-${local.environment}%{endif}"
+  environment_domain_name       = "%{if !local.is_production}${local.environment}.%{endif}${var.base_domain_name}"
   default_dns_zone_name         = replace(local.environment_domain_name, ".", "-")
   frontend_cloud_run_service_id = "${local.project_id}"
 
@@ -41,10 +41,8 @@ locals {
   production_project_id              = "${var.project_id_prefix}"
   production_default_dns_zone_name   = replace(local.production_environment_domain_name, ".", "-")
 
-  frontend_github_branch_name = lookup({
+  github_branch_name = lookup({
     production : "main",
-    demo : "feature/nextjs-infrastructure",
-    testing : "testing",
-    staging : "staging"
+    testing: "feature/nextjs",
   }, local.environment, "main")
 }

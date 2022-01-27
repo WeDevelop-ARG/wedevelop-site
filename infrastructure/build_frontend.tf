@@ -1,6 +1,6 @@
 resource "google_cloudbuild_trigger" "deploy_frontend_from_github" {
   name        = "github-frontend"
-  description = "When the \"${local.frontend_github_branch_name}\" branch changes on GitHub, the frontend is built and deployed both to Firebase Hosting & Cloud Run"
+  description = "When the \"${local.github_branch_name}\" branch changes on GitHub, the frontend is built and deployed both to Firebase Hosting & Cloud Run"
   project     = local.project_id
   filename    = "infrastructure/frontend/cloudbuild.yaml"
   ignored_files  = ["functions/**","firestore/**"]
@@ -21,7 +21,7 @@ resource "google_cloudbuild_trigger" "deploy_frontend_from_github" {
     name  = "wedevelop-site"
 
     push {
-      branch = "^${local.frontend_github_branch_name}$"
+      branch = "^${local.github_branch_name}$"
     }
   }
 
