@@ -20,7 +20,8 @@ steps:
           jq -s '.[0] * .[1]' firebase.template.json firebase.${_ENVIRONMENT}.json; \
         else cat firebase.template.json; fi \
       ) | \
-      > firebase.json \
+      > firebase.json && \
+      cat firebase.json \
     "
   ]
 - name: node:16.13.1-alpine
