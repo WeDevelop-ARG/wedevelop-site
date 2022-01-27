@@ -4,11 +4,13 @@ import isFunction from 'lodash/isFunction'
 import { IS_STATIC_RENDERER } from 'main_app/constants'
 
 const CLUTCH_URL = 'https://widget.clutch.co/static/js/widget.js'
+const interactionEvents = ['click', 'keypress', 'mousemove', 'pointermove', 'scroll', 'touchmove', 'wheel']
+let isWaitingForInteraction = false
 
 function loadClutch (onPossiblyLoaded) {
   if (IS_STATIC_RENDERER) return undefined
 
-  if (isClutchScriptPresent()) {
+  if (isClutchScriptPresent() || isWaitingForInteraction) {
     return onPossiblyLoaded()
   }
 
@@ -22,12 +24,30 @@ function loadClutch (onPossiblyLoaded) {
     onPossiblyLoaded()
   })
 
-  setTimeout(function () {
+  isWaitingForInteraction = true
+
+  let removeEventListeners
+
+  const appendScript = () => {
     if (isClutchScriptPresent()) {
       onPossiblyLoaded()
+    } else {
+      isWaitingForInteraction = false
+      document.head.appendChild(sc)
     }
-    document.head.appendChild(sc)
-  }, 1500)
+
+    removeEventListeners?.()
+  }
+
+  removeEventListeners = () => {
+    for (const event of interactionEvents) {
+      window.removeEventListener(event, appendScript, { passive: true })
+    }
+  }
+
+  for (const event of interactionEvents) {
+    window.addEventListener(event, appendScript, { passive: true })
+  }
 }
 
 function isClutchScriptPresent () {
