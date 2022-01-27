@@ -25,7 +25,6 @@ const cvsdDetails = {
     tags: ['Health', 'Computer Vision'],
     description:
       'CVSD system allows people to move freely through the installation with full adherence to COVID guidelines and restrictions. This virtual system is simple and fast. It doesn’t even have to be installed — anyone can use it within their current camera network.',
-    websiteURL: '',
     imageURL: CvsdLobby
   },
   challenge: {

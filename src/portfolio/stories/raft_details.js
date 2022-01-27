@@ -31,7 +31,6 @@ const raftDetails = {
     tags: ['Travel', 'Booking'],
     description:
       'RAFT Croatia is a search engine for ferry bookings. RAFT’s mission is to make transportation between the islands and coastal cities of Croatia seamless and stress-free.',
-    websiteURL: 'https://raftcroatia.com/',
     imageURL: RaftReservations
   },
   challenge: {

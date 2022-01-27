@@ -8,7 +8,6 @@ import Image from 'main_app/components/Image'
 import { ReactComponent as WhiteBackwardArrow } from 'assets/portfolio/white_backward_arrow.svg'
 import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
 import ProjectLogo from '../ProjectLogo'
-import WorldIcon from 'assets/portfolio/world.svg'
 
 import { forDesktopUp } from 'styles/media_queries'
 
@@ -23,7 +22,6 @@ function StoryHeader ({
   subtitle,
   tags,
   description,
-  websiteURL,
   imageURL,
   logoBackground
 }) {
@@ -63,16 +61,6 @@ function StoryHeader ({
         <p className={classes.heading}>{heading}</p>
         <div className={classes.titleContainer}>
           <h2 className={classes.title}>{title}</h2>
-          {websiteURL &&
-            <a
-              href={websiteURL}
-              target='_blank'
-              rel='noopener noreferrer'
-              className={classes.websiteLink}
-            >
-              Website
-              <Image src={WorldIcon} alt='' className={classes.worldIcon} />
-            </a>}
         </div>
         <hr className={classes.horizontalBar} />
         <h3 className={classes.subtitle}>{subtitle}</h3>

@@ -34,7 +34,6 @@ const copaDetails = {
     tags: ['Fitness', 'Custom'],
     description:
       'COPA Soccer Training Center utilizes advanced technology and sports science to offer a unique objective, data-driven approach to training. Each area of their 110,000 square foot facility is designed to enhance the cognitive, physical, and technical development of athletes. They are dedicated to improving traditional training with innovation — helping take the game to the next level.',
-    websiteURL: 'https://copastc.com/',
     imageURL: CopaSignUp
   },
   challenge: {
