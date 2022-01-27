@@ -9,7 +9,7 @@ steps:
   waitFor: ['install']
   entrypoint: 'npm'
   args: ['run','build-$_ENVIRONMENT']
-- name: node:16.13.1-alpine
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
   id: 'firebase-setup'
   waitFor: ['-']
   entrypoint: 'sh'
