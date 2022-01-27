@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import HeaderBackground from 'assets/staff_augmentation/backgrounds/blue_gradient_background.svg'
+import { ReactComponent as HeaderBackground } from 'assets/staff_augmentation/backgrounds/blue_gradient_background.svg'
 import WeDevelopCEO from 'assets/staff_augmentation/wedevelop_ceo.png'
 import DotsPattern from 'assets/staff_augmentation/white_dots_pattern.svg'
 import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
@@ -28,14 +28,14 @@ export default function NewHeader ({
     <>
       <section id='headerSection' className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
-          <Image src={HeaderBackground} alt='' className={classes.background} />
+          <HeaderBackground preserveAspectRatio='xMidYMax slice' className={classes.background} />
         </div>
-        <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
-        <Image src={DecorationElements} alt='' className={classes.decorationElementsPattern} />
-        <Image src={BlurredDecorationElements} alt='' className={classes.blurredDecorationElements} />
+        <Image src={DotsPattern} alt='' loading='eager' className={classes.dotsPattern} />
+        <Image src={DecorationElements} alt='' loading='eager' className={classes.decorationElementsPattern} />
+        <Image src={BlurredDecorationElements} alt='' loading='eager' className={classes.blurredDecorationElements} />
         <div className={classes.columnsContainer}>
           <div className={classes.leftSideContainer}>
-            <Image src={WeDevelopLogo} alt='WeDevelop logo' className={classes.imageLogo} />
+            <Image src={WeDevelopLogo} alt='WeDevelop logo' width='225' height='51' loading='eager' className={classes.imageLogo} />
             <div className={classes.tagNameContainer}>
               <span className={classes.tagName} style={{ backgroundColor }}>
                 {landingName}
@@ -55,7 +55,7 @@ export default function NewHeader ({
             <div className={classes.quoteContainer}>
               <div className={classes.avatarContainer}>
                 <div className={classes.avatarImageContainer}>
-                  <Image src={WeDevelopCEO} objectFit='cover' alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
+                  <Image src={WeDevelopCEO} loading='eager' objectFit='cover' alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
                 </div>
               </div>
               <q className={classes.quote}>

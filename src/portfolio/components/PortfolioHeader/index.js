@@ -8,7 +8,7 @@ import WhiteDotsPatternMobile from 'assets/portfolio/white_dots_pattern_mobile.s
 
 import classes from './styles.module.scss'
 
-function PortfolioHeader() {
+function PortfolioHeader () {
   return (
     <>
       <section className={classes.headerContainer}>
@@ -35,10 +35,10 @@ function PortfolioHeader() {
             <div className={classes.leftSideContent}>
               <p className={classes.headingText}>success stories</p>
               <h2 className={classes.titleText}>
-                Discover more about us looking at our porfolio
+                Discover our success stories
               </h2>
               <p className={classes.descriptionText}>
-                More than 20 companies have trust on us!
+                Straight 5-star ratings endorse our work
               </p>
               <hr className={classes.horizontalBar} />
             </div>

@@ -13,7 +13,8 @@ import UploadingFile from 'staff_augmentation/components/UploadingFile'
 import SVGIcon from 'main_app/components/SVGIcon'
 import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
-import { isNil, isUndefined } from 'lodash'
+import isNil from 'lodash/isNil'
+import isUndefined from 'lodash/isUndefined'
 
 export default function ScheduleFormModal ({
   isModalOpen,
