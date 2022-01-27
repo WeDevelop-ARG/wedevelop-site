@@ -42,8 +42,7 @@
     "postbuild-production": "mkdirp ./out/assets-production && ncp ./out/_next ./out/assets-production/_next && rimraf -rf ./out/_next",
     "deploy-functions-production": "firebase deploy --only functions --project wedevelop-site",
     "deploy-functions-testing": "firebase deploy --only functions --project wedevelop-site-testing",
-    "deploy-hosting-production": "firebase deploy --project wedevelop-site --only hosting:production",
-    "deploy-hosting-testing": "firebase deploy --project wedevelop-site-testing --only hosting:testing",
+    "deploy-hosting": "firebase deploy --project $npm_config_project --only hosting",
     "cleanup-deploy-build": "rimraf -rf .env.production build node_modules/.cache .next out",
     "deploy-hosting-preview": "firebase hosting:channel:deploy --project wedevelop-site-testing --only testing"
   },
