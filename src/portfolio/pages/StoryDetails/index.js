@@ -65,16 +65,17 @@ function StoryDetails () {
           content={storyDetails.challenge.content}
         />
         {!withoutTestimonials &&
-          <>
-            <Testimonials
-              reviews={storyDetails.testimonials}
-              customDecorations={<TestimonialsDecoration />}
-              hideHeader
-            />
-            <section className={classes.clutchContainer}>
-              <ClutchWidget variant='dark' className={classes.clutchWidget} />
-            </section>
-          </>}
+          <Testimonials
+            reviews={storyDetails.testimonials}
+            customDecorations={<TestimonialsDecoration />}
+            hideHeader
+          />
+        }
+        {storyDetails.reviewedOnClutch &&
+          <section className={classes.clutchContainer}>
+            <ClutchWidget variant='dark' className={classes.clutchWidget} />
+          </section>
+        }
         <TextImageGeneric
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}

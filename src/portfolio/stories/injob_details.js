@@ -133,7 +133,8 @@ const injobDetails = {
       name: 'Terraform',
       photo: Terraform
     }
-  ]
+  ],
+  reviewedOnClutch: true
 }
 
 export default injobDetails

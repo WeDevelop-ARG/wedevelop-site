@@ -86,7 +86,8 @@ const drCannabisDetails = {
       name: 'Firebase',
       photo: Firebase
     }
-  ]
+  ],
+  reviewedOnClutch: false
 }
 
 export default drCannabisDetails

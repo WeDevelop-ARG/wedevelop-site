@@ -162,7 +162,8 @@ const raftDetails = {
       name: 'PostgreSQL',
       photo: PostgreSQL
     }
-  ]
+  ],
+  reviewedOnClutch: true
 }
 
 export default raftDetails
