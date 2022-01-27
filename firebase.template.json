@@ -31,8 +31,8 @@
     }],
     "redirects": [
       {
-        "source": "/lp/:path*",
-        "destination": "/:path",
+        "source": "/devops",
+        "destination": "/lp/devops",
         "type": 302
       },
       {
