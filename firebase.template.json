@@ -36,6 +36,87 @@
         "type": 302
       },
       {
+        "source": "/hire-developers",
+        "destination": "/lp/hire-developers",
+        "type": 302
+      },
+      {
+        "source": "/hire-javascript-developers",
+        "destination": "/lp/hire-javascript-developers",
+        "type": 302
+      },
+      {
+        "source": "/hire-net-developers",
+        "destination": "/lp/hire-net-developers",
+        "type": 302
+      },
+      {
+        "source": "/it-outsourcing",
+        "destination": "/lp/it-outsourcing",
+        "type": 302
+      },
+      {
+        "source": "/it-staffing",
+        "destination": "/lp/it-staffing",
+        "type": 302
+      },
+      {
+        "source": "/mobile",
+        "destination": "/lp/mobile",
+        "type": 302
+      },
+      {
+        "source": "/nearshore-net-developers",
+        "destination": "/lp/nearshore-net-developers",
+        "type": 302
+      },
+      {
+        "source": "/nearshore-software-outsourcing",
+        "destination": "/lp/nearshore-software-outsourcing",
+        "type": 302
+      },
+      {
+        "source": "/offshore-web-development",
+        "destination": "/lp/offshore-web-development",
+        "type": 302
+      },
+      {
+        "source": "/software-development",
+        "destination": "/lp/software-development",
+        "type": 302
+      },
+      {
+        "source": "/staff-augmentation",
+        "destination": "/lp/staff-augmentation",
+        "type": 302
+      },
+      {
+        "source": "/web-coders",
+        "destination": "/lp/web-coders",
+        "type": 302
+      },
+      {
+        "source": "/web-developers",
+        "destination": "/lp/web-developers",
+        "type": 302
+      },
+      {
+        "source": "/web-development-outsourcing",
+        "destination": "/lp/web-development-outsourcing",
+        "type": 302
+      },
+      {
+        "source": "/web-programmers",
+        "destination": "/lp/web-programmers",
+        "type": 302
+      },
+      {
+        "source": "/website-builders",
+        "destination": "/lp/website-builders",
+        "type": 302
+      },
+
+      {
         "source": "/storage/:path*",
         "destination": "https://firebasestorage.googleapis.com/v0/b/wedevelop-site.appspot.com/o/:path",
         "type": 302
