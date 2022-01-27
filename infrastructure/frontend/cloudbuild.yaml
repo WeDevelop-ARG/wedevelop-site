@@ -7,8 +7,8 @@ steps:
 - name: node:16.13.1-alpine
   id: 'install'
   waitFor: ['install-cache']
-  entrypoint: 'n-cache-r'
-  args: ['install', '--bucket wedevelop-site-testing-build-packages']
+  entrypoint: 'npx'
+  args: ['n-cache-r','install', '--bucket wedevelop-site-testing-build-packages']
 - name: node:16.13.1-alpine
   id: 'build'
   waitFor: ['install']
