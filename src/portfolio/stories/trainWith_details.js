@@ -61,7 +61,7 @@ const trainWithDetails = {
       quote:
         'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
       position: 'CEO',
-      company: 'Fitness App Company'
+      company: 'TrainWith'
     }
   ],
   solution: {

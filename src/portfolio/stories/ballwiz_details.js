@@ -62,7 +62,7 @@ const ballwizDetails = {
       quote:
         '"They’re willing to engage with a problem to figure it out rather than waiting to be told what to do."',
       position: 'Founder',
-      company: 'Sports Betting Startup'
+      company: 'Ballwiz'
     }
   ],
   solution: {
