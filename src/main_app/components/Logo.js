@@ -3,7 +3,7 @@ import isologoWhite from 'assets/logo/isologo_white.svg'
 import isologoColor from 'assets/logo/isologo_color.svg'
 import fullLogoWhite from 'assets/logo/full_logo_white.svg'
 import fullLogoColor from 'assets/logo/full_logo_color.svg'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 function Logo ({ variant, width, height, ...props }) {
   let logoSrc

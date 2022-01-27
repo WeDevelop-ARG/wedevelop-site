@@ -8,7 +8,7 @@ import ProcessDiagram from 'assets/services/web_dev_our_process/process_diagram.
 import DotsPattern from 'assets/services/dots-pattern.svg'
 
 import classes from './styles.module.scss'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 import WrappedImage from 'main_app/components/WrappedImage'
 
 function OurProcess () {

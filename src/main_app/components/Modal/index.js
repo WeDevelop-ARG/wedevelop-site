@@ -1,6 +1,6 @@
 import ReactModal from 'react-modal'
 import classnames from 'classnames'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 import Button from 'main_app/components/Button'
 

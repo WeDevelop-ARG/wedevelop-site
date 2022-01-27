@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 import Button from 'main_app/components/Button'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 import useMediaQuery from 'utils/use_media_query'
 import { isVariant } from 'utils/use_variants'

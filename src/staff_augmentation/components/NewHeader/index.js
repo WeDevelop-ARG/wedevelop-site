@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 import HeaderBackground from 'assets/staff_augmentation/backgrounds/blue_gradient_background.component.svg'
 import WeDevelopCEO from 'assets/staff_augmentation/wedevelop_ceo.png'

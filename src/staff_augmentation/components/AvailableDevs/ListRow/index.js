@@ -2,7 +2,7 @@ import Button from 'main_app/components/Button'
 
 import getBackgroundColor from '../use_background_colors'
 import RightArrow from 'assets/hire_developers/right_arrow.svg'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 import classes from './styles.module.scss'
 import WrappedImage from 'main_app/components/WrappedImage'

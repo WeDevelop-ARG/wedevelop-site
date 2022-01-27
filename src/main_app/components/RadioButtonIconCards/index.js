@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 import RadioButtonCard from '../RadioButtonCard'
 
 import classes from './styles.module.scss'

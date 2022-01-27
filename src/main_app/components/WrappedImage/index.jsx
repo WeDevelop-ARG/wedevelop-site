@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import Image from 'next/image'
+import Image from '../Image'
 
 import classes from './styles.module.scss'
 
