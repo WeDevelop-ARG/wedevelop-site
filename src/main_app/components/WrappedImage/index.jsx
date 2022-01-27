@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import Image from 'next/image'
+import Image from '../Image'
 
 import classes from './styles.module.scss'
 
@@ -29,8 +29,8 @@ export default function WrappedImage ({ className, style, src, width, height, la
       }}
     >
       <Image
-        width={layout === 'fixed' ? width : undefined}
-        height={layout === 'fixed' ? height : undefined}
+        width={width}
+        height={height}
         src={src}
         layout={layout}
         alt={alt ?? ''}

@@ -1,5 +1,5 @@
 import { forwardRef, useState } from 'react'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 import classNames from 'classnames'
 
 import InternalLink from 'main_app/components/InternalLink'
@@ -45,7 +45,7 @@ function Header (props, ref) {
           />
         </div>
       </div>
-      <InternalLink href='#services' smooth className={classes.arrow}>
+      <InternalLink href='#services' smooth="true" className={classes.arrow}>
         <Image src={Arrow} layout='fixed' alt='' />
         <div className={classes.scrollText}>scroll down</div>
       </InternalLink>

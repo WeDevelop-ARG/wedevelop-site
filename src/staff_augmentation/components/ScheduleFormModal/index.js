@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import { Field } from 'formik'
 import isNil from 'lodash/isNil'
 import isUndefined from 'lodash/isUndefined'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
 

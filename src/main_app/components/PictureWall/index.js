@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 import Picture1 from 'assets/home/picture_wall_1.png'
 import Picture2 from 'assets/home/picture_wall_2.png'

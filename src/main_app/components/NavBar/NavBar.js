@@ -1,6 +1,6 @@
 import { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import classnames from 'classnames'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 import InternalLink from 'main_app/components/InternalLink'
 
