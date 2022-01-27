@@ -1,4 +1,5 @@
 import Button from 'main_app/components/Button'
+import SVGIcon from 'main_app/components/SVGIcon'
 
 import WrappedImage from 'main_app/components/WrappedImage'
 

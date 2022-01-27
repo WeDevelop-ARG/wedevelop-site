@@ -16,6 +16,7 @@ import Values from './components/Values'
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 import useMediaQuery from 'utils/use_media_query'
+import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 
 import AgileBook from 'assets/home/agile_book.png'
 import WedevelopTeam from 'assets/home/wedevelop_team.png'
@@ -31,6 +32,11 @@ function AboutUs () {
   }, [push])
 
   const isTabletDown = useMediaQuery(forTabletDown)
+  const { reviews } = useReviews()
+  const renderTestimonials = () => {
+    if (isTabletDown) return <Testimonials reviews={reviews} hideHeader />
+    return <Testimonials reviews={reviews} />
+  }
 
   return (
     <>
@@ -48,7 +54,7 @@ function AboutUs () {
         <BackgroundContainer backgroundURL={AgileBook} />
         <Values />
         <BackgroundContainer backgroundURL={WedevelopTeam} />
-        <Testimonials hideHeader={isTabletDown} />
+        {renderTestimonials()}
         <BackgroundContainer backgroundURL={WorkCoffee} />
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />

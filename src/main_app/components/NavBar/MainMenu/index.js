@@ -111,6 +111,15 @@ function MainMenu ({
       </li>
       <li
         className={classNames(classes.navItem, {
+          [classes.active]: globalThis.window?.location.pathname.startsWith('/portfolio')
+        })}
+      >
+        <InternalLink href='/portfolio'>
+          Portfolio
+        </InternalLink>
+      </li>
+      <li
+        className={classNames(classes.navItem, {
           [classes.active]: globalThis.window?.location.pathname.startsWith('/career')
         })}
       >

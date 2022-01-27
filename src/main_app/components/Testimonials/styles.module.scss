@@ -1,7 +1,6 @@
 @import '/src/styles/theme.scss';
 @import '/src/styles/media_queries.scss';
 
-
 .testimonials {
   display: flex;
   flex-direction: column;
@@ -142,6 +141,11 @@
   overflow: hidden;
 }
 
+%circle {
+  border-radius: 50%;
+  position: absolute;
+}
+
 .filledProfileCircle {
   @extend %circle;
   width: 140px;
@@ -197,165 +201,4 @@
   left: 0;
   bottom: 0;
   width: 100%;
-}
-
-%dotsPattern {
-  width: 277px;
-  position: absolute;
-}
-
-.topRightPattern {
-  @extend %dotsPattern;
-  top: 0;
-  right: 50px;
-
-  @include for-tablet-down {
-    display: none;
-  }
-}
-
-.middleLeftPattern {
-  @extend %dotsPattern;
-  transform: rotate(90deg);
-
-  @include for-desktop-up {
-    top: 316px;
-    left: 80px;
-  }
-
-  @include for-tablet-down {
-    width: 237px;
-    bottom: 175px;
-    left: -115px;
-  }
-}
-
-%circle {
-  border-radius: 50%;
-  position: absolute;
-}
-
-.filledSmallCircle {
-  @extend %circle;
-  width: 76px;
-  height: 76px;
-  background: rgba($color: #EAEAEA, $alpha: 0.3);
-  top: 59px;
-  left: 150px;
-
-  @include for-tablet-down {
-    top: 31px;
-    width: 140px;
-    height: 140px;
-    left: -98px;
-  }
-}
-
-.emptySmallCircle {
-  @extend %circle;
-  width: 139px;
-  height: 139px;
-  border: .5px solid rgba($color: #363636, $alpha: 0.2);
-  top: 45px;
-  left: 72px;
-
-  @include for-tablet-down {
-    top: 16px;
-    left: -88px;
-    height: 153px;
-    width: 142px;
-  }
-}
-
-.smallBlurLeftCircle {
-  @extend %circle;
-  width: 14px;
-  height: 14px;
-  background-color: rgba($color: #8224E3, $alpha: 0.5);
-  filter: blur(3px);
-  top: 155px;
-  left: 60px;
-
-  @include for-tablet-down {
-    top: 30px;
-    left: 24px;
-    width: 10px;
-    height: 10px;
-  }
-}
-
-.filledBigCircle {
-  @extend %circle;
-  background: rgba($color: #EAEAEA, $alpha: 0.3);
-
-  @include for-desktop-up {
-    width: 314px;
-    height: 314px;
-    top: 408px;
-    right: 66px;
-  }
-
-  @include for-tablet-down {
-    width: 201px;
-    height: 201px;
-    top: auto;
-    right: -145px;
-    bottom: 0;
-  }
-}
-
-.emptyBigCircle {
-  @extend %circle;
-  border: .5px solid rgba($color: #363636, $alpha: 0.2);
-
-  @include for-desktop-up {
-    width: 314px;
-    height: 314px;
-    top: 426px;
-    right: 100px;
-  }
-
-  @include for-tablet-down {
-    width: 201px;
-    height: 201px;
-    top: auto;
-    right: -128px;
-    bottom: 10px;
-  }
-}
-
-.smallBlurRightCircle {
-  @extend %circle;
-  background-color: rgba($color: #8224E3, $alpha: 0.5);
-  filter: blur(4px);
-
-  @include for-desktop-up {
-    filter: blur(6px);
-    width: 17px;
-    height: 17px;
-    top: 670px;
-    right: 365px;
-  }
-
-  @include for-tablet-down {
-    width: 9px;
-    height: 9px;
-    top: auto;
-    right: 39px;
-    bottom: 170px;
-  }
-}
-
-.smallCircle {
-  @extend %circle;
-  width: 10px;
-  height: 10px;
-  background-color: rgba($color: #8224E3, $alpha: 0.3);
-  filter: blur(1px);
-  top: 416px;
-  right: 112px;
-
-  @include for-tablet-down {
-    display: none;
-  }
 }

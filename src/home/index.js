@@ -12,15 +12,13 @@ import PictureWall from 'main_app/components/PictureWall'
 import Services from './components/Services'
 import Testimonials from 'main_app/components/Testimonials'
 
-import PageMetadata from 'utils/marketing/PageMetadata'
-import TestimonialsBg from 'assets/home/testimonials_background_image.png'
-
 function Landing () {
   const { pathname, push } = useRouter()
 
   const handleClose = useCallback(() => {
     push('/', undefined, { scroll: false, shallow: true })
   }, [push])
+  const { reviews } = useReviews()
 
   return (
     <>
@@ -36,7 +34,9 @@ function Landing () {
         <Header />
         <Services />
         <AboutUs />
-        <Testimonials bottomImageURL={TestimonialsBg} />
+        <Testimonials
+          reviews={reviews}
+        />
         <GetInTouch contactPagePath='/contact' />
         <PictureWall />
       </Article>
