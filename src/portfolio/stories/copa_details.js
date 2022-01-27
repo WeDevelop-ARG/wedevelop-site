@@ -67,16 +67,14 @@ const copaDetails = {
       </>
     )
   },
-  testimonials: [
-    {
-      profileImageURL: TestimonialsImage,
-      name: '',
-      quote:
-        '“They helped us to create member portals with different gamification opportunities that also helped us monetize on a different level. We\'re extremely excited about WeDevelop.”',
-      position: 'General Manager',
-      company: 'Soccer Training Center'
-    }
-  ],
+  testimonial: {
+    profileImageURL: TestimonialsImage,
+    name: '',
+    quote:
+      '“They helped us to create member portals with different gamification opportunities that also helped us monetize on a different level. We\'re extremely excited about WeDevelop.”',
+    position: 'General Manager',
+    company: 'Soccer Training Center'
+  },
   solution: {
     title: 'The Solution',
     content: (

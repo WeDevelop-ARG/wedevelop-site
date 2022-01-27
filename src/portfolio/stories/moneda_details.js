@@ -48,16 +48,14 @@ const monedaDetails = {
       </>
     )
   },
-  testimonials: [
-    {
-      profileImageURL: TestimonialsImage,
-      name: '',
-      quote:
-        'The project cost about half of what it would have had we hired local engineers.',
-      position: 'CTO',
-      company: 'Moneda Lending'
-    }
-  ],
+  testimonial: {
+    profileImageURL: TestimonialsImage,
+    name: '',
+    quote:
+      'The project cost about half of what it would have had we hired local engineers.',
+    position: 'CTO',
+    company: 'Moneda Lending'
+  },
   solution: {
     title: 'The Solution',
     content: (

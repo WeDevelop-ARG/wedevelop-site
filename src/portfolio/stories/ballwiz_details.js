@@ -55,16 +55,14 @@ const ballwizDetails = {
       </>
     )
   },
-  testimonials: [
-    {
-      profileImageURL: '',
-      name: '',
-      quote:
-        '"They’re willing to engage with a problem to figure it out rather than waiting to be told what to do."',
-      position: 'Founder',
-      company: 'Sports Betting Startup'
-    }
-  ],
+  testimonial: {
+    profileImageURL: '',
+    name: '',
+    quote:
+      '"They’re willing to engage with a problem to figure it out rather than waiting to be told what to do."',
+    position: 'Founder',
+    company: 'Sports Betting Startup'
+  },
   solution: {
     title: 'The Solution',
     content: (

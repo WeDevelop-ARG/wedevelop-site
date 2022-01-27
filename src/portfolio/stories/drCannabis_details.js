@@ -47,7 +47,6 @@ const drCannabisDetails = {
       </>
     )
   },
-  testimonials: [],
   solution: {
     title: 'The Solution',
     content: (

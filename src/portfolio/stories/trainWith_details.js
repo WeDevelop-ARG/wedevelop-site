@@ -54,16 +54,14 @@ const trainWithDetails = {
       </>
     )
   },
-  testimonials: [
-    {
-      profileImageURL: TestimonialsImage,
-      name: '',
-      quote:
-        'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
-      position: 'CEO',
-      company: 'Fitness App Company'
-    }
-  ],
+  testimonial: {
+    profileImageURL: TestimonialsImage,
+    name: '',
+    quote:
+      'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
+    position: 'CEO',
+    company: 'Fitness App Company'
+  },
   solution: {
     title: 'The solution',
     content: (

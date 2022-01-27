@@ -51,16 +51,14 @@ const raftDetails = {
       </>
     )
   },
-  testimonials: [
-    {
-      profileImageURL: TestimonialsImage,
-      name: '',
-      quote:
-        '“WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.”',
-      position: 'CEO',
-      company: 'RAFT'
-    }
-  ],
+  testimonial: {
+    profileImageURL: TestimonialsImage,
+    name: '',
+    quote:
+      '“WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.”',
+    position: 'CEO',
+    company: 'RAFT'
+  },
   solution: {
     title: 'The solution',
     content: (
