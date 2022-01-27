@@ -29,8 +29,8 @@ export default function WrappedImage ({ className, style, src, width, height, la
       }}
     >
       <Image
-        width={width}
-        height={height}
+        width={layout === 'fixed' ? width : undefined}
+        height={layout === 'fixed' ? height : undefined}
         src={src}
         layout={layout}
         alt={alt ?? ''}

@@ -53,7 +53,7 @@ function Footer ({ className }) {
           <li>
             <InternalLink
               href='/privacy-policy'
-              smooth="true"
+              smooth
               className={classes.privacyPolicy}
             >
               Privacy&nbsp;Policy
