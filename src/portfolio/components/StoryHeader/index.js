@@ -3,15 +3,20 @@ import { HashLink } from 'react-router-hash-link'
 import Button from 'main_app/components/Button'
 import Image from 'main_app/components/Image'
 
+import useMediaQuery from 'utils/use_media_query'
+
 import { ReactComponent as WhiteBackwardArrow } from 'assets/portfolio/white_backward_arrow.svg'
 import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
 import ProjectLogo from '../ProjectLogo'
 import WorldIcon from 'assets/portfolio/world.svg'
 
+import { forDesktopUp } from 'styles/media_queries'
+
 import classes from './styles.module.scss'
 
 function StoryHeader ({
   backgroundURL,
+  mobileBackgroundURL,
   logoURL,
   heading,
   title,
@@ -22,6 +27,8 @@ function StoryHeader ({
   imageURL,
   logoBackground
 }) {
+  const isDesktopUp = useMediaQuery(forDesktopUp)
+
   const logoStyleProp = {}
   if (logoBackground.startsWith('#')) {
     logoStyleProp.style = { backgroundColor: logoBackground }
@@ -42,7 +49,7 @@ function StoryHeader ({
           Back to list
         </Button>
         <Image
-          src={backgroundURL}
+          src={isDesktopUp ? backgroundURL : mobileBackgroundURL}
           alt=''
           loading='eager'
           placeholderColor='#333'

@@ -37,10 +37,11 @@ $grayColor: #363636;
   left: calc(50% - 60px);
 
   @include for-tablet-up {
-    left: var(--rootContentHorizontalPadding);
+    transform: translateY(20%);
   }
 
   @include for-desktop-up {
+    transform: translateY(40%);
     left: calc(var(--rootContentHorizontalPadding) + 220px);
   }
 }
