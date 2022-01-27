@@ -29,30 +29,27 @@ const trainWithDetails = {
     subtitle: 'A Web-based streaming platform for fitness',
     tags: ['Fitness', 'Streaming'],
     description:
-      'TrainWith is a fitness application, founded in 2017, that allows trainers to host classes online, both live and on-demand. Users can join these classes from the comfort of their homes. During the COVID-19 pandemic the lockdown forced gyms to close their doors and the whole fitness industry faced a crisis without precedents.',
+      'TrainWith is a fitness application founded in 2017 that allows trainers to host live and on-demand classes online. Users can join these classes from the comfort of their homes. During the COVID-19 pandemic, the lockdown forced gyms to close their doors, and the whole fitness industry faced a crisis without precedents.',
     websiteURL: 'https://train-with.com/',
     imageURL: TrainWithLiveClass
   },
   challenge: {
-    title: 'Challenge',
+    title: 'The Challenge',
     content: (
       <>
         <p>
-          As the origin of the word “crisis”, TrainWith’s CEO Rachel Aram, saw
-          an opportunity to adapt the platform to the current situation,
-          enabling not only individual fitness trainers to share their content
-          but also gyms and fitness franchises to do so.
+          In the face of this crisis, TrainWith’s CEO, Rachel Aram, saw an opportunity
+          to adapt the platform to the current situation, enabling individual fitness
+          trainers, gyms, and fitness franchises to share their content.
         </p>
         <p>
-          To add to the challenge of this core change itself, the platform was
-          actively working with thousands of users, and signing up new users
-          every day.
+          Adding to the challenge of this core change itself, the platform was already
+          working with thousands of users and bringing in new users every day.
         </p>
         <p>
-          Furthermore, the backend of the platform had a lot of legacy code (a
-          common situation of startup products that iterated a lot), and the
-          frontend of the platform was a native iOS app that was also not very
-          scalable.
+          Furthermore, the backend of the platform featured large amounts of legacy
+          code — a common situation for iterated startup products. Meanwhile, at the
+          front end of the platform was a native iOS app that was not easily scalable.
         </p>
       </>
     )
@@ -64,7 +61,7 @@ const trainWithDetails = {
       quote:
         'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
       position: 'CEO',
-      company: 'Fitness App Company'
+      company: 'TrainWith'
     }
   ],
   solution: {
@@ -72,50 +69,48 @@ const trainWithDetails = {
     content: (
       <>
         <p>
-          As always, we focus on achieving the business goals first. For goals
-          to be achieved, it not only requires to do the thing that’s needed but
-          also to do it on time.
+          As always, we focused on achieving the business goals first. This meant
+          executing the right strategy to a strict deadline.
         </p>
         <p>
-          This project was a great challenge because nobody was prepared for
-          this pandemic. Overnight, TrainWith’s business model had to be
-          drastically adapted and so its software products.
+          This project was a great challenge because nobody was prepared for this
+          pandemic. Overnight, TrainWith’s business model and software products had
+          to be drastically adapted.
         </p>
         <h4>Adaptation of current platform</h4>
         <p>
-          First, we focused on the main goal: turn TrainWith into a white-label
-          product so that gyms and other fitness studios could release their
-          branded apps to their clients.
+          First, we focused on the main goal — to turn TrainWith into a white-label
+          product so that gyms and other fitness studios could release their branded
+          apps to their clients.
         </p>
         <p>
-          We tried to reuse as much of the legacy code as possible, writing as
-          many tests as the code allowed to avoid bugs.
+          We tried to reuse as much of the legacy code as possible, writing as many
+          tests as the code allowed to avoid bugs.
         </p>
         <p>
-          Some new features were coded from scratch, following the Clean Code
-          principles. This allowed us to migrate small parts of the system
-          without causing any disruption to the UX.
+          We coded some new features from scratch, following the Clean Code principles.
+          This allowed us to migrate small parts of the system without causing any
+          disruption to the UX.
         </p>
         <h4>Migrating to a Web-based responsive streaming platform</h4>
         <p>
-          Once the platform was white-labeled and working properly, we switched
-          our focus to the next bottleneck: the iOS App. The process for
-          releasing new versions to the App Store was cumbersome and not as
-          agile as we need. Also, the app’s code wasn’t that good either, so
-          every change demanded a lot of time and the results didn’t meet our
-          expectations.
+          Once the platform was white-labeled and working properly, we switched our
+          focus to the next bottleneck — the iOS App. The process for releasing new
+          versions to the App Store was cumbersome and not as agile as we needed it
+          to be. Also, the app’s code was substandard, so changes were time-consuming
+          and often did not meet our expectations.
         </p>
         <p>
-          After we identified this and evaluated this situation thoroughly, we
-          ran surveys and other customer research tools to find out what devices
-          people were using. Not surprisingly, Android users weren’t happy about
-          not having an option for Android. But we also found out that iOS users
-          weren’t happy either with the app and its clunky UX.
+          After we identified this problem and evaluated the situation thoroughly, we
+          ran surveys and other customer research programs to determine what devices
+          people were using. Unsurprisingly, Android users weren’t happy about not having
+          an option for their OS. But we also found out that iOS users weren’t pleased
+          either due to the app’s performance and its clunky UX.
         </p>
         <p>
-          Finally, we developed a new web-based version of the platform,
-          optimized for different device sizes (mobile phones, ipads, tablets,
-          laptops, desktop computers, etc).
+          Finally, we developed a new web-based version of the platform, optimized for
+          different devices such as mobile phones, iPads, tablets, laptops, desktop
+          computers, and more.
         </p>
       </>
     ),

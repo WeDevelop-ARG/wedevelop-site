@@ -1,48 +1,21 @@
 @import '/src/styles/media_queries.scss';
 
-.listSkill {
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-
-  @include for-tablet-down {
-    margin-top: 50px;
-    flex-wrap: wrap;
-    overflow: hidden;
-  }
-}
-
-.skill {
-  margin: 30px auto 0px auto;
-
-  @include for-tablet-down {
-    margin: 0 32px 0px 32px;
-  }
-}
-
-.logoSkill {
-  height: 50px;
-}
-
-.name {
-  font-size: 16px;
-  line-height: 100%;
-  opacity: 0.5;
-  margin: 15px 0px;
-}
-
-.container {
-  background-image: url('../../../assets/portfolio/tech_stack/background-for-icons.png');
+.techStackSection {
+  background-image: url('../../../assets/portfolio/tech_stack/background_for_icons.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
   position: relative;
   padding-top: 120px;
   padding-bottom: 120px;
+}
+
+.content {
+  width: 100%;
+  margin-top: 20px;
 
   @include for-desktop-up {
-    padding: 120px 200px 100px 326px;
-    margin-top: 0;
+    padding: 0 220px;
   }
 }
 
@@ -56,6 +29,27 @@
   background: #ffd600;
   border-radius: 50px;
   padding: 10px 20px;
-  margin-bottom: 24px;
-  margin-left: 15px;
+  margin-bottom: 30px;
+}
+
+.listSkill {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.skill {
+  margin: 0;
+}
+
+.logoSkill {
+  height: 50px;
+}
+
+.name {
+  font-size: 16px;
+  line-height: 100%;
+  opacity: 0.5;
+  margin: 15px 0 0;
 }

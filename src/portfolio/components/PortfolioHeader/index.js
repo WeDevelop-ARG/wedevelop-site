@@ -13,24 +13,44 @@ function PortfolioHeader () {
     <>
       <section className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
-          <Image src={PortfolioHeaderBackground} alt='' className={classes.background} />
+          <Image
+            src={PortfolioHeaderBackground}
+            alt=''
+            className={classes.background}
+          />
         </div>
         <Image src={WhiteDotsPattern} alt='' className={classes.dotsPattern} />
-        <Image src={WhiteDotsPatternMobile} alt='' className={classes.dotsPatternMobile} />
-        <Image src={SmallBlurredCircle} alt='' className={classes.smallBlurredCircle} />
+        <Image
+          src={WhiteDotsPatternMobile}
+          alt=''
+          className={classes.dotsPatternMobile}
+        />
+        <Image
+          src={SmallBlurredCircle}
+          alt=''
+          className={classes.smallBlurredCircle}
+        />
         <div className={classes.columnsContainer}>
           <div className={classes.leftSideContainer}>
             <div className={classes.leftSideContent}>
               <p className={classes.headingText}>success stories</p>
               <h2 className={classes.titleText}>
-                Discover more about us looking at our porfolio
+                Discover our success stories
               </h2>
-              <p className={classes.descriptionText}>More than 20 companies have trust on us!</p>
+              <p className={classes.descriptionText}>
+                Straight 5-star ratings endorse our work
+              </p>
               <hr className={classes.horizontalBar} />
             </div>
           </div>
           <div className={classes.rightSideContainer}>
-            <Image src={HeaderCup} alt='' className={classes.headerCup} />
+            <Image
+              src={HeaderCup}
+              alt=''
+              className={classes.headerCup}
+              layout='fill'
+              objectFit='contain'
+            />
           </div>
         </div>
       </section>

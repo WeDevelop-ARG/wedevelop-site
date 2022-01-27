@@ -27,10 +27,10 @@ const ballwizDetails = {
     logoBackground: '#000000',
     heading: 'Success Story',
     title: 'Ballwiz',
-    subtitle: 'A data-driven betting sports platform.',
+    subtitle: 'A data-driven sports betting platform.',
     tags: ['Sports Betting', 'Data Analytics'],
     description:
-      'Everyone is a fan of sports, and what better than to watch your favorite sports and also maybe make some money. That’s why Ballwiz’s owners decided to put their heads together and create a platform to allow everyone to do that. Easily and smartly.',
+      'Most people are fans of sports, and many people love to watch their favorite sports while hoping to make some money at the same time. That’s why Ballwiz’s owners decided to put their heads together and create a platform to allow everyone to do just that, quickly and efficiently.',
     websiteURL: '',
     imageURL: BallwizDashboard
   },
@@ -39,18 +39,18 @@ const ballwizDetails = {
     content: (
       <>
         <p>
-          Our challenge in this project was to build a betting platform with the
-          focus put on the data analytics, trends and odds, to allow the user to
-          make a decision on who to bet on based on real statistics and avoid
-          living it on subjective ideas.
+          Our challenge in this project was to build a betting platform with a focus
+          on data analytics, trends, and odds. This would allow the user to decide
+          who to bet on based on real statistics, removing ambiguity and subjectivity
+          from the process.
         </p>
         <p>
-          We had to find a good balance between emotional bets and rational
-          bets. So the UX was both challenging and fun!
+          We had to find the right balance between emotional bets and rational bets,
+          so developing the UX was both challenging and fun!
         </p>
         <p>
-          On the other hand, collecting real-time statistics was hard and
-          required a lot of high-performant data processing.
+          On the other hand, collecting real-time statistics was difficult and required
+          high-performance data processing.
         </p>
       </>
     )
@@ -62,7 +62,7 @@ const ballwizDetails = {
       quote:
         '"They’re willing to engage with a problem to figure it out rather than waiting to be told what to do."',
       position: 'Founder',
-      company: 'Sports Betting Startup'
+      company: 'Ballwiz'
     }
   ],
   solution: {
@@ -70,20 +70,19 @@ const ballwizDetails = {
     content: (
       <>
         <p>
-          We used Machine Learning to process all the data we collected so that
-          the user could make the decision on who to bet on based on real
-          information and not just leave it to chance.
+          We used machine learning to process all the data we collected. This ensured
+          that the user could decide who to bet on based on accurate and accessible information.
         </p>
         <p>
-          We managed to consume information from different APIs, standardize the
-          data and structure it so that we can process it and present it to the
-          user in a meaningful way.
+          We managed to gather information from different APIs before standardizing
+          the data and structuring it. From here, we processed the data and presented
+          it to the user in a meaningful way.
         </p>
         <p>
-          We combined data of different sports based on different factors such
-          as: weather conditions, team formation, history of the team, how they
-          have been playing in the season, against whom, etc. Many factors that
-          would give the user a really rational bet.
+          We combined data from different sports based on factors such as weather
+          conditions, team formation, history of the team, how they have been playing
+          across the season, who they have played/are playing, etc. — factors that
+          support rational betting.
         </p>
       </>
     ),

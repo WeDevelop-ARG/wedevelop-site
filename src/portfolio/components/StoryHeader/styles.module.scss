@@ -3,24 +3,27 @@
 $grayColor: #363636;
 
 .headerContainer {
-  min-height: 100vh;
   position: relative;
   padding-bottom: 0;
 
   @include for-tablet-down {
-    padding-top: 82vw !important;
+    padding-top: 75vw !important;
   }
 
   @include for-phone-only {
     padding-top: 87vw !important;
+
+    @media screen and (min-width: 500px) {
+      padding-top: 83vw !important;
+    }
   }
 
   @include for-desktop-up {
     padding-top: 20vw !important;
-  }
 
-  @include for-big-desktop-up {
-    padding-top: 18vw !important;
+    @media screen and (min-width: 1600px) {
+      padding-top: 18vw !important;
+    }
   }
 }
 
@@ -47,7 +50,6 @@ $grayColor: #363636;
 .logoContainer {
   position: relative;
   width: 100%;
-  left: -254px;
 
   @include for-tablet-down {
     left: 0px;
@@ -146,9 +148,9 @@ $grayColor: #363636;
 }
 
 .description {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
 }
 
 .bottomImg {

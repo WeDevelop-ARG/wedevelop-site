@@ -2,28 +2,14 @@
 
 .sectionContainer {
   position: relative;
-  background-image: url('../../../assets/portfolio/similar_stories_mobile_background.png');
+  background-image: url('../../../assets/portfolio/similar_stories_background.svg');
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: 100%;
-  padding-bottom: 85px;
-
-  @include for-tablet-up {
-    background-image: url('../../../assets/portfolio/similar_stories_background.png');
-    background-size: auto;
-    padding-bottom: 27vw;
-  }
+  background-size: auto;
+  padding-bottom: 150px;
 
   @include for-desktop-up {
-    padding-bottom: 25vw;
-
-    @media screen and (min-width: 1501px) {
-      padding-bottom: 22vw;
-    }
-  }
-
-  @include for-big-desktop-up {
-    padding-bottom: 19vw;
+    padding-bottom: 275px;
   }
 }
 

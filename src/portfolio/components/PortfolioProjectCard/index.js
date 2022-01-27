@@ -5,6 +5,8 @@ import classNames from 'classnames'
 import Button from 'main_app/components/Button'
 import Image from 'main_app/components/Image'
 import ProjectLogo from '../ProjectLogo'
+import useMediaQuery from 'utils/use_media_query'
+import { forPhoneOnly } from 'styles/media_queries'
 
 import { ReactComponent as World } from 'assets/portfolio/world.svg'
 import { ReactComponent as BlueArrow } from 'assets/portfolio/arrow.svg'
@@ -30,11 +32,15 @@ function PortfolioProjectCard ({
     logoStyleProp.style = { backgroundImage: logoBackground }
   }
   const [isOnHover, setIsOnHover] = useState(false)
+  const isPhoneOnly = useMediaQuery(forPhoneOnly)
   const cantidadCaracteres = 145
   const index = description.substring(0, cantidadCaracteres).lastIndexOf(' ')
   const newDescription = description.substring(0, index).concat('...')
+
   return (
-    <div
+    <HashLink
+      to={detailsPagePath}
+      smooth
       className={classes.container}
       onMouseOver={() => setIsOnHover(true)}
       onMouseOut={() => setIsOnHover(false)}
@@ -61,24 +67,26 @@ function PortfolioProjectCard ({
               href={externalWebsiteURL}
               target='_blank'
               rel='noopener noreferrer'
+              onClick={e => { e.stopPropagation() }}
             >
               <World role='presentation' className={classes.world} />
             </a>
           )}
         </div>
         <p className={classes.shortDescription}>{shortDescription}</p>
-        <div className={classes.tagsContainer}>
-          {tags.map((tag) => (
-            <span className={classes.tag} key={tag}>
-              {tag}
-            </span>
-          ))}
-        </div>
-        <p className={classes.description}>{newDescription}</p>
+        {!isPhoneOnly && (
+          <>
+            <div className={classes.tagsContainer}>
+              {tags.map((tag) => (
+                <span className={classes.tag} key={tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <p className={classes.description}>{newDescription}</p>
+          </>
+        )}
         <Button
-          as={HashLink}
-          to={detailsPagePath}
-          smooth
           variant={isOnHover ? 'primary' : 'link'}
           iconRight={isOnHover ? <WhiteArrow /> : <BlueArrow />}
           className={classNames(classes.readMore, {
@@ -88,7 +96,7 @@ function PortfolioProjectCard ({
           Read More
         </Button>
       </div>
-    </div>
+    </HashLink>
   )
 }
 
