@@ -31,6 +31,11 @@
     }],
     "redirects": [
       {
+        "source": "/lp/:path*",
+        "destination": "/:path",
+        "type": 302
+      },
+      {
         "source": "/storage/:path*",
         "destination": "https://firebasestorage.googleapis.com/v0/b/wedevelop-site.appspot.com/o/:path",
         "type": 302
