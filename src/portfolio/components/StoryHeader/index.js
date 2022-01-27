@@ -46,7 +46,6 @@ function StoryHeader ({
           alt=''
           loading='eager'
           placeholderColor='#333'
-          layout='fill'
           objectFit='cover'
           position='bottom'
           className={classes.headerBackground}
