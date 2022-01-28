@@ -1,6 +1,8 @@
 import { useCallback } from 'react'
 import { useRouteMatch, useHistory } from 'react-router-dom'
 
+import usePageMetadata from 'utils/marketing/use_page_metadata'
+
 import Article from 'main_app/components/Article'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
@@ -9,12 +11,17 @@ import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 
 function Career () {
-  const contactPagePath = '/career/contact'
+  const contactPagePath = '/careers/contact'
   const match = useRouteMatch(contactPagePath)
   const history = useHistory()
   const handleClose = useCallback(() => {
-    history.push('/career')
+    history.push('/careers')
   }, [history])
+
+  usePageMetadata({
+    title: 'Join Us',
+    description: 'Join the professional teams of WeDevelop.'
+  })
 
   return (
     <>
