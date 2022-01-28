@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
-import { isEmpty } from 'lodash'
+import { isEmpty, isUndefined } from 'lodash'
 
 import Article from 'main_app/components/Article'
 import ClutchWidget from 'main_app/components/ClutchWidget'
@@ -11,8 +11,7 @@ import NavBar from 'main_app/components/NavBar/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import SimilarStories from 'portfolio/components/SimilarStories'
 import StoryHeader from '../../components/StoryHeader'
-import Testimonials from 'main_app/components/Testimonials'
-import TestimonialsDecoration from '../../components/TestimonialsDecoration'
+import PortfolioTestimonial from '../../components/PortfolioTestimonial'
 import TextImageGeneric from '../../components/TextImageGeneric'
 import TechStackTexts from 'portfolio/components/TechStackTexts'
 import TechStackIcons from 'portfolio/components/TechStackIcons'
@@ -37,7 +36,7 @@ function StoryDetails () {
   const handleClose = useCallback(() => {
     history.push(`/portfolio/${params.name}`)
   }, [history, params])
-  const withoutTestimonials = isEmpty(storyDetails.testimonials)
+  const withoutTestimonial = isUndefined(storyDetails.testimonial)
 
   return (
     <>
@@ -56,7 +55,6 @@ function StoryDetails () {
           subtitle={storyDetails.header.subtitle}
           tags={storyDetails.header.tags}
           description={storyDetails.header.description}
-          websiteURL={storyDetails.header.websiteURL}
           imageURL={storyDetails.header.imageURL}
           logoBackground={storyDetails.header.logoBackground}
         />
@@ -65,21 +63,22 @@ function StoryDetails () {
           content={storyDetails.challenge.content}
         />
         {!withoutTestimonials &&
-          <>
-            <Testimonials
-              reviews={storyDetails.testimonials}
-              customDecorations={<TestimonialsDecoration />}
-              hideHeader
-            />
-            <section className={classes.clutchContainer}>
-              <ClutchWidget variant='dark' className={classes.clutchWidget} />
-            </section>
-          </>}
+          <Testimonials
+            reviews={storyDetails.testimonials}
+            customDecorations={<TestimonialsDecoration />}
+            hideHeader
+          />
+        }
+        {storyDetails.reviewedOnClutch &&
+          <section className={classes.clutchContainer}>
+            <ClutchWidget variant='dark' className={classes.clutchWidget} />
+          </section>
+        }
         <TextImageGeneric
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}
           imageURL={storyDetails.solution.imageURL}
-          withoutTestimonials={withoutTestimonials}
+          withoutTestimonials={withoutTestimonial}
         />
         {!isEmpty(storyDetails.techStackContent) && (
           <TechStackTexts

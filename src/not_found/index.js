@@ -1,8 +1,8 @@
 import { HashLink } from 'react-router-hash-link'
 
-import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Button from 'main_app/components/Button'
+import NavBar from 'main_app/components/NavBar'
 import SVGIcon from 'main_app/components/SVGIcon'
 
 import usePageMedatada from 'utils/marketing/use_page_metadata'
