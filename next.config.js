@@ -1,10 +1,12 @@
 const { ENVIRONMENT } = require('./src/main_app/constants')
 
 module.exports = require('next-optimized-classnames')({
-  images: {
-    loader: 'cloudinary',
-    path: 'https://res.cloudinary.com/wedevelop-site/image/upload'
-  },
+  images: ENVIRONMENT !== 'development'
+    ? {
+        loader: 'cloudinary',
+        path: 'https://res.cloudinary.com/wedevelop-site/image/upload'
+      }
+    : undefined,
   assetPrefix: ENVIRONMENT !== 'development' ? '/assets-' + ENVIRONMENT : '',
   webpack (config) {
     for (const rule of config.module.rules) {
