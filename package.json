@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^6.2.0",
+    "critters": "^0.0.16",
     "dotenv-cli": "^4.0.0",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.8",
@@ -71,6 +72,7 @@
     "firebase-tools": "^9.5.0",
     "mkdirp": "^1.0.4",
     "ncp": "^2.0.0",
+    "next-optimized-classnames": "github:kenmueller/next-optimized-classnames",
     "rimraf": "^3.0.2",
     "url-loader": "^4.1.1"
   }
