@@ -41,7 +41,6 @@ const cvsdDetails = {
       </>
     )
   },
-  testimonials: [],
   solution: {
     title: 'The Solution',
     content: (
