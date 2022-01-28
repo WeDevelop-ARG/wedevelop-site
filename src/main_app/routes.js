@@ -19,7 +19,7 @@ const SuccessConfirm = prerenderedLazy(() => import('success'))
 
 function Routes () {
   return (
-    <Switch> 
+    <Switch>
       <LazyRoute exact path={['/', '/contact']}>
         <Landing />
       </LazyRoute>
@@ -35,7 +35,7 @@ function Routes () {
       <LazyRoute path='/about-us(/contact)?'>
         <AboutUs />
       </LazyRoute>
-      <LazyRoute path='/career(/contact)?'>
+      <LazyRoute path='/careers(/contact)?'>
         <Career />
       </LazyRoute>
       <Route path='/portfolio'>

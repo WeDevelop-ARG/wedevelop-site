@@ -9,8 +9,8 @@ import classes from './styles.module.scss'
 
 function ContactUs () {
   usePageMetadata({
-    title: 'Get in touch',
-    description: 'Self schedule a call whenever works best for you, shot us an email, or call us if you prefer so. We look forward to hearing from you.'
+    title: 'Get In Touch',
+    description: "Get in touch with us. You can schedule a call or fill out a form. We'll get back in no time."
   })
 
   return (
