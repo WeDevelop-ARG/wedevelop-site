@@ -6,7 +6,6 @@ import Button from 'main_app/components/Button'
 import Image from 'main_app/components/Image'
 
 import { ReactComponent as WhiteBackwardArrow } from 'assets/portfolio/white_backward_arrow.svg'
-import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
 import ProjectLogo from '../ProjectLogo'
 import WorldIcon from 'assets/portfolio/world.svg'
 
@@ -86,7 +85,11 @@ function StoryHeader ({
         <p className={classes.description}>{description}</p>
       </div>
       <Image src={imageURL} alt='' className={classes.bottomImg} />
-      <Image src={DecoCircles} alt='' className={classes.decoCircles} />
+      <div className={classes.leftFilledCircle} aria-hidden='true' />
+      <div className={classes.filledCircle} aria-hidden='true' />
+      <div className={classes.emptyCircle} aria-hidden='true' />
+      <div className={classes.emptyDashedCircle} aria-hidden='true' />
+      <div className={classes.smallBlurCircle} aria-hidden='true' />
     </section>
   )
 }
