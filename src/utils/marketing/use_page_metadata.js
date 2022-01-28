@@ -13,7 +13,8 @@ function usePageMetadata ({
   title,
   description,
   imagePath = undefined,
-  imageURL
+  imageURL,
+  noindex = false
 }) {
   useDeveloperMetadataHints({ url, title, description, imagePath })
 
@@ -38,6 +39,9 @@ function usePageMetadata ({
   usePageMetaContent({ name: 'twitter:title', content: title })
   usePageMetaContent({ name: 'twitter:description', content: description })
   usePageMetaContent({ name: 'twitter:image', content: imageURL })
+
+  const metaRobots = noindex ? { name: 'robots', content: 'noindex' } : {}
+  usePageMetaContent(metaRobots)
 }
 
 function setPageTitleSuffix (suffix) {

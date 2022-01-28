@@ -20,7 +20,7 @@ import classes from './services.module.scss'
 
 function StaffAugmentation () {
   usePageMetadata({
-    title: 'Staff Augmentation',
+    title: 'IT Staff Augmentation',
     description: 'A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
   })
   const SERVICE_NAME = 'staff-augmentation'
