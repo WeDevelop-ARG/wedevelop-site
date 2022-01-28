@@ -122,10 +122,10 @@ function MainMenu ({
       </li>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/career')
+          [classes.active]: window.location.pathname.startsWith('/careers')
         })}
       >
-        <HashLink to='/career#top'>
+        <HashLink to='/careers#top'>
           Careers
         </HashLink>
       </li>

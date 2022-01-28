@@ -8,7 +8,6 @@ import ProjectLogo from '../ProjectLogo'
 import useMediaQuery from 'utils/use_media_query'
 import { forPhoneOnly } from 'styles/media_queries'
 
-import { ReactComponent as World } from 'assets/portfolio/world.svg'
 import { ReactComponent as BlueArrow } from 'assets/portfolio/arrow.svg'
 import { ReactComponent as WhiteArrow } from 'assets/portfolio/white_horizontal_arrow.svg'
 
@@ -18,7 +17,6 @@ function PortfolioProjectCard ({
   coverImageURL,
   logoURL,
   logoBackground,
-  externalWebsiteURL,
   projectName,
   shortDescription,
   tags,
@@ -62,16 +60,6 @@ function PortfolioProjectCard ({
       <div className={classes.projectDetails}>
         <div className={classes.header}>
           <h3 className={classes.projectName}>{projectName}</h3>
-          {externalWebsiteURL && (
-            <a
-              href={externalWebsiteURL}
-              target='_blank'
-              rel='noopener noreferrer'
-              onClick={e => { e.stopPropagation() }}
-            >
-              <World role='presentation' className={classes.world} />
-            </a>
-          )}
         </div>
         <p className={classes.shortDescription}>{shortDescription}</p>
         {!isPhoneOnly && (

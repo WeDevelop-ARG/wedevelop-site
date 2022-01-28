@@ -5,11 +5,23 @@
   background-image: url('../../../assets/portfolio/similar_stories_background.svg');
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: auto;
-  padding-bottom: 150px;
 
   @include for-desktop-up {
+    background-size: 100%;
+    padding-bottom: 225px;
+    
+    @media screen and (min-width: 1500px) {
+      padding-bottom: 250px;
+    }
+  }
+
+  @include for-big-desktop-up {
     padding-bottom: 275px;
+  }
+  
+  @include for-tablet-down {
+    background-size: auto;
+    padding-bottom: 150px;
   }
 }
 

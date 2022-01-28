@@ -30,7 +30,6 @@ const monedaDetails = {
     tags: ['Marketplace', 'BlockChain'],
     description:
       'In a world of constant change, financial institutions have to iterate their business models and adopt new technologies. One of the most impactful technologies is the blockchain. The blockchain brought new possibilities to the fintech space, such as cryptocurrencies and Smart Contracts. That’s where Moneda Financial’s owners saw an opportunity.',
-    websiteURL: '',
     imageURL: MonedaLending
   },
   challenge: {
@@ -48,16 +47,14 @@ const monedaDetails = {
       </>
     )
   },
-  testimonials: [
-    {
-      profileImageURL: TestimonialsImage,
-      name: '',
-      quote:
-        'The project cost about half of what it would have had we hired local engineers.',
-      position: 'CTO',
-      company: 'Moneda Lending'
-    }
-  ],
+  testimonial: {
+    profileImageURL: TestimonialsImage,
+    name: '',
+    quote:
+      'The project cost about half of what it would have had we hired local engineers.',
+    position: 'CTO',
+    company: 'Moneda Lending'
+  },
   solution: {
     title: 'The Solution',
     content: (
