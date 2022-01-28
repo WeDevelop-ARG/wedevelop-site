@@ -71,6 +71,7 @@
     "firebase-tools": "^9.5.0",
     "mkdirp": "^1.0.4",
     "ncp": "^2.0.0",
+    "next-optimized-classnames": "^1.0.2",
     "rimraf": "^3.0.2",
     "url-loader": "^4.1.1"
   }
