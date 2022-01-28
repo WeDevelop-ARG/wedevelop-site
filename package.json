@@ -61,29 +61,12 @@
     "inlineCss": true,
     "include": [
       "/privacy-policy",
-      "/staff-augmentation",
-      "/web-developers",
-      "/hire-developers",
-      "/web-coders",
-      "/hire-javascript-developers",
-      "/hire-net-developers",
-      "/website-builders",
-      "/web-programmers",
       "/about-us",
       "/portfolio",
       "/career",
       "/follow-up",
-      "/offshore-web-development",
-      "/nearshore-net-developers",
-      "/web-development-outsourcing",
-      "/nearshore-web-development",
       "/success/confirm",
-      "/nearshore-software-outsourcing",
-      "/devops",
-      "/it-outsourcing",
-      "/it-staffing",
-      "/mobile",
-      "/software-development"
+      "/it-outsourcing"
     ]
   },
   "eslintConfig": {
