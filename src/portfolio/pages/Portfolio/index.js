@@ -8,10 +8,10 @@ import BackgroundContainer from 'staff_augmentation/components/BackgroundContain
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
+import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import PortfolioHeader from 'portfolio/components/PortfolioHeader'
 import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
-import NavBar from 'main_app/components/NavBar'
 
 import PortfolioImageSeparator from 'assets/portfolio/portfolio_image_separator.png'
 
