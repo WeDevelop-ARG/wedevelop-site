@@ -23,7 +23,6 @@ function GrowToday ({
           <p>{contentText}</p>
         </div>
         <Button
-          smooth
           isAnchor
           variant='primary'
           className={classes.freeQuoteButton}

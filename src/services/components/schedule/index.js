@@ -23,7 +23,6 @@ function Schedule ({ contactPagePath, className, service }) {
           <Button
             as={InternalLink}
             href={contactPagePath}
-            smooth
             isAnchor
             variant='primary'
           >

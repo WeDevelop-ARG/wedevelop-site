@@ -11,6 +11,8 @@ import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import Services from './components/Services'
 import Testimonials from 'main_app/components/Testimonials'
+import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 function Landing () {
   const { pathname, push } = useRouter()

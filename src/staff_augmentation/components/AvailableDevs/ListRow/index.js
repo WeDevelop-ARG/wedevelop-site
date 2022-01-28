@@ -49,7 +49,6 @@ function ListRow ({
         <Button
           variant='icon'
           isAnchor
-          smooth
           iconRight={btnRightArrow}
           className={classes.viewProfileButton}
           onClick={handleModal}

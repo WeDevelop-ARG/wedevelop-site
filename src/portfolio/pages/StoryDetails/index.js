@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
-import { useHistory, useRouteMatch } from 'react-router-dom'
-import { isEmpty } from 'lodash'
+import { isEmpty, isNil } from 'lodash'
 
 import Article from 'main_app/components/Article'
 import ClutchWidget from 'main_app/components/ClutchWidget'
@@ -18,29 +17,31 @@ import TechStackTexts from 'portfolio/components/TechStackTexts'
 import TechStackIcons from 'portfolio/components/TechStackIcons'
 
 import useStoryByName from '../../hooks/useStoryByName'
-import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import classes from './styles.module.scss'
+import { useRouter } from 'next/router'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 function StoryDetails () {
-  const { params } = useRouteMatch('/portfolio/:name')
-  const { storyDetails } = useStoryByName(params.name)
+  const { query, push, pathname } = useRouter()
+  const { name } = query
+  const { storyDetails } = useStoryByName(name)
 
-  usePageMetadata({
-    title: storyDetails.metadata.title,
-    description: storyDetails.metadata.description
-  })
+  const contactPagePath = `/portfolio/${name}/contact`
 
-  const contactPagePath = `/portfolio/${params.name}/contact`
-  const match = useRouteMatch(contactPagePath)
-  const history = useHistory()
   const handleClose = useCallback(() => {
-    history.push(`/portfolio/${params.name}`)
-  }, [history, params])
-  const withoutTestimonials = isEmpty(storyDetails.testimonials)
+    push(`/portfolio/${name}`)
+  }, [name, push])
 
+  const withoutTestimonials = isEmpty(storyDetails?.testimonials)
+
+  if (isNil(storyDetails)) { return null }
   return (
     <>
+      <PageMetadata
+        title={storyDetails.metadata.title}
+        description={storyDetails.metadata.description}
+      />
       <NavBar
         variant={['solid', 'dark']}
         variantAtScrollTop={['transparent', 'light']}
@@ -90,11 +91,11 @@ function StoryDetails () {
         {!isEmpty(storyDetails.techStackIcons) && (
           <TechStackIcons icons={storyDetails.techStackIcons} />
         )}
-        <SimilarStories storyName={params.name} />
+        <SimilarStories storyName={name} />
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
+      {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
     </>
   )

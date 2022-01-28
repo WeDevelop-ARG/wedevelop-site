@@ -18,7 +18,6 @@ function WebDevDetails ({ contactPagePath }) {
           <Button
             as={InternalLink}
             href={contactPagePath}
-            smooth
             isAnchor
             variant='primary'
             className={classes.getInTouchBtn}

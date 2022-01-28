@@ -1,5 +1,4 @@
 import { useCallback } from 'react'
-import { useRouteMatch, useHistory } from 'react-router-dom'
 
 import useStories from '../../hooks/useStories'
 
@@ -16,15 +15,16 @@ import NavBar from 'main_app/components/NavBar'
 import PortfolioImageSeparator from 'assets/portfolio/portfolio_image_separator.png'
 
 import classes from './styles.module.scss'
+import { useRouter } from 'next/router'
 
 function Portfolio () {
   const { stories } = useStories()
   const contactPagePath = '/portfolio/contact'
-  const match = useRouteMatch(contactPagePath)
-  const history = useHistory()
+  const { pathname, push } = useRouter()
+
   const handleClose = useCallback(() => {
-    history.push('/portfolio')
-  }, [history])
+    push('/career', undefined, { shallow: true, scroll: false })
+  }, [push])
 
   return (
     <>
@@ -45,7 +45,7 @@ function Portfolio () {
                 key={story.urlName}
                 coverImageURL={story.resume.headerImageURL}
                 description={story.header.description}
-                detailsPagePath={`/portfolio/${story.urlName}#top`}
+                detailsPagePath={`/portfolio/${story.urlName}`}
                 externalWebsiteURL={story.header.websiteURL}
                 logoBackground={story.header.logoBackground}
                 logoURL={story.header.logoURL}
@@ -61,7 +61,7 @@ function Portfolio () {
           <div className={classes.bottomFilledCircle} />
           <div className={classes.bottomEmptyCircle} />
           <div className={classes.bottomSmallBlurCircle} />
-          {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
+          {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
         </section>
         <BackgroundContainer backgroundURL={PortfolioImageSeparator} />
         <GetInTouch contactPagePath={contactPagePath} />

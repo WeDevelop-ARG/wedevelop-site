@@ -1,14 +1,13 @@
-import Image from 'main_app/components/Image'
-
 import DotsPattern from 'assets/portfolio/dots_pattern.svg'
 
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function TestimonialsDecoration () {
   return (
     <>
-      <Image src={DotsPattern} alt='' className={classes.leftPattern} />
-      <Image src={DotsPattern} alt='' className={classes.rightPattern} />
+      <WrappedImage src={DotsPattern} alt='' className={classes.leftPattern} />
+      <WrappedImage src={DotsPattern} alt='' className={classes.rightPattern} />
     </>
   )
 }

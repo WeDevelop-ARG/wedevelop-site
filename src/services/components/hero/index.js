@@ -40,7 +40,6 @@ function Hero ({
             <Button
               as={InternalLink}
               href={contactPagePath}
-              smooth
               isAnchor
               variant='primary'
             >

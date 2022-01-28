@@ -1,12 +1,20 @@
 const { ENVIRONMENT } = require('./src/main_app/constants')
 
+let imageLoader = {}
+
+if (ENVIRONMENT !== 'development') {
+  imageLoader = {
+    images: {
+      loader: 'cloudinary',
+      path: 'https://res.cloudinary.com/wedevelop-site/image/upload'
+    }
+  }
+}
+
 module.exports = {
-  images: {
-    loader: 'cloudinary',
-    path: `https://res.cloudinary.com/wedevelop-site/image/upload`
-  },
-  assetPrefix: ENVIRONMENT !== 'development' ? '/assets-'+ENVIRONMENT : '',
-  webpack(config) {
+  ...imageLoader,
+  assetPrefix: ENVIRONMENT !== 'development' ? '/assets-' + ENVIRONMENT : '',
+  webpack (config) {
     for (const rule of config.module.rules) {
       if (rule.test?.test('file.svg')) {
         rule.test = new RegExp('(?<!\\.component)' + rule.test.source, rule.test.flags)

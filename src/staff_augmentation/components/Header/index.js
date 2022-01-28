@@ -2,8 +2,7 @@ import ClutchWidget from 'main_app/components/ClutchWidget'
 import FreeQuoteForm from '../FreeQuoteForm'
 import Image from 'main_app/components/Image'
 import Logo from 'main_app/components/Logo'
-import SVGIcon from 'main_app/components/SVGIcon'
-
+import HeaderPattern from 'assets/home/header/pattern.svg'
 import classes from './styles.module.scss'
 
 function Header ({
@@ -53,7 +52,7 @@ function Header ({
           />
         </div>
         <div className={classes.pattern}>
-          <SVGIcon name='home/header/pattern' />
+          <Image alt='header pattern' src={HeaderPattern} />
         </div>
       </section>
     </>

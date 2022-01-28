@@ -1,11 +1,8 @@
-import { HashLink } from 'react-router-hash-link'
-
 import useMediaQuery from 'utils/use_media_query'
 
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
 
-import { ReactComponent as WhiteBackwardArrow } from 'assets/portfolio/white_backward_arrow.svg'
+import WhiteBackwardArrow from 'assets/portfolio/white_backward_arrow.component.svg'
 import DecoCircles from 'assets/portfolio/header_deco_circles.svg'
 import ProjectLogo from '../ProjectLogo'
 import WorldIcon from 'assets/portfolio/world.svg'
@@ -13,6 +10,8 @@ import WorldIcon from 'assets/portfolio/world.svg'
 import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
+import InternalLink from 'main_app/components/InternalLink'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function StoryHeader ({
   backgroundURL,
@@ -39,16 +38,15 @@ function StoryHeader ({
     <section className={classes.headerContainer}>
       <div className={classes.decorationWrapper}>
         <Button
-          as={HashLink}
-          to='/portfolio'
-          smooth
+          as={InternalLink}
+          href='/portfolio'
           variant='link'
           iconLeft={<WhiteBackwardArrow />}
           className={classes.backToList}
         >
           Back to list
         </Button>
-        <Image
+        <WrappedImage
           src={isDesktopUp ? backgroundURL : mobileBackgroundURL}
           alt=''
           loading='eager'
@@ -71,7 +69,7 @@ function StoryHeader ({
               className={classes.websiteLink}
             >
               Website
-              <Image src={WorldIcon} alt='' className={classes.worldIcon} />
+              <WrappedImage src={WorldIcon} alt='' className={classes.worldIcon} />
             </a>}
         </div>
         <hr className={classes.horizontalBar} />
@@ -85,8 +83,8 @@ function StoryHeader ({
         </div>
         <p className={classes.description}>{description}</p>
       </div>
-      <Image src={imageURL} alt='' className={classes.bottomImg} />
-      <Image src={DecoCircles} alt='' className={classes.decoCircles} />
+      <WrappedImage layout='responsive' src={imageURL} alt='' className={classes.bottomImg} />
+      <WrappedImage src={DecoCircles} alt='' className={classes.decoCircles} />
     </section>
   )
 }

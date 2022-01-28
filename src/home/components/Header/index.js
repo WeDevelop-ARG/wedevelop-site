@@ -45,7 +45,7 @@ function Header (props, ref) {
           />
         </div>
       </div>
-      <InternalLink href='#services' smooth className={classes.arrow}>
+      <InternalLink href='#services' className={classes.arrow}>
         <Image src={Arrow} layout='fixed' alt='' />
         <div className={classes.scrollText}>scroll down</div>
       </InternalLink>
