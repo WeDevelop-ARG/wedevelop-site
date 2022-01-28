@@ -119,7 +119,8 @@ const cvsdDetails = {
       </>
     )
   },
-  techStackIcons: []
+  techStackIcons: [],
+  reviewedOnClutch: false
 }
 
 export default cvsdDetails

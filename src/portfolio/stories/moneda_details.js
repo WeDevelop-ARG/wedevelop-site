@@ -94,7 +94,8 @@ const monedaDetails = {
       name: 'React',
       photo: React
     }
-  ]
+  ],
+  reviewedOnClutch: true
 }
 
 export default monedaDetails

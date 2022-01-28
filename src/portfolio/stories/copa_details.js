@@ -268,7 +268,8 @@ const copaDetails = {
       name: 'React Native',
       photo: React
     }
-  ]
+  ],
+  reviewedOnClutch: false
 }
 
 export default copaDetails

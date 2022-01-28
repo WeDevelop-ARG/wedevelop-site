@@ -117,7 +117,8 @@ const ballwizDetails = {
       name: 'Python',
       photo: Python
     }
-  ]
+  ],
+  reviewedOnClutch: true
 }
 
 export default ballwizDetails

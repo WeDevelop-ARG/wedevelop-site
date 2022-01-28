@@ -135,7 +135,8 @@ const trainWithDetails = {
       name: 'Stripe',
       photo: Stripe
     }
-  ]
+  ],
+  reviewedOnClutch: true
 }
 
 export default trainWithDetails

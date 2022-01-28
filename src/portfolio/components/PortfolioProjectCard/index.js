@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
-import classNames from 'classnames'
 
 import Button from 'main_app/components/Button'
 import Image from 'main_app/components/Image'
@@ -9,7 +7,6 @@ import useMediaQuery from 'utils/use_media_query'
 import { forPhoneOnly } from 'styles/media_queries'
 
 import { ReactComponent as BlueArrow } from 'assets/portfolio/arrow.svg'
-import { ReactComponent as WhiteArrow } from 'assets/portfolio/white_horizontal_arrow.svg'
 
 import classes from './styles.module.scss'
 
@@ -29,7 +26,6 @@ function PortfolioProjectCard ({
   } else {
     logoStyleProp.style = { backgroundImage: logoBackground }
   }
-  const [isOnHover, setIsOnHover] = useState(false)
   const isPhoneOnly = useMediaQuery(forPhoneOnly)
   const cantidadCaracteres = 145
   const index = description.substring(0, cantidadCaracteres).lastIndexOf(' ')
@@ -40,8 +36,6 @@ function PortfolioProjectCard ({
       to={detailsPagePath}
       smooth
       className={classes.container}
-      onMouseOver={() => setIsOnHover(true)}
-      onMouseOut={() => setIsOnHover(false)}
     >
       <Image
         src={coverImageURL}
@@ -75,11 +69,9 @@ function PortfolioProjectCard ({
           </>
         )}
         <Button
-          variant={isOnHover ? 'primary' : 'link'}
-          iconRight={isOnHover ? <WhiteArrow /> : <BlueArrow />}
-          className={classNames(classes.readMore, {
-            [classes.readMoreWhite]: isOnHover
-          })}
+          variant='link'
+          iconRight={<BlueArrow />}
+          className={classes.readMore}
         >
           Read More
         </Button>
