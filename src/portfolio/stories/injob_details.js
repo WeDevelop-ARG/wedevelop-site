@@ -34,7 +34,6 @@ const injobDetails = {
     tags: ['Marketplace'],
     description:
       'The shift to online and remote work keeps accelerating year by year, connecting businesses with a wealth of benefits. So, with InJob, our client had the vision of increasing the power of freelancers and making it easier for them to connect and work together with clients.',
-    websiteURL: 'https://injobonline.com/',
     imageURL: InjobCoworking
   },
   challenge: {

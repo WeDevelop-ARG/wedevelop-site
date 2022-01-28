@@ -56,7 +56,6 @@ function StoryDetails () {
           subtitle={storyDetails.header.subtitle}
           tags={storyDetails.header.tags}
           description={storyDetails.header.description}
-          websiteURL={storyDetails.header.websiteURL}
           imageURL={storyDetails.header.imageURL}
           logoBackground={storyDetails.header.logoBackground}
         />

@@ -31,7 +31,6 @@ const ballwizDetails = {
     tags: ['Sports Betting', 'Data Analytics'],
     description:
       'Most people are fans of sports, and many people love to watch their favorite sports while hoping to make some money at the same time. That’s why Ballwiz’s owners decided to put their heads together and create a platform to allow everyone to do just that, quickly and efficiently.',
-    websiteURL: '',
     imageURL: BallwizDashboard
   },
   challenge: {
