@@ -1,7 +1,7 @@
-@import '/src/styles/media_queries.scss';
+@import "/src/styles/media_queries.scss";
 
 .techStackSection {
-  background-image: url('../../../assets/portfolio/tech_stack/background_for_icons.svg');
+  background-image: url("../../../assets/portfolio/tech_stack/background_for_icons.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -52,4 +52,42 @@
   line-height: 100%;
   opacity: 0.5;
   margin: 15px 0 0;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %circle;
+  background: rgba($color: #eaeaea, $alpha: 0.3);
+  width: 309px;
+  height: 309px;
+  top: -141px;
+  left: 12px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  border: 0.5px solid rgba($color: #363636, $alpha: 0.2);
+  width: 310px;
+  height: 310px;
+  top: -153px;
+  left: 38px;
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 10px;
+  height: 10px;
+  background-color: rgba($color: #8224e3, $alpha: 0.5);
+  filter: blur(4px);
+  top: -123px;
+  left: 284px;
 }

@@ -62,11 +62,9 @@ function StoryDetails () {
           title={storyDetails.challenge.title}
           content={storyDetails.challenge.content}
         />
-        {!withoutTestimonials &&
-          <Testimonials
-            reviews={storyDetails.testimonials}
-            customDecorations={<TestimonialsDecoration />}
-            hideHeader
+        {!withoutTestimonial &&
+          <PortfolioTestimonial
+            review={storyDetails.testimonial}
           />
         }
         {storyDetails.reviewedOnClutch &&
