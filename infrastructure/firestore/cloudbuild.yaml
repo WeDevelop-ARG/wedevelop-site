@@ -1,0 +1,10 @@
+steps:
+- name: node:16.13.1-alpine
+  waitFor: ['-']
+  dir: 'firestore'
+  args: ['deploy', '--project=$PROJECT_ID', '--only=firestore:rules']
+
+logsBucket: '$_LOGS_BUCKET'
+timeout: 600s
+options:
+  logging: GCS_ONLY

@@ -10,6 +10,12 @@ variable "region" {
   default     = "us-central1"
 }
 
+variable "region_app" {
+  type        = string
+  description = "GCP region for app engine"
+  default     = "us-central"
+}
+
 variable "zone" {
   type        = string
   description = "GCP zone for resources"
