@@ -9,7 +9,8 @@ resource "google_cloudbuild_trigger" "deploy_frontend_from_github" {
     "infrastructure/firestore/**", 
     "infrastructure/functions/**",
     "infrastructure/build_firestore.tf",
-    "infrastructure/build_functions.tf"
+    "infrastructure/build_functions.tf",
+    "infrastructure/build_storage.tf",
   ]
   included_files = []
   tags = []
