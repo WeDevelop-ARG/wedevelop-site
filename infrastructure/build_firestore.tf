@@ -4,7 +4,7 @@ resource "google_cloudbuild_trigger" "deploy_firestore_from_github" {
   project     = local.project_id
   filename    = "infrastructure/firestore/cloudbuild.yaml"
   ignored_files  = []
-  included_files = ["firestore/**"]
+  included_files = ["firestore/**", "infrastructure/firestore","infrastructure/build_firestore"]
   tags = []
   depends_on = [
     google_project_iam_member.cloudbuild["roles/iam.serviceAccountUser"],

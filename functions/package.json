@@ -6,7 +6,7 @@
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
+    "deploy": "firebase deploy --project=$npm_config_project --only=functions",
     "logs": "firebase functions:log"
   },
   "engines": {
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "eslint": "^7.6.0",
+    "firebase-tools": "^9.5.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
