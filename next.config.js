@@ -7,7 +7,7 @@ function generatePortfolioPaths () {
   const paths = {}
 
   for (const story of stories) {
-    paths[`/portfolio/${story.urlName}`] = { page: `/portfolio/${story.urlName}` }
+    paths[`/portfolio/${story.urlName}`] = { page: '/portfolio/[name]', query: { name: story.urlName } }
   }
 
   return paths
