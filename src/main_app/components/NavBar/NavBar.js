@@ -17,6 +17,7 @@ import Logo from '../Logo'
 
 import CloseX from 'assets/nav_bar/close_x.svg'
 import HamburguerMenu from 'assets/nav_bar/hamburguer_menu.svg'
+import HamburguerMenuWhite from 'assets/nav_bar/hamburguer_menu_white.svg'
 
 import classes from './styles.module.scss'
 
@@ -120,7 +121,7 @@ function NavBar ({
             {menuOpen && <Image src={CloseX} layout='fixed' width='24' height='24' alt='Open menu' />}
             {!menuOpen &&
               <Image
-                src={HamburguerMenu}
+                src={isVariant(variant, 'light') && isVariant(variant, 'transparent') ? HamburguerMenuWhite : HamburguerMenu}
                 layout='fixed'
                 width='27'
                 height='27'
