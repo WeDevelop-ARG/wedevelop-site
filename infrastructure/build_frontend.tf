@@ -6,6 +6,7 @@ resource "google_cloudbuild_trigger" "deploy_frontend_from_github" {
   ignored_files  = [
     "functions/**",
     "firestore/**",
+    "storage/**",
     "infrastructure/firestore/**", 
     "infrastructure/storage/**", 
     "infrastructure/functions/**",
