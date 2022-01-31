@@ -18,6 +18,7 @@ function ProjectLogo ({
       <WrappedImage
         src={logoURL}
         alt={projectName}
+        layout='fill'
         objectFit='contain'
         className={classes.logoImg}
       />
