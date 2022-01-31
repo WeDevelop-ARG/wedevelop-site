@@ -36,6 +36,7 @@ function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
           duration={5000}
           transitionDuration={500}
           autoplay={isAutoplay}
+          canSwipe={isAutoplay}
           pauseOnHover
           indicators={isAutoplay}
           arrows={false}
