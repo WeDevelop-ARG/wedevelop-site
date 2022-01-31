@@ -32,3 +32,9 @@
     margin-top: -220px;
   }
 }
+
+.howItWorks {
+  @include for-desktop-up {
+    margin-bottom: 75px;
+  }
+}

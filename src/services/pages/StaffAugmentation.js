@@ -52,7 +52,7 @@ function StaffAugmentation () {
             <StaffDetails />
           </Details>
         </section>
-        <HowDoesItWorks />
+        <HowDoesItWorks className={classes.howItWorks} />
         <Benefits className={classes.sectionContainer} service='staff-augmentation' />
         <Schedule
           className={classes.sectionContainer}
