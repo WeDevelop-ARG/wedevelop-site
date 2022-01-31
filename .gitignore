@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /functions/node_modules
+/storage/node_modules
 /firestore/node_modules
 /.pnp
 .pnp.js
@@ -33,3 +34,11 @@ yarn-error.log*
 
 firebase.json.backup
 ui-debug.log
+
+# docker-dev
+docker-dev/firebase/bin
+docker-dev/firebase/config
+docker-dev/firebase/**/.data
+docker-dev/firebase/**/*.log
+docker-dev/.service_account.json
+
