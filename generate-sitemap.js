@@ -2,8 +2,6 @@ const fs = require('fs')
 const globby = require('globby')
 require('dotenv').config({ path: '.env.production' })
 
-console.log(process.env)
-
 function addPage (page) {
   const path = page.replace('pages', '').replace('.jsx', '')
   const route = path === '/index' ? '' : path
