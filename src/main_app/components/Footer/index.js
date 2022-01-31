@@ -32,7 +32,7 @@ function Footer ({ variant = 'dark', className }) {
             </HashLink>
           </li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/career#top' smooth className={classes.contactContent}>
+            <HashLink to='/careers#top' smooth className={classes.contactContent}>
               Careers
             </HashLink>
           </li>

@@ -1,6 +1,8 @@
 import { useState, useCallback, useEffect, useMemo } from 'react'
 import { useHistory } from 'react-router'
 
+import usePageMetadata from 'utils/marketing/use_page_metadata'
+
 import { FOLLOW_UP_CONTACT_PROCESSOR_URL, IS_STATIC_RENDERER } from 'main_app/constants'
 import NotFound from 'not_found'
 
@@ -19,6 +21,11 @@ import DotsPattern from 'assets/follow_up/dots_pattern.svg'
 import classes from './styles.module.scss'
 
 function FollowUp () {
+  usePageMetadata({
+    title: 'Complete You Request',
+    noindex: true
+  })
+
   const history = useHistory()
   const [isConfirmationOpen, setConfirmationOpen] = useState(false)
   const [isModalOpen, setModalOpen] = useState(false)

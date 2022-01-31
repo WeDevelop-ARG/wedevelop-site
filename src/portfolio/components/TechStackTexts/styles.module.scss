@@ -1,7 +1,7 @@
-@import '/src/styles/media_queries.scss';
+@import "/src/styles/media_queries.scss";
 
 .techStackSection {
-  background-image: url('../../../assets/portfolio/tech_stack/background_for_texts.svg');
+  background-image: url("../../../assets/portfolio/tech_stack/background_for_texts.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -20,7 +20,7 @@
 }
 
 .listSkills {
-  list-style-image: url('../../../assets/portfolio/tech_stack/check.svg');
+  list-style-image: url("../../../assets/portfolio/tech_stack/check.svg");
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,4 +56,42 @@
   border-radius: 50px;
   padding: 10px 20px;
   margin-bottom: 30px;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %circle;
+  background: rgba($color: #eaeaea, $alpha: 0.3);
+  width: 309px;
+  height: 309px;
+  top: 630px;
+  right: 40px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  border: 0.5px solid rgba($color: #363636, $alpha: 0.2);
+  width: 310px;
+  height: 310px;
+  top: 620px;
+  right: 64px;
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 10px;
+  height: 10px;
+  background-color: rgba($color: #8224e3, $alpha: 0.5);
+  filter: blur(4px);
+  top: 659px;
+  right: 322px
 }

@@ -1,29 +1,19 @@
-@import '/src/styles/media_queries.scss';
+@import "/src/styles/media_queries.scss";
 
 $grayColor: #363636;
 
-.headerContainer {
+.decorationWrapper {
   position: relative;
-  padding-bottom: 0;
+  padding: 0 !important;
+  width: 100%;
+  height: 275px;
 
-  @include for-tablet-down {
-    padding-top: 75vw !important;
-  }
-
-  @include for-phone-only {
-    padding-top: 87vw !important;
-
-    @media screen and (min-width: 500px) {
-      padding-top: 83vw !important;
-    }
+  @include for-tablet-up {
+    height: 250px;
   }
 
   @include for-desktop-up {
-    padding-top: 20vw !important;
-
-    @media screen and (min-width: 1600px) {
-      padding-top: 18vw !important;
-    }
+    height: 225px;
   }
 }
 
@@ -36,28 +26,32 @@ $grayColor: #363636;
   font-weight: 600;
 }
 
-.decorationWrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
 .headerBackground {
   width: 100%;
+  height: 100%;
 }
 
-.logoContainer {
+.projectLogo {
+  bottom: 0;
+  transform: translateY(40%);
+  left: calc(50% - 60px);
+
+  @include for-tablet-up {
+    transform: translateY(20%);
+  }
+
+  @include for-desktop-up {
+    transform: translateY(40%);
+    left: calc(var(--rootContentHorizontalPadding) + 220px);
+  }
+}
+
+.headerContainer {
   position: relative;
-  width: 100%;
-
-  @include for-tablet-down {
-    left: 0px;
-  }
-
-  img {
-    padding: 10px;
-  }
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 80px;
+  overflow: hidden;
 }
 
 .content {
@@ -94,23 +88,6 @@ $grayColor: #363636;
 .title {
   font-size: 60px;
   font-weight: 600;
-}
-
-.websiteLink {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none !important;
-  color: #377DFF;
-}
-
-.worldIcon {
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-  margin-left: 7px;
-  outline: none;
 }
 
 .horizontalBar {
@@ -176,4 +153,63 @@ $grayColor: #363636;
   @extend %decoElements;
   left: 74px;
   bottom: 33vw;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.filledCircle {
+  @extend %circle;
+  background: rgba($color: #eaeaea, $alpha: 0.3);
+  width: 139px;
+  height: 139px;
+  top: 365px;
+  right: -88px;
+}
+
+.emptyCircle {
+  @extend %circle;
+  border: 0.5px solid rgba($color: #363636, $alpha: 0.2);
+  width: 139px;
+  height: 139px;
+  top: 374px;
+  right: -98px;
+}
+
+.emptyDashedCircle {
+  @extend %circle;
+  border: 1px dashed #e1e1e1;
+  width: 321px;
+  height: 321px;
+  top: 264px;
+  right: -86px;
+}
+
+.smallBlurCircle {
+  @extend %circle;
+  width: 14px;
+  height: 14px;
+  background-color: #8224e3;
+  filter: blur(2px);
+  top: 468px;
+  right: 50px;
+  opacity: 0.3;
+}
+
+.leftFilledCircle {
+  @extend %circle;
+  width: 30px;
+  height: 30px;
+  left: 162px;
+  top: 227px;
+  background: #e1e1e1;
+  opacity: 0.2;
+  filter: blur(2px);
 }
