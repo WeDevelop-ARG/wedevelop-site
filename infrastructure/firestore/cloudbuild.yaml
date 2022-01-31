@@ -1,9 +1,15 @@
 steps:
 - name: node:16.13.1-alpine
   waitFor: ['-']
+  id: 'install'
   dir: 'firestore'
-  entrypoint: 'firebase'
-  args: ['deploy', '--project=$PROJECT_ID', '--only=firestore:rules']
+  entrypoint: 'npm'
+  args: ['ci']
+- name: node:16.13.1-alpine
+  waitFor: ['install']
+  dir: 'firestore'
+  entrypoint: 'npm'
+  args: ['deploy', '--project=$PROJECT_ID']
 
 logsBucket: '$_LOGS_BUCKET'
 timeout: 600s
