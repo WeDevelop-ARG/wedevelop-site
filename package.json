@@ -66,7 +66,8 @@
       "/careers",
       "/follow-up",
       "/success/confirm",
-      "/it-outsourcing"
+      "/it-outsourcing",
+      "/it-staffing"
     ]
   },
   "eslintConfig": {
