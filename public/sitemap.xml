@@ -1,236 +1,236 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      <url>
-    <loc>undefined/404</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+    <url>
+    <loc>http://localhost:3000/404</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/contact</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/contact</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/follow-up</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/follow-up</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/privacy-policy</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/privacy-policy</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/about-us/contact</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/about-us/contact</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/about-us/index</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/about-us/index</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/career/contact</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/career/contact</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/career/index</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/career/index</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/devops</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/devops</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/hire-developers</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/hire-developers</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/hire-javascript-developers</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/hire-javascript-developers</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/hire-net-developers</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/hire-net-developers</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/it-outsourcing</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/it-outsourcing</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/it-staffing</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/it-staffing</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/mobile</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/mobile</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/nearshore-net-developers</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/nearshore-net-developers</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/nearshore-software-outsourcing</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/nearshore-software-outsourcing</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/offshore-web-development</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/offshore-web-development</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/software-development</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/software-development</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/staff-augmentation</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/staff-augmentation</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/web-coders</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/web-coders</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/web-developers</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/web-developers</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/web-development-outsourcing</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/web-development-outsourcing</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/web-programmers</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/web-programmers</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/lp/website-builders</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/lp/website-builders</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/portfolio/ballwiz</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/portfolio/ballwiz</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/portfolio/copa</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/portfolio/copa</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/portfolio/cvsd</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/portfolio/cvsd</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/portfolio/dr-cannabis</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/portfolio/dr-cannabis</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/portfolio/index</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/portfolio/index</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/portfolio/injob</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/portfolio/injob</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/portfolio/moneda</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/portfolio/moneda</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/portfolio/raft</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/portfolio/raft</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/portfolio/train-with</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/portfolio/train-with</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/services/index</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/services/index</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/services/staff-augmentation</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/services/staff-augmentation</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/services/web-development</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/services/web-development</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>undefined/success/confirm</loc>
-    <lastmod>2022-01-31T17:30:01.383Z</lastmod>
+<url>
+    <loc>http://localhost:3000/success/confirm</loc>
+    <lastmod>2022-01-31T17:49:07.294Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
