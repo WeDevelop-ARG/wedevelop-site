@@ -49,14 +49,16 @@ const injobDetails = {
       </>
     )
   },
-  testimonial: {
-    profileImageURL: TestimonialsImage,
-    name: '',
-    quote:
-      'They are very understanding with us as it is our first time working with agile methodologies.',
-    position: 'Founder & Investor',
-    company: 'InJob Online'
-  },
+  testimonials: [
+    {
+      profileImageURL: TestimonialsImage,
+      name: '',
+      quote:
+        'They are very understanding with us as it is our first time working with agile methodologies.',
+      position: 'Founder & Investor',
+      company: 'InJob Online'
+    }
+  ],
   solution: {
     title: 'The Solution',
     content: (

@@ -10,10 +10,11 @@ import NavBar from 'main_app/components/NavBar/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import SimilarStories from 'portfolio/components/SimilarStories'
 import StoryHeader from '../../components/StoryHeader'
-import PortfolioTestimonial from '../../components/PortfolioTestimonial'
-import TextImageGeneric from '../../components/TextImageGeneric'
 import TechStackTexts from 'portfolio/components/TechStackTexts'
 import TechStackIcons from 'portfolio/components/TechStackIcons'
+import Testimonials from 'main_app/components/Testimonials'
+import TestimonialsDecoration from 'portfolio/components/TestimonialsDecoration'
+import TextImageGeneric from '../../components/TextImageGeneric'
 
 import useStoryByName from '../../hooks/useStoryByName'
 
@@ -63,8 +64,10 @@ function StoryDetails ({ name }) {
           content={storyDetails.challenge.content}
         />
         {!withoutTestimonial &&
-          <PortfolioTestimonial
-            review={storyDetails.testimonial}
+          <Testimonials
+            reviews={storyDetails.testimonials}
+            customDecorations={<TestimonialsDecoration />}
+            hideHeader
           />}
         {storyDetails.reviewedOnClutch &&
           <section className={classes.clutchContainer}>
