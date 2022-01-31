@@ -29,6 +29,7 @@
     "rectangles": "^0.0.4",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.0",
+    "globby": "^11.0.1",
     "yup": "^0.32.9"
   },
   "scripts": {
@@ -36,10 +37,12 @@
     "lint": "next lint -d pages -d src",
     "lint:fix": "npm run lint -- --fix",
     "build": "NODE_ENV=production next build && next export",
+    "postbuild": "NODE_ENV=production node generate-sitemap",
+
     "build-testing": "ncp .env_testing .env.production && npm run build",
-    "postbuild-testing": "mkdirp ./out/assets-testing && ncp ./out/_next ./out/assets-testing/_next && rimraf -rf ./out/_next",
+    "postbuild-testing": "node generate-sitemap && mkdirp ./out/assets-testing && ncp ./out/_next ./out/assets-testing/_next && rimraf -rf ./out/_next",
     "build-production": "ncp .env_production .env.production && npm run build",
-    "postbuild-production": "mkdirp ./out/assets-production && ncp ./out/_next ./out/assets-production/_next && rimraf -rf ./out/_next",
+    "postbuild-production": "node generate-sitemap && mkdirp ./out/assets-production && ncp ./out/_next ./out/assets-production/_next && rimraf -rf ./out/_next",
     "deploy-functions-production": "firebase deploy --only functions --project wedevelop-site",
     "deploy-functions-testing": "firebase deploy --only functions --project wedevelop-site-testing",
     "deploy-hosting": "firebase deploy --project $npm_config_project --only hosting",
