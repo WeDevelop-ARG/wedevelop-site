@@ -1,6 +1,6 @@
 import Article from 'main_app/components/Article'
-import BackgroundContainer from './components/BackgroundContainer'
 import AvailableDevs from './components/AvailableDevs'
+import BackgroundContainer from './components/BackgroundContainer'
 import Footer from './components/Footer'
 import FullSizeCTA from './components/FullSizeCTA'
 import HireTopTalent from './components/HireTopTalent'

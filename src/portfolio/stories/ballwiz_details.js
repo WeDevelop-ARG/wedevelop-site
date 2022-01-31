@@ -31,7 +31,6 @@ const ballwizDetails = {
     tags: ['Sports Betting', 'Data Analytics'],
     description:
       'Most people are fans of sports, and many people love to watch their favorite sports while hoping to make some money at the same time. That’s why Ballwiz’s owners decided to put their heads together and create a platform to allow everyone to do just that, quickly and efficiently.',
-    websiteURL: '',
     imageURL: BallwizDashboard
   },
   challenge: {
@@ -55,16 +54,14 @@ const ballwizDetails = {
       </>
     )
   },
-  testimonials: [
-    {
-      profileImageURL: '',
-      name: '',
-      quote:
-        '"They’re willing to engage with a problem to figure it out rather than waiting to be told what to do."',
-      position: 'Founder',
-      company: 'Ballwiz'
-    }
-  ],
+  testimonial: {
+    profileImageURL: '',
+    name: '',
+    quote:
+      '"They’re willing to engage with a problem to figure it out rather than waiting to be told what to do."',
+    position: 'Founder',
+    company: 'Sports Betting Startup'
+  },
   solution: {
     title: 'The Solution',
     content: (
@@ -120,7 +117,8 @@ const ballwizDetails = {
       name: 'Python',
       photo: Python
     }
-  ]
+  ],
+  reviewedOnClutch: true
 }
 
 export default ballwizDetails

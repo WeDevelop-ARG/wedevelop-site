@@ -30,7 +30,6 @@ const trainWithDetails = {
     tags: ['Fitness', 'Streaming'],
     description:
       'TrainWith is a fitness application founded in 2017 that allows trainers to host live and on-demand classes online. Users can join these classes from the comfort of their homes. During the COVID-19 pandemic, the lockdown forced gyms to close their doors, and the whole fitness industry faced a crisis without precedents.',
-    websiteURL: 'https://train-with.com/',
     imageURL: TrainWithLiveClass
   },
   challenge: {
@@ -54,16 +53,14 @@ const trainWithDetails = {
       </>
     )
   },
-  testimonials: [
-    {
-      profileImageURL: TestimonialsImage,
-      name: '',
-      quote:
-        'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
-      position: 'CEO',
-      company: 'TrainWith'
-    }
-  ],
+  testimonial: {
+    profileImageURL: TestimonialsImage,
+    name: '',
+    quote:
+      'They’re a well-rounded team, which is conducive to troubleshooting [and] having difficult conversations.',
+    position: 'CEO',
+    company: 'Fitness App Company'
+  },
   solution: {
     title: 'The solution',
     content: (
@@ -138,7 +135,8 @@ const trainWithDetails = {
       name: 'Stripe',
       photo: Stripe
     }
-  ]
+  ],
+  reviewedOnClutch: true
 }
 
 export default trainWithDetails

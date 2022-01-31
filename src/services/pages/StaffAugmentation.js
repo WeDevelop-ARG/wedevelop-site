@@ -31,7 +31,7 @@ function StaffAugmentation () {
   return (
     <>
       <PageMetadata
-        title='Staff Augmentation'
+        title='IT Staff Augmentation'
         description='A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
       />
       <NavBar variant={['solid', 'dark']} />

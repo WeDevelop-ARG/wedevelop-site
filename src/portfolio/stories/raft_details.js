@@ -31,7 +31,6 @@ const raftDetails = {
     tags: ['Travel', 'Booking'],
     description:
       'RAFT Croatia is a search engine for ferry bookings. RAFT’s mission is to make transportation between the islands and coastal cities of Croatia seamless and stress-free.',
-    websiteURL: 'https://raftcroatia.com/',
     imageURL: RaftReservations
   },
   challenge: {
@@ -51,16 +50,14 @@ const raftDetails = {
       </>
     )
   },
-  testimonials: [
-    {
-      profileImageURL: TestimonialsImage,
-      name: '',
-      quote:
-        '“WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.”',
-      position: 'CEO',
-      company: 'RAFT'
-    }
-  ],
+  testimonial: {
+    profileImageURL: TestimonialsImage,
+    name: '',
+    quote:
+      '“WeDevelop was resourceful, unafraid of problems and blockers, creative, professional, and fast.”',
+    position: 'CEO',
+    company: 'RAFT'
+  },
   solution: {
     title: 'The solution',
     content: (
@@ -162,7 +159,8 @@ const raftDetails = {
       name: 'PostgreSQL',
       photo: PostgreSQL
     }
-  ]
+  ],
+  reviewedOnClutch: true
 }
 
 export default raftDetails

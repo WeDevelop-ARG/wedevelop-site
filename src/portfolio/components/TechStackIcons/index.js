@@ -6,6 +6,9 @@ function TechStackIcons ({ icons }) {
   return (
     <section className={classes.techStackSection}>
       <div className={classes.content}>
+        <div className={classes.filledCircle} />
+        <div className={classes.emptyCircle} />
+        <div className={classes.smallBlurCircle} />
         <h3 className={classes.title}>Tech Stack</h3>
         <div className={classes.listSkill} align='center'>
           {icons.map(({ id, name, photo }) => (

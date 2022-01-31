@@ -52,7 +52,7 @@ function AboutUs () {
           className={classes.moreInfoButton}
           link={{ scroll: false }}
         >
-          More Info
+          Get In Touch
         </Button>
         <div className={classes.filledCircle} aria-hidden='true' />
         <div className={classes.emptyCircle} aria-hidden='true' />

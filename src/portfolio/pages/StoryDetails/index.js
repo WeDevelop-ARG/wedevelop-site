@@ -10,8 +10,7 @@ import NavBar from 'main_app/components/NavBar/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import SimilarStories from 'portfolio/components/SimilarStories'
 import StoryHeader from '../../components/StoryHeader'
-import Testimonials from 'main_app/components/Testimonials'
-import TestimonialsDecoration from '../../components/TestimonialsDecoration'
+import PortfolioTestimonial from '../../components/PortfolioTestimonial'
 import TextImageGeneric from '../../components/TextImageGeneric'
 import TechStackTexts from 'portfolio/components/TechStackTexts'
 import TechStackIcons from 'portfolio/components/TechStackIcons'
@@ -33,7 +32,7 @@ function StoryDetails () {
     push(`/portfolio/${name}`)
   }, [name, push])
 
-  const withoutTestimonials = isEmpty(storyDetails?.testimonials)
+  const withoutTestimonial = isEmpty(storyDetails?.testimonials)
 
   if (isNil(storyDetails)) { return null }
   return (
@@ -57,7 +56,6 @@ function StoryDetails () {
           subtitle={storyDetails.header.subtitle}
           tags={storyDetails.header.tags}
           description={storyDetails.header.description}
-          websiteURL={storyDetails.header.websiteURL}
           imageURL={storyDetails.header.imageURL}
           logoBackground={storyDetails.header.logoBackground}
         />
@@ -65,22 +63,19 @@ function StoryDetails () {
           title={storyDetails.challenge.title}
           content={storyDetails.challenge.content}
         />
-        {!withoutTestimonials &&
-          <>
-            <Testimonials
-              reviews={storyDetails.testimonials}
-              customDecorations={<TestimonialsDecoration />}
-              hideHeader
-            />
-            <section className={classes.clutchContainer}>
-              <ClutchWidget variant='dark' className={classes.clutchWidget} />
-            </section>
-          </>}
+        {!withoutTestimonial &&
+          <PortfolioTestimonial
+            review={storyDetails.testimonial}
+          />}
+        {storyDetails.reviewedOnClutch &&
+          <section className={classes.clutchContainer}>
+            <ClutchWidget variant='dark' className={classes.clutchWidget} />
+          </section>}
         <TextImageGeneric
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}
           imageURL={storyDetails.solution.imageURL}
-          withoutTestimonials={withoutTestimonials}
+          withoutTestimonials={withoutTestimonial}
         />
         {!isEmpty(storyDetails.techStackContent) && (
           <TechStackTexts

@@ -7,6 +7,7 @@ import Footer from 'main_app/components/Footer'
 import JoinUsForm from './components/JoinUsForm'
 import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 function Career () {
   const contactPagePath = '/career/contact'
@@ -18,6 +19,10 @@ function Career () {
 
   return (
     <>
+      <PageMetadata
+        title='Join Us'
+        description='Join the professional teams of WeDevelop.'
+      />
       <NavBar
         variant={['solid', 'dark']}
         contactPagePath={contactPagePath}

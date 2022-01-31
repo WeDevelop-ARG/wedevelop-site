@@ -17,6 +17,7 @@ import FollowUpMobileBackground from 'assets/follow_up/mobile_background.png'
 import DotsPattern from 'assets/follow_up/dots_pattern.svg'
 
 import classes from './styles.module.scss'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 function FollowUp () {
   const { query } = useRouter()
@@ -55,6 +56,9 @@ function FollowUp () {
 
   return (
     <>
+      <PageMetadata
+        title='Complete Your Request'
+      />
       <Navbar
         handleModalOpen={handleModalOpen}
       />

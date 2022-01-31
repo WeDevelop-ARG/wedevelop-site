@@ -27,7 +27,6 @@ const drCannabisDetails = {
     tags: ['IA', 'Health'],
     description:
       'People like to grow their own Cannabis, but that’s not always a simple task. The plant can get sick or even die if the grower is not well-versed in cultivating Cannabis. However, there is lots of information online about the cultivation process, and the community is very friendly. You ask, you get a response. You are not alone in this task. Dr. Cannabis wanted to take this to the next level. They decided to gather as much information as possible and then use machine learning to train an AI-powered application that supports people who want to cultivate and harvest their own Cannabis.',
-    websiteURL: '',
     imageURL: Diagnostic
   },
   challenge: {
@@ -47,7 +46,6 @@ const drCannabisDetails = {
       </>
     )
   },
-  testimonials: [],
   solution: {
     title: 'The Solution',
     content: (
@@ -86,7 +84,8 @@ const drCannabisDetails = {
       name: 'Firebase',
       photo: Firebase
     }
-  ]
+  ],
+  reviewedOnClutch: false
 }
 
 export default drCannabisDetails
