@@ -9,7 +9,7 @@ steps:
   waitFor: ['install']
   dir: 'firestore'
   entrypoint: 'npm'
-  args: ['deploy', '--project=$PROJECT_ID']
+  args: ['run', 'deploy', '--project=$PROJECT_ID']
 
 logsBucket: '$_LOGS_BUCKET'
 timeout: 600s
