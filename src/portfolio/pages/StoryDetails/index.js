@@ -21,9 +21,8 @@ import classes from './styles.module.scss'
 import { useRouter } from 'next/router'
 import PageMetadata from 'utils/marketing/PageMetadata'
 
-function StoryDetails () {
-  const { query, push, pathname } = useRouter()
-  const { name } = query
+function StoryDetails ({ name }) {
+  const { push, pathname } = useRouter()
   const { storyDetails } = useStoryByName(name)
 
   const contactPagePath = `/portfolio/${name}/contact`

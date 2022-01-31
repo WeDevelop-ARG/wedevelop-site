@@ -1,27 +1,6 @@
 const { ENVIRONMENT } = require('./src/main_app/constants')
-// const { stories } = require('./src/portfolio/stories')
-
-const stories = [{ urlName: 'copa' }]
-
-function generatePortfolioPaths () {
-  const paths = {}
-
-  for (const story of stories) {
-    paths[`/portfolio/${story.urlName}`] = { page: '/portfolio/[name]', query: { name: story.urlName } }
-  }
-
-  return paths
-}
 
 module.exports = require('next-optimized-classnames')({
-  exportPathMap: async function (
-    defaultPathMap
-  ) {
-    return {
-      ...defaultPathMap,
-      ...generatePortfolioPaths()
-    }
-  },
   experimental: { optimizeCss: true },
   images: ENVIRONMENT !== 'development'
     ? {
