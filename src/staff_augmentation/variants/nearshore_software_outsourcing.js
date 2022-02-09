@@ -13,7 +13,7 @@ const nearshoreSoftwareOutsourcing = {
   },
   header: {
     landingName: <>Nearshore Software Outsourcing</>,
-    title: <>The <b>right Nearshore Software Outsourcing</b> agency</>,
+    title: <>Available <b>Nearshore Talent</b> for you</>,
     description: (
       <>
         <p>Get access to the top Software Engineers in LATAM.</p>
