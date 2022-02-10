@@ -30,6 +30,8 @@ function CalendlyWidget ({ sourcePage, hideText, followUpTracingId, onFinish, pr
       contactType: 'calendly',
       contactSource: sourcePage
     })
+    // LinkedIn Ad Conversion Event
+    try{window?.lintrk?.('track', { conversion_id: 6505732 })}catch(e){}
     try {
       await window.fetch(PROCESS_CALENDLY_EVENT_INVITEE_ENDPOINT_URL, {
         method: 'POST',
