@@ -75,9 +75,7 @@
           sc.async = true
           sc.defer = true
 
-          setTimeout(function () {
-            document.head.appendChild(sc)
-          }, WAIT_TIME_BEFORE_APPEND)
+          document.head.appendChild(sc)
         }
 
         function loadCookieConsent () {

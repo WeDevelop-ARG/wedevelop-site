@@ -20,6 +20,12 @@ const SuccessConfirm = prerenderedLazy(() => import('success'))
 function Routes () {
   return (
     <Switch>
+      <Route path='test-optimize-a'>
+        <h1>A</h1>
+      </Route>
+      <Route path='test-optimize-b'>
+        <h1>B</h1>
+      </Route>
       <LazyRoute exact path={['/', '/contact']}>
         <Landing />
       </LazyRoute>

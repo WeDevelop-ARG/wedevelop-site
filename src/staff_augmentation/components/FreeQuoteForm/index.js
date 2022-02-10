@@ -31,6 +31,8 @@ function FreeQuoteForm ({
         contactType: 'free-quote-form',
         source: formOrigin
       })
+      // LinkedIn Ad Conversion Event
+      try{window?.lintrk?.('track', { conversion_id: 6505732 })}catch(e){}
       const responseJSON = await response.json()
       tracingId = responseJSON.tracingId
       history.push('/follow-up?tracingId=' + tracingId)
@@ -53,9 +55,9 @@ function FreeQuoteForm ({
         <p className={classes.descriptionText}>{formHeader.description}</p>
         <hr className={classes.horizontalBar} />
       </div>
-      <LoaderSpinner 
-        className={classes.loadingContainer} 
-        visible={isLoading} 
+      <LoaderSpinner
+        className={classes.loadingContainer}
+        visible={isLoading}
       />
       <HubspotFreeQuoteForm
         region={LANDING_FREE_QUOTE_HUBSPOT_FORM_REGION}
