@@ -7,6 +7,7 @@ import HireTopTalent from './components/HireTopTalent'
 import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import PictureWall from 'main_app/components/PictureWall'
 import ReviewCards from './components/ReviewCards'
+import SkillSet from './components/SkillSet'
 
 export default function LandingPageContent ({
   landing,
@@ -34,6 +35,13 @@ export default function LandingPageContent ({
             handleModal={handleContactCTAClick}
           />}
         {landing.hideHowDoesItWork || <HowDoesItWorks />}
+        <SkillSet
+          title={landing.skillSet?.title}
+          subtitle={landing.skillSet?.subtitle}
+          ctaText={landing.skillSet?.ctaText}
+          skillSet={landing.skillSet?.positions}
+          onCTAClick={handleContactCTAClick}
+        />
         <ReviewCards
           subtitle={landing.reviewsHeading.subtitle}
           title={landing.reviewsHeading.title}
