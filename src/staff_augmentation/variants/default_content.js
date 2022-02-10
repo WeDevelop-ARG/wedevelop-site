@@ -54,6 +54,48 @@ const defaultContent = {
     formButtonText: 'Get Web Developer profiles',
     formDisclaimer: 'We typically reply every email within an hour.'
   },
+  skillSet: {
+    title: 'With our skillset,\nWe’ve got you covered',
+    subtitle: 'our team',
+    ctaText: 'Get a Free Quote',
+    positions: {
+      'Backend Developers': [
+        'Ruby Developers',
+        'Python Developers',
+        'PHP Developers',
+        'Node.js Developers',
+        'Java Developers',
+        'Magento Developers',
+        'Golang Developers'
+      ],
+      'Mobile Developers': [
+        'iOS Developers',
+        'Android Developers',
+        'React Native Developers'
+      ],
+      'Cloud/AWS Engineers': [
+        'AWS Engineers',
+        'SRE Engineers',
+        'Google Cloud Platform Engineers',
+        'QA Engineers',
+        'Manual QA Engineers',
+        'QA Automation Engineers',
+        'Project Managers',
+        'Agile Project Managers',
+        'SCRUM Masters',
+        'Engineer Managers',
+        'Seasoned Engineer Managers'
+      ],
+      'Frontend Developers': [
+        'React Developers',
+        'Angular Developers',
+        'Vue.js Developers'
+      ],
+      'Microsoft Stack Developers': [
+        '.Net Developers'
+      ]
+    }
+  },
   reviewsHeading: {
     subtitle: 'Customers reviews',
     title: "Here's what our customers say about our Staffing services",
