@@ -2,6 +2,7 @@ import RachelAram from 'assets/about_us/testimonials/rachel_aram.jpg'
 import FilipElez from 'assets/about_us/testimonials/filip_elez.jpg'
 import HugoTroche from 'assets/about_us/testimonials/hugo_troche.jpg'
 import DarrenLiu from 'assets/about_us/testimonials/darren_liu.jpg'
+import SofiOtta from 'assets/portfolio/injob/testimonials_default_image.png'
 
 const reviews = [
   {
@@ -35,6 +36,13 @@ const reviews = [
     quote: 'They\'re willing to engage with a problem to figure it out rather than waiting to be told what to do.',
     position: 'CEO',
     company: 'Betzar'
+  }, {
+    profileImageURL: SofiOtta,
+    name: '',
+    quote:
+      'They are very understanding with us as it is our first time working with agile methodologies.',
+    position: 'Founder & Investor',
+    company: 'InJob Online'
   }
 ]
 
