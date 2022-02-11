@@ -142,6 +142,15 @@ const defaultContent = {
         type: 'Product Development',
         company: 'Ferry Booking Platform'
       }
+    }, {
+      id: '5',
+      quote:
+        'They are very understanding with us as it is our first time working with agile methodologies.',
+      stars: 5,
+      project: {
+        type: 'Software Development',
+        company: 'InJob Online'
+      }
     }
   ],
   HireTopTalent: {
