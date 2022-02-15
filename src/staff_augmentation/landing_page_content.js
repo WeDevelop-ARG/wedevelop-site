@@ -8,6 +8,7 @@ import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import PictureWall from 'main_app/components/PictureWall'
 import ReviewCards from './components/ReviewCards'
 import SkillSet from './components/SkillSet'
+import LatamTalent from './components/LatamTalent'
 
 export default function LandingPageContent ({
   landing,
@@ -16,6 +17,13 @@ export default function LandingPageContent ({
   return (
     <>
       <Article>
+        <LatamTalent
+          subtitle={landing.latamTalent?.subtitle}
+          title={landing.latamTalent?.title}
+          text={landing.latamTalent?.text}
+          onCTAClick={handleContactCTAClick}
+          ctaText={landing.latamTalent?.ctaText}
+        />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}

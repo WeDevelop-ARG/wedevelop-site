@@ -54,6 +54,12 @@ const defaultContent = {
     formButtonText: 'Get Web Developer profiles',
     formDisclaimer: 'We typically reply every email within an hour.'
   },
+  latamTalent: {
+    subtitle: 'Latam Talent',
+    title: <>The Best<br /><b>LATAM</b> Talent</>,
+    text: 'We source the best talent from LATAM, which guarantees a great quality/price relation. Nearshore to LATAM, it\'s a one-way trip.',
+    ctaText: 'Get a Free Quote'
+  },
   skillSet: {
     title: 'With our skillset,\nWe’ve got you covered',
     subtitle: 'our team',
