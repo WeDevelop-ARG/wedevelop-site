@@ -9,6 +9,7 @@ import PictureWall from 'main_app/components/PictureWall'
 import ReviewCards from './components/ReviewCards'
 import SkillSet from './components/SkillSet'
 import LatamTalent from './components/LatamTalent'
+import WhyLatam from './components/WhyLatam'
 
 export default function LandingPageContent ({
   landing,
@@ -24,6 +25,7 @@ export default function LandingPageContent ({
           onCTAClick={handleContactCTAClick}
           ctaText={landing.latamTalent?.ctaText}
         />
+        <WhyLatam />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}
