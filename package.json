@@ -60,6 +60,8 @@
     "asyncScriptTags": true,
     "inlineCss": true,
     "include": [
+      "/test-optimize-a",
+      "/test-optimize-b",
       "/privacy-policy",
       "/about-us",
       "/portfolio",
@@ -67,7 +69,8 @@
       "/follow-up",
       "/success/confirm",
       "/it-outsourcing",
-      "/it-staffing"
+      "/it-staffing",
+      "/nearshore-software-outsourcing"
     ]
   },
   "eslintConfig": {
