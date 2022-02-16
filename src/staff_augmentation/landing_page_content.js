@@ -11,6 +11,9 @@ import SkillSet from './components/SkillSet'
 import LatamTalent from './components/LatamTalent'
 import WhyLatam from './components/WhyLatam'
 
+import ThreeReasonsBottomSeparator from 'assets/staff_augmentation/three_reasons_bottom_separator.png'
+import HowItWorksBottomSeparator from 'assets/staff_augmentation/how_it_works_bottom_separator.png'
+
 export default function LandingPageContent ({
   landing,
   handleContactCTAClick
@@ -25,7 +28,13 @@ export default function LandingPageContent ({
           onCTAClick={handleContactCTAClick}
           ctaText={landing.latamTalent?.ctaText}
         />
-        <WhyLatam />
+        <WhyLatam
+          subtitle={landing.whyLatam?.subtitle}
+          title={landing.whyLatam?.title}
+          cards={landing.whyLatam?.cards}
+          onCTAClick={handleContactCTAClick}
+          ctaText={landing.whyLatam?.ctaText}
+        />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}
@@ -34,17 +43,18 @@ export default function LandingPageContent ({
           buttonText={landing.HireTopTalent.buttonText}
           handleModal={handleContactCTAClick}
         />
-        <BackgroundContainer backgroundURL={landing.backgrounds.firstBackground} />
+        <BackgroundContainer backgroundURL={ThreeReasonsBottomSeparator} />
         {landing.availableDevs &&
           <AvailableDevs
-            subtitle={landing.availableDevs.subtitle}
-            title={landing.availableDevs.title}
-            description={landing.availableDevs.description}
-            devs={landing.availableDevs.devs}
-            buttonText={landing.availableDevs.buttonText}
-            handleModal={handleContactCTAClick}
+          subtitle={landing.availableDevs.subtitle}
+          title={landing.availableDevs.title}
+          description={landing.availableDevs.description}
+          devs={landing.availableDevs.devs}
+          buttonText={landing.availableDevs.buttonText}
+          handleModal={handleContactCTAClick}
           />}
         {landing.hideHowDoesItWork || <HowDoesItWorks />}
+        <BackgroundContainer backgroundURL={HowItWorksBottomSeparator} />
         <SkillSet
           title={landing.skillSet?.title}
           subtitle={landing.skillSet?.subtitle}
