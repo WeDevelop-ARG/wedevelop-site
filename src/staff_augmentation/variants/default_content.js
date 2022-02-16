@@ -2,6 +2,11 @@ import DefaultBackground from 'assets/web_developers/backgrounds/bg_web_develope
 import WeDevLaptops from 'assets/web_developers/backgrounds/wedev_laptops.png'
 import BookLaptop from 'assets/web_developers/backgrounds/book_laptop.png'
 
+import { ReactComponent as TimeZoneIcon } from 'assets/staff_augmentation/timezone_globe.svg'
+import { ReactComponent as CulturalClosenessIcon } from 'assets/staff_augmentation/cultural_closeness.svg'
+import { ReactComponent as LevelOfEnglishIcon } from 'assets/staff_augmentation/language.svg'
+import { ReactComponent as PriceQualityIcon } from 'assets/staff_augmentation/price_quality.svg'
+
 const defaultContent = {
   pathName: '',
   metadata: {
@@ -53,6 +58,34 @@ const defaultContent = {
     formOrigin: 'web-developers',
     formButtonText: 'Get Web Developer profiles',
     formDisclaimer: 'We typically reply every email within an hour.'
+  },
+  latamTalent: {
+    subtitle: 'Latam Talent',
+    title: <>The Best<br /><b>LATAM</b> Talent</>,
+    text: 'We source the best talent from LATAM, which guarantees a great quality/price relation.\n\nNearshore to LATAM, it\'s a one-way trip.',
+    ctaText: 'Get a Free Quote'
+  },
+  whyLatam: {
+    subtitle: 'NEARSHORE',
+    title: 'Why LATAM?',
+    cards: [{
+      icon: <TimeZoneIcon />,
+      title: 'Time Zone Aligned',
+      text: 'As our engineers are in LATAM in which only has 3 or 4 (+-) hours difference you are going to be working in real-time with your team. Being able to consult them and solve any issue straightaway.'
+    }, {
+      icon: <CulturalClosenessIcon />,
+      title: 'Cultural Closeness',
+      text: 'As we already know our cultures have a lot in common. We share the values of working as a team in a collaborative way, taking responsibilities, fulfilling schedules, and accomplishing a common goal.'
+    }, {
+      icon: <LevelOfEnglishIcon />,
+      title: 'Level of English',
+      text: 'In LATAM the level of english we present is above the average, and besides that we take care of ensuring you that every developer has a high level of English so you can be able to speak with them as you were speaking with an english native.'
+    }, {
+      icon: <PriceQualityIcon />,
+      title: 'Best Price & Quality',
+      text: 'You will find the best relation between price and quality. We only hire the top 1% talented developers to ensure you the best quality, and besides that our prices are almost half cheapest the cost of a US-based equivalent.'
+    }],
+    ctaText: 'Get a Free Quote'
   },
   skillSet: {
     title: 'With our skillset,\nWe’ve got you covered',
