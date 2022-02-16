@@ -60,8 +60,6 @@
     "asyncScriptTags": true,
     "inlineCss": true,
     "include": [
-      "/test-optimize-a",
-      "/test-optimize-b",
       "/privacy-policy",
       "/about-us",
       "/portfolio",
