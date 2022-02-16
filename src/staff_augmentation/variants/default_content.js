@@ -62,11 +62,11 @@ const defaultContent = {
   latamTalent: {
     subtitle: 'Latam Talent',
     title: <>The Best<br /><b>LATAM</b> Talent</>,
-    text: 'We source the best talent from LATAM, which guarantees a great quality/price relation. Nearshore to LATAM, it\'s a one-way trip.',
+    text: 'We source the best talent from LATAM, which guarantees a great quality/price relation.\n\nNearshore to LATAM, it\'s a one-way trip.',
     ctaText: 'Get a Free Quote'
   },
   whyLatam: {
-    subtitle: 'great reasons',
+    subtitle: 'NEARSHORE',
     title: 'Why LATAM?',
     cards: [{
       icon: <TimeZoneIcon />,
