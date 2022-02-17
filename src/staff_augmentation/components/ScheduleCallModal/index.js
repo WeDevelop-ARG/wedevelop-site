@@ -1,5 +1,5 @@
 import ContactPopupModal from '../ContactPopupModal'
-import CalendlyWidget from 'main_app/components/CalendlyWidget'
+import HubSpotCalendar from 'main_app/components/HubSpotCalendar'
 
 export default function ScheduleCallModal ({
   isModalOpen,
@@ -18,7 +18,7 @@ export default function ScheduleCallModal ({
         </span>
       }
     >
-      <CalendlyWidget
+      <HubSpotCalendar
         hideText
         onFinish={() => onSubmit?.()}
       />

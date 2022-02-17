@@ -1,6 +1,6 @@
 import Button from 'main_app/components/Button'
-import CalendlyWidget from 'main_app/components/CalendlyWidget'
 import Modal from 'main_app/components/Modal'
+import HubSpotCalendar from '../HubSpotCalendar'
 
 import classes from './styles.module.scss'
 
@@ -19,7 +19,7 @@ function ContactModal ({ isOpen, onRequestClose }) {
         <hr className={classes.horizontalBar} />
       </div>
       <section className={classes.calendlyWidget}>
-        <CalendlyWidget sourcePage='contact' />
+        <HubSpotCalendar sourcePage='contact' />
       </section>
       <div className={classes.btnContainer}>
         <Button
