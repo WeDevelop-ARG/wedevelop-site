@@ -1,28 +1,28 @@
 import BgHireDevelopers from 'assets/hire_developers/backgrounds/bg_hire_developers.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
-const nearshoreNetDevelopers = {
+const hireDevelopers = {
   ...defaultContent,
-  pathName: 'nearshore-net-developers',
+  pathName: 'hire-developers',
   metadata: {
     title: 'IT Staffing Agency',
-    description: 'Hire .NET Developers.'
+    description: 'Hire Developers and Development Teams.'
   },
   header: {
     navBar: {
       ...defaultContent.header.navBar
     },
     landingName: <>hire developers</>,
-    title: <>Hire Nearshore .NET Developers</>,
+    title: <>Hire Developers and Development Teams</>,
     description: (
       <>
-        <p>Hire Nearshore .NET Developers without the hassles.</p>
+        <p>Hire Top Web Developers without the hassles.</p>
       </>
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>.NET Development Services</b>?
+        Are you interested to learn more about our <b>Development Services</b>?
       </>
     ),
     sideImageURL: BgHireDevelopers,
@@ -32,12 +32,12 @@ const nearshoreNetDevelopers = {
     ...defaultContent.freeQuoteForm,
     formHeader: {
       subtitle: 'Get profiles',
-      title: 'Get Nearshore .NET Developer Profiles',
-      description: 'Fill out the form and Get Nearshore .NET Developer Profiles and Rates.'
+      title: 'Get Developer Profiles',
+      description: 'Fill out the form and Get Developer Profiles and Developer Rates.'
     },
-    formOrigin: 'hire-net-developers',
+    formOrigin: 'hire-developers',
     formButtonText: 'Get profiles and rates'
   }
 }
 
-export default nearshoreNetDevelopers
+export default hireDevelopers

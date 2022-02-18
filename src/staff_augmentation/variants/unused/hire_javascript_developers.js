@@ -1,6 +1,6 @@
 import BgHireDevelopers from 'assets/hire_developers/backgrounds/bg_hire_developers.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
 const hireJavascriptDevelopers = {
   ...defaultContent,

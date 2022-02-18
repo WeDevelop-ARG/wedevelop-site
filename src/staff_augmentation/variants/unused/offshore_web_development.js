@@ -1,28 +1,28 @@
 import BgWebDevelopers from 'assets/web_developers/backgrounds/bg_web_developers.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
-const nearshoreWebDevelopment = {
+const offshoreWebDevelopment = {
   ...defaultContent,
-  pathName: 'nearshore-web-development',
+  pathName: 'offshore-web-development',
   metadata: {
-    title: 'Nearshore Web Development Agency',
+    title: 'Offshore Web Development Agency',
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
   },
   header: {
     navBar: {
       ...defaultContent.header.navBar
     },
-    landingName: <>nearshore web development</>,
-    title: <>Top notch <b>Nearshore Web Development</b></>,
+    landingName: <>offshore web development</>,
+    title: <>Top notch <b>Offshore Web Development</b></>,
     description: (
       <>
-        <p>Hire Nearshore Web Developers without the hassles.</p>
+        <p>Hire Offshore Web Developers without the hassles.</p>
       </>
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Web Development Services</b>?
+        Are you interested to learn more about our <b>Offshore Web Development</b>?
       </>
     ),
     sideImageURL: BgWebDevelopers,
@@ -32,12 +32,12 @@ const nearshoreWebDevelopment = {
     ...defaultContent.freeQuoteForm,
     formHeader: {
       subtitle: 'Get in touch',
-      title: 'Get Nearshore Web Development profiles',
+      title: 'Get Offshore Web Development profiles',
       description: 'Fill out the form and receive a list of vetted Web Developers.'
     },
     formOrigin: 'web-developers',
-    formButtonText: 'Get Nearshore Web Development profiles'
+    formButtonText: 'Get Offshore Web Development profiles'
   }
 }
 
-export default nearshoreWebDevelopment
+export default offshoreWebDevelopment

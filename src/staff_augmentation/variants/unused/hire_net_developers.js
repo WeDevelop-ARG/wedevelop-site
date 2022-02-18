@@ -1,28 +1,28 @@
 import BgHireDevelopers from 'assets/hire_developers/backgrounds/bg_hire_developers.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
-const hireDevelopers = {
+const hireNetDevelopers = {
   ...defaultContent,
-  pathName: 'hire-developers',
+  pathName: 'hire-net-developers',
   metadata: {
     title: 'IT Staffing Agency',
-    description: 'Hire Developers and Development Teams.'
+    description: 'Hire .NET Developers.'
   },
   header: {
     navBar: {
       ...defaultContent.header.navBar
     },
     landingName: <>hire developers</>,
-    title: <>Hire Developers and Development Teams</>,
+    title: <>Hire .NET Developers</>,
     description: (
       <>
-        <p>Hire Top Web Developers without the hassles.</p>
+        <p>Hire .NET Developers without the hassles.</p>
       </>
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Development Services</b>?
+        Are you interested to learn more about our <b>.NET Development Services</b>?
       </>
     ),
     sideImageURL: BgHireDevelopers,
@@ -32,12 +32,12 @@ const hireDevelopers = {
     ...defaultContent.freeQuoteForm,
     formHeader: {
       subtitle: 'Get profiles',
-      title: 'Get Developer Profiles',
-      description: 'Fill out the form and Get Developer Profiles and Developer Rates.'
+      title: 'Get .NET Developer Profiles',
+      description: 'Fill out the form and Get .NET Developer Profiles and Rates.'
     },
-    formOrigin: 'hire-developers',
+    formOrigin: 'hire-net-developers',
     formButtonText: 'Get profiles and rates'
   }
 }
 
-export default hireDevelopers
+export default hireNetDevelopers

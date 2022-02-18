@@ -1,6 +1,6 @@
 import BgWebCoders from 'assets/web_developers/backgrounds/bg_web_developers.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
 const webCoders = {
   ...defaultContent,

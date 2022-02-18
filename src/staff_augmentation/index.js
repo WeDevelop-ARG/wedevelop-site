@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 
 import Article from 'main_app/components/Article'
+import FullImageHeader from './components/FullImageHeader'
 import NavBar from './components/NavBar'
 import NewHeader from './components/NewHeader'
 import ScheduleCallModal from './components/ScheduleCallModal'
@@ -18,10 +19,11 @@ const LandingPageContent = dynamic(() => import('./landing_page_content'))
 
 const interactionEvents = ['click', 'keypress', 'mousemove', 'pointermove', 'scroll', 'touchmove', 'wheel']
 
-function LandingPage ({ landingName }) {
+function LandingPage ({ landingName, landingVersion }) {
   const [showContent, setShowContent] = useState(false)
   const { landing } = useLandingVariantByName(landingName)
   const { push } = useRouter()
+  const Header = landingVersion === 'b' ? FullImageHeader : NewHeader
 
   useEffect(() => {
     const showContent = () => {
@@ -81,7 +83,7 @@ function LandingPage ({ landingName }) {
         buttonLabel={landing.header.navBar.buttonLabel}
       />
       <Article>
-        <NewHeader
+        <Header
           landingName={landing.header.landingName}
           title={landing.header.title}
           description={landing.header.description}
