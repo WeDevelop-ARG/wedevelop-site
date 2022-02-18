@@ -1,0 +1,298 @@
+@import "/src/styles/theme.scss";
+@import "/src/styles/media_queries.scss";
+
+.headerContainer {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  margin-bottom: 10vw;
+
+  @include for-tablet-down {
+    padding: 0 !important;
+  }
+}
+
+.backgroundContainer {
+  position: absolute;
+  top: 220px;
+  bottom: 0;
+  left: 0;
+  right: -80px;
+  z-index: -1;
+
+  @include for-tablet-up {
+    right: 0px;
+  }
+
+  @include for-desktop-up {
+    top: 0;
+    right: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(172, 172, 172, 0.87);
+    mix-blend-mode: lighten;
+    opacity: 0.3;
+  }
+}
+
+.circles {
+  position: absolute;
+  top: 5px;
+  left: -15px;
+  z-index: -1;
+  display: none;
+
+  @include for-desktop-up {
+    display: block;
+  }
+}
+
+.dotsPattern {
+  position: absolute;
+  z-index: -1;
+  top: 265px;
+  left: -60px;
+
+  @include for-desktop-up {
+    transform: rotate(90deg);
+    top: auto;
+    left: 25%;
+    bottom: 3%;
+  }
+}
+
+.imageLogo {
+  display: block;
+  margin: 0 auto;
+
+  @include for-desktop-up {
+    margin: 0;
+    width: 65% !important;
+    height: auto;
+  }
+}
+
+.columnsContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @include for-desktop-up {
+    flex-direction: row;
+    min-height: 65vh;
+  }
+}
+
+.leftSideContainer {
+  background: linear-gradient(180deg, #377DFE 0%, #2C4397 100%);
+  padding: 40px 30px 20px;
+
+  @include for-desktop-up {
+    flex-grow: 1;
+    padding: 0;
+    background: transparent;
+    margin-right: 8%;
+  }
+}
+
+.rightSideContainer {
+  margin-top: auto;
+  padding-bottom: 40px;
+
+  @include for-desktop-up {
+    align-self: flex-end;
+    width: 440px;
+    flex-shrink: 0;
+    align-self: center;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  word-break: break-word;
+  margin-top: 50px;
+
+  @media screen and (min-width: 376px) {
+    font-size: 30px;
+  }
+
+  @include for-desktop-up {
+    text-align: left;
+    font-size: 60px;
+    line-height: 62px;
+  }
+}
+
+.subTitle {
+  margin: 50px auto;
+
+  > * {
+    font-size: 17px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+
+    @include for-desktop-up {
+      font-size: 23px;
+      text-align: left;
+    }
+
+    @media screen and (max-width: 1550px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.separator {
+  margin: 15px auto 25px;
+  width: 100px;
+  height: 5px;
+  background-color: #FFC331;
+}
+
+.hideOnTabletDown {
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.hideOnDesktopUp {
+  @include for-desktop-up {
+    display: none;
+  }
+}
+
+.ctaContainer {
+  @include for-desktop-up {
+    background-color: #1313134D;
+    border-radius: 8px;
+    padding: 30px;
+    padding-top: 35px;
+  }
+}
+
+.ctaButtonContainer {
+  border: 1px solid #E0E0E04D;
+  padding: 15px;
+  border-radius: 3px;
+  max-width: 270px;
+  margin: 0 auto;
+}
+
+.scheduleButton {
+  box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  font-size: 15px;
+
+  @include for-tablet-up {
+    font-size: 24px;
+  }
+}
+
+.alternativeSchedule {
+  font-size: 18px;
+  margin: 0;
+  margin-top: 15px;
+  text-align: center;
+  color: #fff;
+  display: none;
+
+  @include for-desktop-up {
+    display: block;
+  }
+}
+
+.scheduleFormButton {
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.whatHappensNextContainer {
+  display: none;
+  justify-content: center;
+  margin-top: 50px;
+
+  @include for-desktop-up {
+    display: flex;
+  }
+
+  & > .whatHappensNext {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0 25px;
+    user-select: none;
+
+    & > .icon {
+      margin-right: 10px;
+    }
+  }
+}
+
+:global(#what-happens-next-popover) {
+  z-index: 10;
+}
+
+.popoverContainer {
+  background-color: #FFF;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 25px;
+  max-width: 50vw;
+  position: relative;
+  font-size: 18px;
+  animation: fade-in 250ms ease;
+
+  & > :global(.popover-header) {
+    font-weight: 800;
+    color: #377DFF;
+    margin-bottom: 5px;
+  }
+
+  & > :global(.popover-body) {
+    font-weight: 300;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 20px solid #FFF;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.arrowDown {
+  display: block;
+  margin: 50px auto 0;
+}

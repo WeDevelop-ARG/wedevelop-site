@@ -17,6 +17,11 @@ function Routes ({ children }) {
           <LandingPage />
         </LazyRoute>
       ))}
+      {variants.map(({ pathName }) => (
+        <LazyRoute exact path={`/${pathName}/:version`} key={pathName}>
+          <LandingPage />
+        </LazyRoute>
+      ))}
       {children}
     </Switch>
   )

@@ -1,10 +1,10 @@
 import BgWebDevelopers from 'assets/web_developers/backgrounds/bg_web_developers.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
-const websiteBuilders = {
+const webDevelopers = {
   ...defaultContent,
-  pathName: 'website-builders',
+  pathName: 'web-developers',
   metadata: {
     title: 'Web Development Agency',
     description: 'Outsource with Us and Accelerate your Digital Transformation.'
@@ -13,16 +13,16 @@ const websiteBuilders = {
     navBar: {
       ...defaultContent.header.navBar
     },
-    landingName: <>website builders</>,
-    title: <>Top notch <b>Website Builders</b></>,
+    landingName: <>web developers</>,
+    title: <>Top notch <b>Web Developers</b></>,
     description: (
       <>
-        <p>Hire Website Builders without the hassles.</p>
+        <p>Hire Web Developers without the hassles.</p>
       </>
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Website Builder Services</b>? 
+        Are you interested to learn more about our <b>Web Development Services</b>?
       </>
     ),
     sideImageURL: BgWebDevelopers,
@@ -32,12 +32,12 @@ const websiteBuilders = {
     ...defaultContent.freeQuoteForm,
     formHeader: {
       subtitle: 'Get in touch',
-      title: 'Get Website Builders profiles',
-      description: 'Fill out the form and receive a list of vetted Website Builders.'
+      title: 'Get Web Developer profiles',
+      description: 'Fill out the form and receive a list of vetted Web Developers.'
     },
-    formOrigin: 'website-builders',
-    formButtonText: 'Get Website Builders profiles'
+    formOrigin: 'web-developers',
+    formButtonText: 'Get Web Developer profiles'
   }
 }
 
-export default websiteBuilders
+export default webDevelopers
