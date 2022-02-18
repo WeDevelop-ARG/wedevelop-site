@@ -1,6 +1,6 @@
 import BgWebDevelopers from 'assets/web_developers/backgrounds/bg_web_developers.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
 const nearshoreWebDevelopment = {
   ...defaultContent,
@@ -22,7 +22,7 @@ const nearshoreWebDevelopment = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Web Development Services</b>? 
+        Are you interested to learn more about our <b>Web Development Services</b>?
       </>
     ),
     sideImageURL: BgWebDevelopers,

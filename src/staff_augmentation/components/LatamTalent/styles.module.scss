@@ -11,7 +11,8 @@ $textColor: #363636;
   @include for-desktop-up {
     margin-top: -6vw;
     padding-bottom: 50px;
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
   }
 }
 

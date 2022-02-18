@@ -4,6 +4,7 @@ import { useRouteMatch, useHistory } from 'react-router'
 import { prerenderedLazy } from 'utils/prerendered_lazy'
 
 import Article from 'main_app/components/Article'
+import FullImageHeader from './components/FullImageHeader'
 import NavBar from './components/NavBar'
 import NewHeader from './components/NewHeader'
 import ScheduleCallModal from './components/ScheduleCallModal'
@@ -20,8 +21,9 @@ const interactionEvents = ['click', 'keypress', 'mousemove', 'pointermove', 'scr
 
 function LandingPage () {
   const [showContent, setShowContent] = useState(false)
-  const { params } = useRouteMatch('/:name')
+  const { params } = useRouteMatch('/:name/:version?')
   const { landing } = useLandingVariantByName(params.name)
+  const Header = params.version === 'b' ? FullImageHeader : NewHeader
 
   usePageMetadata({
     title: landing.metadata.title,
@@ -81,7 +83,7 @@ function LandingPage () {
         buttonLabel={landing.header.navBar.buttonLabel}
       />
       <Article>
-        <NewHeader
+        <Header
           landingName={landing.header.landingName}
           title={landing.header.title}
           description={landing.header.description}

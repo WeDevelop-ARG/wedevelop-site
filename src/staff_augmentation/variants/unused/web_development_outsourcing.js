@@ -1,6 +1,6 @@
 import BgWebDevelopers from 'assets/web_developers/backgrounds/bg_web_developers.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
 const webDevelopmentOutsourcing = {
   ...defaultContent,
@@ -22,7 +22,7 @@ const webDevelopmentOutsourcing = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Web Development Outsourcing</b>? 
+        Are you interested to learn more about our <b>Web Development Outsourcing</b>?
       </>
     ),
     sideImageURL: BgWebDevelopers,

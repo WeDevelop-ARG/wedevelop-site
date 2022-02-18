@@ -2,7 +2,7 @@ import BgStaffAugmentation from 'assets/staff_augmentation/backgrounds/bg_staff_
 import StaffAugScreen from 'assets/staff_augmentation/backgrounds/staff_aug_screen.png'
 import WeDevMeeting from 'assets/staff_augmentation/backgrounds/wedev_meeting.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
 const staffAugmentation = {
   ...defaultContent,
@@ -25,7 +25,7 @@ const staffAugmentation = {
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Staff Augmentation Services</b>? 
+        Are you interested to learn more about our <b>Staff Augmentation Services</b>?
       </>
     ),
     sideImageURL: BgStaffAugmentation,

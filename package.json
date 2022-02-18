@@ -66,8 +66,11 @@
       "/follow-up",
       "/success/confirm",
       "/it-outsourcing",
+      "/it-outsourcing/b",
       "/it-staffing",
-      "/nearshore-software-outsourcing"
+      "/it-staffing/b",
+      "/nearshore-software-outsourcing",
+      "/nearshore-software-outsourcing/b"
     ]
   },
   "eslintConfig": {

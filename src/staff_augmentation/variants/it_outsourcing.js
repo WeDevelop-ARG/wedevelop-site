@@ -13,7 +13,7 @@ const itOutsourcing = {
   },
   header: {
     landingName: <>IT Outsourcing</>,
-    title: <><b>Trusted and Efficient</b> IT Outsourcing for you</>,
+    title: <><b>Trusted and Efficient</b><br />IT Outsourcing for you</>,
     description: (
       <>
         <p>Talent that delivers like your dream team would.</p>

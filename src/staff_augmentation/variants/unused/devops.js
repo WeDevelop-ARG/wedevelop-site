@@ -2,27 +2,27 @@ import BgStaffAugmentation from 'assets/staff_augmentation/backgrounds/bg_staff_
 import WeDevLaptops from 'assets/web_developers/backgrounds/wedev_laptops.png'
 import WeDevMeeting from 'assets/staff_augmentation/backgrounds/wedev_meeting.png'
 
-import defaultContent from './default_content'
+import defaultContent from '../default_content'
 
-const mobile = {
+const devOps = {
   ...defaultContent,
-  pathName: 'mobile',
+  pathName: 'devops',
   metadata: {
-    title: 'Top Mobile Development Company',
-    description: 'Our experienced Mobile engineering teams deliver dream-team outcomes, without the hassles of hiring.'
+    title: 'Top DevOps Development Company',
+    description: 'Our experienced DevOps engineering teams deliver dream-team outcomes, without the hassles of hiring.'
   },
   header: {
-    landingName: <>Mobile Development</>,
-    title: <>Hire the <b>best Mobile Engineering teams</b></>,
+    landingName: <>DevOps | SRE</>,
+    title: <>Hire the <b>best DevOps Engineering teams</b></>,
     description: (
       <>
-        <p>Get access to the top Mobile Developers in LATAM.</p>
+        <p>Get access to the top DevOps engineers in LATAM.</p>
         <p>Fast, without the hassles.</p>
       </>
     ),
     quote: (
       <>
-        Are you interested to learn more about our <b>Mobile Development</b> services?
+        Are you interested to learn more about our <b>DevOps</b> services?
       </>
     ),
     sideImageURL: BgStaffAugmentation,
@@ -42,7 +42,7 @@ const mobile = {
     buttonText: 'Get in touch'
   },
   fullSizeCTA: {
-    title: 'Ready to outsource your Mobile Development?',
+    title: 'Ready to outsource your DevOps development?',
     subTitle: 'GET IN TOUCH NOW',
     ctaText: 'Get in touch',
     ctaToPath: '#top',
@@ -50,4 +50,4 @@ const mobile = {
   }
 }
 
-export default mobile
+export default devOps
