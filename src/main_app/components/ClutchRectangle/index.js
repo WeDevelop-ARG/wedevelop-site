@@ -6,13 +6,13 @@ import ClutchWidget from '../ClutchWidget'
 
 import classes from './styles.module.scss'
 
-function ClutchRectangle ({ isClutchLoaded, setIsClutchLoaded }) {
+function ClutchRectangle ({ isClutchLoaded, setIsClutchLoaded, className }) {
   const shouldUseBiggerClutch = useMediaQuery('screen and (min-width: 1550px)')
   const handleClutchLoaded = useCallback(() => {
     setIsClutchLoaded(true)
   }, [setIsClutchLoaded])
   return (
-    <div className={classNames(classes.clutchRectangle, { [classes.visuallyHidden]: !isClutchLoaded })}>
+    <div className={classNames(classes.clutchRectangle, className, { [classes.visuallyHidden]: !isClutchLoaded })}>
       <ClutchWidget
         className={classes.clutchWidget}
         onLoad={handleClutchLoaded}
