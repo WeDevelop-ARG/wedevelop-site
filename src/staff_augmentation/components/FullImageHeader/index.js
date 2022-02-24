@@ -41,6 +41,7 @@ export default function FullImageHeader ({
             <div className={classes.hideOnTabletDown}>
               <h2 className={classes.subTitle}>{description}</h2>
               <ClutchRectangle
+                className={classes.desktopClutch}
                 isClutchLoaded={isClutchLoaded}
                 setIsClutchLoaded={setIsClutchLoaded}
               />
