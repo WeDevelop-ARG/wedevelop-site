@@ -10,14 +10,14 @@ import { ReactComponent as GradientArrow } from 'assets/staff_augmentation/arrow
 import classes from './styles.module.scss'
 
 function Toggle ({ eventKey, children, onClick, hasItems }) {
-  const currentEventKey = useContext(AccordionContext);
+  const currentEventKey = useContext(AccordionContext)
 
   const decoratedOnClick = useAccordionToggle(
     eventKey,
     () => onClick && onClick(eventKey)
   )
 
-  const isCurrentEventKey = currentEventKey === eventKey;
+  const isCurrentEventKey = currentEventKey === eventKey
 
   return (
     <button

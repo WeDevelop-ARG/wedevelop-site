@@ -1,7 +1,6 @@
 import Button from 'main_app/components/Button'
 import classNames from 'classnames'
 
-
 import { ReactComponent as Background } from 'assets/staff_augmentation/latam_background.svg'
 import { ReactComponent as BackgroundMobile } from 'assets/staff_augmentation/latam_background_mobile.svg'
 import BottomSeparator from 'assets/staff_augmentation/latam_bottom_separator.png'

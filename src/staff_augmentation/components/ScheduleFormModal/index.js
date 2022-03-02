@@ -79,7 +79,7 @@ export default function ScheduleFormModal ({
         source: formOrigin
       })
       // LinkedIn Ad Conversion Event
-      try{window?.lintrk?.('track', { conversion_id: 6505732 })}catch(e){}
+      try { window?.lintrk?.('track', { conversion_id: 6505732 }) } catch (e) {}
       onSubmit?.()
     } catch (err) {
       console.error(err)

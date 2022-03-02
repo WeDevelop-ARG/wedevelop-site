@@ -46,12 +46,12 @@ export default function LandingPageContent ({
         <BackgroundContainer backgroundURL={ThreeReasonsBottomSeparator} />
         {landing.availableDevs &&
           <AvailableDevs
-          subtitle={landing.availableDevs.subtitle}
-          title={landing.availableDevs.title}
-          description={landing.availableDevs.description}
-          devs={landing.availableDevs.devs}
-          buttonText={landing.availableDevs.buttonText}
-          handleModal={handleContactCTAClick}
+            subtitle={landing.availableDevs.subtitle}
+            title={landing.availableDevs.title}
+            description={landing.availableDevs.description}
+            devs={landing.availableDevs.devs}
+            buttonText={landing.availableDevs.buttonText}
+            handleModal={handleContactCTAClick}
           />}
         {landing.hideHowDoesItWork || <HowDoesItWorks />}
         <BackgroundContainer backgroundURL={HowItWorksBottomSeparator} />

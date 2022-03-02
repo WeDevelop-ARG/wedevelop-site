@@ -43,7 +43,7 @@ export default function HubSpotCalendar ({ sourcePage, onFinish, hideText }) {
       contactSource: sourcePage
     })
     // LinkedIn Ad Conversion Event
-    try{window?.lintrk?.('track', { conversion_id: 6505732 })}catch(e){}
+    try { window?.lintrk?.('track', { conversion_id: 6505732 }) } catch (e) {}
     try {
       onFinish()
     } catch (err) {
@@ -68,7 +68,7 @@ export default function HubSpotCalendar ({ sourcePage, onFinish, hideText }) {
 
   return (
     <>
-      <div className="meetings-iframe-container" data-src="https://meetings.hubspot.com/abel-osorio/15-minute-free-consultation?embed=true" />
+      <div className='meetings-iframe-container' data-src='https://meetings.hubspot.com/abel-osorio/15-minute-free-consultation?embed=true' />
       {!hideText && <p>or email us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>}
     </>
   )
