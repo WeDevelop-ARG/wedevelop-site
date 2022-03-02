@@ -31,6 +31,8 @@ function FreeQuoteForm ({
         contactType: 'free-quote-form',
         source: formOrigin
       })
+      // LinkedIn Ad Conversion Event
+      try{window?.lintrk?.('track', { conversion_id: 6505732 })}catch(e){}
       const responseJSON = await response.json()
       tracingId = responseJSON.tracingId
       history.push('/follow-up?tracingId=' + tracingId)

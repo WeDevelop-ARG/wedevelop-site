@@ -2,6 +2,11 @@ import DefaultBackground from 'assets/web_developers/backgrounds/bg_web_develope
 import WeDevLaptops from 'assets/web_developers/backgrounds/wedev_laptops.png'
 import BookLaptop from 'assets/web_developers/backgrounds/book_laptop.png'
 
+import TimeZoneIcon from 'assets/staff_augmentation/timezone_globe.component.svg'
+import CulturalClosenessIcon from 'assets/staff_augmentation/cultural_closeness.component.svg'
+import LevelOfEnglishIcon from 'assets/staff_augmentation/language.component.svg'
+import PriceQualityIcon from 'assets/staff_augmentation/price_quality.component.svg'
+
 const defaultContent = {
   pathName: '',
   metadata: {
@@ -54,6 +59,76 @@ const defaultContent = {
     formButtonText: 'Get Web Developer profiles',
     formDisclaimer: 'We typically reply every email within an hour.'
   },
+  latamTalent: {
+    subtitle: 'Latam Talent',
+    title: <>The Best<br /><b>LATAM</b> Talent</>,
+    text: 'We source the best talent from LATAM, which guarantees a great quality/price relation.\n\nNearshore to LATAM, it\'s a one-way trip.',
+    ctaText: 'Get a Free Quote'
+  },
+  whyLatam: {
+    subtitle: 'NEARSHORE',
+    title: 'Why LATAM?',
+    cards: [{
+      icon: <TimeZoneIcon />,
+      title: 'Time Zone Aligned',
+      text: 'As our engineers are in LATAM in which only has 3 or 4 (+-) hours difference you are going to be working in real-time with your team. Being able to consult them and solve any issue straightaway.'
+    }, {
+      icon: <CulturalClosenessIcon />,
+      title: 'Cultural Closeness',
+      text: 'As we already know our cultures have a lot in common. We share the values of working as a team in a collaborative way, taking responsibilities, fulfilling schedules, and accomplishing a common goal.'
+    }, {
+      icon: <LevelOfEnglishIcon />,
+      title: 'Level of English',
+      text: 'In LATAM the level of english we present is above the average, and besides that we take care of ensuring you that every developer has a high level of English so you can be able to speak with them as you were speaking with an english native.'
+    }, {
+      icon: <PriceQualityIcon />,
+      title: 'Best Price & Quality',
+      text: 'You will find the best relation between price and quality. We only hire the top 1% talented developers to ensure you the best quality, and besides that our prices are almost half cheapest the cost of a US-based equivalent.'
+    }],
+    ctaText: 'Get a Free Quote'
+  },
+  skillSet: {
+    title: 'With our skillset,\nWe’ve got you covered',
+    subtitle: 'our team',
+    ctaText: 'Get a Free Quote',
+    positions: {
+      'Backend Developers': [
+        'Ruby Developers',
+        'Python Developers',
+        'PHP Developers',
+        'Node.js Developers',
+        'Java Developers',
+        'Magento Developers',
+        'Golang Developers'
+      ],
+      'Mobile Developers': [
+        'iOS Developers',
+        'Android Developers',
+        'React Native Developers'
+      ],
+      'Cloud/AWS Engineers': [
+        'AWS Engineers',
+        'SRE Engineers',
+        'Google Cloud Platform Engineers',
+        'QA Engineers',
+        'Manual QA Engineers',
+        'QA Automation Engineers',
+        'Project Managers',
+        'Agile Project Managers',
+        'SCRUM Masters',
+        'Engineer Managers',
+        'Seasoned Engineer Managers'
+      ],
+      'Frontend Developers': [
+        'React Developers',
+        'Angular Developers',
+        'Vue.js Developers'
+      ],
+      'Microsoft Stack Developers': [
+        '.Net Developers'
+      ]
+    }
+  },
   reviewsHeading: {
     subtitle: 'Customers reviews',
     title: "Here's what our customers say about our Staffing services",
@@ -99,6 +174,15 @@ const defaultContent = {
       project: {
         type: 'Product Development',
         company: 'Ferry Booking Platform'
+      }
+    }, {
+      id: '5',
+      quote:
+        'They are very understanding with us as it is our first time working with agile methodologies.',
+      stars: 5,
+      project: {
+        type: 'Software Development',
+        company: 'InJob Online'
       }
     }
   ],

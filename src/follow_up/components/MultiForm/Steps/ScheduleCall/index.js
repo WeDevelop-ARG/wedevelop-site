@@ -1,6 +1,6 @@
 import StepHeader from '../../StepHeader'
 import ControlButtons from '../../ControlButtons'
-import CalendlyWidget from 'main_app/components/CalendlyWidget'
+import HubSpotCalendar from 'main_app/components/HubSpotCalendar'
 
 function ScheduleCall ({ currentStep, previousStep, totalSteps, skipModal, tracingId, contact }) {
   return (
@@ -11,12 +11,10 @@ function ScheduleCall ({ currentStep, previousStep, totalSteps, skipModal, traci
       />
       <div>
         {contact && (
-          <CalendlyWidget
+          <HubSpotCalendar
             sourcePage='follow-up'
             hideText
             onFinish={skipModal}
-            followUpTracingId={tracingId}
-            prefill={contact}
           />
         )}
       </div>
