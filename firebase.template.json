@@ -31,13 +31,28 @@
     }],
     "redirects": [
       {
+        "source": "/it-outsourcing",
+        "destination": "/lp/it-outsourcing",
+        "type": 302
+      },
+      {
         "source": "/it-outsourcing/:path*",
         "destination": "/lp/it-outsourcing/:path",
         "type": 302
       },
       {
+        "source": "/it-staffing",
+        "destination": "/lp/it-staffing",
+        "type": 302
+      },
+      {
         "source": "/it-staffing/:path*",
         "destination": "/lp/it-staffing/:path",
+        "type": 302
+      },
+      {
+        "source": "/nearshore-software-outsourcing",
+        "destination": "/lp/nearshore-software-outsourcing",
         "type": 302
       },
       {
