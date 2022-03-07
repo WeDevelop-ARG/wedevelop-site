@@ -18,16 +18,16 @@ import Footer from 'main_app/components/Footer'
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 import classes from './services.module.scss'
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 function WebDevelopment () {
   const SERVICE_NAME = 'web-development'
   const contactPagePath = '/services/web-development/contact'
-  const { pathname } = useRouter()
+  const { pathname, push } = useRouter()
 
   const handleClose = useCallback(() => {
-    Router.push('/services/web-development')
-  }, [])
+    push('/services/web-development')
+  }, [push])
 
   return (
     <>
