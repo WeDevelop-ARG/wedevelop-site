@@ -48,6 +48,7 @@ function StoryHeader ({
           alt=''
           loading='eager'
           placeholderColor='#333'
+          layout='responsive'
           objectFit='cover'
           position='bottom'
           className={classes.headerBackground}
@@ -71,7 +72,7 @@ function StoryHeader ({
           </div>
           <p className={classes.description}>{description}</p>
         </div>
-        <WrappedImage src={imageURL} alt='' className={classes.bottomImg} />
+        <WrappedImage src={imageURL} layout='responsive' alt='' className={classes.bottomImg} />
         <div className={classes.leftFilledCircle} aria-hidden='true' />
         <div className={classes.filledCircle} aria-hidden='true' />
         <div className={classes.emptyCircle} aria-hidden='true' />
