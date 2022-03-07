@@ -6,7 +6,6 @@ import PageMetadata from 'utils/marketing/PageMetadata'
 import HubSpotCalendar from 'main_app/components/HubSpotCalendar'
 
 import classes from './styles.module.scss'
-import HubSpotCalendar from 'main_app/components/HubSpotCalendar'
 
 function ContactUs () {
   return (
