@@ -1,8 +1,8 @@
 import Button from 'main_app/components/Button'
 import classNames from 'classnames'
 
-import { ReactComponent as Background } from 'assets/staff_augmentation/latam_background.svg'
-import { ReactComponent as BackgroundMobile } from 'assets/staff_augmentation/latam_background_mobile.svg'
+import Background from 'assets/staff_augmentation/latam_background.component.svg'
+import BackgroundMobile from 'assets/staff_augmentation/latam_background_mobile.component.svg'
 import BottomSeparator from 'assets/staff_augmentation/latam_bottom_separator.png'
 import BackgroundContainer from '../BackgroundContainer'
 
@@ -17,8 +17,8 @@ export default function WhyLatam ({
 }) {
   return (
     <>
-      <Background preserveAspectRatio='xMidYMid slice' className={classes.background} />
-      <BackgroundMobile preserveAspectRatio='xMidYMid slice' className={classNames(classes.background, classes.mobile)} />
+      <Background viewBox='0 0 1680 664' preserveAspectRatio='xMidYMid slice' className={classes.background} />
+      <BackgroundMobile viewBox='0 0 375 1012' preserveAspectRatio='xMidYMid slice' className={classNames(classes.background, classes.mobile)} />
       <section id='why-latam-section' className={classes.sectionContainer}>
         <div className={classes.sectionHeader}>
           <p className={classes.subheadingText}>{subtitle}</p>

@@ -28,7 +28,7 @@ export default function LatamTalent ({
       </div>
       <div className={classes.mobileGradient} />
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className={classes.map} src={LatamMap} alt='' />
+      <img className={classes.map} src={LatamMap.src} alt='' />
       <div className={classes.mobileCTAContainer}>
         <Button
           variant='primary'

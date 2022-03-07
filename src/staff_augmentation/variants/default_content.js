@@ -2,10 +2,10 @@ import DefaultBackground from 'assets/web_developers/backgrounds/bg_web_develope
 import WeDevLaptops from 'assets/web_developers/backgrounds/wedev_laptops.png'
 import BookLaptop from 'assets/web_developers/backgrounds/book_laptop.png'
 
-import { ReactComponent as TimeZoneIcon } from 'assets/staff_augmentation/timezone_globe.svg'
-import { ReactComponent as CulturalClosenessIcon } from 'assets/staff_augmentation/cultural_closeness.svg'
-import { ReactComponent as LevelOfEnglishIcon } from 'assets/staff_augmentation/language.svg'
-import { ReactComponent as PriceQualityIcon } from 'assets/staff_augmentation/price_quality.svg'
+import TimeZoneIcon from 'assets/staff_augmentation/timezone_globe.component.svg'
+import CulturalClosenessIcon from 'assets/staff_augmentation/cultural_closeness.component.svg'
+import LevelOfEnglishIcon from 'assets/staff_augmentation/language.component.svg'
+import PriceQualityIcon from 'assets/staff_augmentation/price_quality.component.svg'
 
 const defaultContent = {
   pathName: '',

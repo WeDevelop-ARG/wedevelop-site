@@ -6,12 +6,13 @@ import AbelBookBackground from 'assets/staff_augmentation/abel_book_background.p
 import DotsPattern from 'assets/staff_augmentation/white_dots_pattern.svg'
 import InfoIcon from 'assets/staff_augmentation/info_icon.svg'
 import ArrowDown from 'assets/staff_augmentation/arrow_downward.svg'
-import { ReactComponent as Circles } from 'assets/staff_augmentation/full_image_header_circles.svg'
+import Circles from 'assets/staff_augmentation/full_image_header_circles.component.svg'
 import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
 
 import Button from 'main_app/components/Button'
 import ClutchRectangle from 'main_app/components/ClutchRectangle'
 import Image from 'main_app/components/Image'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
 
@@ -30,13 +31,13 @@ export default function FullImageHeader ({
     <>
       <section id='headerSection' className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
-          <Image src={AbelBookBackground} objectFit='cover' position='top_right' alt='' />
+          <Image src={AbelBookBackground} layout='fill' objectFit='cover' objectPosition='top right' alt='' />
         </div>
         <Circles className={classes.circles} />
-        <Image src={DotsPattern} alt='' loading='eager' className={classes.dotsPattern} />
+        <WrappedImage src={DotsPattern} alt='' loading='eager' layout='intrinsic' className={classes.dotsPattern} />
         <div className={classes.columnsContainer}>
           <div className={classes.leftSideContainer}>
-            <Image src={WeDevelopLogo} alt='WeDevelop logo' width='225' height='51' loading='eager' className={classes.imageLogo} />
+            <WrappedImage src={WeDevelopLogo} alt='WeDevelop logo' layout='responsive' width='225' height='51' loading='eager' className={classes.imageLogo} />
             <h1 className={classes.title}>{title}</h1>
             <div className={classes.hideOnTabletDown}>
               <h2 className={classes.subTitle}>{description}</h2>
@@ -66,7 +67,7 @@ export default function FullImageHeader ({
                   trigger={['hover', 'focus']}
                   placement='left'
                   overlay={
-                    <Popover id='what-happens-next-popover'>
+                    <Popover id='what-happens-next-popover' style={{ zIndex: 10 }}>
                       <div className={classes.popoverContainer}>
                         <Popover.Title>
                           WHAT HAPPENS NEXT?
@@ -79,7 +80,7 @@ export default function FullImageHeader ({
                   }
                 >
                   <div tabIndex='0' className={classes.whatHappensNext}>
-                    <Image className={classes.icon} src={InfoIcon} alt='' /> WHAT HAPPENS NEXT?
+                    <WrappedImage className={classes.icon} src={InfoIcon} alt='' /> WHAT HAPPENS NEXT?
                   </div>
                 </OverlayTrigger>
               </div>
@@ -90,7 +91,7 @@ export default function FullImageHeader ({
                 isClutchLoaded={isClutchLoaded}
                 setIsClutchLoaded={setIsClutchLoaded}
               />
-              <Image src={ArrowDown} alt='Page continues below' className={classes.arrowDown} />
+              <WrappedImage src={ArrowDown} alt='Page continues below' className={classes.arrowDown} />
             </div>
           </div>
         </div>
