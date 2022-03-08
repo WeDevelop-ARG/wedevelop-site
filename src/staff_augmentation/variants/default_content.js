@@ -188,28 +188,77 @@ const defaultContent = {
   ],
   HireTopTalent: {
     subtitle: 'white-glove service',
-    title: '3 reasons to choose WeDevelop',
-    description: '',
-    content: (
-      <>
-        <ul>
-          <li>
-            <b>Strong Talent</b> - We've iterated our vetting process to make
-            sure you get the best professionals.
-            <hr />
-          </li>
-          <li>
-            <b>White Glove Service</b> - We strive to provide you the best IT
-            Staffing services you'll find.
-            <hr />
-          </li>
-          <li>
-            <b>High Values</b> - We pride ourselves on being very transparent,
-            trustworthy, and dedicated.
-          </li>
-        </ul>
-      </>
-    ),
+    title: '3 Reasons to choose WeDevelop',
+    reasons: [{
+      id: '1',
+      imageURL: '',
+      title: 'Strong Talent',
+      description: 'We\'ve iterated our vetting process to make sure you get the best professionals.',
+      toggleContent: (
+        <>
+          <p>
+            Lorem gravida neque pellentesque elementum ut metus, fusce et.
+            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+          </p>
+          <p>
+            Pellentesque placerat est amet ultrices ornare. Dui tellus et
+            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
+            Pellentesque placerat est amet ultrices ornare. Dui tellus et
+            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
+          </p>
+          <p>
+            Lorem gravida neque pellentesque elementum ut metus, fusce et.
+            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+          </p>
+        </>
+      )
+    }, {
+      id: '2',
+      imageURL: '',
+      title: 'White Glove Service',
+      description: 'We strive to provide you the best IT Staffing services you\'ll find.',
+      toggleContent: (
+        <>
+          <p>
+            Lorem gravida neque pellentesque elementum ut metus, fusce et.
+            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+          </p>
+          <p>
+            Pellentesque placerat est amet ultrices ornare. Dui tellus et
+            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
+            Pellentesque placerat est amet ultrices ornare. Dui tellus et
+            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
+          </p>
+          <p>
+            Lorem gravida neque pellentesque elementum ut metus, fusce et.
+            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+          </p>
+        </>
+      )
+    }, {
+      id: '3',
+      imageURL: '',
+      title: 'High Values',
+      description: 'We pride ourselves on being very transparent, trustworthy, and dedicated.',
+      toggleContent: (
+        <>
+          <p>
+            Lorem gravida neque pellentesque elementum ut metus, fusce et.
+            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+          </p>
+          <p>
+            Pellentesque placerat est amet ultrices ornare. Dui tellus et
+            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
+            Pellentesque placerat est amet ultrices ornare. Dui tellus et
+            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
+          </p>
+          <p>
+            Lorem gravida neque pellentesque elementum ut metus, fusce et.
+            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+          </p>
+        </>
+      )
+    }],
     buttonText: 'Get In Touch'
   },
   fullSizeCTA: {
