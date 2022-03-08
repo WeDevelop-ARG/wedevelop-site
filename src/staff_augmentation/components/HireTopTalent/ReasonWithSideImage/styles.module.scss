@@ -1,9 +1,19 @@
+@import '/src/styles/media_queries.scss';
+
 .container {
   width: 100%;
   max-width: 900px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 50px;
+  align-items: center;
+  gap: 20px;
+
+  @include for-tablet-up {
+    flex-direction: row;
+    align-items: unset;
+    gap: 50px;
+  }
 }
 
 %imageContainer {
@@ -27,18 +37,34 @@
 
 .reasonContent {
   order: 2;
+
+  @include for-phone-only {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .title {
   font-size: 60px;
   font-weight: 300;
   margin-bottom: 25px;
+
+  @include for-phone-only {
+    font-size: 40px;
+    text-align: center;
+  }
 }
 
-.description, .toggleContainer > p {
+.description, .toggleContainer > * {
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 16px;
+
+  @include for-phone-only {
+    text-align: center;
+  }
 }
 
 .toggleContainer {
