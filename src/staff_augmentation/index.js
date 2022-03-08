@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import Article from 'main_app/components/Article'
 import FullImageHeader from './components/FullImageHeader'
 import NavBar from './components/NavBar'
-import NewHeader from './components/NewHeader'
 import ScheduleCallModal from './components/ScheduleCallModal'
 import ScheduleFormModal from './components/ScheduleFormModal'
 
@@ -19,11 +18,11 @@ const LandingPageContent = dynamic(() => import('./landing_page_content'))
 
 const interactionEvents = ['click', 'keypress', 'mousemove', 'pointermove', 'scroll', 'touchmove', 'wheel']
 
-function LandingPage ({ landingName, landingVersion }) {
+function LandingPage ({ landingName }) {
   const [showContent, setShowContent] = useState(false)
   const { landing } = useLandingVariantByName(landingName)
   const { push } = useRouter()
-  const Header = landingVersion === 'b' ? FullImageHeader : NewHeader
+  const Header = FullImageHeader
 
   useEffect(() => {
     const showContent = () => {
