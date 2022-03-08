@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import Button from 'main_app/components/Button'
-/* import Image from 'main_app/components/Image' */
+import Image from 'main_app/components/Image'
 
 import BlueArrow from 'assets/portfolio/arrow.component.svg'
 
@@ -11,7 +11,7 @@ function ReasonWithSideImage ({ isRightAlignment, imageURL, title, description, 
   return (
     <section className={classes.container}>
       <div className={isRightAlignment ? classes.imageContainerToRight : classes.imageContainerToLeft}>
-        {/* <Image src={imageURL} alt='' className={classes.reasonImage} /> */}
+        <Image src={imageURL} alt='' className={classes.reasonImage} />
       </div>
       <div className={classes.reasonContent}>
         <h2 className={classNames(classes.title, {

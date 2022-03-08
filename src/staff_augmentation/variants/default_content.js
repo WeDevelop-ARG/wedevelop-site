@@ -7,6 +7,10 @@ import CulturalClosenessIcon from 'assets/staff_augmentation/cultural_closeness.
 import LevelOfEnglishIcon from 'assets/staff_augmentation/language.component.svg'
 import PriceQualityIcon from 'assets/staff_augmentation/price_quality.component.svg'
 
+import StrongTalent from 'assets/reasons_to_choose_wedev/strong_talent.svg'
+import WhiteGloveService from 'assets/reasons_to_choose_wedev/white_glove_service.svg'
+import HighValues from 'assets/reasons_to_choose_wedev/high_values.svg'
+
 const defaultContent = {
   pathName: '',
   metadata: {
@@ -191,7 +195,7 @@ const defaultContent = {
     title: '3 Reasons to choose WeDevelop',
     reasons: [{
       id: '1',
-      imageURL: '',
+      imageURL: StrongTalent,
       title: 'Strong Talent',
       description: 'We\'ve iterated our vetting process to make sure you get the best professionals.',
       toggleContent: (
@@ -214,7 +218,7 @@ const defaultContent = {
       )
     }, {
       id: '2',
-      imageURL: '',
+      imageURL: WhiteGloveService,
       title: 'White Glove Service',
       description: 'We strive to provide you the best IT Staffing services you\'ll find.',
       toggleContent: (
@@ -237,7 +241,7 @@ const defaultContent = {
       )
     }, {
       id: '3',
-      imageURL: '',
+      imageURL: HighValues,
       title: 'High Values',
       description: 'We pride ourselves on being very transparent, trustworthy, and dedicated.',
       toggleContent: (
