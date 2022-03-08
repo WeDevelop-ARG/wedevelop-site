@@ -3,7 +3,9 @@
 .hireTopTalent {
   display: flex;
   position: relative;
+  padding-top: 70px;
   padding-bottom: 70px;
+  overflow: hidden;
 
   @include for-tablet-up {
     padding: auto;
@@ -12,9 +14,11 @@
 
 .sectionContainer {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 
   @include for-phone-only {
     grid-template-columns: repeat(1, 1fr);
@@ -33,38 +37,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
-  text-align: right;
-
-  @include for-phone-only {
-    text-align: center;
-    align-items: center;
-  }
 }
 
 .subheadingText {
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 1em;
   color: rgba($color: #363636, $alpha: 0.5);
   font-size: 13px;
   line-height: 13px;
-  margin-bottom: 32px;
   text-transform: uppercase;
 }
 
 .titleText {
-  @include for-desktop-up {
-    font-weight: 600;
-    font-size: 60px;
-    margin-bottom: 10px;
-  }
-}
-
-.descriptionText {
-  font-weight: 300;
-  font-size: 20px;
-  color: rgba($color: #363636, $alpha: 0.5);
+  font-weight: 600;
+  font-size: 60px;
+  margin: 32px auto;
 }
 
 .horizontalBar {
@@ -72,55 +61,19 @@
   height: 10px;
   background: #ffc331;
   border: none;
-
-  @include for-tablet-up {
-    margin-right: 0px;
-  }
 }
 
 .sectionContent {
-  font-size: 24px;
-  line-height: 36px;
-  text-align: left;
-  list-style-image: url('../../../assets/staff_augmentation/bullet_points.svg');
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  hr {
-    border: 1px solid #e1e1e1;
-    margin: 20px 0px 20px -25px;
-  }
-
-  > ul {
-    margin: 0px;
-
-    > li {
-      font-size: 18px;
-
-      @include for-desktop-up {
-        font-size: 20px;
-      }
-    }
-
-    > li:not(:last-of-type) {
-      margin-bottom: 20px;
-    }
-  }
+  align-items: center;
+  gap: 60px;
 }
 
 .freeQuoteButton {
   width: 260px;
-
-  @include for-phone-only {
-    position: absolute;
-    bottom: 15px;
-  }
-
-  @include for-tablet-up {
-    margin-top: 35px;
-    margin-right: 0px;
-  }
+  margin-top: 40px;
 }
 
 %dotsPattern {
@@ -140,6 +93,12 @@
 
 .topLeftDotsPattern {
   @extend %dotsPattern;
-  top: 119px;
+  top: 345px;
   left: -55px;
+}
+
+.bottomRightDotsPattern {
+  @extend %dotsPattern;
+  bottom: 395px;
+  right: -50px;
 }
