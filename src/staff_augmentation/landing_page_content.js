@@ -38,8 +38,7 @@ export default function LandingPageContent ({
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}
-          descriptionText={landing.HireTopTalent.description}
-          contentText={landing.HireTopTalent.content}
+          reasonsContent={landing.HireTopTalent.reasons}
           buttonText={landing.HireTopTalent.buttonText}
           handleModal={handleContactCTAClick}
         />
