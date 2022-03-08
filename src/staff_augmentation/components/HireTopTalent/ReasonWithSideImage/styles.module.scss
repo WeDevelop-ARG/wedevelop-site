@@ -1,0 +1,67 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+%imageContainer {
+  display: flex;
+  width: 330px;
+  height: 320px;
+  flex-shrink: 0;
+  background-color: rgba($color: #363636, $alpha: 5%);
+}
+
+.imageContainerToRight {
+  @extend %imageContainer;
+
+  order: 3;
+}
+
+.imageContainerToLeft {
+  @extend %imageContainer;
+
+  order: 1;
+}
+
+.reasonContent {
+  order: 2;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+
+.description, .toggleContainer > p {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.toggleContainer {
+  display: none;
+}
+
+.textAlignToRight {
+  text-align: right;
+}
+
+.readMore {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 15px;
+  color: #377dff;
+  margin-top: 10px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.readMoreToRight {
+  float: right;
+}
