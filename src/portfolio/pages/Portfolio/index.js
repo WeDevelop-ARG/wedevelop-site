@@ -23,7 +23,7 @@ function Portfolio () {
   const { pathname, push } = useRouter()
 
   const handleClose = useCallback(() => {
-    push('/career', undefined, { shallow: true, scroll: false })
+    push('/portfolio', undefined, { shallow: true, scroll: false })
   }, [push])
 
   return (
