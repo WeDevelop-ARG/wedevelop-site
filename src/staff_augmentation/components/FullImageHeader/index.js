@@ -12,6 +12,7 @@ import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
 import Button from 'main_app/components/Button'
 import ClutchRectangle from 'main_app/components/ClutchRectangle'
 import Image from 'main_app/components/Image'
+import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
@@ -91,7 +92,9 @@ export default function FullImageHeader ({
                 isClutchLoaded={isClutchLoaded}
                 setIsClutchLoaded={setIsClutchLoaded}
               />
-              <WrappedImage src={ArrowDown} alt='Page continues below' className={classes.arrowDown} />
+              <InternalLink href='#latam-talent-section' className={classes.arrowDown}>
+                <Image src={ArrowDown} layout='fixed' alt='' />
+              </InternalLink>
             </div>
           </div>
         </div>
