@@ -34,7 +34,10 @@ function StaffAugmentation () {
         title='IT Staff Augmentation'
         description='A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
       />
-      <NavBar variant={['solid', 'dark']} />
+      <NavBar
+        variant={['solid', 'dark']}
+        contactPagePath={contactPagePath}
+      />
       <Article>
         {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
         <Hero

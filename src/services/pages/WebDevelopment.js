@@ -35,7 +35,10 @@ function WebDevelopment () {
         title='Agile Web Development'
         description='We create high-quality Digital Products through our Agile Web Development services, delivering meaningful experiences to clients and users all over the world.'
       />
-      <NavBar variant={['solid', 'dark']} />
+      <NavBar
+        variant={['solid', 'dark']}
+        contactPagePath={contactPagePath}
+      />
       <Article>
         {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
         <Hero
