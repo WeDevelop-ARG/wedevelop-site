@@ -1,20 +1,19 @@
-
 import PortfolioHeaderBackground from 'assets/portfolio/portfolio_header_background.svg'
 import Button from 'main_app/components/Button'
 import InternalLink from 'main_app/components/InternalLink'
+import WrappedImage from 'main_app/components/WrappedImage'
 import useStories from '../../hooks/useStories'
 import classes from './styles.module.scss'
 
-function PortfolioFeatureDisplay ({
-  title,
-  subtitle,
-  description,
-  buttonText
-}) {
+function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) {
   const { stories } = useStories()
-
+  const defaultProjectPreviewImgSizeInPx = 200
+  const defaultCompanyLogoImgSizeInPx = 40
   return (
-    <div className={classes.portfolioProjectPreShowcase} style={{ backgroundImage: `url(${PortfolioHeaderBackground.src})` }}>
+    <div
+      className={classes.portfolioProjectPreShowcase}
+      style={{ backgroundImage: `url(${PortfolioHeaderBackground.src})` }}
+    >
       <div className={classes.portfolioFeatured}>
         <h3>{title}</h3>
         <h4>{subtitle}</h4>
@@ -39,15 +38,29 @@ function PortfolioFeatureDisplay ({
               href={`/portfolio/${story.urlName}`}
               className={classes.container}
             >
-              <div className={classes.portfolioProjectPreview} key={i} style={{ backgroundImage: `url(${story.header.imageURL.src})` }}>
-                <div className={classes.portfolioProjectCompanyLogo} style={{ backgroundColor: story.header.logoBackground }}>
-                  <img src={story.header.logoURL.src} alt={`logo-${story.urlName}`} />
+              <div className={classes.portfolioProjectWrapper}>
+                <WrappedImage
+                  layout='fill'
+                  src={story.header.imageURL.src}
+                  alt=''
+                  width={defaultProjectPreviewImgSizeInPx}
+                  height={defaultProjectPreviewImgSizeInPx}
+                  className={classes.portfolioProjectPreview}
+                />
+                <div className={classes.portfolioProjectCompanyLogoWrapper} style={{ backgroundColor: story.header.logoBackground }}>
+                  <WrappedImage
+                    layout='fill'
+                    src={story.header.logoURL.src}
+                    alt={`logo-${story.urlName}`}
+                    width={defaultCompanyLogoImgSizeInPx}
+                    height={defaultCompanyLogoImgSizeInPx}
+                    className={classes.portfolioProjectCompanyLogo}
+                  />
                 </div>
               </div>
             </InternalLink>
           )
-        }
-        )}
+        })}
       </div>
     </div>
   )
