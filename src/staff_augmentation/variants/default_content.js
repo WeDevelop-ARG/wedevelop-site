@@ -250,7 +250,7 @@ const defaultContent = {
           </p>
           <Button
             as={InternalLink}
-            href='/'
+            href='https://wedevelop.me/about-us#values'
             variant={['secondary', 'black']}
           >
             Read more
