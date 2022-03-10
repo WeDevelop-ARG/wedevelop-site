@@ -1,3 +1,6 @@
+import InternalLink from 'main_app/components/InternalLink'
+import Button from 'main_app/components/Button'
+
 import DefaultBackground from 'assets/web_developers/backgrounds/bg_web_developers.png'
 import WeDevLaptops from 'assets/web_developers/backgrounds/wedev_laptops.png'
 import BookLaptop from 'assets/web_developers/backgrounds/book_laptop.png'
@@ -201,18 +204,13 @@ const defaultContent = {
       toggleContent: (
         <>
           <p>
-            Lorem gravida neque pellentesque elementum ut metus, fusce et.
-            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+            Our sophisticated vetting process ensures that you get the <b>best LATAM professionals</b>.
           </p>
           <p>
-            Pellentesque placerat est amet ultrices ornare. Dui tellus et
-            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
-            Pellentesque placerat est amet ultrices ornare. Dui tellus et
-            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
+            We've built an extensive recruiting network over the years to guarantee quick access to <b>highly talented people</b>.
           </p>
           <p>
-            Lorem gravida neque pellentesque elementum ut metus, fusce et.
-            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+            Only the Top 3% of the Talent pass our strict vetting process, which grants that <b>you'll get the best of the best</b>.
           </p>
         </>
       )
@@ -224,18 +222,13 @@ const defaultContent = {
       toggleContent: (
         <>
           <p>
-            Lorem gravida neque pellentesque elementum ut metus, fusce et.
-            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+            The primary goal of our customer-centric service is to <b>make you happy</b>.
           </p>
           <p>
-            Pellentesque placerat est amet ultrices ornare. Dui tellus et
-            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
-            Pellentesque placerat est amet ultrices ornare. Dui tellus et
-            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
+            We tailor every aspect of it based on your needs. We believe that be can always do better. And we want to.
           </p>
           <p>
-            Lorem gravida neque pellentesque elementum ut metus, fusce et.
-            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+            If you want to enjoy an <b>exquisite outsourcing service</b>, we invite you to try ours.
           </p>
         </>
       )
@@ -247,19 +240,21 @@ const defaultContent = {
       toggleContent: (
         <>
           <p>
-            Lorem gravida neque pellentesque elementum ut metus, fusce et.
-            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+            We're proud to say that we're <b>a team you'll love to work with</b>.
           </p>
           <p>
-            Pellentesque placerat est amet ultrices ornare. Dui tellus et
-            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
-            Pellentesque placerat est amet ultrices ornare. Dui tellus et
-            ut vehicula. Dignissim ipsum tristique rutrum facilisi neque.
+            We're <b>a people-first company</b>, that loves to grow organically as the result of the growth of its collaborators, clients, and partners.
           </p>
           <p>
-            Lorem gravida neque pellentesque elementum ut metus, fusce et.
-            Faucibus faucibus habitant eget ultricies cursus. Nulla donec.
+            We believe that <b>crystal-clear communication</b>, <b>openess</b>, and <b>transparency</b> create a rich work environment.
           </p>
+          <Button
+            as={InternalLink}
+            href='/'
+            variant={['secondary', 'black']}
+          >
+            Read more
+          </Button>
         </>
       )
     }],
