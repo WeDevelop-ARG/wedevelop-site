@@ -6,6 +6,7 @@ $primaryVariantHoverBackground: #2564D9;
 $secondaryVariantBackground: transparent;
 $lightTextBorder: #377DFF;
 $darkTextBorder: #FFFFFF;
+$blackTextBorder: #000000;
 
 .button {
   display: inline-flex;
@@ -77,11 +78,21 @@ $darkTextBorder: #FFFFFF;
     color: $darkTextBorder;
   }
 
+  &.variant_black {
+    background-color: $secondaryVariantBackground;
+    border-color: $blackTextBorder;
+    color: $blackTextBorder;
+  }
+
   &:hover, &:focus {
     box-shadow: 0 0 0 1px $lightTextBorder;
 
     &.variant_dark {
       box-shadow: 0 0 0 1px $darkTextBorder;
+    }
+
+    &.variant_black {
+      box-shadow: 0 0 0 1px $blackTextBorder;
     }
   }
 }
