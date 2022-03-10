@@ -1,5 +1,6 @@
 
 import PortfolioHeaderBackground from 'assets/portfolio/portfolio_header_background.svg'
+import Button from 'main_app/components/Button'
 import InternalLink from 'main_app/components/InternalLink'
 import useStories from '../../hooks/useStories'
 import classes from './styles.module.scss'
@@ -19,12 +20,16 @@ function PortfolioFeatureDisplay ({
         <h4>{subtitle}</h4>
         <p>{description}</p>
         <hr className={classes.horizontalBar} />
-        <InternalLink
+        <Button
+          as={InternalLink}
           href='/portfolio'
-          className={classes.container}
+          isAnchor
+          variant={['secondary', 'light']}
+          className={classes.viewMoreButton}
+          link={{ scroll: false }}
         >
-          <button>{buttonText}</button>
-        </InternalLink>
+          {buttonText}
+        </Button>
       </div>
       <div className={classes.portfolioProjectDisplayWrapper}>
         {stories.slice(0, 3).map((story, i) => {
