@@ -10,14 +10,21 @@ import ReviewCards from './components/ReviewCards'
 import SkillSet from './components/SkillSet'
 import LatamTalent from './components/LatamTalent'
 import WhyLatam from './components/WhyLatam'
+import PortfolioHeaderBackground from 'assets/portfolio/portfolio_header_background.svg'
+import InternalLink from 'main_app/components/InternalLink'
+import useStories from '../portfolio/hooks/useStories'
 
 import ThreeReasonsBottomSeparator from 'assets/staff_augmentation/three_reasons_bottom_separator.png'
 import HowItWorksBottomSeparator from 'assets/staff_augmentation/how_it_works_bottom_separator.png'
+
+import classes from './styles.module.scss'
 
 export default function LandingPageContent ({
   landing,
   handleContactCTAClick
 }) {
+  const { stories } = useStories()
+
   return (
     <>
       <Article>
@@ -62,6 +69,41 @@ export default function LandingPageContent ({
           skillSet={landing.skillSet?.positions}
           onCTAClick={handleContactCTAClick}
         />
+        <div className={classes.portfolioProjectPreShowcase} style={{ backgroundImage: `url(${PortfolioHeaderBackground.src})` }}>
+          <div className={classes.portfolioFeatured}>
+            <h3>Our Portfolio</h3>
+            <h4>See what's possible</h4>
+            <p>More than 20 companies have trust on us!</p>
+            <hr className={classes.horizontalBar} />
+            <InternalLink
+              href='/portfolio'
+              className={classes.container}
+            >
+              <button>View More</button>
+            </InternalLink>
+          </div>
+          <div className={classes.portfolioProjectDisplayWrapper}>
+            {stories.map((story, i) => {
+              if (i < 3) {
+                return (
+                  <InternalLink
+                    href={`/portfolio/${story.urlName}`}
+                    className={classes.container}
+                  >
+                    <div className={classes.portfolioProjectPreview} key={i} style={{ backgroundImage: `url(${story.header.imageURL.src})` }}>
+                      <div className={classes.portfolioProjectCompanyLogo} style={{ backgroundColor: story.header.logoBackground }}>
+                        <img src={story.header.logoURL.src} alt={`logo-${story.urlName}`} />
+                      </div>
+                    </div>
+                  </InternalLink>
+                )
+              } else {
+                return null
+              }
+            }
+            )}
+          </div>
+        </div>
         <ReviewCards
           subtitle={landing.reviewsHeading.subtitle}
           title={landing.reviewsHeading.title}
