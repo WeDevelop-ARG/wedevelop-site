@@ -4,6 +4,7 @@
   display: flex;
   background-size: cover;
   background-position: center;
+  padding-bottom: 50px;
   @include for-tablet-down {
     padding-bottom: 20px;
     flex-direction: column;

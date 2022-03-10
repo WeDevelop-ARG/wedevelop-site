@@ -1,4 +1,4 @@
-import PortfolioHeaderBackground from 'assets/portfolio/portfolio_header_background.svg'
+import PortfolioFeaturedProjectsBackground from 'assets/portfolio/portfolio_featured_projects_bg.svg'
 import Button from 'main_app/components/Button'
 import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
@@ -12,7 +12,7 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
   return (
     <div
       className={classes.portfolioProjectPreShowcase}
-      style={{ backgroundImage: `url(${PortfolioHeaderBackground.src})` }}
+      style={{ backgroundImage: `url(${PortfolioFeaturedProjectsBackground.src})` }}
     >
       <div className={classes.portfolioFeatured}>
         <h3>{title}</h3>
