@@ -11,7 +11,6 @@ import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import PortfolioHeader from 'portfolio/components/PortfolioHeader'
 import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
-
 import PortfolioImageSeparator from 'assets/portfolio/portfolio_image_separator.png'
 
 import classes from './styles.module.scss'
@@ -21,7 +20,6 @@ function Portfolio () {
   const { stories } = useStories()
   const contactPagePath = '/portfolio/contact'
   const { pathname, push } = useRouter()
-
   const handleClose = useCallback(() => {
     push('/portfolio', undefined, { shallow: true, scroll: false })
   }, [push])

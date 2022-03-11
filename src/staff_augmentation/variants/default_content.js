@@ -136,6 +136,12 @@ const defaultContent = {
       ]
     }
   },
+  portfolioFeaturedDisplay: {
+    title: 'Our Portfolio',
+    subtitle: "See what's possible",
+    description: 'More than 20 companies have trust on us!',
+    buttonText: 'View More'
+  },
   reviewsHeading: {
     subtitle: 'Customers reviews',
     title: "Here's what our customers say about our Staffing services",

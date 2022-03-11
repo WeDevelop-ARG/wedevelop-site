@@ -13,6 +13,7 @@ import WhyLatam from './components/WhyLatam'
 
 import ThreeReasonsBottomSeparator from 'assets/staff_augmentation/three_reasons_bottom_separator.png'
 import HowItWorksBottomSeparator from 'assets/staff_augmentation/how_it_works_bottom_separator.png'
+import PortfolioFeatureDisplay from 'portfolio/components/PortfolioFeaturedDIsplay'
 
 export default function LandingPageContent ({
   landing,
@@ -60,6 +61,12 @@ export default function LandingPageContent ({
           ctaText={landing.skillSet?.ctaText}
           skillSet={landing.skillSet?.positions}
           onCTAClick={handleContactCTAClick}
+        />
+        <PortfolioFeatureDisplay
+          title={landing.portfolioFeaturedDisplay.title}
+          subtitle={landing.portfolioFeaturedDisplay.subtitle}
+          description={landing.portfolioFeaturedDisplay.description}
+          buttonText={landing.portfolioFeaturedDisplay.buttonText}
         />
         <ReviewCards
           subtitle={landing.reviewsHeading.subtitle}
