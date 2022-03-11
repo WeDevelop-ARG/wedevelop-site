@@ -12,26 +12,10 @@ import '../src/styles/root.scss'
 setupGlobalDeveloperHints()
 setPageTitlePrefix('WeDevelop - ')
 
-const WAIT_TIME_BEFORE_APPEND = 3000
-
 function loadAfterInteraction () {
   window.removeEventListener('scroll', loadAfterInteraction, { passive: true })
 
   loadCookieConsent()
-}
-
-function loadGoogleTagManager () {
-  if (!IS_PRODUCTION) return undefined
-
-  const sc = document.createElement('script')
-
-  sc.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-53CPLS8'
-  sc.async = true
-  sc.defer = true
-
-  setTimeout(function () {
-    document.head.appendChild(sc)
-  }, WAIT_TIME_BEFORE_APPEND)
 }
 
 function loadCookieConsent () {
@@ -73,7 +57,6 @@ function MyApp ({ Component, pageProps }) {
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
     window.addEventListener('scroll', loadAfterInteraction, { passive: true })
-    document.addEventListener('DOMContentLoaded', loadGoogleTagManager)
   }, [])
 
   return (
@@ -100,6 +83,13 @@ function MyApp ({ Component, pageProps }) {
           href='https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'
           rel='stylesheet'
         />
+        {IS_PRODUCTION && (
+          <script
+            src='https://www.googletagmanager.com/gtm.js?id=GTM-53CPLS8'
+            async
+            defer
+          />
+        )}
       </Head>
       <NavBarContextProvider>
         <NavBar />
@@ -111,7 +101,7 @@ function MyApp ({ Component, pageProps }) {
             src='https://www.googletagmanager.com/ns.html?id=GTM-53CPLS8'
             height='0'
             width='0'
-            style='display:none;visibility:hidden'
+            style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
       )}

@@ -1,12 +1,9 @@
 import { useEffect, useCallback } from 'react'
-import { IS_STATIC_RENDERER } from 'main_app/constants'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 const SCRIPT_URL = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
 
 function loadScript (onPossiblyLoaded) {
-  if (IS_STATIC_RENDERER) return undefined
-
   if (isScriptPresent()) removeScript()
 
   const sc = document.createElement('script')

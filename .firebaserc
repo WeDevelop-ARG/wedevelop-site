@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "default": "wedevelop-site-testing"
+  },
+  "targets": {
+    "wedevelop-site": {
+      "hosting": {
+        "production": [
+          "wedevelop-site-prod"
+        ]
+      }
+    },
+    "wedevelop-site-testing": {
+      "hosting": {
+        "testing": [
+          "wedevelop-site-testing"
+        ]
+      }
+    }
+  }
+}

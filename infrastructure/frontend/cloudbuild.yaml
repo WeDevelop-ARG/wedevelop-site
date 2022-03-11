@@ -27,7 +27,7 @@ steps:
   id: 'deploy'
   waitFor: ['build','firebase-setup']
   entrypoint: 'npm'
-  args: ['run','deploy-hosting','--project=$PROJECT_ID']
+  args: ['run', 'deploy-hosting', '--project=$PROJECT_ID', '--environment=$_ENVIRONMENT']
 logsBucket: '$_LOGS_BUCKET'
 timeout: 2400s
 options:
