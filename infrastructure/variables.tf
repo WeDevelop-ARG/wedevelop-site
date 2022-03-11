@@ -49,6 +49,6 @@ locals {
 
   github_branch_name = lookup({
     production : "main",
-    testing: "feature/nextjs",
+    testing: "develop",
   }, local.environment, "main")
 }
