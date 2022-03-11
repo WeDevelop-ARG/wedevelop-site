@@ -1,11 +1,18 @@
+import InternalLink from 'main_app/components/InternalLink'
+import Button from 'main_app/components/Button'
+
 import DefaultBackground from 'assets/web_developers/backgrounds/bg_web_developers.png'
 import WeDevLaptops from 'assets/web_developers/backgrounds/wedev_laptops.png'
 import BookLaptop from 'assets/web_developers/backgrounds/book_laptop.png'
 
-import { ReactComponent as TimeZoneIcon } from 'assets/staff_augmentation/timezone_globe.svg'
-import { ReactComponent as CulturalClosenessIcon } from 'assets/staff_augmentation/cultural_closeness.svg'
-import { ReactComponent as LevelOfEnglishIcon } from 'assets/staff_augmentation/language.svg'
-import { ReactComponent as PriceQualityIcon } from 'assets/staff_augmentation/price_quality.svg'
+import TimeZoneIcon from 'assets/staff_augmentation/timezone_globe.component.svg'
+import CulturalClosenessIcon from 'assets/staff_augmentation/cultural_closeness.component.svg'
+import LevelOfEnglishIcon from 'assets/staff_augmentation/language.component.svg'
+import PriceQualityIcon from 'assets/staff_augmentation/price_quality.component.svg'
+
+import StrongTalent from 'assets/reasons_to_choose_wedev/strong_talent.svg'
+import WhiteGloveService from 'assets/reasons_to_choose_wedev/white_glove_service.svg'
+import HighValues from 'assets/reasons_to_choose_wedev/high_values.svg'
 
 const defaultContent = {
   pathName: '',
@@ -129,6 +136,12 @@ const defaultContent = {
       ]
     }
   },
+  portfolioFeaturedDisplay: {
+    title: 'Our Portfolio',
+    subtitle: "See what's possible",
+    description: 'More than 20 companies have trust on us!',
+    buttonText: 'View More'
+  },
   reviewsHeading: {
     subtitle: 'Customers reviews',
     title: "Here's what our customers say about our Staffing services",
@@ -188,28 +201,69 @@ const defaultContent = {
   ],
   HireTopTalent: {
     subtitle: 'white-glove service',
-    title: '3 reasons to choose WeDevelop',
-    description: '',
-    content: (
-      <>
-        <ul>
-          <li>
-            <b>Strong Talent</b> - We've iterated our vetting process to make
-            sure you get the best professionals.
-            <hr />
-          </li>
-          <li>
-            <b>White Glove Service</b> - We strive to provide you the best IT
-            Staffing services you'll find.
-            <hr />
-          </li>
-          <li>
-            <b>High Values</b> - We pride ourselves on being very transparent,
-            trustworthy, and dedicated.
-          </li>
-        </ul>
-      </>
-    ),
+    title: '3 Reasons to choose WeDevelop',
+    reasons: [{
+      id: '1',
+      imageURL: StrongTalent,
+      title: 'Strong Talent',
+      description: 'We\'ve iterated our vetting process to make sure you get the best professionals.',
+      toggleContent: (
+        <>
+          <p>
+            Our sophisticated vetting process ensures that you get the <b>best LATAM professionals</b>.
+          </p>
+          <p>
+            We've built an extensive recruiting network over the years to guarantee quick access to <b>highly talented people</b>.
+          </p>
+          <p>
+            Only the Top 3% of the Talent pass our strict vetting process, which grants that <b>you'll get the best of the best</b>.
+          </p>
+        </>
+      )
+    }, {
+      id: '2',
+      imageURL: WhiteGloveService,
+      title: 'White Glove Service',
+      description: 'We strive to provide you the best IT Staffing services you\'ll find.',
+      toggleContent: (
+        <>
+          <p>
+            The primary goal of our customer-centric service is to <b>make you happy</b>.
+          </p>
+          <p>
+            We tailor every aspect of it based on your needs. We believe that be can always do better. And we want to.
+          </p>
+          <p>
+            If you want to enjoy an <b>exquisite outsourcing service</b>, we invite you to try ours.
+          </p>
+        </>
+      )
+    }, {
+      id: '3',
+      imageURL: HighValues,
+      title: 'High Values',
+      description: 'We pride ourselves on being very transparent, trustworthy, and dedicated.',
+      toggleContent: (
+        <>
+          <p>
+            We're proud to say that we're <b>a team you'll love to work with</b>.
+          </p>
+          <p>
+            We're <b>a people-first company</b>, that loves to grow organically as the result of the growth of its collaborators, clients, and partners.
+          </p>
+          <p>
+            We believe that <b>crystal-clear communication</b>, <b>openess</b>, and <b>transparency</b> create a rich work environment.
+          </p>
+          <Button
+            as={InternalLink}
+            href='/about-us#values'
+            variant={['secondary', 'black']}
+          >
+            Read more
+          </Button>
+        </>
+      )
+    }],
     buttonText: 'Get In Touch'
   },
   fullSizeCTA: {

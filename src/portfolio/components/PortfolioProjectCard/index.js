@@ -1,14 +1,13 @@
-import { HashLink } from 'react-router-hash-link'
-
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
 import ProjectLogo from '../ProjectLogo'
 import useMediaQuery from 'utils/use_media_query'
 import { forPhoneOnly } from 'styles/media_queries'
 
-import { ReactComponent as BlueArrow } from 'assets/portfolio/arrow.svg'
+import BlueArrow from 'assets/portfolio/arrow.component.svg'
 
 import classes from './styles.module.scss'
+import InternalLink from 'main_app/components/InternalLink'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function PortfolioProjectCard ({
   coverImageURL,
@@ -32,12 +31,11 @@ function PortfolioProjectCard ({
   const newDescription = description.substring(0, index).concat('...')
 
   return (
-    <HashLink
-      to={detailsPagePath}
-      smooth
+    <InternalLink
+      href={detailsPagePath}
       className={classes.container}
     >
-      <Image
+      <WrappedImage
         src={coverImageURL}
         alt={shortDescription}
         objectFit='cover'
@@ -76,7 +74,7 @@ function PortfolioProjectCard ({
           Read More
         </Button>
       </div>
-    </HashLink>
+    </InternalLink>
   )
 }
 

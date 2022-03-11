@@ -5,19 +5,19 @@ import BAccordion from 'react-bootstrap/Accordion'
 import classNames from 'classnames'
 import isEmpty from 'lodash/isEmpty'
 
-import { ReactComponent as GradientArrow } from 'assets/staff_augmentation/arrow_gradient.svg'
+import GradientArrow from 'assets/staff_augmentation/arrow_gradient.component.svg'
 
 import classes from './styles.module.scss'
 
 function Toggle ({ eventKey, children, onClick, hasItems }) {
-  const currentEventKey = useContext(AccordionContext);
+  const currentEventKey = useContext(AccordionContext)
 
   const decoratedOnClick = useAccordionToggle(
     eventKey,
     () => onClick && onClick(eventKey)
   )
 
-  const isCurrentEventKey = currentEventKey === eventKey;
+  const isCurrentEventKey = currentEventKey === eventKey
 
   return (
     <button

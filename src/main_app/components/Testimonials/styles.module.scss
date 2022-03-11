@@ -129,8 +129,6 @@
 
 .profileImgContainer {
   position: relative;
-  width: 115px;
-  height: 115px;
   border-radius: 50%;
   flex-shrink: 0;
   margin-bottom: 20px;
@@ -138,6 +136,8 @@
 
 .profileImg {
   border-radius: 50%;
+  width: 115px;
+  height: 115px;
   overflow: hidden;
 }
 

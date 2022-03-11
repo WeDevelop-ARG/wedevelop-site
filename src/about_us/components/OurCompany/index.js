@@ -1,23 +1,24 @@
 import PeopleWorking from 'assets/about_us/our_company/people_working.png'
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
-import Image from 'main_app/components/Image'
+
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
 
 function OurCompany () {
   return (
-    <section id='our-company' className={classes.ourCompany}>
-      <div className={classes.sectionHeader}>
-        <p className={classes.subheadingText}>About Us</p>
-        <h2 className={classes.titleText}>Our Company</h2>
-        <p className={classes.descriptionText}>
-          Providing a more enjoyable life for people and
-          being the company everyone wants to work with.
-        </p>
-        <hr className={classes.horizontalBar} />
-      </div>
-      <div className={classes.sectionContent}>
-        <div className={classes.textBlock}>
+    <>
+      <section id='our-company' className={classes.ourCompany}>
+        <div className={classes.sectionHeader}>
+          <p className={classes.subheadingText}>About Us</p>
+          <h2 className={classes.titleText}>Our Company</h2>
+          <p className={classes.descriptionText}>
+            Providing a more enjoyable life for people and
+            being the company everyone wants to work with.
+          </p>
+          <hr className={classes.horizontalBar} />
+        </div>
+        <div className={classes.firstTextBlock}>
           <p>
             Since 2019, this US-based company has been delivering
             exceptional Software Development Services. Our team is
@@ -33,10 +34,16 @@ function OurCompany () {
             world we live in and love.
           </p>
         </div>
-        <div className={classes.backgroundImgContainer}>
-          <Image src={PeopleWorking} alt='' className={classes.backgroundImg} />
-        </div>
-        <div className={classes.textBlock}>
+        <div className={classes.filledCircle} aria-hidden='true' />
+        <div className={classes.emptyCircle} aria-hidden='true' />
+        <div className={classes.smallBlurCircle} aria-hidden='true' />
+        <div className={classes.emptySemiCircle} aria-hidden='true' />
+        <WrappedImage src={DotsPattern} alt='' layout='intrinsic' className={classes.topRightDotsPattern} aria-hidden='true' />
+      </section>
+      <WrappedImage src={DotsPattern} alt='' layout='responsive' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <WrappedImage src={PeopleWorking} alt='' layout='responsive' className={classes.backgroundImg} />
+      <section className={classes.ourCompanyBottom}>
+        <div className={classes.lastTextBlock}>
           <p>
             We're not just another software company,
             <b>
@@ -53,16 +60,10 @@ function OurCompany () {
             know they're valued for their abilities beyond anything else.
           </p>
         </div>
-      </div>
-      <div className={classes.filledCircle} aria-hidden='true' />
-      <div className={classes.emptyCircle} aria-hidden='true' />
-      <div className={classes.smallBlurCircle} aria-hidden='true' />
-      <div className={classes.emptySemiCircle} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.topRightDotsPattern} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.bottomRightDotsPattern} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.bottomLeftDotsPattern} aria-hidden='true' />
-    </section>
+        <WrappedImage src={DotsPattern} alt='' layout='intrinsic' className={classes.bottomRightDotsPattern} aria-hidden='true' />
+        <WrappedImage src={DotsPattern} alt='' layout='intrinsic' className={classes.bottomLeftDotsPattern} aria-hidden='true' />
+      </section>
+    </>
   )
 }
 

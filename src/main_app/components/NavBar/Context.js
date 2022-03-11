@@ -19,11 +19,15 @@ function NavBarContextProvider ({ children }) {
 }
 
 function withNavBarContextProps (NavBarComponent) {
-  return (defaultProps) => {
+  const Component = (defaultProps) => {
     const { props } = useContext(NavBarContext) ?? {}
 
     return <NavBarComponent show={false} {...defaultProps} {...props} />
   }
+
+  Component.displayName = 'NavBar'
+
+  return Component
 }
 
 const NavBarContextProxy = forwardRef(({
@@ -47,6 +51,8 @@ const NavBarContextProxy = forwardRef(({
 
   return null
 })
+
+NavBarContextProxy.displayName = 'NavBar'
 
 export {
   NavBarContextProvider,

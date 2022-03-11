@@ -1,5 +1,8 @@
 import Button from 'main_app/components/Button'
-import SVGIcon from 'main_app/components/SVGIcon'
+
+import WrappedImage from 'main_app/components/WrappedImage'
+
+import ErrorIcon from 'assets/career/errorUploadingFile.svg'
 
 import classes from './styles.module.scss'
 
@@ -7,8 +10,9 @@ export default function ErrorUploadingFile ({ retryButtonProps }) {
   return (
     <div className={classes.field}>
       <div className={classes.errorUploadingMessage}>
-        <SVGIcon
-          name='career/errorUploadingFile'
+        <WrappedImage
+          src={ErrorIcon}
+          layout='fixed'
           alt=''
           className={classes.errorUploadingFile}
         />

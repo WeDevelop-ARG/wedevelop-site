@@ -1,20 +1,28 @@
-import Button from 'main_app/components/Button'
 import { useCallback, useState } from 'react'
 import { Field } from 'formik'
-import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
-import ContactPopupModal from '../ContactPopupModal'
-import classes from './styles.module.scss'
-import ErrorUploadingFile from 'staff_augmentation/components/ErrorUploadingFile'
-import ScheduleForm from '../ScheduleForm'
-import SubmitButton from 'main_app/components/SubmitButton'
-import FileInput from 'career/components/JoinUsForm/FileInput'
-import uploadFile from 'service_providers/firebase/uploadFile'
-import UploadingFile from 'staff_augmentation/components/UploadingFile'
-import SVGIcon from 'main_app/components/SVGIcon'
-import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
-import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 import isNil from 'lodash/isNil'
 import isUndefined from 'lodash/isUndefined'
+import Image from 'main_app/components/Image'
+
+import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
+
+import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
+import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
+
+import uploadFile from 'service_providers/firebase/uploadFile'
+
+import Button from 'main_app/components/Button'
+import ErrorUploadingFile from 'staff_augmentation/components/ErrorUploadingFile'
+import SubmitButton from 'main_app/components/SubmitButton'
+import FileInput from 'career/components/JoinUsForm/FileInput'
+import UploadingFile from 'staff_augmentation/components/UploadingFile'
+
+import ContactPopupModal from '../ContactPopupModal'
+import ScheduleForm from '../ScheduleForm'
+
+import ClipIcon from 'assets/career/clip.svg'
+
+import classes from './styles.module.scss'
 
 export default function ScheduleFormModal ({
   isModalOpen,
@@ -71,7 +79,7 @@ export default function ScheduleFormModal ({
         source: formOrigin
       })
       // LinkedIn Ad Conversion Event
-      try{window?.lintrk?.('track', { conversion_id: 6505732 })}catch(e){}
+      try { window?.lintrk?.('track', { conversion_id: 6505732 }) } catch (e) {}
       onSubmit?.()
     } catch (err) {
       console.error(err)
@@ -141,7 +149,7 @@ export default function ScheduleFormModal ({
               aria-hidden='true'
             >
               <div className={classes.field}>
-                <SVGIcon name='career/clip' className={classes.clip} alt='' />
+                <Image layout='fixed' src={ClipIcon} alt='' />
                 <p className={classes.fileUploadLabel}>Attach</p>
               </div>
             </Field>

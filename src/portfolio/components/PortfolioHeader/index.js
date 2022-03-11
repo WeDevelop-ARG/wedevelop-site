@@ -1,5 +1,3 @@
-import Image from 'main_app/components/Image'
-
 import HeaderCup from 'assets/portfolio/header_cup.svg'
 import PortfolioHeaderBackground from 'assets/portfolio/portfolio_header_background.svg'
 import SmallBlurredCircle from 'assets/portfolio/small_blurred_circle.png'
@@ -7,25 +5,22 @@ import WhiteDotsPattern from 'assets/portfolio/white_dots_pattern.svg'
 import WhiteDotsPatternMobile from 'assets/portfolio/white_dots_pattern_mobile.svg'
 
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function PortfolioHeader () {
   return (
     <>
       <section className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
-          <Image
-            src={PortfolioHeaderBackground}
-            alt=''
-            className={classes.background}
-          />
+          <WrappedImage layout='fill' objectFit='cover' objectPosition='bottom' src={PortfolioHeaderBackground} alt='' className={classes.background} />
         </div>
-        <Image src={WhiteDotsPattern} alt='' className={classes.dotsPattern} />
-        <Image
+        <WrappedImage src={WhiteDotsPattern} alt='' className={classes.dotsPattern} />
+        <WrappedImage
           src={WhiteDotsPatternMobile}
           alt=''
           className={classes.dotsPatternMobile}
         />
-        <Image
+        <WrappedImage
           src={SmallBlurredCircle}
           alt=''
           className={classes.smallBlurredCircle}
@@ -44,7 +39,7 @@ function PortfolioHeader () {
             </div>
           </div>
           <div className={classes.rightSideContainer}>
-            <Image
+            <WrappedImage
               src={HeaderCup}
               alt=''
               className={classes.headerCup}

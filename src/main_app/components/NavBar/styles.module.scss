@@ -7,7 +7,7 @@
 }
 
 .rootWithNavBar {
-  --rootContentExtraPaddingTop: 70px;
+  --rootContentExtraPaddingTop: 70px !important;
 }
 
 .header {
@@ -67,11 +67,6 @@
   outline: auto;
 }
 
-.logo {
-  width: auto !important;
-  height: 40px !important;
-}
-
 .menuToggle {
   align-self: flex-end;
   background: none;
@@ -89,26 +84,11 @@
   & > * {
     margin: auto;
   }
-
- .open {
-    width: 27px;
-    height: auto;
-
-    &.white {
-      --primaryColor: #{$secondaryColor};
-    }
-  }
-
-  .close {
-    width: 24px;
-    height: auto;
-    z-index: 1;
-  }
 }
 
 .menu {
   position: fixed;
-  top: 40px;
+  top: 63px;
   left: 0;
   right: 0;
   bottom: 10px;

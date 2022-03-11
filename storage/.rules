@@ -1,0 +1,12 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{path} {
+    	allow read: if path != "raw-uploads";
+      
+	    match /{file} {
+    	  allow create: if path == "raw-uploads" && request.resource.size <= 20 * 1024 * 1024;
+    	}
+    }
+  }
+}

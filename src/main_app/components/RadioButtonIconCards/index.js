@@ -16,7 +16,7 @@ function RadioButtonIconCards ({ options, name }) {
             className={classes.card}
           >
             {option.icon && <div className={classes.icon}>{option.icon}</div>}
-            {option.iconURL && <Image src={option.iconURL} alt='' className={classes.icon} />}
+            {option.iconURL && <Image src={option.iconURL} layout='fixed' alt='' className={classes.icon} />}
             <span className={classes.textCard}>{option.label}</span>
           </RadioButtonCard>
         </li>

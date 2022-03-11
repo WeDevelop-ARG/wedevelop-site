@@ -10,7 +10,7 @@ import LeftSemicirclesMobile from 'assets/services/staff_aug_details/left_semici
 import RightSemicirclesMobile from 'assets/services/staff_aug_details/right_semicircles_mobile.svg'
 
 import classes from './staffDetails.module.scss'
-import Image from 'main_app/components/Image'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function StaffDetails () {
   const servicesList = useStaffDetails()
@@ -24,14 +24,14 @@ function StaffDetails () {
           </div>
         ))}
       </div>
-      <Image className={classes.decoPattern} src={Pattern} alt='' />
-      <Image className={classes.decoCircle} src={Circle} alt='' />
-      <Image className={classes.decoEmptyCircle} src={EmptyCircle} alt='' />
-      <Image className={classes.decoFilledCircle} src={FilledCircle} alt='' />
-      <Image className={classes.decoCircleLine} src={CircleLine} alt='' />
-      <Image className={classes.decoBlur} src={BlurDot} alt='' />
-      <Image className={classes.leftSemicirclesMobile} src={LeftSemicirclesMobile} alt='' />
-      <Image className={classes.rightSemicirclesMobile} src={RightSemicirclesMobile} alt='' />
+      <WrappedImage className={classes.decoPattern} src={Pattern} alt='' />
+      <WrappedImage className={classes.decoCircle} src={Circle} alt='' />
+      <WrappedImage className={classes.decoEmptyCircle} src={EmptyCircle} alt='' />
+      <WrappedImage className={classes.decoFilledCircle} src={FilledCircle} alt='' />
+      <WrappedImage className={classes.decoCircleLine} src={CircleLine} alt='' />
+      <WrappedImage className={classes.decoBlur} src={BlurDot} alt='' />
+      <WrappedImage className={classes.leftSemicirclesMobile} src={LeftSemicirclesMobile} alt='' />
+      <WrappedImage className={classes.rightSemicirclesMobile} src={RightSemicirclesMobile} alt='' />
     </>
   )
 }

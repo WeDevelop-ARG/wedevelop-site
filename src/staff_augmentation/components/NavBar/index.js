@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-import { HashLink } from 'react-router-hash-link'
+import InternalLink from 'main_app/components/InternalLink'
 import classnames from 'classnames'
-
-import { IS_STATIC_RENDERER } from 'main_app/constants'
 
 import Logo from 'main_app/components/Logo'
 import Button from 'main_app/components/Button'
@@ -19,14 +17,14 @@ function NavBar ({
   buttonLabel
 }) {
   const [atScrollTop, observerRef] = useOverlappingObserver({
-    root: document.body,
+    root: globalThis.document?.body,
     ignoreHeight: true,
     defaultValue: null
   })
   const [initialized, setInitialized] = useState(false)
 
   useEffect(() => {
-    if (atScrollTop !== null && !IS_STATIC_RENDERER) setInitialized(true)
+    if (atScrollTop !== null) setInitialized(true)
   }, [atScrollTop])
 
   return (
@@ -38,13 +36,12 @@ function NavBar ({
         [classes.initialized]: initialized
       })}
     >
-      <HashLink
-        to='#top'
+      <InternalLink
+        href='#top'
         className={classes.logoLink}
-        smooth
       >
         <Logo width='203' height='46' />
-      </HashLink>
+      </InternalLink>
       <nav className={classes.menu}>
         <div className={classes.bubble}>
           <span className={classes.tagName} style={{ color: backgroundColor }}>{landingName}</span>

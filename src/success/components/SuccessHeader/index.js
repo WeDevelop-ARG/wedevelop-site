@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react'
 
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
 import ScheduleCallModal from 'staff_augmentation/components/ScheduleCallModal'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import HeaderBackground from 'assets/staff_augmentation/backgrounds/blue_gradient_background.svg'
 import DotsPattern from 'assets/staff_augmentation/white_dots_pattern.svg'
@@ -22,18 +22,18 @@ export default function SuccessHeader ({ displayScheduleCallHint = false }) {
   return (
     <section id='headerSection' className={classes.headerContainer}>
       <div className={classes.backgroundContainer}>
-        <Image src={HeaderBackground} alt='' className={classes.background} />
+        <WrappedImage layout='fill' objectFit='cover' objectPosition='bottom' src={HeaderBackground} alt='' className={classes.background} />
       </div>
       <ScheduleCallModal
         isModalOpen={isCallModalOpen}
         setModalOpen={setCallModalOpen}
         onSubmit={onSuccess}
       />
-      <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
-      <Image src={DecorationElements} alt='' className={classes.decorationElementsPattern} />
-      <Image src={BlurredDecorationElements} alt='' className={classes.blurredDecorationElements} />
+      <WrappedImage src={DotsPattern} alt='' className={classes.dotsPattern} />
+      <WrappedImage src={DecorationElements} alt='' className={classes.decorationElementsPattern} />
+      <WrappedImage src={BlurredDecorationElements} alt='' className={classes.blurredDecorationElements} />
       <div className={classes.successMessageContainer}>
-        <Image src={ThumbsUpIcon} className={classes.thumbsUpIcon} />
+        <WrappedImage src={ThumbsUpIcon} className={classes.thumbsUpIcon} />
         <h1 className={classes.title}><span className={classes.bold}>Thanks</span> for contacting WeDevelop</h1>
         <p className={classes.paragraph}>
           You will receive a confirmation email shortly with the information you requested. Please be sure to check your spam folder for it!

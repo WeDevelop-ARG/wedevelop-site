@@ -1,13 +1,23 @@
 import classnames from 'classnames'
-import Image from 'main_app/components/Image'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
 
 function BackgroundContainer ({ backgroundURL, className }) {
+  let height
+
+  if (backgroundURL.width && backgroundURL.height) {
+    height = `${backgroundURL.height / backgroundURL.width}vw`
+  }
+
   return (
-    <div className={classnames(classes.backgroundContainer, className)}>
-      <Image src={backgroundURL} objectFit='auto' resize='auto-height' alt='' />
-    </div>
+    <WrappedImage
+      src={backgroundURL}
+      style={{ height }}
+      layout='responsive'
+      alt=''
+      className={classnames(classes.backgroundContainer, className)}
+    />
   )
 }
 

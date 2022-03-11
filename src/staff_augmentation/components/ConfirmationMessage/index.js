@@ -1,12 +1,12 @@
-import SVGIcon from 'main_app/components/SVGIcon'
-
+import WrappedImage from 'main_app/components/WrappedImage'
+import CheckSign from 'assets/staff_augmentation/check_sign.svg'
 import classes from './styles.module.scss'
 
 function ConfirmationMessage ({ showModal, onModalClose }) {
   return (
     <div className={classes.container}>
       <div className={classes.confirmationBadge}>
-        <SVGIcon name='staff_augmentation/check_sign' className={classes.checkSign} />
+        <WrappedImage src={CheckSign} className={classes.checkSign} />
       </div>
       <div className={classes.messageSent}>
         <h2>We got it.</h2>

@@ -6,19 +6,23 @@ import InputGroup from 'react-bootstrap/InputGroup'
 
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
-import SVGIcon from 'main_app/components/SVGIcon'
-import Image from 'main_app/components/Image'
 import FormikSelect from 'main_app/components/FormikSelect'
-import FileInput from './FileInput'
 import ReCAPTCHAField from 'main_app/components/ReCAPTCHAField'
+import WrappedImage from 'main_app/components/WrappedImage'
+
+import FileInput from './FileInput'
 import UploadingFile from 'staff_augmentation/components/UploadingFile'
 import ErrorUploadingFile from 'staff_augmentation/components/ErrorUploadingFile'
+
 import useSkillOptions from 'main_app/components/useSkillOptions'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import FormLogic from './FormLogic'
-import CountrySelect from './CountrySelect/index'
+import CountrySelect from './CountrySelect'
+
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
+import Clip from 'assets/career/clip.svg'
+import HalfCircle from 'assets/home/services/half_circle.svg'
 
 import classes from './styles.module.scss'
 
@@ -129,7 +133,7 @@ function JoinUsForm () {
               aria-hidden='true'
             >
               <div className={classes.field}>
-                <SVGIcon name='career/clip' className={classes.clip} alt='' />
+                <WrappedImage src={Clip} layout='fixed' className={classes.clip} alt='' />
                 Attach
               </div>
             </Field>}
@@ -169,10 +173,8 @@ function JoinUsForm () {
       <div className={classes.filledCircle} aria-hidden='true' />
       <div className={classes.emptyCircle} aria-hidden='true' />
       <div className={classes.smallBlurCircle} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
-      <div className={classes.halfCircle}>
-        <SVGIcon name='home/services/half_circle' />
-      </div>
+      <WrappedImage src={DotsPattern} layout='intrinsic' alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <WrappedImage src={HalfCircle} layout='intrinsic' className={classes.halfCircle} />
       <div className={classes.leftSmallBlurCircle} />
       <div className={classes.leftFilledCircle} />
       <div className={classes.leftEmptyCircle} />

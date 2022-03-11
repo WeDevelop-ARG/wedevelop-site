@@ -1,22 +1,26 @@
-import { HashLink } from 'react-router-hash-link'
-
-import SVGIcon from '../SVGIcon'
+import InternalLink from 'main_app/components/InternalLink'
 import ClutchWidget from 'main_app/components/ClutchWidget'
 import Logo from '../Logo'
+import WrappedImage from '../WrappedImage'
 
 import classes from './styles.module.scss'
-import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
 
-import pattern from 'assets/footer/pattern.svg'
-import Image from '../Image'
+import Pattern from 'assets/footer/pattern.svg'
+import Email from 'assets/footer/email.svg'
+import Location from 'assets/footer/location.svg'
+import Phone from 'assets/footer/phone.svg'
+import Download from 'assets/footer/download.svg'
+import Facebook from 'assets/footer/facebook.svg'
+import Instagram from 'assets/footer/instagram.svg'
+import LinkedIn from 'assets/footer/linked_in.svg'
 
-function Footer ({ variant = 'dark', className }) {
+function Footer ({ className }) {
   className = classnames(
     classes.containerStyle,
-    useVariants(classes, variant, { prefix: 'variant_' }),
     className
   )
+
   return (
     <footer className={className}>
       <div className={classes.listUs}>
@@ -27,14 +31,14 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.contact}>
           <li><p className={classes.titleContainer}>company</p></li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/about-us#top' smooth className={classes.contactContent}>
+            <InternalLink href='/about-us' className={classes.contactContent}>
               About Us
-            </HashLink>
+            </InternalLink>
           </li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/careers#top' smooth className={classes.contactContent}>
+            <InternalLink href='/career' className={classes.contactContent}>
               Careers
-            </HashLink>
+            </InternalLink>
           </li>
           <li className={classes.contactContentContainer}>
             <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
@@ -45,14 +49,14 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.contact}>
           <li><p className={classes.titleContainer}>services</p></li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/services/web-development#top' smooth className={classes.contactContent}>
+            <InternalLink href='/services/web-development' className={classes.contactContent}>
               Web Development
-            </HashLink>
+            </InternalLink>
           </li>
           <li className={classes.contactContentContainer}>
-            <HashLink to='/services/staff-augmentation#top' smooth className={classes.contactContent}>
+            <InternalLink href='/services/staff-augmentation' className={classes.contactContent}>
               Staff Augmentation
-            </HashLink>
+            </InternalLink>
           </li>
         </ul>
         <ul className={classes.contact}>
@@ -88,26 +92,26 @@ function Footer ({ variant = 'dark', className }) {
           <li><p className={classes.titleContainer}>contact us</p></li>
           <li>
             <a href='mailto:info@wedevelop.me' className={classes.contactContentContainer}>
-              <SVGIcon name='footer/email' className={classes.iconStyles} />
+              <WrappedImage src={Email} className={classes.iconStyles} />
               <span className={classes.contactContent}>
                 info@wedevelop.me
               </span>
             </a>
           </li>
           <li className={classes.contactContentContainer}>
-            <SVGIcon name='footer/location' className={classes.iconStyles} />
+            <WrappedImage src={Location} className={classes.iconStyles} />
             <address className={classes.contactContent}>
               WeDevelop LLC FL 33134, US
             </address>
           </li>
           <li className={classes.contactContentContainer}>
-            <SVGIcon name='footer/phone' className={classes.iconStyles} />
+            <WrappedImage src={Phone} className={classes.iconStyles} />
             <a href='tel:+19254486165' className={classes.contactContent}>
               +1 (925) 448-6165
             </a>
           </li>
           <li className={classes.contactContentContainer}>
-            <SVGIcon name='footer/download' className={classes.iconStyles} />
+            <WrappedImage src={Download} className={classes.iconStyles} />
             <a href='/storage/WeDevelop-Brochure.pdf?alt=media' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
               Download brochure
             </a>
@@ -117,9 +121,9 @@ function Footer ({ variant = 'dark', className }) {
       <div className={classes.socials}>
         <ul className={classes.branding}>
           <li>
-            <HashLink to='/privacy-policy#top' smooth className={classes.privacyPolicy}>
+            <InternalLink href='/privacy-policy' className={classes.privacyPolicy}>
               Privacy&nbsp;Policy
-            </HashLink>
+            </InternalLink>
           </li>
           <li className={classes.pleca}>|</li>
           <li className={classes.copyright}>
@@ -129,22 +133,22 @@ function Footer ({ variant = 'dark', className }) {
         <ul className={classes.socialNetworks}>
           <li>
             <a href='https://www.linkedin.com/company/wedevelop-arg' target='_blank' rel='noreferrer'>
-              <SVGIcon name='footer/linked_in' title={'WeDevelop\'s LinkedIn'} className={classes.iconSocialNetworks} />
+              <WrappedImage src={LinkedIn} title={'WeDevelop\'s LinkedIn'} className={classes.iconSocialNetworks} />
             </a>
           </li>
           <li>
             <a href='https://facebook.com/WeDevelop-101618141565362' target='_blank' rel='noreferrer'>
-              <SVGIcon name='footer/facebook' title={'WeDevelop\'s Facebook'} className={classes.iconSocialNetworks} />
+              <WrappedImage src={Facebook} title={'WeDevelop\'s Facebook'} className={classes.iconSocialNetworks} />
             </a>
           </li>
           <li>
             <a href='https://www.instagram.com/wedevelop.me' target='_blank' rel='noreferrer'>
-              <SVGIcon name='footer/instagram' title={'WeDevelop\'s Instagram'} className={classes.iconSocialNetworks} />
+              <WrappedImage src={Instagram} title={'WeDevelop\'s Instagram'} className={classes.iconSocialNetworks} />
             </a>
           </li>
         </ul>
       </div>
-      <Image src={pattern} alt='' className={classes.pattern} />
+      <WrappedImage src={Pattern} layout='fixed' alt='' className={classes.pattern} />
     </footer>
   )
 }

@@ -1,8 +1,5 @@
 import { useCallback } from 'react'
-import { useRouteMatch, useHistory } from 'react-router-dom'
-
-import usePageMetadata from 'utils/marketing/use_page_metadata'
-import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
+import { useRouter } from 'next/router'
 
 import Article from 'main_app/components/Article'
 import AboutUs from './components/AboutUs'
@@ -14,21 +11,23 @@ import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import Services from './components/Services'
 import Testimonials from 'main_app/components/Testimonials'
+import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 function Landing () {
-  usePageMetadata({
-    title: 'A Human-Centered Company that Gets Things Done',
-    description: 'We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
-  })
-  const match = useRouteMatch('/contact')
-  const history = useHistory()
+  const { pathname, push } = useRouter()
+
   const handleClose = useCallback(() => {
-    history.push('/')
-  }, [history])
+    push('/', undefined, { scroll: false, shallow: true })
+  }, [push])
   const { reviews } = useReviews()
 
   return (
     <>
+      <PageMetadata
+        title='A Human-Centered Company that Gets Things Done'
+        description='We are a digital product agency that delivers meaningful experiences to clients and users all over the world.'
+      />
       <NavBar
         variant={['solid', 'dark']}
         variantAtScrollTop={['transparent', 'light']}
@@ -43,8 +42,8 @@ function Landing () {
         <GetInTouch contactPagePath='/contact' />
         <PictureWall />
       </Article>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer variant='light' />
+      {pathname === '/contact' && <ContactModal isOpen onRequestClose={handleClose} />}
+      <Footer />
     </>
   )
 }

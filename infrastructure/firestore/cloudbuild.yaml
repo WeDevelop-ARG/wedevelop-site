@@ -1,0 +1,17 @@
+steps:
+- name: node:16.13.1-alpine
+  waitFor: ['-']
+  id: 'install'
+  dir: 'firestore'
+  entrypoint: 'npm'
+  args: ['ci']
+- name: node:16.13.1-alpine
+  waitFor: ['install']
+  dir: 'firestore'
+  entrypoint: 'npm'
+  args: ['run', 'deploy', '--project=$PROJECT_ID']
+
+logsBucket: '$_LOGS_BUCKET'
+timeout: 600s
+options:
+  logging: GCS_ONLY

@@ -1,6 +1,6 @@
 import classnames from 'classnames'
 
-import Image from 'main_app/components/Image'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
 
@@ -15,9 +15,10 @@ function ProjectLogo ({
       className={classnames(classes.logoBackground, className)}
       {...props}
     >
-      <Image
+      <WrappedImage
         src={logoURL}
         alt={projectName}
+        layout='fill'
         objectFit='contain'
         className={classes.logoImg}
       />

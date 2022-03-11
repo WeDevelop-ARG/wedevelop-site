@@ -1,5 +1,5 @@
-import { IS_STATIC_RENDERER } from 'main_app/constants'
-import { useState, useLayoutEffect, useMemo } from 'react'
+import { isUndefined } from 'lodash'
+import { useState, useEffect, useMemo } from 'react'
 import { area, intersect, intersection } from 'rectangles'
 import useComponentDidMount from './use_component_did_mount'
 
@@ -27,8 +27,8 @@ function useOverlappingObserver ({
     return result
   }, [isOverlapping, targetRef, rootRef])
 
-  useLayoutEffect(() => {
-    if (IS_STATIC_RENDERER || !didMount) return undefined
+  useEffect(() => {
+    if (!didMount) return undefined
 
     const calculateOverlap = () => {
       const targetRect = getRectangleCoordinates(target?.getBoundingClientRect(), { ignoreHeight })
@@ -90,6 +90,8 @@ function getRectangleCoordinates ({
 }
 
 function buildViewportElement () {
+  if (isUndefined(globalThis.document)) return undefined
+
   const rootRect = document.documentElement.getBoundingClientRect()
 
   return buildRootRectangleElement({

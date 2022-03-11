@@ -1,16 +1,15 @@
-import { HashLink } from 'react-router-hash-link'
-
-import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
-
 import useMediaQuery from 'utils/use_media_query'
 
-import { ReactComponent as WhiteBackwardArrow } from 'assets/portfolio/white_backward_arrow.svg'
+import Button from 'main_app/components/Button'
+
+import WhiteBackwardArrow from 'assets/portfolio/white_backward_arrow.component.svg'
 import ProjectLogo from '../ProjectLogo'
 
 import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
+import InternalLink from 'main_app/components/InternalLink'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function StoryHeader ({
   backgroundURL,
@@ -36,20 +35,20 @@ function StoryHeader ({
     <>
       <div className={classes.decorationWrapper}>
         <Button
-          as={HashLink}
-          to='/portfolio'
-          smooth
+          as={InternalLink}
+          href='/portfolio'
           variant='link'
           iconLeft={<WhiteBackwardArrow />}
           className={classes.backToList}
         >
           Back to list
         </Button>
-        <Image
+        <WrappedImage
           src={isDesktopUp ? backgroundURL : mobileBackgroundURL}
           alt=''
           loading='eager'
           placeholderColor='#333'
+          layout='responsive'
           objectFit='cover'
           position='bottom'
           className={classes.headerBackground}
@@ -73,7 +72,7 @@ function StoryHeader ({
           </div>
           <p className={classes.description}>{description}</p>
         </div>
-        <Image src={imageURL} alt='' className={classes.bottomImg} />
+        <WrappedImage src={imageURL} layout='responsive' alt='' className={classes.bottomImg} />
         <div className={classes.leftFilledCircle} aria-hidden='true' />
         <div className={classes.filledCircle} aria-hidden='true' />
         <div className={classes.emptyCircle} aria-hidden='true' />

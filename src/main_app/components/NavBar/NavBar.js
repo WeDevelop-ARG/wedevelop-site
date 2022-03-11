@@ -1,20 +1,23 @@
 import { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import classnames from 'classnames'
-import { HashLink } from 'react-router-hash-link'
+import Image from 'main_app/components/Image'
+
+import InternalLink from 'main_app/components/InternalLink'
 
 import useOverlappingObserver from 'utils/use_overlapping_observer'
 import useElementClass from 'utils/use_element_class'
 import useVariants, { combineVariants, isVariant } from 'utils/use_variants'
 import useCombinedRefs from 'utils/use_combined_refs'
 import useMediaQuery from 'utils/use_media_query'
-import { IS_STATIC_RENDERER } from 'main_app/constants'
 
 import { forDesktopUp, forTabletDown } from 'styles/media_queries'
 
-import SVGIcon from '../SVGIcon'
-
 import MainMenu from './MainMenu'
 import Logo from '../Logo'
+
+import CloseX from 'assets/nav_bar/close_x.svg'
+import HamburguerMenu from 'assets/nav_bar/hamburguer_menu.svg'
+import HamburguerMenuWhite from 'assets/nav_bar/hamburguer_menu_white.svg'
 
 import classes from './styles.module.scss'
 
@@ -22,13 +25,13 @@ function NavBar ({
   variant,
   variantAtScrollTop,
   show = true,
-  pathLogo = '/#top',
+  pathLogo = '/',
   hideMenu = false,
   contactPagePath = '/contact'
 }, ref) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [atScrollTop, observerRef] = useOverlappingObserver({
-    root: document.body,
+    root: globalThis.document?.body,
     ignoreHeight: true,
     defaultValue: null
   })
@@ -38,7 +41,7 @@ function NavBar ({
   const isTabletDown = useMediaQuery(forTabletDown)
 
   useEffect(() => {
-    if (atScrollTop !== null && !IS_STATIC_RENDERER) setInitialized(true)
+    if (atScrollTop !== null) setInitialized(true)
   }, [atScrollTop])
 
   variant = useMemo(() => {
@@ -82,8 +85,8 @@ function NavBar ({
     setMenuOpen(false)
   }, [])
 
-  useElementClass(document.getElementById('root'), classes.rootWithNavBar)
-  useElementClass(document.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
+  useElementClass(globalThis.document?.getElementById('__next'), classes.rootWithNavBar)
+  useElementClass(globalThis.document?.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
 
   return (
     <header
@@ -97,33 +100,32 @@ function NavBar ({
         [classes.initialized]: initialized
       })}
     >
-      <HashLink
-        to={pathLogo}
+      <InternalLink
+        href={pathLogo}
         className={classes.logoLink}
-        smooth
       >
         <Logo
           variant={logoVariant}
-          className={classes.logo}
+          height='40'
           loading='eager'
         />
-      </HashLink>
+      </InternalLink>
       {!hideMenu && (
         <nav className={classes.nav}>
           <button
             type='button'
+            layout='fixed'
             onClick={toggleMenu}
             className={classes.menuToggle}
           >
-            {menuOpen && <SVGIcon name='nav_bar/close_x' className={classes.close} />}
+            {menuOpen && <Image src={CloseX} layout='fixed' width='24' height='24' alt='Open menu' />}
             {!menuOpen &&
-              <SVGIcon
-                name='nav_bar/hamburguer_menu'
-                className={
-                  classnames(classes.open, {
-                    [classes.white]: isVariant(variant, 'light')
-                  })
-                }
+              <Image
+                src={isVariant(variant, 'light') && isVariant(variant, 'transparent') ? HamburguerMenuWhite : HamburguerMenu}
+                layout='fixed'
+                width='27'
+                height='27'
+                alt='Open menu'
               />}
           </button>
           <MainMenu

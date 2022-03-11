@@ -1,15 +1,17 @@
 import { useState } from 'react'
+import Image from 'main_app/components/Image'
 
-import { ReactComponent as HeaderBackground } from 'assets/staff_augmentation/backgrounds/blue_gradient_background.svg'
+import HeaderBackground from 'assets/staff_augmentation/backgrounds/blue_gradient_background.component.svg'
 import WeDevelopCEO from 'assets/staff_augmentation/wedevelop_ceo.png'
 import DotsPattern from 'assets/staff_augmentation/white_dots_pattern.svg'
 import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
 import DecorationElements from 'assets/staff_augmentation/deco_elements.svg'
 import BlurredDecorationElements from 'assets/staff_augmentation/blurred_deco_elements.svg'
 
+import WrappedImage from 'main_app/components/WrappedImage'
+
 import Button from 'main_app/components/Button'
 import ClutchRectangle from 'main_app/components/ClutchRectangle'
-import Image from 'main_app/components/Image'
 
 import classes from './styles.module.scss'
 
@@ -28,14 +30,14 @@ export default function NewHeader ({
     <>
       <section id='headerSection' className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
-          <HeaderBackground preserveAspectRatio='xMidYMax slice' className={classes.background} />
+          <HeaderBackground preserveAspectRatio='xMidYMax slice' viewBox='0 0 1680 950' className={classes.background} />
         </div>
-        <Image src={DotsPattern} alt='' loading='eager' className={classes.dotsPattern} />
-        <Image src={DecorationElements} alt='' loading='eager' className={classes.decorationElementsPattern} />
-        <Image src={BlurredDecorationElements} alt='' loading='eager' className={classes.blurredDecorationElements} />
+        <WrappedImage layout='fixed' src={DotsPattern} alt='' loading='eager' className={classes.dotsPattern} />
+        <WrappedImage layout='fixed' src={DecorationElements} alt='' loading='eager' className={classes.decorationElementsPattern} />
+        <WrappedImage layout='fixed' src={BlurredDecorationElements} alt='' loading='eager' className={classes.blurredDecorationElements} />
         <div className={classes.columnsContainer}>
           <div className={classes.leftSideContainer}>
-            <Image src={WeDevelopLogo} alt='WeDevelop logo' width='225' height='51' loading='eager' className={classes.imageLogo} />
+            <WrappedImage layout='responsive' src={WeDevelopLogo} alt='WeDevelop logo' loading='eager' className={classes.imageLogo} />
             <div className={classes.tagNameContainer}>
               <span className={classes.tagName} style={{ backgroundColor }}>
                 {landingName}
@@ -55,7 +57,7 @@ export default function NewHeader ({
             <div className={classes.quoteContainer}>
               <div className={classes.avatarContainer}>
                 <div className={classes.avatarImageContainer}>
-                  <Image src={WeDevelopCEO} loading='eager' objectFit='cover' alt={'A photo of WeDevelop\'s CEO'} className={classes.avatar} />
+                  <Image src={WeDevelopCEO} layout='fill' loading='eager' objectFit='cover' alt={'A photo of WeDevelop\'s CEO'} />
                 </div>
               </div>
               <q className={classes.quote}>

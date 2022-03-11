@@ -25,7 +25,7 @@
 }
 
 .background {
-  position: absolute;
+  position: absolute !important;
   top: -1px;
   right: 0;
   width: 762px;
@@ -35,24 +35,24 @@
 
   @media screen and (min-width: 1024px) and (max-width: 1245px) {
     right: -325px;
-  }  
+  }
 
   @media screen and (min-width: 1246px) and (max-width: 1430px) {
     right: -225px;
   }
 
   @include for-tablet-down {
-    display: none;
+    display: none !important;
   }
 }
 
 .mobileBackground {
   @include for-desktop-up {
-    display: none;
+    display: none !important;
   }
 
   @include for-tablet-down {
-    display: block;
+    display: block !important;
     width: 100vw;
     margin-bottom: 25px;
     margin-left: -24px;
@@ -60,7 +60,7 @@
 }
 
 %decoElements {
-  position: absolute;
+  position: absolute !important;
   z-index: -1;
 }
 

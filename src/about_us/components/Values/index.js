@@ -1,9 +1,9 @@
 import useValues from '../../hooks/useValues'
 
-import Image from 'main_app/components/Image'
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function Values () {
   const values = useValues()
@@ -29,8 +29,8 @@ function Values () {
               </li>
             ))}
           </ul>
-          <Image src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
-          <Image src={DotsPattern} alt='' className={classes.middleLeftPattern} aria-hidden='true' />
+          <WrappedImage layout='intrinsic' src={DotsPattern} alt='' className={classes.topRightPattern} aria-hidden='true' />
+          <WrappedImage layout='intrinsic' src={DotsPattern} alt='' className={classes.middleLeftPattern} aria-hidden='true' />
           <div className={classes.filledSmallCircle} aria-hidden='true' />
           <div className={classes.emptySmallCircle} aria-hidden='true' />
           <div className={classes.smallBlurLeftCircle} aria-hidden='true' />

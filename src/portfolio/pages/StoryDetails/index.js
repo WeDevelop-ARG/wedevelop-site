@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
-import { useHistory, useRouteMatch } from 'react-router-dom'
-import { isEmpty, isUndefined } from 'lodash'
+import { isEmpty, isNil } from 'lodash'
 
 import Article from 'main_app/components/Article'
 import ClutchWidget from 'main_app/components/ClutchWidget'
@@ -11,35 +10,37 @@ import NavBar from 'main_app/components/NavBar/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
 import SimilarStories from 'portfolio/components/SimilarStories'
 import StoryHeader from '../../components/StoryHeader'
-import PortfolioTestimonial from '../../components/PortfolioTestimonial'
-import TextImageGeneric from '../../components/TextImageGeneric'
 import TechStackTexts from 'portfolio/components/TechStackTexts'
 import TechStackIcons from 'portfolio/components/TechStackIcons'
+import Testimonials from 'main_app/components/Testimonials'
+import TestimonialsDecoration from 'portfolio/components/TestimonialsDecoration'
+import TextImageGeneric from '../../components/TextImageGeneric'
 
 import useStoryByName from '../../hooks/useStoryByName'
-import usePageMetadata from 'utils/marketing/use_page_metadata'
 
 import classes from './styles.module.scss'
+import { useRouter } from 'next/router'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
-function StoryDetails () {
-  const { params } = useRouteMatch('/portfolio/:name')
-  const { storyDetails } = useStoryByName(params.name)
+function StoryDetails ({ name }) {
+  const { push, pathname } = useRouter()
+  const { storyDetails } = useStoryByName(name)
 
-  usePageMetadata({
-    title: storyDetails.metadata.title,
-    description: storyDetails.metadata.description
-  })
+  const contactPagePath = `/portfolio/${name}/contact`
 
-  const contactPagePath = `/portfolio/${params.name}/contact`
-  const match = useRouteMatch(contactPagePath)
-  const history = useHistory()
   const handleClose = useCallback(() => {
-    history.push(`/portfolio/${params.name}`)
-  }, [history, params])
-  const withoutTestimonial = isUndefined(storyDetails.testimonial)
+    push(`/portfolio/${name}`)
+  }, [name, push])
 
+  const withoutTestimonial = isEmpty(storyDetails?.testimonials)
+
+  if (isNil(storyDetails)) { return null }
   return (
     <>
+      <PageMetadata
+        title={storyDetails.metadata.title}
+        description={storyDetails.metadata.description}
+      />
       <NavBar
         variant={['solid', 'dark']}
         variantAtScrollTop={['transparent', 'light']}
@@ -63,15 +64,15 @@ function StoryDetails () {
           content={storyDetails.challenge.content}
         />
         {!withoutTestimonial &&
-          <PortfolioTestimonial
-            review={storyDetails.testimonial}
-          />
-        }
+          <Testimonials
+            reviews={storyDetails.testimonials}
+            customDecorations={<TestimonialsDecoration />}
+            hideHeader
+          />}
         {storyDetails.reviewedOnClutch &&
           <section className={classes.clutchContainer}>
             <ClutchWidget variant='dark' className={classes.clutchWidget} />
-          </section>
-        }
+          </section>}
         <TextImageGeneric
           title={storyDetails.solution.title}
           content={storyDetails.solution.content}
@@ -87,11 +88,11 @@ function StoryDetails () {
         {!isEmpty(storyDetails.techStackIcons) && (
           <TechStackIcons icons={storyDetails.techStackIcons} />
         )}
-        <SimilarStories storyName={params.name} />
+        <SimilarStories storyName={name} />
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
+      {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer variant='light' />
     </>
   )

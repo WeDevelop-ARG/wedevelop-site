@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@cloudinary/url-gen": "^1.0.0",
-    "@loadable/component": "^5.15.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
@@ -13,6 +11,7 @@
     "firebase": "^9.0.1",
     "formik": "^2.2.6",
     "lodash": "^4.17.21",
+    "next": "^12.0.8",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.6.4",
@@ -21,10 +20,7 @@
     "react-loader-spinner": "^4.0.0",
     "react-modal": "^3.13.1",
     "react-prerendered-component": "^1.2.4",
-    "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.4.0",
-    "react-scripts": "4.0.3",
-    "react-scroll-to-top": "^1.0.5",
     "react-select": "^4.3.1",
     "react-slideshow-image": "^3.5.0",
     "react-step-wizard": "^5.3.9",
@@ -32,52 +28,24 @@
     "rectangles": "^0.0.4",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.0",
+    "globby": "^11.0.1",
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "prebuild": "rimraf build",
-    "build": "NODE_ENV=production react-scripts build && react-snap && rimraf ./build/storage",
-    "postbuild": "npm run add-http2-push-headers && dotenv -e .env.production npm run build-sitemap",
-    "add-http2-push-headers": "ncp firebase.json firebase.json.backup && node ./add_http2_push_headers.js",
-    "build-sitemap": "react-snap-sitemap --base-url=$REACT_APP_BASE_URL/",
-    "build-testing": "ncp .testing_env .env.production && npm run build",
-    "build-preview": "REACT_APP_PREVIEW_BUILD=preview npm run build-testing",
-    "build-production": "ncp .production_env .env.production && npm run build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "lint": "next lint -d pages -d src",
+    "lint:fix": "npm run lint -- --fix",
+    "prebuild": "NODE_ENV=production node generate-sitemap && node generate-robots",
+    "build": "NODE_ENV=production next build && next export",
+    "build-testing": "ncp .env_testing .env.production && npm run build",
+    "postbuild-testing": "mkdirp ./out/assets-testing && ncp ./out/_next ./out/assets-testing/_next && rimraf -rf ./out/_next",
+    "build-production": "ncp .env_production .env.production && npm run build",
+    "postbuild-production": "mkdirp ./out/assets-production && ncp ./out/_next ./out/assets-production/_next && rimraf -rf ./out/_next",
     "deploy-functions-production": "firebase deploy --only functions --project wedevelop-site",
     "deploy-functions-testing": "firebase deploy --only functions --project wedevelop-site-testing",
-    "deploy-hosting-production": "firebase deploy --project wedevelop-site --only hosting:production",
-    "deploy-hosting-testing": "firebase deploy --project wedevelop-site-testing --only hosting:testing",
-    "cleanup-deploy-build": "rimraf -rf firebase.json.backup .env.production build node_modules/.cache",
+    "deploy-hosting": "firebase deploy --project $npm_config_project --only hosting:$npm_config_environment",
+    "cleanup-deploy-build": "rimraf -rf .env.production build node_modules/.cache .next out",
     "deploy-hosting-preview": "firebase hosting:channel:deploy --project wedevelop-site-testing --only testing"
-  },
-  "reactSnap": {
-    "skipThirdPartyRequests": true,
-    "http2PushManifest": true,
-    "asyncScriptTags": true,
-    "inlineCss": true,
-    "include": [
-      "/privacy-policy",
-      "/about-us",
-      "/portfolio",
-      "/careers",
-      "/follow-up",
-      "/success/confirm",
-      "/it-outsourcing",
-      "/it-outsourcing/b",
-      "/it-staffing",
-      "/it-staffing/b",
-      "/nearshore-software-outsourcing",
-      "/nearshore-software-outsourcing/b"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -92,14 +60,21 @@
     ]
   },
   "devDependencies": {
-    "@fudohq/react-snap-sitemap": "^0.1.5",
+    "@svgr/webpack": "^6.2.0",
+    "critters": "^0.0.16",
     "dotenv-cli": "^4.0.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.8",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-jsx": "^10.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
     "firebase-tools": "^9.5.0",
-    "import-glob-loader": "^1.1.0",
+    "mkdirp": "^1.0.4",
     "ncp": "^2.0.0",
-    "react-snap": "^1.23.0",
+    "next-optimized-classnames": "github:kenmueller/next-optimized-classnames",
     "rimraf": "^3.0.2",
-    "sass": "^1.32.8",
-    "standard": "^16.0.3"
+    "url-loader": "^4.1.1"
   }
 }

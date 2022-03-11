@@ -8,11 +8,16 @@ $grayColor: #363636;
   background-size: cover;
   background-position: top center;
   position: relative;
+  padding-top: 325px;
+  padding-bottom: 100px;
 
   @include for-desktop-up {
-    padding-left: 136px;
-    padding-right: 136px;
     margin-top: 0;
+    padding-top: 175px;
+  }
+
+  @include for-big-desktop-up {
+    padding-top: 175px;
   }
 }
 

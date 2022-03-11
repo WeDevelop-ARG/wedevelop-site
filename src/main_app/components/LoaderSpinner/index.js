@@ -7,13 +7,13 @@ function LoaderSpinner ({
   visible
 }) {
   const containerClassName = classNames(classes.container, className)
-  if(!visible) return null
+  if (!visible) return null
 
   return (
     <div className={containerClassName}>
-      <Loader 
-        type="TailSpin"
-        color="#377dff"
+      <Loader
+        type='TailSpin'
+        color='#377dff'
       />
     </div>
   )

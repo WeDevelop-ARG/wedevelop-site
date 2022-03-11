@@ -6,6 +6,8 @@ import { forDesktopUp } from 'styles/media_queries'
 import Modal from 'main_app/components/Modal'
 import SidebarModal from '../SidebarModal'
 
+import XShapeWhite from 'assets/staff_augmentation/x_shape_white.svg'
+
 import classes from './styles.module.scss'
 
 export default function ContactPopupModal ({
@@ -26,7 +28,7 @@ export default function ContactPopupModal ({
       isOpen={isModalOpen}
       onRequestClose={handleModalClose}
       className={classes.modal}
-      iconName={isDesktop ? 'x_shape_white' : 'x_shape'}
+      icon={isDesktop ? XShapeWhite : undefined}
     >
       <div className={classes.leftSideContent}>
         <p className={classes.getInTouch}>Get in Touch</p>

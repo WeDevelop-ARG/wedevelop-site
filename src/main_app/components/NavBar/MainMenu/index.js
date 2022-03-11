@@ -1,6 +1,5 @@
 import { useMemo, useCallback, useState } from 'react'
 import classNames from 'classnames'
-import { HashLink } from 'react-router-hash-link'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 import Button from 'main_app/components/Button'
@@ -15,6 +14,7 @@ import DropdownIcon from 'assets/nav_bar/dropdown_icon.svg'
 import DropdownIconWhite from 'assets/nav_bar/dropdown_icon_white.svg'
 
 import classes from './styles.module.scss'
+import InternalLink from 'main_app/components/InternalLink'
 
 function MainMenu ({
   isOpen,
@@ -50,7 +50,7 @@ function MainMenu ({
     <ul onClick={handleClick} className={classNames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/services')
+          [classes.active]: globalThis.window?.location.pathname.startsWith('/services')
         })}
       >
         <Dropdown show={isServicesDropdownOpen} onToggle={setIsServicesDropdownOpen}>
@@ -74,17 +74,15 @@ function MainMenu ({
 
           <Dropdown.Menu className={classes.dropdownMenu}>
             <Dropdown.Item
-              as={HashLink}
-              to='/services/web-development#top'
-              smooth
+              as={InternalLink}
+              href='/services/web-development'
               className={classes.dropdownItem}
             >
               Web Development
             </Dropdown.Item>
             <Dropdown.Item
-              as={HashLink}
-              to='/services/staff-augmentation#top'
-              smooth
+              as={InternalLink}
+              href='/services/staff-augmentation'
               className={classes.dropdownItem}
             >
               Staff Augmentation
@@ -94,17 +92,17 @@ function MainMenu ({
       </li>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/about-us')
+          [classes.active]: globalThis.window?.location.pathname.startsWith('/about-us')
         })}
       >
-        <HashLink to='/about-us#top'>
+        <InternalLink href='/about-us'>
           About Us
-        </HashLink>
+        </InternalLink>
       </li>
       <li className={classes.navItem}>
-        <HashLink to='/#testimonials' smooth>
+        <InternalLink href='/#testimonials'>
           Testimonials
-        </HashLink>
+        </InternalLink>
       </li>
       <li className={classNames(classes.navItem)}>
         <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
@@ -113,31 +111,31 @@ function MainMenu ({
       </li>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/portfolio')
+          [classes.active]: globalThis.window?.location.pathname.startsWith('/portfolio')
         })}
       >
-        <HashLink to='/portfolio#top'>
+        <InternalLink href='/portfolio'>
           Portfolio
-        </HashLink>
+        </InternalLink>
       </li>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: window.location.pathname.startsWith('/careers')
+          [classes.active]: globalThis.window?.location.pathname.startsWith('/career')
         })}
       >
-        <HashLink to='/careers#top'>
+        <InternalLink href='/career'>
           Careers
-        </HashLink>
+        </InternalLink>
       </li>
       <li>
         <Button
-          as={HashLink}
+          as={InternalLink}
           isAnchor
           variant={contactCTAVariant}
-          to={contactPagePath}
-          smooth
+          href={contactPagePath}
           className={classes.buttonTalk}
           onClick={onRequestClose}
+          link={{ scroll: false, shallow: true }}
         >
           Get in Touch
         </Button>

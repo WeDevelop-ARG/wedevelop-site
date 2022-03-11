@@ -1,18 +1,25 @@
-import { HashLink } from 'react-router-hash-link'
-
-import SVGIcon from 'main_app/components/SVGIcon'
-import Logo from 'main_app/components/Logo'
-
-import classes from './styles.module.scss'
-import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
 
-function Footer({ variant = 'dark', className }) {
+import InternalLink from 'main_app/components/InternalLink'
+
+import Logo from 'main_app/components/Logo'
+import WrappedImage from 'main_app/components/WrappedImage'
+
+import EmailIcon from 'assets/footer/email.svg'
+import LocationIcon from 'assets/footer/location.svg'
+import PhoneIcon from 'assets/footer/phone.svg'
+import LinkedInIcon from 'assets/footer/linked_in.svg'
+import FacebookIcon from 'assets/footer/facebook.svg'
+import InstagramIcon from 'assets/footer/instagram.svg'
+
+import classes from './styles.module.scss'
+
+function Footer ({ className }) {
   className = classnames(
     classes.containerStyle,
-    useVariants(classes, variant, { prefix: 'variant_' }),
     className
   )
+
   return (
     <footer className={className}>
       <div className={classes.contact}>
@@ -21,7 +28,7 @@ function Footer({ variant = 'dark', className }) {
       <div className={classes.listUs}>
         <ul className={classes.contact}>
           <li className={classes.contactContentContainer}>
-            <SVGIcon name='footer/email' className={classes.iconStyles} />
+            <WrappedImage src={EmailIcon} layout='fixed' width='15' className={classes.iconStyles} />
             <a
               href='mailto:info@wedevelop.me'
               className={classes.contactContent}
@@ -30,13 +37,13 @@ function Footer({ variant = 'dark', className }) {
             </a>
           </li>
           <li className={classes.contactContentContainer}>
-            <SVGIcon name='footer/location' className={classes.iconStyles} />
+            <WrappedImage src={LocationIcon} layout='fixed' width='15' className={classes.iconStyles} />
             <address className={classes.contactContent}>
               WeDevelop LLC FL 33134, US
             </address>
           </li>
           <li className={classes.contactContentContainer}>
-            <SVGIcon name='footer/phone' className={classes.iconStyles} />
+            <WrappedImage src={PhoneIcon} layout='fixed' width='15' className={classes.iconStyles} />
             <a href='tel:+19254486165' className={classes.contactContent}>
               +1 (925) 448-6165
             </a>
@@ -44,13 +51,12 @@ function Footer({ variant = 'dark', className }) {
         </ul>
         <ul className={classes.branding}>
           <li>
-            <HashLink
-              to='/privacy-policy#top'
-              smooth
+            <InternalLink
+              href='/privacy-policy'
               className={classes.privacyPolicy}
             >
               Privacy&nbsp;Policy
-            </HashLink>
+            </InternalLink>
           </li>
           <li className={classes.pleca}>|</li>
           <li className={classes.copyright}>
@@ -66,8 +72,10 @@ function Footer({ variant = 'dark', className }) {
               target='_blank'
               rel='noreferrer'
             >
-              <SVGIcon
-                name='footer/linked_in'
+              <WrappedImage
+                src={LinkedInIcon}
+                layout='fixed'
+                width='15'
                 title={"WeDevelop's LinkedIn"}
                 className={classes.iconSocialNetworks}
               />
@@ -79,8 +87,10 @@ function Footer({ variant = 'dark', className }) {
               target='_blank'
               rel='noreferrer'
             >
-              <SVGIcon
-                name='footer/facebook'
+              <WrappedImage
+                src={FacebookIcon}
+                layout='fixed'
+                width='15'
                 title={"WeDevelop's Facebook"}
                 className={classes.iconSocialNetworks}
               />
@@ -92,8 +102,10 @@ function Footer({ variant = 'dark', className }) {
               target='_blank'
               rel='noreferrer'
             >
-              <SVGIcon
-                name='footer/instagram'
+              <WrappedImage
+                src={InstagramIcon}
+                layout='fixed'
+                width='15'
                 title={"WeDevelop's Instagram"}
                 className={classes.iconSocialNetworks}
               />

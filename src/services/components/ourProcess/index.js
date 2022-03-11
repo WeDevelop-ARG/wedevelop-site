@@ -9,6 +9,7 @@ import DotsPattern from 'assets/services/dots-pattern.svg'
 
 import classes from './styles.module.scss'
 import Image from 'main_app/components/Image'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function OurProcess () {
   return (
@@ -91,7 +92,7 @@ function OurProcess () {
         </div>
       </div>
       <div className={classes.background} />
-      <Image src={DotsPattern} className={classes.dotsPatternRight} alt='' />
+      <WrappedImage src={DotsPattern} className={classes.dotsPatternRight} alt='' />
     </section>
   )
 }

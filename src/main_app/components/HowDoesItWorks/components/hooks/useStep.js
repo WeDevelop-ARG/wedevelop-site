@@ -1,7 +1,7 @@
-import { ReactComponent as ChecklistIcon } from 'assets/how_does_it_works/icons/checklist_icon.svg'
-import { ReactComponent as SelectionIcon } from 'assets/how_does_it_works/icons/selection_icon.svg'
-import { ReactComponent as InterviewsIcon } from 'assets/how_does_it_works/icons/interviews_icon.svg'
-import { ReactComponent as OnboardingIcon } from 'assets/how_does_it_works/icons/onboarding_icon.svg'
+import ChecklistIcon from 'assets/how_does_it_works/icons/checklist_icon.component.svg'
+import SelectionIcon from 'assets/how_does_it_works/icons/selection_icon.component.svg'
+import InterviewsIcon from 'assets/how_does_it_works/icons/interviews_icon.component.svg'
+import OnboardingIcon from 'assets/how_does_it_works/icons/onboarding_icon.component.svg'
 
 const steps = [
   {

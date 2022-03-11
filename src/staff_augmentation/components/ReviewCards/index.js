@@ -1,11 +1,11 @@
 import Review from './Review'
 import Button from 'main_app/components/Button'
 
-import Image from 'main_app/components/Image'
 import DotsPattern from 'assets/staff_augmentation/dots_pattern.svg'
-import { ReactComponent as ReviewsBackground } from 'assets/staff_augmentation/backgrounds/customers_reviews.svg'
+import ReviewsBackground from 'assets/staff_augmentation/backgrounds/customers_reviews.component.svg'
 
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function ReviewCards ({
   subtitle,
@@ -43,7 +43,7 @@ function ReviewCards ({
         {buttonText}
       </Button>
       <ReviewsBackground preserveAspectRatio='xMidYMin slice' className={classes.background} />
-      <Image src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
+      <WrappedImage src={DotsPattern} alt='' className={classes.topLeftDotsPattern} aria-hidden='true' />
       <div className={classes.filledCircle} aria-hidden='true' />
       <div className={classes.emptyCircle} aria-hidden='true' />
       <div className={classes.smallBlurredCircle} aria-hidden='true' />

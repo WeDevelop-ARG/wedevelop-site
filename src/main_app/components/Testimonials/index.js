@@ -4,11 +4,11 @@ import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
 import DefaultDecoration from './DefaultDecoration'
-import Image from '../Image'
 
 import QuotationMark from 'assets/home/quotation_mark.svg'
 
 import classes from './styles.module.scss'
+import WrappedImage from '../WrappedImage'
 
 function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
   const isAutoplay = useMemo(() => {
@@ -36,6 +36,7 @@ function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
           duration={5000}
           transitionDuration={500}
           autoplay={isAutoplay}
+          canSwipe={isAutoplay}
           pauseOnHover
           indicators={isAutoplay}
           arrows={false}
@@ -44,13 +45,13 @@ function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
           {reviews.map((review) => (
             <figure key={review.id} className={classes.slide}>
               <div className={classes.quoteContainer}>
-                <Image src={QuotationMark} alt='' className={classes.openQuote} />
+                <WrappedImage src={QuotationMark} alt='' layout='fill' className={classes.openQuote} />
                 <blockquote className={classes.quote}>{review.quote}</blockquote>
-                <Image src={QuotationMark} alt='' className={classes.closeQuote} />
+                <WrappedImage src={QuotationMark} alt='' layout='fill' className={classes.closeQuote} />
               </div>
               {!isEmpty(review.profileImageURL) &&
                 <div className={classes.profileImgContainer}>
-                  <Image
+                  <WrappedImage
                     src={review.profileImageURL}
                     objectFit='cover'
                     alt={`Profile of ${review.name}`}

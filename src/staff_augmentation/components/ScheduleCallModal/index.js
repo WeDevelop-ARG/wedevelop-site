@@ -1,7 +1,7 @@
 import ContactPopupModal from '../ContactPopupModal'
 import HubSpotCalendar from 'main_app/components/HubSpotCalendar'
 
-export default function ScheduleCallModal({
+export default function ScheduleCallModal ({
   isModalOpen,
   setModalOpen,
   onSubmit

@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "wedevelop-site"
+    "default": "wedevelop-site-testing"
   },
   "targets": {
     "wedevelop-site": {

@@ -1,0 +1,34 @@
+steps:
+- name: node:16.13.1-alpine
+  id: 'install'
+  waitFor: ['-']
+  entrypoint: 'npm'
+  args: ['ci']
+- name: node:16.13.1-alpine
+  id: 'build'
+  waitFor: ['install']
+  entrypoint: 'npm'
+  args: ['run','build-$_ENVIRONMENT']
+- name: node:16.13.1-alpine
+  id: 'firebase-setup'
+  waitFor: ['-']
+  entrypoint: 'sh'
+  args: [
+    '-c', "\
+      apk add jq && echo $(\
+        if [ -f 'firebase.${_ENVIRONMENT}.json' ]; then \
+          jq -s '.[0] * .[1]' firebase.template.json firebase.${_ENVIRONMENT}.json; \
+        else cat firebase.template.json; fi \
+      ) > firebase.json && \
+      cat firebase.json \
+    "
+  ]
+- name: node:16.13.1-alpine
+  id: 'deploy'
+  waitFor: ['build','firebase-setup']
+  entrypoint: 'npm'
+  args: ['run', 'deploy-hosting', '--project=$PROJECT_ID', '--environment=$_ENVIRONMENT']
+logsBucket: '$_LOGS_BUCKET'
+timeout: 2400s
+options:
+  logging: GCS_ONLY

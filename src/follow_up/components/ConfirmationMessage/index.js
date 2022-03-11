@@ -1,17 +1,17 @@
-import { HashLink } from 'react-router-hash-link'
+import InternalLink from 'main_app/components/InternalLink'
 
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
 
 import IsologoColor from 'assets/logo/isologo_color.svg'
 
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function ConfirmationMessage () {
   return (
     <div className={classes.container}>
       <div className={classes.confirmationBadge}>
-        <Image src={IsologoColor} alt='' className={classes.wedevLogo} />
+        <WrappedImage src={IsologoColor} layout='responsive' alt='' className={classes.wedevLogo} />
       </div>
       <div className={classes.messageSent}>
         <h2>We got it!</h2>
@@ -21,9 +21,8 @@ function ConfirmationMessage () {
       <div className={classes.redirectToWebsite}>
         <p>In the meantime, you'll be redirected to our website, so you get to know us better &#128521;</p>
         <Button
-          as={HashLink}
-          to='/'
-          smooth
+          as={InternalLink}
+          href='/'
           variant='primary'
           className={classes.goWebsiteButton}
         >

@@ -37,12 +37,16 @@ const Button = forwardRef(({
       ref={ref}
       {...props}
     >
-      {iconLeft && <div className={classes.iconLeft}>{iconLeft}</div>}
-      <span>{children}</span>
-      {iconRight && <div className={classes.iconRight}>{iconRight}</div>}
+      <>
+        {iconLeft && <div className={classes.iconLeft}>{iconLeft}</div>}
+        <span>{children}</span>
+        {iconRight && <div className={classes.iconRight}>{iconRight}</div>}
+      </>
     </ButtonComponent>
   )
 })
+
+Button.displayName = 'Button'
 
 const variants = PropTypes.oneOf([
   'primary',
@@ -53,7 +57,8 @@ const variants = PropTypes.oneOf([
   'icon',
   'light',
   'focus-scale',
-  'focus-gradient'
+  'focus-gradient',
+  'black'
 ])
 
 Button.propTypes = {

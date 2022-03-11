@@ -1,16 +1,18 @@
 import times from 'lodash/times'
 
-import SVGIcon from 'main_app/components/SVGIcon'
+import StarIcon from 'assets/staff_augmentation/star.svg'
 
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function Stars ({ starsNumber }) {
   return (
     <div className={classes.starIcons}>
       {times(starsNumber).map((_, index) => (
-        <SVGIcon
+        <WrappedImage
           key={index}
-          name='staff_augmentation/star'
+          layout='fixed'
+          src={StarIcon}
           className={classes.star}
         />
       ))}

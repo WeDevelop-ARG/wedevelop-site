@@ -1,22 +1,23 @@
-import { HashLink } from 'react-router-hash-link'
+import InternalLink from 'main_app/components/InternalLink'
 
+import WrappedImage from 'main_app/components/WrappedImage'
+import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Button from 'main_app/components/Button'
-import NavBar from 'main_app/components/NavBar'
-import SVGIcon from 'main_app/components/SVGIcon'
 
-import usePageMedatada from 'utils/marketing/use_page_metadata'
+import PageMetadata from 'utils/marketing/PageMetadata'
+
+import Astronaut from 'assets/not_found/astronaut.svg'
 
 import classes from './styles.module.scss'
 
 function NotFound () {
-  usePageMedatada({
-    title: '404 Not Found',
-    description: 'The page you\'re looking for was not found.'
-  })
-
   return (
     <>
+      <PageMetadata
+        title='404 Not Found'
+        description={'The page you\'re looking for was not found.'}
+      />
       <NavBar
         hideMenu
         variant={['solid', 'dark']}
@@ -29,16 +30,15 @@ function NotFound () {
             <h2>Houston, we have a problem!</h2>
             <p>The page you're looking for is lost in cyberspace...</p>
             <Button
-              as={HashLink}
+              as={InternalLink}
               isAnchor
               variant='secondary'
-              to='/#top'
-              smooth
+              href='/'
             >
               Let's head back to earth
             </Button>
           </div>
-          <SVGIcon name='not_found/astronaut' className={classes.astronaut} />
+          <WrappedImage src={Astronaut} layout='intrinsic' className={classes.astronaut} />
         </section>
       </Article>
     </>

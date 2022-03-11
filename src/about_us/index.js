@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useRouteMatch, useHistory } from 'react-router-dom'
+import { useRouter } from 'next/router'
 
 import Article from 'main_app/components/Article'
 import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
@@ -13,7 +13,8 @@ import PictureWall from 'main_app/components/PictureWall'
 import Testimonials from 'main_app/components/Testimonials'
 import Values from './components/Values'
 
-import usePageMetadata from 'utils/marketing/use_page_metadata'
+import PageMetadata from 'utils/marketing/PageMetadata'
+
 import useMediaQuery from 'utils/use_media_query'
 import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 
@@ -24,16 +25,12 @@ import WorkCoffee from 'assets/about_us/testimonials/work_cofee.png'
 import { forTabletDown } from 'styles/media_queries'
 
 function AboutUs () {
-  usePageMetadata({
-    title: 'About Us',
-    description: 'Founded in 2019, WeDevelop is a Web Development and IT Staff Augmentation agency. Meet us.'
-  })
   const contactPagePath = '/about-us/contact'
-  const match = useRouteMatch(contactPagePath)
-  const history = useHistory()
+  const { pathname, push } = useRouter()
   const handleClose = useCallback(() => {
-    history.push('/about-us')
-  }, [history])
+    push('/about-us', undefined, { shallow: true, scroll: false })
+  }, [push])
+
   const isTabletDown = useMediaQuery(forTabletDown)
   const { reviews } = useReviews()
   const renderTestimonials = () => {
@@ -43,6 +40,10 @@ function AboutUs () {
 
   return (
     <>
+      <PageMetadata
+        title='About Us'
+        description='Founded in 2019, WeDevelop is a Web Development and IT Staff Augmentation agency. Meet us.'
+      />
       <NavBar
         variant={['solid', 'dark']}
         contactPagePath={contactPagePath}
@@ -58,8 +59,8 @@ function AboutUs () {
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer variant='light' />
+      {contactPagePath === pathname && <ContactModal isOpen onRequestClose={handleClose} />}
+      <Footer />
     </>
   )
 }

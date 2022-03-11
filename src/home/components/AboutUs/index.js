@@ -1,7 +1,6 @@
-import { HashLink } from 'react-router-hash-link'
-
+import InternalLink from 'main_app/components/InternalLink'
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import SmilingFace from 'assets/home/smiling_face.svg'
 import CuriousHead from 'assets/home/curious_head.svg'
@@ -24,21 +23,21 @@ function AboutUs () {
         </div>
         <div className={classes.sectionContent}>
           <div className={classes.aboutUsBullet}>
-            <Image src={SmilingFace} alt='' className={classes.bulletImg} />
+            <WrappedImage src={SmilingFace} alt='' className={classes.bulletImg} />
             <p>
               <b>We love what we do</b> - Our indomitable spirit makes
               us live our dreams by doing what we love.
             </p>
           </div>
           <div className={classes.aboutUsBullet}>
-            <Image src={CuriousHead} alt='' className={classes.bulletImg} />
+            <WrappedImage src={CuriousHead} alt='' className={classes.bulletImg} />
             <p>
               <b>We are curious</b> - On an exponential growing world,
               we stay on the edge. And we love it!
             </p>
           </div>
           <div className={classes.aboutUsBullet}>
-            <Image src={DreamTeam} alt='' className={classes.bulletImg} />
+            <WrappedImage src={DreamTeam} alt='' className={classes.bulletImg} />
             <p>
               <b>We work as a Dream Team</b> - We have fun and learn
               from each other. Everyone is a key player.
@@ -46,12 +45,12 @@ function AboutUs () {
           </div>
         </div>
         <Button
-          as={HashLink}
-          to='/contact'
-          smooth
+          as={InternalLink}
+          href='/contact'
           isAnchor
           variant='primary'
           className={classes.moreInfoButton}
+          link={{ scroll: false }}
         >
           Get In Touch
         </Button>
@@ -60,7 +59,12 @@ function AboutUs () {
         <div className={classes.smallCircle} aria-hidden='true' />
         <div className={classes.smallBlurCircle} aria-hidden='true' />
       </section>
-      <Image src={BottomImg} alt='' className={classes.bottomImg} />
+      <WrappedImage
+        src={BottomImg}
+        alt=''
+        layout='fill'
+        className={classes.bottomImg}
+      />
     </>
   )
 }

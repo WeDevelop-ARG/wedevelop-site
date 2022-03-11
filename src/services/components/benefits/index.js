@@ -4,8 +4,6 @@ import Benefit from './components/Benefit'
 import DecorationWebDev from './components/DecorationWebDev'
 import DecorationStaff from './components/DecorationStaff'
 
-import Image from 'main_app/components/Image'
-
 import iconCostReduction from 'assets/services/icon-cost-reduction.svg'
 import iconExperts from 'assets/services/icon-experts.svg'
 import iconTime from 'assets/services/icon-time.svg'
@@ -14,6 +12,7 @@ import iconAgile from 'assets/services/icon-agile.svg'
 import background from 'assets/services/background-key-featured-benefits.png'
 
 import classes from './benefits.module.scss'
+import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
 
 function Benefits ({ service, className }) {
   const decoration = useMemo(() => {
@@ -38,7 +37,7 @@ function Benefits ({ service, className }) {
         </div>
         {decoration}
       </section>
-      <Image className={classes.background} src={background} alt='' />
+      <BackgroundContainer className={classes.background} backgroundURL={background} alt='' />
     </>
   )
 }

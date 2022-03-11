@@ -1,11 +1,11 @@
 import { Fragment } from 'react'
 
 import Button from 'main_app/components/Button'
-import Image from 'main_app/components/Image'
 import ListRow from './ListRow'
 import DotsPattern from 'assets/home/dots_pattern.svg'
 
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function AvailableDevs ({ subtitle, title, description, devs, buttonText, handleModal }) {
   return (
@@ -20,7 +20,6 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
         {devs.map(({ id, devImgURL, devName, devRole, devSkills, devExperience, devRate }) => (
           <Fragment key={id}>
             <ListRow
-              key={id}
               devImgURL={devImgURL}
               devName={devName}
               devRole={devRole}
@@ -37,7 +36,6 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
         <p>...<b>20+ more</b> awesome Web Developers on bench</p>
       </div>
       <Button
-        smooth
         variant='primary'
         className={classes.getRatesButton}
         onClick={handleModal}
@@ -48,7 +46,7 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
       <div className={classes.emptySolidCircle} aria-hidden='true' />
       <div className={classes.emptyLightCircle} aria-hidden='true' />
       <div className={classes.smallBlurCircle} aria-hidden='true' />
-      <Image src={DotsPattern} alt='' className={classes.dotsPattern} />
+      <WrappedImage layout='intrinsic' src={DotsPattern} alt='' className={classes.dotsPattern} />
     </section>
   )
 }

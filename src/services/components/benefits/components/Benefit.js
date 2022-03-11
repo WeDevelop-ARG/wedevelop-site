@@ -1,10 +1,10 @@
-import Image from 'main_app/components/Image'
+import WrappedImage from 'main_app/components/WrappedImage'
 import classes from '../benefits.module.scss'
 
 function Benefit ({ className, image, text }) {
   return (
     <div className={className}>
-      <Image className={classes.iconCircle} src={image} alt='' />
+      <WrappedImage layout='responsive' className={classes.iconCircle} src={image} alt='' />
       <p className={classes.descriptionText}>{text}</p>
     </div>
   )

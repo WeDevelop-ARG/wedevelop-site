@@ -1,0 +1,4 @@
+.terraform
+cloud_sql_proxy
+firebase*.log
+cloud-builders-community

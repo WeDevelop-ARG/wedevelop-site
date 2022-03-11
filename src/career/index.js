@@ -1,7 +1,5 @@
 import { useCallback } from 'react'
-import { useRouteMatch, useHistory } from 'react-router-dom'
-
-import usePageMetadata from 'utils/marketing/use_page_metadata'
+import { useRouter } from 'next/router'
 
 import Article from 'main_app/components/Article'
 import ContactModal from 'main_app/components/ContactModal'
@@ -9,22 +7,22 @@ import Footer from 'main_app/components/Footer'
 import JoinUsForm from './components/JoinUsForm'
 import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
+import PageMetadata from 'utils/marketing/PageMetadata'
 
 function Career () {
-  const contactPagePath = '/careers/contact'
-  const match = useRouteMatch(contactPagePath)
-  const history = useHistory()
-  const handleClose = useCallback(() => {
-    history.push('/careers')
-  }, [history])
+  const contactPagePath = '/career/contact'
+  const { pathname, push } = useRouter()
 
-  usePageMetadata({
-    title: 'Join Us',
-    description: 'Join the professional teams of WeDevelop.'
-  })
+  const handleClose = useCallback(() => {
+    push('/career', undefined, { shallow: true, scroll: false })
+  }, [push])
 
   return (
     <>
+      <PageMetadata
+        title='Join Us'
+        description='Join the professional teams of WeDevelop.'
+      />
       <NavBar
         variant={['solid', 'dark']}
         contactPagePath={contactPagePath}
@@ -33,8 +31,8 @@ function Career () {
         <JoinUsForm />
         <PictureWall />
       </Article>
-      {match?.isExact && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer variant='light' />
+      {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
+      <Footer />
     </>
   )
 }

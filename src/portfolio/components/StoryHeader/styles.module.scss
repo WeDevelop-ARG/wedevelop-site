@@ -6,15 +6,6 @@ $grayColor: #363636;
   position: relative;
   padding: 0 !important;
   width: 100%;
-  height: 275px;
-
-  @include for-tablet-up {
-    height: 250px;
-  }
-
-  @include for-desktop-up {
-    height: 225px;
-  }
 }
 
 .backToList {
@@ -24,6 +15,7 @@ $grayColor: #363636;
   color: #ffffff;
   font-size: 15px;
   font-weight: 600;
+  z-index: 3;
 }
 
 .headerBackground {
@@ -33,11 +25,11 @@ $grayColor: #363636;
 
 .projectLogo {
   bottom: 0;
-  transform: translateY(40%);
+  transform: translateY(20%);
   left: calc(50% - 60px);
 
   @include for-tablet-up {
-    transform: translateY(20%);
+    transform: translateY(5%);
   }
 
   @include for-desktop-up {

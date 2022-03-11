@@ -1,6 +1,3 @@
-import { HashLink } from 'react-router-hash-link'
-
-import Image from 'main_app/components/Image'
 import PortfolioProjectCard from 'portfolio/components/PortfolioProjectCard'
 
 import Arrow from 'assets/portfolio/arrow.svg'
@@ -8,6 +5,8 @@ import Arrow from 'assets/portfolio/arrow.svg'
 import { useSimilarStories } from '../../hooks/useSimilarStories'
 
 import classes from './styles.module.scss'
+import InternalLink from 'main_app/components/InternalLink'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 function SimilarStories ({ storyName }) {
   const { similarStories } = useSimilarStories({ amount: 3, storyName })
@@ -19,10 +18,10 @@ function SimilarStories ({ storyName }) {
           <p className={classes.subheadingText}>success stories</p>
           <h2 className={classes.titleText}>Similar stories to read</h2>
           <hr className={classes.horizontalBar} />
-          <HashLink smooth to='/portfolio#top' className={classes.viewAll}>
+          <InternalLink href='/portfolio#top' className={classes.viewAll}>
             View All
-            <Image src={Arrow} alt='' className={classes.arrow} />
-          </HashLink>
+            <WrappedImage src={Arrow} alt='' className={classes.arrow} />
+          </InternalLink>
         </div>
         <div className={classes.projectCards}>
           {similarStories.map(story => (

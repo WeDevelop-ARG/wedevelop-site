@@ -2,7 +2,9 @@ import { useMemo } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import { useField } from 'formik'
 
-import SVGIcon from 'main_app/components/SVGIcon'
+import WrappedImage from 'main_app/components/WrappedImage'
+
+import UploadingFileIcon from 'assets/career/uploadingFile.svg'
 
 import classes from './styles.module.scss'
 
@@ -16,8 +18,9 @@ export default function UploadingFile ({ currentProgress, inputName }) {
   return (
     <label className={classes.fileUploadField}>
       <div className={classes.field}>
-        <SVGIcon
-          name='career/uploadingFile'
+        <WrappedImage
+          src={UploadingFileIcon}
+          layout='fixed'
           alt=''
           className={classes.uploadingFile}
         />

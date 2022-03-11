@@ -3,7 +3,7 @@ import classes from './styles.module.scss'
 import useVariants from 'utils/use_variants'
 import classnames from 'classnames'
 
-function FullSizeCTA({
+function FullSizeCTA ({
   title,
   subTitle,
   ctaText,
