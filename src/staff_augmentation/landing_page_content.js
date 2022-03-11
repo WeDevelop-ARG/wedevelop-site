@@ -11,7 +11,6 @@ import SkillSet from './components/SkillSet'
 import LatamTalent from './components/LatamTalent'
 import WhyLatam from './components/WhyLatam'
 
-import defaultContent from './variants/default_content'
 import ThreeReasonsBottomSeparator from 'assets/staff_augmentation/three_reasons_bottom_separator.png'
 import HowItWorksBottomSeparator from 'assets/staff_augmentation/how_it_works_bottom_separator.png'
 import PortfolioFeatureDisplay from 'portfolio/components/PortfolioFeaturedDIsplay'
@@ -65,10 +64,10 @@ export default function LandingPageContent ({
           onCTAClick={handleContactCTAClick}
         />
         <PortfolioFeatureDisplay
-          title={defaultContent.portfolioFeaturedDisplay.title}
-          subtitle={defaultContent.portfolioFeaturedDisplay.subtitle}
-          description={defaultContent.portfolioFeaturedDisplay.description}
-          buttonText={defaultContent.portfolioFeaturedDisplay.buttonText}
+          title={landing.portfolioFeaturedDisplay.title}
+          subtitle={landing.portfolioFeaturedDisplay.subtitle}
+          description={landing.portfolioFeaturedDisplay.description}
+          buttonText={landing.portfolioFeaturedDisplay.buttonText}
         />
         <ReviewCards
           subtitle={landing.reviewsHeading.subtitle}

@@ -25,7 +25,6 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
           isAnchor
           variant={['secondary', 'light']}
           className={classes.viewMoreButton}
-          link={{ scroll: false }}
         >
           {buttonText}
         </Button>
