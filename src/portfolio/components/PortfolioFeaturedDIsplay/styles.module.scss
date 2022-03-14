@@ -2,18 +2,28 @@
 
 .portfolioProjectPreShowcase {
   display: flex;
+  align-items: center;
   background-size: cover;
   background-position: center;
-  padding-bottom: 50px;
-  @include for-tablet-down {
-    padding-bottom: 20px;
-    flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 260px;
+  background: linear-gradient(to right,#122952, #377DFF);
+  clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 82%);
+  flex-flow: column wrap;
+  .portfolioFeaturedWrapper {
+    display: flex;
+    width: 100%;
+    @include for-tablet-down {
+      padding-bottom: 50px;                 
+      flex-direction: column;
+    }
   }
   .portfolioFeatured {
     color: #fff;
     padding: 20px 0;
     max-width: 250px;
     @include for-tablet-down {
+      grid-template-columns: 1fr;
       width: 100%;
       max-width: 100%;
       text-align: center;
@@ -104,6 +114,12 @@
   margin-top: 16px;
   border: 1px solid #fff;
   border-radius: 3px;
+  @include for-tablet-up {
+    margin-right: auto;
+  }
+  @include for-tablet-down {
+    margin: auto;
+  }
   color: #fff;
   &:hover {
     cursor: pointer;
