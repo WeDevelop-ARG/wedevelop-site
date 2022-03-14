@@ -7,7 +7,7 @@ import classes from './styles.module.scss'
 
 function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) {
   const { stories } = useStories()
-  const defaultProjectPreviewImgSizeInPx = 200
+  const defaultProjectPreviewImgSizeInPx = 150
   const defaultCompanyLogoImgSizeInPx = 40
   return (
     <div
