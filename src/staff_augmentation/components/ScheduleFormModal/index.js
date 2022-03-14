@@ -14,7 +14,7 @@ import uploadFile from 'service_providers/firebase/uploadFile'
 import Button from 'main_app/components/Button'
 import ErrorUploadingFile from 'staff_augmentation/components/ErrorUploadingFile'
 import SubmitButton from 'main_app/components/SubmitButton'
-import FileInput from 'career/components/JoinUsForm/FileInput'
+import FileInput from 'careers/components/JoinUsForm/FileInput'
 import UploadingFile from 'staff_augmentation/components/UploadingFile'
 
 import ContactPopupModal from '../ContactPopupModal'
