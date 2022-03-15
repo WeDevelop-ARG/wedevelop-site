@@ -64,6 +64,16 @@
         "source": "/storage/:path*",
         "destination": "https://firebasestorage.googleapis.com/v0/b/wedevelop-site.appspot.com/o/:path",
         "type": 302
+      },
+      {
+        "source": "/career",
+        "destination": "/careers",
+        "type": 302
+      },
+      {
+        "source": "/career/:path*",
+        "destination": "/careers/:path",
+        "type": 302
       }
     ],
     "headers": [
