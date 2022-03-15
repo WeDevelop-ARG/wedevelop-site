@@ -1,32 +1,92 @@
-import ChecklistIcon from 'assets/how_does_it_works/icons/checklist_icon.component.svg'
-import SelectionIcon from 'assets/how_does_it_works/icons/selection_icon.component.svg'
-import InterviewsIcon from 'assets/how_does_it_works/icons/interviews_icon.component.svg'
-import OnboardingIcon from 'assets/how_does_it_works/icons/onboarding_icon.component.svg'
+import StepOne from 'assets/how_does_it_works/icons/step_one.component.svg'
+import StepOneMobileArrow from 'assets/how_does_it_works/arrows/step_one_mobile_arrow.svg'
+import StepTwo from 'assets/how_does_it_works/icons/step_two.component.svg'
+import StepTwoMobileArrow from 'assets/how_does_it_works/arrows/step_two_mobile_arrow.svg'
+import StepThree from 'assets/how_does_it_works/icons/step_three.component.svg'
+import StepThreeMobileArrow from 'assets/how_does_it_works/arrows/step_three_mobile_arrow.svg'
+import StepFour from 'assets/how_does_it_works/icons/step_four.component.svg'
 
 const steps = [
   {
     id: 1,
-    icon: <ChecklistIcon />,
-    title: 'Requirements',
-    description: 'Fill out a form and let us know your needs.'
+    icon: <StepOne />,
+    title: 'Let us know your needs',
+    description: (
+      <>
+        <ul>
+          <li>
+            You can fill <span>this form</span> or
+          </li>
+          <li>
+            <span>Schedule a call</span> when it works best for you.
+          </li>
+        </ul>
+      </>
+    ),
+    mobileArrow: StepOneMobileArrow
   },
   {
     id: 2,
-    icon: <SelectionIcon />,
-    title: 'Screening & Selection',
-    description: 'We’ll get back to you within 1-2 hours to refine the Job description and present you some profiles from our Talent Pool.'
+    icon: <StepTwo />,
+    title: 'Job Description',
+    description: (
+      <>
+        <ul>
+          <li>
+            If you have a JD, we'll base our recruiting process on it;
+          </li>
+          <li>
+            Otherwise, we'll help you create one.
+          </li>
+          <li>
+            If there are any candidates that match the JD, we'll present them right away!
+          </li>
+        </ul>
+      </>
+    ),
+    mobileArrow: StepTwoMobileArrow
   },
   {
     id: 3,
-    icon: <InterviewsIcon />,
-    title: 'Interviews with the client',
-    description: 'You’ll evaluate these candidates and interview the ones that you like the most.'
+    icon: <StepThree />,
+    title: 'Candidate selection',
+    description: (
+      <>
+        <ul>
+          <li>
+            In a few days, you'll receive a list of fully vetted candidates for you.
+          </li>
+          <li>
+            We'll check that the candidates are a great fit technically and culturally,
+            and that they speak English fluently and clearly.
+          </li>
+          <li>
+            You'll continue to receive new candidates every few days.
+          </li>
+        </ul>
+      </>
+    ),
+    mobileArrow: StepThreeMobileArrow
   },
   {
     id: 4,
-    icon: <OnboardingIcon />,
-    title: 'Onboarding!',
-    description: 'Once you find the person you’re looking for, we’ll send you the contract and that’s it!.'
+    icon: <StepFour />,
+    title: 'Hiring & Onboarding',
+    description: (
+      <>
+        <ul>
+          <li>
+            Once you've decided which candidate you want to hire, we'll do all the paperwork and guide you through the process.
+          </li>
+          <li>
+            We'll take care of the legal relationship with the contractor.
+          </li>
+          <li>
+            Also, we'll help the candidates to ramp up into the project smoothly.
+          </li>
+        </ul>
+      </>
+    )
   }
 ]
 
