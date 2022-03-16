@@ -1,8 +1,11 @@
 @import '/src/styles/media_queries.scss';
 
-.icon {
+.textContainer {
+  position: relative;
+  padding: 0 0 0 55px;
+
   @include for-desktop-up {
-    display: none;
+    padding: 0;
   }
 }
 
@@ -11,10 +14,34 @@
   margin: 20px auto 30px;
 }
 
-.column {
-  text-align: center;
+.description {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 22px;
+  color: rgba($color: #363636, $alpha: 1);
+
+  > ul {
+
+    > li {
+      list-style: url('../../../../assets/how_does_it_works/icons/blue_bullet.svg');
+      margin-bottom: 10px;
+      margin-left: -25px;
+      padding-left: 10px;
+
+      > span {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
-.description {
-  color: rgba($color: #363636, $alpha: .5);
+.arrows {
+  position: absolute;
+  top: 0;
+  left: 30px;
+
+  @include for-desktop-up {
+    display: none;
+  }
 }

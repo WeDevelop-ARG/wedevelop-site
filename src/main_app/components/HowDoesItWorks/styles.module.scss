@@ -3,22 +3,8 @@
 $grayColor: #363636;
 
 .container {
-  background-image: url('../../../assets/how_does_it_works/background/how_does_it_works_background.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
   position: relative;
-  padding-top: 325px;
-  padding-bottom: 100px;
-
-  @include for-desktop-up {
-    margin-top: 0;
-    padding-top: 175px;
-  }
-
-  @include for-big-desktop-up {
-    padding-top: 175px;
-  }
+  padding: 50px auto;
 }
 
 .sectionHeader {
@@ -26,6 +12,10 @@ $grayColor: #363636;
   width: 100%;
   flex-direction: column;
   align-items: center;
+
+  @include for-desktop-up {
+    align-items: flex-start;
+  }
 }
 
 .subheading {
@@ -54,7 +44,7 @@ $grayColor: #363636;
   width: 100px;
   height: 10px;
   background: #ffc331;
-  margin: 32px 0px 85px;
+  margin: 32px 0px 45px;
   border: none;
 }
 
@@ -62,66 +52,33 @@ $grayColor: #363636;
   position: relative;
 }
 
-.remarkContainer {
-  display: none;
-
-  @include for-desktop-up {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-.remark {
-  max-width: 190px;
-  width: 100%;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 14px;
-  text-align: center;
-  color: rgba($color: $grayColor, $alpha: 0.5);
-
-  @include for-phone-only {
-    margin-bottom: 5px;
-  }
-}
-
-.curvedArrow {
-  width: 400px;
-
-  @include for-desktop-up {
-    display: none;
-  }
-}
-
 .row {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  gap: 70px;
 
   @include for-desktop-up {
     flex-direction: row;
     align-items: baseline;
-    gap: 25px;
-    margin: 0 -3%;
+    gap: 7vw;
+    margin: 0;
   }
 }
 
 .step {
-  max-width: 300px;
+  max-width: 280px;
   width: 100%;
 
   @include for-phone-only {
-    width: 250px;
+    max-width: 300px;
   }
 }
 
 .arrows {
-  transform: rotate(90deg);
+  position: absolute;
+  left: 0;
 
   @include for-desktop-up {
     display: none;
@@ -133,7 +90,18 @@ $grayColor: #363636;
 
   @include for-desktop-up {
     display: block;
-    width: 100%;
+    width: 90%;
     height: auto;
+    margin-left: -35px;
+  }
+}
+
+.topRightDotsPattern {
+  position: absolute;
+  top: -40px;
+  right: 4vw;
+
+  @include for-tablet-down {
+    display: none;
   }
 }

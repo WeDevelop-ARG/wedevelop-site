@@ -1,32 +1,30 @@
 import { Fragment } from 'react'
 import classNames from 'classnames'
 
-import Step from './components/Step'
-
 import { useStep } from './components/hooks/useStep'
 
-import DesktopSteps from 'assets/how_does_it_works/steps.svg'
-import Arrow from 'assets/how_does_it_works/arrows/horizontal_arrow.component.svg'
-
+import Step from './components/Step'
 import WrappedImage from '../WrappedImage'
+
+import DesktopSteps from 'assets/how_does_it_works/steps.svg'
+import DotsPattern from 'assets/how_does_it_works/dots_pattern.svg'
+
 import classes from './styles.module.scss'
 
 function HowDoesItWorks ({ className }) {
   const steps = useStep()
   return (
     <section className={classNames(classes.container, className)}>
+      <WrappedImage src={DotsPattern} alt='' className={classes.topRightDotsPattern} />
       <div className={classes.sectionHeader}>
-        <p className={classes.subheading}>Screening Process</p>
-        <h2 className={classes.title}>How it works</h2>
+        <p className={classes.subheading}>Our Process</p>
+        <h2 className={classes.title}>How It Works</h2>
         <hr className={classes.horizontalBar} />
       </div>
       <div className={classes.stepsContainer}>
-        <div className={classes.remarkContainer}>
-          <p className={classes.remark}>We’ll send you  more profiles on a daily basis</p>
-        </div>
         <WrappedImage layout='responsive' src={DesktopSteps} alt='' className={classes.desktopSteps} />
         <div className={classes.row}>
-          {steps && steps.map(({ id, icon, title, description }, index) => {
+          {steps && steps.map(({ id, icon, title, description, mobileArrow }, index) => {
             const isLast = (steps.length - 1) === index
             return (
               <Fragment key={id}>
@@ -34,9 +32,10 @@ function HowDoesItWorks ({ className }) {
                   icon={icon}
                   title={title}
                   description={description}
+                  isLast={isLast}
+                  arrow={mobileArrow}
                   className={classes.step}
                 />
-                {!isLast && <Arrow className={classes.arrows} />}
               </Fragment>
             )
           }
