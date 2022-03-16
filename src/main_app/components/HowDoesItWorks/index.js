@@ -11,8 +11,15 @@ import DotsPattern from 'assets/how_does_it_works/dots_pattern.svg'
 
 import classes from './styles.module.scss'
 
-function HowDoesItWorks ({ className }) {
-  const steps = useStep()
+function HowDoesItWorks ({
+  handleContactCTAClick,
+  handleScheduleMeetingCTAClick,
+  className
+}) {
+  const steps = useStep({
+    handleContactCTAClick,
+    handleScheduleMeetingCTAClick
+  })
   return (
     <section className={classNames(classes.container, className)}>
       <WrappedImage src={DotsPattern} alt='' className={classes.topRightDotsPattern} />
