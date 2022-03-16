@@ -1,6 +1,7 @@
-import { useCallback } from 'react'
-import Article from 'main_app/components/Article'
+import { useCallback, useState } from 'react'
+import { useRouter } from 'next/router'
 
+import Article from 'main_app/components/Article'
 import Benefits from '../components/benefits'
 import ContactModal from 'main_app/components/ContactModal'
 import Details from '../components/details'
@@ -8,6 +9,7 @@ import Hero from '../components/hero'
 import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import PictureWall from 'main_app/components/PictureWall'
 import Schedule from '../components/schedule'
+import ScheduleFormModal from 'staff_augmentation/components/ScheduleFormModal'
 import StaffDetails from '../components/details/components/StaffDetails'
 
 import photo from 'assets/services/photo-staff-augmentation.svg'
@@ -18,7 +20,6 @@ import Footer from 'main_app/components/Footer'
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 import classes from './services.module.scss'
-import { useRouter } from 'next/router'
 
 function StaffAugmentation () {
   const SERVICE_NAME = 'staff-augmentation'
@@ -27,6 +28,22 @@ function StaffAugmentation () {
   const handleClose = useCallback(() => {
     push('/services/staff-augmentation')
   }, [push])
+
+  const [isFormModalOpen, setFormModalOpen] = useState(false)
+
+  const onSuccess = useCallback(() => {
+    setFormModalOpen(false)
+  }, [])
+  const switchToCallModal = useCallback(() => {
+    setFormModalOpen(false)
+    push(contactPagePath)
+  }, [push])
+  const handleScheduleMeetingCTAClick = useCallback(() => {
+    push(contactPagePath)
+  }, [push])
+  const handleContactCTAClick = useCallback(() => {
+    setFormModalOpen(true)
+  }, [])
 
   return (
     <>
@@ -55,7 +72,11 @@ function StaffAugmentation () {
             <StaffDetails />
           </Details>
         </section>
-        <HowDoesItWorks className={classes.howItWorks} />
+        <HowDoesItWorks
+          className={classes.howItWorks}
+          handleContactCTAClick={handleContactCTAClick}
+          handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
+        />
         <Benefits className={classes.sectionContainer} service='staff-augmentation' />
         <Schedule
           className={classes.sectionContainer}
@@ -65,6 +86,13 @@ function StaffAugmentation () {
         <PictureWall />
       </Article>
       <Footer />
+      <ScheduleFormModal
+        isModalOpen={isFormModalOpen}
+        setModalOpen={setFormModalOpen}
+        onScheduleMeetingClick={switchToCallModal}
+        onSubmit={onSuccess}
+        formOrigin='services/staff-augmentation'
+      />
     </>
   )
 }
