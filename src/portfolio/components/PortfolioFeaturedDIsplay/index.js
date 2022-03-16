@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import Button from 'main_app/components/Button'
 import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
@@ -18,6 +19,15 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
           <h4>{subtitle}</h4>
           <p>{description}</p>
           <hr className={classes.horizontalBar} />
+          <Button
+            as={InternalLink}
+            href='/portfolio'
+            isAnchor
+            variant={['secondary', 'light']}
+            className={classes.viewMoreButton}
+          >
+            {buttonText}
+          </Button>
         </div>
         <div className={classes.portfolioProjectDisplayWrapper}>
           {stories.slice(0, 3).map((story, i) => {
@@ -26,6 +36,7 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
                 key={i}
                 href={`/portfolio/${story.urlName}`}
                 className={classes.container}
+                title={`Go to portfolio entry for ${story.header.title}`}
               >
                 <div className={classes.portfolioProjectWrapper}>
                   <WrappedImage
@@ -35,6 +46,8 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
                     width={defaultProjectPreviewImgSizeInPx}
                     height={defaultProjectPreviewImgSizeInPx}
                     className={classes.portfolioProjectPreview}
+                    objectFit='cover'
+                    objectPosition='center'
                   />
                   <div className={classes.portfolioProjectCompanyLogoWrapper} style={{ backgroundColor: story.header.logoBackground }}>
                     <WrappedImage
@@ -44,6 +57,8 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
                       width={defaultCompanyLogoImgSizeInPx}
                       height={defaultCompanyLogoImgSizeInPx}
                       className={classes.portfolioProjectCompanyLogo}
+                      objectFit='cover'
+                      objectPosition='center'
                     />
                   </div>
                 </div>
@@ -57,7 +72,7 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
         href='/portfolio'
         isAnchor
         variant={['secondary', 'light']}
-        className={classes.viewMoreButton}
+        className={classNames(classes.viewMoreButton, classes.mobile)}
       >
         {buttonText}
       </Button>
