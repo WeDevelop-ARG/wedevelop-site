@@ -53,7 +53,8 @@
 .benefit {
   flex: 0 1 0;
   text-align: center;
-  margin-inline-start: 100px;
+  margin-inline-start: 50px;
+  margin-inline-end: 50px;
 
   @include for-phone-only {
     width: 100%;
