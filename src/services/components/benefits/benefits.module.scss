@@ -43,7 +43,6 @@
   margin-right: auto;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 675px;
 
   @include for-phone-only {
     padding-left: 50px;
@@ -52,9 +51,9 @@
 }
 
 .benefit {
-  margin: 12.5px;
   flex: 0 1 0;
   text-align: center;
+  margin-inline-start: 100px;
 
   @include for-phone-only {
     width: 100%;
