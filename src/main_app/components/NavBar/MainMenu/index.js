@@ -120,10 +120,10 @@ function MainMenu ({
       </li>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: globalThis.window?.location.pathname.startsWith('/career')
+          [classes.active]: globalThis.window?.location.pathname.startsWith('/careers')
         })}
       >
-        <InternalLink href='/career'>
+        <InternalLink href='/careers'>
           Careers
         </InternalLink>
       </li>

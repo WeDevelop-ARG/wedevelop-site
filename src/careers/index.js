@@ -10,11 +10,11 @@ import PictureWall from 'main_app/components/PictureWall'
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 function Career () {
-  const contactPagePath = '/career/contact'
+  const contactPagePath = '/careers/contact'
   const { pathname, push } = useRouter()
 
   const handleClose = useCallback(() => {
-    push('/career', undefined, { shallow: true, scroll: false })
+    push('/careers', undefined, { shallow: true, scroll: false })
   }, [push])
 
   return (

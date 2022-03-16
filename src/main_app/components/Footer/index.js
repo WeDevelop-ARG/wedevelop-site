@@ -36,7 +36,7 @@ function Footer ({ className }) {
             </InternalLink>
           </li>
           <li className={classes.contactContentContainer}>
-            <InternalLink href='/career' className={classes.contactContent}>
+            <InternalLink href='/careers' className={classes.contactContent}>
               Careers
             </InternalLink>
           </li>
