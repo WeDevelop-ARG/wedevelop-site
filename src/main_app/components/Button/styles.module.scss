@@ -119,6 +119,14 @@ $blackTextBorder: #000000;
   border: none;
   font-weight: inherit;
   text-align: left;
+
+  &.variant_black {
+    color: rgba($color: #363636, $alpha: 100%);
+  }
+
+  &.variant_bold {
+    font-weight: 600;
+  }
 }
 
 .variant_focus-scale {

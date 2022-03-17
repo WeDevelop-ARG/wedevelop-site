@@ -97,6 +97,7 @@ function LandingPage ({ landingName }) {
         <LandingPageContent
           landing={landing}
           handleContactCTAClick={handleContactCTAClick}
+          handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
         />
       )}
       <ScheduleCallModal

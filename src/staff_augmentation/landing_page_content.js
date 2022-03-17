@@ -17,7 +17,8 @@ import PortfolioFeatureDisplay from 'portfolio/components/PortfolioFeaturedDIspl
 
 export default function LandingPageContent ({
   landing,
-  handleContactCTAClick
+  handleContactCTAClick,
+  handleScheduleMeetingCTAClick
 }) {
   return (
     <>
@@ -53,7 +54,11 @@ export default function LandingPageContent ({
             buttonText={landing.availableDevs.buttonText}
             handleModal={handleContactCTAClick}
           />}
-        {landing.hideHowDoesItWork || <HowDoesItWorks />}
+        {landing.hideHowDoesItWork ||
+          <HowDoesItWorks
+            handleContactCTAClick={handleContactCTAClick}
+            handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
+          />}
         <BackgroundContainer backgroundURL={HowItWorksBottomSeparator} />
         <SkillSet
           title={landing.skillSet?.title}
