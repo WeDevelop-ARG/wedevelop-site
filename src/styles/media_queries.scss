@@ -10,6 +10,15 @@
   @media screen and (min-width: 700px) { @content; }
 }
 
+@mixin for-medium-desktop-down {
+  @media screen and (max-width: 1567px) { @content; }
+}
+
+@mixin for-regular-desktop-down {
+  @media screen and (max-width: 1139px) { @content; }
+}
+
+
 @mixin for-tablet-down {
   @media screen and (max-width: 1024px) { @content; }
 }
