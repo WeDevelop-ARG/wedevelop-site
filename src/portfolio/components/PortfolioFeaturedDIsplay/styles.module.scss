@@ -9,13 +9,13 @@
   padding-bottom: 260px;
   background: linear-gradient(to right,#122952, #377DFF);
   clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 82%);
-  flex-flow: column wrap;
-
+  @include for-regular-desktop-down {
+    flex-direction: column;
+  }
   .portfolioFeaturedWrapper {
     display: flex;
     width: 100%;
-
-    @include for-tablet-down {
+    @include for-medium-desktop-down {
       padding-bottom: 50px;
       flex-direction: column;
     }
@@ -28,7 +28,7 @@
     flex-shrink: 0;
     margin-right: 100px;
 
-    @include for-tablet-down {
+    @include for-medium-desktop-down {
       grid-template-columns: 1fr;
       width: 100%;
       max-width: 100%;
@@ -64,7 +64,7 @@
       background: #FFC331;
       margin: 0;
 
-      @include for-tablet-down {
+      @include for-medium-desktop-down {
         margin: auto;
         align-self: center;
       }
@@ -80,8 +80,7 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-
-    @include for-tablet-down {
+    @include for-regular-desktop-down {
       flex-direction: column;
     }
 
