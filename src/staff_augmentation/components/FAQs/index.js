@@ -1,6 +1,6 @@
 import Button from 'main_app/components/Button'
 import WrappedImage from 'main_app/components/WrappedImage'
-import Question from './components/Question'
+import Question from './Question'
 
 import classes from './styles.module.scss'
 
