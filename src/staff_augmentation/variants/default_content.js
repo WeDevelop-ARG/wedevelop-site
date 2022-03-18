@@ -14,6 +14,8 @@ import StrongTalent from 'assets/reasons_to_choose_wedev/strong_talent.svg'
 import WhiteGloveService from 'assets/reasons_to_choose_wedev/white_glove_service.svg'
 import HighValues from 'assets/reasons_to_choose_wedev/high_values.svg'
 
+import FaqsIcon from 'assets/staff_augmentation/faqs/faq_icon.svg'
+
 const defaultContent = {
   pathName: '',
   metadata: {
@@ -265,6 +267,67 @@ const defaultContent = {
       )
     }],
     buttonText: 'Get In Touch'
+  },
+  FAQs: {
+    icon: FaqsIcon,
+    title: 'FAQs',
+    description: 'Get instant answers for the most common doubts about our process and general topics',
+    noAnswerCTA: {
+      description: 'Can\'t find an answer?',
+      buttonText: 'Get in touch with us'
+    },
+    frequentlyQuestions: [
+      {
+        id: 1,
+        question: 'Dui, sed in feugiat pharetra. Elit cursus sed lacus sed pulvinar',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      },
+      {
+        id: 2,
+        question: 'Volutpat blandit varius nunc felis. In urna porta massa, libero. Lacus aliquam dolor sapien mauris vitae nunc in hac ipsum.',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      },
+      {
+        id: 3,
+        question: 'Nunc eu pulvinar vivamus potenti erat purus. Augue lobortis ac fermentum ullamcorper?',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      },
+      {
+        id: 4,
+        question: 'Tempor ut ullamcorper adipiscing est adipiscing semper sodales accumsan. Sagittis pharetra?',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      },
+      {
+        id: 5,
+        question: 'Tristique ac diam cursus euismod tortor, eget et ut. Habitasse ullamcorper at viverra bibendum leo?',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      },
+      {
+        id: 6,
+        question: 'Volutpat blandit varius nunc felis. In urna porta massa, libero. Lacus aliquam dolor sapien mauris vitae nunc in hac ipsum.',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      },
+      {
+        id: 7,
+        question: 'Velit viverra viverra varius gravida quis laoreet. In non nisl in maecenas. Pharetra leo tristique turpis risus?',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      },
+      {
+        id: 8,
+        question: 'In integer gravida amet sed gravida egestas lectus augue. In porttitor diam massa in ut sodales placerat?',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      },
+      {
+        id: 9,
+        question: 'Congue volutpat erat sit dui quis tellus sapien elementum. Cursus cum eget ultrices mattis?',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      },
+      {
+        id: 10,
+        question: 'Volutpat blandit varius nunc felis. In urna porta massa, libero. Lacus aliquam dolor sapien mauris vitae nunc in hac ipsum.',
+        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+      }
+    ]
   },
   fullSizeCTA: {
     title: 'Ready to grow your IT Staff?',
