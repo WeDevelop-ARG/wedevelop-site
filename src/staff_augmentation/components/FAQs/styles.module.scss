@@ -1,0 +1,102 @@
+@import '/src/styles/media_queries.scss';
+
+$textColor: #363636;
+
+.faqsSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 215px;
+
+  @include for-tablet-up {
+    padding: 75px 120px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+  }
+}
+
+.sectionHeader {
+  max-width: 350px;
+  width: 100%;
+  flex-grow: 0;
+
+  @include for-phone-only {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.headerIcon {
+  flex-shrink: 0;
+}
+
+.titleText {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 45px 0 24px;
+
+  @include for-tablet-up {
+    font-size: 60px;
+  }
+}
+
+.descriptionText {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+  text-align: center;
+  color: rgba($color: $textColor, $alpha: 50%);
+  margin-bottom: 0;
+
+  @include for-tablet-up {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 32px 0 44px;
+  border: none;
+
+  @include for-phone-only {
+    margin-bottom: 0;
+  }
+}
+
+.noAnswerCTA {
+  > .description {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    margin-bottom: 24px;
+  }
+
+  > .CTAButton {
+    padding: 12px 26px;
+  }
+
+  @include for-phone-only {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 85px;
+  }
+}
+
+.questionsList {
+  flex-grow: 1;
+}
