@@ -5,21 +5,22 @@ $textColor: #363636;
 
 .sectionContainer {
   position: relative;
-  overflow: hidden;
   padding-top: 0 !important;
+
+  @include for-phone-only {
+    overflow: hidden;
+  }
 
   @include for-desktop-up {
     margin-top: -6vw;
     padding-bottom: 50px;
-    overflow-x: clip;
-    overflow-y: visible;
   }
 }
 
 .mobileGradient {
   position: absolute;
   height: 100px;
-  width: 150vw;
+  width: 98vw;
   left: 50%;
   transform: translateX(-50%);
   margin-top: -40px;
@@ -36,29 +37,25 @@ $textColor: #363636;
 
 .map {
   z-index: -2;
+  right: 0;
 
   @include for-tablet-down {
     position: relative;
     left: 50%;
-    margin-top: -175px;
+    margin-top: -40px;
     transform: translateX(-50%);
-    width: max(100%, 915px);
-    right: 0;
+    width: max(100%, 415px);
   }
 
   @include for-desktop-up {
     position: absolute;
-    top: calc(-400px);
-    right: 6vw;
-    height: calc(100% + 450px);
+    top: -270px;
+    right: 18vw;
+    height: calc(100% + 350px);
   }
 
   @media screen and (max-width: 1350px) {
     right: 0;
-  }
-
-  @media screen and (max-width: 1160px) and (min-width: 1000px) {
-    right: -13vw;
   }
 }
 

@@ -32,7 +32,17 @@ export default function FullImageHeader ({
     <>
       <section id='headerSection' className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
-          <Image src={AbelBookBackground} layout='fill' objectFit='cover' objectPosition='top right' alt='' />
+          <Image
+            src={AbelBookBackground}
+            alt=''
+            layout='fill'
+            loading='eager'
+            priority
+            decoding='sync'
+            placeholder='blur'
+            objectFit='cover'
+            objectPosition='top right'
+          />
         </div>
         <Circles className={classes.circles} />
         <WrappedImage src={DotsPattern} alt='' loading='eager' layout='intrinsic' className={classes.dotsPattern} />
