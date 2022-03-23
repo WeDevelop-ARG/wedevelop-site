@@ -23,7 +23,7 @@ export function useStep ({
             <li>
               You can fill{' '}
               <Button
-                variant={['link', 'black', 'bold', 'focus-scale']}
+                variant={['link', 'black', 'bold']}
                 onClick={handleContactCTAClick}
               >
                 this form
@@ -31,7 +31,7 @@ export function useStep ({
             </li>
             <li>
               <Button
-                variant={['link', 'black', 'bold', 'focus-scale']}
+                variant={['link', 'black', 'bold']}
                 onClick={handleScheduleMeetingCTAClick}
               >
                 Schedule a call
