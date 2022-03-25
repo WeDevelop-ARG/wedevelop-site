@@ -14,6 +14,8 @@ import StrongTalent from 'assets/reasons_to_choose_wedev/strong_talent.svg'
 import WhiteGloveService from 'assets/reasons_to_choose_wedev/white_glove_service.svg'
 import HighValues from 'assets/reasons_to_choose_wedev/high_values.svg'
 
+import FaqsIcon from 'assets/staff_augmentation/faqs/faq_icon.svg'
+
 const defaultContent = {
   pathName: '',
   metadata: {
@@ -265,6 +267,169 @@ const defaultContent = {
       )
     }],
     buttonText: 'Get In Touch'
+  },
+  FAQs: {
+    icon: FaqsIcon,
+    title: 'FAQs',
+    description: 'Get instant answers for the most common doubts about our process and general topics',
+    noAnswerCTA: {
+      description: 'Can\'t find an answer?',
+      buttonText: 'Get in touch with us'
+    },
+    frequentlyQuestions: [
+      {
+        id: 1,
+        question: 'Who is WeDevelop?',
+        answer: (
+          <>
+            <p>
+              We're a us-based 100% remote company made of people from all around Latin America and the US.
+            </p>
+            <p>
+              We strive to provide the best Nearshore outsourcing services.
+            </p>
+            <p>
+              You may find we aren't the cheapest option but our quality is outstanding and always improving.
+            </p>
+          </>
+        )
+      },
+      {
+        id: 2,
+        question: 'What is the no-risk trial period for developers?',
+        answer: (
+          <>
+            <p>
+              All of our Staffing contracts come with a 15-day risk-free trial period.
+              Which means you can engage with us and test the quality of our service for 15 days.
+            </p>
+            <p>
+              Should you not be satisfied, you get your money back. Period.
+            </p>
+            <p>
+              We're humbled to mention that we have a 100% success rate :)
+            </p>
+          </>
+        )
+      },
+      {
+        id: 3,
+        question: 'What if I am not satisfied with the work of your developer?',
+        answer: (
+          <p>
+            We make sure the candidates we provide are the best fit for the positions you need to cover.
+            However, if you're not satisfied with any of the developers, we change them as soon as possible.
+          </p>
+        )
+      },
+      {
+        id: 4,
+        question: 'What does a Staffing contract look like?',
+        answer: (
+          <>
+            <p>
+              When you're ready to engage formally with us, we sign an MSA (Master Service Agreement)
+              that outlines the general legal framework for our relationship.
+            </p>
+            <p>
+              Then, we execute a SOW (Scope Of Work) for each individual contractor you hire.
+            </p>
+            <p>
+              And, of course, we also execute an NDA (Non-Disclosure Agreement).
+            </p>
+          </>
+        )
+      },
+      {
+        id: 5,
+        question: 'How long until you present candidates to me?',
+        answer: (
+          <>
+            <p>
+              Once we've got the Job Description and all the details for the position(s) you need to cover,
+              we'll 1) take a look at our Talent Pool to see if we have matching candidates and/or 2) start a new search.
+            </p>
+            <p>
+              In the best case, you'll have a few fully-vetted good candidates by the day after our call.
+            </p>
+            <p>
+              Otherwise, new searches take 1 to 3 weeks, depending on the complexity of the Job Description.
+            </p>
+          </>
+        )
+      },
+      {
+        id: 6,
+        question: 'What is the cost of outsourcing to LATAM?',
+        answer: (
+          <>
+            <p>
+              To put it simple, it's in the middle of hiring on US soil and outsourcing to Western Europe or Asia.
+            </p>
+            <p>
+              Latin America has been known to be a great Nearshore location. The quality of the talent
+              is exceptional and prices are totally affordable and reasonable.
+            </p>
+            <p>
+              If you want to get a quote for a specific project or position, please feel free to reach out.
+            </p>
+          </>
+        )
+      },
+      {
+        id: 7,
+        question: 'Do you work with freelancers or part-time developers?',
+        answer: (
+          <>
+            <p>
+              No. We only engage in full-time long-term relationships.
+            </p>
+            <p>
+              We've learned that freelancers or part-time developers aren't fully connected with the project.
+              And the same happens with developers that work only a few months on a project before moving to the next.
+            </p>
+            <p>
+              It's in WeDevelop's DNA to engage in long-term relationships to help you grow your business as we grow ours.
+            </p>
+          </>
+        )
+      },
+      {
+        id: 8,
+        question: 'What are the main locations you source from?',
+        answer: (
+          <>
+            <p>
+              We've created an extensive recruiting network that helped us find niches for different technologies.
+              So, for example, if you need Blockchain developers, we know where the best are.
+            </p>
+            <p>
+              However, in terms of stats, our top 5 locations are: Argentina, Brazil, Colombia, Uruguay, and Costa Rica.
+            </p>
+          </>
+        )
+      },
+      {
+        id: 9,
+        question: 'What timezone are you in?',
+        answer: (
+          <p>
+            Between GMT-6 to GMT-3.
+          </p>
+        )
+      },
+      {
+        id: 10,
+        question: 'How do you check the developers\' English level?',
+        answer: (
+          <p>
+            We check their English level in every interview during the process. In addition, there is a specific
+            step when they have an interview with a native english teacher who evaluates the candidates' english
+            level, focusing especially on their speaking fluency and clarity.
+          </p>
+        )
+      }
+    ]
   },
   fullSizeCTA: {
     title: 'Ready to grow your IT Staff?',

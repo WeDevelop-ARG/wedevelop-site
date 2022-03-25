@@ -14,6 +14,7 @@ import WhyLatam from './components/WhyLatam'
 import ThreeReasonsBottomSeparator from 'assets/staff_augmentation/three_reasons_bottom_separator.png'
 import HowItWorksBottomSeparator from 'assets/staff_augmentation/how_it_works_bottom_separator.png'
 import PortfolioFeatureDisplay from 'portfolio/components/PortfolioFeaturedDIsplay'
+import FrequentlyAskedQuestions from './components/FAQs'
 
 export default function LandingPageContent ({
   landing,
@@ -80,6 +81,14 @@ export default function LandingPageContent ({
           reviews={landing.reviews}
           buttonText={landing.reviewsHeading.buttonText}
           handleModal={handleContactCTAClick}
+        />
+        <FrequentlyAskedQuestions
+          icon={landing.FAQs.icon}
+          title={landing.FAQs.title}
+          description={landing.FAQs.description}
+          noAnswerCTA={landing.FAQs.noAnswerCTA}
+          onCTAClick={handleContactCTAClick}
+          frequentlyQuestions={landing.FAQs.frequentlyQuestions}
         />
         <FullSizeCTA
           title={landing.fullSizeCTA.title}
