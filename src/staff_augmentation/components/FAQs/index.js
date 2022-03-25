@@ -12,7 +12,6 @@ export default function FrequentlyAskedQuestions ({
   onCTAClick,
   frequentlyQuestions
 }) {
-  console.log(frequentlyQuestions)
   return (
     <section id='frequently-asked-questions' className={classes.faqsSection}>
       <div className={classes.sectionHeader}>
