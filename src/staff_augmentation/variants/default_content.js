@@ -279,53 +279,155 @@ const defaultContent = {
     frequentlyQuestions: [
       {
         id: 1,
-        question: 'Dui, sed in feugiat pharetra. Elit cursus sed lacus sed pulvinar',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'Who is WeDevelop?',
+        answer: (
+          <>
+            <p>
+              We're a us-based 100% remote company made of people from all around Latin America and the US.
+            </p>
+            <p>
+              We strive to provide the best Nearshore outsourcing services.
+            </p>
+            <p>
+              You may find we aren't the cheapest option but our quality is outstanding and always improving.
+            </p>
+          </>
+        )
       },
       {
         id: 2,
-        question: 'Volutpat blandit varius nunc felis. In urna porta massa, libero. Lacus aliquam dolor sapien mauris vitae nunc in hac ipsum.',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'What is the no-risk trial period for developers?',
+        answer: (
+          <>
+            <p>
+              All of our Staffing contracts come with a 15-day risk-free trial period.
+              Which means you can engage with us and test the quality of our service for 15 days.
+            </p>
+            <p>
+              Should you not be satisfied, you get your money back. Period.
+            </p>
+            <p>
+              We're humbled to mention that we have a 100% success rate :)
+            </p>
+          </>
+        )
       },
       {
         id: 3,
-        question: 'Nunc eu pulvinar vivamus potenti erat purus. Augue lobortis ac fermentum ullamcorper?',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'What if I am not satisfied with the work of your developer?',
+        answer: (
+          <p>
+            We make sure the candidates we provide are the best fit for the positions you need to cover.
+            However, if you're not satisfied with any of the developers, we change them as soon as possible.
+          </p>
+        )
       },
       {
         id: 4,
-        question: 'Tempor ut ullamcorper adipiscing est adipiscing semper sodales accumsan. Sagittis pharetra?',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'What does a Staffing contract look like?',
+        answer: (
+          <>
+            <p>
+              When you're ready to engage formally with us, we sign an MSA (Master Service Agreement)
+              that outlines the general legal framework for our relationship.
+            </p>
+            <p>
+              Then, we execute a SOW (Scope Of Work) for each individual contractor you hire.
+            </p>
+            <p>
+              And, of course, we also execute an NDA (Non-Disclosure Agreement).
+            </p>
+          </>
+        )
       },
       {
         id: 5,
-        question: 'Tristique ac diam cursus euismod tortor, eget et ut. Habitasse ullamcorper at viverra bibendum leo?',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'How long until you present candidates to me?',
+        answer: (
+          <>
+            <p>
+              Once we've got the Job Description and all the details for the position(s) you need to cover,
+              we'll 1) take a look at our Talent Pool to see if we have matching candidates and/or 2) start a new search.
+            </p>
+            <p>
+              In the best case, you'll have a few fully-vetted good candidates by the day after our call.
+            </p>
+            <p>
+              Otherwise, new searches take 1 to 3 weeks, depending on the complexity of the Job Description.
+            </p>
+          </>
+        )
       },
       {
         id: 6,
-        question: 'Volutpat blandit varius nunc felis. In urna porta massa, libero. Lacus aliquam dolor sapien mauris vitae nunc in hac ipsum.',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'What is the cost of outsourcing to LATAM?',
+        answer: (
+          <>
+            <p>
+              To put it simple, it's in the middle of hiring on US soil and outsourcing to Western Europe or Asia.
+            </p>
+            <p>
+              Latin America has been known to be a great Nearshore location. The quality of the talent
+              is exceptional and prices are totally affordable and reasonable.
+            </p>
+            <p>
+              If you want to get a quote for a specific project or position, please feel free to reach out.
+            </p>
+          </>
+        )
       },
       {
         id: 7,
-        question: 'Velit viverra viverra varius gravida quis laoreet. In non nisl in maecenas. Pharetra leo tristique turpis risus?',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'Do you work with freelancers or part-time developers?',
+        answer: (
+          <>
+            <p>
+              No. We only engage in full-time long-term relationships.
+            </p>
+            <p>
+              We've learned that freelancers or part-time developers aren't fully connected with the project.
+              And the same happens with developers that work only a few months on a project before moving to the next.
+            </p>
+            <p>
+              It's in WeDevelop's DNA to engage in long-term relationships to help you grow your business as we grow ours.
+            </p>
+          </>
+        )
       },
       {
         id: 8,
-        question: 'In integer gravida amet sed gravida egestas lectus augue. In porttitor diam massa in ut sodales placerat?',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'What are the main locations you source from?',
+        answer: (
+          <>
+            <p>
+              We've created an extensive recruiting network that helped us find niches for different technologies.
+              So, for example, if you need Blockchain developers, we know where the best are.
+            </p>
+            <p>
+              However, in terms of stats, our top 5 locations are: Argentina, Brazil, Colombia, Uruguay, and Costa Rica.
+            </p>
+          </>
+        )
       },
       {
         id: 9,
-        question: 'Congue volutpat erat sit dui quis tellus sapien elementum. Cursus cum eget ultrices mattis?',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'What timezone are you in?',
+        answer: (
+          <p>
+            Between GMT-6 to GMT-3.
+          </p>
+        )
       },
       {
         id: 10,
-        question: 'Volutpat blandit varius nunc felis. In urna porta massa, libero. Lacus aliquam dolor sapien mauris vitae nunc in hac ipsum.',
-        answer: 'Iaculis a nisl semper scelerisque curabitur eget in iaculis. Dignissim tincidunt ornare vitae, fringilla dolor ac id vel. Duis id consectetur purus venenatis nisl sed. In dis fermentum laoreet et. Neque imperdiet dignissim pellentesque amet, ultricies sollicitudin nunc fringilla nullam. Nisl integer nunc aliquam.'
+        question: 'How do you check the developers\' English level?',
+        answer: (
+          <p>
+            We check their English level in every interview during the process. In addition, there is a specific
+            step when they have an interview with a native english teacher who evaluates the candidates' english
+            level, focusing especially on their speaking fluency and clarity.
+          </p>
+        )
       }
     ]
   },
