@@ -28,8 +28,8 @@ const itStaffing = {
     sideImageURL: BgStaffAugmentation,
     backgroundColor: '#377DFF',
     navBar: {
-      ctaDescription: 'Schedule a 15-minute consultation',
-      buttonLabel: 'Schedule a call'
+      ctaDescription: 'How can we help you?',
+      buttonLabel: 'Get in touch'
     }
   },
   backgrounds: {
