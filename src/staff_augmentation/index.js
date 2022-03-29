@@ -76,7 +76,7 @@ function LandingPage ({ landingName }) {
       />
       <NavBar
         landingName={landing.header.landingName}
-        handleModal={handleScheduleMeetingCTAClick}
+        handleModal={handleContactCTAClick}
         backgroundColor={landing.header.backgroundColor}
         ctaDescription={landing.header.navBar.ctaDescription}
         buttonLabel={landing.header.navBar.buttonLabel}
