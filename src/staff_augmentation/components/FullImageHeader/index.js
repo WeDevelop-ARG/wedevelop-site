@@ -62,16 +62,20 @@ export default function FullImageHeader ({
           <div className={classes.rightSideContainer}>
             <div className={classes.ctaContainer}>
               <div className={classes.ctaButtonContainer}>
-                <Button className={classes.scheduleButton} onClick={onScheduleMeetingCTAClick} variant={['primary', 'focus-gradient']}>
-                  Schedule a call
+                <Button className={classes.scheduleButton} onClick={onContactCTAClick} variant={['primary', 'focus-gradient']}>
+                  {/* NOTE:(hardcoded) Change location of this hardcoded text */}
+                  Get in touch
                 </Button>
               </div>
               <p className={classes.alternativeSchedule}>
+                {/* NOTE:(hardcoded) Change location of this hardcoded text */}
                 Or, use{' '}
-                <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onContactCTAClick}>
-                  this form
+                <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onScheduleMeetingCTAClick}>
+                  {/* NOTE:(hardcoded) Change location of this hardcoded text */}
+                  this link
                 </Button>
-                {' '}to tell us about your needs.
+                {/* NOTE:(hardcoded) Change location of this hardcoded text */}
+                {' '}to schedule a call with us.
               </p>
               <div className={classes.whatHappensNextContainer}>
                 <OverlayTrigger
