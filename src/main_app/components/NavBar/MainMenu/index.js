@@ -105,7 +105,7 @@ function MainMenu ({
         </InternalLink>
       </li>
       <li className={classNames(classes.navItem)}>
-        <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer'>
+        <a href='https://blog.wedevelop.me' target='_self' rel='noopener noreferrer'>
           Blog
         </a>
       </li>
