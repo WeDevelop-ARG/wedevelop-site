@@ -25,9 +25,9 @@ function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
       {!hideHeader &&
         <div className={classes.sectionHeader}>
           <p className={classes.subheadingText}>Testimonials</p>
-          <h2 className={classes.titleText}>What clients say</h2>
+          <h2 className={classes.titleText}>What our clients say</h2>
           <p className={classes.descriptionText}>
-            Don't take our word for it. See what our customers say.
+            Don’t take our word for it, see what our customers have to say.
           </p>
           <hr className={classes.horizontalBar} />
         </div>}

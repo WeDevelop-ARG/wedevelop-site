@@ -53,7 +53,7 @@ function ServicesOffered () {
           <Skills />
           <div className={classes.contentText}>
             <p className={classes.descriptionText}>
-              ...and other tailor made solutions!
+              And other tailor-made solutions!
             </p>
             <div className={classes.talk}>
               <Button
