@@ -1,42 +1,36 @@
-version: '3.3'
+version: "3.3"
 
 services:
   wedevelop-site:
     container_name: wedevelop-site
     image: node:16.13.1-alpine
-    user: 'node'
+    user: "node"
     working_dir: "/usr/src/app"
     volumes:
-      - '../:/usr/src/app'
+      - "../:/usr/src/app"
     environment:
       - PORT=3000
     env_file: ../.env_local
     ports:
       - 3000:3000 # NextJS
-    command: ['npm', 'run', 'dev:smart']
+    command: ["npm", "run", "dev:smart"]
 
   wedevelop-site-firebase-emulators:
     container_name: wedevelop-site-firebase-emulators
     build:
-        context: ./
-        dockerfile: firebase.Dockerfile
-    volumes:
-        - ../storage/:/opt/workspace/storage
-        - ../functions/:/opt/workspace/functions
-        - ../firestore/:/opt/workspace/firestore
-        - ./firebase/emulators/:/opt/workspace
-        - ./firebase/bin/:/root/.cache:cached
-        - ./firebase/config/:/root/.config:cached
+      context: ../
+      dockerfile: docker-dev/firebase.Dockerfile
+
     environment:
-        - STORAGE_EMULATOR_DEBUG=true
+      - STORAGE_EMULATOR_DEBUG=true
     ports:
-        - 4000:4000 # Emulator Suite UI
-        - 5000:5000 # Firebase Hosting
-        - 5001:5001 # Clound Functions
-        - 9000:9000 # Realtime Database
-        - 9099:9099 # Auth emulator
-        - 8080:8080 # Cloud Firestore
-        - 8085:8085 # Cloud Pub/Sub
-        - 9199:9199 # Storage
+      - 4000:4000 # Emulator Suite UI
+      - 5000:5000 # Firebase Hosting
+      - 5001:5001 # Clound Functions
+      - 9000:9000 # Realtime Database
+      - 9099:9099 # Auth emulator
+      - 8080:8080 # Cloud Firestore
+      - 8085:8085 # Cloud Pub/Sub
+      - 9199:9199 # Storage
     working_dir: /opt/workspace
-    command: ['bash', './run_emulators.sh']
+    command: ["bash", "./run_emulators.sh"]
