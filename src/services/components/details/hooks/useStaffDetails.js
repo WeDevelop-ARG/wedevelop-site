@@ -5,15 +5,15 @@ const servicesList = [
   },
   {
     title: 'Talent Screening',
-    description: 'We select our candidates who have previously gone through a rigorous hiring process by our recruiters and technical experts. Then, we discuss the profiles with you to see if they are the right fit.'
+    description: 'Our candidates go through a rigorous hiring process with our recruiters and technical experts, then we discuss the profiles with you to see if they are the right fit.'
   },
   {
     title: 'Interview and feedback',
-    description: 'You can start with the final interviews and if you are satisfied, we begin the onboarding process together.'
+    description: 'You can conduct the final interviews and if you are satisfied, we begin the onboarding process together.'
   },
   {
     title: 'Ongoing Support',
-    description: 'We assist you with onboarding the talent and we’ll be always present to help.'
+    description: 'We assist you with onboarding the talent and we’ll be always ready to help.'
   }
 ]
 const useStaffDetails = () => servicesList

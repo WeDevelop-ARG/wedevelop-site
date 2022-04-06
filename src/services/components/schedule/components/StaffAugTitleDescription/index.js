@@ -16,7 +16,7 @@ function StaffAugTitleDescription () {
       </h2>
       <p className={classes.description}>
         Get a free quote within the hour. Get ready
-        to boost your team with great team players.
+        to take your team to the next level.
       </p>
     </>
   )

@@ -65,10 +65,10 @@ function StaffAugmentation () {
           photo={photo}
           background={background}
           title={<>Staff <br />Augmentation</>}
-          description='Expand your team with our skilled experts who can scale up your development speed, quality and substantially cut down your costs.'
+          description='Expand your team with our skilled experts who can boost your development speed, quality and substantially cut down on costs.'
         />
         <section className={classes.serviceDetails}>
-          <Details subTitle='Get your dream team of highly skilled professionals'>
+          <Details subTitle='Assemble your dream team of highly skilled professionals'>
             <StaffDetails />
           </Details>
         </section>
