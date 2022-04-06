@@ -29,7 +29,7 @@ const trainWithDetails = {
     subtitle: 'A Web-based streaming platform for fitness',
     tags: ['Fitness', 'Streaming'],
     description:
-      'TrainWith is a fitness application founded in 2017 that allows trainers to host live and on-demand classes online. Users can join these classes from the comfort of their homes. During the COVID-19 pandemic, the lockdown forced gyms to close their doors, and the whole fitness industry faced a crisis without precedents.',
+      'TrainWith is a fitness application founded in 2017 that allows trainers to host live and on-demand classes online. Users can join these classes from the comfort of home.',
     imageURL: TrainWithLiveClass
   },
   challenge: {
@@ -37,18 +37,20 @@ const trainWithDetails = {
     content: (
       <>
         <p>
+          During the COVID-19 pandemic, lockdowns forced gyms to close their doors,
+          and the whole fitness industry faced an unprecedented crisis.
           In the face of this crisis, TrainWith’s CEO, Rachel Aram, saw an opportunity
           to adapt the platform to the current situation, enabling individual fitness
           trainers, gyms, and fitness franchises to share their content.
         </p>
         <p>
-          Adding to the challenge of this core change itself, the platform was already
+          In addition to this seismic the change in the market, the platform was already
           working with thousands of users and bringing in new users every day.
         </p>
         <p>
           Furthermore, the backend of the platform featured large amounts of legacy
-          code — a common situation for iterated startup products. Meanwhile, at the
-          front end of the platform was a native iOS app that was not easily scalable.
+          code — a common situation for iterated startup products. Meanwhile, the
+          front end of the platform had a native iOS app that was not easily scalable.
         </p>
       </>
     )
@@ -68,13 +70,13 @@ const trainWithDetails = {
     content: (
       <>
         <p>
-          As always, we focused on achieving the business goals first. This meant
-          executing the right strategy to a strict deadline.
+          As always, we focused on achieving the business's goals first. This meant
+          executing the right strategy for a strict deadline.
         </p>
         <p>
-          This project was a great challenge because nobody was prepared for this
+          This project was an especially challenging case because nobody was prepared for this
           pandemic. Overnight, TrainWith’s business model and software products had
-          to be drastically adapted.
+          to be drastically adapted to the “new normal".
         </p>
         <h4>Adaptation of current platform</h4>
         <p>
@@ -84,7 +86,7 @@ const trainWithDetails = {
         </p>
         <p>
           We tried to reuse as much of the legacy code as possible, writing as many
-          tests as the code allowed to avoid bugs.
+          tests as the code would allow in order to avoid bugs.
         </p>
         <p>
           We coded some new features from scratch, following the Clean Code principles.
@@ -94,16 +96,16 @@ const trainWithDetails = {
         <h4>Migrating to a Web-based responsive streaming platform</h4>
         <p>
           Once the platform was white-labeled and working properly, we switched our
-          focus to the next bottleneck — the iOS App. The process for releasing new
+          focus to the other bottleneck — the iOS App. The process for releasing new
           versions to the App Store was cumbersome and not as agile as we needed it
           to be. Also, the app’s code was substandard, so changes were time-consuming
           and often did not meet our expectations.
         </p>
         <p>
-          After we identified this problem and evaluated the situation thoroughly, we
-          ran surveys and other customer research programs to determine what devices
+          After we identified this problem and thoroughly evaluated the situation, we
+          ran surveys and other customer research programs to determine which devices
           people were using. Unsurprisingly, Android users weren’t happy about not having
-          an option for their OS. But we also found out that iOS users weren’t pleased
+          an option for their OS. and we also found out that iOS users weren’t pleased
           either due to the app’s performance and its clunky UX.
         </p>
         <p>
