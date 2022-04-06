@@ -34,7 +34,7 @@ function OurProcess () {
                 Get to know your needs
               </li>
               <li>
-                Evalute project’s viability and feasibility
+                Evaluate your project’s viability and feasibility
               </li>
               <li>
                 Learn about our process in detail
@@ -48,11 +48,11 @@ function OurProcess () {
             </div>
             <ul className={classes.phaseSteps}>
               <li>
-                Breakdown the initial project into clear &amp; estimable work pieces
+                Break down the initial project into clear &amp; understandable work pieces
               </li>
               <li>
-                In joint workshops estimate the initial backlog using techniques
-                such us Poker Planning &amp; Magic Estimation
+                Estimate the initial backlog in joint workshops using techniques
+                like Poker Planning &amp; Magic Estimation
               </li>
             </ul>
           </div>
@@ -76,10 +76,10 @@ function OurProcess () {
             <ul className={classes.phaseSteps}>
               <li>
                 We specialize in Agile Software Development, which is highly
-                collaborative and eficient
+                collaborative and efficient
               </li>
               <li>
-                First functional delivery in the first 2 sprints. Guaranteeded
+                First functional delivery in the first 2 sprints, guaranteed
               </li>
             </ul>
           </div>

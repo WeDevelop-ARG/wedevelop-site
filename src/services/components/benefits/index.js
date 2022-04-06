@@ -24,14 +24,14 @@ function Benefits ({ service, className }) {
     <>
       <section className={className}>
         <div className={classes.header}>
-          <p className={classes.keyFeatured}>Key featured</p>
+          <p className={classes.keyFeatured}>Key Feature</p>
           <h2 className={classes.titleText}>Benefits</h2>
           <hr className={classes.horizontalBar} />
         </div>
         <div className={classes.benefitsContainer}>
           <Benefit className={classes.benefit} image={iconCostReduction} text='Cost and risk reduction' />
           <Benefit className={classes.benefit} image={iconTime} text='More time to prioritize your own project' />
-          <Benefit className={classes.benefit} image={iconExperts} text='Highly skilled experts with a proficient english level' />
+          <Benefit className={classes.benefit} image={iconExperts} text='Highly skilled experts speaking proficient English' />
           <Benefit className={classes.benefit} image={iconRecruitmentCost} text='No recruitment cost' />
           <Benefit className={classes.benefit} image={iconAgile} text='Agile scale up/down' />
         </div>
