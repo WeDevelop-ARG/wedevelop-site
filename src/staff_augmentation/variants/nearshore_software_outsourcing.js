@@ -17,7 +17,7 @@ const nearshoreSoftwareOutsourcing = {
     description: (
       <>
         <p>Get access to the top Software Engineers in LATAM.</p>
-        <p>Fast, without the hassles.</p>
+        <p>Fast and with no hassles.</p>
       </>
     ),
     quote: (
