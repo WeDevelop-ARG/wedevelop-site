@@ -23,7 +23,7 @@ trap -- '_handle_SIGTERM' TERM
 trap -- '_handle_SIGKILL' KILL
 
 runFirebaseEmulators () {
-  FIREBASE_AUTH_EMULATOR_HOST="localhost:9099" firebase emulators:start \
+  firebase emulators:start \
     --only functions,storage \
     --project demo-test \
     --export-on-exit \

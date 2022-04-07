@@ -20,7 +20,8 @@ services:
     build:
       context: ../
       dockerfile: docker-dev/firebase.Dockerfile
-
+    volumes:
+      - "./firebase-persistent-data/.data/:/opt/workspace/.data/"
     environment:
       - STORAGE_EMULATOR_DEBUG=true
     ports:
