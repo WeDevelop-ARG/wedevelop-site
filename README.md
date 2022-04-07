@@ -68,3 +68,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Using docker-compose for local development
+
+Find `docker-dev` folder at the project's root level. You have several files inside required to start
+local docker containers. Please contact with the person who is responsible for the development and
+ask him all the necessary values you need to define within `.runtimeconfig.sample.json`.
+Once you've done execute the following commands
+
+```
+cd docker-dev
+docker-compose up
+```
+
+It builds the containers defined in `docker-compose.yml` file. If you are lucky enough and not observe
+fatal errors you are done.
+
+For any additional information about how to install `docker-compose` visit [Docker compose install](https://docs.docker.com/compose/install/)
