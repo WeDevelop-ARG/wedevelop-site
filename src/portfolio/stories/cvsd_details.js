@@ -21,10 +21,10 @@ const cvsdDetails = {
     logoBackground: '#000000',
     heading: 'Success Story',
     title: 'CVSD',
-    subtitle: 'A computer vision-powered solution for Social Distancing.',
+    subtitle: 'A vision-powered digital solution for Social Distancing',
     tags: ['Health', 'Computer Vision'],
     description:
-      'CVSD system allows people to move freely through the installation with full adherence to COVID guidelines and restrictions. This virtual system is simple and fast. It doesn’t even have to be installed — anyone can use it within their current camera network.',
+      'The CVSD system allows people to move freely through the installation with full adherence to COVID guidelines and restrictions. This virtual system is simple and fast, and it doesn’t even have to be installed — anyone can use it within their current camera network.',
     imageURL: CvsdLobby
   },
   challenge: {
@@ -55,9 +55,9 @@ const cvsdDetails = {
         <p>
           Due to COVID-19, this internal product was developed to control social
           distancing through computer visual terminals. The solution needed to
-          handle frame processing of real-time video integrated with the existing
+          handle frame processing of real-time video integrated within the existing
           camera network. We managed to achieve all of this with no extra setup
-          or hardware. The solution is up and running by itself in 15 minutes.
+          or hardware. The solution we built can be up and running by itself in 15 minutes.
         </p>
         <p>
           This tool was able to carry out immediate statistical analysis of the
@@ -66,9 +66,9 @@ const cvsdDetails = {
           levels and the average distance between people.
         </p>
         <p>
-          We decided to gain customers’ trust by showing them this real-time
-          information. By printing a QR code and deploying this on the wall, we
-          were able to deliver information about the room to visitors without delay.
+          We decided to gain customers’ trust by showing them this information in real-time.
+          By printing a QR code and displaying this on the wall, we
+          were able to deliver information about the room to visitors without a moment's delay.
         </p>
         <p>
           Teams using the solution can access actionable metrics and get instant
@@ -84,32 +84,32 @@ const cvsdDetails = {
       <>
         <ul>
           <li>
-            It was deployed in a <b>serverless automated environment</b>
+            Deployment in a <b>serverless automated environment.</b>
           </li>
           <li>
-            <b>Real time video frame processing</b>
+            <b>Real time video frame processing.</b>
           </li>
           <li>
-            <b>Statical analysis</b> of the extracted data
+            <b>Statistical analysis</b> of the extracted data.
           </li>
           <li>
-            <b>Visualization of video streams</b> with information overlay
+            <b>Visualization of video streams</b> with information overlay.
           </li>
           <li>
-            <b>Deployed in an environment severless</b> (App Engine) automated
+            <b>Deployed in an environment severless</b> (App Engine) automated.
           </li>
           <li>
             <b>Deployed manual of NVIDIA Triton</b> (Al server) to solve the
-            problems of Google Cloud Al Platform.
+            problems with the Google Cloud Al Platform.
           </li>
           <li>
-            <b>Development of AI models</b>, combining other pre-existing ones
-            with TensorFlow. Manual optimization of the same.
+            <b>Development of AI models</b>, combining pre-existing ones
+            with TensorFlow, as well as manual optimization of those models.
           </li>
           <li>
             <b>
               Google Cloud for all (App Engine, Al Platform, Compute Engine,
-              DNS, BD, PubSub, Storage, Cloud Build)
+              DNS, BD, PubSub, Storage, Cloud Build).
             </b>
           </li>
           <li>
