@@ -73,8 +73,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Find `docker-dev` folder at the project's root level. You have several files inside required to start
 local docker containers. Please contact with the person who is responsible for the development and
-ask him all the necessary values you need to define within `.runtimeconfig.sample.json`.
-Once you've done execute the following commands
+ask them all the necessary values you need to define within `.runtimeconfig.sample.json` and `.env` files.
+Once you've done so, execute the following commands
 
 ```
 cd docker-dev
