@@ -43,7 +43,7 @@ const injobDetails = {
         <p>
           The goal for this project was to develop an intuitive and dynamic platform.
           This platform would be a professional ecosystem for the community of entrepreneurs,
-          freelancers, and clients, It needed to support their comprehensive connection, protection, management,
+          freelancers, and clients, it needed to support their comprehensive connection, protection, management,
           and accessibility.
         </p>
       </>
