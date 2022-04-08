@@ -71,7 +71,7 @@ const defaultContent = {
   latamTalent: {
     subtitle: 'Latam Talent',
     title: <>The Best<br /><b>LATAM</b> Talent</>,
-    text: 'We source the best talent from LATAM, which guarantees a great quality/price relation.\n\nNearshore to LATAM, it\'s a one-way trip.',
+    text: 'We source the best talent from LATAM, which guarantees excellent quality for a fair price.\n\nNearshore to LATAM, it\'s a one-way trip.',
     ctaText: 'Get a Free Quote'
   },
   whyLatam: {
@@ -80,19 +80,19 @@ const defaultContent = {
     cards: [{
       icon: <TimeZoneIcon />,
       title: 'Time Zone Aligned',
-      text: 'As our engineers are in LATAM in which only has 3 or 4 (+-) hours difference you are going to be working in real-time with your team. Being able to consult them and solve any issue straightaway.'
+      text: 'Our engineers are in LATAM, which only has a 3 or 4 hour time difference (+-). That means you will be working in real time with your team. You can consult them and solve issues without any delays.'
     }, {
       icon: <CulturalClosenessIcon />,
-      title: 'Cultural Closeness',
-      text: 'As we already know our cultures have a lot in common. We share the values of working as a team in a collaborative way, taking responsibilities, fulfilling schedules, and accomplishing a common goal.'
+      title: 'Cultural Similarity',
+      text: 'Our cultures have a lot in common. We share the core values of teamwork, personal responsibility, upholding schedules, and accomplishing mutual goals.'
     }, {
       icon: <LevelOfEnglishIcon />,
-      title: 'Level of English',
-      text: 'In LATAM the level of english we present is above the average, and besides that we take care of ensuring you that every developer has a high level of English so you can be able to speak with them as you were speaking with an english native.'
+      title: 'Proficient English',
+      text: 'In LATAM, English comprehension is already above the international average. We take that to the next level by ensuring that every developer speaks English at a high level. You will be able to communicate with them as if you were talking to a native English speaker.'
     }, {
       icon: <PriceQualityIcon />,
       title: 'Best Price & Quality',
-      text: 'You will find the best relation between price and quality. We only hire the top 1% talented developers to ensure you the best quality, and besides that our prices are almost half cheapest the cost of a US-based equivalent.'
+      text: 'We offer the best bang for your buck without sacrificing quality. Our prices are about half the cost of a US-based equivalent, and we only hire the top 1% most talented developers to deliver you the best quality.'
     }],
     ctaText: 'Get a Free Quote'
   },
@@ -141,7 +141,7 @@ const defaultContent = {
   portfolioFeaturedDisplay: {
     title: 'Our Portfolio',
     subtitle: "See what's possible",
-    description: 'More than 20 companies have trust on us!',
+    description: 'More than 20 companies have put their trust in us!',
     buttonText: 'View More'
   },
   reviewsHeading: {
@@ -244,7 +244,7 @@ const defaultContent = {
       id: '3',
       imageURL: HighValues,
       title: 'High Values',
-      description: 'We pride ourselves on being very transparent, trustworthy, and dedicated.',
+      description: 'We pride ourselves on being transparent, trustworthy, and committed.',
       toggleContent: (
         <>
           <p>
@@ -279,17 +279,17 @@ const defaultContent = {
     frequentlyQuestions: [
       {
         id: 1,
-        question: 'Who is WeDevelop?',
+        question: 'Who are WeDevelop?',
         answer: (
           <>
             <p>
-              We're a us-based 100% remote company made of people from all around Latin America and the US.
+              We're a US-based, 100% remote company made up of people from all around the US and Latin America.
             </p>
             <p>
               We strive to provide the best Nearshore outsourcing services.
             </p>
             <p>
-              You may find we aren't the cheapest option but our quality is outstanding and always improving.
+              You may find cheaper alternatives out there, but our quality is outstanding and always improving.
             </p>
           </>
         )
@@ -300,11 +300,11 @@ const defaultContent = {
         answer: (
           <>
             <p>
-              All of our Staffing contracts come with a 15-day risk-free trial period.
-              Which means you can engage with us and test the quality of our service for 15 days.
+              All of our staffing contracts come with a 15-day, risk-free trial period.
+              You can test the quality of our services for 15 days before you need to make a decision.
             </p>
             <p>
-              Should you not be satisfied, you get your money back. Period.
+              If you’re not satisfied, you get your money back. Period.
             </p>
             <p>
               We're humbled to mention that we have a 100% success rate :)
@@ -318,7 +318,7 @@ const defaultContent = {
         answer: (
           <p>
             We make sure the candidates we provide are the best fit for the positions you need to cover.
-            However, if you're not satisfied with any of the developers, we change them as soon as possible.
+            However, if you're not satisfied with any of the developers, we will change them as soon as possible.
           </p>
         )
       },
@@ -350,7 +350,7 @@ const defaultContent = {
               we'll 1) take a look at our Talent Pool to see if we have matching candidates and/or 2) start a new search.
             </p>
             <p>
-              In the best case, you'll have a few fully-vetted good candidates by the day after our call.
+              In the best case, you'll have a few fully-vetted candidates by the next day.
             </p>
             <p>
               Otherwise, new searches take 1 to 3 weeks, depending on the complexity of the Job Description.
@@ -364,11 +364,11 @@ const defaultContent = {
         answer: (
           <>
             <p>
-              To put it simple, it's in the middle of hiring on US soil and outsourcing to Western Europe or Asia.
+              To put it simply, it's in the middle of hiring on US soil and outsourcing to Eastern Europe or Asia.
             </p>
             <p>
-              Latin America has been known to be a great Nearshore location. The quality of the talent
-              is exceptional and prices are totally affordable and reasonable.
+              Latin America is known to be a great Nearshore location. The quality of the talent
+              is exceptional and the prices are totally affordable and reasonable.
             </p>
             <p>
               If you want to get a quote for a specific project or position, please feel free to reach out.
@@ -385,8 +385,8 @@ const defaultContent = {
               No. We only engage in full-time long-term relationships.
             </p>
             <p>
-              We've learned that freelancers or part-time developers aren't fully connected with the project.
-              And the same happens with developers that work only a few months on a project before moving to the next.
+              We've learned that freelancers or part-time developers just aren’t as committed to the project.
+              It tends to be the same with developers that work only a few months on a project before moving to the next.
             </p>
             <p>
               It's in WeDevelop's DNA to engage in long-term relationships to help you grow your business as we grow ours.
@@ -400,8 +400,8 @@ const defaultContent = {
         answer: (
           <>
             <p>
-              We've created an extensive recruiting network that helped us find niches for different technologies.
-              So, for example, if you need Blockchain developers, we know where the best are.
+              We've created an extensive recruiting network that helps us find the right niches for different technologies.
+              So, for example, if you need Blockchain developers, we know where to find the best.
             </p>
             <p>
               However, in terms of stats, our top 5 locations are: Argentina, Brazil, Colombia, Uruguay, and Costa Rica.
@@ -423,9 +423,9 @@ const defaultContent = {
         question: 'How do you check the developers\' English level?',
         answer: (
           <p>
-            We check their English level in every interview during the process. In addition, there is a specific
-            step when they have an interview with a native english teacher who evaluates the candidates' english
-            level, focusing especially on their speaking fluency and clarity.
+            We check their English level at each stage of the interview process. What’s more, we include a specific
+            step for an interview with a native English teacher who evaluates the candidates' English
+            level, focusing specifically on their speaking fluency and clarity.
           </p>
         )
       }
