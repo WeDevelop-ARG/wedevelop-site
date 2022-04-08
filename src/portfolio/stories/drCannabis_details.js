@@ -23,10 +23,10 @@ const drCannabisDetails = {
     logoBackground: '#DBF1E2',
     heading: 'Success Story',
     title: 'Dr Cannabis',
-    subtitle: 'An AI-powered App to diagnose issues with Cannabis plants',
+    subtitle: 'An AI-powered App to diagnose issues with cannabis plants',
     tags: ['IA', 'Health'],
     description:
-      'People like to grow their own Cannabis, but that’s not always a simple task. The plant can get sick or even die if the grower is not well-versed in cultivating Cannabis. However, there is lots of information online about the cultivation process, and the community is very friendly. You ask, you get a response. You are not alone in this task. Dr. Cannabis wanted to take this to the next level. They decided to gather as much information as possible and then use machine learning to train an AI-powered application that supports people who want to cultivate and harvest their own Cannabis.',
+      'People across the world like to grow their own cannabis, but that’s not always a simple task. The plant can wither or even die if the grower is not well-versed in horticulture. Luckily, there is a lot of information online about the cultivation process, and the community is very friendly. You ask, you get a response. You are not on your own. Dr. Cannabis wanted to take this community knowledge to the next level. That’s why they decided to gather as much information as possible and use machine learning to train an AI-powered application that supports people who want to cultivate and harvest their own cannabis.',
     imageURL: Diagnostic
   },
   challenge: {
@@ -34,14 +34,15 @@ const drCannabisDetails = {
     content: (
       <>
         <p>
-          One of our biggest challenges was to make everything simple. We wanted the app to be
-          super user-friendly. We learned from customer research sessions that we had several
-          well-defined customer segments, most of which were not tech-savvy.
+          One of our biggest challenges was to simplify everything as much as possible.
+          Our customer research sessions that we had several
+          well-defined customer segments, most of which were not tech-savvy. This meant
+          we needed the app to be super user-friendly.
         </p>
         <p>
           The other challenge we faced was gathering all the information online, simply because
-          this information was user-generated and so not always accurate. Thus we had to review
-          and curate the information before using it to feed our AI.
+          this information was user-generated and therefore not always accurate. Thus we had to review
+          and curate the information before feeding it into our AI.
         </p>
       </>
     )
@@ -53,19 +54,19 @@ const drCannabisDetails = {
         <p>
           We approached this challenge using the Lean methodology. We listed the main problems
           for users, ran interviews and other customer research activities, and wrote hypotheses
-          for the solution.
+          for the potential solutions.
         </p>
         <p>
-          The first problem we tackled was user confidence — people simply didn’t feel confident
+          The main problem we tackled was user confidence — many people simply didn’t feel confident
           nor comfortable with growing Cannabis.
         </p>
         <p>
-          For this problem, we created a minimum viable product app that would make people feel
-          they are not alone, connecting users with the support of a positive community.
+          To remedy this, we created a minimum viable product app that made people feel
+          supported by a positive community and connected with other users just like them.
         </p>
         <p>
-          The app was very simple. The software asks people to post three pictures of their plant
-          (with or without disease) and a brief description in their own words of the issue. Then,
+          The app is elegantly simple. The software asks people to post three pictures of their plant
+          (with or without disease) and a brief description of the issue in their own words. Then,
           community experts reach out to the individual with valuable feedback.
         </p>
       </>
