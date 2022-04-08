@@ -4,7 +4,7 @@ function Details ({ subTitle, children }) {
     <div className={classes.container}>
       <div className={classes.centeredContainer}>
         <div className={classes.sectionHeader}>
-          <p className={classes.keyFeatured}>Key featured </p>
+          <p className={classes.keyFeatured}>Key Feature</p>
           <h2 className={classes.titleText}>Service Details</h2>
           <p className={classes.subtitleText}>{subTitle}</p>
           <hr className={classes.horizontalBar} />
