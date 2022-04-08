@@ -21,7 +21,7 @@ export function useStep ({
         <>
           <ul>
             <li>
-              You can fill{' '}
+              You can fill out{' '}
               <Button
                 variant={['link', 'black', 'bold']}
                 onClick={handleContactCTAClick}
@@ -53,10 +53,11 @@ export function useStep ({
               If you have a JD, we'll base our recruiting process on it;
             </li>
             <li>
-              Otherwise, we'll help you create one.
+              Otherwise, we'll help you put one together.
             </li>
             <li>
-              If there are any candidates that match the JD, we'll present them right away!
+              If there are any candidates that match the JD,
+              we'll present them to you right away!
             </li>
           </ul>
         </>
@@ -71,10 +72,10 @@ export function useStep ({
         <>
           <ul>
             <li>
-              In a few days, you'll receive a list of fully vetted candidates for you.
+              In a few days, you'll receive a list of fully vetted candidates.
             </li>
             <li>
-              We'll check that the candidates are a great fit technically and culturally,
+              We'll make sure that the candidates are a great fit technically and culturally,
               and that they speak English fluently and clearly.
             </li>
             <li>
@@ -99,7 +100,7 @@ export function useStep ({
               We'll take care of the legal relationship with the contractor.
             </li>
             <li>
-              Also, we'll help the candidates to ramp up into the project smoothly.
+              We'll also help the candidates onboard smoothly.
             </li>
           </ul>
         </>
