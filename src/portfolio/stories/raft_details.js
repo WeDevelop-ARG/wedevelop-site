@@ -30,7 +30,7 @@ const raftDetails = {
     subtitle: 'A search engine for ferry booking.',
     tags: ['Travel', 'Booking'],
     description:
-      'RAFT Croatia is a search engine for ferry bookings. RAFT’s mission is to make transportation between the islands and coastal cities of Croatia seamless and stress-free.',
+      'RAFT Croatia is a search engine for booking ferries. RAFT’s mission is to make transportation between the islands and coastal cities of Croatia stress-free and seamless.',
     imageURL: RaftReservations
   },
   challenge: {
@@ -38,9 +38,9 @@ const raftDetails = {
     content: (
       <>
         <p>
-          Ferry transportation is a niche industry, and there is no search engine or
+          Ferry transportation is a niche industry, and there was no search engine or
           metadata platform for servicing this market — globally or within individual
-          countries. This meant we had to build much of it on our own.
+          countries. This meant we had to build most of it on our own.
         </p>
         <p>
           We needed to design and implement platforms and tools for passengers to buy
@@ -89,14 +89,14 @@ const raftDetails = {
             <p>
               We integrated with SMS and Email providers to send notifications and
               other relevant information to the customers. This includes booking
-              confirmations, changes to the schedule, etc.
+              confirmations, schedule changes, etc.
             </p>
           </li>
         </ul>
         <h4>Biz Portal</h4>
         <ul>
           <li>
-            POS - Point Of Sales
+            POS - Point Of Sale
             <p>
               A tool for the ferry companies to sell their tickets online, using
               RAFT’s POS.
@@ -105,8 +105,7 @@ const raftDetails = {
           <li>
             Employee management
             <p>
-              A solution that manages employee access to the platform in a secure
-              and efficient manner.
+              A solution that securely and efficiently manages employee access to the platform.
             </p>
           </li>
           <li>
@@ -119,7 +118,7 @@ const raftDetails = {
           <li>
             Ticket printing
             <p>
-              Users and employees can print paper ferry tickets with a custom layout.
+              Users and employees can print paper ferry tickets with custom layouts.
             </p>
           </li>
           <li>

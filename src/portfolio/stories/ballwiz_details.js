@@ -30,7 +30,7 @@ const ballwizDetails = {
     subtitle: 'A data-driven sports betting platform.',
     tags: ['Sports Betting', 'Data Analytics'],
     description:
-      'Most people are fans of sports, and many people love to watch their favorite sports while hoping to make some money at the same time. That’s why Ballwiz’s owners decided to put their heads together and create a platform to allow everyone to do just that, quickly and efficiently.',
+      'Most people are fans of sports, and many people want the chance to make some money while they watch their favorite game. That’s why Ballwiz’s owners put their heads together and created a platform to allow everyone to do just that, quickly and efficiently.',
     imageURL: BallwizDashboard
   },
   challenge: {
@@ -39,8 +39,8 @@ const ballwizDetails = {
       <>
         <p>
           Our challenge in this project was to build a betting platform with a focus
-          on data analytics, trends, and odds. This would allow the user to decide
-          who to bet on based on real statistics, removing ambiguity and subjectivity
+          on data analytics, trends, and odds. This would allow the user to make their
+          bets based on real statistics, removing ambiguity and subjectivity
           from the process.
         </p>
         <p>
@@ -70,17 +70,17 @@ const ballwizDetails = {
       <>
         <p>
           We used machine learning to process all the data we collected. This ensured
-          that the user could decide who to bet on based on accurate and accessible information.
+          that the user could base their bets on accurate and readily-accessible information.
         </p>
         <p>
           We managed to gather information from different APIs before standardizing
-          the data and structuring it. From here, we processed the data and presented
+          the data and structuring it. From there, we processed the data and presented
           it to the user in a meaningful way.
         </p>
         <p>
-          We combined data from different sports based on factors such as weather
-          conditions, team formation, history of the team, how they have been playing
-          across the season, who they have played/are playing, etc. — factors that
+          We combined data from different sports based on factors like weather
+          conditions, team formation, team track records, team performance in
+          the current season, who they have played/are playing, etc. — factors that
           support rational betting.
         </p>
       </>
