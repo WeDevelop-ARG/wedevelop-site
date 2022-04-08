@@ -33,7 +33,7 @@ const copaDetails = {
     subtitle: 'A tailored management system for the business.',
     tags: ['Fitness', 'Custom'],
     description:
-      'COPA Soccer Training Center utilizes advanced technology and sports science to offer a unique objective, data-driven approach to training. Each area of their 110,000 square foot facility is designed to enhance the cognitive, physical, and technical development of athletes. They are dedicated to improving traditional training with innovation — helping take the game to the next level.',
+      'COPA Soccer Training Center utilizes advanced technology and sports science to offer a unique, objective, data-driven approach to training. Each area of their 110,000 square foot facilities is designed to enhance the cognitive, physical, and technical development of athletes. They are dedicated to improving traditional training with innovation — taking the game to the next level.',
     imageURL: CopaSignUp
   },
   challenge: {
@@ -50,7 +50,7 @@ const copaDetails = {
           </li>
           <li>
             <p>
-              As the business grew rapidly, they needed a solution to support
+              As their business was growing rapidly, they needed a solution to support
               the grand opening of their innovative 110,000-square-foot facility.
             </p>
           </li>
@@ -83,18 +83,18 @@ const copaDetails = {
         <p>
           We worked alongside COPA’s stakeholders, general managers, accounting
           department, and all other areas to design and implement the software
-          they needed in the 3-month window.
+          they needed in a 3-month window.
         </p>
         <p>
-          WeDevelop deployed their creative team, brainstorming ways to develop
-          these solutions in a fast, iterative manner to deliver a functional
-          version on time.
+          WeDevelop deployed their creative team, brainstorming the best ways to develop
+          these solutions in a fast, iterative manner and deliver a functional version
+          on schedule.
         </p>
         <h4>About Software Development Methodology</h4>
         <p>
           Meeting customers’ expectations in real life is not an easy task.
-          First, software teams need time to design and iterate basic user
-          experience aspects for digital solutions. Next is the development
+          First, software teams need time to design and iterate the basic user
+          experience aspects for digital solutions. Next comes the development
           of small pieces of software, deployment, testing, and so on.
         </p>
         <p>
@@ -103,13 +103,13 @@ const copaDetails = {
           the ongoing development and improvement strategy.
         </p>
         <p>
-          In the case of COPA STC, there was no time. Instead, they identified
+          In the case of COPA STC, there was no time for that. Instead, they identified
           a need for this custom solution only 3 months before opening the
           doors of their extraordinary facility.
         </p>
         <p>
           WeDevelop jumped right in when no other software company dared to
-          do so. As a result, we helped COPA realize their dream — seeing
+          do so. As a result, we helped COPA realize their vision — seeing
           athletes train in their top-notch facility.
         </p>
         <p>
@@ -118,7 +118,7 @@ const copaDetails = {
         </p>
         <Image src={CopaMethodology} alt='' objectFit='contain' position='center' />
         <p>
-          Basically, every 2-week sprint, we deployed a very small but functional
+          Every 2-week sprint, we deployed a very small but functional
           piece of software. In addition, we provided a small but highly talented
           cross-functional team on a sophisticated development cycle, allowing us
           to deliver consistently every couple of weeks.
@@ -136,11 +136,11 @@ const copaDetails = {
             <p>
               A set of tools to enable COPA to operate its business through a
               branded platform, optimized for their business needs. A solution
-              that can iterate as the business model does.
+              that can be iterated alongside the business model.
             </p>
             <ul>
               <li>
-                Classes Scheduling
+                Class Scheduling
                 <p>
                   Scheduling software for different practices and classes during
                   the week, managing a complex schedule with multiple instructors,
@@ -155,18 +155,18 @@ const copaDetails = {
                 </p>
               </li>
               <li>
-                Integrations with GL Software
+                Integration with GL Software
                 <p>
                   Integration with 3rd party GL software for reporting and
                   budgeting.
                 </p>
               </li>
               <li>
-                Memberships Management
+                Membership Management
                 <p>
                   Tools supporting subscription plans, features per memberships,
                   benefits, and perks allow COPA to define its memberships according
-                  to business needs and customers’ preferences.
+                  to their business needs and customers’ preferences.
                 </p>
               </li>
             </ul>
@@ -231,8 +231,8 @@ const copaDetails = {
           customer’s life easier.
         </p>
         <p>
-          This testing provided insights for improving our digital tools and gave highly
-          valuable data to COPA’s business, facility, crew, and more.
+          This testing provided insights for improving our digital tools and resulted in highly
+          valuable data for COPA’s business, facility, crew, and more.
         </p>
       </>
     ),
