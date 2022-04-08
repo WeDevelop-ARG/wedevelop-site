@@ -29,7 +29,7 @@ const monedaDetails = {
     subtitle: 'A smart contract-powered loan platform',
     tags: ['Marketplace', 'BlockChain'],
     description:
-      'In a world of constant change, financial institutions have to iterate their business models and adopt new technologies. One of the most impactful technologies is the blockchain. The blockchain brought new possibilities to the fintech space, such as cryptocurrencies and Smart Contracts. That’s where Moneda Financial’s owners saw an opportunity.',
+      'In a world of constant change, financial institutions have to iterate their business models and adopt new technologies. One of the most impactful new technologies is the blockchain, which has brought new possibilities to the fintech space, such as cryptocurrencies and smart contracts. That’s where Moneda Financial’s owners saw their opportunity.',
     imageURL: MonedaLending
   },
   challenge: {
@@ -37,8 +37,8 @@ const monedaDetails = {
     content: (
       <>
         <p>
-          Our challenge was to create a platform based on Smart Contracts, allowing people to
-          bet on the market price at which an IPO would end. The user who selects the closet
+          Our challenge was to create a platform based on smart contracts that allows people to
+          bet on the market price at which an IPO would end. The user who selects the closest
           price wins.
         </p>
         <p>
@@ -63,7 +63,7 @@ const monedaDetails = {
       <>
         <p>
           We built a web application based on Node.js and React, allowing users to execute
-          these bets. A Smart Contract represents each bet with all the necessary information
+          these bets. Each bet is represented by a smart contract containing all the necessary information
           and logic for the transaction.
         </p>
         <p>
