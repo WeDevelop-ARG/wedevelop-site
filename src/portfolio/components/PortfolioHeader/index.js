@@ -30,10 +30,10 @@ function PortfolioHeader () {
             <div className={classes.leftSideContent}>
               <p className={classes.headingText}>success stories</p>
               <h2 className={classes.titleText}>
-                Discover our success stories
+                Check out our success stories
               </h2>
               <p className={classes.descriptionText}>
-                Straight 5-star ratings endorse our work
+                Our work is endorsed by straight 5-star ratings
               </p>
               <hr className={classes.horizontalBar} />
             </div>
