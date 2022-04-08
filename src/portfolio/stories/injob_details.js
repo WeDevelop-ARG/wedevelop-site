@@ -33,7 +33,7 @@ const injobDetails = {
     subtitle: 'A web platform to connect top talent with clients',
     tags: ['Marketplace'],
     description:
-      'The shift to online and remote work keeps accelerating year by year, connecting businesses with a wealth of benefits. So, with InJob, our client had the vision of increasing the power of freelancers and making it easier for them to connect and work together with clients.',
+      'The shift to online and remote work keeps accelerating year by year, connecting businesses with a wealth of benefits. With InJob, our client had the vision of empowering freelancers and making it easier for them to connect and work together with clients.',
     imageURL: InjobCoworking
   },
   challenge: {
@@ -41,9 +41,9 @@ const injobDetails = {
     content: (
       <>
         <p>
-          The challenge for this project was to develop an intuitive and dynamic platform.
+          The goal for this project was to develop an intuitive and dynamic platform.
           This platform would be a professional ecosystem for the community of entrepreneurs,
-          freelancers, and clients, supporting comprehensive connection, protection, management,
+          freelancers, and clients, it needed to support their comprehensive connection, protection, management,
           and accessibility.
         </p>
       </>
@@ -64,27 +64,27 @@ const injobDetails = {
     content: (
       <>
         <p>
-          Together with our client, we created a web-based platform developed and finished
-          successfully. This provided an environment where users could find the best freelancers
-          and carry out projects, drawing upon efficient management tools and compatibility algorithms.
+          Together with our client, we successfully developed and finished
+          a web-based platform. This provided an environment where users could find the best freelancers
+          to carry out projects, drawing on efficient management tools and compatibility algorithms.
         </p>
         <p>
           Within the platform, users can find projects, services, or freelancers. We developed
-          an interface that allows users to act as either clients or freelancers within
-          the same account, working with both services and projects. Also, the platform
-          enables search and filtering by category, assessment, or location. Users can
-          communicate in real-time via a live chat feature.
+          an interface that allows users to act as both clients and freelancers within
+          the same account, working with both services and projects. It also supports searching
+          and filtering by category, assessment, or location. Users can
+          communicate in real time via a live chat feature.
         </p>
         <p>
           All of this was achieved by applying an Agile methodology in which we had a small
           but functional piece of software ready for deployment and client assessment after
-          every 2-week sprint. That’s our metric — functional software delivered.
+          every 2-week sprint. That’s our most important metric — functional software delivery.
         </p>
         <p>
-          We provided a cross-functional team of talented personnel, working on a constant
-          development cycle that allowed us to deliver consistently on every sprint. In
-          addition, we held frequent meetings with the client, assessing our progress before
-          moving forward to meet their needs and expectations.
+          We provided a cross-functional team of talented personnel, working on a consistent
+          development cycle that allowed us to deliver on every sprint. In
+          addition, we held frequent meetings with the client, assessing our progress
+          and reaffirming their expectations before moving forward.
         </p>
       </>
     ),
