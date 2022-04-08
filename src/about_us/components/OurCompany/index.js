@@ -13,19 +13,19 @@ function OurCompany () {
           <p className={classes.subheadingText}>About Us</p>
           <h2 className={classes.titleText}>Our Company</h2>
           <p className={classes.descriptionText}>
-            Providing a more enjoyable life for people and
+            Providing better quality of life and
             being the company everyone wants to work with.
           </p>
           <hr className={classes.horizontalBar} />
         </div>
         <div className={classes.firstTextBlock}>
           <p>
-            Since 2019, this US-based company has been delivering
+            Since 2019, our US-based company has been delivering
             exceptional Software Development Services. Our team is
             a diverse group of people from all around the globe,
-            with the majority of the Engineers and Designers from
-            Argentina, Uruguay, Peru, Colombia, and other central
-            and south american countries.
+            with the majority of the Engineers and Designers coming from
+            Argentina, Uruguay, Peru, Colombia, and other Central
+            and South American countries.
           </p>
           <p>
             At WeDevelop, we love what we do, and that gets reflected
@@ -47,17 +47,16 @@ function OurCompany () {
           <p>
             We're not just another software company,
             <b>
-              {' '}we're working together as a dream
-              team, and believe in partnership rather
+              {' '}we're a dream team,
+              and we believe in partnership rather
               than competition.{' '}
             </b>
-            When we set our minds to a goal, there's
-            nothing that can stop us from achieving it.
+            When we set our minds to a goal, there's no stopping us.
           </p>
           <p>
-            We respect each other and encourage an environment filled
-            with equality, where collaborators feel appreciated and
-            know they're valued for their abilities beyond anything else.
+            We respect each other and create an environment that promotes
+            equality, where collaborators feel appreciated and
+            know they're valued for their abilities above anything else.
           </p>
         </div>
         <WrappedImage src={DotsPattern} alt='' layout='intrinsic' className={classes.bottomRightDotsPattern} aria-hidden='true' />
