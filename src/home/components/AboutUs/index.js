@@ -25,22 +25,22 @@ function AboutUs () {
           <div className={classes.aboutUsBullet}>
             <WrappedImage src={SmilingFace} alt='' className={classes.bulletImg} />
             <p>
-              <b>We love what we do</b> - Our indomitable spirit makes
-              us live our dreams by doing what we love.
+              <b>We love what we do</b> - Our unshakeable passion
+              helps us live our dreams through hard work.
             </p>
           </div>
           <div className={classes.aboutUsBullet}>
             <WrappedImage src={CuriousHead} alt='' className={classes.bulletImg} />
             <p>
-              <b>We are curious</b> - On an exponential growing world,
-              we stay on the edge. And we love it!
+              <b>We are curious</b> - In an ever-evolving world,
+              we stay on the cutting edge. And we love it!
             </p>
           </div>
           <div className={classes.aboutUsBullet}>
             <WrappedImage src={DreamTeam} alt='' className={classes.bulletImg} />
             <p>
-              <b>We work as a Dream Team</b> - We have fun and learn
-              from each other. Everyone is a key player.
+              <b>We are always collaborating</b> - Our dream team has fun
+              and learns from each other. Everyone is a key player.
             </p>
           </div>
         </div>

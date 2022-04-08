@@ -23,12 +23,12 @@ function Header (props, ref) {
         <h1 className={classes.title}>
           <p className={classes.firstLine}>
             A <b>human-centered company <br /></b>
-            that gets things done efficiently
+            with a focus on efficiency
           </p>
         </h1>
         <p className={classes.text}>
-          We are a digital product agency that delivers meaningful
-          <br />experiences to clients and users all over the world.
+          We are agile, driven,
+          <br />and fully committed to your vision and goals.
         </p>
         <hr className={classes.divider} />
         <InternalLink href='#services' className={classes.arrowMobile}>
