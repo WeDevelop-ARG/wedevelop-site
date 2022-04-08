@@ -16,7 +16,7 @@
     "destination_email": "local-part@domain"
   },
   "career_form": {
-    "destination_emails": "local-part-dest@domain"
+    "destination_emails": ["local-part-dest@domain"]
   },
   "recaptcha": {
     "secret_key": ""
