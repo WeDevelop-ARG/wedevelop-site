@@ -48,7 +48,7 @@ locals {
   production_default_dns_zone_name   = replace(local.production_environment_domain_name, ".", "-")
 
   github_branch_name = lookup({
-    production : "main",
+    production : "master",
     testing: "develop",
-  }, local.environment, "main")
+  }, local.environment, "master")
 }
