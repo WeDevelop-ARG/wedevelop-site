@@ -1,26 +1,25 @@
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
+
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
+
 import { Field } from 'formik'
-import isNil from 'lodash/isNil'
-import isUndefined from 'lodash/isUndefined'
 import * as Yup from 'yup'
+
 import classNames from 'classnames'
 
 import InfoIconFilled from 'assets/staff_augmentation/info_icon_filled.svg'
 import AvatarTeamwork from 'assets/staff_augmentation/avatar_teamwork.svg'
-
-import uploadFile from 'service_providers/firebase/uploadFile'
 
 import WrappedImage from 'main_app/components/WrappedImage'
 import Form from 'main_app/components/Form'
 import SubmitButton from 'main_app/components/SubmitButton'
 import Textarea from 'main_app/components/Textarea'
 
+import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
+
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
-
-import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
 
 import * as classes from './styles.module.scss'
 
@@ -43,24 +42,8 @@ export default function ScheduleFormBasic ({
   const InputWithError = useFieldWithErrorClassName('input', classes.fieldWithError)
   const TextAreaWithError = useFieldWithErrorClassName(Textarea, classes.fieldWithError)
 
-  const [fileUploadProgress, setFileUploadProgress] = useState()
-  const [fileUploadError, setFileUploadError] = useState()
-
   const handleFormSubmit = useCallback(async (values) => {
-    setFileUploadError(undefined)
-
     try {
-      let filePath
-      if (!isNil(values.filesAttached)) {
-        try {
-          filePath = await uploadFile(values.filesAttached, setFileUploadProgress)
-          setFileUploadProgress(undefined)
-        } catch (error) {
-          setFileUploadError(error)
-          throw error
-        }
-      }
-
       await window.fetch(INITIAL_LANDING_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: {
@@ -70,7 +53,6 @@ export default function ScheduleFormBasic ({
         body: JSON.stringify({
           email: values.email,
           message: values.details,
-          filePath: filePath ?? '',
           formOrigin
         })
       })
@@ -96,36 +78,25 @@ export default function ScheduleFormBasic ({
     >
       <WrappedImage src={AvatarTeamwork} className={classes.avatarTeamWork} alt='team_work_illustration' height='100' width='100' />
       <h2 className={classes.scheduleTitle}>We’d love hear from you!</h2>
-      {
-        (isUndefined(fileUploadProgress) &&
-        isUndefined(fileUploadError)) &&
-        (
-          <label className={classes.labels}>
-            <span>Your work email</span>
-            <Field
-              as={InputWithError}
-              type='email'
-              name='email'
-              className={classes.scheduleFormBasicInput}
-            />
-          </label>
-        )
-      }
-      {
-        (isUndefined(fileUploadProgress) &&
-        isUndefined(fileUploadError)) &&
-        (
-          <label className={classes.scheduleFormBasicTextAreaLabel}>
-            <span>What can we do for you?</span>
-            <Field
-              as={TextAreaWithError}
-              type='text'
-              name='details'
-              className={classNames(classes.scheduleFormBasicInput, classes.scheduleFormBasicTextArea)}
-            />
-          </label>
-        )
-      }
+
+      <label className={classes.labels}>
+        <span>Your work email</span>
+        <Field
+          as={InputWithError}
+          type='email'
+          name='email'
+          className={classes.scheduleFormBasicInput}
+        />
+      </label>
+      <label className={classes.scheduleFormBasicTextAreaLabel}>
+        <span>What can we do for you?</span>
+        <Field
+          as={TextAreaWithError}
+          type='text'
+          name='details'
+          className={classNames(classes.scheduleFormBasicInput, classes.scheduleFormBasicTextArea)}
+        />
+      </label>
       <div className={classes.submitWrapper}>
         <SubmitButton
           variant='primary'
