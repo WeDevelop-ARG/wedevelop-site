@@ -8,6 +8,7 @@ import Textarea from 'main_app/components/Textarea'
 import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import * as classes from './styles.module.scss'
+import classNames from 'classnames'
 
 const initialValues = {
   email: '',
@@ -26,30 +27,31 @@ export default function ScheduleFormBasic ({ onSubmit, ...props }) {
 
   return (
     <Form
+      className={classes.scheduleFormBasic}
       onSubmit={onSubmit}
       validationSchema={schema}
       initialValues={initialValues}
       {...props}
     >
       <label className={classes.labels}>
-        Your work email
+        <span>Your work email</span>
         <Field
           as={InputWithError}
           type='email'
           name='email'
-          className={classes.inputStyles}
+          className={classes.scheduleFormBasicInput}
         />
       </label>
-      <label className={classes.labels}>
-        What can we do for you?
+      <label className={classes.scheduleFormBasicTextAreaLabel}>
+        <span>What can we do for you?</span>
         <Field
           as={TextAreaWithError}
           type='text'
           name='description'
-          className={classes.inputStyles}
+          className={classNames(classes.scheduleFormBasicInput, classes.scheduleFormBasicTextArea)}
         />
       </label>
-      <div className={classes.buttonContainer}>
+      <div>
         <SubmitButton
           variant='primary'
           className={classes.buttonStyles}
