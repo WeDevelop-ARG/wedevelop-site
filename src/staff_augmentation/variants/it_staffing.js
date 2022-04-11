@@ -8,16 +8,16 @@ const itStaffing = {
   ...defaultContent,
   pathName: 'it-staffing',
   metadata: {
-    title: 'The Top IT Staffing Company',
-    description: 'Talent that delivers like your dream team would, without the hassles of hiring.'
+    title: 'IT Staff Augmentation',
+    description: 'Hire the best Software Developers from Latin America.'
   },
   header: {
     landingName: <>IT Staffing</>,
-    title: <>Boost Your Team With <b>Top-Notch Experts</b> From WeDevelop</>,
+    title: <>IT Staff Augmentation</>,
     description: (
       <>
-        <p>Talent that delivers like your dream team would.</p>
-        <p>Fast, without the hassles.</p>
+        <p>Hire the best Developers from Latin America.</p>
+        <p>Outstanding quality at a great price.</p>
       </>
     ),
     quote: (
@@ -37,7 +37,7 @@ const itStaffing = {
     secondBackground: WeDevMeeting
   },
   reviewsHeading: {
-    title: 'Here\'s what our customers say about our IT Staffing services',
+    title: 'Don\' take our word for it',
     description: '',
     buttonText: 'Get in touch'
   },
