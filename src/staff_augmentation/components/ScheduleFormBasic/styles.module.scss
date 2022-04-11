@@ -112,6 +112,7 @@ $required: #F00;
   font-size: 18px;
   animation: fade-in 250ms ease;
   text-align: center;
+  margin-left: 50px;
 
   & > :global(.popover-header) {
     font-weight: 800;
@@ -127,7 +128,7 @@ $required: #F00;
   &::after {
     content: '';
     position: absolute;
-    left: -15px;
+    left: -10px;
     top: 30%;
     // transform: translate(100%, 50%);
     width: 0;
