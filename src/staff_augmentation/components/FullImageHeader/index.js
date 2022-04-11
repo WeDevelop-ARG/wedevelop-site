@@ -1,33 +1,27 @@
-import { useState } from 'react'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Popover from 'react-bootstrap/Popover'
 
 import AbelBookBackground from 'assets/staff_augmentation/abel_book_background.png'
 import DotsPattern from 'assets/staff_augmentation/white_dots_pattern.svg'
-import InfoIcon from 'assets/staff_augmentation/info_icon.svg'
-import ArrowDown from 'assets/staff_augmentation/arrow_downward.svg'
 import Circles from 'assets/staff_augmentation/full_image_header_circles.component.svg'
 import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
 
-import Button from 'main_app/components/Button'
-import ClutchRectangle from 'main_app/components/ClutchRectangle'
 import Image from 'main_app/components/Image'
-import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
+import ScheduleFormBasic from '../ScheduleFormBasic'
 
 export default function FullImageHeader ({
-  freeQuoteForm,
-  landingName,
-  backgroundColor,
+  // freeQuoteForm,
+  // landingName,
+  // fixedForm,
+  // backgroundColor,
   title,
-  description,
-  onScheduleMeetingCTAClick,
-  onContactCTAClick,
-  quote = ''
+  description
+  // onScheduleMeetingCTAClick,
+  // onContactCTAClick,
+  // quote = ''
 }) {
-  const [isClutchLoaded, setIsClutchLoaded] = useState(false)
+  // const [isClutchLoaded, setIsClutchLoaded] = useState(false)
   return (
     <>
       <section id='headerSection' className={classes.headerContainer}>
@@ -52,29 +46,26 @@ export default function FullImageHeader ({
             <h1 className={classes.title}>{title}</h1>
             <div className={classes.hideOnTabletDown}>
               <h2 className={classes.subTitle}>{description}</h2>
-              <ClutchRectangle
+              <ScheduleFormBasic />
+              {/* <ClutchRectangle
                 className={classes.desktopClutch}
                 isClutchLoaded={isClutchLoaded}
                 setIsClutchLoaded={setIsClutchLoaded}
-              />
+              /> */}
             </div>
           </div>
-          <div className={classes.rightSideContainer}>
+          {/* <div className={classes.rightSideContainer}>
             <div className={classes.ctaContainer}>
               <div className={classes.ctaButtonContainer}>
-                <Button className={classes.scheduleButton} onClick={onContactCTAClick} variant={['primary', 'focus-gradient']}>
-                  {/* NOTE:(hardcoded) Change location of this hardcoded text */}
+                <Button className={classes} onClick={onContactCTAClick} variant={['primary', 'focus-gradient']}>
                   Get in touch
                 </Button>
               </div>
               <p className={classes.alternativeSchedule}>
-                {/* NOTE:(hardcoded) Change location of this hardcoded text */}
                 Or, use{' '}
                 <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onScheduleMeetingCTAClick}>
-                  {/* NOTE:(hardcoded) Change location of this hardcoded text */}
                   this link
                 </Button>
-                {/* NOTE:(hardcoded) Change location of this hardcoded text */}
                 {' '}to schedule a call with us.
               </p>
               <div className={classes.whatHappensNextContainer}>
@@ -110,7 +101,7 @@ export default function FullImageHeader ({
                 <Image src={ArrowDown} layout='fixed' alt='' />
               </InternalLink>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
