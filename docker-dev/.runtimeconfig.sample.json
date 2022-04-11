@@ -1,6 +1,7 @@
 {
   "calendly": {
-    "access_token": ""
+    "access_token": "",
+    "base_url": ""
   },
   "mailchimp": {
     "api_key": "",
@@ -12,10 +13,10 @@
     "api_key": ""
   },
   "contact_form": {
-    "destination_email": ""
+    "destination_email": "local-part@domain"
   },
   "career_form": {
-    "destination_emails": []
+    "destination_emails": ["local-part-dest@domain"]
   },
   "recaptcha": {
     "secret_key": ""
