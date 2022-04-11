@@ -6,6 +6,7 @@ import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
 
 import Image from 'main_app/components/Image'
 import WrappedImage from 'main_app/components/WrappedImage'
+import Button from 'main_app/components/Button'
 
 import classes from './styles.module.scss'
 import ScheduleFormBasic from '../ScheduleFormBasic'
@@ -16,8 +17,8 @@ export default function FullImageHeader ({
   // fixedForm,
   // backgroundColor,
   title,
-  description
-  // onScheduleMeetingCTAClick,
+  description,
+  onScheduleMeetingCTAClick
   // onContactCTAClick,
   // quote = ''
 }) {
@@ -46,7 +47,16 @@ export default function FullImageHeader ({
             <h1 className={classes.title}>{title}</h1>
             <div className={classes.hideOnTabletDown}>
               <h2 className={classes.subTitle}>{description}</h2>
-              <ScheduleFormBasic />
+              <div className={classes.formWrapper}>
+                <ScheduleFormBasic />
+                <p className={classes.alternativeSchedule}>
+                  Or, use{' '}
+                  <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onScheduleMeetingCTAClick}>
+                    this link
+                  </Button>
+                  {' '}to schedule a call with us.
+                </p>
+              </div>
               {/* <ClutchRectangle
                 className={classes.desktopClutch}
                 isClutchLoaded={isClutchLoaded}
@@ -54,8 +64,11 @@ export default function FullImageHeader ({
               /> */}
             </div>
           </div>
-          {/* <div className={classes.rightSideContainer}>
-            <div className={classes.ctaContainer}>
+          <div className={classes.rightSideContainer}>
+            <WrappedImage src={DotsPattern} alt='' loading='eager' layout='intrinsic' className={classes.dotsPatternRight} />
+            <p className={classes.imageSubject}>Abel Osorio<br /> Chief Executive Officer</p>
+
+            {/* <div className={classes.ctaContainer}>
               <div className={classes.ctaButtonContainer}>
                 <Button className={classes} onClick={onContactCTAClick} variant={['primary', 'focus-gradient']}>
                   Get in touch
@@ -100,8 +113,8 @@ export default function FullImageHeader ({
               <InternalLink href='#latam-talent-section' className={classes.arrowDown}>
                 <Image src={ArrowDown} layout='fixed' alt='' />
               </InternalLink>
-            </div>
-          </div> */}
+            </div> */}
+          </div>
         </div>
       </section>
     </>
