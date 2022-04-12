@@ -65,8 +65,12 @@ $required: #F00;
 
 .scheduleFormBasicButton {
   height: 56px;
-  width: 220px;
+  width: 100%;
   font-size: 20px;
+  @include for-desktop-up {
+    display: flex;
+    width: 220px;
+  }
 }
 
 .avatarTeamWork {
