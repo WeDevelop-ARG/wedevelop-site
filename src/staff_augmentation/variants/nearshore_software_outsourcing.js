@@ -8,16 +8,16 @@ const nearshoreSoftwareOutsourcing = {
   ...defaultContent,
   pathName: 'nearshore-software-outsourcing',
   metadata: {
-    title: 'Tech Talent That Delivers Like Your Dream Team Would',
-    description: 'Our experienced engineering teams deliver dream-team outcomes, without the hassles of hiring.'
+    title: 'Nearshore Outsourcing',
+    description: 'Outsource to Latin America - the top offshore choice.'
   },
   header: {
     landingName: <>Nearshore Software Outsourcing</>,
-    title: <>Available <b>Nearshore Talent</b> for you</>,
+    title: <><b>Nearshore</b> Software Outsourcing</>,
     description: (
       <>
-        <p>Get access to the top Software Engineers in LATAM.</p>
-        <p>Fast and with no hassles.</p>
+        <p>Hire the best Developers from Latin America.</p>
+        <p>The top offshore choice for Software Development.</p>
       </>
     ),
     quote: (
@@ -48,7 +48,7 @@ const nearshoreSoftwareOutsourcing = {
   },
   hideHowDoesItWork: true,
   reviewsHeading: {
-    title: 'Here\'s what our customers say about our Nearshore services',
+    title: 'Outsourcing done well',
     description: '',
     buttonText: 'Get a Free Quote'
   },
