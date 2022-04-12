@@ -46,7 +46,7 @@ export default function FullImageHeader ({
           <div className={classes.leftSideContainer}>
             <WrappedImage src={WeDevelopLogo} alt='WeDevelop logo' layout='responsive' width='225' height='51' loading='eager' className={classes.imageLogo} />
             <h1 className={classes.title}>{title}</h1>
-            <div className={classes.hideOnTabletDown}>
+            <div>
               <h2 className={classes.subTitle}>{description}</h2>
               <div className={classes.formWrapper}>
                 <ScheduleFormBasic onSubmit={onSuccess} />

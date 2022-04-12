@@ -85,6 +85,7 @@ export default function ScheduleFormBasic ({
           as={InputWithError}
           type='email'
           name='email'
+          autoFocus
           className={classes.scheduleFormBasicInput}
         />
       </label>
