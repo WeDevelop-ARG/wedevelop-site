@@ -1,0 +1,146 @@
+@import "/src/styles/media_queries.scss";
+
+$required: #F00;
+
+.scheduleFormBasic {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 32px;
+  border-radius: 5px;
+  background-color: #fff;
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #363636;
+  }
+  label {
+    span {
+      font-size: 14px;
+      color: #363636;
+    }
+  }
+}
+
+.scheduleFormBasicInput {
+  margin-top: 5px;
+}
+
+.scheduleFormBasicTextAreaLabel {
+  margin-top: 29px;
+}
+
+.scheduleFormBasicTextArea {
+  resize: none;
+  margin-top: 29px;
+  min-height: 104px;
+}
+
+.scheduleFormBasicInput {
+  margin-top: 5px;
+  border: rgba($color: #363636, $alpha: 0.12) 1px solid;
+  border-radius: 4px;
+  padding: 15px;
+  width: 100%;
+  height: 37px;
+  font-size: inherit;
+  transition: all ease-in-out 150ms;
+  outline: none;
+
+  &:focus {
+    border-color: rgba($color: #000000, $alpha: 1.0);
+    border-width: 1px;
+  }
+
+  &::placeholder {
+    font-size: 16px;
+    color: rgba($color: #707070, $alpha: 1);
+  }
+}
+
+.fieldWithError {
+  border-color: $required;
+}
+
+.scheduleFormBasicButton {
+  height: 56px;
+  width: 220px;
+  font-size: 20px;
+}
+
+.avatarTeamWork {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: -34px;
+  top: -48px;
+}
+
+.submitWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.whatHappensNextContainer {
+  display: none;
+  justify-content: center;
+
+  @include for-desktop-up {
+    display: flex;
+  }
+
+  & > .whatHappensNext {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.popoverContainer {
+  background-color: #FDF2D6;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 25px;
+  max-width: 421px;
+  position: relative;
+  font-size: 18px;
+  animation: fade-in 250ms ease;
+  text-align: center;
+  margin-left: 50px;
+
+  & > :global(.popover-header) {
+    font-weight: 800;
+    color: #363636;
+    margin-bottom: 5px;
+  }
+
+  & > :global(.popover-body) {
+    font-weight: 200;
+    text-align: center;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 30%;
+    // transform: translate(100%, 50%);
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 20px solid #FDF2D6;
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph; /*IE*/
+    filter: fliph; /*IE*/
+  }
+}
