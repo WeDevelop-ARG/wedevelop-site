@@ -1,3 +1,4 @@
+import { isNil } from 'lodash'
 import { useCallback, useState } from 'react'
 
 import classes from './styles.module.scss'
@@ -13,6 +14,11 @@ function Textarea ({ onChange, maxLength, ...props }) {
     onChange?.(e, ...args)
   }, [onChange, maxLength])
 
+  function renderCounter () {
+    if (isNil(maxLength)) { return (<></>) }
+    return (<span>{length}/{maxLength}</span>)
+  }
+
   return (
     <>
       <textarea
@@ -24,7 +30,7 @@ function Textarea ({ onChange, maxLength, ...props }) {
         className={classes.charactersLeft}
         aria-label={`${length} characters out of ${maxLength}`}
       >
-        {length}/{maxLength}
+        {renderCounter()}
       </div>
     </>
   )

@@ -111,9 +111,17 @@
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  max-width: 166px;
+  padding: 16px;
+  .dotsPatternRight {
+    display: none;
+  }
   @include for-desktop-up {
-    width: 440px;
+    & {
+      .dotsPatternRight {
+        display: block;
+      }
+    }
+    max-width: 166px;
     flex-shrink: 0;
   }
 }
@@ -153,104 +161,43 @@
   }
 }
 
-.desktopClutch {
-  margin-left: 9px;
-}
-
-.separator {
-  margin: 15px auto 25px;
-  width: 100px;
-  height: 5px;
-  background-color: #FFC331;
-}
-
-.hideOnTabletDown {
-  @include for-tablet-down {
-    display: none;
-  }
-}
-
-.hideOnDesktopUp {
-  @include for-desktop-up {
-    display: none;
-  }
-}
-
-.ctaContainer {
-  @include for-desktop-up {
-    background-color: #1313134D;
-    border-radius: 8px;
-    padding: 30px;
-    padding-top: 35px;
-    position: absolute;
-    bottom: 7%;
-  }
-}
-
-.ctaButtonContainer {
-  border: 1px solid #E0E0E04D;
-  padding: 15px;
-  border-radius: 3px;
-  max-width: 373px;
-  margin: 0 auto;
-}
-
-.scheduleButton {
-  font-family: Inter, sans-serif;
-  box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  font-size: 15px;
-
-  @include for-tablet-up {
-    font-size: 20px;
-  }
-}
-
 .alternativeSchedule {
   font-size: 18px;
   margin: 0;
   margin-top: 15px;
   color: #fff;
-  display: none;
-
-  @include for-desktop-up {
-    display: block;
-  }
+  max-width: 360px;
+  white-space: nowrap;
 }
 
 .scheduleFormButton {
   font-size: 18px;
   color: #fff;
+  width: 100%;
   font-weight: bold;
   text-decoration: underline;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
+  @include for-desktop-up {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
-
-.arrowDown {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 35px auto 50px;
-}
-
 
 .formWrapper {
-  max-width: 598px;
   margin-bottom: 40px;
+  max-width: 598px;
+  // text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  @include for-desktop-up {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .imageSubject {
   text-align: right;
   font-size: 11px;
   margin-top: 29px;
+  color: #fff;
   margin-bottom: 50px;
 }
