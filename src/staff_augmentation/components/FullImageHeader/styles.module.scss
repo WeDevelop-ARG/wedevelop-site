@@ -14,14 +14,14 @@
 
 .backgroundContainer {
   position: absolute;
-  top: 220px;
+  top: 0;
   bottom: 0;
   left: 0;
-  right: -80px;
+  right: -400px;
   z-index: -1;
 
   @include for-tablet-up {
-    right: 0px;
+    right: -300px;
   }
 
   @include for-desktop-up {
@@ -42,26 +42,29 @@
   }
 }
 
+.brandImage {
+  max-width: 336.61px;
+}
+
 .circles {
   position: absolute;
   top: 5px;
   left: -15px;
   z-index: -1;
-  display: none;
-
-  @include for-desktop-up {
-    display: block;
-  }
 }
 
 .dotsPattern {
   position: absolute;
   z-index: -1;
-  top: 265px;
+  top: 320px;
   left: -60px;
 
   @media screen and (max-width: 490px) {
     display: none;
+  }
+
+  @include for-tablet-up {
+     top: 450px;
   }
 
   @include for-desktop-up {
@@ -76,11 +79,17 @@
 .imageLogo {
   display: block;
   margin: 0 auto;
+  transform: translateX(-10px);
+  
+  @include for-tablet-up {
+    height: auto !important;
+    width: 47% !important;
+    margin: 0;
+    margin-top: 70px;
+  }
 
   @include for-desktop-up {
     margin: 0;
-    width: 65% !important;
-    height: auto !important;
   }
 }
 
@@ -88,22 +97,28 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
   @include for-desktop-up {
     flex-direction: row;
-    min-height: 65vh;
+    min-height: calc(100vh - 130px);
   }
 }
 
 .leftSideContainer {
-  background: linear-gradient(180deg, #377DFE 0%, #2C4397 100%);
   padding: 40px 30px 20px;
 
+  @include for-tablet-down {
+    .formWrapper {
+      display: none;
+    }
+  }
+
+  @include for-tablet-up {
+    padding: 40px 45px 0;
+  }
   @include for-desktop-up {
     flex-grow: 1;
     padding: 0;
     background: transparent;
-    margin-right: 8%;
   }
 }
 
@@ -111,9 +126,14 @@
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 16px 32px;
+
   .dotsPatternRight {
     display: none;
+  }
+
+  @include for-tablet-up {
+    padding-top: 0; 
   }
   @include for-desktop-up {
     & {
@@ -121,8 +141,10 @@
         display: block;
       }
     }
-    max-width: 166px;
     flex-shrink: 0;
+    .formWrapper {
+      display: none;
+    }
   }
 }
 
@@ -130,16 +152,18 @@
   font-size: 20px;
   font-weight: normal;
   color: #fff;
-  text-align: center;
+  text-align: left;
   word-break: break-word;
   margin-top: 50px;
-
   @media screen and (min-width: 376px) {
-    font-size: 30px;
+    font-size: 36px;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 22px;
   }
 
   @include for-desktop-up {
-    text-align: left;
     font-size: 60px;
     line-height: 62px;
   }
@@ -147,16 +171,29 @@
 
 .subTitle {
   margin: 50px auto;
-
+  @media screen and (max-width: 400px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  @include for-tablet-up {
+    margin-bottom: 0;
+  }
   > * {
     font-size: 17px;
-    text-align: center;
+    @media screen and (max-width: 400px) {
+      font-size: 15px;
+      max-width: 238px!important;
+    }
+    text-align: left;
     color: rgba(255, 255, 255, 0.7);
     font-weight: normal;
 
+    @include for-phone-only {
+      max-width: 300px;
+    }
+
     @include for-desktop-up {
       font-size: 24px;
-      text-align: left;
     }
   }
 }
@@ -166,16 +203,21 @@
   margin: 0;
   margin-top: 15px;
   color: #fff;
-  max-width: 360px;
-  white-space: nowrap;
+  @include for-phone-only {
+    font-size: 16px;
+  }
 }
 
 .scheduleFormButton {
   font-size: 18px;
   color: #fff;
-  width: 100%;
+  width: auto;
   font-weight: bold;
   text-decoration: underline;
+
+  @include for-phone-only {
+    font-size: 16px;
+  }
   @include for-desktop-up {
     margin-left: 0;
     margin-right: 0;
@@ -183,11 +225,14 @@
 }
 
 .formWrapper {
+  margin-top: 60px;
   margin-bottom: 40px;
   max-width: 598px;
-  // text-align: center;
   margin-left: auto;
   margin-right: auto;
+  @media screen and (max-width: 429px) {
+    margin: 0;
+  }
   @include for-desktop-up {
     margin-left: 0;
     margin-right: 0;
@@ -195,9 +240,16 @@
 }
 
 .imageSubject {
+  color: #fff;
   text-align: right;
   font-size: 11px;
   margin-top: 29px;
-  color: #fff;
-  margin-bottom: 50px;
+  @media screen and (max-width: 400px) {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  @include for-tablet-up {
+    font-size: 15px;
+    margin-top: 0px;
+  }
 }
