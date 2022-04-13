@@ -10,10 +10,16 @@ $required: #F00;
   padding: 32px;
   border-radius: 5px;
   background-color: #fff;
+  @include for-tablet-down {
+    padding-top: 52px;
+  }
   h2 {
     font-size: 24px;
     font-weight: 500;
     color: #363636;
+    @media screen and (max-width: 400px) {
+      font-size: 18px;
+    }
   }
   label {
     span {
@@ -67,6 +73,9 @@ $required: #F00;
   height: 56px;
   width: 100%;
   font-size: 20px;
+  @media screen and (max-width: 400px) {
+    font-size: 15px;
+  }
   @include for-desktop-up {
     display: flex;
     width: 220px;
@@ -76,9 +85,14 @@ $required: #F00;
 .avatarTeamWork {
   width: 100px;
   height: 100px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
   position: absolute;
-  right: -34px;
-  top: -48px;
+  @include for-desktop-up {
+    left: 100%;
+     transform: translate(-60%, -40%);
+  }
 }
 
 .submitWrapper {
