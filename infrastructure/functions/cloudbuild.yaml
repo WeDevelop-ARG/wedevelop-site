@@ -42,7 +42,7 @@ steps:
   - name: gcr.io/$PROJECT_ID/firebase
     dir: "functions"
     waitFor: ["setup-firebase-json", "setup-environment", "install"]
-    args: ["--debug", "deploy", "--project=$PROJECT_ID", "--only=functions"]
+    args: ["deploy", "--project=$PROJECT_ID", "--only=functions"]
 
 logsBucket: "$_LOGS_BUCKET"
 timeout: 600s
