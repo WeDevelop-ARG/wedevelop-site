@@ -24,6 +24,19 @@ export default function FullImageHeader ({
     push(redirectUrl)
   }, [push])
 
+  const formSchedule = (
+    <div className={classes.formWrapper}>
+      <ScheduleFormBasic onSubmit={onSuccess} />
+      <p className={classes.alternativeSchedule}>
+        Or, use{' '}
+        <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onScheduleMeetingCTAClick}>
+          this link
+        </Button>
+        {' '}to schedule a call with us.
+      </p>
+    </div>
+  )
+
   return (
     <>
       <section id='headerSection' className={classes.headerContainer}>
@@ -31,6 +44,7 @@ export default function FullImageHeader ({
           <Image
             src={AbelBookBackground}
             alt=''
+            className={classes.brandImage}
             layout='fill'
             loading='eager'
             priority
@@ -48,21 +62,13 @@ export default function FullImageHeader ({
             <h1 className={classes.title}>{title}</h1>
             <div>
               <h2 className={classes.subTitle}>{description}</h2>
-              <div className={classes.formWrapper}>
-                <ScheduleFormBasic onSubmit={onSuccess} />
-                <p className={classes.alternativeSchedule}>
-                  Or, use{' '}
-                  <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onScheduleMeetingCTAClick}>
-                    this link
-                  </Button>
-                  {' '}to schedule a call with us.
-                </p>
-              </div>
+              {formSchedule}
             </div>
           </div>
           <div className={classes.rightSideContainer}>
             <WrappedImage src={DotsPattern} alt='' loading='eager' layout='intrinsic' className={classes.dotsPatternRight} />
             <p className={classes.imageSubject}>Abel Osorio<br /> Chief Executive Officer</p>
+            {formSchedule}
           </div>
         </div>
       </section>

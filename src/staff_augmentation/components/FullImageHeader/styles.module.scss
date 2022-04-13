@@ -42,6 +42,10 @@
   }
 }
 
+.brandImage {
+  max-width: 336.61px;
+}
+
 .circles {
   position: absolute;
   top: 5px;
@@ -88,22 +92,25 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
   @include for-desktop-up {
     flex-direction: row;
-    min-height: 65vh;
+    min-height: calc(100vh - 130px);
   }
 }
 
 .leftSideContainer {
   background: linear-gradient(180deg, #377DFE 0%, #2C4397 100%);
   padding: 40px 30px 20px;
-
+  @include for-tablet-down {
+    .formWrapper {
+      display: none;
+    }
+  }
   @include for-desktop-up {
     flex-grow: 1;
     padding: 0;
     background: transparent;
-    margin-right: 8%;
+    margin-right: 40%;
   }
 }
 
@@ -123,6 +130,9 @@
     }
     max-width: 166px;
     flex-shrink: 0;
+    .formWrapper {
+      display: none;
+    }
   }
 }
 
@@ -166,14 +176,13 @@
   margin: 0;
   margin-top: 15px;
   color: #fff;
-  max-width: 360px;
   white-space: nowrap;
 }
 
 .scheduleFormButton {
   font-size: 18px;
   color: #fff;
-  width: 100%;
+  width: auto;
   font-weight: bold;
   text-decoration: underline;
   @include for-desktop-up {
@@ -199,5 +208,17 @@
   font-size: 11px;
   margin-top: 29px;
   color: #fff;
-  margin-bottom: 50px;
+  // @include for-tablet-up {
+  //   margin-bottom: 30px;
+  // }
+
+  // @include for-desktop-up {
+  //   margin-left: 0;
+  //   margin-right: 0;
+
+  // }
+
+  // @media screen and (min-width: 1530px) { 
+  //   margin-bottom: 12vh;
+  // }
 }
