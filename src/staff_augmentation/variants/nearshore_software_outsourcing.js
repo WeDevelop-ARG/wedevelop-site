@@ -46,7 +46,6 @@ const nearshoreSoftwareOutsourcing = {
     firstBackground: WeDevLaptops,
     secondBackground: WeDevMeeting
   },
-  hideHowDoesItWork: true,
   reviewsHeading: {
     title: 'Outsourcing done well',
     description: '',
