@@ -414,7 +414,7 @@ const defaultContent = {
         question: 'What timezone are you in?',
         answer: (
           <p>
-            Between GMT-6 to GMT-3.
+            Between GMT-6 to GMT-3. Up to 3 hours from most US cities.
           </p>
         )
       },
