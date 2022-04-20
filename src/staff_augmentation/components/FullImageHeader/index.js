@@ -1,17 +1,19 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 
-import AbelBookBackground from 'assets/staff_augmentation/abel_book_background.png'
+import Background from 'assets/staff_augmentation/header_laptop_background.png'
 import DotsPattern from 'assets/staff_augmentation/white_dots_pattern.svg'
-import Circles from 'assets/staff_augmentation/full_image_header_circles.component.svg'
 import WeDevelopLogo from 'assets/logo/full_logo_white.svg'
 
 import Image from 'main_app/components/Image'
 import WrappedImage from 'main_app/components/WrappedImage'
 import Button from 'main_app/components/Button'
 
-import classes from './styles.module.scss'
 import ScheduleFormBasic from '../ScheduleFormBasic'
+import useMediaQuery from 'utils/use_media_query'
+import { forPhoneOnly } from 'styles/media_queries'
+
+import classes from './styles.module.scss'
 
 export default function FullImageHeader ({
   title,
@@ -19,56 +21,64 @@ export default function FullImageHeader ({
   onScheduleMeetingCTAClick
 }) {
   const { push } = useRouter()
+  const isPhone = useMediaQuery(forPhoneOnly)
   const onSuccess = useCallback(() => {
     const redirectUrl = '/success/confirm'
     push(redirectUrl)
   }, [push])
-
-  const formSchedule = (
-    <div className={classes.formWrapper}>
-      <ScheduleFormBasic onSubmit={onSuccess} />
-      <p className={classes.alternativeSchedule}>
-        Or, use{' '}
-        <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onScheduleMeetingCTAClick}>
-          this link
-        </Button>
-        {' '}to schedule a call with us.
-      </p>
-    </div>
-  )
 
   return (
     <>
       <section id='headerSection' className={classes.headerContainer}>
         <div className={classes.backgroundContainer}>
           <Image
-            src={AbelBookBackground}
+            src={Background}
             alt=''
-            className={classes.brandImage}
             layout='fill'
             loading='eager'
             priority
             decoding='sync'
             placeholder='blur'
             objectFit='cover'
-            objectPosition='top right'
+            objectPosition='bottom center'
           />
         </div>
-        <Circles className={classes.circles} />
-        <WrappedImage src={DotsPattern} alt='' loading='eager' layout='intrinsic' className={classes.dotsPattern} />
+        <WrappedImage
+          src={DotsPattern}
+          alt=''
+          loading='eager'
+          layout='intrinsic'
+          className={classes.dotsPattern}
+        />
+        <WrappedImage
+          src={WeDevelopLogo}
+          alt='WeDevelop logo'
+          layout={isPhone ? 'fixed' : 'responsive'}
+          width='225'
+          height='51'
+          loading='eager'
+          className={classes.imageLogo}
+        />
         <div className={classes.columnsContainer}>
           <div className={classes.leftSideContainer}>
-            <WrappedImage src={WeDevelopLogo} alt='WeDevelop logo' layout='responsive' width='225' height='51' loading='eager' className={classes.imageLogo} />
             <h1 className={classes.title}>{title}</h1>
-            <div>
-              <h2 className={classes.subTitle}>{description}</h2>
-              {formSchedule}
-            </div>
+            <h2 className={classes.subTitle}>{description}</h2>
+            <hr className={classes.separator} />
           </div>
           <div className={classes.rightSideContainer}>
-            <WrappedImage src={DotsPattern} alt='' loading='eager' layout='intrinsic' className={classes.dotsPatternRight} />
-            <p className={classes.imageSubject}>Abel Osorio<br /> Chief Executive Officer</p>
-            {formSchedule}
+            <div className={classes.formWrapper}>
+              <ScheduleFormBasic onSubmit={onSuccess} />
+              <p className={classes.alternativeSchedule}>
+                Or,{' '}
+                <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onScheduleMeetingCTAClick}>
+                  schedule a call
+                </Button>
+                {' '}to tell us about your needs.
+              </p>
+              <p className={classes.imageSubject}>
+                <b>Abel Osorio /</b> Chief Executive Officer
+              </p>
+            </div>
           </div>
         </div>
       </section>

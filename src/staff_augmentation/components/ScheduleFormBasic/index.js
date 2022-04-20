@@ -9,7 +9,7 @@ import * as Yup from 'yup'
 import classNames from 'classnames'
 
 import InfoIconFilled from 'assets/staff_augmentation/info_icon_filled.svg'
-import AvatarTeamwork from 'assets/staff_augmentation/avatar_teamwork.svg'
+import Abel from 'assets/staff_augmentation/abel_circle.png'
 
 import WrappedImage from 'main_app/components/WrappedImage'
 import Form from 'main_app/components/Form'
@@ -76,8 +76,8 @@ export default function ScheduleFormBasic ({
       validationSchema={schema}
       initialValues={initialValues}
     >
-      <WrappedImage src={AvatarTeamwork} className={classes.avatarTeamWork} alt='team_work_illustration' height='100' width='100' />
-      <h2 className={classes.scheduleTitle}>We’d love hear from you!</h2>
+      <WrappedImage src={Abel} className={classes.avatarTeamWork} alt='' height='100' width='100' />
+      <h2 className={classes.scheduleTitle}>We’d love to hear from you!</h2>
 
       <label className={classes.labels}>
         <span>Your work email</span>
@@ -108,7 +108,7 @@ export default function ScheduleFormBasic ({
         <div className={classes.whatHappensNextContainer}>
           <OverlayTrigger
             trigger={['hover', 'focus']}
-            placement='right'
+            placement='left'
             overlay={
               <Popover id='what-happens-next-popover' style={{ zIndex: 10 }}>
                 <div className={classes.popoverContainer}>
@@ -120,7 +120,7 @@ export default function ScheduleFormBasic ({
                   </Popover.Content>
                 </div>
               </Popover>
-                  }
+            }
           >
             <div tabIndex='0' className={classes.whatHappensNext}>
               <WrappedImage className={classes.icon} src={InfoIconFilled} alt='' />

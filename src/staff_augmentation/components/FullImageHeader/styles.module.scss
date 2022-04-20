@@ -2,13 +2,15 @@
 @import "/src/styles/media_queries.scss";
 
 .headerContainer {
-  min-height: 100vh;
+  min-height: calc(100vh + 90px);
   position: relative;
-  overflow-x: hidden;
   margin-bottom: 10vw;
+  padding-bottom: 80px;
+  overflow-x: hidden;
 
-  @include for-tablet-down {
-    padding: 0 !important;
+  @media screen and (max-width: 1320px) {
+    padding: 30px !important;
+    padding-bottom: 80px !important;
   }
 }
 
@@ -28,29 +30,6 @@
     top: 0;
     right: 0;
   }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(172, 172, 172, 0.87);
-    mix-blend-mode: lighten;
-    opacity: 0.3;
-  }
-}
-
-.brandImage {
-  max-width: 336.61px;
-}
-
-.circles {
-  position: absolute;
-  top: 5px;
-  left: -15px;
-  z-index: -1;
 }
 
 .dotsPattern {
@@ -79,89 +58,68 @@
 .imageLogo {
   display: block;
   margin: 0 auto;
-  transform: translateX(-10px);
-  
+  width: 52px !important;
+  overflow: hidden;
+
   @include for-tablet-up {
     height: auto !important;
-    width: 47% !important;
-    margin: 0;
-    margin-top: 70px;
+    width: 30% !important;
   }
 
   @include for-desktop-up {
-    margin: 0;
+    transform: translateX(-10px);
+    margin: 0 0 40px;
   }
 }
 
 .columnsContainer {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+
   @include for-desktop-up {
     flex-direction: row;
-    min-height: calc(100vh - 130px);
+  }
+}
+
+.separator {
+  display: inline-block;
+  height: 10px;
+  width: 100px;
+  background-color: #FFC331;
+  border: 0;
+
+  @include for-desktop-up {
+    margin: 30px 0 0;
   }
 }
 
 .leftSideContainer {
-  padding: 40px 30px 20px;
+  text-align: center;
 
-  @include for-tablet-down {
-    .formWrapper {
-      display: none;
-    }
-  }
-
-  @include for-tablet-up {
-    padding: 40px 45px 0;
-  }
   @include for-desktop-up {
+    text-align: unset;
     flex-grow: 1;
+    margin-right: 20%;
     padding: 0;
     background: transparent;
   }
 }
 
 .rightSideContainer {
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 16px 32px;
-
-  .dotsPatternRight {
-    display: none;
-  }
-
-  @include for-tablet-up {
-    padding-top: 0; 
-  }
+  margin-top: 30px;
   @include for-desktop-up {
-    & {
-      .dotsPatternRight {
-        display: block;
-      }
-    }
-    flex-shrink: 0;
-    .formWrapper {
-      display: none;
-    }
+    margin: 0;
+    min-width: 450px;
+    max-width: 636px;
   }
 }
 
 .title {
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 42px;
   color: #fff;
-  text-align: left;
   word-break: break-word;
   margin-top: 50px;
-  @media screen and (min-width: 376px) {
-    font-size: 36px;
-  }
-
-  @media screen and (max-width: 400px) {
-    font-size: 22px;
-  }
+  font-weight: normal;
 
   @include for-desktop-up {
     font-size: 60px;
@@ -170,27 +128,11 @@
 }
 
 .subTitle {
-  margin: 50px auto;
-  @media screen and (max-width: 400px) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  @include for-tablet-up {
-    margin-bottom: 0;
-  }
+  margin-bottom: 0;
+
   > * {
     font-size: 17px;
-    @media screen and (max-width: 400px) {
-      font-size: 15px;
-      max-width: 238px!important;
-    }
-    text-align: left;
     color: rgba(255, 255, 255, 0.7);
-    font-weight: normal;
-
-    @include for-phone-only {
-      max-width: 300px;
-    }
 
     @include for-desktop-up {
       font-size: 24px;
@@ -203,6 +145,8 @@
   margin: 0;
   margin-top: 15px;
   color: #fff;
+  text-align: center;
+
   @include for-phone-only {
     font-size: 16px;
   }
@@ -228,28 +172,22 @@
   margin-top: 60px;
   margin-bottom: 40px;
   max-width: 598px;
-  margin-left: auto;
   margin-right: auto;
-  @media screen and (max-width: 429px) {
-    margin: 0;
-  }
+  margin-left: auto;
+  position: relative;
+
   @include for-desktop-up {
+    margin-right: 30px;
     margin-left: 0;
-    margin-right: 0;
   }
 }
 
 .imageSubject {
   color: #fff;
-  text-align: right;
   font-size: 11px;
-  margin-top: 29px;
-  @media screen and (max-width: 400px) {
-    margin-top: 0;
-    margin-bottom: 30px;
-  }
-  @include for-tablet-up {
-    font-size: 15px;
-    margin-top: 0px;
-  }
+  position: absolute;
+  top: 0;
+  right: -110px;
+  transform: rotate(270deg) translate(-85%, 0);
+  opacity: 0.7;
 }
