@@ -54,26 +54,13 @@ locals {
 }
 
 locals {
-  cloud_functions_config_values {
-    calendly {
-      base_url = "https://api.calendly.com/"
-    }
-    mailchimp {
-      server = "us8"
-      default_list_id = (is_production ? "daf422a384" : "dev")
-      career_list_id = (is_production ? "34abbed596" : "dev")
-    }
-    contact_form {
-      destination_email = (is_production ? "info@wedevelop.me" : "nahuel@wedevelop.me")
-    }
-
-    career_form {
-      destination_emails = (is_production ? ["jobs@wedevelop.me"] : ["nahuel@wedevelop.me"])
-    }
-    hub_spot {
-      landing_deal_pipeline_name = (is_production ? "default" : "")
-      landing_deal_pipeline_stage = (is_production ? "4357554" : "")
-      blog_newsletter_id = (is_production ? "30923530" : "")
-    }
-  }
+  cf_calendly_base_url = "https://api.calendly.com/"
+  cf_mailchimp_server = "us8"
+  cf_mailchimp_default_list_id = (local.is_production ? "daf422a384" : "dev")
+  cf_mailchimp_career_list_id = (local.is_production ? "34abbed596" : "dev")
+  cf_contact_form_destination_email = (local.is_production ? "info@wedevelop.me" : "nahuel@wedevelop.me")
+  cf_career_form_destination_emails = (local.is_production ? ["jobs@wedevelop.me"] : ["nahuel@wedevelop.me"])
+  cf_hub_spot_landing_deal_pipeline_name = (local.is_production ? "default" : "")
+  cf_hub_spot_landing_deal_pipeline_stage = (local.is_production ? "4357554" : "")
+  cf_hub_spot_blog_newsletter_id = (local.is_production ? "30923530" : "")
 }
