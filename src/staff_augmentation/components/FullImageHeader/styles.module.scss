@@ -114,10 +114,11 @@
   font-size: 42px;
   color: #fff;
   word-break: break-word;
-  margin-top: 50px;
+  margin-top: 20px;
   font-weight: normal;
 
   @include for-desktop-up {
+    margin-top: 50px;
     font-size: 60px;
     line-height: 62px;
   }
