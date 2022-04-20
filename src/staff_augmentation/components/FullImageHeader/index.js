@@ -44,13 +44,6 @@ export default function FullImageHeader ({
           />
         </div>
         <WrappedImage
-          src={DotsPattern}
-          alt=''
-          loading='eager'
-          layout='intrinsic'
-          className={classes.dotsPattern}
-        />
-        <WrappedImage
           src={WeDevelopLogo}
           alt='WeDevelop logo'
           layout={isPhone ? 'fixed' : 'responsive'}
@@ -64,6 +57,13 @@ export default function FullImageHeader ({
             <h1 className={classes.title}>{title}</h1>
             <h2 className={classes.subTitle}>{description}</h2>
             <hr className={classes.separator} />
+            <WrappedImage
+              src={DotsPattern}
+              alt=''
+              loading='eager'
+              layout='intrinsic'
+              className={classes.dotsPattern}
+            />
           </div>
           <div className={classes.rightSideContainer}>
             <div className={classes.formWrapper}>

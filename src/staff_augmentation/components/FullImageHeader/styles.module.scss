@@ -8,9 +8,14 @@
   padding-bottom: 80px;
   overflow-x: hidden;
 
-  @media screen and (max-width: 1320px) {
+  @include for-phone-only {
     padding: 30px !important;
-    padding-bottom: 80px !important;
+  }
+
+  @include for-tablet-up {
+    @media screen and (max-width: 1320px) {
+      padding: 30px 70px 80px !important;
+    }
   }
 }
 
@@ -33,27 +38,17 @@
 }
 
 .dotsPattern {
-  position: absolute;
+  position: relative;
+  display: block;
   z-index: -1;
-  top: 320px;
-  left: -60px;
+  transform: rotate(90deg);
+  bottom: -66px;
+  left: 50px;
+  width: 140px;
 
-  @media screen and (max-width: 490px) {
+  @include for-tablet-down {
     display: none;
-  }
-
-  @include for-tablet-up {
-     top: 450px;
-  }
-
-  @include for-desktop-up {
-    transform: rotate(90deg);
-    top: auto;
-    left: 35%;
-    bottom: -50px;
-    width: 140px;
-  }
-}
+  }}
 
 .imageLogo {
   display: block;
@@ -99,7 +94,7 @@
   @include for-desktop-up {
     text-align: unset;
     flex-grow: 1;
-    margin-right: 20%;
+    margin-right: 5%;
     padding: 0;
     background: transparent;
   }
@@ -107,10 +102,11 @@
 
 .rightSideContainer {
   margin-top: 30px;
+
   @include for-desktop-up {
     margin: 0;
-    min-width: 450px;
-    max-width: 636px;
+    width: 510px;
+    flex-shrink: 0;
   }
 }
 
