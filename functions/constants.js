@@ -13,4 +13,5 @@ exports.HUBSPOT_LANDING_DEAL_PIPELINE_NAME = config.hubspot.landing_deal_pipelin
 exports.HUBSPOT_LANDING_DEAL_PIPELINE_STAGE = config.hubspot.landing_deal_pipeline_stage
 
 exports.BLOG_NEWSLETTER_ID = config.hubspot.blog_newsletter_id
+exports.IS_LOCAL_ENVIRONMENT = process.env.FUNCTIONS_EMULATOR
 exports.GCP_SECRET_ID = `projects/${process.env.GCP_PROJECT}/secrets/${process.env.GCP_PROJECT}-cloud-functions`

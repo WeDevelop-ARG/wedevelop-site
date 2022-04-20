@@ -3,16 +3,20 @@ const md5 = require('md5')
 
 const { MAILCHIMP_SERVER } = require('../constants')
 const { getSecret } = require('./secrets_provider')
+let isMailChimpConfigured = false
 
 async function configureMailchimp () {
+  if (isMailChimpConfigured) { return }
   const MAILCHIMP_API_KEY = await getSecret('mailchimp.api_key')
   mailchimp.setConfig({
     apiKey: MAILCHIMP_API_KEY,
     server: MAILCHIMP_SERVER
   })
+  isMailChimpConfigured = true
 }
 
 async function addSubscriberToMailchimp ({ listId, subscriber }) {
+  await configureMailchimp()
   const subscriberHash = md5(subscriber.email.toLowerCase())
 
   return mailchimp.lists.setListMember(listId, subscriberHash, {
@@ -32,6 +36,7 @@ async function addTagsToMailchimpSubscriber ({ listId, subscriberId, tags }) {
     return undefined
   }
 
+  await configureMailchimp()
   await mailchimp.lists.updateListMemberTags(listId, subscriberId, {
     tags: tags.map((name) => ({ name, status: 'active' }))
   })

@@ -1,8 +1,8 @@
 const { SecretManagerServiceClient } = require('@google-cloud/secret-manager')
 const { config: getFunctionsConfig } = require('firebase-functions')
-const { get } = require('lodash')
+const { get, isEmpty } = require('lodash')
 
-const { GCP_SECRET_ID } = require('../constants')
+const { GCP_SECRET_ID, IS_LOCAL_ENVIRONMENT } = require('../constants')
 
 let secrets = {}
 
@@ -17,14 +17,13 @@ async function readFromSecretManager () {
   return secretsPayload
 }
 
-function readFromConfig () {
+function readFromFunctionsConfig () {
   return getFunctionsConfig()
 }
 
 async function retrieveSecretsJSON () {
-  if (!secrets) {
-    // allow provide secrets via .runtimeconfig.json (docker-compose)
-    secrets = process.env.FUNCTIONS_EMULATOR ? readFromConfig() : await readFromSecretManager()
+  if (isEmpty(secrets)) {
+    secrets = IS_LOCAL_ENVIRONMENT ? readFromFunctionsConfig() : await readFromSecretManager()
   }
 }
 
