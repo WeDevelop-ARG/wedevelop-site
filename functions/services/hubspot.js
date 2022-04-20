@@ -2,11 +2,19 @@ const hubspot = require('@hubspot/api-client')
 const dayjs = require('dayjs')
 const { compact } = require('lodash')
 
-const { HUBSPOT_API_KEY, HUBSPOT_LANDING_DEAL_PIPELINE_STAGE, HUBSPOT_LANDING_DEAL_PIPELINE_NAME } = require('../constants')
+const { HUBSPOT_LANDING_DEAL_PIPELINE_STAGE, HUBSPOT_LANDING_DEAL_PIPELINE_NAME } = require('../constants')
+const { getSecret } = require('./secrets_provider')
 
-const hubspotClient = new hubspot.Client({
-  apiKey: HUBSPOT_API_KEY
-})
+let hubspotClient = null
+
+async function setupHubSpotClient () {
+  const HUBSPOT_API_KEY = await getSecret('hubspot.api_key')
+  hubspotClient = new hubspot.Client({
+    apiKey: HUBSPOT_API_KEY
+  })
+}
+
+setupHubSpotClient()
 
 exports.getContact = async function getContact (contactId, idProperty) {
   const response = await hubspotClient.crm.contacts.basicApi.getById(
