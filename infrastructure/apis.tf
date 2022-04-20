@@ -5,7 +5,8 @@ resource "google_project_service" "service" {
     "iam.googleapis.com",
     "iamcredentials.googleapis.com",
     "firebase.googleapis.com",
-    "dns.googleapis.com"
+    "dns.googleapis.com",
+    "secretmanager.googleapis.com"
   ])
 
   project            = local.project_id

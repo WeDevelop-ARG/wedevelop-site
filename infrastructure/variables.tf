@@ -52,3 +52,28 @@ locals {
     testing: "develop",
   }, local.environment, "main")
 }
+
+locals {
+  cloud_functions_config_values {
+    calendly {
+      base_url = "https://api.calendly.com/"
+    }
+    mailchimp {
+      server = "us8"
+      default_list_id = (is_production ? "daf422a384" : "dev")
+      career_list_id = (is_production ? "34abbed596" : "dev")
+    }
+    contact_form {
+      destination_email = (is_production ? "info@wedevelop.me" : "nahuel@wedevelop.me")
+    }
+
+    career_form {
+      destination_emails = (is_production ? ["jobs@wedevelop.me"] : ["nahuel@wedevelop.me"])
+    }
+    hub_spot {
+      landing_deal_pipeline_name = (is_production ? "default" : "")
+      landing_deal_pipeline_stage = (is_production ? "4357554" : "")
+      blog_newsletter_id = (is_production ? "30923530" : "")
+    }
+  }
+}

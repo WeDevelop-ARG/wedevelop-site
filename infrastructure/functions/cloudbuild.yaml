@@ -19,25 +19,15 @@ steps:
       [
         "functions:config:set",
         "--project=$PROJECT_ID",
-        "calendly.access_token=",
-        "calendly.base_url=",
-
-        "mailchimp.api_key=",
-        "mailchimp.server=",
-        "mailchimp.default_list_id=",
-        "mailchimp.career_list_id=",
-
-        "sendgrid.api_key=",
-
-        "contact_form.destination_email=",
-        "career_form.destination_emails.0=",
-
-        "recaptcha.secret_key=",
-
-        "hubspot.api_key=",
-        "hubspot.landing_deal_pipeline_name=",
-        "hubspot.landing_deal_pipeline_stage=",
-        "hubspot.blog_newsletter_id=",
+        "calendly.base_url=$_CF_CALENDLY_BASE_URL",
+        "mailchimp.server=$_CF_MAILCHIMP_SERVER",
+        "mailchimp.default_list_id=$_CF_MAILCHIMP_DEFAULT_LIST_ID",
+        "mailchimp.career_list_id=$_CF_MAILCHIMP_CAREER_LIST_ID",
+        "contact_form.destination_email=$_CF_CONTACT_FORM_DESTINATION_EMAIL",
+        "career_form.destination_emails.0=$_CF_CAREER_FORM_DESTINATION_EMAILS",
+        "hubspot.landing_deal_pipeline_name=$_CF_HUB_SPOT_LANDING_DEAL_PIPELINE_NAME",
+        "hubspot.landing_deal_pipeline_stage=$_CF_HUB_SPOT_LANDING_DEAL_PIPELINE_STAGE",
+        "hubspot.blog_newsletter_id=$_CF_HUB_SPOT_BLOG_NEWSLETTER_ID",
       ]
   - name: gcr.io/$PROJECT_ID/firebase
     dir: "functions"
