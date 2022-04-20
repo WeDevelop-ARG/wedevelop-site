@@ -9,7 +9,6 @@ exports.MAILCHIMP_CAREER_LIST_ID = config.mailchimp.career_list_id
 exports.CONTACT_FORM_DESTINATION_EMAIL = config.contact_form.destination_email
 exports.CAREER_FORM_DESTINATION_EMAILS = config.career_form.destination_emails
 
-exports.HUBSPOT_API_KEY = config.hubspot.api_key // secret 5
 exports.HUBSPOT_LANDING_DEAL_PIPELINE_NAME = config.hubspot.landing_deal_pipeline_name
 exports.HUBSPOT_LANDING_DEAL_PIPELINE_STAGE = config.hubspot.landing_deal_pipeline_stage
 
