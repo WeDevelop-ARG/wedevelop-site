@@ -13,19 +13,32 @@ $required: #F00;
   @include for-tablet-down {
     padding-top: 52px;
   }
-  h2 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #363636;
-    @media screen and (max-width: 400px) {
-      font-size: 18px;
-    }
-  }
+
   label {
     span {
       font-size: 14px;
       color: #363636;
+      opacity: .65;
+      font-weight: 500;
     }
+  }
+}
+
+.scheduleTitle {
+  font-weight: 500;
+  color: #363636;
+  font-size: 20px;
+  text-align: center;
+  margin: 15px 0;
+
+  @include for-tablet-up {
+    max-width: 70%;
+    font-size: 42px;
+    text-align: left;
+  }
+
+  @include for-desktop-up {
+    margin-top: 0;
   }
 }
 
@@ -71,27 +84,36 @@ $required: #F00;
 
 .scheduleFormBasicButton {
   height: 56px;
-  width: 100%;
+  width: 80%;
   font-size: 20px;
-  @media screen and (max-width: 400px) {
-    font-size: 15px;
-  }
-  @include for-desktop-up {
-    display: flex;
-    width: 220px;
-  }
+  box-shadow: 3px 3px 4px rgba(40, 53, 123, 0.3);
+  border: 0;
 }
 
 .avatarTeamWork {
-  width: 100px;
-  height: 100px;
+  width: 115px;
+  height: 115px;
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+
   @include for-desktop-up {
     left: 100%;
-     transform: translate(-60%, -40%);
+    transform: translate(-60%, -40%);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url("../../../assets/staff_augmentation/avatar_circle_background.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 140px;
+    top: -28px;
+    left: -30px;
   }
 }
 
@@ -103,7 +125,6 @@ $required: #F00;
 }
 
 .whatHappensNextContainer {
-  display: none;
   justify-content: center;
 
   @include for-desktop-up {
@@ -126,12 +147,16 @@ $required: #F00;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 25px;
-  max-width: 400px;
+  max-width: calc(100vw - 100px);
   position: relative;
   font-size: 14px;
   animation: fade-in 250ms ease;
   text-align: center;
-  margin-left: 50px;
+  margin-right: 15px;
+
+  @include for-tablet-up {
+    max-width: 400px;
+  }
 
   & > :global(.popover-header) {
     font-weight: 800;
@@ -147,18 +172,13 @@ $required: #F00;
   &::after {
     content: '';
     position: absolute;
-    left: -10px;
-    top: 30%;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 0;
     height: 0;
     border-top: 35px solid transparent;
     border-bottom: 35px solid transparent;
     border-left: 20px solid #FDF2D6;
-    -moz-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
-    -ms-filter: fliph; /*IE*/
-    filter: fliph; /*IE*/
   }
 }

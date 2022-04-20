@@ -1,6 +1,7 @@
 @import "/src/styles/media_queries.scss";
 
 .portfolioProjectPreShowcase {
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   background-size: cover;

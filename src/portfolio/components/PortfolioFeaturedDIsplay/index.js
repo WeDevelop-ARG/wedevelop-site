@@ -10,9 +10,7 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
   const defaultProjectPreviewImgSizeInPx = 150
   const defaultCompanyLogoImgSizeInPx = 40
   return (
-    <div
-      className={classes.portfolioProjectPreShowcase}
-    >
+    <section className={classes.portfolioProjectPreShowcase}>
       <div className={classes.portfolioFeaturedWrapper}>
         <div className={classes.portfolioFeatured}>
           <h3>{title}</h3>
@@ -76,7 +74,7 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
       >
         {buttonText}
       </Button>
-    </div>
+    </section>
   )
 }
 
