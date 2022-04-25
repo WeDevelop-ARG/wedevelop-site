@@ -103,6 +103,7 @@ export default function ScheduleFormModal ({
       <ScheduleForm
         onSubmit={handleFormSubmit}
         className={classes.form}
+        id='get-in-touch-form'
       >
         <label className={classes.labels}>
           <span>*</span>{' '}Full Name
