@@ -75,6 +75,7 @@ export default function ScheduleFormBasic ({
       onSubmit={handleFormSubmit}
       validationSchema={schema}
       initialValues={initialValues}
+      id='get-in-touch-form'
     >
       <WrappedImage src={Abel} className={classes.avatarTeamWork} alt='' height='100' width='100' />
       <h2 className={classes.scheduleTitle}>We’d love to hear from you!</h2>
