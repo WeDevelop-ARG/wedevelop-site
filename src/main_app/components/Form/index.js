@@ -7,7 +7,8 @@ function Form ({
   initialValues,
   validationSchema,
   children,
-  className
+  className,
+  id
 }) {
   const handleSubmit = useCallback(async (values, actions) => {
     try {
@@ -25,7 +26,7 @@ function Form ({
       initialValues={initialValues}
       validationSchema={validationSchema}
     >
-      <FormikForm className={className}>
+      <FormikForm className={className} id={id}>
         {children}
       </FormikForm>
     </Formik>
