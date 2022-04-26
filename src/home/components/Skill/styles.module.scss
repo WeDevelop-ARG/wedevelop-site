@@ -3,31 +3,33 @@
 
 .skill {
   margin: 30px auto 67px auto;
-  filter: grayscale(1) contrast(0.5) brightness(1.1) opacity(.6);
-  transition: filter ease-in-out 200ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 7.5px 50px 7.5px;
+  text-align: center;
 
-  &:hover {
-    filter: grayscale(0) contrast(1) brightness(1) opacity(1);
+  span {
+    display: inline-block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(186, 186, 186, 1);
   }
-}
 
-.logoSkill {
-  height: 50px;
-}
-
-@include for-tablet-down {
   .logoSkill {
-    margin-bottom: 20px;
+    height: 50px;
+    margin-bottom: 10px;
   }
 
-  .skill {
-    margin: 0 32px 0px 32px;
-    flex: 0 0 auto;
-  }
-}
+  &.grayscaleEffect {
+    .logoSkill {
+      filter: grayscale(1) contrast(0.5) brightness(1.1) opacity(.6);
+      transition: filter ease-in-out 200ms;
+    }
 
-@include for-phone-only {
-  .logoSkill {
-    margin-bottom: 50px;
+    &:hover .logoSkill {
+      filter: grayscale(0) contrast(1) brightness(1) opacity(1);
+    }
   }
 }

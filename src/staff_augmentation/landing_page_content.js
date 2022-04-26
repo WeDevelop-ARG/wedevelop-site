@@ -8,13 +8,12 @@ import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import PictureWall from 'main_app/components/PictureWall'
 import ReviewCards from './components/ReviewCards'
 import SkillSet from './components/SkillSet'
-import LatamTalent from './components/LatamTalent'
-import WhyLatam from './components/WhyLatam'
 
 import ThreeReasonsBottomSeparator from 'assets/staff_augmentation/three_reasons_bottom_separator.png'
 import HowItWorksBottomSeparator from 'assets/staff_augmentation/how_it_works_bottom_separator.png'
 import PortfolioFeatureDisplay from 'portfolio/components/PortfolioFeaturedDIsplay'
 import FrequentlyAskedQuestions from './components/FAQs'
+import OurServices from './components/OurServices'
 
 export default function LandingPageContent ({
   landing,
@@ -24,20 +23,7 @@ export default function LandingPageContent ({
   return (
     <>
       <Article>
-        <LatamTalent
-          subtitle={landing.latamTalent?.subtitle}
-          title={landing.latamTalent?.title}
-          text={landing.latamTalent?.text}
-          onCTAClick={handleContactCTAClick}
-          ctaText={landing.latamTalent?.ctaText}
-        />
-        <WhyLatam
-          subtitle={landing.whyLatam?.subtitle}
-          title={landing.whyLatam?.title}
-          cards={landing.whyLatam?.cards}
-          onCTAClick={handleContactCTAClick}
-          ctaText={landing.whyLatam?.ctaText}
-        />
+        <OurServices />
         <HireTopTalent
           subheadingText={landing.HireTopTalent.subtitle}
           titleText={landing.HireTopTalent.title}

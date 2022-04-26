@@ -24,7 +24,7 @@ const skills = [{
 },
 {
   id: '4',
-  name: 'Amazon Web Services',
+  name: 'AWS',
   photo: Aws
 },
 {
