@@ -9,6 +9,7 @@
 
   @include for-phone-only {
     padding: 30px !important;
+    padding-bottom: 80px !important;
   }
 
   @include for-tablet-up {
@@ -145,6 +146,9 @@
 
   @include for-phone-only {
     font-size: 16px;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

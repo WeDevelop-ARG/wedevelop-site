@@ -358,10 +358,30 @@
 }
 
 .skills {
-  max-width: 410px;
+  max-width: 390px;
   margin: 0 auto;
 
   @include for-desktop-up {
     margin: -30px 0 0;
+  }
+
+  @media screen and (max-width: 405px) {
+    max-width: 325px;
+
+    .skill {
+      font-size: 10px;
+    }
+    .skillLogo {
+      height: 40px;
+    }
+  }
+
+  @media screen and (max-width: 357px) {
+    .skill {
+      font-size: 9px;
+    }
+    .skillLogo {
+      height: 35px;
+    }
   }
 }

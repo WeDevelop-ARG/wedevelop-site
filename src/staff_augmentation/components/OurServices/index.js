@@ -85,6 +85,8 @@ export default function OurServices () {
       </div>
       <Skills
         className={classes.skills}
+        logoClassName={classes.skillLogo}
+        skillClassName={classes.skill}
         showNames
         grayscaleEffect={false}
       />
