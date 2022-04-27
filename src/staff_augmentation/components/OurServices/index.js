@@ -49,7 +49,7 @@ export default function OurServices () {
         </ul>
       </div>
       <div className={classes.needHelpIfFull}>
-        <h3>You may need our helf if:</h3>
+        <h3>You may need our help if:</h3>
         <ul>
           <li>You need help to find offshore/nearshore talent.</li>
           <li>You can’t/won’t afford local talent.</li>
