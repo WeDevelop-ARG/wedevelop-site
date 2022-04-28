@@ -3,7 +3,6 @@ import AvailableDevs from './components/AvailableDevs'
 import BackgroundContainer from './components/BackgroundContainer'
 import Footer from './components/Footer'
 import FullSizeCTA from './components/FullSizeCTA'
-import HireTopTalent from './components/HireTopTalent'
 import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
 import PictureWall from 'main_app/components/PictureWall'
 import ReviewCards from './components/ReviewCards'
@@ -24,13 +23,6 @@ export default function LandingPageContent ({
     <>
       <Article>
         <OurServices />
-        <HireTopTalent
-          subheadingText={landing.HireTopTalent.subtitle}
-          titleText={landing.HireTopTalent.title}
-          reasonsContent={landing.HireTopTalent.reasons}
-          buttonText={landing.HireTopTalent.buttonText}
-          handleModal={handleContactCTAClick}
-        />
         <BackgroundContainer backgroundURL={ThreeReasonsBottomSeparator} />
         {landing.availableDevs &&
           <AvailableDevs
