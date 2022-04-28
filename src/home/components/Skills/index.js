@@ -1,25 +1,35 @@
+import classNames from 'classnames'
+
 import Skill from '../Skill'
 import useSkill from '../../hooks/useSkill'
 import classes from './styles.module.scss'
 
-function Skills () {
+function Skills ({
+  showNames,
+  grayscaleEffect,
+  className,
+  skillClassName,
+  logoClassName
+}) {
   const skills = useSkill()
 
   return (
-    <section>
-      <div className={classes.listSkill}>
-        {skills.map(({
-          id,
-          name,
-          photo
-        }) => (
-          <Skill
-            key={id}
-            photo={photo}
-          />
-        ))}
-      </div>
-    </section>
+    <div className={classNames(classes.listSkill, className)}>
+      {skills.map(({
+        id,
+        name,
+        renderedLogo
+      }) => (
+        <Skill
+          key={id}
+          renderedLogo={renderedLogo}
+          name={showNames ? name : undefined}
+          grayscaleEffect={grayscaleEffect}
+          className={skillClassName}
+          logoClassName={logoClassName}
+        />
+      ))}
+    </div>
   )
 }
 

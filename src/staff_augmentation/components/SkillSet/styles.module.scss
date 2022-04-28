@@ -57,3 +57,27 @@ $textColor: #363636;
 .ctaButton {
   margin: 0 auto;
 }
+
+.skills {
+  max-width: 265px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .skillLogo {
+    height: 30px !important;
+  }
+
+  @media screen and (min-width: 370px) {
+    max-width: 390px;
+
+    .skillLogo {
+      height: 50px !important;
+    }
+  }
+
+  @media screen and (min-width: 631px) {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

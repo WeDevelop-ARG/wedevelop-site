@@ -36,13 +36,13 @@ function LandingPage ({ landingName }) {
       window.addEventListener(event, showContent, { passive: true })
     }
 
-    document.getElementById('__next').classList.add(classes.root)
+    document.body.classList.add(classes.root)
 
     return () => {
       for (const event of interactionEvents) {
         window.removeEventListener(event, showContent, { passive: true })
       }
-      document.getElementById('__next').classList.remove(classes.root)
+      document.body.classList.remove(classes.root)
     }
   }, [])
 

@@ -19,7 +19,10 @@ export default function SkillSet ({
         <hr className={classes.horizontalBar} />
       </div>
       <Accordion skillSet={skillSet} />
-      <Skills />
+      <Skills
+        className={classes.skills}
+        logoClassName={classes.skillLogo}
+      />
       <div className={classes.ctaContainer}>
         <Button
           variant='primary'
