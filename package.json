@@ -34,7 +34,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "dev:smart": "npm run smart_install && npm run dev",
-    "smart_install": "sh ./scripts/smart_install.sh ..",
+    "smart_install": "sh ./scripts/smart_install.sh . --no-recursion",
     "lint": "next lint -d pages -d src",
     "lint:fix": "npm run lint -- --fix",
     "prebuild": "NODE_ENV=production node generate-sitemap && node generate-robots",
