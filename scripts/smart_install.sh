@@ -1,15 +1,20 @@
 #!/bin/sh
 
 DIR=$1
+MAXDEPTH=""
 
-if [ -z "$DIR" ]; then
-  DIR=.
+if [ "$2" = "--no-recursion" -o "$3" = "--no-recursion" ]; then
+  MAXDEPTH="-maxdepth 1"
 fi
 
-if [ "$2" = "ci" ]; then
+if [ "$2" = "ci" -o "$3" = "ci" ]; then
   NPM_COMMAND="ci"
 else
   NPM_COMMAND="install"
+fi
+
+if [ -z "$DIR" ]; then
+  DIR=.
 fi
 
 installPackages () {
@@ -40,7 +45,7 @@ installPackages () {
 echo "Current working directory is $(pwd)"
 echo "Looking for package files in $DIR"
 
-FILES=$(find $DIR -name "package.json" 2> /dev/null | grep -v node_modules)
+FILES=$(find $DIR $MAXDEPTH -name "package.json" 2> /dev/null | grep -v node_modules)
 
 echo "Installing the following files"
 echo $FILES

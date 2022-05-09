@@ -14,8 +14,6 @@ COPY ./docker-dev/firebase/emulators/ /opt/workspace/
 COPY ./storage/ /opt/workspace/storage/
 COPY ./functions/ /opt/workspace/functions/
 COPY ./firestore/ /opt/workspace/firestore/
-COPY ./docker-dev/firebase/bin /root/.cache/
-COPY ./docker-dev/firebase/config/ /root/.config/
 COPY ./docker-dev/.runtimeconfig.sample.json \
   /opt/workspace/functions/.runtimeconfig.json
 
