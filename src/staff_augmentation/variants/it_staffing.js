@@ -17,7 +17,7 @@ const itStaffing = {
     description: (
       <>
         <p>Hire the best Developers from Latin America.</p>
-        <p>Outstanding quality at a great price.</p>
+        <p>Access outstanding quality results and lower your costs, while focusing on your core business.</p>
       </>
     ),
     quote: (
@@ -42,7 +42,7 @@ const itStaffing = {
     buttonText: 'Get in touch'
   },
   fullSizeCTA: {
-    title: 'Ready to grow your IT Staff?',
+    title: 'Ready to grow your tech team?',
     subTitle: 'GET IN TOUCH NOW',
     ctaText: 'Get in touch',
     ctaToPath: '#top',

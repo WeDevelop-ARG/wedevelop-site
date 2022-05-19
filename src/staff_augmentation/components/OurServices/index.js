@@ -16,45 +16,45 @@ export default function OurServices () {
       <ul className={classes.cards}>
         <li>
           <Globe className={classes.image} viewBox='0 0 100 100' />
-          <span className={classes.tag}>Top 3% Devs</span>
+          <span className={classes.tag}>Hire the top 3% Talent</span>
           Recruitment &amp; Selection<br />of LATAM Engineers
         </li>
         <li>
           <Agreement className={classes.image} viewBox='0 0 100 100' />
-          Local Hiring:<br />Contracting &amp; Compliance
+          We handle the hiring, administrative, and compliance requirements
         </li>
         <li>
           <TableConversation className={classes.image} viewBox='0 0 92 104' />
-          Periodically 1:1<br />People Care meetings
+          Expert People Care team to support engineers
         </li>
         <li>
           <Communication className={classes.image} viewBox='0 0 100 100' />
-          Constant<br />Communication
+          Fluent Communication &amp; Feedback
         </li>
         <DecoElements className={classes.decoElements} />
       </ul>
       <div className={classes.mainContainer}>
-        <h3>we strive to excellence</h3>
+        <h3>we strive for excellence</h3>
         <h2>Nearshore Outsourcing</h2>
         <p>
-          Get access to a white-glove service. Build your teams with the top 3% LATAM Talent.
+          Get access to a world-class service. Build your tech teams with the top 3% of LatAm talent.
         </p>
-        <p>IT Staff Augmentation done well.</p>
+        <p>Top Tier Staff Augmentation.</p>
         <hr />
         <ul>
           <li>Highly skilled developers.</li>
           <li>Excellent communication skills.</li>
           <li>Timezone alignment.</li>
-          <li>Great prices.</li>
+          <li>Cost-effective.</li>
         </ul>
       </div>
       <div className={classes.needHelpIfFull}>
         <h3>You may need our help if:</h3>
         <ul>
-          <li>You need help to find offshore/nearshore talent.</li>
-          <li>You can’t/won’t afford local talent.</li>
-          <li>You want to transition to  remote teams.</li>
-          <li>You need to develop high-quality solutions.</li>
+          <li>You want to find nearshore talent</li>
+          <li>You want to expand your local team</li>
+          <li>You want to lower your hiring costs</li>
+          <li>You need to develop high-quality solutions</li>
         </ul>
       </div>
       <div className={classes.needHelpIfSlides}>
@@ -70,10 +70,10 @@ export default function OurServices () {
           className={classes.carousel}
         >
           {[
-            'I need help to find offshore/nearshore talent.',
-            'I can’t/won’t afford local talent.',
-            'I want to transition to  remote teams.',
-            'I need to develop high-quality solutions.'
+            'You want to find nearshore talent',
+            'You want to expand your local team',
+            'You want to lower your hiring costs',
+            'You need to develop high-quality solutions'
           ].map(text => (
             <div key={text} className={classes.quoteContainer}>
               <p className={classes.quote}>

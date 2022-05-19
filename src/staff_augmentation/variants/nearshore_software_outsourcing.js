@@ -17,7 +17,7 @@ const nearshoreSoftwareOutsourcing = {
     description: (
       <>
         <p>Hire the best Developers from Latin America.</p>
-        <p>The top offshore choice for Software Development.</p>
+        <p>The top nearshore choice for Software Development.</p>
       </>
     ),
     quote: (
