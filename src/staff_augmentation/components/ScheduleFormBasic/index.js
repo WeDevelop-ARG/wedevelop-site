@@ -78,10 +78,10 @@ export default function ScheduleFormBasic ({
       id='get-in-touch-form'
     >
       <WrappedImage src={Abel} className={classes.avatarTeamWork} alt='' height='100' width='100' />
-      <h2 className={classes.scheduleTitle}>We’d love to hear from you!</h2>
+      <h2 className={classes.scheduleTitle}>Let's talk!</h2>
 
       <label className={classes.labels}>
-        <span>Your work email</span>
+        <span>Work Email</span>
         <Field
           as={InputWithError}
           type='email'
@@ -91,7 +91,7 @@ export default function ScheduleFormBasic ({
         />
       </label>
       <label className={classes.scheduleFormBasicTextAreaLabel}>
-        <span>What can we do for you?</span>
+        <span>How can we help?</span>
         <Field
           as={TextAreaWithError}
           type='text'

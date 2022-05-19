@@ -279,7 +279,7 @@ const defaultContent = {
     frequentlyQuestions: [
       {
         id: 1,
-        question: 'Who are WeDevelop?',
+        question: 'Who are we?',
         answer: (
           <>
             <p>
@@ -363,9 +363,6 @@ const defaultContent = {
         question: 'What is the cost of outsourcing to LATAM?',
         answer: (
           <>
-            <p>
-              To put it simply, it's in the middle of hiring on US soil and outsourcing to Eastern Europe or Asia.
-            </p>
             <p>
               Latin America is known to be a great Nearshore location. The quality of the talent
               is exceptional and the prices are totally affordable and reasonable.

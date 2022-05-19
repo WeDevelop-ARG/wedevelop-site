@@ -35,7 +35,7 @@ export function useStep ({
                 onClick={handleScheduleMeetingCTAClick}
               >
                 Schedule a call
-              </Button> when it works best for you.
+              </Button>.
             </li>
           </ul>
         </>
@@ -50,7 +50,7 @@ export function useStep ({
         <>
           <ul>
             <li>
-              If you have a JD, we'll base our recruiting process on it;
+              If you have a JD, we'll base our recruitment process on it;
             </li>
             <li>
               Otherwise, we'll help you put one together.
@@ -76,7 +76,7 @@ export function useStep ({
             </li>
             <li>
               We'll make sure that the candidates are a great fit technically and culturally,
-              and that they speak English fluently and clearly.
+              and that they speak English fluently.
             </li>
             <li>
               You'll continue to receive new candidates every few days.
