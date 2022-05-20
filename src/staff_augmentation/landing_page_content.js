@@ -8,6 +8,7 @@ import FrequentlyAskedQuestions from './components/FAQs'
 import OurServices from './components/OurServices'
 import FiguresFacts from './components/FiguresFacts'
 import Testimonials from './components/Testimonials'
+import CTABannerSucceed from './components/CTABannerSucceed'
 
 export default function LandingPageContent ({
   landing,
@@ -24,6 +25,7 @@ export default function LandingPageContent ({
           handleContactCTAClick={handleContactCTAClick}
           handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
         />
+        <CTABannerSucceed onCTAClick={handleContactCTAClick} />
         <FrequentlyAskedQuestions
           icon={landing.FAQs.icon}
           title={landing.FAQs.title}

@@ -59,6 +59,7 @@ const variants = PropTypes.oneOf([
   'focus-scale',
   'focus-gradient',
   'black',
+  'white',
   'bold'
 ])
 
