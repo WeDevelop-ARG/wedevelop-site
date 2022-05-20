@@ -19,7 +19,7 @@ export default function Question ({ question, answer }) {
     setDisplaySeeLessIcon(false)
     setDisplayAnswer(false)
   }, [setDisplayAnswer, setDisplaySeeLessIcon])
-  console.log(question, answer)
+
   return (
     <div className={classes.container}>
       <Button

@@ -58,7 +58,9 @@ const variants = PropTypes.oneOf([
   'light',
   'focus-scale',
   'focus-gradient',
-  'black'
+  'black',
+  'white',
+  'bold'
 ])
 
 Button.propTypes = {

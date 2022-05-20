@@ -16,12 +16,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 100px;
 }
 
 .subheadingText {
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 1em;
   color: rgba($color: #363636, $alpha: 0.5);
   font-size: 10px;
   margin-bottom: 40px;
@@ -29,6 +28,12 @@
 }
 
 .titleText {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  color: #363636;
+
   @include for-desktop-up {
     font-weight: 600;
     font-size: 60px;
@@ -41,14 +46,15 @@
   font-size: 20px;
   color: rgba($color: #363636, $alpha: 0.5);
   text-align: center;
+  margin-bottom: 0;
 }
 
 .horizontalBar {
   width: 100px;
   height: 10px;
+  border: 0;
   background: #ffc331;
-  margin: 40px auto;
-  border: none;
+  margin: 32px auto 40px;
 }
 
 %dotsPattern {
@@ -199,4 +205,9 @@
       right: 0vw;
     }
   }
+}
+
+.buttonTalk {
+  width: 100%;
+  max-width: 262px;
 }

@@ -1,7 +1,6 @@
 const { ENVIRONMENT } = require('./src/main_app/constants')
 
 module.exports = require('next-optimized-classnames')({
-  experimental: { optimizeCss: true },
   images: ENVIRONMENT !== 'development'
     ? {
         loader: 'cloudinary',

@@ -64,6 +64,15 @@ $blackTextBorder: #000000;
   &:hover, &:focus {
     background-color: $primaryVariantHoverBackground;
   }
+
+  &.variant_white {
+    background-color: #FFFFFF;
+    color: #363636;
+
+    &:hover, &:focus {
+      background-color: #EAEAEA;
+    }
+  }
 }
 
 .variant_secondary {

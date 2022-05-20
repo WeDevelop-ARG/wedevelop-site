@@ -5,7 +5,6 @@
   padding: 25px var(--rootContentHorizontalPadding);
   display: flex;
   flex-direction: column;
-  height: 530px;
 
   & > * {
     margin: 0 auto;
@@ -18,11 +17,8 @@
   .branding {
     list-style-type: none;
     display: flex;
-    padding-left: 0px;
-
-    @include for-desktop-up {
-      padding-left: 140px;
-    }
+    padding: 0px;
+    justify-content: center;
   }
 
   .pleca {
@@ -30,34 +26,29 @@
     margin: 17px 10px 0px 10px;
   }
 
-  @include for-desktop-up {
+  @include for-tablet-up {
     flex-basis: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+
+    @media screen and (min-width: 1180px) {
+      align-items: flex-start;
+      flex-direction: row;
+    }
 
     & > * {
       margin: 0;
     }
   }
 
-  @include for-tablet-down {
+  @include for-phone-only {
     flex-direction: column;
-    height: 400px;
 
     & > * + * {
       margin-top: 0px;
     }
   }
-
-  @include for-phone-only {
-    flex-direction: column;
-    height: 500px;
-  }
-
-  @extend .backgroundDown;
-  background-color: #ffffff;
 
   %contactLinksColor {
     color: $textColor;
@@ -83,13 +74,14 @@
   display: flex;
   align-items: center;
   opacity: 0.5;
+  margin: 7px auto -5px;
 
-  li + li {
-    margin-left: 15px;
+  @include for-tablet-up {
+    margin: 7px -7.5px 5px;
   }
 
-  @include for-desktop-up {
-    margin-top: 74px;
+  li {
+    margin: 5px 7.5px;
   }
 }
 
@@ -105,15 +97,15 @@
     padding-top: 20px;
   }
 
-  @include for-desktop-up {
+  @include for-tablet-up {
     padding: 0;
-    margin-left: 0px;
     flex-direction: row;
-    margin-bottom: -13px;
+    align-items: center;
+    margin: 0;
 
-    & > li + li {
-      margin-left: 15px;
-      padding-top: 10px;
+    & > li {
+      padding-top: 0 !important;
+      margin: 10px 15px;
     }
   }
 }
@@ -153,7 +145,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  @include for-desktop-up {
+  @include for-tablet-up {
     flex-basis: 100%;
   }
 }
@@ -161,13 +153,7 @@
 .copyright {
   margin-top: 17px;
   font-size: 10px;
-  margin-left: auto;
-  margin-right: auto;
   display: block;
-
-  @include for-desktop-up {
-    flex-basis: 100%;
-  }
 }
 
 .privacyPolicy {
@@ -175,26 +161,4 @@
   font-size: 10px;
   color: $secondaryColor;
   display: block;
-}
-
-.socials {
-  margin: -12px auto 50px auto;
-}
-
-.backgroundDown {
-  background-image: url(../../../assets/footer/background.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 100%;
-  height: 100%;
-
-  @include for-desktop-up {
-    background-size: contain;
-  }
-}
-
-.listUs {
-  @include for-desktop-up {
-    margin-left: 40px;
-    margin-bottom: 40px;
-  }
 }
