@@ -15,7 +15,7 @@ function Step ({ className, icon, title, description, isLast, arrow }) {
       {!isDesktopUp && icon}
       <div className={classes.textContainer}>
         <h3 className={classes.title}>{title}</h3>
-        <p className={classes.description}>{description}</p>
+        <div className={classes.description}>{description}</div>
         {!isLast && <WrappedImage src={arrow} alt='' className={classes.arrows} />}
       </div>
     </div>

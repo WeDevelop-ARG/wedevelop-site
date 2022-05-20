@@ -37,7 +37,7 @@ function FreeQuoteForm ({
       tracingId = responseJSON.tracingId
       history.push('/follow-up?tracingId=' + tracingId)
     } catch (error) {
-      console.log(error)
+      console.error(error)
     } finally {
       setIsLoading(false)
     }

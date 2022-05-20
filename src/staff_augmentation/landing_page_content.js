@@ -7,6 +7,7 @@ import PictureWall from 'main_app/components/PictureWall'
 import FrequentlyAskedQuestions from './components/FAQs'
 import OurServices from './components/OurServices'
 import FiguresFacts from './components/FiguresFacts'
+import Testimonials from './components/Testimonials'
 
 export default function LandingPageContent ({
   landing,
@@ -18,6 +19,7 @@ export default function LandingPageContent ({
       <Article>
         <OurServices />
         <FiguresFacts />
+        <Testimonials />
         <HowDoesItWorks
           handleContactCTAClick={handleContactCTAClick}
           handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}

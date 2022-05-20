@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import classNames from 'classnames'
 
 import { useStep } from './components/hooks/useStep'
@@ -31,21 +30,17 @@ function HowDoesItWorks ({
       <div className={classes.stepsContainer}>
         <WrappedImage layout='responsive' src={DesktopSteps} alt='' className={classes.desktopSteps} />
         <div className={classes.row}>
-          {steps && steps.map(({ id, icon, title, description, mobileArrow }, index) => {
-            const isLast = (steps.length - 1) === index
-            return (
-              <Fragment key={id}>
-                <Step
-                  icon={icon}
-                  title={title}
-                  description={description}
-                  isLast={isLast}
-                  arrow={mobileArrow}
-                  className={classes.step}
-                />
-              </Fragment>
-            )
-          }
+          {steps?.map(({ id, icon, title, description, mobileArrow }, index) => (
+            <Step
+              key={id}
+              icon={icon}
+              title={title}
+              description={description}
+              isLast={(steps.length - 1) === index}
+              arrow={mobileArrow}
+              className={classes.step}
+            />
+          )
           )}
         </div>
       </div>

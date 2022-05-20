@@ -10,6 +10,7 @@
     "classnames": "^2.2.6",
     "firebase": "^9.0.1",
     "formik": "^2.2.6",
+    "globby": "^11.0.1",
     "lodash": "^4.17.21",
     "next": "^12.0.8",
     "normalize.css": "^8.0.1",
@@ -22,13 +23,12 @@
     "react-prerendered-component": "^1.2.4",
     "react-router-hash-link": "^2.4.0",
     "react-select": "^4.3.1",
-    "react-slideshow-image": "^3.5.0",
+    "react-slideshow-image": "^3.7.5",
     "react-step-wizard": "^5.3.9",
     "react-text-loop": "^2.3.0",
     "rectangles": "^0.0.4",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.0",
-    "globby": "^11.0.1",
     "yup": "^0.32.9"
   },
   "scripts": {
