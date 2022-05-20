@@ -1,5 +1,5 @@
 import identity from 'lodash/identity'
-import { useEffect, useMemo } from 'react'
+import { useLayoutEffect, useMemo } from 'react'
 
 function useElementClass (element, classOrClasses) {
   classOrClasses = useMemo(() => {
@@ -12,7 +12,7 @@ function useElementClass (element, classOrClasses) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [classOrClasses.toString()])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     for (const class_ of classOrClasses) {
       element?.classList.add(class_)
     }
