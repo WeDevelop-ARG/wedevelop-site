@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import Article from 'main_app/components/Article'
 import FullImageHeader from './components/FullImageHeader'
@@ -11,8 +12,6 @@ import ScheduleFormModal from './components/ScheduleFormModal'
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
-
-import classes from './styles.module.scss'
 
 const LandingPageContent = dynamic(() => import('./landing_page_content'))
 
@@ -36,13 +35,10 @@ function LandingPage ({ landingName }) {
       window.addEventListener(event, showContent, { passive: true })
     }
 
-    document.body.classList.add(classes.root)
-
     return () => {
       for (const event of interactionEvents) {
         window.removeEventListener(event, showContent, { passive: true })
       }
-      document.body.classList.remove(classes.root)
     }
   }, [])
 
@@ -70,6 +66,11 @@ function LandingPage ({ landingName }) {
 
   return (
     <>
+      <Head>
+        <style type='text/css'>
+          {'body { --pageContentDesktopMinSize: 87vw !important; --pageContentDesktopMaxSize: 1400px !important; }'}
+        </style>
+      </Head>
       <PageMetadata
         title={landing.metadata.title}
         description={landing.metadata.description}

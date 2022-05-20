@@ -1,5 +1,7 @@
 import { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import classnames from 'classnames'
+import Head from 'next/head'
+
 import Image from 'main_app/components/Image'
 
 import InternalLink from 'main_app/components/InternalLink'
@@ -85,7 +87,6 @@ function NavBar ({
     setMenuOpen(false)
   }, [])
 
-  useElementClass(globalThis.document?.getElementById('__next'), classes.rootWithNavBar)
   useElementClass(globalThis.document?.body, classnames({ [classes.bodyMenuOpen]: menuOpen }))
 
   return (
@@ -100,6 +101,11 @@ function NavBar ({
         [classes.initialized]: initialized
       })}
     >
+      <Head>
+        <style type='text/css'>
+          {'#__next { --rootContentExtraPaddingTop: 70px !important; }'}
+        </style>
+      </Head>
       <InternalLink
         href={pathLogo}
         className={classes.logoLink}

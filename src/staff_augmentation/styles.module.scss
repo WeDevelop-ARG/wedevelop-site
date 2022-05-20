@@ -1,10 +1,5 @@
 @import '/src/styles/media_queries.scss';
 
-.root {
-  --pageContentDesktopMinSize: 87vw !important;
-  --pageContentDesktopMaxSize: 1400px !important;
-}
-
 .tabletUp {
   @include for-phone-only {
     display: none;
