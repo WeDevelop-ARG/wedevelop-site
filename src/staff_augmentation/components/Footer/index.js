@@ -64,55 +64,53 @@ function Footer ({ className }) {
           </li>
         </ul>
       </div>
-      <div className={classes.socials}>
-        <ul className={classes.socialNetworks}>
-          <li>
-            <a
-              href='https://www.linkedin.com/company/wedevelop-arg'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <WrappedImage
-                src={LinkedInIcon}
-                layout='fixed'
-                width='15'
-                title={"WeDevelop's LinkedIn"}
-                className={classes.iconSocialNetworks}
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href='https://facebook.com/WeDevelop-101618141565362'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <WrappedImage
-                src={FacebookIcon}
-                layout='fixed'
-                width='15'
-                title={"WeDevelop's Facebook"}
-                className={classes.iconSocialNetworks}
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href='https://www.instagram.com/wedevelop.me'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <WrappedImage
-                src={InstagramIcon}
-                layout='fixed'
-                width='15'
-                title={"WeDevelop's Instagram"}
-                className={classes.iconSocialNetworks}
-              />
-            </a>
-          </li>
-        </ul>
-      </div>
+      <ul className={classes.socialNetworks}>
+        <li>
+          <a
+            href='https://www.linkedin.com/company/wedevelop-arg'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <WrappedImage
+              src={LinkedInIcon}
+              layout='fixed'
+              width='15'
+              title={"WeDevelop's LinkedIn"}
+              className={classes.iconSocialNetworks}
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href='https://facebook.com/WeDevelop-101618141565362'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <WrappedImage
+              src={FacebookIcon}
+              layout='fixed'
+              width='15'
+              title={"WeDevelop's Facebook"}
+              className={classes.iconSocialNetworks}
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href='https://www.instagram.com/wedevelop.me'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <WrappedImage
+              src={InstagramIcon}
+              layout='fixed'
+              width='15'
+              title={"WeDevelop's Instagram"}
+              className={classes.iconSocialNetworks}
+            />
+          </a>
+        </li>
+      </ul>
     </footer>
   )
 }
