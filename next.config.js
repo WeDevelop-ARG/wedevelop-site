@@ -1,4 +1,5 @@
 const { ENVIRONMENT } = require('./src/main_app/constants')
+const path = require('path')
 
 module.exports = require('next-optimized-classnames')({
   experimental: { optimizeCss: true },
@@ -8,7 +9,6 @@ module.exports = require('next-optimized-classnames')({
         path: 'https://res.cloudinary.com/wedevelop-site/image/upload'
       }
     : undefined,
-  assetPrefix: ENVIRONMENT !== 'development' ? '/assets-' + ENVIRONMENT : '',
   webpack (config) {
     for (const rule of config.module.rules) {
       if (rule.test?.test('file.svg')) {
@@ -27,5 +27,8 @@ module.exports = require('next-optimized-classnames')({
     })
 
     return config
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')]
   }
 })

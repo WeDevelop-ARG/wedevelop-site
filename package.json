@@ -15,6 +15,7 @@
     "next": "^12.0.8",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
+    "react-amphtml": "^4.0.2",
     "react-bootstrap": "^1.6.4",
     "react-dom": "^17.0.1",
     "react-flags-select": "^2.1.2",
@@ -77,6 +78,7 @@
     "ncp": "^2.0.0",
     "next-optimized-classnames": "github:kenmueller/next-optimized-classnames",
     "rimraf": "^3.0.2",
+    "sass": "^1.49.11",
     "url-loader": "^4.1.1"
   }
 }
