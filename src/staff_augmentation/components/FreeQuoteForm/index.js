@@ -1,7 +1,11 @@
 import { useCallback, useState } from 'react'
-import { useHistory } from 'react-router'
 
-import { INITIAL_LANDING_FORM_PROCESSOR_URL, LANDING_FREE_QUOTE_HUBSPOT_FORM_FORM_ID, LANDING_FREE_QUOTE_HUBSPOT_FORM_PORTAL_ID, LANDING_FREE_QUOTE_HUBSPOT_FORM_REGION } from 'main_app/constants'
+import {
+  INITIAL_LANDING_FORM_PROCESSOR_URL,
+  LANDING_FREE_QUOTE_HUBSPOT_FORM_FORM_ID,
+  LANDING_FREE_QUOTE_HUBSPOT_FORM_PORTAL_ID,
+  LANDING_FREE_QUOTE_HUBSPOT_FORM_REGION
+} from 'main_app/constants'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import HubspotFreeQuoteForm from '../HubspotFreeQuoteForm'
@@ -9,16 +13,14 @@ import LoaderSpinner from 'main_app/components/LoaderSpinner'
 import classes from './styles.module.scss'
 
 function FreeQuoteForm ({
-  formHeader,
-  formOrigin
+  formOrigin,
+  onSuccess
 }) {
   const [isLoading, setIsLoading] = useState(false)
-  const history = useHistory()
   const handleSubmitFinished = useCallback(async values => {
-    let tracingId
     try {
       setIsLoading(true)
-      const response = await window.fetch(INITIAL_LANDING_FORM_PROCESSOR_URL, {
+      await window.fetch(INITIAL_LANDING_FORM_PROCESSOR_URL, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -33,15 +35,13 @@ function FreeQuoteForm ({
       })
       // LinkedIn Ad Conversion Event
       try { window?.lintrk?.('track', { conversion_id: 6505732 }) } catch (e) {}
-      const responseJSON = await response.json()
-      tracingId = responseJSON.tracingId
-      history.push('/follow-up?tracingId=' + tracingId)
+      onSuccess?.()
     } catch (error) {
       console.error(error)
     } finally {
       setIsLoading(false)
     }
-  }, [history, formOrigin])
+  }, [formOrigin, onSuccess])
 
   const onLoadingStateChange = useCallback(isLoading => {
     setIsLoading(isLoading)
@@ -49,12 +49,6 @@ function FreeQuoteForm ({
 
   return (
     <>
-      <div className={classes.formHeader}>
-        <p className={classes.subheadingText}>{formHeader.subtitle}</p>
-        <h2 className={classes.titleText}>{formHeader.title}</h2>
-        <p className={classes.descriptionText}>{formHeader.description}</p>
-        <hr className={classes.horizontalBar} />
-      </div>
       <LoaderSpinner
         className={classes.loadingContainer}
         visible={isLoading}
