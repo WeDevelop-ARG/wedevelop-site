@@ -1,6 +1,6 @@
-import { useCallback } from 'react'
+import Button from 'main_app/components/Button'
+import ContactPopupModal from '../ContactPopupModal'
 
-import Modal from 'main_app/components/Modal'
 import FreeQuoteForm from '../FreeQuoteForm'
 
 import classes from './styles.module.scss'
@@ -8,27 +8,29 @@ import classes from './styles.module.scss'
 function FreeQuoteModal ({
   isModalOpen,
   setModalOpen,
-  freeQuoteForm
+  onScheduleMeetingClick,
+  onSuccess,
+  formOrigin
 }) {
-  const handleModalClose = useCallback(() => {
-    setModalOpen(false)
-  }, [setModalOpen])
-
   return (
-    <Modal
-      isOpen={isModalOpen}
-      onRequestClose={handleModalClose}
-      className={classes.freeQuoteModal}
+    <ContactPopupModal
+      isModalOpen={isModalOpen}
+      setModalOpen={setModalOpen}
+      title="We'd love hear from you"
+      label='Get Custom Solutions, Recommendations, Resumes, or Estimates. Confidentiality & Same Day Response Guaranteed!'
+      sidebarContent={
+        <span>
+          One of our Account Managers will contact you shortly. <br /><br />
+          We usually get back in two hours or less. Should you need a faster response,{' '}
+          <Button variant='link' className={classes.bookTimeButton} onClick={() => onScheduleMeetingClick?.()}>book a time here</Button>.
+        </span>
+      }
     >
       <FreeQuoteForm
-        formHeader={freeQuoteForm.formHeader}
-        fixedFields={freeQuoteForm.formCustomizations.fixedFields}
-        customFields={freeQuoteForm.formCustomizations.customFields}
-        formButtonText={freeQuoteForm.formButtonText}
-        formOrigin={freeQuoteForm.formOrigin}
-        formDisclaimer={freeQuoteForm.formDisclaimer}
+        formOrigin={formOrigin}
+        onSuccess={onSuccess}
       />
-    </Modal>
+    </ContactPopupModal>
   )
 }
 

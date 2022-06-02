@@ -65,7 +65,10 @@ export default function HubSpotCalendar ({ sourcePage, onFinish, hideText }) {
 
   return (
     <>
-      <div className='meetings-iframe-container' data-src='https://meetings.hubspot.com/abel-osorio/15-minute-free-consultation?embed=true' />
+      <div
+        className='meetings-iframe-container'
+        data-src='https://meetings.hubspot.com/wedevelop/book-a-call?embed=true'
+      />
       {!hideText && <p>or email us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>}
     </>
   )

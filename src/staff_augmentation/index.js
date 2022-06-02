@@ -7,11 +7,11 @@ import Article from 'main_app/components/Article'
 import FullImageHeader from './components/FullImageHeader'
 import NavBar from './components/NavBar'
 import ScheduleCallModal from './components/ScheduleCallModal'
-import ScheduleFormModal from './components/ScheduleFormModal'
 
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 import useLandingVariantByName from './hooks/useLandingVariantByName'
+import FreeQuoteModal from './components/FreeQuoteModal'
 
 const LandingPageContent = dynamic(() => import('./landing_page_content'))
 
@@ -92,6 +92,7 @@ function LandingPage ({ landingName }) {
           quote={landing.header.quote}
           onContactCTAClick={handleContactCTAClick}
           onScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
+          formOrigin={landingName}
         />
       </Article>
       {showContent && (
@@ -106,12 +107,12 @@ function LandingPage ({ landingName }) {
         setModalOpen={setCallModalOpen}
         onSubmit={onSuccess}
       />
-      <ScheduleFormModal
+      <FreeQuoteModal
         isModalOpen={isFormModalOpen}
         setModalOpen={setFormModalOpen}
         onScheduleMeetingClick={switchToCallModal}
-        onSubmit={onSuccess}
-        formOrigin={landing.freeQuoteForm.formOrigin}
+        onSuccess={onSuccess}
+        formOrigin={landingName}
       />
     </>
   )
