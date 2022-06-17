@@ -1,12 +1,8 @@
 import Button from 'main_app/components/Button'
 
 import StepOne from 'assets/how_does_it_works/icons/step_one.component.svg'
-import StepOneMobileArrow from 'assets/how_does_it_works/arrows/step_one_mobile_arrow.svg'
 import StepTwo from 'assets/how_does_it_works/icons/step_two.component.svg'
-import StepTwoMobileArrow from 'assets/how_does_it_works/arrows/step_two_mobile_arrow.svg'
 import StepThree from 'assets/how_does_it_works/icons/step_three.component.svg'
-import StepThreeMobileArrow from 'assets/how_does_it_works/arrows/step_three_mobile_arrow.svg'
-import StepFour from 'assets/how_does_it_works/icons/step_four.component.svg'
 
 export function useStep ({
   handleContactCTAClick,
@@ -16,93 +12,73 @@ export function useStep ({
     {
       id: 1,
       icon: <StepOne />,
-      title: 'Let us know your needs',
+      title: 'Send us your Job Description',
       description: (
         <>
           <ul>
             <li>
-              You can fill out{' '}
-              <Button
-                variant={['link', 'black', 'bold']}
-                onClick={handleContactCTAClick}
-              >
-                this form
-              </Button> or
+              If you don’t have one, we can help you craft one.
             </li>
             <li>
-              <Button
-                variant={['link', 'black', 'bold']}
-                onClick={handleScheduleMeetingCTAClick}
-              >
-                Schedule a call
-              </Button>.
+              We put special attention to this very first step because
+              we want to know exactly how the person that will make your
+              life easier is.
+            </li>
+            <li>
+              Our solutions are always tailored to your needs.
             </li>
           </ul>
+          <Button
+            variant={['link', 'black', 'bold']}
+            onClick={handleContactCTAClick}
+          >
+            Complete our form and we’ll set up a call with one of our Managers.
+          </Button>
         </>
-      ),
-      mobileArrow: StepOneMobileArrow
+      )
     },
     {
       id: 2,
       icon: <StepTwo />,
-      title: 'Job Description',
+      title: 'Meet your perfect developer',
       description: (
         <>
           <ul>
             <li>
-              If you have a JD, we'll base our recruitment process on it;
+              Using our sophisticated matching process, we watch you with up
+              to 3 expert developers within 48 hours.
             </li>
             <li>
-              Otherwise, we'll help you put one together.
-            </li>
-            <li>
-              If there are any candidates that match the JD,
-              we'll present them to you right away!
+              If we don't find a match, we start a new search, which its takes
+              usually 1-2 weeks.
             </li>
           </ul>
+          <p>
+            <b>75% hire the fist match we make.</b>
+          </p>
         </>
-      ),
-      mobileArrow: StepTwoMobileArrow
+      )
     },
     {
       id: 3,
       icon: <StepThree />,
-      title: 'Candidate selection',
+      title: 'Save time and money',
       description: (
         <>
           <ul>
             <li>
-              In a few days, you'll receive a list of fully vetted candidates.
+              Once you meet one of our excellent hand-picked developers, things will move real fast.
             </li>
             <li>
-              We'll make sure that the candidates are a great fit technically and culturally,
-              and that they speak English fluently.
+              We'll be there to make sure everything runs smoothly.
             </li>
             <li>
-              You'll continue to receive new candidates every few days.
+              No recruitment fees
             </li>
           </ul>
-        </>
-      ),
-      mobileArrow: StepThreeMobileArrow
-    },
-    {
-      id: 4,
-      icon: <StepFour />,
-      title: 'Hiring & Onboarding',
-      description: (
-        <>
-          <ul>
-            <li>
-              Once you've decided which candidate you want to hire, we'll do all the paperwork and guide you through the process.
-            </li>
-            <li>
-              We'll take care of the legal relationship with the contractor.
-            </li>
-            <li>
-              We'll also help the candidates onboard smoothly.
-            </li>
-          </ul>
+          <p>
+            <b>15-days money back trial period.</b>
+          </p>
         </>
       )
     }
