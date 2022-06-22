@@ -1,12 +1,15 @@
+import { useRef } from 'react'
 import classNames from 'classnames'
+import { Slide } from 'react-slideshow-image'
 
 import { useStep } from './components/hooks/useStep'
 
 import Step from './components/Step'
 import WrappedImage from '../WrappedImage'
 
-import DesktopSteps from 'assets/how_does_it_works/steps.svg'
 import DotsPattern from 'assets/how_does_it_works/dots_pattern.svg'
+import useMediaQuery from 'utils/use_media_query'
+import { forTabletUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
 
@@ -15,10 +18,13 @@ function HowDoesItWorks ({
   handleScheduleMeetingCTAClick,
   className
 }) {
+  const slideRef = useRef()
   const steps = useStep({
     handleContactCTAClick,
     handleScheduleMeetingCTAClick
   })
+  const isTabletUp = useMediaQuery(forTabletUp)
+
   return (
     <section className={classNames(classes.container, className)}>
       <WrappedImage src={DotsPattern} alt='' className={classes.topRightDotsPattern} />
@@ -28,20 +34,29 @@ function HowDoesItWorks ({
         <hr className={classes.horizontalBar} />
       </div>
       <div className={classes.stepsContainer}>
-        <WrappedImage layout='responsive' src={DesktopSteps} alt='' className={classes.desktopSteps} />
         <div className={classes.row}>
-          {steps?.map(({ id, icon, title, description, mobileArrow }, index) => (
-            <Step
-              key={id}
-              icon={icon}
-              title={title}
-              description={description}
-              isLast={(steps.length - 1) === index}
-              arrow={mobileArrow}
-              className={classes.step}
-            />
-          )
-          )}
+          <Slide
+            ref={slideRef}
+            className={classes.slide}
+            transitionDuration={500}
+            slidesToShow={isTabletUp ? 3 : 1}
+            canSwipe={!isTabletUp}
+            autoplay={false}
+            infinite={false}
+            arrows={false}
+          >
+            {steps?.map(({ id, icon, title, description }) => (
+              <Step
+                key={id}
+                slideRef={slideRef}
+                position={id}
+                icon={icon}
+                title={title}
+                description={description}
+                className={classes.step}
+              />
+            ))}
+          </Slide>
         </div>
       </div>
     </section>
