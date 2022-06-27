@@ -3,13 +3,10 @@ import classNames from 'classnames'
 import { Slide } from 'react-slideshow-image'
 
 import { useStep } from './components/hooks/useStep'
-
 import Step from './components/Step'
-import WrappedImage from '../WrappedImage'
 
-import DotsPattern from 'assets/how_does_it_works/dots_pattern.svg'
 import useMediaQuery from 'utils/use_media_query'
-import { forTabletUp } from 'styles/media_queries'
+import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
 
@@ -23,15 +20,15 @@ function HowDoesItWorks ({
     handleContactCTAClick,
     handleScheduleMeetingCTAClick
   })
-  const isTabletUp = useMediaQuery(forTabletUp)
+  const isTabletUp = useMediaQuery(forDesktopUp)
+  const slidesToShow = window.outerWidth > 1023 ? 3 : 1
 
   return (
     <section className={classNames(classes.container, className)}>
-      <WrappedImage src={DotsPattern} alt='' className={classes.topRightDotsPattern} />
       <div className={classes.sectionHeader}>
-        <p className={classes.subheading}>Our Process</p>
-        <h2 className={classes.title}>How It Works</h2>
+        <h2 className={classes.title}>We find you the best developers</h2>
         <hr className={classes.horizontalBar} />
+        <p>Connect with expert developers in just 3 easy steps:</p>
       </div>
       <div className={classes.stepsContainer}>
         <div className={classes.row}>
@@ -39,7 +36,7 @@ function HowDoesItWorks ({
             ref={slideRef}
             className={classes.slide}
             transitionDuration={500}
-            slidesToShow={isTabletUp ? 3 : 1}
+            slidesToShow={slidesToShow}
             canSwipe={!isTabletUp}
             autoplay={false}
             infinite={false}

@@ -5,7 +5,17 @@ $grayColor: #363636;
 
 .container {
   position: relative;
+  padding-top: 3rem;
   padding-bottom: 3rem;
+  background-image: url(../../../assets/how_does_it_works/mobile_background.svg);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: cover;
+
+  @include for-tablet-up {
+    padding-bottom: 0;
+    background-image: url(../../../assets/how_does_it_works/background_gradient.svg);
+  }
 }
 
 .sectionHeader {
@@ -14,8 +24,29 @@ $grayColor: #363636;
   flex-direction: column;
   align-items: center;
 
-  @include for-desktop-up {
-    align-items: flex-start;
+  h2 {
+    text-align: center;
+  }
+
+  hr {
+    order: 3;
+
+    @include for-tablet-up {
+      order: unset;
+    }
+  }
+
+  p {
+    opacity: .5;
+    color: $textColor;
+    font-size: .94rem;
+    text-align: center;
+    order: 2;
+
+    @include for-tablet-up {
+      font-size: 2em;
+      order: unset;
+    }
   }
 }
 
