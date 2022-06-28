@@ -21,7 +21,6 @@ function HowDoesItWorks ({
     handleScheduleMeetingCTAClick
   })
   const isTabletUp = useMediaQuery(forDesktopUp)
-  const slidesToShow = useMediaQuery('screen and (max-width: 1024px)') ? 1 : 3
 
   return (
     <section className={classNames(classes.container, className)}>
@@ -36,11 +35,14 @@ function HowDoesItWorks ({
             ref={slideRef}
             className={classes.slide}
             transitionDuration={500}
-            slidesToShow={slidesToShow}
+            slidesToShow={1}
             canSwipe={!isTabletUp}
             autoplay={false}
             infinite={false}
             arrows={false}
+            responsive={[
+              { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } }
+            ]}
           >
             {steps?.map(({ id, icon, title, description }) => (
               <Step
