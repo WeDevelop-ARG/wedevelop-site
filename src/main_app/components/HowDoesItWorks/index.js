@@ -21,7 +21,7 @@ function HowDoesItWorks ({
     handleScheduleMeetingCTAClick
   })
   const isTabletUp = useMediaQuery(forDesktopUp)
-  const slidesToShow = useMediaQuery('screen and (min-width: 1023px)') ? 3 : 1
+  const slidesToShow = useMediaQuery('screen and (max-width: 1024px)') ? 1 : 3
 
   return (
     <section className={classNames(classes.container, className)}>
