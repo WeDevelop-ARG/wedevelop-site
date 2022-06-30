@@ -9,6 +9,7 @@ import useMediaQuery from 'utils/use_media_query'
 import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
+import 'react-slideshow-image/dist/styles.css'
 
 function HowDoesItWorks ({
   handleContactCTAClick,
