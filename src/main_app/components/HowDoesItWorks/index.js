@@ -3,13 +3,12 @@ import classNames from 'classnames'
 import { Slide } from 'react-slideshow-image'
 
 import { useStep } from './components/hooks/useStep'
+import indicatorsStep from './components/hoc/indicatorsStep'
 import Step from './components/Step'
-import WrappedImage from '../WrappedImage'
 
 import useMediaQuery from 'utils/use_media_query'
 import { forDesktopUp } from 'styles/media_queries'
 
-import rightArrow from '../../../assets/how_does_it_works/arrows/right_arrow_mobile.svg'
 import classes from './styles.module.scss'
 import 'react-slideshow-image/dist/styles.css'
 
@@ -24,6 +23,7 @@ function HowDoesItWorks ({
     handleScheduleMeetingCTAClick
   })
   const isTabletUp = useMediaQuery(forDesktopUp)
+  const lastStep = steps.length - 1
 
   return (
     <section className={classNames(classes.container, className)}>
@@ -43,12 +43,7 @@ function HowDoesItWorks ({
             autoplay={false}
             infinite={false}
             arrows={false}
-            indicators={!isTabletUp ? (index) => {
-              return (<div>
-                <div className={classNames('stepsIndicator')}></div>
-                {index < 2 && <WrappedImage className={classes.arrow} src={rightArrow} />}
-              </div>)
-            } : undefined}
+            indicators={!isTabletUp && indicatorsStep(lastStep)}
             responsive={[
               { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } }
             ]}
