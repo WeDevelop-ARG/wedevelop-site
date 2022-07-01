@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { Slide } from 'react-slideshow-image'
 
 import { useStep } from './components/hooks/useStep'
+import indicatorsStep from './components/hoc/indicatorsStep'
 import Step from './components/Step'
 
 import useMediaQuery from 'utils/use_media_query'
@@ -22,6 +23,7 @@ function HowDoesItWorks ({
     handleScheduleMeetingCTAClick
   })
   const isTabletUp = useMediaQuery(forDesktopUp)
+  const lastStep = steps.length - 1
 
   return (
     <section className={classNames(classes.container, className)}>
@@ -41,6 +43,7 @@ function HowDoesItWorks ({
             autoplay={false}
             infinite={false}
             arrows={false}
+            indicators={!isTabletUp && indicatorsStep(lastStep)}
             responsive={[
               { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } }
             ]}
