@@ -112,7 +112,6 @@ $grayColor: #363636;
         order: 1;
         height: 3rem;
         padding: 0;
-        width: 100%;
 
         .arrow {
           position: absolute;
@@ -159,6 +158,9 @@ $grayColor: #363636;
             background-size: 100%;
             width: 100%;
             height: 100%;
+            cursor: pointer;
+            background-color: unset;
+            border: none;
           }
         }
 
