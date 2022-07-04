@@ -8,7 +8,7 @@ const indicatorsStep = (lastStep) =>
   (index) => {
     return (
       <div>
-        <div className={classNames('stepsIndicator')}></div>
+        <button tabIndex="0" className={classNames('stepsIndicator')} />
         {index < lastStep && <WrappedImage className="arrow" src={rightArrow} />}
       </div>
     )
