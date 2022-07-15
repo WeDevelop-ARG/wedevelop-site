@@ -8,11 +8,11 @@ import {
 } from 'main_app/constants'
 import WrappedImage from 'main_app/components/WrappedImage'
 import LoaderSpinner from 'main_app/components/LoaderSpinner'
-
 import HubspotFreeQuoteForm from 'staff_augmentation/components/HubspotFreeQuoteForm'
-
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
 import HalfCircle from 'assets/home/services/half_circle.svg'
+
+import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import classes from './styles.module.scss'
 
@@ -20,20 +20,23 @@ function JoinUsForm() {
   const [isLoading, setIsLoading] = useState(true)
   const { push } = useRouter()
 
-  const handleSubmitFinished = useCallback(async values => {
-    console.log(values);
-
-    // onSuccess()
-  }, [])
-
-  const onLoadingStateChange = useCallback(isLoading => {
-    setIsLoading(isLoading)
-  }, [])
-
   const onSuccess = useCallback(() => {
     const redirectUrl = '/success/confirm'
     push(redirectUrl)
   }, [push])
+
+  const handleSubmitFinished = useCallback(() => {
+    logAnalyticsEvent({
+      event: 'join-us-form-submit',
+      contactType: 'careers-form',
+      source: 'careers'
+    })
+    onSuccess()
+  }, [onSuccess])
+
+  const onLoadingStateChange = useCallback(isLoading => {
+    setIsLoading(isLoading)
+  }, [])
 
   return (
     <section className={classes.joinUsSection} >
