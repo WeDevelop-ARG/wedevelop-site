@@ -1,47 +1,65 @@
+import { useRef } from 'react'
 import classNames from 'classnames'
+import { Slide } from 'react-slideshow-image'
 
 import { useStep } from './components/hooks/useStep'
-
+import indicatorsStep from './components/hoc/indicatorsStep'
 import Step from './components/Step'
-import WrappedImage from '../WrappedImage'
 
-import DesktopSteps from 'assets/how_does_it_works/steps.svg'
-import DotsPattern from 'assets/how_does_it_works/dots_pattern.svg'
+import useMediaQuery from 'utils/use_media_query'
+import { forDesktopUp } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
+import 'react-slideshow-image/dist/styles.css'
 
 function HowDoesItWorks ({
   handleContactCTAClick,
   handleScheduleMeetingCTAClick,
   className
 }) {
+  const slideRef = useRef()
   const steps = useStep({
     handleContactCTAClick,
     handleScheduleMeetingCTAClick
   })
+  const isTabletUp = useMediaQuery(forDesktopUp)
+  const lastStep = steps.length - 1
+
   return (
     <section className={classNames(classes.container, className)}>
-      <WrappedImage src={DotsPattern} alt='' className={classes.topRightDotsPattern} />
       <div className={classes.sectionHeader}>
-        <p className={classes.subheading}>Our Process</p>
-        <h2 className={classes.title}>How It Works</h2>
+        <h2 className={classes.title}>We find you the best developers</h2>
         <hr className={classes.horizontalBar} />
+        <p>Connect with expert developers in just 3 easy steps:</p>
       </div>
       <div className={classes.stepsContainer}>
-        <WrappedImage layout='responsive' src={DesktopSteps} alt='' className={classes.desktopSteps} />
         <div className={classes.row}>
-          {steps?.map(({ id, icon, title, description, mobileArrow }, index) => (
-            <Step
-              key={id}
-              icon={icon}
-              title={title}
-              description={description}
-              isLast={(steps.length - 1) === index}
-              arrow={mobileArrow}
-              className={classes.step}
-            />
-          )
-          )}
+          <Slide
+            ref={slideRef}
+            className={classes.slide}
+            transitionDuration={500}
+            slidesToShow={1}
+            canSwipe={!isTabletUp}
+            autoplay={false}
+            infinite={false}
+            arrows={false}
+            indicators={!isTabletUp && indicatorsStep(lastStep)}
+            responsive={[
+              { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } }
+            ]}
+          >
+            {steps?.map(({ id, icon, title, description }) => (
+              <Step
+                key={id}
+                slideRef={slideRef}
+                position={id}
+                icon={icon}
+                title={title}
+                description={description}
+                className={classes.step}
+              />
+            ))}
+          </Slide>
         </div>
       </div>
     </section>

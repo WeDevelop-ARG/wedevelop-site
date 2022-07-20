@@ -8,6 +8,18 @@ $attachColor: #377DFF;
 .joinUsSection {
   position: relative;
   overflow: hidden;
+
+  .careerForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .loadingContainer {
+      margin: 12px 0;
+    }
+  }
 }
 
 .form {

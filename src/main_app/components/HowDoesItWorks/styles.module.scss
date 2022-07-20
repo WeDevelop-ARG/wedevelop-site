@@ -1,10 +1,21 @@
 @import '/src/styles/media_queries.scss';
+@import '/src/styles/theme.scss';
 
 $grayColor: #363636;
 
 .container {
   position: relative;
-  padding: 50px auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-image: url(../../../assets/how_does_it_works/mobile_background.svg);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: cover;
+
+  @include for-tablet-up {
+    padding-bottom: 0;
+    background-image: url(../../../assets/how_does_it_works/background_gradient.svg);
+  }
 }
 
 .sectionHeader {
@@ -13,8 +24,29 @@ $grayColor: #363636;
   flex-direction: column;
   align-items: center;
 
-  @include for-desktop-up {
-    align-items: flex-start;
+  h2 {
+    text-align: center;
+  }
+
+  hr {
+    order: 3;
+
+    @include for-tablet-up {
+      order: unset;
+    }
+  }
+
+  p {
+    opacity: .5;
+    color: $textColor;
+    font-size: .94rem;
+    text-align: center;
+    order: 2;
+
+    @include for-tablet-up {
+      font-size: 2em;
+      order: unset;
+    }
   }
 }
 
@@ -65,14 +97,152 @@ $grayColor: #363636;
     gap: 7vw;
     margin: 0;
   }
-}
 
-.step {
-  max-width: 280px;
-  width: 100%;
+  .slide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-  @include for-phone-only {
-    max-width: 300px;
+    :global {
+      .react-slideshow-container {
+        order: 2;
+      }
+
+      .indicators {
+        order: 1;
+        height: 3rem;
+        padding: 0;
+
+        .arrow {
+          position: absolute;
+          right: -2rem;
+
+          @media only screen and (min-width: 480px) and (max-width:700px) {
+            right: -3rem;
+          }
+          @include for-tablet-up {
+            right: -3rem;
+          }
+        }
+
+        @include for-phone-only {
+          margin-bottom: 2rem;
+          margin-left: 2rem;
+        }
+
+        @include for-tablet-up {
+          height: 4rem;
+          margin-left: 2rem;
+          margin-top: 4rem;
+        }
+
+        > div {
+          width: 3rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          position: relative;
+          margin-right: 15%;
+
+          @media only screen and (min-width: 480px) and (max-width:700px) {
+            width: 3rem;
+          }
+
+          @include for-tablet-up {
+            width: 4rem;
+            margin-right: 10%;
+          }
+
+          .stepsIndicator {
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background-color: unset;
+            border: none;
+          }
+        }
+
+        > div[data-key="0"] {
+          .stepsIndicator {
+            background-image: url(../../../assets/how_does_it_works/indicators/one-indicator.svg);
+          }
+
+          &.active {
+            .stepsIndicator {
+              background-image: url(../../../assets/how_does_it_works/icons/step_one_active.svg);
+            }
+          }
+        }
+
+        > div[data-key="1"] {
+          .stepsIndicator {
+            background-image: url(../../../assets/how_does_it_works/indicators/two-indicator.svg);
+          }
+
+          &.active {
+            .stepsIndicator {
+              background-image: url(../../../assets/how_does_it_works/icons/step_two_active.svg);
+            }
+          }
+        }
+
+        > div[data-key="2"] {
+          .stepsIndicator {
+            background-image: url(../../../assets/how_does_it_works/indicators/three-indicator.svg);
+          }
+
+          &.active {
+            .stepsIndicator {
+              background-image: url(../../../assets/how_does_it_works/icons/step_three_active.svg);
+            }
+          }
+        }
+
+        .active {
+          .stepsIndicator {
+            transform: translate(-10px, -10px) scale(1.3);
+          }
+        }
+      }
+    }
+
+    .step {
+      width: 100%;
+
+      @include for-tablet-up {
+        padding: 4rem;
+      }
+
+      p b {
+        font-size: 14px;
+      }
+    }
+
+    :global {
+      button.default-nav {
+        position: relative;
+        z-index: 1;
+
+        &.disabled {
+          fill: $disabledButtonBackground;
+        }
+
+        &[data-type="prev"] {
+          left: -8%;
+          @include for-tablet-up {
+            left: 0;
+          }
+        }
+        &[data-type="next"] {
+          right: -8%;
+          @include for-tablet-up {
+            right: 0;
+          }
+        }
+      }
+    }
   }
 }
 

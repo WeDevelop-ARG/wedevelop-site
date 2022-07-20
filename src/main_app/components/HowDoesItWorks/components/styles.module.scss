@@ -1,8 +1,30 @@
 @import '/src/styles/media_queries.scss';
 
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .stepIndicator {
+    display: flex;
+    align-items: center;
+
+    svg {
+      transform: translate(0, -15%) scale(0.6);
+      margin-left: -2rem;
+    }
+
+    .unSelectedStep {
+      cursor: pointer;
+      margin: 0 .5rem;
+    }
+  }
+
+}
+
 .textContainer {
   position: relative;
-  padding: 0 0 0 55px;
+
 
   @include for-desktop-up {
     padding: 0;
@@ -11,7 +33,13 @@
 
 .title {
   font-size: 24px;
-  margin: 20px auto 30px;
+  margin: 0 auto 20px;
+  text-align: left;
+  
+  @include for-tablet-up {
+    text-align: center;
+    margin: 20px auto 30px;
+  }
 }
 
 .description {
@@ -27,6 +55,8 @@
       margin-bottom: 10px;
       margin-left: -25px;
       padding-left: 10px;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
     }
   }
 }
