@@ -1,10 +1,9 @@
 import { useCallback, useState } from 'react'
-import { useRouter } from 'next/router'
 
 import {
   LANDING_CAREERS_HUBSPOT_FORM_FORM_ID,
   LANDING_FREE_QUOTE_HUBSPOT_FORM_PORTAL_ID,
-  LANDING_FREE_QUOTE_HUBSPOT_FORM_REGION,
+  LANDING_FREE_QUOTE_HUBSPOT_FORM_REGION
 } from 'main_app/constants'
 import WrappedImage from 'main_app/components/WrappedImage'
 import LoaderSpinner from 'main_app/components/LoaderSpinner'
@@ -16,14 +15,8 @@ import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 import classes from './styles.module.scss'
 
-function JoinUsForm() {
+function JoinUsForm () {
   const [isLoading, setIsLoading] = useState(true)
-  const { push } = useRouter()
-
-  const onSuccess = useCallback(() => {
-    const redirectUrl = '/success/confirm'
-    push(redirectUrl)
-  }, [push])
 
   const handleSubmitFinished = useCallback(() => {
     logAnalyticsEvent({
@@ -31,15 +24,14 @@ function JoinUsForm() {
       contactType: 'careers-form',
       source: 'careers'
     })
-    onSuccess()
-  }, [onSuccess])
+  }, [])
 
   const onLoadingStateChange = useCallback(isLoading => {
     setIsLoading(isLoading)
   }, [])
 
   return (
-    <section className={classes.joinUsSection} >
+    <section className={classes.joinUsSection}>
       <p className={classes.subheadingText}>Join Us</p>
       <h2 className={classes.titleText}>Let’s grow together</h2>
       <hr className={classes.horizontalBar} />
@@ -65,7 +57,7 @@ function JoinUsForm() {
       <div className={classes.leftFilledCircle} />
       <div className={classes.leftEmptyCircle} />
       <div className={classes.leftSmallCircle} />
-    </section >
+    </section>
   )
 }
 
