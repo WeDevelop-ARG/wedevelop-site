@@ -16,8 +16,8 @@ const nearshoreSoftwareOutsourcing = {
     title: <><b>Nearshore</b> Software Outsourcing</>,
     description: (
       <>
-        <p>Hire the best Developers from Latin America.</p>
-        <p>The top nearshore choice for Software Development.</p>
+        <p>Hire the top Software Development Company in Latin America.</p>
+        <p>Access outstanding quality results and boost your development speed, while focusing on your core business.</p>
       </>
     ),
     quote: (
