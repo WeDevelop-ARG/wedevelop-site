@@ -69,13 +69,6 @@ export default function FullImageHeader ({
           <div className={classes.rightSideContainer}>
             <div className={classes.formWrapper}>
               <ScheduleFormBasic onSubmit={onSuccess} formOrigin={formOrigin} />
-              <p className={classes.alternativeSchedule}>
-                Or,{' '}
-                <Button variant={['link', 'focus-scale']} className={classes.scheduleFormButton} onClick={onScheduleMeetingCTAClick}>
-                  schedule a call
-                </Button>
-                {' '}to tell us about your needs.
-              </p>
               <p className={classes.imageSubject}>
                 <b>Abel Osorio /</b> Chief Executive Officer
               </p>

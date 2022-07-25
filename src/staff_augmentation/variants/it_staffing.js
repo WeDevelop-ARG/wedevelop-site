@@ -16,8 +16,8 @@ const itStaffing = {
     title: <>IT Staff Augmentation</>,
     description: (
       <>
-        <p>Hire the best Developers from Latin America.</p>
-        <p>Access outstanding quality results and lower your costs, while focusing on your core business.</p>
+        <p>Hire the top Software Development Company in Latin America.</p>
+        <p>Access outstanding quality results and boost your development speed, while focusing on your core business.</p>
       </>
     ),
     quote: (

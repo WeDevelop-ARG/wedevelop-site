@@ -16,8 +16,8 @@ const itOutsourcing = {
     title: <><b>Trusted and Efficient</b><br />IT Outsourcing for you</>,
     description: (
       <>
-        <p>Talent that delivers like your dream team would.</p>
-        <p>Fast, without the hassles.</p>
+        <p>Boost Your Projects with the best LatAm IT talent.</p>
+        <p>Fast and at your same time-zone.</p>
       </>
     ),
     quote: (
