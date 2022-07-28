@@ -11,7 +11,7 @@ import Button from 'main_app/components/Button'
 
 import classes from './styles.module.scss'
 
-export default function OurServices() {
+export default function OurServices({ onCTAClick }) {
   return (
     <section className={classes.container} id='our-services'>
       <ul className={classes.cards}>
@@ -95,8 +95,7 @@ export default function OurServices() {
         <p>Hire Cost-Efficent &amp; Experienced Softward Developers</p>
         <Button
           variant='primary'
-          className={classes.buttonTalk}
-          onClick={() => { }}
+          onClick={onCTAClick}
         >
           Get in touch
         </Button>
