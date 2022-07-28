@@ -401,6 +401,12 @@
   @include for-tablet-up {
     flex-direction: row;
     align-items: baseline;
+    width: 80%;
+    margin: auto;
+  }
+
+  @include for-desktop-up {
+    width: 100%;
   }
 
   p {
