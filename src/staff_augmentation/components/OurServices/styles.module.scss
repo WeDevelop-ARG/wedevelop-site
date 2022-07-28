@@ -290,6 +290,8 @@
 }
 
 .needHelpIfSlides {
+  order: 1;
+
   @include for-desktop-up {
     display: none;
   }
@@ -360,6 +362,11 @@
 .skills {
   max-width: 390px;
   margin: 0 auto;
+  order: 3;
+
+  @include for-tablet-up {
+    order: 2;
+  }
 
   @include for-desktop-up {
     margin: -30px 0 0;
@@ -383,5 +390,35 @@
     .skillLogo {
       height: 35px;
     }
+  }
+}
+
+.costEffectiveCTAButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  background-color: #F9F9F9;
+  order: 2;
+  
+  @include for-tablet-up {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  p {
+    font-weight: 500;
+    color: #363636;
+
+    @include for-tablet-down {
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+
+  button {
+    padding: 1rem 3.5rem;
+    font-size: 1rem;
   }
 }

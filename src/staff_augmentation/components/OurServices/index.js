@@ -7,10 +7,11 @@ import DecoElements from 'assets/staff_augmentation/our_services/deco-elements.c
 import Globe from 'assets/staff_augmentation/our_services/globe_magnifying_glass.component.svg'
 import TableConversation from 'assets/staff_augmentation/our_services/table_conversation.component.svg'
 import Skills from 'home/components/Skills'
+import Button from 'main_app/components/Button'
 
 import classes from './styles.module.scss'
 
-export default function OurServices () {
+export default function OurServices() {
   return (
     <section className={classes.container} id='our-services'>
       <ul className={classes.cards}>
@@ -90,6 +91,16 @@ export default function OurServices () {
         showNames
         grayscaleEffect={false}
       />
+      <div className={classes.costEffectiveCTAButton}>
+        <p>Hire Cost-Efficent &amp; Experienced Softward Developers</p>
+        <Button
+          variant='primary'
+          className={classes.buttonTalk}
+          onClick={() => { }}
+        >
+          Get in touch
+        </Button>
+      </div>
     </section>
   )
 }
