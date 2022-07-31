@@ -6,7 +6,7 @@ import classes from './styles.module.scss'
 const ContactCTA = ({ onCTAClick }) => {
   return (
     <div className={classes.ctaContactUsContainer}>
-      <p>Hire Cost-Efficent &amp; Experienced Softward Developers</p>
+      <p>Hire Cost-Efficent &amp; Experienced Software Developers</p>
       <Button
         className={classes.ctaButton}
         onClick={onCTAClick}

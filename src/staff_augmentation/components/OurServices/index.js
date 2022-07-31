@@ -92,7 +92,7 @@ export default function OurServices({ onCTAClick }) {
         grayscaleEffect={false}
       />
       <div className={classes.costEffectiveCTAButton}>
-        <p>Hire Cost-Efficent &amp; Experienced Softward Developers</p>
+        <p>Hire Cost-Efficent &amp; Experienced Software Developers</p>
         <Button
           variant='primary'
           onClick={onCTAClick}
