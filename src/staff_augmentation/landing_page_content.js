@@ -25,8 +25,8 @@ export default function LandingPageContent ({
   return (
     <div className={classes.container}>
       <Article>
-        <OurServices />
-        <FiguresFacts />
+        <OurServices onCTAClick={handleContactCTAClick} />
+        <FiguresFacts onCTAClick={handleContactCTAClick} />
         <Testimonials />
         <HowDoesItWorks
           handleContactCTAClick={handleContactCTAClick}
