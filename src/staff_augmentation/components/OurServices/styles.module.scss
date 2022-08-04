@@ -248,46 +248,101 @@
   }
 }
 
-.needHelpIfFull {
-  align-self: flex-end;
-  margin-bottom: 36px;
+.needHelpItemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  @include for-tablet-down {
-    display: none;
+  @include for-big-desktop-up {
+    align-items: flex-end;
   }
 
-  h3 {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 100%;
-    color: #363636;
-    margin-bottom: 30px;
-  }
+  .needHelpIfFull {
+    align-self: flex-end;
+    margin-bottom: 36px;
 
-  ul {
-    list-style-image: url('~/src/assets/staff_augmentation/our_services/arrow_forward.svg');
-    list-style-position: inside;
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: 15px;
-
-    @media screen and (max-width: 1310px) {
-      grid-template-columns: 1fr;
+    @include for-tablet-down {
+      display: none;
     }
 
-    li {
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 19px;
+    @include for-tablet-up {
+      align-self: flex-start;
+    }
+  
+    h3 {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 100%;
       color: #363636;
+      margin-bottom: 30px;
+    }
+  
+    ul {
+      list-style-image: url('~/src/assets/staff_augmentation/our_services/arrow_forward.svg');
+      list-style-position: inside;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 15px;
+  
+      @media screen and (max-width: 1310px) {
+        grid-template-columns: 1fr;
+      }
+  
+      li {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #363636;
+      }
+    }
+  }
+
+  .costEffectiveCTAButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    background-color: #F9F9F9;
+  
+    @include for-tablet-up {
+      align-items: baseline;
+      flex-direction: row;
+      width: 90%;
+    }
+
+    @include for-tablet-down {
+      align-items: baseline;
+    }
+
+    @include for-regular-desktop-down {
+      align-items: center;
+    }
+
+    @include for-desktop-up {
+      width: 100%;
+    }
+
+    p {
+      font-weight: 500;
+      color: #363636;
+
+      @include for-tablet-down {
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      padding: 1rem 3.5rem;
+      font-size: 1rem;
+      white-space: nowrap;
     }
   }
 }
 
 .needHelpIfSlides {
-  order: 1;
-
   @include for-desktop-up {
     display: none;
   }
@@ -358,11 +413,7 @@
 .skills {
   max-width: 390px;
   margin: 0 auto;
-  order: 3;
 
-  @include for-tablet-up {
-    order: 2;
-  }
 
   @include for-desktop-up {
     margin: -30px 0 0;
@@ -386,41 +437,5 @@
     .skillLogo {
       height: 35px;
     }
-  }
-}
-
-.costEffectiveCTAButton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 1rem;
-  background-color: #F9F9F9;
-  order: 2;
-  
-  @include for-tablet-up {
-    flex-direction: row;
-    align-items: baseline;
-    width: 80%;
-    margin: auto;
-  }
-
-  @include for-desktop-up {
-    width: 100%;
-  }
-
-  p {
-    font-weight: 500;
-    color: #363636;
-
-    @include for-tablet-down {
-      text-align: center;
-      font-size: 1rem;
-    }
-  }
-
-  button {
-    padding: 1rem 3.5rem;
-    font-size: 1rem;
   }
 }

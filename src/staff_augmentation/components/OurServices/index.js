@@ -49,15 +49,6 @@ export default function OurServices({ onCTAClick }) {
           <li>Cost-effective.</li>
         </ul>
       </div>
-      <div className={classes.needHelpIfFull}>
-        <h3>You may need our help if:</h3>
-        <ul>
-          <li>You want to find nearshore talent</li>
-          <li>You want to expand your local team</li>
-          <li>You want to lower your hiring costs</li>
-          <li>You need to develop high-quality solutions</li>
-        </ul>
-      </div>
       <div className={classes.needHelpIfSlides}>
         <h3>You may need our help if...</h3>
         <Slide
@@ -84,6 +75,26 @@ export default function OurServices({ onCTAClick }) {
           ))}
         </Slide>
       </div>
+      <div className={classes.needHelpItemContainer}>
+        <div className={classes.needHelpIfFull}>
+          <h3>You may need our help if:</h3>
+          <ul>
+            <li>You want to find nearshore talent</li>
+            <li>You want to expand your local team</li>
+            <li>You want to lower your hiring costs</li>
+            <li>You need to develop high-quality solutions</li>
+          </ul>
+        </div>
+        <div className={classes.costEffectiveCTAButton}>
+          <p>Hire Cost-Efficient &amp; Experienced Software Developers</p>
+          <Button
+            variant='primary'
+            onClick={onCTAClick}
+          >
+            Get in touch
+          </Button>
+        </div>
+      </div>
       <Skills
         className={classes.skills}
         logoClassName={classes.skillLogo}
@@ -91,15 +102,6 @@ export default function OurServices({ onCTAClick }) {
         showNames
         grayscaleEffect={false}
       />
-      <div className={classes.costEffectiveCTAButton}>
-        <p>Hire Cost-Efficent &amp; Experienced Software Developers</p>
-        <Button
-          variant='primary'
-          onClick={onCTAClick}
-        >
-          Get in touch
-        </Button>
-      </div>
     </section>
   )
 }
