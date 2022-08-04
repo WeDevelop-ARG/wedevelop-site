@@ -7,10 +7,11 @@ import DecoElements from 'assets/staff_augmentation/our_services/deco-elements.c
 import Globe from 'assets/staff_augmentation/our_services/globe_magnifying_glass.component.svg'
 import TableConversation from 'assets/staff_augmentation/our_services/table_conversation.component.svg'
 import Skills from 'home/components/Skills'
+import Button from 'main_app/components/Button'
 
 import classes from './styles.module.scss'
 
-export default function OurServices () {
+export default function OurServices({ onCTAClick }) {
   return (
     <section className={classes.container} id='our-services'>
       <ul className={classes.cards}>
@@ -48,15 +49,6 @@ export default function OurServices () {
           <li>Cost-effective.</li>
         </ul>
       </div>
-      <div className={classes.needHelpIfFull}>
-        <h3>You may need our help if:</h3>
-        <ul>
-          <li>You want to find nearshore talent</li>
-          <li>You want to expand your local team</li>
-          <li>You want to lower your hiring costs</li>
-          <li>You need to develop high-quality solutions</li>
-        </ul>
-      </div>
       <div className={classes.needHelpIfSlides}>
         <h3>You may need our help if...</h3>
         <Slide
@@ -82,6 +74,26 @@ export default function OurServices () {
             </div>
           ))}
         </Slide>
+      </div>
+      <div className={classes.needHelpItemContainer}>
+        <div className={classes.needHelpIfFull}>
+          <h3>You may need our help if:</h3>
+          <ul>
+            <li>You want to find nearshore talent</li>
+            <li>You want to expand your local team</li>
+            <li>You want to lower your hiring costs</li>
+            <li>You need to develop high-quality solutions</li>
+          </ul>
+        </div>
+        <div className={classes.costEffectiveCTAButton}>
+          <p>Hire Cost-Efficient &amp; Experienced Software Developers</p>
+          <Button
+            variant='primary'
+            onClick={onCTAClick}
+          >
+            Get in touch
+          </Button>
+        </div>
       </div>
       <Skills
         className={classes.skills}

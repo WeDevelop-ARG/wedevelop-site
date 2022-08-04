@@ -6,18 +6,27 @@ import BackgroundDesktop from 'assets/staff_augmentation/figures_facts/backgroun
 import BackgroundMobile from 'assets/staff_augmentation/figures_facts/background_mobile.component.svg'
 import ColombiaCircle from 'assets/staff_augmentation/figures_facts/colombia_circle.svg'
 import Icons from 'assets/staff_augmentation/figures_facts/icons.component.svg'
+import ContactCTA from './ContactCTA'
+import useMediaQuery from 'utils/use_media_query'
+import { forTabletDown } from 'styles/media_queries'
 
 import classes from './styles.module.scss'
 
-export default function FiguresFacts () {
+export default function FiguresFacts ({ onCTAClick }) {
+  const isTabletDown = useMediaQuery(forTabletDown)
+
   return (
     <section className={classes.container}>
       <BackgroundDesktop className={classes.desktopBackground} viewBox='0 0 1680 811' preserveAspectRatio='xMidYMid slice' />
       <BackgroundMobile className={classes.mobileBackground} viewBox='0 0 419 694' preserveAspectRatio='xMidYMid slice' />
       <div className={classes.titleContainer}>
         <h3>our numbers</h3>
-        <h2>Figures &amp; Facts</h2>
+        <h2>
+          Figures <br />
+          &amp; Facts
+        </h2>
         <hr />
+        {isTabletDown || <ContactCTA onCTAClick={onCTAClick} />}
       </div>
       <div className={classes.top3Container}>
         <WrappedImage className={classes.top3} src={Top3} layout='responsive' alt='Top 3% Latam Talent' />
@@ -38,6 +47,7 @@ export default function FiguresFacts () {
         preserveAspectRatio='xMidYMid meet'
         alt='One hundred percent customer success rate. More than 200 fully vetted developers. Average hiring time of two weeks. Average time difference of two hours.'
       />
+      {isTabletDown && <ContactCTA onCTAClick={onCTAClick} />}
     </section>
   )
 }
