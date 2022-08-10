@@ -28,6 +28,12 @@ variable "base_domain_name" {
   default     = "wedevelop.me"
 }
 
+variable "base_marketing_domain_name" {
+  type        = string
+  description = "Base domain name for marketing purposes. Specific environments other than production will be a direct subdomain."
+  default     = "wedevelop.info"
+}
+
 variable "production_environment_name" {
   type        = string
   description = "Environment name used for the production environment"
@@ -40,7 +46,9 @@ locals {
 
   project_id                    = "${var.project_id_prefix}%{if !local.is_production}-${local.environment}%{endif}"
   environment_domain_name       = "%{if !local.is_production}${local.environment}.%{endif}${var.base_domain_name}"
+  marketing_environment_domain_name = "%{if !local.is_production}${local.environment}.%{endif}${var.base_marketing_domain_name}"
   default_dns_zone_name         = replace(local.environment_domain_name, ".", "-")
+  default_marketing_dns_zone_name = replace(local.marketing_environment_domain_name, ".", "-")
   frontend_cloud_run_service_id = "${local.project_id}"
 
   production_environment_domain_name = var.base_domain_name

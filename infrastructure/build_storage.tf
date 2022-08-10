@@ -1,4 +1,5 @@
 resource "google_cloudbuild_trigger" "deploy_storage_from_github" {
+  disabled = true
   name        = "github-storage"
   description = "When the \"${local.github_branch_name}\" branch changes on GitHub, the Cloud storage configuration is updated"
   project     = local.project_id
