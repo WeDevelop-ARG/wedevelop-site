@@ -15,7 +15,7 @@ function ConfirmationMessage ({ showModal, onModalClose }) {
       </div>
       <div className={classes.addSomething}>
         <p>Forgot to say something important?</p>
-        <p>Send us a new message or write us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>
+        <p>Send us a new message or write us at <a href='mailto:staffing@wedevelop.me'>staffing@wedevelop.me</a></p>
       </div>
     </div>
   )

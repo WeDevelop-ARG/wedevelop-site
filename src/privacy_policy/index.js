@@ -485,7 +485,7 @@ function PrivacyPolicy () {
           <ul>
             <li>
               By email:
-              <span>info@wedevelop.me</span>
+              <span>staffing@wedevelop.me</span>
             </li>
           </ul>
         </section>

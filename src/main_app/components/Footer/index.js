@@ -15,7 +15,7 @@ import Facebook from 'assets/footer/facebook.svg'
 import Instagram from 'assets/footer/instagram.svg'
 import LinkedIn from 'assets/footer/linked_in.svg'
 
-function Footer ({ className }) {
+function Footer ({ className, email = 'staffing@wedevelop.me' }) {
   className = classnames(
     classes.containerStyle,
     className
@@ -91,10 +91,10 @@ function Footer ({ className }) {
         <ul className={classes.contact}>
           <li><p className={classes.titleContainer}>contact us</p></li>
           <li>
-            <a href='mailto:info@wedevelop.me' className={classes.contactContentContainer}>
+            <a href={`mailto:${email}`} className={classes.contactContentContainer}>
               <WrappedImage src={Email} className={classes.iconStyles} />
               <span className={classes.contactContent}>
-                info@wedevelop.me
+                {email}
               </span>
             </a>
           </li>

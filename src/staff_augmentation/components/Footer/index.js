@@ -30,10 +30,10 @@ function Footer ({ className }) {
           <li className={classes.contactContentContainer}>
             <WrappedImage src={EmailIcon} layout='fixed' width='15' className={classes.iconStyles} />
             <a
-              href='mailto:info@wedevelop.me'
+              href='mailto:staffing@wedevelop.me'
               className={classes.contactContent}
             >
-              info@wedevelop.me
+              staffing@wedevelop.me
             </a>
           </li>
           <li className={classes.contactContentContainer}>
