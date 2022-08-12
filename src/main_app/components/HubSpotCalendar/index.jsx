@@ -69,7 +69,7 @@ export default function HubSpotCalendar ({ sourcePage, onFinish, hideText }) {
         className='meetings-iframe-container'
         data-src='https://meetings.hubspot.com/wedevelop/book-a-call?embed=true'
       />
-      {!hideText && <p>or email us at <a href='mailto:info@wedevelop.me'>info@wedevelop.me</a></p>}
+      {!hideText && <p>or email us at <a href='mailto:staffing@wedevelop.me'>staffing@wedevelop.me</a></p>}
     </>
   )
 }
