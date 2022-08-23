@@ -6,15 +6,15 @@ const javascriptSoftwareOutsourcing = {
   ...defaultContent,
   pathName: 'javascript-software-outsourcing',
   metadata: {
-    title: 'Javascript Software Outsourcing',
-    description: 'Senior Javascript services from Latin America. The top nearshore choice for Software Development.'
+    title: 'JavaScript Software Outsourcing',
+    description: 'Senior JavaScript services from Latin America. The top nearshore choice for Software Development.'
   },
   header: {
-    landingName: <>Javascript-Service</>,
-    title: <><b>Javascript Software Outsourcing</b></>,
+    landingName: <>JavaScript-Service</>,
+    title: <><b>JavaScript Software Outsourcing</b></>,
     description: (
       <>
-        <p>Senior Javascript services from Latin America.</p>
+        <p>Senior JavaScript services from Latin America.</p>
         <p>The top nearshore choice for Software Development.</p>
       </>
     ),

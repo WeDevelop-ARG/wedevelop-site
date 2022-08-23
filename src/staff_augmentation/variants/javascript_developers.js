@@ -6,15 +6,15 @@ const javascriptDevelopers = {
   ...defaultContent,
   pathName: 'javascript-developers',
   metadata: {
-    title: 'Looking for Javascript developers?',
-    description: 'Hire the best Javascript engineers from Latin America. The top nearshore services to boost your software development.'
+    title: 'Looking for JavaScript developers?',
+    description: 'Hire the best JavaScript engineers from Latin America. The top nearshore services to boost your software development.'
   },
   header: {
-    landingName: <>Javascript-People</>,
-    title: <><b>Looking for Javascript developers?</b></>,
+    landingName: <>JavaScript-People</>,
+    title: <><b>Looking for JavaScript developers?</b></>,
     description: (
       <>
-        <p>Hire the best Javascript engineers from Latin America.</p>
+        <p>Hire the best JavaScript engineers from Latin America.</p>
         <p>The top nearshore services to boost your software development.</p>
       </>
     ),
