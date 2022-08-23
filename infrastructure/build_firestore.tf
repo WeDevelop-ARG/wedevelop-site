@@ -1,4 +1,5 @@
 resource "google_cloudbuild_trigger" "deploy_firestore_from_github" {
+  disabled = true
   name        = "github-firestore"
   description = "When the \"${local.github_branch_name}\" branch changes on GitHub, the Cloud Firestore configuration is updated"
   project     = local.project_id

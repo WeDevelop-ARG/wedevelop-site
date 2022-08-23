@@ -32,7 +32,7 @@ function Career () {
         <PictureWall />
       </Article>
       {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer />
+      <Footer email="jobs@wedevelop.me" />
     </>
   )
 }
