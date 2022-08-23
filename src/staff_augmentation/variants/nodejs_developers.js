@@ -6,15 +6,15 @@ const nodejsDevelopers = {
   ...defaultContent,
   pathName: 'nodejs-developers',
   metadata: {
-    title: 'Looking for Node.js engineers?',
-    description: 'Hire the best Node.js engineers from Latin America. The top nearshore services to boost your software development.'
+    title: 'Looking for NodeJS developers?',
+    description: 'Hire the best NodeJS engineers from Latin America. The top nearshore services to boost your software development.'
   },
   header: {
-    landingName: <>Node.js-People</>,
-    title: <><b>Looking for Node.js engineers?</b></>,
+    landingName: <>NodeJS-People</>,
+    title: <><b>Looking for NodeJS developers?</b></>,
     description: (
       <>
-        <p>Hire the best Node.js engineers from Latin America.</p>
+        <p>Hire the best NodeJS engineers from Latin America.</p>
         <p>The top nearshore services to boost your software development.</p>
       </>
     ),
