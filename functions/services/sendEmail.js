@@ -1,8 +1,10 @@
 const axios = require('axios')
 
-const { SENDGRID_API_KEY } = require('../constants')
+const { getSecret } = require('./secrets_provider')
 
-function sendEmail (data) {
+async function sendEmail (data) {
+  const SENDGRID_API_KEY = await getSecret('sendgrid.api_key')
+
   return axios.post('https://api.sendgrid.com/v3/mail/send', data, {
     headers: {
       Authorization: `Bearer ${SENDGRID_API_KEY}`

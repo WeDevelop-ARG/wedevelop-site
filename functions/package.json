@@ -14,6 +14,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@google-cloud/secret-manager": "^3.12.0",
     "@hubspot/api-client": "^5.0.0",
     "@mailchimp/mailchimp_marketing": "^3.0.38",
     "axios": "^0.21.2",

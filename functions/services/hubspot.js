@@ -2,13 +2,23 @@ const hubspot = require('@hubspot/api-client')
 const dayjs = require('dayjs')
 const { compact } = require('lodash')
 
-const { HUBSPOT_API_KEY, HUBSPOT_LANDING_DEAL_PIPELINE_STAGE, HUBSPOT_LANDING_DEAL_PIPELINE_NAME } = require('../constants')
+const { HUBSPOT_LANDING_DEAL_PIPELINE_STAGE, HUBSPOT_LANDING_DEAL_PIPELINE_NAME } = require('../constants')
+const { getSecret } = require('./secrets_provider')
 
-const hubspotClient = new hubspot.Client({
-  apiKey: HUBSPOT_API_KEY
-})
+let hubspotClient = null
+
+async function setupHubSpotClient () {
+  if (hubspotClient !== null) { return }
+  const HUBSPOT_API_KEY = await getSecret('hubspot.api_key')
+  hubspotClient = new hubspot.Client({
+    apiKey: HUBSPOT_API_KEY
+  })
+}
+
+setupHubSpotClient()
 
 exports.getContact = async function getContact (contactId, idProperty) {
+  await setupHubSpotClient()
   const response = await hubspotClient.crm.contacts.basicApi.getById(
     contactId,
     undefined,
@@ -26,6 +36,8 @@ exports.createContact = async function createContact ({ name, email } = {}) {
     firstname: name
   }
   const SimplePublicObjectInput = { properties }
+
+  await setupHubSpotClient()
   const apiResponse = await hubspotClient.crm.contacts.basicApi.create(SimplePublicObjectInput)
 
   return apiResponse.body.id
@@ -44,6 +56,7 @@ exports.createContactIfNotExists = async function upsertContact ({ name, email }
 }
 
 exports.getDeal = async function getDeal (dealId, { considerExpiredAfterSeconds = 3600 } = {}) {
+  await setupHubSpotClient()
   const apiResponse = await hubspotClient.crm.deals.basicApi.getById(dealId, undefined, ['contact'])
   const deal = apiResponse.body
 
@@ -61,6 +74,7 @@ exports.createDeal = async function createDeal (contactId, { name } = {}) {
     pipeline: HUBSPOT_LANDING_DEAL_PIPELINE_NAME
   }
   const SimplePublicObjectInput = { properties }
+  await setupHubSpotClient()
   const apiResponse = await hubspotClient.crm.deals.basicApi.create(SimplePublicObjectInput)
 
   await exports.associateDealToContact(apiResponse.body.id, contactId)
@@ -78,6 +92,7 @@ exports.associateDealToContact = async function associateDealToContact (dealId, 
 }
 
 exports.createDealNote = async function createDealNote (dealId, { body } = {}) {
+  await setupHubSpotClient()
   await hubspotClient.apiRequest({
     method: 'POST',
     path: '/engagements/v1/engagements',
@@ -91,6 +106,7 @@ exports.createDealNote = async function createDealNote (dealId, { body } = {}) {
 }
 
 exports.createContactNote = async function createContactNote (contactId, { body } = {}) {
+  await setupHubSpotClient()
   await hubspotClient.apiRequest({
     method: 'POST',
     path: '/engagements/v1/engagements',
@@ -116,7 +132,7 @@ exports.createMeeting = async function createMeeting ({
 
   associations.contactIds = Array.isArray(contactId) ? contactId : [contactId]
   if (dealId) associations.dealIds = [dealId]
-
+  await setupHubSpotClient()
   await hubspotClient.apiRequest({
     method: 'POST',
     path: '/engagements/v1/engagements',
@@ -138,6 +154,7 @@ exports.subscribeContactToNewsletter = async function ({
   emailAddress,
   subscriptionId
 } = {}) {
+  await setupHubSpotClient()
   await hubspotClient.apiRequest({
     method: 'POST',
     path: '/communication-preferences/v3/subscribe',

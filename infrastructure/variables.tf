@@ -60,3 +60,15 @@ locals {
     testing: "develop",
   }, local.environment, "main")
 }
+
+locals {
+  cf_calendly_base_url = "https://api.calendly.com/"
+  cf_mailchimp_server = "us8"
+  cf_mailchimp_default_list_id = (local.is_production ? "daf422a384" : "dev")
+  cf_mailchimp_career_list_id = (local.is_production ? "34abbed596" : "dev")
+  cf_contact_form_destination_email = (local.is_production ? "info@wedevelop.me" : "nahuel@wedevelop.me")
+  cf_career_form_destination_emails = (local.is_production ? ["jobs@wedevelop.me"] : ["nahuel@wedevelop.me"])
+  cf_hub_spot_landing_deal_pipeline_name = (local.is_production ? "default" : "")
+  cf_hub_spot_landing_deal_pipeline_stage = (local.is_production ? "4357554" : "")
+  cf_hub_spot_blog_newsletter_id = (local.is_production ? "30923530" : "")
+}
