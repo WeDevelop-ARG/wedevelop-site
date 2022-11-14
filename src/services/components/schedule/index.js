@@ -17,7 +17,7 @@ function Schedule ({ contactPagePath, className, service }) {
     <>
       <section className={className}>
         <div className={classes.container}>
-          <p className={classes.heading}>Get in touch</p>
+          <p className={classes.heading}>{(service === 'staff-augmentation') ? 'Contact us!' : 'Get in touch'}</p>
           {renderTitleDescription(service)}
           <hr className={classes.horizontalBar} />
           <Button
