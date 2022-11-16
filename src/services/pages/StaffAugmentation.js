@@ -11,6 +11,8 @@ import PictureWall from 'main_app/components/PictureWall'
 import Schedule from '../components/schedule'
 import ScheduleFormModal from 'staff_augmentation/components/ScheduleFormModal'
 import StaffDetails from '../components/details/components/StaffDetails'
+import EveryStepMatters from 'services/components/EveryStepMatters'
+import HowStaffAugmentationSolutionsWork from 'services/components/HowStaffAugmentationSolutionsWork'
 
 import photo from 'assets/services/photo-staff-augmentation.svg'
 import icon from 'assets/services/icon-staff-augmentation.svg'
@@ -20,7 +22,6 @@ import Footer from 'main_app/components/Footer'
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 import classes from './services.module.scss'
-import HowStaffAugmentationSolutionsWork from 'services/components/HowStaffAugmentationSolutionsWork'
 
 function StaffAugmentation () {
   const SERVICE_NAME = 'staff-augmentation'
@@ -80,6 +81,7 @@ function StaffAugmentation () {
           handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
         />
         <Benefits className={classes.sectionContainer} service='staff-augmentation' />
+        <EveryStepMatters />
         <HowStaffAugmentationSolutionsWork />
         <Schedule
           className={classes.sectionContainer}
