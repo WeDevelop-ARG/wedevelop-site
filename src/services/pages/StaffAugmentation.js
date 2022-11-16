@@ -6,7 +6,7 @@ import Benefits from '../components/benefits'
 import ContactModal from 'main_app/components/ContactModal'
 import Details from '../components/details'
 import Hero from '../components/hero'
-import HowDoesItWorks from 'main_app/components/HowDoesItWorks'
+import HowItWorks from 'services/components/HowItWorks'
 import PictureWall from 'main_app/components/PictureWall'
 import Schedule from '../components/schedule'
 import ScheduleFormModal from 'staff_augmentation/components/ScheduleFormModal'
@@ -40,12 +40,6 @@ function StaffAugmentation () {
     setFormModalOpen(false)
     push(contactPagePath)
   }, [push])
-  const handleScheduleMeetingCTAClick = useCallback(() => {
-    push(contactPagePath)
-  }, [push])
-  const handleContactCTAClick = useCallback(() => {
-    setFormModalOpen(true)
-  }, [])
 
   return (
     <>
@@ -75,14 +69,10 @@ function StaffAugmentation () {
             <StaffDetails />
           </Details>
         </section>
-        <HowDoesItWorks
-          className={classes.howItWorks}
-          handleContactCTAClick={handleContactCTAClick}
-          handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
-        />
         <Benefits className={classes.sectionContainer} service='staff-augmentation' />
         <EveryStepMatters />
         <HowStaffAugmentationSolutionsWork />
+        <HowItWorks />
         <Schedule
           className={classes.sectionContainer}
           contactPagePath={contactPagePath}
