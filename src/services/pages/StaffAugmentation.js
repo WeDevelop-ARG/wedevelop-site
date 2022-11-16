@@ -64,8 +64,9 @@ function StaffAugmentation () {
           icon={icon}
           photo={photo}
           background={background}
-          title={<>Staff <br />Augmentation</>}
-          description='Expand your team with our skilled experts who can boost your development speed, quality and substantially cut down on costs.'
+          title={<>IT Staff <br />Augmentation</>}
+          description={<>Struggling to find talent? <br />Access a Top-Level talent pool of IT professionals.</>}
+          ctaText='Start Today'
         />
         <section className={classes.serviceDetails}>
           <Details subTitle='Assemble your dream team of highly skilled professionals'>

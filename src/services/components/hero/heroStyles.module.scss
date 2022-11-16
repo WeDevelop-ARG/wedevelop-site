@@ -26,13 +26,14 @@
   background: #FFC331;
   border: none;
   height: 10px;
-  margin: 32px 0px;
+  margin: 32px 0px 30px;
   width: 100px;
 }
 
 .icon {
   height: 100px;
   width: 100px;
+  margin-bottom: 30px;
 
   @include for-tablet-down {
     height: 50px;
@@ -42,6 +43,7 @@
 
 .titleText {
   font-weight: 600;
+  margin-bottom: 20px;
 
   @include for-tablet-down {
     font-size: 32px;
@@ -52,6 +54,9 @@
 
 .descriptionText {
   font-weight: 300;
+  line-height: 30px;
+  opacity: 50%;
+  margin: 0;
 
   @include for-phone-only {
     padding-right: 0;

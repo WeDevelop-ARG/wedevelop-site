@@ -14,6 +14,7 @@ function Hero ({
   title,
   description,
   contactPagePath,
+  ctaText,
   className
 }) {
   const {
@@ -43,7 +44,7 @@ function Hero ({
               isAnchor
               variant='primary'
             >
-              Get in Touch
+              {ctaText}
             </Button>
           </div>
           <WrappedImage layout='responsive' className={classes.photo} src={photo} alt='' loading='eager' />
