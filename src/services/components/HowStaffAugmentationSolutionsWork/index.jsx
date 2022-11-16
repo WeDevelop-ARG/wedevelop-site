@@ -1,5 +1,5 @@
 import DotsPattern from 'assets/home/dots_pattern.svg'
-import WrappedImage from '../WrappedImage'
+import WrappedImage from '../../../main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
 

@@ -20,6 +20,7 @@ import Footer from 'main_app/components/Footer'
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 import classes from './services.module.scss'
+import HowStaffAugmentationSolutionsWork from 'services/components/HowStaffAugmentationSolutionsWork'
 
 function StaffAugmentation () {
   const SERVICE_NAME = 'staff-augmentation'
@@ -78,6 +79,7 @@ function StaffAugmentation () {
           handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
         />
         <Benefits className={classes.sectionContainer} service='staff-augmentation' />
+        <HowStaffAugmentationSolutionsWork />
         <Schedule
           className={classes.sectionContainer}
           contactPagePath={contactPagePath}
