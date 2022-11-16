@@ -11,6 +11,8 @@ import PictureWall from 'main_app/components/PictureWall'
 import Schedule from '../components/schedule'
 import ScheduleFormModal from 'staff_augmentation/components/ScheduleFormModal'
 import StaffDetails from '../components/details/components/StaffDetails'
+import EveryStepMatters from 'services/components/EveryStepMatters'
+import HowStaffAugmentationSolutionsWork from 'services/components/HowStaffAugmentationSolutionsWork'
 
 import photo from 'assets/services/photo-staff-augmentation.svg'
 import icon from 'assets/services/icon-staff-augmentation.svg'
@@ -64,8 +66,9 @@ function StaffAugmentation () {
           icon={icon}
           photo={photo}
           background={background}
-          title={<>Staff <br />Augmentation</>}
-          description='Expand your team with our skilled experts who can boost your development speed, quality and substantially cut down on costs.'
+          title={<>IT Staff <br />Augmentation</>}
+          description={<>Struggling to find talent? <br />Access a Top-Level talent pool of IT professionals.</>}
+          ctaText='Start Today'
         />
         <section className={classes.serviceDetails}>
           <Details subTitle='Assemble your dream team of highly skilled professionals'>
@@ -78,6 +81,8 @@ function StaffAugmentation () {
           handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
         />
         <BenefitsOfPartnering contactPagePath={contactPagePath} />
+        <HowStaffAugmentationSolutionsWork />
+        <EveryStepMatters />
         <Schedule
           className={classes.sectionContainer}
           contactPagePath={contactPagePath}
