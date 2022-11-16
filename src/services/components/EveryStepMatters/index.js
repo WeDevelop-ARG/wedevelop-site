@@ -1,6 +1,6 @@
 import WrappedImage from '../../../main_app/components/WrappedImage'
 
-import codingBanner from 'assets/staff_augmentation/code_banner.svg'
+import codingBanner from 'assets/staff_augmentation/code_banner.png'
 import blueGradient from 'assets/staff_augmentation/backgrounds/blue_gradient_triangular_background.svg'
 
 import classes from './styles.module.scss'
