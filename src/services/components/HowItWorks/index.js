@@ -11,7 +11,7 @@ export default function HowItWorks () {
 
   return (
     <>
-      <section id='staff-augmentation-how-it-works' className={classes.howItWorksSection}>
+      <section id='how-it-works' className={classes.howItWorksSection}>
         <div className={classes.sectionHeader}>
           <div className={classes.headerContent}>
             <p className={classes.heading}>Our Process</p>
