@@ -6,6 +6,7 @@ import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import NavBar from 'main_app/components/NavBar'
 import NearshoreOutsourcingHero from '../components/NearshoreOutsourcing'
+import KeyToSuccessfulSourcing from '../components/KeyToSuccessfulSourcing'
 
 import PageMetadata from 'utils/marketing/PageMetadata'
 
@@ -19,8 +20,8 @@ function NearshoreOutsourcing () {
   return (
     <>
       <PageMetadata
-        title='About Us'
-        description='Founded in 2019, WeDevelop is a Web Development and IT Staff Augmentation agency. Meet us.'
+        title='Nearshore Outsourcing'
+        description='The smart way to have on board the best remote talent.'
       />
       <NavBar
         variant={['solid', 'dark']}
@@ -28,6 +29,7 @@ function NearshoreOutsourcing () {
       />
       <Article>
         <NearshoreOutsourcingHero />
+        <KeyToSuccessfulSourcing />
       </Article>
       {contactPagePath === pathname && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer />

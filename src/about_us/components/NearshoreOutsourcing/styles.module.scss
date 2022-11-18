@@ -9,7 +9,7 @@ $grayColor: #363636;
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .sectionHeader {
@@ -37,23 +37,36 @@ $grayColor: #363636;
   gap: 15px;
   align-items: center;
 
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: -0.3px;
-  color: #377DFF;
-
   .text {
     margin: 0;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: #377DFF;
+
+    @include for-desktop-up {
+      font-size: 15px;
+    }
+  }
+
+  .open {
+    transition: transform 100ms ease-in-out;
+    transform: rotate(-90deg);
   }
 }
 
 .discoverMoreButton {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 18px;
   letter-spacing: -0.3px;
-  max-width: 450px;
+  max-width: 300px;
+
+  @include for-desktop-up {
+    font-size: 15px;
+    max-width: 450px;
+  }
 }
 
 .titleText {
@@ -84,16 +97,32 @@ $grayColor: #363636;
   width: 100px;
   height: 10px;
   background: #FFC331;
-  margin: 32px 0px 40px;
+  margin: 32px 0px 25px;
   border: none;
 }
 
 .textBlock {
   width: 100%;
-  font-weight: 300;
-  max-width: 75%;
-  font-size: 20px;
-  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+  align-items: flex-start;
+
+  @include for-desktop-up {
+    gap: 30px;
+  }
+
+  & > p {
+    font-weight: 300;
+    max-width: 75%;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0;
+  
+    @include for-desktop-up {
+      font-size: 20px;
+    }
+  }
 }
 
 .backgroundImg {
