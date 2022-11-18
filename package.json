@@ -25,6 +25,7 @@
     "react-select": "^4.3.1",
     "react-slideshow-image": "^3.7.5",
     "react-step-wizard": "^5.3.9",
+    "react-tabs": "^3.2.3",
     "react-text-loop": "^2.3.0",
     "rectangles": "^0.0.4",
     "uuid": "^8.3.2",

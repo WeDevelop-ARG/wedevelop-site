@@ -7,9 +7,12 @@ import Footer from 'main_app/components/Footer'
 import NavBar from 'main_app/components/NavBar'
 import NearshoreOutsourcingHero from '../components/NearshoreOutsourcing'
 import KeyToSuccessfulSourcing from '../components/KeyToSuccessfulSourcing'
+import NearshoreITStaffing from '../components/NearshoreITStaffing'
 import OutsourceReasons from '../components/OutsourceReasons'
 
 import PageMetadata from 'utils/marketing/PageMetadata'
+
+import classes from './nearshore-outsourcing.module.scss'
 
 function NearshoreOutsourcing () {
   const contactPagePath = '/about-us/contact'
@@ -28,9 +31,10 @@ function NearshoreOutsourcing () {
         variant={['solid', 'dark']}
         contactPagePath={contactPagePath}
       />
-      <Article>
+      <Article className={classes.pageContent}>
         <NearshoreOutsourcingHero />
         <KeyToSuccessfulSourcing />
+        <NearshoreITStaffing />
         <OutsourceReasons />
       </Article>
       {contactPagePath === pathname && <ContactModal isOpen onRequestClose={handleClose} />}
