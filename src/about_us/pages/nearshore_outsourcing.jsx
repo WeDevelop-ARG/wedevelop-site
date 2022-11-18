@@ -7,6 +7,7 @@ import Footer from 'main_app/components/Footer'
 import NavBar from 'main_app/components/NavBar'
 import NearshoreOutsourcingHero from '../components/NearshoreOutsourcing'
 import KeyToSuccessfulSourcing from '../components/KeyToSuccessfulSourcing'
+import OutsourceReasons from '../components/OutsourceReasons'
 
 import PageMetadata from 'utils/marketing/PageMetadata'
 
@@ -30,6 +31,7 @@ function NearshoreOutsourcing () {
       <Article>
         <NearshoreOutsourcingHero />
         <KeyToSuccessfulSourcing />
+        <OutsourceReasons />
       </Article>
       {contactPagePath === pathname && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer />
