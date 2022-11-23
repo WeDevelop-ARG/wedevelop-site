@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
 
 import Article from 'main_app/components/Article'
-import Benefits from '../components/benefits'
+import BenefitsOfPartnering from 'services/components/BenefitsOfPartnering'
 import ContactModal from 'main_app/components/ContactModal'
 import Details from '../components/details'
 import Hero from '../components/hero'
@@ -80,9 +80,9 @@ function StaffAugmentation () {
           handleContactCTAClick={handleContactCTAClick}
           handleScheduleMeetingCTAClick={handleScheduleMeetingCTAClick}
         />
-        <Benefits className={classes.sectionContainer} service='staff-augmentation' />
-        <EveryStepMatters />
+        <BenefitsOfPartnering contactPagePath={contactPagePath} />
         <HowStaffAugmentationSolutionsWork />
+        <EveryStepMatters />
         <Schedule
           className={classes.sectionContainer}
           contactPagePath={contactPagePath}

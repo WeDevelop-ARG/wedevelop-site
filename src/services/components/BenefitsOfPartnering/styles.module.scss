@@ -1,0 +1,117 @@
+@import '/src/styles/media_queries.scss';
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(125px + var(--rootContentMinPadding));
+  padding-bottom: calc(125px + var(--rootContentMinPadding)) !important;
+  gap: 100px;
+  padding-bottom: 60px;
+
+  @include for-desktop-up {
+    flex-direction: row;
+    padding-top: calc(200px + var(--rootContentMinPadding));
+  }
+  
+  @include for-big-desktop-up {
+    padding-top: calc(275px + var(--rootContentMinPadding));
+  }
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+
+  @include for-desktop-up {
+    max-width: 425px;
+    align-items: flex-end;
+    text-align: right;
+    margin-top: 0;
+  }
+}
+
+.titleText {
+  font-weight: 600;
+  margin-bottom: 24px;
+
+  @include for-tablet-down {
+    font-size: 32px;
+    line-height: 32px;
+    margin: 10px auto 16px;
+  }
+}
+
+.descriptionText {
+  font-weight: 300;
+  line-height: 24px;
+  opacity: 50%;
+  margin: 0;
+
+  @include for-phone-only {
+    padding-right: 0;
+  }
+
+  @include for-tablet-down {
+    color: rgba($color: #363636, $alpha: .5);
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+.horizontalBar {
+  background: #FFC331;
+  border: none;
+  height: 10px;
+  margin: 32px 0px;
+  width: 100px;
+}
+
+.button {
+  padding: 13px 73px;
+}
+
+.content {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 100%;
+  padding: 24px 0 24px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  list-style: url('../../../assets/services/benefits/bullet.svg');
+
+  &:first-of-type {
+    padding: 0 0 24px 20px;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid #e1e1e1;
+  }
+}
+
+.background {
+  background-image: url('../../../assets/services/benefits/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
