@@ -12,7 +12,7 @@ function Schedule ({ contactPagePath, className, service }) {
 
   return (
     <>
-      <section className={className}>
+      <section id='contact-us' className={className}>
         <div className={classes.container}>
           <p className={classes.heading}>{getHeadingText()}</p>
           {renderTitleDescription()}

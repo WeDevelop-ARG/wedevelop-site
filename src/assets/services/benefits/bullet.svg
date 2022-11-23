@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 20 20"
+   fill="none"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="benefits_list_bullet.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <circle
+     cx="10"
+     cy="10"
+     r="10"
+     fill="url(#paint0_linear_3239_17727)"
+     id="circle2"
+     style="fill:url(#paint0_linear_3239_17727)" />
+  <g
+     clip-path="url(#clip0_3239_17727)"
+     id="g6"
+     transform="translate(-0.1850996,-0.40820026)">
+    <path
+       d="m 10.1849,5.07489 -0.94,0.94 3.72,3.72667 H 4.85156 v 1.33334 h 8.11334 l -3.72,3.7267 0.94,0.94 5.3333,-5.3334 z"
+       fill="#ffffff"
+       id="path4" />
+  </g>
+  <defs
+     id="defs16">
+    <linearGradient
+       id="paint0_linear_3239_17727"
+       x1="0.12542699"
+       y1="12.5709"
+       x2="18.775"
+       y2="4.3736801"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-0.1850996,-0.40820026)">
+      <stop
+         stop-color="#6B67E9"
+         id="stop8" />
+      <stop
+         offset="1"
+         stop-color="#8224E3"
+         id="stop10" />
+    </linearGradient>
+    <clipPath
+       id="clip0_3239_17727">
+      <rect
+         width="16"
+         height="16"
+         fill="#ffffff"
+         transform="translate(2.18506,2.4082)"
+         id="rect13"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+</svg>
