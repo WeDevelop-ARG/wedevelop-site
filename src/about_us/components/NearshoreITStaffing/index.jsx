@@ -8,7 +8,6 @@ import WrappedImage from 'main_app/components/WrappedImage'
 import strongTalent from 'assets/about_us/nearshore_outsourcing/strong_talent.svg'
 import decoImage from 'assets/about_us/nearshore_outsourcing/deco-elements-3.svg'
 import tabButtonImage from 'assets/about_us/nearshore_outsourcing/tab_button.svg'
-import gradientBackground from 'assets/about_us/nearshore_outsourcing/gradient_background.svg'
 
 import classes from './styles.module.scss'
 
@@ -117,7 +116,7 @@ export default function NearshoreITStaffing () {
         </Button>
         <WrappedImage src={decoImage} alt='decorative image' layout='intrinsic' className={classes.decoImage} />
         <WrappedImage src={strongTalent} alt='strong talent' layout='intrinsic' className={classes.strongTalent} />
-        <WrappedImage src={gradientBackground} alt='decorative background' layout='responsive' className={classes.backgroundImage} />
+        <div className={classes.background} />
       </section>
     </>
   )
