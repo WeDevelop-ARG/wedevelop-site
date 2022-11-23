@@ -25,6 +25,29 @@
   }
 }
 
+.map {
+  z-index: -2;
+  right: 0;
+
+  @include for-tablet-down {
+    position: relative;
+    left: 50%;
+    margin-top: -40px;
+    transform: translateX(0%);
+    width: max(100%, 415px);
+  }
+
+  @include for-desktop-up {
+    position: absolute;
+    top: 0px;
+    right: 0;
+  }
+
+  @media screen and (max-width: 1350px) {
+    right: 0;
+  }
+}
+
 .mainContainer {
   display: flex;
   flex-direction: row;

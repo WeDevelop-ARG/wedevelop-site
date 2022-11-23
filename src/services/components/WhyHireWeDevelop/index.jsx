@@ -2,7 +2,7 @@ import WrappedImage from 'main_app/components/WrappedImage'
 import Image from 'main_app/components/Image'
 
 import circleDeco from 'assets/services/benefits-circle-left.svg'
-import latamMap from 'assets/staff_augmentation/latam_map.svg'
+import LatamMap from 'assets/staff_augmentation/latam_map.svg'
 
 import classes from './styles.module.scss'
 
@@ -13,7 +13,8 @@ function WhyHireWeDevelop () {
         <div className={classes.mainContainer}>
           <div className={classes.imageContainer}>
             {/* ask why the image disappears when layout='fill' is added */}
-            <Image src={latamMap} className={classes.map} alt='' />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LatamMap.src} className={classes.map} alt='' />
           </div>
           <div className={classes.textContainer}>
             <p className={classes.header}>Why us</p>
