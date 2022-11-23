@@ -6,10 +6,10 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 0 200px;
 
   @include for-tablet-down {
     margin-top: 200px;
+    width: 100%;
   }
 }
 
@@ -153,16 +153,17 @@
   max-width: 210px;
 }
 
-.backgroundImage {
+.background {
+  background-image: url('../../../assets/about_us/nearshore_outsourcing/gradient_background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  height: 100%;
+  left: 0;
   position: absolute;
-  padding: 0;
-  z-index: -2;
-
-  @include for-desktop-up {
-    left: 0;
-    right: 0;
-    top: -100px;
-  }
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .strongTalent {
