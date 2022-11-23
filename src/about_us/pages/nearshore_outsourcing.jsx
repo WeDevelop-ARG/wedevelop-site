@@ -9,6 +9,7 @@ import NearshoreOutsourcingHero from '../components/NearshoreOutsourcing'
 import KeyToSuccessfulSourcing from '../components/KeyToSuccessfulSourcing'
 import NearshoreITStaffing from '../components/NearshoreITStaffing'
 import OutsourceReasons from '../components/OutsourceReasons'
+import SourcingTOPPerformingTalent from '../components/SourcingTOPPerformingTalent'
 
 import PageMetadata from 'utils/marketing/PageMetadata'
 
@@ -36,6 +37,7 @@ function NearshoreOutsourcing () {
         <KeyToSuccessfulSourcing />
         <NearshoreITStaffing />
         <OutsourceReasons />
+        <SourcingTOPPerformingTalent />
       </Article>
       {contactPagePath === pathname && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer />
