@@ -1,5 +1,4 @@
 import WrappedImage from 'main_app/components/WrappedImage'
-import Image from 'main_app/components/Image'
 
 import circleDeco from 'assets/services/benefits-circle-left.svg'
 import LatamMap from 'assets/staff_augmentation/latam_map.svg'
