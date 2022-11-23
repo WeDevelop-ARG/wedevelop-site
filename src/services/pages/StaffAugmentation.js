@@ -5,21 +5,22 @@ import Article from 'main_app/components/Article'
 import BenefitsOfPartnering from 'services/components/BenefitsOfPartnering'
 import ContactModal from 'main_app/components/ContactModal'
 import Details from '../components/details'
+import EveryStepMatters from 'services/components/EveryStepMatters'
+import Footer from 'main_app/components/Footer'
 import Hero from '../components/hero'
 import HowItWorks from 'services/components/HowItWorks'
+import HowStaffAugmentationSolutionsWork from 'services/components/HowStaffAugmentationSolutionsWork'
+import NavBar from 'main_app/components/NavBar'
+import NumbersSpeak from 'services/components/NumbersSpeak'
+import PageMetadata from 'utils/marketing/PageMetadata'
 import PictureWall from 'main_app/components/PictureWall'
 import Schedule from '../components/schedule'
 import ScheduleFormModal from 'staff_augmentation/components/ScheduleFormModal'
 import StaffDetails from '../components/details/components/StaffDetails'
-import EveryStepMatters from 'services/components/EveryStepMatters'
-import HowStaffAugmentationSolutionsWork from 'services/components/HowStaffAugmentationSolutionsWork'
 
 import photo from 'assets/services/photo-staff-augmentation.svg'
 import icon from 'assets/services/icon-staff-augmentation.svg'
 import background from 'assets/services/background-staff-augmentation.png'
-import NavBar from 'main_app/components/NavBar'
-import Footer from 'main_app/components/Footer'
-import PageMetadata from 'utils/marketing/PageMetadata'
 
 import classes from './services.module.scss'
 
@@ -72,6 +73,7 @@ function StaffAugmentation () {
         <BenefitsOfPartnering contactPagePath={contactPagePath} />
         <HowStaffAugmentationSolutionsWork />
         <EveryStepMatters />
+        <NumbersSpeak />
         <HowItWorks />
         <Schedule
           className={classes.sectionContainer}
