@@ -2,7 +2,7 @@ import { useWebDevDetails } from '../hooks/useWebDevDetails'
 import InternalLink from 'main_app/components/InternalLink'
 import Button from 'main_app/components/Button'
 
-import Pattern from 'assets/services/dots-pattern.svg'
+import Pattern from 'assets/services/dots-pattern.component.svg'
 import Circle from 'assets/services/details-web-deco-circle.svg'
 
 import WrappedImage from 'main_app/components/WrappedImage'
@@ -31,7 +31,7 @@ function WebDevDetails ({ contactPagePath }) {
           ))}
         </ul>
       </div>
-      <WrappedImage className={classes.decoPattern} src={Pattern} alt='' />
+      <Pattern className={classes.decoPattern} viewBox='0 0 166 327' preserveAspectRatio='xMidYMid meet' />
       <WrappedImage className={classes.decoCircle} src={Circle} alt='' />
     </>
   )
