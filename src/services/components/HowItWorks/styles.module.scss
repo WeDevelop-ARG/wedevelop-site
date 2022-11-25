@@ -1,0 +1,141 @@
+@import '/src/styles/media_queries.scss';
+
+.howItWorksSection {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+}
+
+.headerContent {
+  max-width: 665px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.heading {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  color: rgba($color: #363636, $alpha: 50%);
+  margin-bottom: 32px;
+
+  @include for-tablet-down {
+    font-size: 10px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 10px;
+
+  @include for-tablet-down {
+    font-size: 32px;
+    line-height: 32px;
+    margin: 10px auto 16px;
+  }
+}
+
+.description {
+  font-weight: 300;
+  line-height: 30px;
+  opacity: 50%;
+  margin: 0;
+  text-align: center;
+
+  @include for-phone-only {
+    padding-right: 0;
+  }
+
+  @include for-tablet-down {
+    color: rgba($color: #363636, $alpha: .5);
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+.horizontalBar {
+  background: #FFC331;
+  border: none;
+  height: 10px;
+  margin: 32px 0px 30px;
+  width: 100px;
+}
+
+.howDisclaimer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 48px;
+  background: linear-gradient(270deg, rgba(43, 212, 250, 0.05) 0%, rgba(130, 36, 227, 0.035) 100%);
+  border-radius: 10px;
+
+  > p {
+    margin: 0;
+  }
+
+  @include for-desktop-up {
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+
+.disclaimerTitle {
+  flex-shrink: 0;
+  font-weight: 600;
+  background: linear-gradient(66.27deg, #6B67E9 11.76%, #8224E3 89.05%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.disclaimerContent {
+  flex-grow: 1;
+  font-weight: 300;
+  line-height: 27px;
+}
+
+.ourProcessSteps {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.stepsHeading {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color:rgba($color: #363636, $alpha: 50%);
+  margin-bottom: 30px;
+}
+
+.stepsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+
+  @include for-desktop-up {
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
