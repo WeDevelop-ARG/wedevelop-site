@@ -1,5 +1,4 @@
-import DotsPattern from 'assets/home/dots_pattern.svg'
-import WrappedImage from '../../../main_app/components/WrappedImage'
+import DotsPattern from 'assets/services/dots-pattern.component.svg'
 
 import classes from './styles.module.scss'
 
@@ -7,7 +6,7 @@ function HowStaffAugmentationSolutionsWork () {
   return (
     <>
       <section className={classes.howStaffAugmentationSolutionsWork}>
-        <WrappedImage src={DotsPattern} layout='intrinsic' alt='' className={classes.leftPattern} aria-hidden='true' />
+        <DotsPattern className={classes.topRightPattern} viewBox='0 0 166 327' preserveAspectRatio='xMidYMid meet' />
         <div className={classes.sectionContent}>
           <h2 className={classes.titleContainer}>
             <p className={classes.titleText}>How Our Staff Augmentation Solutions<b className={classes.colouredTitleText}> Work</b></p>
@@ -23,6 +22,7 @@ function HowStaffAugmentationSolutionsWork () {
             . Our exclusive methodology focuses on tailoring our solutions and creating long-lasting relationships with every client.
           </p>
         </div>
+        <DotsPattern className={classes.leftPattern} viewBox='0 0 166 327' preserveAspectRatio='xMidYMid meet' />
       </section>
     </>
   )
