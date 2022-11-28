@@ -9,6 +9,7 @@ import GetInTouch from 'main_app/components/GetInTouch'
 import NavBar from 'main_app/components/NavBar'
 import PageMetadata from 'utils/marketing/PageMetadata'
 import AreasOfExpertiseHero from '../../components/AreasOfExpertiseHero'
+import TechProfiles from 'about_us/components/TechProfiles'
 
 export default function AreasOfExpertise () {
   const contactPagePath = '/about-us/areas-of-expertise/contact'
@@ -29,6 +30,7 @@ export default function AreasOfExpertise () {
       />
       <Article>
         <AreasOfExpertiseHero />
+        <TechProfiles />
         <TestimonialsContainer />
         <GetInTouch
           heading='Get In Touch'
