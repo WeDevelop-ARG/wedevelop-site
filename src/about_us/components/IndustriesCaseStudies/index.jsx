@@ -1,7 +1,7 @@
 import Button from 'main_app/components/Button'
 import Image from 'main_app/components/Image'
 import InternalLink from 'main_app/components/InternalLink'
-import useIndustries from './industries'
+import useIndustries from '../../hooks/useIndustries'
 import classes from './styles.module.scss'
 
 export default function IndustriesAndCaseStudies () {
