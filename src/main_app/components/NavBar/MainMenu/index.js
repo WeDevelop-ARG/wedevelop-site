@@ -121,14 +121,14 @@ function MainMenu ({
               href='/about-us'
               className={classes.dropdownItem}
             >
-              About Us
+              Who we are
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
               href='/about-us/nearshore-outsourcing'
               className={classes.dropdownItem}
             >
-              Nearshore Outsourcing
+              Nearshore outsourcing
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
