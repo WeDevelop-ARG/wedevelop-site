@@ -1,0 +1,105 @@
+@import '/src/styles/media_queries.scss';
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 51px;
+  margin: 150px 0;
+
+  .background {
+    background-image: url('../../../assets/about_us/areas_of_expertise/industries-background.svg');
+    background-size: cover;
+    height: 120%;
+    left: 0;
+    position: absolute;
+    top: -145px;
+    width: 100%;
+    z-index: -1;
+
+    @include for-desktop-up {
+      height: 130%;
+    }
+
+    @media screen and (min-width: 1023px) { 
+      height: 140%;
+    }
+  }
+
+  .titleSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    & > * {
+      text-align: center;
+    }
+
+    .title {
+      font-weight: 600;
+      line-height: 100%;
+      font-size: 52px;
+
+      @include for-desktop-up {
+        font-size: 60px;
+      }
+    }
+
+    .subtitle {
+      font-weight: 300;
+      line-height: 100%;
+      opacity: 0.5;
+      font-size: 17px;
+
+      @include for-desktop-up {
+        font-size: 20px;
+      }
+    }
+
+    .horizontalBar {
+      width: 100px;
+      height: 10px;
+      background: #FFC331;
+      border: none;
+      margin: 0;
+    }
+  }
+
+  .industriesContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .industry {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 230px;
+
+      .icon {
+        width: 120px;
+        height: 120px;
+
+        @include for-desktop-up {
+          width: 140px;
+          height: 140px;
+        }
+      }
+
+      .name {
+        font-weight: 500;
+        line-height: 120%;
+        text-align: center;
+        font-size: 20px;
+
+        @include for-desktop-up {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
