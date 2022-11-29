@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 
+import GetTheMost from 'about_us/components/GetTheMost'
 import IndustriesAndCaseStudies from 'about_us/components/IndustriesCaseStudies'
 import ProcessAndMethodologies from 'about_us/components/ProcessAndMethodologies'
 import TechProfiles from 'about_us/components/TechProfiles'
@@ -38,6 +39,7 @@ export default function AreasOfExpertise () {
         <IndustriesAndCaseStudies />
         <TestimonialsContainer />
         <ProcessAndMethodologies />
+        <GetTheMost />
         <GetInTouch
           heading='Get In Touch'
           title='Time to hire top talent now!'
