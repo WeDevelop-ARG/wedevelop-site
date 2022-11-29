@@ -3,11 +3,13 @@
 
 .howStaffAugmentationSolutionsWork {
   position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: calc(50px + var(--rootContentMinPadding));
   padding-bottom: calc(50px + var(--rootContentMinPadding));
+  overflow: clip visible;
 }
 
 .sectionContent {
