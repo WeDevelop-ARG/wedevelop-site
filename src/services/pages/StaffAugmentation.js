@@ -27,8 +27,8 @@ function StaffAugmentation () {
   const SERVICE_NAME = 'staff-augmentation'
   const contactPagePath = '/services/staff-augmentation/contact'
   const { pathname, push } = useRouter()
-  const handleClose = useCallback(() => {
-    push('/services/staff-augmentation')
+  const handleClose = useCallback(async () => {
+    await push('/services/staff-augmentation')
   }, [push])
 
   const [isFormModalOpen, setFormModalOpen] = useState(false)
@@ -36,12 +36,12 @@ function StaffAugmentation () {
   const onSuccess = useCallback(() => {
     setFormModalOpen(false)
   }, [])
-  const switchToCallModal = useCallback(() => {
+  const switchToCallModal = useCallback(async () => {
     setFormModalOpen(false)
-    push(contactPagePath)
+    await push(contactPagePath)
   }, [push])
-  const handleScheduleMeetingCTAClick = useCallback(() => {
-    push(contactPagePath)
+  const handleScheduleMeetingCTAClick = useCallback(async () => {
+    await push(contactPagePath)
   }, [push])
   const handleContactCTAClick = useCallback(() => {
     setFormModalOpen(true)
@@ -86,7 +86,7 @@ function StaffAugmentation () {
         <Schedule
           className={classes.sectionContainer}
           contactPagePath={contactPagePath}
-          service={SERVICE_NAME}
+          page={SERVICE_NAME}
         />
         <PictureWall />
       </Article>
