@@ -10,7 +10,7 @@ export default function IndustriesAndCaseStudies () {
   return (
     <section className={classes.section}>
       <div className={classes.titleSection}>
-        <h2 className={classes.title}>Industries & Case Studies</h2>
+        <h2>Industries & Case Studies</h2>
         <p className={classes.subtitle}>
           With deep-rooted know-how, we have +15 years of
           experience boosting tech projects across various industries

@@ -37,16 +37,6 @@
       text-align: center;
     }
 
-    .title {
-      font-weight: 600;
-      line-height: 100%;
-      font-size: 52px;
-
-      @include for-desktop-up {
-        font-size: 60px;
-      }
-    }
-
     .subtitle {
       font-weight: 300;
       line-height: 100%;
