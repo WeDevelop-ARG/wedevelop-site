@@ -68,7 +68,7 @@ export default function GetTheMost () {
           </div>
         </Button>
       </div>
-      <div className={classes.background}  />
+      <div className={classes.background} />
     </section>
   )
 }
