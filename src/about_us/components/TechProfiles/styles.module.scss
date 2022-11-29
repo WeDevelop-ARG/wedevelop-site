@@ -29,6 +29,7 @@
     text-transform: uppercase;
     opacity: 0.5;
     font-size: 10px;
+    text-align: center;
 
     @include for-desktop-up {
       font-size: 13px;

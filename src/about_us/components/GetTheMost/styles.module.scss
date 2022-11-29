@@ -14,7 +14,7 @@
     height: 170%;
     left: 0;
     position: absolute;
-    top: -185px;
+    top: -25%;
     width: 100%;
     z-index: -1;
   }
@@ -29,6 +29,7 @@
     .title {
       color: #FFFFFF;
       text-align: center;
+      padding: 20px;
     }
 
     .horizontalBar {
@@ -49,6 +50,7 @@
         color: #FFFFFF;
         font-size: 15px;
         text-align: center;
+        margin-bottom: 0;
   
         @include for-desktop-up {
           font-size: 20px;
