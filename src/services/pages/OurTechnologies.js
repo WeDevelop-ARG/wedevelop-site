@@ -1,27 +1,25 @@
 import { useRouter } from 'next/router'
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
 
 import Article from 'main_app/components/Article'
 import PictureWall from 'main_app/components/PictureWall'
-import ScheduleFormModal from 'staff_augmentation/components/ScheduleFormModal'
 import OurMainTechnologies from 'services/components/OurMainTechnologies'
 
 import Footer from 'main_app/components/Footer'
 import NavBar from 'main_app/components/NavBar'
 import PageMetadata from 'utils/marketing/PageMetadata'
 import OtherTechnologies from '../components/OtherTechnologies'
+import Schedule from '../components/schedule'
+import ContactModal from '../../main_app/components/ContactModal'
+
+import classes from './services.module.scss'
 
 function OurTechnologies () {
-  const contactPagePath = '/services/staff-augmentation/contact'
-  const { push } = useRouter()
-  const [isFormModalOpen, setFormModalOpen] = useState(false)
+  const contactPagePath = '/services/our-technologies/contact'
+  const { pathname, push } = useRouter()
 
-  const onSuccess = useCallback(() => {
-    setFormModalOpen(false)
-  }, [])
-  const switchToCallModal = useCallback(() => {
-    setFormModalOpen(false)
-    push(contactPagePath)
+  const handleClose = useCallback(async () => {
+    await push('/services/web-development')
   }, [push])
 
   return (
@@ -37,16 +35,15 @@ function OurTechnologies () {
       <Article>
         <OurMainTechnologies />
         <OtherTechnologies />
+        <Schedule
+          page='our-technologies'
+          contactPagePath={contactPagePath}
+          className={classes.sectionContainer}
+        />
         <PictureWall />
+        {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       </Article>
       <Footer />
-      <ScheduleFormModal
-        isModalOpen={isFormModalOpen}
-        setModalOpen={setFormModalOpen}
-        onScheduleMeetingClick={switchToCallModal}
-        onSubmit={onSuccess}
-        formOrigin='services/staff-augmentation'
-      />
     </>
   )
 }
