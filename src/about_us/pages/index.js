@@ -56,7 +56,10 @@ function AboutUs () {
         <BackgroundContainer backgroundURL={WedevelopTeam} />
         {renderTestimonials()}
         <BackgroundContainer backgroundURL={WorkCoffee} />
-        <GetInTouch contactPagePath={contactPagePath} />
+        <GetInTouch
+          description=''
+          contactPagePath={contactPagePath}
+        />
         <PictureWall />
       </Article>
       {contactPagePath === pathname && <ContactModal isOpen onRequestClose={handleClose} />}
