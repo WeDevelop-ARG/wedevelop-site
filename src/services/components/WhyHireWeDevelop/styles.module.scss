@@ -3,126 +3,123 @@
 
 .whyHireWeDevelop {
   position: relative;
-  padding: 0 200px 0 0;
+  max-height: 100vw;
+  height: 100%;
   width: 100%;
-  margin-bottom: 150px;
-  margin-top: -200px;
+  display: flex;
+  justify-content: center;
 
-  @include for-regular-desktop-down{
-    padding: 50px 100px 0 100px;
+  @include for-desktop-up {
+    justify-content: right;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.content {
+  display: flex;
+  max-width: 646px;
+  width: 100%;
+  flex-direction: column;
+  gap: 32px;
+
+  .header {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: 1em;
+    text-transform: uppercase;
+    color: #363636;
+    opacity: 0.5;
+    margin: 0;
+
+    @include for-tablet-down {
+      text-align: center;
+    }
   }
 
-  .decoImage {
-    position: absolute;
-    z-index: -1;
-    top: 43%;
-    left: 10%;
+  .title {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 100%;
+    color: #363636;
+    margin: 0;
 
     @include for-regular-desktop-down{
-      width: 120px;
-      top: 15%;
+      font-size: 32px;
+    }
+
+    @include for-tablet-down {
+      text-align: center;
+    }
+  }
+
+  .body > p{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 150%;
+    margin: 0;
+
+    @include for-regular-desktop-down{
+      font-size: 18px;
+    }
+
+    @include for-tablet-down {
+      text-align: center;
+    }
+  }
+
+  .horizontalBar {
+    width: 100px;
+    height: 10px;
+    background: #ffc331;
+    margin: 0;
+    border: none;
+
+    @include for-tablet-down {
+      margin: 0 auto;
+    }
+  }
+
+  @include for-desktop-up {
+    @include for-medium-desktop-down {
+      max-width: none;
+      width: 40vw;
     }
   }
 }
 
 .map {
+  position: absolute;
+  top: -20.5vw;
+  left: 0;
   z-index: -2;
-  right: 0;
+
+  @include for-medium-desktop-down {
+    top: -19.5vw;
+    width: 50%;
+  }
 
   @include for-tablet-down {
-    position: relative;
-    left: 50%;
-    margin-top: -40px;
-    transform: translateX(0%);
-    width: max(100%, 415px);
-  }
-
-  @include for-desktop-up {
-    position: absolute;
-    top: 0px;
-    right: 0;
-  }
-
-  @media screen and (max-width: 1350px) {
-    right: 0;
+    display: none;
   }
 }
 
-.mainContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 75px;
+.decoImage {
+  position: absolute;
+  z-index: -3;
+  bottom: 3vw;
+  left: 10vw;
 
-  .imageContainer {
-    position: relative;
-    height: 100%;
-    width: 100%;
-
-    @include for-regular-desktop-down{
-      display: none
-    }
+  @include for-medium-desktop-down {
+    width: 250px;
   }
 
-  .textContainer {
-    padding-top: 200px;
-    padding-bottom: 200px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
+  @include for-regular-desktop-down{
+    width: 120px;
+  }
 
-    @include for-regular-desktop-down{
-      align-items: center;
-      gap: 15px;
-
-      padding-top: 150px;
-      padding-bottom: 0;
-    }
-
-    .header {
-      font-weight: 500;
-      font-size: 13px;
-      line-height: 100%;
-      letter-spacing: 1em;
-      text-transform: uppercase;
-      color: #363636;
-      opacity: 0.5;
-
-      @include for-regular-desktop-down{
-        font-size: 10px;
-      }
-    }
-
-    .title {
-      font-weight: 600;
-      font-size: 60px;
-      line-height: 100%;
-      color: #363636;
-
-      @include for-regular-desktop-down{
-        font-size: 30px;
-        text-align: center;
-      }
-    }
-
-    .body > p{
-      font-weight: 300;
-      font-size: 20px;
-      line-height: 150%;
-
-      @include for-regular-desktop-down{
-        font-size: 15px;
-        text-align: center;
-      }
-    }
-
-    .horizontalBar {
-      width: 100px;
-      height: 10px;
-      background: #ffc331;
-      margin: 32px 0px 45px;
-      border: none;
-    }
+  @include for-tablet-down {
+    display: none;
   }
 }
