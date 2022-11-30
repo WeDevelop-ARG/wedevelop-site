@@ -19,7 +19,7 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
           <hr className={classes.horizontalBar} />
           <Button
             as={InternalLink}
-            href='/portfolio'
+            href='/about-us/success-stories'
             isAnchor
             variant={['secondary', 'light']}
             className={classes.viewMoreButton}
@@ -32,7 +32,7 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
             return (
               <InternalLink
                 key={i}
-                href={`/portfolio/${story.urlName}`}
+                href={`/about-us/success-stories/${story.urlName}`}
                 className={classes.container}
                 title={`Go to portfolio entry for ${story.header.title}`}
               >
@@ -67,7 +67,7 @@ function PortfolioFeatureDisplay ({ title, subtitle, description, buttonText }) 
       </div>
       <Button
         as={InternalLink}
-        href='/portfolio'
+        href='/about-us/success-stories'
         isAnchor
         variant={['secondary', 'light']}
         className={classNames(classes.viewMoreButton, classes.mobile)}
