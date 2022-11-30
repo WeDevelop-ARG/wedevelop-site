@@ -7,18 +7,15 @@ import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
 import NavBar from 'main_app/components/NavBar'
-import OurCulture from '../components/OurCulture'
 import OurCompany from '../components/OurCompany'
 import PictureWall from 'main_app/components/PictureWall'
 import Testimonials from 'main_app/components/Testimonials'
-import Values from '../components/Values'
 
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 import useMediaQuery from 'utils/use_media_query'
 import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 
-import AgileBook from 'assets/home/agile_book.png'
 import WedevelopTeam from 'assets/home/wedevelop_team.png'
 import WorkCoffee from 'assets/about_us/testimonials/work_cofee.png'
 
@@ -50,9 +47,6 @@ function AboutUs () {
       />
       <Article>
         <OurCompany />
-        <OurCulture />
-        <BackgroundContainer backgroundURL={AgileBook} />
-        <Values />
         <BackgroundContainer backgroundURL={WedevelopTeam} />
         {renderTestimonials()}
         <BackgroundContainer backgroundURL={WorkCoffee} />
