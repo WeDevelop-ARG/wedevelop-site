@@ -33,7 +33,18 @@ function AboutUs () {
   const isTabletDown = useMediaQuery(forTabletDown)
   const { reviews } = useReviews()
   const renderTestimonials = () => {
-    if (isTabletDown) return <Testimonials reviews={reviews} hideHeader showCta />
+    if (isTabletDown) {
+      return (
+        <Testimonials
+          reviews={reviews}
+          hideHeader
+          showCta
+          ctaText={'Let\'s work together on your digital acceleration'}
+          ctaLink={contactPagePath}
+        />
+      )
+    }
+
     return (
       <Testimonials
         title='A word from our clients'
