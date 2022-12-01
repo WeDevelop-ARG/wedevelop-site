@@ -134,6 +134,13 @@ function MainMenu ({
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
+              href='/about-us/areas-of-expertise'
+              className={classes.dropdownItem}
+            >
+              Areas of Expertise
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
               href='/about-us/nearshore-outsourcing'
               className={classes.dropdownItem}
             >

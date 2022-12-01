@@ -21,7 +21,8 @@ function Testimonials ({
   reviews,
   customDecorations,
   hideHeader = false,
-  showCta = false
+  showCta = false,
+  hideSubtitle = false
 }) {
   const isAutoplay = useMemo(() => {
     return !(reviews.length === 1)
@@ -37,11 +38,10 @@ function Testimonials ({
         <div className={classes.sectionHeader}>
           <p className={classes.headingText}>{!isNil(heading) ? heading : 'Testimonials'}</p>
           <h2 className={classes.titleText}>{!isNil(title) ? title : 'What our clients say'}</h2>
-          <p className={classes.descriptionText}>
-            {!isNil(description)
-              ? description
-              : 'Don\'t take our word for it, see what our customers have to say.'}
-          </p>
+          {!hideSubtitle &&
+            <p className={classes.descriptionText}>
+              Don’t take our word for it, see what our customers have to say.
+            </p>}
           <hr className={classes.horizontalBar} />
         </div>}
       <div>

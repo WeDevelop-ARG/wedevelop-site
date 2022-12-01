@@ -7,7 +7,7 @@ import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
 import KeyToSuccessfulSourcing from '../../components/KeyToSuccessfulSourcing'
 import NavBar from 'main_app/components/NavBar'
-import NearshoreOutsourcingHero from '../../components/NearshoreOutsourcing'
+import NearshoreOutsourcingHero from '../../components/NearshoreOutsourcingHero'
 import PageMetadata from 'utils/marketing/PageMetadata'
 
 import classes from './styles.module.scss'
