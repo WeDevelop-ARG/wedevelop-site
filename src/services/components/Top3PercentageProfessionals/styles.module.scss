@@ -1,9 +1,11 @@
 @import '/src/styles/media_queries.scss';
 
 .howWeHire {
+  position: relative;
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  overflow-x: hidden;
 }
 
 .header {
@@ -194,4 +196,26 @@
   left: 0;
   bottom: 0;
   z-index: -1;
+}
+
+.dotsPattern {
+  position: absolute;
+  top: 225px;
+  right: -75px;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.howWeHireCircle {
+  position: absolute;
+  top: 100px;
+  left: 5vw;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
 }

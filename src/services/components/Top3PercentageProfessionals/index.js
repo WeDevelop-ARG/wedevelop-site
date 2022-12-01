@@ -1,8 +1,11 @@
 import Button from 'main_app/components/Button'
 import Funnel from './Funnel'
 import InternalLink from 'main_app/components/InternalLink'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import BlueGradientWithFigures from 'assets/services/blue-gradient-with-figures-background.component.svg'
+import DotsPatterns from 'assets/services/dots-pattern.svg'
+import HowWeHireCircle from 'assets/services/how-we-hire-circle.svg'
 
 import classes from './styles.module.scss'
 
@@ -57,6 +60,8 @@ export default function Top3PercentageProfessionals ({ ctaLink }) {
         </Button>
         <BlueGradientWithFigures className={classes.background} viewBox='0 0 1680 548' preserveAspectRatio='xMidYMid slice' />
       </div>
+      <WrappedImage src={DotsPatterns} alt='' className={classes.dotsPattern} aria-hidden />
+      <WrappedImage src={HowWeHireCircle} alt='' className={classes.howWeHireCircle} aria-hidden />
     </section>
   )
 }
