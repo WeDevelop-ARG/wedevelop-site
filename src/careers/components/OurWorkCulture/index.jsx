@@ -51,7 +51,16 @@ export default function OurWorkCulture () {
           </p>
           {seeMoreButtonClicked &&
             <p>
-              test
+              At WeDevelop, we foster a culture of consistent
+              learning to address the ever-changing skills in
+              demand within this fast-paced tech environment.
+              By questioning what we know, we acquire new perspectives
+              to provide a seamless hiring experience that positively
+              impacts the recruitment process for every client we
+              partner with. Our greatest value lies in our people
+              and their unique selves. Every idea matters, and
+              that’s why we embrace a human-centered approach,
+              harnessing individual differences as a company strength.
             </p>}
           <Button variant='link' onClick={() => setSeeMoreButtonClicked(!seeMoreButtonClicked)}>
             <div className={classes.seeMoreButton}>
