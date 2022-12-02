@@ -12,6 +12,7 @@ import Testimonials from 'main_app/components/Testimonials'
 import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 import PageMetadata from 'utils/marketing/PageMetadata'
 import StaffAugmentationService from './components/StaffAugmentationService'
+import OurPortfolio from './components/OurPortfolio'
 
 function Landing () {
   const { pathname, push } = useRouter()
@@ -34,6 +35,7 @@ function Landing () {
       <Article>
         <Header />
         <StaffAugmentationService />
+        <OurPortfolio />
         <Testimonials
           reviews={reviews}
           title='A word from our clients'
