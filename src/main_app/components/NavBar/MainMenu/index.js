@@ -92,6 +92,13 @@ function MainMenu ({
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
+              href='/services/how-we-hire'
+              className={classes.dropdownItem}
+            >
+              How We Hire
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
               href='/services/staff-augmentation'
               className={classes.dropdownItem}
             >
