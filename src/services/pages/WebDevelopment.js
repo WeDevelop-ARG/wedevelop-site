@@ -25,8 +25,8 @@ function WebDevelopment () {
   const contactPagePath = '/services/web-development/contact'
   const { pathname, push } = useRouter()
 
-  const handleClose = useCallback(() => {
-    push('/services/web-development')
+  const handleClose = useCallback(async () => {
+    await push('/services/web-development')
   }, [push])
 
   return (
@@ -63,7 +63,7 @@ function WebDevelopment () {
         <Schedule
           className={classes.sectionContainer}
           contactPagePath={contactPagePath}
-          service={SERVICE_NAME}
+          page={SERVICE_NAME}
         />
         <PictureWall />
       </Article>
