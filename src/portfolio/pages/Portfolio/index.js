@@ -65,7 +65,7 @@ function Portfolio () {
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
-      <Footer variant='light' />
+      <Footer contactPagePath={contactPagePath} hideContactButton={false} variant='light' />
     </>
   )
 }

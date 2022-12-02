@@ -82,7 +82,7 @@ function StaffAugmentation () {
         />
         <PictureWall />
       </Article>
-      <Footer />
+      <Footer contactPagePath={contactPagePath} hideContactButton={false} />
       <ScheduleFormModal
         isModalOpen={isFormModalOpen}
         setModalOpen={setFormModalOpen}

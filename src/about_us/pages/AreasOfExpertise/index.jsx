@@ -39,7 +39,7 @@ export default function AreasOfExpertise () {
         />
       </Article>
       {contactPagePath === pathname && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer />
+      <Footer contactPagePath={contactPagePath} hideContactButton={false} />
     </>
   )
 }

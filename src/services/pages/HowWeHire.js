@@ -43,7 +43,7 @@ export default function HowWeHire () {
         <PictureWall />
         {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       </Article>
-      <Footer />
+      <Footer contactPagePath={contactPagePath} hideContactButton={false} />
     </>
   )
 }

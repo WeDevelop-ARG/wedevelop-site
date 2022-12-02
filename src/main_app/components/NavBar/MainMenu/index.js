@@ -86,10 +86,10 @@ function MainMenu ({
           <Dropdown.Menu className={classes.dropdownMenu}>
             <Dropdown.Item
               as={InternalLink}
-              href='/services/web-development'
+              href='/services/staff-augmentation'
               className={classes.dropdownItem}
             >
-              Web Development
+              Staff Augmentation
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
@@ -97,13 +97,6 @@ function MainMenu ({
               className={classes.dropdownItem}
             >
               How We Hire
-            </Dropdown.Item>
-            <Dropdown.Item
-              as={InternalLink}
-              href='/services/staff-augmentation'
-              className={classes.dropdownItem}
-            >
-              Staff Augmentation
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
@@ -171,16 +164,6 @@ function MainMenu ({
           </Dropdown.Menu>
         </Dropdown>
       </li>
-      <li className={classes.navItem}>
-        <InternalLink href='/#testimonials'>
-          Testimonials
-        </InternalLink>
-      </li>
-      <li className={classNames(classes.navItem)}>
-        <a href='https://blog.wedevelop.me' target='_self' rel='noopener noreferrer'>
-          Blog
-        </a>
-      </li>
       <li
         className={classNames(classes.navItem, {
           [classes.active]: globalThis.window?.location.pathname.startsWith('/careers')
@@ -221,6 +204,11 @@ function MainMenu ({
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
+      </li>
+      <li className={classNames(classes.navItem)}>
+        <a href='https://blog.wedevelop.me' target='_self' rel='noopener noreferrer'>
+          Blog
+        </a>
       </li>
       <li>
         <Button
