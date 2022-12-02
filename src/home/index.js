@@ -13,9 +13,11 @@ import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 import PageMetadata from 'utils/marketing/PageMetadata'
 import StaffAugmentationService from './components/StaffAugmentationService'
 import OurPortfolio from './components/OurPortfolio'
+import AboutWeDevelop from 'main_app/components/AboutWeDevelop'
 
 function Landing () {
   const { pathname, push } = useRouter()
+  const contactPagePath = '/contact'
 
   const handleClose = useCallback(() => {
     push('/', undefined, { scroll: false, shallow: true })
@@ -41,10 +43,11 @@ function Landing () {
           title='A word from our clients'
           hideSubtitle
         />
-        <GetInTouch contactPagePath='/contact' />
+        <AboutWeDevelop ctaLink={contactPagePath} />
+        <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
-      {pathname === '/contact' && <ContactModal isOpen onRequestClose={handleClose} />}
+      {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer />
     </>
   )
