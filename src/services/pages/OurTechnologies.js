@@ -9,6 +9,7 @@ import OurMainTechnologies from 'services/components/OurMainTechnologies'
 import Footer from 'main_app/components/Footer'
 import NavBar from 'main_app/components/NavBar'
 import PageMetadata from 'utils/marketing/PageMetadata'
+import OtherTechnologies from '../components/OtherTechnologies'
 
 function OurTechnologies () {
   const contactPagePath = '/services/staff-augmentation/contact'
@@ -35,6 +36,7 @@ function OurTechnologies () {
       />
       <Article>
         <OurMainTechnologies />
+        <OtherTechnologies />
         <PictureWall />
       </Article>
       <Footer />
