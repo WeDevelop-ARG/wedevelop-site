@@ -26,10 +26,10 @@ function StoryDetails ({ name }) {
   const { push, pathname } = useRouter()
   const { storyDetails } = useStoryByName(name)
 
-  const contactPagePath = `/portfolio/${name}/contact`
+  const contactPagePath = `/about-us/success-stories/${name}/contact`
 
   const handleClose = useCallback(() => {
-    push(`/portfolio/${name}`)
+    push(`/about-us/success-stories/${name}`)
   }, [name, push])
 
   const withoutTestimonial = isEmpty(storyDetails?.testimonials)

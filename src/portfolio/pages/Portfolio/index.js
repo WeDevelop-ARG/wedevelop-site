@@ -18,10 +18,10 @@ import { useRouter } from 'next/router'
 
 function Portfolio () {
   const { stories } = useStories()
-  const contactPagePath = '/portfolio/contact'
+  const contactPagePath = '/about-us/success-stories/contact'
   const { pathname, push } = useRouter()
   const handleClose = useCallback(() => {
-    push('/portfolio', undefined, { shallow: true, scroll: false })
+    push('/about-us/success-stories', undefined, { shallow: true, scroll: false })
   }, [push])
 
   return (
@@ -43,7 +43,7 @@ function Portfolio () {
                 key={story.urlName}
                 coverImageURL={story.resume.headerImageURL}
                 description={story.header.description}
-                detailsPagePath={`/portfolio/${story.urlName}`}
+                detailsPagePath={`/about-us/success-stories/${story.urlName}`}
                 externalWebsiteURL={story.header.websiteURL}
                 logoBackground={story.header.logoBackground}
                 logoURL={story.header.logoURL}
