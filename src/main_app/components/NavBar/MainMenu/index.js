@@ -88,6 +88,13 @@ function MainMenu ({
             >
               Staff Augmentation
             </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/services/our-technologies'
+              className={classes.dropdownItem}
+            >
+              Our Technologies
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </li>
