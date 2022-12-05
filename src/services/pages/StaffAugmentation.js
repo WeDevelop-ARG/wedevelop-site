@@ -17,6 +17,7 @@ import PictureWall from 'main_app/components/PictureWall'
 import Schedule from '../components/schedule'
 import ScheduleFormModal from 'staff_augmentation/components/ScheduleFormModal'
 import StaffDetails from '../components/details/components/StaffDetails'
+import WhyHireWeDevelop from 'services/components/WhyHireWeDevelop'
 
 import photo from 'assets/services/photo-staff-augmentation.svg'
 import icon from 'assets/services/icon-staff-augmentation.svg'
@@ -65,6 +66,7 @@ function StaffAugmentation () {
           description={<>Struggling to find talent? <br />Access a Top-Level talent pool of IT professionals.</>}
           ctaText='Start Today'
         />
+        <WhyHireWeDevelop />
         <section className={classes.serviceDetails}>
           <Details subTitle='Assemble your dream team of highly skilled professionals'>
             <StaffDetails />
