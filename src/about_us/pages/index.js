@@ -24,6 +24,7 @@ import WorkCoffee from 'assets/about_us/testimonials/work_cofee.png'
 
 import { forTabletDown } from 'styles/media_queries'
 import WeDevelopCulture from 'about_us/components/WeDevelopCulture'
+import MeetOurCEO from 'about_us/components/MeetOurCEO'
 
 function AboutUs () {
   const contactPagePath = '/about-us/contact'
@@ -52,6 +53,7 @@ function AboutUs () {
       <Article>
         <OurCompany />
         <WeDevelopCulture />
+        <MeetOurCEO />
         <OurCulture />
         <BackgroundContainer backgroundURL={AgileBook} />
         <Values />
