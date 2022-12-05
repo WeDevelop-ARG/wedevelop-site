@@ -18,7 +18,7 @@ function SimilarStories ({ storyName }) {
           <p className={classes.subheadingText}>success stories</p>
           <h2 className={classes.titleText}>Similar stories to read</h2>
           <hr className={classes.horizontalBar} />
-          <InternalLink href='/portfolio#top' className={classes.viewAll}>
+          <InternalLink href='/about-us/success-stories#top' className={classes.viewAll}>
             View All
             <WrappedImage src={Arrow} alt='' className={classes.arrow} />
           </InternalLink>
@@ -29,7 +29,7 @@ function SimilarStories ({ storyName }) {
               key={story.urlName}
               coverImageURL={story.resume.headerImageURL}
               description={story.header.description}
-              detailsPagePath={`/portfolio/${story.urlName}#top`}
+              detailsPagePath={`/about-us/success-stories/${story.urlName}#top`}
               externalWebsiteURL={story.header.websiteURL}
               logoBackground={story.header.logoBackground}
               logoURL={story.header.logoURL}

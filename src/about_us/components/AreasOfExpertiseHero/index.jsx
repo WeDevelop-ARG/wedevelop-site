@@ -15,7 +15,7 @@ export default function AreasOfExpertiseHero () {
       <section className={classes.areasOfExpertise}>
         <p className={classes.subheadingText}>Our Company</p>
         <div className={classes.sectionHeader}>
-          <h2 className={classes.titleText}>Our Areas Of Expertise</h2>
+          <h2>Our Areas Of Expertise</h2>
           <p className={classes.descriptionText}>
             We help companies innovate and scale by embracing the latest technologies and resources
           </p>

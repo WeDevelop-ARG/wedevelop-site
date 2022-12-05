@@ -4,21 +4,20 @@ import { useRouter } from 'next/router'
 import useMediaQuery from 'utils/use_media_query'
 import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 
+import AboutWeDevelop from '../components/AboutWeDevelop'
 import Article from 'main_app/components/Article'
 import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
 import NavBar from 'main_app/components/NavBar'
-import OurCulture from '../components/OurCulture'
 import OurCompany from '../components/OurCompany'
 import PageMetadata from 'utils/marketing/PageMetadata'
 import PictureWall from 'main_app/components/PictureWall'
 import Testimonials from 'main_app/components/Testimonials'
-import Values from '../components/Values'
+import WeDevelopCulture from 'about_us/components/WeDevelopCulture'
+import MeetOurCEO from 'about_us/components/MeetOurCEO'
 
-import AgileBook from 'assets/home/agile_book.png'
-import WedevelopTeam from 'assets/home/wedevelop_team.png'
 import WorkCoffee from 'assets/about_us/testimonials/work_cofee.png'
 
 import { forTabletDown } from 'styles/media_queries'
@@ -38,9 +37,9 @@ function AboutUs () {
         <Testimonials
           reviews={reviews}
           hideHeader
-          showCta
           ctaText={'Let\'s work together on your digital acceleration'}
           ctaLink={contactPagePath}
+          showCta
         />
       )
     }
@@ -69,10 +68,9 @@ function AboutUs () {
       />
       <Article>
         <OurCompany />
-        <OurCulture />
-        <BackgroundContainer backgroundURL={AgileBook} />
-        <Values />
-        <BackgroundContainer backgroundURL={WedevelopTeam} />
+        <WeDevelopCulture />
+        <MeetOurCEO />
+        <AboutWeDevelop ctaLink={contactPagePath} />
         {renderTestimonials()}
         <BackgroundContainer backgroundURL={WorkCoffee} />
         <GetInTouch

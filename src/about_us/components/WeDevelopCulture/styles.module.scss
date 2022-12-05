@@ -1,0 +1,78 @@
+@import '/src/styles/media_queries.scss';
+
+
+.section {
+  position: relative;
+
+  .content {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @include for-desktop-up {
+      margin-top: 80px;
+    }
+
+    .textContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 32px;
+      width: 100%;
+      margin-top: 50px;
+
+      @include for-desktop-up {
+        align-items: flex-start;
+        margin-top: 0;
+        width: 40%;
+      }
+
+      .title {
+        text-align: center;
+
+        @include for-desktop-up {
+          text-align: left;
+        }
+      }
+
+      .body {
+        font-weight: 300;
+        line-height: 150%;
+        font-size: 14px;
+        text-align: center;
+
+        @include for-desktop-up {
+          font-size: 18px;
+          text-align: left;
+        }
+
+        .boldText {
+          font-weight: 600;
+        }
+      }
+
+      .horizontalBar {
+        width: 100px;
+        height: 10px;
+        background: #FFC331;
+        border: none;
+        margin: 0;
+      }
+    }
+  }
+
+  .background {
+    background-image: url('../../../assets/about_us/gradient-background.svg');
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
