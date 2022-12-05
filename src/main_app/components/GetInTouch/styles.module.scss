@@ -19,17 +19,21 @@
   align-items: center;
 
   @include for-tablet-down {
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0 40px 0;
   }
 }
 
 .subheadingText {
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 1em;
   color: rgba($color: #363636, $alpha: 0.5);
   font-size: 10px;
   margin-bottom: 40px;
   text-transform: uppercase;
+
+  @include for-desktop-up {
+    font-size: 13px;
+  }
 }
 
 .titleText {
@@ -74,7 +78,7 @@
   @extend %dotsPattern;
   top: 40px;
   left: calc(50% - 125px);
-  
+
   @include for-desktop-up {
     top: 90px;
     left: 5vw;
@@ -89,7 +93,7 @@
   @extend %dotsPattern;
   bottom: 40px;
   right: calc(50% - 125px);
-  
+
   @include for-desktop-up {
     top: 90px;
     bottom: auto;

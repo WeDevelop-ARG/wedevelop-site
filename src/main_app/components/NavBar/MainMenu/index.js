@@ -89,6 +89,13 @@ function MainMenu ({
             >
               Staff Augmentation
             </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/services/our-technologies'
+              className={classes.dropdownItem}
+            >
+              Our Technologies
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </li>
@@ -122,14 +129,21 @@ function MainMenu ({
               href='/about-us'
               className={classes.dropdownItem}
             >
-              About Us
+              Who we are
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/about-us/areas-of-expertise'
+              className={classes.dropdownItem}
+            >
+              Areas of Expertise
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
               href='/about-us/nearshore-outsourcing'
               className={classes.dropdownItem}
             >
-              Nearshore Outsourcing
+              Nearshore outsourcing
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>

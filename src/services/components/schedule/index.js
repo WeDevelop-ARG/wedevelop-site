@@ -7,8 +7,8 @@ import classes from './schedule.module.scss'
 import WrappedImage from 'main_app/components/WrappedImage'
 import useGetScheduleData from './hooks/useGetScheduleData'
 
-function Schedule ({ contactPagePath, className, service }) {
-  const { renderTitleDescription, getHeadingText, getCTAText } = useGetScheduleData(service)
+function Schedule ({ contactPagePath, className, page }) {
+  const { renderTitleDescription, getHeadingText, getCTAText } = useGetScheduleData(page)
 
   return (
     <>
