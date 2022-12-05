@@ -140,6 +140,13 @@ function MainMenu ({
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
+              href='/about-us/success-stories'
+              className={classes.dropdownItem}
+            >
+              Success Stories
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
               href='/about-us/nearshore-outsourcing'
               className={classes.dropdownItem}
             >
@@ -157,15 +164,6 @@ function MainMenu ({
         <a href='https://blog.wedevelop.me' target='_self' rel='noopener noreferrer'>
           Blog
         </a>
-      </li>
-      <li
-        className={classNames(classes.navItem, {
-          [classes.active]: globalThis.window?.location.pathname.startsWith('/portfolio')
-        })}
-      >
-        <InternalLink href='/portfolio'>
-          Portfolio
-        </InternalLink>
       </li>
       <li
         className={classNames(classes.navItem, {
