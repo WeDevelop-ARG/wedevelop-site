@@ -46,6 +46,7 @@ function MainMenu ({
   }, [onRequestClose])
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
   const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false)
+  const [isCareersDropdownOpen, setIsCareersDropdownOpen] = useState(false)
 
   return (
     <ul onClick={handleClick} className={classNames(classes.menu, className, { [classes.hidden]: !isOpen })}>
@@ -95,6 +96,13 @@ function MainMenu ({
             >
               Staff Augmentation
             </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/services/our-technologies'
+              className={classes.dropdownItem}
+            >
+              Our Technologies
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </li>
@@ -128,14 +136,28 @@ function MainMenu ({
               href='/about-us'
               className={classes.dropdownItem}
             >
-              About Us
+              Who we are
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/about-us/areas-of-expertise'
+              className={classes.dropdownItem}
+            >
+              Areas of Expertise
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/about-us/success-stories'
+              className={classes.dropdownItem}
+            >
+              Success Stories
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
               href='/about-us/nearshore-outsourcing'
               className={classes.dropdownItem}
             >
-              Nearshore Outsourcing
+              Nearshore outsourcing
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
@@ -152,21 +174,44 @@ function MainMenu ({
       </li>
       <li
         className={classNames(classes.navItem, {
-          [classes.active]: globalThis.window?.location.pathname.startsWith('/portfolio')
-        })}
-      >
-        <InternalLink href='/portfolio'>
-          Portfolio
-        </InternalLink>
-      </li>
-      <li
-        className={classNames(classes.navItem, {
           [classes.active]: globalThis.window?.location.pathname.startsWith('/careers')
         })}
       >
-        <InternalLink href='/careers'>
-          Careers
-        </InternalLink>
+        <Dropdown show={isCareersDropdownOpen} onToggle={setIsCareersDropdownOpen}>
+          <Dropdown.Toggle
+            as={Button}
+            variant='link'
+            className={classNames(classes.servicesDropdownToggle, {
+              [classes.open]: isCareersDropdownOpen
+            })}
+            data-close-menu-on-click='false'
+            iconRight={
+              <Image
+                src={dropdownIconURL}
+                alt=''
+                className={classes.iconRight}
+              />
+            }
+          >
+            Careers
+          </Dropdown.Toggle>
+          <Dropdown.Menu className={classes.dropdownMenu}>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/careers/work-culture'
+              className={classes.dropdownItem}
+            >
+              Work Culture
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/careers/job-openings'
+              className={classes.dropdownItem}
+            >
+              Job Openings
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </li>
       <li>
         <Button

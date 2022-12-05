@@ -60,7 +60,8 @@ const variants = PropTypes.oneOf([
   'focus-gradient',
   'black',
   'white',
-  'bold'
+  'bold',
+  'container'
 ])
 
 Button.propTypes = {

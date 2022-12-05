@@ -99,6 +99,7 @@
   color: rgba($color: #ffffff, $alpha: 50%);
   text-transform: uppercase;
   margin-bottom: 32px;
+  letter-spacing: 1em;
 
   @include for-desktop-up {
     font-size: 13px;

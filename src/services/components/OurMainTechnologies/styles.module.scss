@@ -1,0 +1,105 @@
+@import '/src/styles/media_queries.scss';
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  overflow-x: hidden;
+
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .title {
+      font-weight: 600;
+      font-size: 45px;
+      line-height: 50px;
+      text-align: center;
+
+      @include for-desktop-up {
+        font-size: 60px;
+        line-height: 60px;
+      }
+    }
+
+    .subtitle {
+      font-weight: 300;
+      opacity: 0.5;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+
+      @include for-desktop-up {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    .horizontalBar {
+      width: 100px;
+      height: 10px;
+      background: #FFC331;
+      margin: auto;
+      border: none;
+    }
+  }
+
+  .logoWall {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px,auto));
+    align-items: center;
+    gap: 70px 120px;
+
+    .technologyContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+
+      .technologyName {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 20px;
+        margin: 0;
+      }
+    }
+
+    @include for-desktop-up {
+      grid-template-columns: repeat(3, minmax(150px, auto));
+    }
+  }
+
+  %decoration {
+    z-index: -1;
+  }
+
+  .decoElements {
+    @extend %decoration;
+    position: absolute;
+    top: 0;
+    left: 50px;
+  }
+
+  .dottedSemiCircle {
+    @extend %decoration;
+    position: absolute;
+    top: 500px;
+    left: 0;
+  }
+
+  .dotsPattern {
+    @extend %decoration;
+    position: absolute;
+    top: 1000px;
+    right: -70px;
+
+    @include for-desktop-up {
+      top: 300px;
+    }
+  }
+}

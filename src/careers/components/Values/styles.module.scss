@@ -1,0 +1,139 @@
+@import '/src/styles/theme';
+@import '/src/styles/media_queries';
+
+$grayColor: #363636;
+
+.values {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 115px;
+  overflow: hidden;
+}
+
+.sectionContent {
+  padding-top: 50px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.headingText {
+  font-weight: 500;
+  letter-spacing: 1em;
+  color: rgba($color: #363636, $alpha: 0.5);
+  font-size: 10px;
+  margin: 0 auto 32px auto;
+  text-transform: uppercase;
+
+  @include for-tablet-up {
+    font-size: 13px;
+  }
+}
+
+.titleText {
+  font-size: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+  }
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 32px auto 60px auto;
+  border: none;
+}
+
+.valueList {
+  --repeat: auto-fit;
+
+  @include for-desktop-up {
+    --repeat: 2;
+  }
+
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--repeat), minmax(250px, 1fr));
+  column-gap: 30px;
+  row-gap: 30px;
+  margin: auto;
+}
+
+.valueBox {
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  z-index: 1;
+  width: 100%;
+  min-height: 230px;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.valueIcon {
+  margin-bottom: 24px;
+}
+
+.valueTitle {
+  line-height: 44px;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.valueDescription {
+  font-weight: 300;
+  line-height: 24px;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+%decoElement {
+  position: absolute;
+  z-index: -1;
+}
+
+.topLeftPattern {
+  @extend %decoElement;
+
+  top: 25%;
+  left: -65px;
+
+  @include for-tablet-down {
+    width: 217px;
+    transform: rotate(90deg);
+  }
+
+  @include for-desktop-up {
+    width: 277px;
+    transform: rotate(0deg);
+    top: 12vw;
+    left: 10vw;
+  }
+}
+
+.decoCircle {
+  @extend %decoElement;
+
+  bottom: 0;
+  right: 10vw;
+
+  @include for-medium-desktop-down {
+    right: 5vw;
+  }
+
+  @include for-tablet-down {
+    display: none;
+  }
+}

@@ -36,7 +36,7 @@ function StoryHeader ({
       <div className={classes.decorationWrapper}>
         <Button
           as={InternalLink}
-          href='/portfolio'
+          href='/about-us/success-stories'
           variant='link'
           iconLeft={<WhiteBackwardArrow />}
           className={classes.backToList}

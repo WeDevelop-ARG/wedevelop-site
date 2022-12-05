@@ -36,7 +36,7 @@ function Footer ({ className, email = 'staffing@wedevelop.me' }) {
             </InternalLink>
           </li>
           <li className={classes.contactContentContainer}>
-            <InternalLink href='/careers' className={classes.contactContent}>
+            <InternalLink href='/careers/job-openings' className={classes.contactContent}>
               Careers
             </InternalLink>
           </li>

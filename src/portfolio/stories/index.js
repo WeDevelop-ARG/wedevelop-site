@@ -7,7 +7,7 @@ import monedaDetails from './moneda_details'
 import raftDetails from './raft_details'
 import trainWithDetails from './trainWith_details'
 
-// TODO: Recordar agregar la pagina nueva sobre /pages/portfolios en caso de agregar una nuevo story
+// TODO: Recordar agregar la pagina nueva sobre /pages/about-us/success-stories en caso de agregar una nuevo story
 
 export const stories = [
   copaDetails,
