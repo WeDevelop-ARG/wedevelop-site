@@ -50,7 +50,7 @@ export default function StaffAugmentationService () {
           <Button
             as={InternalLink}
             variant='link'
-            href='/services/staff-augmentation'
+            href='/services/our-technologies'
             className={classes.button}
           >
             <div className={classes.seeMoreButton}>
