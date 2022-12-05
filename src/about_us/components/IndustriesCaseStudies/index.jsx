@@ -1,7 +1,7 @@
 import Button from 'main_app/components/Button'
 import Image from 'main_app/components/Image'
 import InternalLink from 'main_app/components/InternalLink'
-import useIndustries from './industries'
+import useIndustries from '../../hooks/useIndustries'
 import classes from './styles.module.scss'
 
 export default function IndustriesAndCaseStudies () {
@@ -10,7 +10,7 @@ export default function IndustriesAndCaseStudies () {
   return (
     <section className={classes.section}>
       <div className={classes.titleSection}>
-        <h2 className={classes.title}>Industries & Case Studies</h2>
+        <h2>Industries & Case Studies</h2>
         <p className={classes.subtitle}>
           With deep-rooted know-how, we have +15 years of
           experience boosting tech projects across various industries

@@ -9,7 +9,7 @@ export default function TechProfiles () {
       <div className={classes.textContainer}>
         <p className={classes.introTitle}>We strive to excellence</p>
         <div className={classes.mainContent}>
-          <h2 className={classes.title}>Tech Profiles</h2>
+          <h2>Tech Profiles</h2>
           <span>
             <p className={classes.body}>
               Augment your in-house team and fill the skills gaps in
