@@ -1,11 +1,13 @@
 import WebDevTitleDescription from '../components/WebDevTitleDescription'
 import StaffAugTitleDescription from '../components/StaffAugTitleDescription'
+import HowWeHireTitleDescription from '../components/HowWeHireTitleDescription'
 import OurTechsTitleDescription from '../components/OurTechsTitleDescription'
 
 export default function useGetScheduleData (page) {
   const renderTitleDescription = () => {
     if (page === 'staff-augmentation') return (<StaffAugTitleDescription />)
-    if (page === 'our-technologies') return (<OurTechsTitleDescription />)
+    else if (page === 'how-we-hire') return (<HowWeHireTitleDescription />)
+    else if (page === 'our-technologies') return (<OurTechsTitleDescription />)
     return (<WebDevTitleDescription />)
   }
 
