@@ -7,7 +7,7 @@
 
   @include for-desktop-up {
     padding-top: var(--rootContentMinPadding);
-    padding-bottom: var(--rootContentMinPadding);
+    padding-bottom: calc(30px + var(--rootContentMinPadding));
   }
 
   @include for-tablet-down {

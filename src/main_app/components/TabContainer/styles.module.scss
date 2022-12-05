@@ -1,0 +1,73 @@
+@import '/src/styles/media_queries.scss';
+
+$tabFontColor: #363636;
+$activeTabBackgroundColor: #f9f9f9;
+
+.tabHeader {
+  position: relative;
+  display: flex;
+}
+
+.headerLabel {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba($color: $tabFontColor, $alpha: 50%);
+}
+
+.tabList {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 0;
+
+  @include for-tablet-up {
+    width: 100%;
+  }
+}
+
+.arrow {
+  align-self: center;
+  padding: 0 5px;
+  flex-shrink: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px !important;
+  color: $tabFontColor !important;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.selectedTab .button {
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px !important;
+  color: $tabFontColor !important;
+  font-weight: 500;
+  cursor: pointer;
+  background: $activeTabBackgroundColor;
+}
+
+.tabPanel {
+  padding: 30px 100px;
+
+  &[class~="react-tabs__tab-panel--selected"] {
+    background: $activeTabBackgroundColor;
+  }
+
+  &:not([class~="react-tabs__tab-panel--selected"]) {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
 import Button from 'main_app/components/Button'
 
-import LatamMap from 'assets/staff_augmentation/latam_map.svg'
+import LatamMap from 'assets/staff_augmentation/latam_map.component.svg'
 
 import classes from './styles.module.scss'
 

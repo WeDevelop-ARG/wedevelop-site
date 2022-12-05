@@ -28,12 +28,14 @@ function PortfolioHeader () {
         <div className={classes.columnsContainer}>
           <div className={classes.leftSideContainer}>
             <div className={classes.leftSideContent}>
-              <p className={classes.headingText}>success stories</p>
+              <p className={classes.headingText}>our portfolio</p>
               <h2 className={classes.titleText}>
-                Check out our success stories
+                Success Stories
               </h2>
               <p className={classes.descriptionText}>
-                Our work is endorsed by straight 5-star ratings
+                Our work sets us apart. Learn more about how
+                WeDevelop has helped businesses across all
+                industries accelerate their digital transformation.
               </p>
               <hr className={classes.horizontalBar} />
             </div>
