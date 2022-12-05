@@ -1,5 +1,10 @@
+import Image from 'main_app/components/Image'
 import useProcessSteps from './ProcessSteps/process_steps'
+
+import stepDecoration from 'assets/about_us/areas_of_expertise/step-decoration.svg'
+
 import classes from './styles.module.scss'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 export default function ProcessAndMethodologies () {
   const { steps } = useProcessSteps()
@@ -8,7 +13,7 @@ export default function ProcessAndMethodologies () {
     <section className={classes.section}>
       <div className={classes.textSection}>
         <p className={classes.introTitle}>Our Process</p>
-        <h2>Our Process + Methodologies</h2>
+        <h2 className={classes.title}>Our Process + Methodologies</h2>
         <div className={classes.body}>
           <p className={classes.normalText}>
             At WeDevelop, we work only with top-notch talent.
@@ -32,6 +37,7 @@ export default function ProcessAndMethodologies () {
       <div className={classes.stepsContainer}>
         {steps.map(({ description }, index) => (
           <div key={index} className={classes.step}>
+            <WrappedImage src={stepDecoration} alt='decorative image' className={classes.stepDecoration} />
             <span className={classes.number}>{index + 1}</span>
             {description}
           </div>

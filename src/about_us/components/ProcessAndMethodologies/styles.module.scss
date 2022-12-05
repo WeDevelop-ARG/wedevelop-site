@@ -37,6 +37,14 @@
       }
     }
 
+    .title {
+      text-align: center;
+
+      @include for-desktop-up {
+        text-align: left;
+      }
+    }
+
     .horizontalBar {
       width: 100px;
       height: 10px;
@@ -76,6 +84,7 @@
     }
 
     .step {
+      position: relative;
       display: flex;
       gap: 10px;
       flex-direction: column;
@@ -95,6 +104,16 @@
         font-size: 75px;
         line-height: 100%;
         text-align: center;
+      }
+
+      .stepDecoration {
+        z-index: -1;
+        top: 25px !important;
+        right: -40px !important;
+
+        @media screen and (min-width: 1023px) and (max-width: 1165px) {
+          display: none;
+        }
       }
     }
   }
