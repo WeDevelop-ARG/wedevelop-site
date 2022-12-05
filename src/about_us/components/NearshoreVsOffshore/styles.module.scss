@@ -1,0 +1,70 @@
+@import '/src/styles/media_queries.scss';
+
+.nearshoreVsOffshoreSection {
+  position: relative;
+  width: 100%;
+
+  @include for-desktop-up {
+    padding: 40px 40px 80px;
+  }
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+}
+
+.header {
+  max-width: 875px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 600;
+  text-align: center;
+
+  @include for-desktop-up {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.description {
+  font-weight: 300;
+  color: rgba($color: #363636, $alpha: 50%);
+  margin: 0;
+  text-align: center;
+
+  @include for-desktop-up {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.horizontalBar {
+  background: #FFC331;
+  border: none;
+  height: 10px;
+  margin: 32px 0 50px;
+  width: 100px;
+}
+
+.decoCircles {
+  display: none;
+
+  @include for-desktop-up {
+    display: block;
+    position: absolute;
+    top: -70px;
+    left: 50px;
+    z-index: -1;
+  }
+}

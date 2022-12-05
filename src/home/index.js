@@ -1,7 +1,10 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 
+import useAvailableDevs from './hooks/useAvailableDevs'
+
 import Article from 'main_app/components/Article'
+import AvailableDevs from '../staff_augmentation/components/AvailableDevs'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
@@ -16,6 +19,7 @@ import OurPortfolio from './components/OurPortfolio'
 import AboutWeDevelop from 'main_app/components/AboutWeDevelop'
 
 function Landing () {
+  const { availableDevs } = useAvailableDevs()
   const { pathname, push } = useRouter()
   const contactPagePath = '/contact'
 
@@ -44,6 +48,13 @@ function Landing () {
           hideSubtitle
         />
         <AboutWeDevelop ctaLink={contactPagePath} />
+        <AvailableDevs
+          heading='Top Engineers'
+          title='Get a look at our top IT talents'
+          description='Subscribe and receive a list of our best talents every 2 weeks'
+          devs={availableDevs}
+          buttonText='I want to receive this'
+        />
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>

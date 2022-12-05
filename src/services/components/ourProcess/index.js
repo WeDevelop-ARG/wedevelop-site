@@ -5,11 +5,10 @@ import InitialBacklog from 'assets/services/web_dev_our_process/initial_backlog.
 import Proposal from 'assets/services/web_dev_our_process/proposal.svg'
 import ProjectStarts from 'assets/services/web_dev_our_process/project_starts.svg'
 import ProcessDiagram from 'assets/services/web_dev_our_process/process_diagram.svg'
-import DotsPattern from 'assets/services/dots-pattern.svg'
+import DotsPattern from 'assets/services/dots-pattern.component.svg'
 
 import classes from './styles.module.scss'
 import Image from 'main_app/components/Image'
-import WrappedImage from 'main_app/components/WrappedImage'
 
 function OurProcess () {
   return (
@@ -92,7 +91,7 @@ function OurProcess () {
         </div>
       </div>
       <div className={classes.background} />
-      <WrappedImage src={DotsPattern} className={classes.dotsPatternRight} alt='' />
+      <DotsPattern className={classes.dotsPatternRight} viewBox='0 0 166 327' preserveAspectRatio='xMidYMid meet' />
     </section>
   )
 }

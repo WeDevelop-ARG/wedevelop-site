@@ -2,6 +2,7 @@ import BackgroundContainer from 'staff_augmentation/components/BackgroundContain
 import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
 
+import DecoHalfCircle from 'assets/services/every-steps-half-circle-right.component.svg'
 import ListBullet from 'assets/services/benefits/bullet.svg'
 import NumbersSpeakBackground from 'assets/services/background-numbers-speak.png'
 
@@ -11,6 +12,7 @@ export default function NumbersSpeak () {
   return (
     <>
       <section className={classes.numbersSpeak}>
+        <DecoHalfCircle className={classes.decoHalfCircle} viewBox='0 0 211 270' preserveAspectRatio='xMidYMid meet' />
         <div className={classes.cardsAndButtons}>
           <div className={classes.card}>
             <WrappedImage alt='List bullet' src={ListBullet} className={classes.bullet} />

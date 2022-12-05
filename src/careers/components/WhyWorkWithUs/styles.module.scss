@@ -1,0 +1,108 @@
+@import '/src/styles/media_queries.scss';
+
+.section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+
+  @include for-desktop-up {
+    flex-direction: row;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+
+    @include for-desktop-up {
+      width: 50%;
+    }
+
+    .title {
+      text-align: center;
+
+      @include for-desktop-up {
+        text-align: left;
+      }
+    }
+
+    .subtitle {
+      font-weight: 300;
+      line-height: 150%;
+      opacity: 0.7;
+      font-size: 16px;
+      text-align: center;
+
+      @include for-desktop-up {
+        font-size: 20px;
+        text-align: left;
+      }
+    }
+
+    .horizontalBar {
+      width: 100px;
+      height: 10px;
+      border: none;
+      background: #FFC331;
+      margin: 0;
+
+      @include for-tablet-down {
+        align-self: center;
+      }
+    }
+
+    .workWithUs {
+      display: flex;
+      flex-direction: inherit;
+
+      & > * {
+        @include for-tablet-down {
+          align-self: center;
+        }
+      }
+
+      .workWithUsHeader {
+        @include for-tablet-down {
+          text-align: center;
+        }
+      }
+
+      .workWithUsButton {
+        max-width: 200px;
+  
+        @include for-tablet-down {
+          align-self: center;
+        }
+      }
+    }
+
+  }
+
+  .benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include for-desktop-up {
+      width: 50%;
+    }
+
+    .introBenefits {
+      font-weight: 300;
+      line-height: 150%;
+      text-transform: uppercase;
+      opacity: 0.5;
+      font-size: 12px;
+      text-align: center;
+
+      @include for-desktop-up {
+        font-size: 15px;
+        text-align: left;
+      }
+    }
+  }
+}

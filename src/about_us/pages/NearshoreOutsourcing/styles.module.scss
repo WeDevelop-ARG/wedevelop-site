@@ -6,3 +6,10 @@
     padding-right: 225px;
   }
 }
+
+.pageContent {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  overflow-x: hidden;
+}
