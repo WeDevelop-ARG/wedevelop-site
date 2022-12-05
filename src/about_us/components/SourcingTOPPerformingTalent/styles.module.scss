@@ -1,0 +1,103 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 150px 0;
+  margin: 100px 0;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 150px;
+
+  & > h2 {
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 45px;
+
+    @include for-desktop-up {
+      font-size: 60px;
+    }
+  }
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  border: none;
+  align-self: center;
+}
+
+.contentText {
+  font-weight: 300;
+  font-size: 18px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 0 80px;
+
+  @include for-desktop-up {
+    font-size: 24px;
+  }
+
+  .boldText {
+    font-weight: 600;
+  }
+}
+
+.carousel {
+  z-index: 1;
+  position: relative;
+}
+
+.carousel > *[class^='react-slideshow-container'] {
+  display: flex;
+  justify-content: space-around;
+
+  & > .carouselArrow {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+
+  @include for-tablet-up {
+    & > *[class^='react-slideshow-wrapper'] {
+      max-width: 865px;
+    }
+  }
+}
+
+.carousel > *[class^='indicators'] {
+  display: flex;
+  gap: 50px;
+  margin: auto;
+  padding: 0;
+
+  & > li > *[class^='each-slideshow-indicator']::before {
+    background: #FFFFFF;
+    width: 50px;
+    height: 5px;
+    border-radius: 0px;
+  }
+}
+
+.background {
+  background-image: url('../../../assets/about_us/nearshore_outsourcing/blue_gradient_background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
