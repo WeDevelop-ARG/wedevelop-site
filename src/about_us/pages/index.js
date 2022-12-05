@@ -15,11 +15,12 @@ import OurCompany from '../components/OurCompany'
 import PageMetadata from 'utils/marketing/PageMetadata'
 import PictureWall from 'main_app/components/PictureWall'
 import Testimonials from 'main_app/components/Testimonials'
+import WeDevelopCulture from 'about_us/components/WeDevelopCulture'
+import MeetOurCEO from 'about_us/components/MeetOurCEO'
+
 import WorkCoffee from 'assets/about_us/testimonials/work_cofee.png'
 
 import { forTabletDown } from 'styles/media_queries'
-import WeDevelopCulture from 'about_us/components/WeDevelopCulture'
-import MeetOurCEO from 'about_us/components/MeetOurCEO'
 
 function AboutUs () {
   const contactPagePath = '/about-us/contact'
