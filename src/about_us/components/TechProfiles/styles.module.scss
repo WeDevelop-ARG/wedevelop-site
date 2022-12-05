@@ -1,0 +1,88 @@
+@import '/src/styles/media_queries.scss';
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @include for-desktop-up {
+    flex-direction: row;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  align-items: center;
+
+  @include for-desktop-up {
+    width: 50%;
+    align-items: flex-start;
+  }
+
+  .introTitle {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    font-size: 10px;
+
+    @include for-desktop-up {
+      font-size: 13px;
+    }
+  }
+
+  .mainContent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    @include for-desktop-up {
+      align-items: flex-start;
+    }
+  }
+
+  .body {
+    font-weight: 300;
+    line-height: 150%;
+    letter-spacing: -0.015em;
+    opacity: 0.7;
+    font-size: 20px;
+    text-align: center;
+    padding-right: 20px;
+
+    @include for-desktop-up {
+      text-align: left;
+    }
+
+    .boldText {
+      font-weight: 600;
+    }
+  }
+
+  .horizontalBar {
+    width: 100px;
+    height: 10px;
+    background: #FFC331;
+    border: none;
+    margin: 0;
+  }
+
+  .hireNowButton {
+    width: 200px;
+  }
+}
+
+.profilesContainer {
+  width: 100%;
+  margin-top: 32px;
+
+  @include for-desktop-up {
+    width: 50%;
+    margin-top: 0;
+  }
+}
