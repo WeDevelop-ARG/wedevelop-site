@@ -1,10 +1,9 @@
-import WrappedImage from '../../../main_app/components/WrappedImage'
+import Image from 'main_app/components/Image'
 
-import codingBanner from 'assets/staff_augmentation/code_banner.png'
-import blueGradient from 'assets/staff_augmentation/backgrounds/blue_gradient_triangular_background.svg'
+import BlueGradient from 'assets/services/blue_gradient_triangular_background.component.svg'
+import CodingBanner from 'assets/staff_augmentation/code_banner.png'
 
 import classes from './styles.module.scss'
-import Image from 'main_app/components/Image'
 
 function EveryStepMatters () {
   return (
@@ -12,7 +11,7 @@ function EveryStepMatters () {
       <section className={classes.everyStepMatters}>
         <div className={classes.container}>
           <div className={classes.image}>
-            <Image src={codingBanner} layout='fill' objectFit='cover' className={classes.codeBanner} alt='decorative code image' />
+            <Image src={CodingBanner} layout='fill' objectFit='cover' className={classes.codeBanner} alt='decorative code image' />
           </div>
           <div className={classes.mainContainer}>
             <div className={classes.primaryContainer}>
@@ -40,7 +39,7 @@ function EveryStepMatters () {
             </div>
           </div>
         </div>
-        <WrappedImage src={blueGradient} layout='responsive' className={classes.blueBackground} alt='decorative blue triangular shape' />
+        <BlueGradient className={classes.blueBackground} viewBox='0 0 1680 665' preserveAspectRatio='xMidYMin slice' />
       </section>
     </>
   )
