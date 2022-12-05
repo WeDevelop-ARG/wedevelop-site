@@ -62,7 +62,7 @@ $grayColor: #363636;
   width: 100px;
   height: 10px;
   background: #FFC331;
-  margin: 32px 0px 40px;
+  margin: 32px 0 40px;
   border: none;
 }
 
@@ -77,6 +77,10 @@ $grayColor: #363636;
   max-width: 594px;
   font-size: 20px;
   line-height: 30px;
+
+  span {
+    font-weight: 600;
+  }
 }
 
 .lastTextBlock {
@@ -86,6 +90,16 @@ $grayColor: #363636;
   font-size: 24px;
   line-height: 36px;
   margin: auto;
+
+  span {
+    font-weight: 600;
+  }
+
+  .goToStaffAugService {
+    color: #377dff;
+    font-size: 15px;
+    font-weight: 600;
+  }
 }
 
 .backgroundImg {
@@ -147,10 +161,10 @@ $grayColor: #363636;
 
 .bottomRightDotsPattern {
   @extend %dotsPattern;
-  bottom: 371px;
+  bottom: 3vw;
   right: 5vw;
 
-  @media screen and (min-width:1025px) and (max-width: 1250px) {
+  @include for-regular-desktop-down {
     right: 0;
   }
 
@@ -159,13 +173,14 @@ $grayColor: #363636;
   }
 }
 
-.bottomLeftDotsPattern {
-  @extend %dotsPattern;
-  bottom: 111px;
-  left: 0;
+.bottomLeftDecoCircle {
+  position: absolute;
+  bottom: 3vw;
+  left: 5vw;
+  z-index: -1;
 
-  @media screen and (min-width:1025px) and (max-width: 1250px) {
-    left: -15px;
+  @include for-regular-desktop-down {
+    left: -10vw;
   }
 
   @include for-tablet-down {

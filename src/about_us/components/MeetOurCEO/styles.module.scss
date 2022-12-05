@@ -1,0 +1,146 @@
+@import '/src/styles/media_queries.scss';
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 50px;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include for-desktop-up {
+      justify-content: flex-start;
+    }
+
+    .introTitle {
+      font-weight: 500;
+      line-height: 100%;
+      opacity: 0.5;
+      letter-spacing: 1em;
+      text-transform: uppercase;
+      font-size: 10px;
+      text-align: center;
+
+      @include for-desktop-up {
+        font-size: 13px;
+        text-align: left;
+      }
+    }
+
+    .title {
+      text-align: center;
+
+      @include for-desktop-up {
+        text-align: left;
+      }
+    }
+
+    .horizontalBar {
+      width: 100px;
+      height: 10px;
+      background: #FFC331;
+      border: none;
+      margin: 0;
+      align-self: center;
+
+      @include for-desktop-up {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  .body {
+    @include for-tablet-down {
+      margin-top: 32px;
+      padding: 0 5%;
+    }
+
+    @include for-desktop-up {
+      width: 40%;
+    }
+
+    .text {
+      font-weight: 300;
+      line-height: 150%;
+      font-size: 14px;
+      text-align: center;
+
+      @include for-desktop-up {
+        font-size: 18px;
+        text-align: left;
+      };
+
+      & > b {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .dotsPattern {
+    position: absolute;
+    z-index: -1;
+    left: -180px;
+    top: 90px;
+
+    @include for-desktop-up {
+      left: -150px;
+      top: 103px;
+    }
+  }
+}
+
+.profileImgContainer {
+  position: relative;
+  border-radius: 50%;
+  margin-bottom: 30px;
+
+  @include for-tablet-down {
+    align-self: center;
+  }
+}
+
+.profileImg {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+%circle {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.filledProfileCircle {
+  @extend %circle;
+  width: 230px;
+  height: 230px;
+  z-index: -1;
+  background: rgba($color: #EAEAEA, $alpha: 0.3);
+  top: -10px;
+  left: calc(50% - 180px);
+
+  @include for-tablet-down {
+    left: calc(50% - 106px);
+  }
+}
+
+.emptyProfileCircle {
+  @extend %circle;
+  width: 220px;
+  height: 220px;
+  border: .5px solid rgba($color: #8224E3, $alpha: 0.5);
+  z-index: -1;
+  top: -10px;
+  left: calc(50% - 190px);
+
+  @include for-tablet-down {
+    left: calc(50% - 116px);
+  }
+}

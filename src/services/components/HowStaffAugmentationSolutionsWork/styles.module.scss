@@ -3,25 +3,24 @@
 
 .howStaffAugmentationSolutionsWork {
   position: relative;
-  padding-top: 200px;
-  padding-bottom: 200px;
-  width: 75%;
-  margin: auto;
-
-  @include for-desktop-up {
-    padding-top: var(--rootContentMinPadding);
-    padding-bottom: var(--rootContentMinPadding);
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: calc(50px + var(--rootContentMinPadding));
+  padding-bottom: calc(50px + var(--rootContentMinPadding));
+  overflow: clip visible;
 }
 
 .sectionContent {
   display: flex;
+  max-width: 915px;
   width: 100%;
   flex-direction: column;
   align-items: center;
 
   @include for-tablet-down {
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0 40px 0;
   }
 }
 
@@ -47,7 +46,7 @@
   font-size: 60px;
   margin-bottom: 10px;
   text-align: center;
-  
+
   @include for-tablet-down {
     font-size: 30px;
   }
@@ -77,36 +76,33 @@
 
 %dotsPattern {
   position: absolute;
-  width: 250px;
+  z-index: -1;
+}
 
-  @include for-desktop-up {
-    width: 15vw;
+.topRightPattern {
+  @extend %dotsPattern;
+  top: -125px;
+  right: 5vw;
 
-    @media screen and (min-width: 1024px) and (max-width: 1230px) {
-      width: 12vw;
-    }
+  @media screen and (min-width: 1024px) and (max-width: 1400px) {
+    right: -5vw;
+  }
+
+  @include for-tablet-down {
+    display: none;
   }
 }
 
 .leftPattern {
   @extend %dotsPattern;
-  top: 0px;
-  transform: rotate(90deg);
-  
-  @include for-tablet-down {
-    width: 200px;
-    display: block;
-    transform: rotate(0deg);
-    margin: auto;
-    position: inherit;
+  bottom: 85px;
+  left: 5vw;
+
+  @media screen and (min-width: 1024px) and (max-width: 1400px) {
+    left: -6vw;
   }
 
-  @include for-desktop-up {
-    top: 400px;
-    left: -5vw;
-
-    @media screen and (min-width: 1024px) and (max-width: 1230px) {
-      left: -5vw;
-    }
+  @include for-tablet-down {
+    display: none;
   }
 }
