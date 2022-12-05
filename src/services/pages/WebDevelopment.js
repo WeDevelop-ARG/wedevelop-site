@@ -50,6 +50,7 @@ function WebDevelopment () {
           title={<>Web <br />Development</>}
           description='We understand how important it is for businesses to get competitive web solutions. Our expertise and talent ensures the most agile development process possible.'
           contactPagePath={contactPagePath}
+          ctaText='Get in Touch'
         />
         <section className={classes.sectionContainer}>
           <Details
