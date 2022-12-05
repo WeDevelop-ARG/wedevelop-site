@@ -18,6 +18,8 @@ import Testimonials from 'main_app/components/Testimonials'
 import WorkCoffee from 'assets/about_us/testimonials/work_cofee.png'
 
 import { forTabletDown } from 'styles/media_queries'
+import WeDevelopCulture from 'about_us/components/WeDevelopCulture'
+import MeetOurCEO from 'about_us/components/MeetOurCEO'
 
 function AboutUs () {
   const contactPagePath = '/about-us/contact'
@@ -34,8 +36,9 @@ function AboutUs () {
         <Testimonials
           reviews={reviews}
           hideHeader
-          showCta
+          ctaText={'Let\'s work together on your digital acceleration'}
           ctaLink={contactPagePath}
+          showCta
         />
       )
     }
@@ -64,6 +67,8 @@ function AboutUs () {
       />
       <Article>
         <OurCompany />
+        <WeDevelopCulture />
+        <MeetOurCEO />
         <AboutWeDevelop ctaLink={contactPagePath} />
         {renderTestimonials()}
         <BackgroundContainer backgroundURL={WorkCoffee} />
