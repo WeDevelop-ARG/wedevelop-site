@@ -10,7 +10,7 @@ import QuotationMark from 'assets/home/quotation_mark.svg'
 import classes from './styles.module.scss'
 import WrappedImage from '../WrappedImage'
 
-function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
+function Testimonials ({ reviews, customDecorations, hideHeader = false, hideSubtitle = false }) {
   const isAutoplay = useMemo(() => {
     if (reviews.length === 1) return false
     return true
@@ -26,9 +26,10 @@ function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
         <div className={classes.sectionHeader}>
           <p className={classes.subheadingText}>Testimonials</p>
           <h2 className={classes.titleText}>What our clients say</h2>
-          <p className={classes.descriptionText}>
-            Don’t take our word for it, see what our customers have to say.
-          </p>
+          {!hideSubtitle &&
+            <p className={classes.descriptionText}>
+              Don’t take our word for it, see what our customers have to say.
+            </p>}
           <hr className={classes.horizontalBar} />
         </div>}
       <div>

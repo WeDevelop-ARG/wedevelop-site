@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { mainTechnologies } from './main_technologies'
+import useMainTechnologies from '../../hooks/useMainTechnologies'
 
 import WrappedImage from 'main_app/components/WrappedImage'
 import TechnologyTooltip from '../TechnologyTooltip'
@@ -12,6 +12,8 @@ import dottedSemiCircle from 'assets/services/our_technologies/dotted-semi-circl
 import classes from './styles.module.scss'
 
 export default function OurMainTechnologies () {
+  const { technologies } = useMainTechnologies()
+
   return (
     <section className={classes.section}>
       <div className={classes.titleContainer}>
@@ -25,7 +27,7 @@ export default function OurMainTechnologies () {
         <hr className={classes.horizontalBar} />
       </div>
       <div className={classes.logoWall}>
-        {mainTechnologies.map((technology, i) => (
+        {technologies.map((technology, i) => (
           <TechnologyTooltip
             key={i}
             image={technology.image}

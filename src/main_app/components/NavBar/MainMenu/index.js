@@ -45,6 +45,7 @@ function MainMenu ({
     }
   }, [onRequestClose])
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
+  const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false)
 
   return (
     <ul onClick={handleClick} className={classNames(classes.menu, className, { [classes.hidden]: !isOpen })}>
@@ -102,9 +103,49 @@ function MainMenu ({
           [classes.active]: globalThis.window?.location.pathname.startsWith('/about-us')
         })}
       >
-        <InternalLink href='/about-us'>
-          About Us
-        </InternalLink>
+        <Dropdown show={isAboutUsDropdownOpen} onToggle={setIsAboutUsDropdownOpen}>
+          <Dropdown.Toggle
+            as={Button}
+            variant='link'
+            className={classNames(classes.servicesDropdownToggle, {
+              [classes.open]: isAboutUsDropdownOpen
+            })}
+            data-close-menu-on-click='false'
+            iconRight={
+              <Image
+                src={dropdownIconURL}
+                alt=''
+                className={classes.iconRight}
+              />
+            }
+          >
+            About Us
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu className={classes.dropdownMenu}>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/about-us'
+              className={classes.dropdownItem}
+            >
+              About Us
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/about-us/areas-of-expertise'
+              className={classes.dropdownItem}
+            >
+              Areas of Expertise
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={InternalLink}
+              href='/about-us/nearshore-outsourcing'
+              className={classes.dropdownItem}
+            >
+              Nearshore Outsourcing
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </li>
       <li className={classes.navItem}>
         <InternalLink href='/#testimonials'>

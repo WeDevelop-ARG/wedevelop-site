@@ -33,6 +33,7 @@
 }
 
 .titleText {
+  text-align: center;
 
   @include for-desktop-up {
     font-weight: 600;

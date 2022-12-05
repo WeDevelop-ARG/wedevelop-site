@@ -1,0 +1,120 @@
+@import '/src/styles/media_queries.scss';
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+
+  
+  @include for-desktop-up {
+    justify-content: space-between;
+  }
+
+  .textSection {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+
+    @include for-desktop-up {
+      align-items: flex-start;
+      width: 40%;
+    }
+
+    .introTitle {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 1em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      font-size: 11px;
+
+      @include for-desktop-up {
+        font-size: 13px;
+      }
+    }
+
+    .title {
+      text-align: center;
+
+      @include for-desktop-up {
+        text-align: left;
+      }
+    }
+
+    .horizontalBar {
+      width: 100px;
+      height: 10px;
+      background: #FFC331;
+      border: none;
+      margin: 0;
+    }
+
+    .body {
+      .normalText {
+        font-weight: 300;
+        line-height: 150%;
+        font-size: 20px;
+        text-align: center;
+
+        @include for-desktop-up {
+          font-size: 17px;
+          text-align: left;
+        }
+
+        .boldText {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .stepsContainer {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    @include for-desktop-up {
+      margin-top: 0;
+    }
+
+    .step {
+      position: relative;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      align-items: center;      
+
+      @include for-desktop-up {
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      .number {
+        width: 50px;
+        color: #377DFF;
+        font-weight: 200;
+        font-size: 75px;
+        line-height: 100%;
+        text-align: center;
+      }
+
+      .stepDecoration {
+        z-index: -1;
+        top: 25px !important;
+        right: -40px !important;
+
+        @media screen and (min-width: 1023px) and (max-width: 1165px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
