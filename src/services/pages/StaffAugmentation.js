@@ -36,9 +36,9 @@ function StaffAugmentation () {
   const onSuccess = useCallback(() => {
     setFormModalOpen(false)
   }, [])
-  const switchToCallModal = useCallback(() => {
+  const switchToCallModal = useCallback(async () => {
     setFormModalOpen(false)
-    push(contactPagePath)
+    await push(contactPagePath)
   }, [push])
 
   return (
@@ -73,7 +73,7 @@ function StaffAugmentation () {
         <Schedule
           className={classes.sectionContainer}
           contactPagePath={contactPagePath}
-          service={SERVICE_NAME}
+          page={SERVICE_NAME}
         />
         <PictureWall />
       </Article>

@@ -1,9 +1,11 @@
 @import '/src/styles/media_queries.scss';
 
+$section-padding: calc(140px + var(--rootContentMinPadding));
+
 .otherTechnologies {
   width: 100%;
-  padding-top: calc(140px + var(--rootContentMinPadding));
-  padding-bottom: calc(200px + var(--rootContentMinPadding));
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
 }
 
 .logosWall {
