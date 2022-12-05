@@ -52,6 +52,15 @@ function MainMenu ({
     <ul onClick={handleClick} className={classNames(classes.menu, className, { [classes.hidden]: !isOpen })}>
       <li
         className={classNames(classes.navItem, {
+          [classes.active]: globalThis.window?.location.pathname.endsWith('/')
+        })}
+      >
+        <InternalLink href='/'>
+          Home
+        </InternalLink>
+      </li>
+      <li
+        className={classNames(classes.navItem, {
           [classes.active]: globalThis.window?.location.pathname.startsWith('/services')
         })}
       >

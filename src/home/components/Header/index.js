@@ -12,6 +12,7 @@ import HalfCircle from 'assets/home/header/half_circle.svg'
 import Pattern from 'assets/home/header/pattern.svg'
 
 import classes from './styles.module.scss'
+import Button from 'main_app/components/Button'
 
 function Header (props, ref) {
   const [isBackgroundLoading, setIsBackgroundLoading] = useState(true)
@@ -20,18 +21,24 @@ function Header (props, ref) {
   return (
     <section ref={ref} className={classes.headerContainer}>
       <div className={classes.content}>
+        <p className={classes.introTitle}>what we are</p>
         <h1 className={classes.title}>
           <p className={classes.firstLine}>
-            A <b>human-centered company <br /></b>
-            with a focus on efficiency
+            <b>Build World-Class IT Teams <br /></b>
           </p>
         </h1>
         <p className={classes.text}>
-          We are agile, driven,
-          <br />and fully committed to your vision and goals.
+          Access a Top-Level Talent Pool of IT Professionals
         </p>
         <hr className={classes.divider} />
-        <InternalLink href='#services' className={classes.arrowMobile}>
+        <Button
+          as={InternalLink}
+          href='/contact'
+          className={classes.letsTalkButton}
+        >
+          Let's Talk
+        </Button>
+        <InternalLink href='#staff-augmentation-service' className={classes.arrowMobile}>
           <Image src={Arrow} layout='fixed' alt='' />
           <div className={classes.scrollTextMobile}>scroll down</div>
         </InternalLink>
@@ -45,7 +52,7 @@ function Header (props, ref) {
           />
         </div>
       </div>
-      <InternalLink href='#services' className={classes.arrow}>
+      <InternalLink href='#staff-augmentation-service' className={classes.arrowDesktop}>
         <Image src={Arrow} layout='fixed' alt='' />
         <div className={classes.scrollText}>scroll down</div>
       </InternalLink>

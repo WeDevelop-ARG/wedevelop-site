@@ -21,8 +21,8 @@ function Testimonials ({
   reviews,
   customDecorations,
   hideHeader = false,
-  hideSubtitle = false,
-  showCta = false
+  showCta = false,
+  hideSubtitle = false
 }) {
   const isAutoplay = useMemo(() => {
     return !(reviews.length === 1)
