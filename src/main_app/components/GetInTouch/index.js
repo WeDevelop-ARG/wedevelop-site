@@ -1,22 +1,26 @@
-import InternalLink from 'main_app/components/InternalLink'
+import classNames from 'classnames'
+import isNil from 'lodash/isNil'
 
 import Button from 'main_app/components/Button'
+import InternalLink from 'main_app/components/InternalLink'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import DotsPattern from 'assets/home/dots_pattern.svg'
-import WrappedImage from '../WrappedImage'
 
 import classes from './styles.module.scss'
 
-function GetInTouch ({ contactPagePath }) {
+function GetInTouch ({ heading, title, description, ctaButtonText, contactPagePath, className }) {
   return (
     <>
       <section className={classes.getInTouch}>
         <WrappedImage src={DotsPattern} layout='intrinsic' alt='' className={classes.leftPattern} aria-hidden='true' />
-        <div className={classes.sectionContent}>
-          <p className={classes.subheadingText}>Get in touch</p>
-          <h2 className={classes.titleText}>Schedule a call with us</h2>
+        <div className={classNames(classes.sectionContent, className)}>
+          <p className={classes.subheadingText}>{!isNil(heading) ? heading : 'Get in touch'}</p>
+          <h2 className={classes.titleText}>{!isNil(title) ? title : 'Schedule a call with us'}</h2>
           <p className={classes.descriptionText}>
-            We look forward to learning how WeDevelop can help you and your business
+            {!isNil(description)
+              ? description
+              : 'We look forward to learning how WeDevelop can help you and your business'}
           </p>
           <hr className={classes.horizontalBar} />
           <Button
@@ -27,7 +31,7 @@ function GetInTouch ({ contactPagePath }) {
             className={classes.buttonTalk}
             link={{ scroll: false, shallow: true }}
           >
-            Get in Touch
+            {!isNil(ctaButtonText) ? ctaButtonText : 'Get in Touch'}
           </Button>
         </div>
         <WrappedImage src={DotsPattern} layout='intrinsic' alt='' className={classes.rightPattern} aria-hidden='true' />

@@ -1,0 +1,131 @@
+@import '/src/styles/media_queries.scss';
+
+.numbersSpeak {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-top: 120px;
+  padding-bottom: 40px;
+
+  @include for-desktop-up {
+    flex-direction: row;
+    gap: 100px;
+  }
+}
+
+.cardsAndButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  @include for-desktop-up {
+    max-width: 570px;
+  }
+}
+
+%card {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 24px;
+  padding: 60px 30px;
+}
+
+%cardText {
+  font-weight: 500;
+  margin: 0;
+
+  @include for-desktop-up {
+    font-size: 24px;
+  }
+}
+
+.card {
+  @extend %card;
+
+  background: #f9f9f9;
+  border-radius: 5px;
+
+  > p {
+    @extend %cardText;
+
+    background: linear-gradient(66.27deg, #6B67E9 11.76%, #8224E3 89.05%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.buttonCard {
+  @extend %card;
+
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 15%);
+  border-radius: 5px;
+
+  > p {
+    @extend %cardText;
+
+    color: #363636;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.bullet {
+  flex-shrink: 0;
+}
+
+.content {
+  width: 100%;
+  text-align: center;
+
+  @include for-desktop-up {
+    max-width: 667px;
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+
+  @include for-desktop-up {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 60px;
+  }
+}
+
+.paragraph {
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+
+  @include for-desktop-up {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 36px;
+  }
+}
+
+.decoHalfCircle {
+  position: absolute;
+  top: -115px;
+  right: 0;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
