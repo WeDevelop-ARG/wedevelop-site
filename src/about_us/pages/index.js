@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import useMediaQuery from 'utils/use_media_query'
 import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 
-import AboutWeDevelop from '../components/AboutWeDevelop'
+import AboutWeDevelop from 'main_app/components/AboutWeDevelop'
 import Article from 'main_app/components/Article'
 import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
 import ContactModal from 'main_app/components/ContactModal'

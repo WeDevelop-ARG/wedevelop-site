@@ -16,10 +16,12 @@ import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 import PageMetadata from 'utils/marketing/PageMetadata'
 import StaffAugmentationService from './components/StaffAugmentationService'
 import OurPortfolio from './components/OurPortfolio'
+import AboutWeDevelop from 'main_app/components/AboutWeDevelop'
 
 function Landing () {
   const { availableDevs } = useAvailableDevs()
   const { pathname, push } = useRouter()
+  const contactPagePath = '/contact'
 
   const handleClose = useCallback(() => {
     push('/', undefined, { scroll: false, shallow: true })
@@ -45,6 +47,7 @@ function Landing () {
           title='A word from our clients'
           hideSubtitle
         />
+        <AboutWeDevelop ctaLink={contactPagePath} />
         <AvailableDevs
           heading='Top Engineers'
           title='Get a look at our top IT talents'
@@ -52,10 +55,10 @@ function Landing () {
           devs={availableDevs}
           buttonText='I want to receive this'
         />
-        <GetInTouch contactPagePath='/contact' />
+        <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
-      {pathname === '/contact' && <ContactModal isOpen onRequestClose={handleClose} />}
+      {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer />
     </>
   )
