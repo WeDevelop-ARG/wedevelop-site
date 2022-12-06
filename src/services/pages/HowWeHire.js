@@ -3,12 +3,12 @@ import { useRouter } from 'next/router'
 
 import Article from 'main_app/components/Article'
 import ContactModal from 'main_app/components/ContactModal'
-import PictureWall from 'main_app/components/PictureWall'
-import Schedule from 'services/components/schedule'
-import OurCulture from 'services/components/OurCulture'
 import Footer from 'main_app/components/Footer'
 import NavBar from 'main_app/components/NavBar'
 import PageMetadata from 'utils/marketing/PageMetadata'
+import PictureWall from 'main_app/components/PictureWall'
+import Schedule from 'services/components/schedule'
+import Top3PercentageProfessionals from '../components/Top3PercentageProfessionals'
 
 import classes from './services.module.scss'
 
@@ -17,8 +17,8 @@ export default function HowWeHire () {
   const contactPagePath = '/services/how-we-hire/contact'
   const { pathname, push } = useRouter()
 
-  const handleClose = useCallback(() => {
-    push('/services/how-we-hire')
+  const handleClose = useCallback(async () => {
+    await push('/services/how-we-hire', undefined, { shallow: true, scroll: false })
   }, [push])
 
   return (
@@ -32,14 +32,16 @@ export default function HowWeHire () {
         contactPagePath={contactPagePath}
       />
       <Article>
-        {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
-        <OurCulture />
+        <Top3PercentageProfessionals
+          ctaLink={contactPagePath}
+        />
         <Schedule
           contactPagePath={contactPagePath}
           service={SERVICE_NAME}
           className={classes.sectionContainer}
         />
         <PictureWall />
+        {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       </Article>
       <Footer />
     </>
