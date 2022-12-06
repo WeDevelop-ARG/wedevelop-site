@@ -20,7 +20,7 @@ export default function useMainTechnologies () {
       },
       {
         name: 'Node.js',
-        description: 'Node.js is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection, the callback is fired, but if there is no work to be done, Node.js will sleep.',
+        description: 'Node.js is an open-source, cross-platform JavaScript runtime environment and library for running web applications outside the client\'s browser',
         image: {
           src: nodeJsLogo,
           alt: 'node.js logo',
