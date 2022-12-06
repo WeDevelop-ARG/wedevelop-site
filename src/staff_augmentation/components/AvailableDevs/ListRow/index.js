@@ -1,11 +1,10 @@
 import Button from 'main_app/components/Button'
-
-import getBackgroundColor from '../use_background_colors'
-import RightArrow from 'assets/hire_developers/right_arrow.svg'
 import Image from 'main_app/components/Image'
+import WrappedImage from 'main_app/components/WrappedImage'
+
+import RightArrow from 'assets/hire_developers/right_arrow.svg'
 
 import classes from './styles.module.scss'
-import WrappedImage from 'main_app/components/WrappedImage'
 
 function ListRow ({
   devImgURL,
@@ -14,6 +13,7 @@ function ListRow ({
   devSkills,
   devExperience,
   devRate,
+  showViewProfileButton = false,
   handleModal
 }) {
   const btnRightArrow = <Image src={RightArrow} alt='' />
@@ -25,37 +25,38 @@ function ListRow ({
         <p>{devName}</p>
       </div>
       <div className={classes.roleTech}>
-        <p><b>{devRole}</b></p>
+        <p>{devRole}</p>
       </div>
       <div className={classes.skills}>
         {devSkills.map(({ skill, color }) => {
           return (
             <span
               key={skill}
-              style={{ backgroundColor: getBackgroundColor(color) }}
+              style={{ backgroundColor: color }}
             >
               {skill}
             </span>
           )
         })}
       </div>
-      <div className={classes.description}>
+      <div className={classes.experience}>
         <p>{devExperience}</p>
       </div>
       <div className={classes.rate}>
         <p>{devRate}</p>
       </div>
-      <div className={classes.viewProfile}>
-        <Button
-          variant='icon'
-          isAnchor
-          iconRight={btnRightArrow}
-          className={classes.viewProfileButton}
-          onClick={handleModal}
-        >
-          View Profile
-        </Button>
-      </div>
+      {showViewProfileButton &&
+        <div>
+          <Button
+            variant='icon'
+            isAnchor
+            iconRight={btnRightArrow}
+            className={classes.viewProfileButton}
+            onClick={handleModal}
+          >
+            View Profile
+          </Button>
+        </div>}
     </>
   )
 }

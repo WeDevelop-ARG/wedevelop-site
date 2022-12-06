@@ -49,6 +49,10 @@ $blackTextBorder: #000000;
     &.variant_dark {
       border-color: $backgroundColor;
     }
+
+    &.variant_container {
+      box-shadow: none;
+    }
   }
 }
 
@@ -71,6 +75,15 @@ $blackTextBorder: #000000;
 
     &:hover, &:focus {
       background-color: #EAEAEA;
+    }
+  }
+
+  &.variant_container {
+    background-color: transparent;
+    color: inherit;
+
+    &::before {
+      display: none;
     }
   }
 }

@@ -1,6 +1,10 @@
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 
+import GetTheMost from 'about_us/components/GetTheMost'
+import IndustriesAndCaseStudies from 'about_us/components/IndustriesCaseStudies'
+import ProcessAndMethodologies from 'about_us/components/ProcessAndMethodologies'
+import TechProfiles from 'about_us/components/TechProfiles'
 import TestimonialsContainer from 'about_us/components/TestimonialsContainer'
 import Article from 'main_app/components/Article'
 import ContactModal from 'main_app/components/ContactModal'
@@ -9,6 +13,8 @@ import GetInTouch from 'main_app/components/GetInTouch'
 import NavBar from 'main_app/components/NavBar'
 import PageMetadata from 'utils/marketing/PageMetadata'
 import AreasOfExpertiseHero from '../../components/AreasOfExpertiseHero'
+
+import classes from './styles.module.scss'
 
 export default function AreasOfExpertise () {
   const contactPagePath = '/about-us/areas-of-expertise/contact'
@@ -27,9 +33,13 @@ export default function AreasOfExpertise () {
         variant={['solid', 'dark']}
         contactPagePath={contactPagePath}
       />
-      <Article>
+      <Article className={classes.mainPage}>
         <AreasOfExpertiseHero />
+        <TechProfiles />
+        <IndustriesAndCaseStudies />
         <TestimonialsContainer />
+        <ProcessAndMethodologies />
+        <GetTheMost />
         <GetInTouch
           heading='Get In Touch'
           title='Time to hire top talent now!'

@@ -4,7 +4,7 @@ import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
 
 import BlueGradientWithFigures from 'assets/services/blue-gradient-with-figures-background.component.svg'
-import DotsPatterns from 'assets/services/dots-pattern.svg'
+import DotsPatterns from 'assets/home/dots_pattern.svg'
 import HowWeHireCircle from 'assets/services/how-we-hire-circle.svg'
 
 import classes from './styles.module.scss'

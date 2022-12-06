@@ -2,16 +2,16 @@ import { Fragment } from 'react'
 
 import Button from 'main_app/components/Button'
 import ListRow from './ListRow'
-import DotsPattern from 'assets/home/dots_pattern.svg'
+
+import Background from 'assets/home/top_engineers/background.component.svg'
 
 import classes from './styles.module.scss'
-import WrappedImage from 'main_app/components/WrappedImage'
 
-function AvailableDevs ({ subtitle, title, description, devs, buttonText, handleModal }) {
+export default function AvailableDevs ({ heading, title, description, devs, buttonText, handleModal }) {
   return (
     <section className={classes.availableDevs}>
       <div className={classes.sectionHeader}>
-        <p className={classes.subheadingText}>{subtitle}</p>
+        <p className={classes.subheadingText}>{heading}</p>
         <h2 className={classes.titleText}>{title}</h2>
         <p className={classes.descriptionText}>{description}</p>
         <hr className={classes.horizontalBar} />
@@ -33,7 +33,7 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
         ))}
       </div>
       <div className={classes.moreOnBench}>
-        <p>...<b>20+ more</b> awesome Web Developers on bench</p>
+        <p>and more than <b>20 awesome professionals</b> waiting for you</p>
       </div>
       <Button
         variant='primary'
@@ -42,13 +42,7 @@ function AvailableDevs ({ subtitle, title, description, devs, buttonText, handle
       >
         {buttonText}
       </Button>
-      <div className={classes.filledCircle} aria-hidden='true' />
-      <div className={classes.emptySolidCircle} aria-hidden='true' />
-      <div className={classes.emptyLightCircle} aria-hidden='true' />
-      <div className={classes.smallBlurCircle} aria-hidden='true' />
-      <WrappedImage layout='intrinsic' src={DotsPattern} alt='' className={classes.dotsPattern} />
+      <Background className={classes.background} viewBox='0 0 1680 1349' preserveAspectRatio='xMidYMin slice' />
     </section>
   )
 }
-
-export default AvailableDevs

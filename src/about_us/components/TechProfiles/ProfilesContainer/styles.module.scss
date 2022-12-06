@@ -1,0 +1,12 @@
+@import '/src/styles/media_queries.scss';
+
+.profilesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.profilesColumn {
+  align-self: stretch;
+}
