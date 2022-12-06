@@ -11,6 +11,7 @@ import Schedule from 'services/components/schedule'
 import Top3PercentageProfessionals from '../components/Top3PercentageProfessionals'
 
 import classes from './services.module.scss'
+import OurCulture from 'services/components/OurCulture'
 
 export default function HowWeHire () {
   const SERVICE_NAME = 'how-we-hire'
@@ -35,9 +36,10 @@ export default function HowWeHire () {
         <Top3PercentageProfessionals
           ctaLink={contactPagePath}
         />
+        <OurCulture />
         <Schedule
           contactPagePath={contactPagePath}
-          service={SERVICE_NAME}
+          page={SERVICE_NAME}
           className={classes.sectionContainer}
         />
         <PictureWall />

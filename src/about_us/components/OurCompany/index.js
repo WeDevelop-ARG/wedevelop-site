@@ -6,7 +6,7 @@ import WrappedImage from 'main_app/components/WrappedImage'
 import BlueRightArrow from 'assets/about_us/our_company/blue-right-arrow.svg'
 import DecoCircle from 'assets/about_us/our_company/deco-circle.svg'
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
-import PeopleWorking from 'assets/about_us/our_company/people_working.png'
+import WeDevs from 'assets/about_us/our_company/wedevs.png'
 
 import classes from './styles.module.scss'
 
@@ -40,7 +40,7 @@ function OurCompany () {
         <WrappedImage src={DotsPattern} alt='' layout='intrinsic' className={classes.topRightDotsPattern} aria-hidden='true' />
       </section>
       <WrappedImage src={DotsPattern} alt='' layout='responsive' className={classes.topLeftDotsPattern} aria-hidden='true' />
-      <WrappedImage src={PeopleWorking} alt='' layout='responsive' className={classes.backgroundImg} />
+      <WrappedImage src={WeDevs} alt='' layout='responsive' className={classes.backgroundImg} />
       <section className={classes.ourCompanyBottom}>
         <div className={classes.lastTextBlock}>
           <p>

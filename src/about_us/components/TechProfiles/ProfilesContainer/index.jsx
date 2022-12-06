@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import Detail from '../../../../main_app/components/Detail'
-import useTechProfiles from '../tech_profiles'
+import Detail from 'main_app/components/Detail'
+import useTechProfiles from 'about_us/hooks/useTechProfiles'
 import classes from './styles.module.scss'
 
 export default function ProfilesContainer (props) {

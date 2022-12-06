@@ -13,15 +13,7 @@
     gap: 24px;
 
     .title {
-      font-weight: 600;
-      font-size: 45px;
-      line-height: 50px;
       text-align: center;
-
-      @include for-desktop-up {
-        font-size: 60px;
-        line-height: 60px;
-      }
     }
 
     .subtitle {
