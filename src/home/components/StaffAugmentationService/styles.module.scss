@@ -193,7 +193,8 @@
 
     .button {
       &:hover, &:focus {
-        text-decoration: none;
+        text-decoration: underline;
+        color: #363636;
       }
     }
 

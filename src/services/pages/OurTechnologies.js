@@ -18,7 +18,7 @@ function OurTechnologies () {
   const { pathname, push } = useRouter()
 
   const handleClose = useCallback(async () => {
-    await push('/services/our-technologies')
+    await push('/services/our-technologies', undefined, { shallow: true, scroll: false })
   }, [push])
 
   return (

@@ -66,6 +66,12 @@
       display: flex;
       gap: 15px;
       align-items: center;
+
+      &:hover, &:focus {
+        text-decoration: underline;
+        color: #FFFFFF;
+      }
+      
     
       .text {
         margin: 0;

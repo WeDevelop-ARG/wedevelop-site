@@ -90,34 +90,33 @@ export default function NearshoreITStaffing () {
   ]
 
   return (
-    <>
-      <section className={classes.sectionContainer}>
-        <p className={classes.title}>
-          <span className={classes.boldText}>
-            The Next Frontier of Remote Talent Sourcing:
-          </span>
-          &nbsp;Nearshore IT Staffing
-        </p>
-        <hr className={classes.horizontalBar} />
-        <TabContainer
-          tabListClassName={classes.tabsList}
-          tabContainerClassName={classes.tabsContainer}
-          tabPanelClassName={classes.tabContent}
-          tabButtonClassName={classes.tabButton}
-          selectedTabClassName={classes.selectedTab}
-          tabs={tabs}
-        />
-        <Button
-          as={InternalLink}
-          href='/services/staff-augmentation'
-          className={classes.scaleYourTeamButton}
-        >
-          Scale your Team now
-        </Button>
-        <WrappedImage src={decoImage} alt='decorative image' layout='intrinsic' className={classes.decoImage} />
-        <WrappedImage src={strongTalent} alt='strong talent' layout='intrinsic' className={classes.strongTalent} />
-        <div className={classes.background} />
-      </section>
-    </>
+    <section className={classes.sectionContainer}>
+      <p className={classes.title}>
+        <span className={classes.boldText}>
+          The Next Frontier of Remote Talent Sourcing:
+        </span>
+        &nbsp;Nearshore IT Staffing
+      </p>
+      <hr className={classes.horizontalBar} />
+      <TabContainer
+        tabListClassName={classes.tabsList}
+        tabContainerClassName={classes.tabsContainer}
+        tabPanelClassName={classes.tabContent}
+        tabButtonClassName={classes.tabButton}
+        tabHeaderClassName={classes.tabHeader}
+        selectedTabClassName={classes.selectedTab}
+        tabs={tabs}
+      />
+      <Button
+        as={InternalLink}
+        href='/services/staff-augmentation'
+        className={classes.scaleYourTeamButton}
+      >
+        Scale your Team now
+      </Button>
+      <WrappedImage src={decoImage} alt='decorative image' layout='intrinsic' className={classes.decoImage} />
+      <WrappedImage src={strongTalent} alt='strong talent' layout='intrinsic' className={classes.strongTalent} />
+      <div className={classes.background} />
+    </section>
   )
 }

@@ -44,7 +44,7 @@ function NearshoreOutsourcing () {
           heading='Get In Touch'
           title='Get a bespoke solution for your business'
           description=''
-          ctaButtonText='Get a bespoke'
+          ctaButtonText='Get a bespoke solution'
           contactPagePath={contactPagePath}
           className={classes.getInTouchContent}
         />

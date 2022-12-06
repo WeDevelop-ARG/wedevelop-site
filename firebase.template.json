@@ -84,6 +84,11 @@
         "source": "/portfolio/:path*",
         "destination": "/about-us/success-stories/:path",
         "type": 302
+      },
+      {
+        "source": "/careers/",
+        "destination": "/careers/job-openings",
+        "type": 302
       }
     ],
     "headers": [

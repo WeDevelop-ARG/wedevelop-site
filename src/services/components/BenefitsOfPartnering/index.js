@@ -27,6 +27,7 @@ export default function BenefitsOfPartnering ({ contactPagePath }) {
           isAnchor
           variant='primary'
           className={classes.button}
+          link={{ scroll: false, shallow: true }}
         >
           Schedule a call
         </Button>

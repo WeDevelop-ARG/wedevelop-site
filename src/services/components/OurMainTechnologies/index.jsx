@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 import useMainTechnologies from '../../hooks/useMainTechnologies'
 
