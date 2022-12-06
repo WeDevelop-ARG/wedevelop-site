@@ -7,7 +7,7 @@ import Background from 'assets/home/top_engineers/background.component.svg'
 
 import classes from './styles.module.scss'
 
-export default function AvailableDevs ({ heading, title, description, devs, buttonText, handleModal }) {
+export default function AvailableDevs ({ heading, title, description, devs, buttonText, ctaAction }) {
   return (
     <section className={classes.availableDevs}>
       <div className={classes.sectionHeader}>
@@ -26,7 +26,6 @@ export default function AvailableDevs ({ heading, title, description, devs, butt
               devSkills={devSkills}
               devExperience={devExperience}
               devRate={devRate}
-              handleModal={handleModal}
             />
             <hr key={id} className={classes.separator} />
           </Fragment>
@@ -38,7 +37,7 @@ export default function AvailableDevs ({ heading, title, description, devs, butt
       <Button
         variant='primary'
         className={classes.getRatesButton}
-        onClick={handleModal}
+        onClick={() => ctaAction()}
       >
         {buttonText}
       </Button>
