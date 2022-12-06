@@ -38,7 +38,7 @@ function WorkCulture () {
         <PictureWall />
       </Article>
       {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer />
+      <Footer contactPagePath={contactPagePath} hideContactButton={false} />
     </>
   )
 }

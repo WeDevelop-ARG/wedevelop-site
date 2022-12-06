@@ -32,7 +32,7 @@ function JobOpenings () {
         <PictureWall />
       </Article>
       {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer email='jobs@wedevelop.me' />
+      <Footer contactPagePath={contactPagePath} hideContactButton={false} email='jobs@wedevelop.me' />
     </>
   )
 }
