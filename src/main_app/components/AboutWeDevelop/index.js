@@ -33,6 +33,7 @@ export default function AboutWeDevelop ({ ctaLink }) {
           isAnchor
           variant='primary'
           className={classes.ctaButton}
+          link={{ scroll: false, shallow: true }}
         >
           Contact Us Today
         </Button>

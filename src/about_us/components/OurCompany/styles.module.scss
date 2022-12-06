@@ -99,6 +99,10 @@ $grayColor: #363636;
     color: #377dff;
     font-size: 15px;
     font-weight: 600;
+
+    @include for-phone-only {
+      font-size: 10px;
+    }
   }
 }
 

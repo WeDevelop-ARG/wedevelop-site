@@ -27,9 +27,7 @@ export default function IndustriesAndCaseStudies () {
       </div>
       <Button
         as={InternalLink}
-        // this link will be changed
-        // when success stories pages is redesigned
-        href='/portfolio'
+        href='/about-us/success-stories'
       >
         Check out our stories of success
       </Button>

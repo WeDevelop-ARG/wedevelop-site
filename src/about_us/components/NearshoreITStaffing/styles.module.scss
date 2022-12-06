@@ -188,13 +188,17 @@
 
 .decoImage {
   position: absolute;
-  top: -264px;
-  right: 221px;
+  top: -25%;
+  right: 35%;
   width: 250px;
   z-index: -2;
 
   @include for-desktop-up {
     top: -100px;
     right: 177px;
+  }
+
+  @include for-phone-only {
+    right: 20%;
   }
 }
