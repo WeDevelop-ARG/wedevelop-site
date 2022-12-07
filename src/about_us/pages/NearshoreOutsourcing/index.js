@@ -19,8 +19,8 @@ import classes from './styles.module.scss'
 function NearshoreOutsourcing () {
   const contactPagePath = '/about-us/nearshore-outsourcing/contact'
   const { pathname, push } = useRouter()
-  const handleClose = useCallback(() => {
-    push('/about-us/nearshore-outsourcing', undefined, { shallow: true, scroll: false })
+  const handleClose = useCallback(async () => {
+    await push('/about-us/nearshore-outsourcing', undefined, { shallow: true, scroll: false })
   }, [push])
 
   return (
