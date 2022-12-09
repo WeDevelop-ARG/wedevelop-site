@@ -5,16 +5,16 @@ import Button from 'main_app/components/Button'
 import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
 
-import strongTalent from 'assets/about_us/nearshore_outsourcing/strong_talent.svg'
-import decoImage from 'assets/about_us/nearshore_outsourcing/deco-elements-3.svg'
-import tabButtonImage from 'assets/about_us/nearshore_outsourcing/tab_button.svg'
+import GradientBackground from 'assets/about_us/nearshore_outsourcing/gradient_background.component.svg'
+import StrongTalent from 'assets/about_us/nearshore_outsourcing/strong_talent.svg'
+import TabButtonImage from 'assets/about_us/nearshore_outsourcing/tab_button.svg'
 
 import classes from './styles.module.scss'
 
 export default function NearshoreITStaffing () {
   const renderTabLabel = (label) => (
     <div className={classes.tabLabelContent}>
-      <Image src={tabButtonImage} alt='' width='20px' height='20px' />
+      <Image src={TabButtonImage} alt='' width='20px' height='20px' />
       <span className={classes.labelText}>{label}</span>
     </div>
   )
@@ -114,9 +114,8 @@ export default function NearshoreITStaffing () {
       >
         Scale your Team now
       </Button>
-      <WrappedImage src={decoImage} alt='decorative image' layout='intrinsic' className={classes.decoImage} />
-      <WrappedImage src={strongTalent} alt='strong talent' layout='intrinsic' className={classes.strongTalent} />
-      <div className={classes.background} />
+      <WrappedImage src={StrongTalent} alt='strong talent' layout='intrinsic' className={classes.strongTalent} />
+      <GradientBackground className={classes.background} viewBox='0 0 1680 962' preserveAspectRatio='xMidYMid slice' />
     </section>
   )
 }
