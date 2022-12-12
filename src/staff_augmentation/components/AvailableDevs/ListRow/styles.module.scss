@@ -58,6 +58,10 @@ $primaryBlue: #377DFF;
     font-size: 15px;
     margin: auto;
     font-weight: 600;
+
+    >span {
+      filter: blur(3px);
+    }
   }
 }
 
