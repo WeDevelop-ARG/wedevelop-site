@@ -1,78 +1,80 @@
 @import '/src/styles/media_queries.scss';
 
-
 .section {
   position: relative;
+  min-height: 45vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 125px;
+  padding-bottom: 100px;
 
-  .content {
-    padding: 20px;
-    display: flex;
+  @include for-desktop-up {
     flex-direction: row;
-    flex-wrap: wrap;
+    gap: 60px;
+    padding-top: 150px;
+  }
+
+  .textContent {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    gap: 32px;
+    max-width: 540px;
+    width: 100%;
+    margin-top: 50px;
 
     @include for-desktop-up {
-      margin-top: 80px;
+      align-items: flex-start;
+      margin-top: 0;
     }
 
-    .textContent {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 32px;
-      width: 100%;
-      margin-top: 50px;
+    .title {
+      text-align: center;
 
       @include for-desktop-up {
-        align-items: flex-start;
-        margin-top: 0;
-        width: 40%;
+        text-align: left;
+      }
+    }
+
+    .body {
+      font-weight: 300;
+      line-height: 150%;
+      font-size: 14px;
+      text-align: center;
+
+      @include for-desktop-up {
+        font-size: 18px;
+        text-align: left;
       }
 
-      .title {
-        text-align: center;
-
-        @include for-desktop-up {
-          text-align: left;
-        }
+      .boldText {
+        font-weight: 600;
       }
+    }
 
-      .body {
-        font-weight: 300;
-        line-height: 150%;
-        font-size: 14px;
-        text-align: center;
-
-        @include for-desktop-up {
-          font-size: 18px;
-          text-align: left;
-        }
-
-        .boldText {
-          font-weight: 600;
-        }
-      }
-
-      .horizontalBar {
-        width: 100px;
-        height: 10px;
-        background: #FFC331;
-        border: none;
-        margin: 0;
-      }
+    .horizontalBar {
+      width: 100px;
+      height: 10px;
+      background: #FFC331;
+      border: none;
+      margin: 0;
     }
   }
 
-  .background {
-    background-image: url('../../../assets/about_us/gradient-background.svg');
-    background-size: cover;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -1;
+  .image {
+    flex-shrink: 0;
   }
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
