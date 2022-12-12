@@ -4,12 +4,8 @@ export default function Funnel () {
   return (
     <div className={classes.container}>
       <figure className={classes.level1}>
-        <div className={classes.percentage}>
-          <h4>32.4%</h4>
-          <p>of applicants pass</p>
-        </div>
         <div className={classes.content}>
-          <h5>Discovery Call</h5>
+          <h5>Screening</h5>
           <p>
             To understand your specific needs, we will assign your business to our
             Customer Success Manager that will follow your case closely to make sure
@@ -20,48 +16,33 @@ export default function Funnel () {
       </figure>
       <hr className={classes.separator} />
       <figure className={classes.level2}>
-        <div className={classes.percentage}>
-          <h4>19.7%</h4>
-          <p>of applicants pass</p>
-        </div>
         <div className={classes.content}>
-          <h5>Talent Acquisition</h5>
+          <h5>Soft-skills interview</h5>
           <p>
-            Once the search criteria are met, our Talent Acquisition and Technical
-            recruiters will start defining the best candidates for your business
-            and present them ASAP. WeDevelop’s talent pool is constantly growing.
+            Apart from finding matching candidates in terms of certifications and techs,
+            we will also check the soft skills of the different profiles.
           </p>
         </div>
       </figure>
       <hr className={classes.separator} />
       <figure className={classes.level3}>
-        <div className={classes.percentage}>
-          <h4>8.7%</h4>
-          <p>of applicants pass</p>
-        </div>
         <div className={classes.content}>
-          <h5>Candidates Presentation</h5>
+          <h5>Technical Assessment</h5>
           <p>
-            Our Customer Success Manager will present you a list of candidates to
-            evaluate on...You only have to review them and choose your favourite
-            and let us know. We take care of the rest!
+            Our tech expert in the Talent Acquisition will be in charge of checking with
+            a Live Technical Assessment the level of the candidate to make sure it fits your needs.
           </p>
         </div>
       </figure>
       <hr className={classes.separator} />
       <figure className={classes.level4}>
         <div className={classes.level4Content}>
-          <div className={classes.percentage}>
-            <h4>3%</h4>
-            <p>of applicants pass</p>
-          </div>
           <div className={classes.content}>
-            <h5>Interview Process: Hard & Soft Skills, English Level & Cultural Fit</h5>
+            <h5>English Level & Cultural Fit</h5>
             <p>
-              Once candidates are vetted, our team will set the scheduled interviews.
-              Once the final decision is made, we will handle the contract signing,
-              and you will be ready to go. The contract will be customized to your
-              needs and reviewed together beforehand.
+              Of course the english level and the culture fit is a relevant part of the process.
+              We make sure the english level is advanced and that the candidate is aligned and a
+              good culture fit for your company.
             </p>
           </div>
         </div>
