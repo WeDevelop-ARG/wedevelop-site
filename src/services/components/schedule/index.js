@@ -22,6 +22,7 @@ function Schedule ({ contactPagePath, className, page }) {
             href={contactPagePath}
             isAnchor
             variant='primary'
+            link={{ scroll: false, shallow: true }}
           >
             {getCTAText()}
           </Button>

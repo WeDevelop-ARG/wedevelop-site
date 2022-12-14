@@ -1,6 +1,8 @@
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
+import BlueGradientBackground from 'assets/about_us/nearshore_outsourcing/blue_gradient_background.component.svg'
+
 import classes from './styles.module.scss'
 
 function SourcingTOPPerformingTalent () {
@@ -87,7 +89,11 @@ function SourcingTOPPerformingTalent () {
           {slidesText.map(slideText => slideText.content)}
         </Slide>
       </div>
-      <div className={classes.background} />
+      <BlueGradientBackground
+        className={classes.background}
+        viewBox='0 0 1680 719'
+        preserveAspectRatio='xMidYMid slice'
+      />
     </section>
   )
 }

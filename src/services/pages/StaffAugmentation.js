@@ -28,7 +28,7 @@ function StaffAugmentation () {
   const contactPagePath = '/services/staff-augmentation/contact'
   const { pathname, push } = useRouter()
   const handleClose = useCallback(async () => {
-    await push('/services/staff-augmentation')
+    await push('/services/staff-augmentation', undefined, { shallow: true, scroll: false })
   }, [push])
 
   const [isFormModalOpen, setFormModalOpen] = useState(false)

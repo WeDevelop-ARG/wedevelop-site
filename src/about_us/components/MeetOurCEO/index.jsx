@@ -35,8 +35,7 @@ export default function MeetOurCEO () {
         <br />
         <p className={classes.text}>
           Relentless and resilient,
-          <b>
-            Abel has set the ground rules and essence of his company, drawn upon adaptability,
+          <b> Abel has set the ground rules and essence of his company, drawn upon adaptability,
             creativity, and insightfulness
           </b>. He works closely with clients helping them achieve their goals by creating and
           scaling unique tech teams.

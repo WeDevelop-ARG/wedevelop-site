@@ -76,13 +76,14 @@
 
 .dotsPattern {
   position: absolute;
-  z-index: -1;
+  z-index: -2;
+  width: 150px;
   top: -50px;
   left: 50px;
 
   @include for-desktop-up {
     width: 277px;
     top: 26px;
-    left: 0px;
+    left: -16%;
   }
 }

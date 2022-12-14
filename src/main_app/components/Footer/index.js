@@ -135,7 +135,7 @@ function Footer ({ className, contactPagePath = '/contact', hideContactButton = 
                     </span>
                   </a>
                 </li>
-                <li>|</li>
+                <li className={classes.pleca}>|</li>
                 <li>
                   <a href='tel:+19254486165' className={classes.contactContentContainer}>
                     <WrappedImage src={Phone} className={classes.iconStyles} />

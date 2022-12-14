@@ -104,9 +104,10 @@
 
 .topRightDotsPattern {
   @extend %dotsPattern;
-  top: 335px;
+  top: 260px;
   right: 0;
   transform: rotate(0deg);
+  z-index: -2;
 
   @media screen and (min-width:1025px) and (max-width: 1250px) {
     top: 40px;
