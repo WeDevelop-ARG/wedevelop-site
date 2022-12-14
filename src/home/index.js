@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
 
 import useAvailableDevs from './hooks/useAvailableDevs'
@@ -17,16 +17,26 @@ import PageMetadata from 'utils/marketing/PageMetadata'
 import StaffAugmentationService from './components/StaffAugmentationService'
 import OurPortfolio from './components/OurPortfolio'
 import AboutWeDevelop from 'main_app/components/AboutWeDevelop'
+import TopEngineersModal from './components/TopEngineersModal'
 
 function Landing () {
   const { availableDevs } = useAvailableDevs()
   const { pathname, push } = useRouter()
   const contactPagePath = '/contact'
+  const [isTopEngineersModalOpen, setIsTopEngineersModalOpen] = useState(false)
 
-  const handleClose = useCallback(() => {
-    push('/', undefined, { scroll: false, shallow: true })
+  const handleClose = useCallback(async () => {
+    await push('/', undefined, { scroll: false, shallow: true })
   }, [push])
   const { reviews } = useReviews()
+
+  const handleTopEngineersModalOpen = useCallback(() => {
+    setIsTopEngineersModalOpen(true)
+  }, [])
+
+  const handleTopEngineersModalClose = useCallback(() => {
+    setIsTopEngineersModalOpen(false)
+  }, [])
 
   return (
     <>
@@ -54,10 +64,15 @@ function Landing () {
           description='Instant access to the best Latin American Talent Pool'
           devs={availableDevs}
           buttonText='Hire your new dev today'
+          ctaAction={handleTopEngineersModalOpen}
         />
         <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
+      <TopEngineersModal
+        isOpen={isTopEngineersModalOpen}
+        onRequestClose={handleTopEngineersModalClose}
+      />
       {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
       <Footer contactPagePath={contactPagePath} hideContactButton={false} />
     </>
