@@ -61,9 +61,9 @@ function Landing () {
         <AvailableDevs
           heading='Top Engineers'
           title='Get a look at our top IT talents'
-          description='Subscribe and receive a list of our best talents every 2 weeks'
+          description='Instant access to the best Latin American Talent Pool'
           devs={availableDevs}
-          buttonText='I want to receive this'
+          buttonText='Hire your new dev today'
           ctaAction={handleTopEngineersModalOpen}
         />
         <GetInTouch contactPagePath={contactPagePath} />

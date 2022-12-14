@@ -32,7 +32,7 @@ export default function AvailableDevs ({ heading, title, description, devs, butt
         ))}
       </div>
       <div className={classes.moreOnBench}>
-        <p>and more than <b>20 awesome professionals</b> waiting for you</p>
+        <p><b>120+ awesome professionals</b> waiting for you</p>
       </div>
       <Button
         variant='primary'

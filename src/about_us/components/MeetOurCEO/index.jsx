@@ -9,16 +9,12 @@ export default function MeetOurCEO () {
   return (
     <section className={classes.section}>
       <div className={classes.header}>
-        <div className={classes.profileImgContainer}>
-          <WrappedImage
-            src={abelProfilePicture}
-            objectFit='cover'
-            alt='Photo of Abel Osorio, WeDevelop CEO'
-            className={classes.profileImg}
-          />
-          <div className={classes.filledProfileCircle} aria-hidden='true' />
-          <div className={classes.emptyProfileCircle} aria-hidden='true' />
-        </div>
+        <WrappedImage
+          src={abelProfilePicture}
+          objectFit='cover'
+          alt='Photo of Abel Osorio, WeDevelop CEO'
+          className={classes.profileImg}
+        />
         <p className={classes.introTitle}>Leadership</p>
         <h2 className={classes.title}>Meet Our CEO</h2>
         <hr className={classes.horizontalBar} />

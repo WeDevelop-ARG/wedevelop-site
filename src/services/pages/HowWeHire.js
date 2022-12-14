@@ -5,13 +5,13 @@ import Article from 'main_app/components/Article'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import NavBar from 'main_app/components/NavBar'
+import OurCulture from 'services/components/OurCulture'
 import PageMetadata from 'utils/marketing/PageMetadata'
 import PictureWall from 'main_app/components/PictureWall'
 import Schedule from 'services/components/schedule'
 import Top3PercentageProfessionals from '../components/Top3PercentageProfessionals'
 
 import classes from './services.module.scss'
-import OurCulture from 'services/components/OurCulture'
 
 export default function HowWeHire () {
   const SERVICE_NAME = 'how-we-hire'

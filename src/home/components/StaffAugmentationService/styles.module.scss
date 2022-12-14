@@ -7,6 +7,7 @@
   flex-wrap: wrap-reverse;
   align-items: center;
   justify-content: space-around;
+  overflow-x: clip;
 
   .content {
     display: flex;
@@ -127,34 +128,46 @@
     @extend %decoration;
     transform: rotate(90deg);
     width: 200px;
-    right: 0%;
+    right: 0;
 
     @include for-tablet-down {
       top: 15%
+    }
+
+    @include for-phone-only {
+      display: none;
     }
   }
 
   .dottedSemiCircle {
     @extend %decoration;
     width: 140px;
-    left: 0%;
+    left: 0;
     top: 75%;
 
     @include for-tablet-down {
       top: 80%;
       left: -10%;
     }
+
+    @include for-phone-only {
+      display: none;
+    }
   }
 
   .filledSemiCircle {
     @extend %decoration;
     width: 140px;
-    right: 0%;
-    top: 100%;
+    right: 0;
+    bottom: -300px;
 
     @include for-tablet-down {
-      top: 140%;
-      right: -15%;
+      bottom: -425px;
+      right: 0;
+    }
+
+    @include for-phone-only {
+      display: none;
     }
   }
 }
@@ -203,7 +216,7 @@
       flex-direction: row;
       gap: 8px;
       align-items: center;
-    
+
       .text {
         margin: 0;
         font-weight: 600;
