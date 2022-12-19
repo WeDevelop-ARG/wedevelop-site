@@ -22,7 +22,7 @@ export default function StaffAugmentationService () {
             <div className={classes.text}>
               <h2>Staff Augmentation Services</h2>
               <p className={classes.subtitle}>
-                Boost your projects and access on demand skilled
+                Boost your projects and access on-demand skilled
                 IT talent while reducing costs.
               </p>
             </div>
