@@ -1,5 +1,5 @@
 import Tooltip from 'main_app/components/Tooltip'
-import Image from 'next/image'
+import Image from 'main_app/components/Image'
 
 import classes from './styles.module.scss'
 

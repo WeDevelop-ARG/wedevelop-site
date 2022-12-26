@@ -39,11 +39,11 @@ export default function Top3PercentageProfessionals ({ ctaLink }) {
           </div>
           <div className={classes.content}>
             <h5>
-              <span>Customer Services</span>
+              <span>Customer Service</span>
             </h5>
             <p>
               We are a personalized customer centric company.
-              <span> Your feedback will be key and if you think our service did not meet your expectations, we will work with a 90-days trial. </span>
+              <span> Your feedback will be key and if you think our service did not meet your expectations, we will work with a 15-days trial period. </span>
               In that stage, you can choose a new resources until you are happy with our
               services. It comes with no extra cost and at the same hourly rate.
             </p>
