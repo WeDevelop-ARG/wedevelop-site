@@ -74,6 +74,13 @@
   background: #F9F9F9 !important;
 }
 
+.selectedTab > button > span > .tabLabelContent > .labelText {
+  background: linear-gradient(66.27deg, #6B67E9 11.76%, #8224E3 89.05%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .tabButton {
   display: flex;
   justify-content: flex-start;
@@ -108,6 +115,18 @@
     @include for-desktop-up {
       font-size: 20px;
       line-height: 29px;
+    }
+  }
+}
+
+.tabTitle {
+  text-align: center;
+
+  .percentage {
+    font-size: 25px;
+
+    @include for-desktop-up {
+      font-size: 45px;
     }
   }
 }

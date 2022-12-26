@@ -21,6 +21,10 @@ export default function NumbersSpeak () {
       label: renderTabLabel('75% of our clients hire the first match'),
       children: (
         <>
+          <h3 className={classes.tabTitle}>
+            <span className={classes.percentage}>75% </span>
+            of our clients hire the first match
+          </h3>
           <p className={classes.tabText}>
             And this is possible only because we love what we
             do and strive for excellence in everything we do.
@@ -37,9 +41,14 @@ export default function NumbersSpeak () {
       label: renderTabLabel('Top 3% Latin American Talent'),
       children: (
         <>
+          <h3 className={classes.tabTitle}>
+            Top
+            <span className={classes.percentage}> 3% </span>
+            Latin American Talent
+          </h3>
           <p className={classes.tabText}>
-            We have skilled developers are from top 5 locations
-            are: Argentina, Brazil, Colombia, Uruguay, and Costa
+            We have skilled developers are from top 5 locations:
+            Argentina, Brazil, Colombia, Uruguay, and Costa
             Rica with matching timezone between
             <span className={classes.boldText}>
             &nbsp;GMT-6 to GMT-3
@@ -72,6 +81,9 @@ export default function NumbersSpeak () {
       label: renderTabLabel('15-day Money-back Trial Period'),
       children: (
         <>
+          <h3 className={classes.tabTitle}>
+            15-day Money-back Trial Period
+          </h3>
           <p className={classes.tabText}>
             The Client may terminate our Agreement with
             immediate effect by written notice to the other
