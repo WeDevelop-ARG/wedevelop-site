@@ -21,7 +21,7 @@ export default function OurPortfolio () {
         <div className={classes.ourPortfolio}>
           <div className={classes.title}>
             <span className={classes.introTitle}>Our Portfolio</span>
-            <h3>Company’s Who Trust Us</h3>
+            <h3>Companies Who Trust Us</h3>
             <hr className={classes.horizontalBar} />
           </div>
           <div className={classes.successStories}>
