@@ -5,15 +5,7 @@
   padding: 25px var(--rootContentHorizontalPadding);
   display: flex;
   flex-direction: column;
-  height: 530px;
-
-  & > * {
-    margin: 0 auto;
-  }
-
-  & > * + * {
-    margin-top: 60px;
-  }
+  gap: 10px;
 
   .branding {
     list-style-type: none;
@@ -24,28 +16,6 @@
   .pleca {
     font-size: 10px;
     margin: 17px 10px 0px 10px;
-  }
-
-  @include for-desktop-up {
-    flex-basis: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
-
-    & > * {
-      margin: 0;
-    }
-  }
-
-  @include for-tablet-down {
-    flex-direction: column;
-    height: 400px;
-  }
-
-  @include for-phone-only {
-    flex-direction: column;
-    height: 500px;
   }
 
   @extend .backgroundDown;
@@ -69,74 +39,14 @@
   }
 }
 
-.socialNetworks {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  margin-left: 85px;
-  opacity: 0.5;
-
-  li + li {
-    margin-left: 15px;
-  }
-}
-
-.contact {
-  list-style-type: none;
-  margin-top: 50px;
-  padding: 0px;
-
-  & > li + li {
-    padding-top: 24px;
-  }
-
-  @include for-desktop-up {
-    padding: 0;
-    margin-left: 0px;
-    margin-top: 100px;
-  }
+.divider {
+  width: 94px;
+  border: 1px solid #E1E1E1;
+  margin-left: 0;
 }
 
 %contactLinksColor {
   color: $secondaryColor;
-}
-
-.contactContentContainer {
-  @extend %contactLinksColor;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-}
-
-.iconStyles {
-  width: 15px;
-  margin-right: 18px;
-}
-
-.iconSocialNetworks {
-  @extend .iconStyles;
-  margin-right: 24px;
-}
-
-.contactContent {
-  @extend %contactLinksColor;
-  text-align: left;
-  font-style: normal;
-  line-height: 17px;
-}
-
-.logoStyle {
-  --primaryColor: #{$secondaryColor};
-  --secondaryColor: #{$textColor};
-  height: 25px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include for-desktop-up {
-    flex-basis: 100%;
-  }
 }
 
 .copyright {
@@ -159,32 +69,20 @@
   display: block;
 }
 
-.listsContainer {
-  @include for-desktop-up {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0px;
-  }
-}
-
 .titleContainer {
   text-transform: uppercase;
   font-size: 10px;
   opacity: 0.5;
 }
 
-.techContent {
-  margin-left: auto;
-  padding-left: 50px;
-}
-
 .socials {
   margin: 50px auto 50px auto;
+  opacity: 0.5;
 }
 
 .clutchWidget {
   margin-top: 15px;
+  max-width: 192px;
 }
 
 .pattern {
@@ -209,32 +107,160 @@
 }
 
 .listUs {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 
-  ul:nth-child(1) {
-    text-align: center;
-    display: inline-block;
+  @include for-desktop-up {
+    flex-direction: row;
+  }
 
-    & > li {
-      @include for-tablet-down {
+  .weDevelop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include for-desktop-up {
+      align-items: flex-start;
+    }
+  }
+
+  .pageContent {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @include for-tablet-up {
+      flex-direction: row;
+    }
+
+    .contact {
+      list-style-type: none;
+      margin-top: 50px;
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    
+      @include for-desktop-up {
+        padding: 0;
+        margin-left: 0px;
+        margin-top: 100px;
+      }
+
+      .contactContentContainer {
+        @extend %contactLinksColor;
         display: flex;
-        justify-content: left;
+        align-items: center;
+        font-size: 15px;
+        gap: 10px;
+      }
+
+      .contactContent {
+        @extend %contactLinksColor;
+        text-align: left;
+        font-style: normal;
+        line-height: 17px;
       }
     }
   }
 
-  @include for-desktop-up {
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-    justify-content: left;
-  }
-}
+  .contactUs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.listTech {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(2, 100px);
-  grid-gap: 20px;
+    @include for-desktop-up {
+      align-items: flex-end;
+    }
+
+    .contact {
+      list-style-type: none;
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: inherit;
+      justify-content: inherit;
+      gap: 24px;
+    
+      @include for-desktop-up {
+        padding: 0;
+        margin-left: 0px;
+      }
+
+      .buttonContainer{
+        width: 100%;
+        .letsTalkButton {
+          width: 100%;
+        }
+      }
+
+      .followUs {
+        display: flex;
+        flex-direction: column;
+        align-items: inherit;
+        gap: 15px;
+
+        .title {
+          font-weight: 300;
+          font-size: 15px;
+          line-height: 100%;
+          opacity: 0.5;
+        }
+
+        .socialNetworks {
+          list-style-type: none;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+
+          .iconSocialNetworks {
+            width: 15px;
+          }
+        }
+
+        .directContact {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+          padding: 0;
+          gap: 10px;
+
+          & > li {
+            list-style-type: none;
+          }
+
+          & > li > .contactContentContainer {
+            @extend %contactLinksColor;
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            gap: 10px;
+          }
+          
+          .pleca {
+            margin: 0;
+          }
+
+          .iconStyles {
+            width: 15px;
+            opacity: 0.5;
+          }
+
+          .contactContent {
+            @extend %contactLinksColor;
+            text-align: left;
+            font-style: normal;
+            line-height: 17px;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
 }

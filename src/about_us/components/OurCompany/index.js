@@ -1,7 +1,12 @@
-import PeopleWorking from 'assets/about_us/our_company/people_working.png'
-import DotsPattern from 'assets/about_us/dots_pattern.svg'
-
+import Button from 'main_app/components/Button'
+import Image from 'main_app/components/Image'
+import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
+
+import BlueRightArrow from 'assets/about_us/our_company/blue-right-arrow.svg'
+import DecoCircle from 'assets/about_us/our_company/deco-circle.svg'
+import DotsPattern from 'assets/about_us/dots_pattern.svg'
+import WeDevs from 'assets/about_us/our_company/wedevs.png'
 
 import classes from './styles.module.scss'
 
@@ -10,28 +15,22 @@ function OurCompany () {
     <>
       <section id='our-company' className={classes.ourCompany}>
         <div className={classes.sectionHeader}>
-          <p className={classes.subheadingText}>About Us</p>
-          <h2 className={classes.titleText}>Our Company</h2>
+          <p className={classes.subheadingText}>Our company</p>
+          <h2 className={classes.titleText}>About Us</h2>
           <p className={classes.descriptionText}>
-            Providing better quality of life and
+            Providing a more enjoyable life for people and
             being the company everyone wants to work with.
           </p>
           <hr className={classes.horizontalBar} />
         </div>
         <div className={classes.firstTextBlock}>
           <p>
-            Since 2019, our US-based company has been delivering
-            exceptional Software Development Services. Our team is
-            a diverse group of people from all around the globe,
-            with the majority of the Engineers and Designers coming from
-            Argentina, Uruguay, Peru, Colombia, and other Central
-            and South American countries.
-          </p>
-          <p>
-            At WeDevelop, we love what we do, and that gets reflected
-            in our results as we work day by day to transform and
-            innovate as we want to build a better tomorrow for the
-            world we live in and love.
+            We are WeDevelop, a cutting-edge IT Staff-augmentation and technology solution
+            company committed to excellence. Since 2019,
+            <span> we have assembled a diverse and top-talented team of engineers from Latin America. </span>
+            At WeDevelop excels at delivering Software Development Services and catering to
+            clients’ needs, expertly scaling their tech teams, and delivering innovative
+            projects with an agile mindset.
           </p>
         </div>
         <div className={classes.filledCircle} aria-hidden='true' />
@@ -41,26 +40,28 @@ function OurCompany () {
         <WrappedImage src={DotsPattern} alt='' layout='intrinsic' className={classes.topRightDotsPattern} aria-hidden='true' />
       </section>
       <WrappedImage src={DotsPattern} alt='' layout='responsive' className={classes.topLeftDotsPattern} aria-hidden='true' />
-      <WrappedImage src={PeopleWorking} alt='' layout='responsive' className={classes.backgroundImg} />
+      <WrappedImage src={WeDevs} alt='' layout='responsive' className={classes.backgroundImg} />
       <section className={classes.ourCompanyBottom}>
         <div className={classes.lastTextBlock}>
           <p>
-            We're not just another software company,
-            <b>
-              {' '}we're a dream team,
-              and we believe in partnership rather
-              than competition.{' '}
-            </b>
-            When we set our minds to a goal, there's no stopping us.
+            However, we are not your average IT Staff-augmentation business. As a human-centered company,
+            <span> we care for client satisfaction while promoting staff well-being. Teamwork, transparency, and collaboration are our mottos. </span>
+            Resilience and flexibility, our leading values. Our indomitable spirits and curious minds
+            drive our team to always strive for excellence.
           </p>
-          <p>
-            We respect each other and create an environment that promotes
-            equality, where collaborators feel appreciated and
-            know they're valued for their abilities above anything else.
-          </p>
+          <Button
+            as={InternalLink}
+            variant='link'
+            href='/services/staff-augmentation'
+            isAnchor
+            iconRight={<Image src={BlueRightArrow} alt='' />}
+            className={classes.goToStaffAugService}
+          >
+            Learn More About Staff Augmentation Services
+          </Button>
         </div>
         <WrappedImage src={DotsPattern} alt='' layout='intrinsic' className={classes.bottomRightDotsPattern} aria-hidden='true' />
-        <WrappedImage src={DotsPattern} alt='' layout='intrinsic' className={classes.bottomLeftDotsPattern} aria-hidden='true' />
+        <WrappedImage src={DecoCircle} alt='' layout='intrinsic' className={classes.bottomLeftDecoCircle} aria-hidden='true' />
       </section>
     </>
   )

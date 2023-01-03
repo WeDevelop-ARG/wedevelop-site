@@ -1,0 +1,174 @@
+@import '/src/styles/media_queries.scss';
+
+.sectionContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 200px;
+  padding-bottom: 125px;
+  margin-top: 50px;
+
+  @include for-tablet-up {
+    margin-top: 200px;
+  }
+
+  @include for-desktop-up {
+    padding-bottom: 200px;
+    margin-top: auto;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.tabsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 40px;
+  height: 100%;
+
+  @media screen and (min-width: 1350px) {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+}
+
+.tabHeader {
+  width: 100%;
+  margin: auto;
+
+  @media screen and (min-width: 1350px) {
+    width: 50%;
+    margin: 0;
+  }
+}
+
+.tabsList {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+
+  & > li {
+    width: 100%;
+  }
+}
+
+.tabContent {
+  width: 60%;
+  background: none !important;
+  padding: 0;
+  align-self: center;
+}
+
+.selectedTab > button {
+  border: none;
+  box-shadow: none;
+  background: #F9F9F9 !important;
+}
+
+.selectedTab > button > span > .tabLabelContent > .labelText {
+  background: linear-gradient(66.27deg, #6B67E9 11.76%, #8224E3 89.05%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tabButton {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background: #FFFFFF !important;
+
+  @media screen and (min-width: 1350px) {
+    & > span {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.tabLabelContent {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+
+  @media screen and (min-width: 1350px) {
+    padding: 25px;
+  }
+
+  & > .labelText {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+
+    @include for-desktop-up {
+      font-size: 20px;
+      line-height: 29px;
+    }
+  }
+}
+
+.tabTitle {
+  text-align: center;
+
+  .percentage {
+    font-size: 25px;
+
+    @include for-desktop-up {
+      font-size: 45px;
+    }
+  }
+}
+
+.tabText {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 150%;
+  margin: 0;
+  text-align: center;
+
+
+  @include for-desktop-up {
+    font-size: 20px;
+  }
+
+  .list {
+    text-align: left;
+
+    & > li > b {
+      font-weight: 600;
+    }
+  }
+
+  & > .boldText {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 150%;
+
+    @include for-desktop-up {
+      font-size: 20px;
+    }
+  }
+}
+
+.decoHalfCircle {
+  position: absolute;
+  top: -115px;
+  right: 0;
+  z-index: -1;
+
+  @include for-tablet-down {
+    display: none;
+  }
+}

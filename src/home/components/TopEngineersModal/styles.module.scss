@@ -1,0 +1,13 @@
+@import '/src/styles/media_queries.scss';
+
+.careerForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+
+  .loadingContainer {
+    margin: 12px 0;
+  }
+}

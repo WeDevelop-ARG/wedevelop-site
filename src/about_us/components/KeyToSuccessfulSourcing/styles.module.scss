@@ -1,0 +1,89 @@
+@import '/src/styles/media_queries.scss';
+@import '/src/styles/theme.scss';
+
+.section {
+  position: relative;
+}
+
+.keyToSuccessfulSourcing {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  
+  @include for-desktop-up {
+    gap: 32px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 100%;
+  text-align: center;
+
+  @include for-desktop-up {
+    font-size: 60px;
+  }
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 10px 0px 25px;
+  border: none;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 80px 0 80px;
+  text-align: center;
+
+  @include for-desktop-up {
+    gap: 70px;
+    text-align: left;
+  }
+
+  & > p {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 150%;
+    margin: 0;
+
+    @include for-desktop-up {
+      font-size: 24px;
+      columns: 2 auto;
+    }
+
+    & > .boldText {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 150%;
+
+      @include for-desktop-up {
+        font-size: 24px;
+      }
+    }
+  }
+
+  @include for-desktop-up {
+    flex-direction: row;
+  }
+}
+
+.dotsPattern {
+  position: absolute;
+  z-index: -2;
+  width: 150px;
+  top: -50px;
+  left: 50px;
+
+  @include for-desktop-up {
+    width: 277px;
+    top: 26px;
+    left: -16%;
+  }
+}

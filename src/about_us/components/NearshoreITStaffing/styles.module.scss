@@ -1,0 +1,204 @@
+@import '/src/styles/media_queries.scss';
+@import '/src/styles/theme.scss';
+
+.sectionContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 200px;
+  padding-bottom: 125px;
+  margin-top: 50px;
+
+  @include for-tablet-up {
+    margin-top: 200px;
+  }
+
+  @include for-desktop-up {
+    padding-bottom: 200px;
+    margin-top: auto;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 150%;
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word;
+
+  @include for-desktop-up {
+    max-width: 60%;
+    font-size: 50px;
+    text-align: left;
+  }
+
+  & > .boldText {
+    font-weight: 600;
+    text-align: center;
+
+    @include for-desktop-up {
+      font-size: 50px;
+      text-align: left;
+    }
+  }
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 10px 0 25px;
+  border: none;
+  align-self: center;
+
+  @include for-desktop-up {
+    align-self: flex-start;
+  }
+}
+
+.tabsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 40px;
+  height: 100%;
+
+  @include for-desktop-up {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+}
+
+.tabHeader {
+  width: 100%;
+  margin: auto;
+
+  @include for-desktop-up {
+    width: 40%;
+    margin: 0;
+  }
+}
+
+.tabsList {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 40%;
+
+  & > li {
+    width: 100%;
+  }
+}
+
+.tabContent {
+  width: 100%;
+  background: none !important;
+  padding: 0;
+
+  @include for-desktop-up {
+    width: 60%;
+  }
+}
+
+.selectedTab > button {
+  border: 1px solid #E1E1E1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background: #FFFFFF !important;
+}
+
+.tabButton {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  background: none;
+
+  @include for-desktop-up {
+    & > span {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.tabLabelContent {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  & > .labelText {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+  }
+}
+
+.tabText {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 150%;
+  margin: 0;
+  text-align: center;
+
+
+  @include for-desktop-up {
+    font-size: 20px;
+    height: 320px;
+    text-align: left;
+  }
+
+  & > .boldText {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 150%;
+
+    @include for-desktop-up {
+      font-size: 20px;
+    }
+  }
+}
+
+.scaleYourTeamButton {
+  align-self: center;
+  max-width: 210px;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.strongTalent {
+  position: absolute;
+  z-index: -1;
+  width: 275px;
+  top: -90px;
+  right: calc(50vw - 137px);
+
+  @include for-tablet-up {
+    width: auto;
+    top: -225px;
+    right: calc(50vw - 200px);
+  }
+
+  @include for-desktop-up {
+    top: 0;
+    right: 15vw;
+
+    @media screen and (max-width: 1200px) {
+      right: 3vw;
+    }
+  }
+}

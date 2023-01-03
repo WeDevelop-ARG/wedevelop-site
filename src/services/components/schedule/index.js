@@ -1,32 +1,30 @@
 import InternalLink from 'main_app/components/InternalLink'
 
 import Button from 'main_app/components/Button'
-import WebDevTitleDescription from './components/WebDevTitleDescription'
-import StaffAugTitleDescription from './components/StaffAugTitleDescription'
 
 import patternHorizontal from 'assets/services/dots-pattern-horizontal.svg'
 import classes from './schedule.module.scss'
 import WrappedImage from 'main_app/components/WrappedImage'
+import useGetScheduleData from './hooks/useGetScheduleData'
 
-function Schedule ({ contactPagePath, className, service }) {
-  const renderTitleDescription = (service) => {
-    if (service === 'staff-augmentation') return (<StaffAugTitleDescription />)
-    return (<WebDevTitleDescription />)
-  }
+function Schedule ({ contactPagePath, className, page }) {
+  const { renderTitleDescription, getHeadingText, getCTAText } = useGetScheduleData(page)
+
   return (
     <>
-      <section className={className}>
+      <section id='contact-us' className={className}>
         <div className={classes.container}>
-          <p className={classes.heading}>Get in touch</p>
-          {renderTitleDescription(service)}
+          <p className={classes.heading}>{getHeadingText()}</p>
+          {renderTitleDescription()}
           <hr className={classes.horizontalBar} />
           <Button
             as={InternalLink}
             href={contactPagePath}
             isAnchor
             variant='primary'
+            link={{ scroll: false, shallow: true }}
           >
-            Get in Touch
+            {getCTAText()}
           </Button>
         </div>
         <WrappedImage className={classes.patternHorizontalLeft} src={patternHorizontal} alt='' />

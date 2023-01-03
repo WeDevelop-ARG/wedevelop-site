@@ -25,8 +25,8 @@ function WebDevelopment () {
   const contactPagePath = '/services/web-development/contact'
   const { pathname, push } = useRouter()
 
-  const handleClose = useCallback(() => {
-    push('/services/web-development')
+  const handleClose = useCallback(async () => {
+    await push('/services/web-development')
   }, [push])
 
   return (
@@ -50,6 +50,7 @@ function WebDevelopment () {
           title={<>Web <br />Development</>}
           description='We understand how important it is for businesses to get competitive web solutions. Our expertise and talent ensures the most agile development process possible.'
           contactPagePath={contactPagePath}
+          ctaText='Get in Touch'
         />
         <section className={classes.sectionContainer}>
           <Details
@@ -63,7 +64,7 @@ function WebDevelopment () {
         <Schedule
           className={classes.sectionContainer}
           contactPagePath={contactPagePath}
-          service={SERVICE_NAME}
+          page={SERVICE_NAME}
         />
         <PictureWall />
       </Article>

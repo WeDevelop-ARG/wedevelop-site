@@ -15,6 +15,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: $textColor;
   background-color: $secondaryColor;
+
+  .cc-window {
+    z-index: 9999999999;
+  }
 }
 
 a {

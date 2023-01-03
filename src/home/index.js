@@ -1,26 +1,42 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
 
+import useAvailableDevs from './hooks/useAvailableDevs'
+
 import Article from 'main_app/components/Article'
-import AboutUs from './components/AboutUs'
+import AvailableDevs from '../staff_augmentation/components/AvailableDevs'
 import ContactModal from 'main_app/components/ContactModal'
 import Footer from 'main_app/components/Footer'
 import GetInTouch from 'main_app/components/GetInTouch'
 import Header from './components/Header'
 import NavBar from 'main_app/components/NavBar'
 import PictureWall from 'main_app/components/PictureWall'
-import Services from './components/Services'
 import Testimonials from 'main_app/components/Testimonials'
 import useReviews from 'main_app/components/Testimonials/hooks/useReviews'
 import PageMetadata from 'utils/marketing/PageMetadata'
+import StaffAugmentationService from './components/StaffAugmentationService'
+import OurPortfolio from './components/OurPortfolio'
+import AboutWeDevelop from 'main_app/components/AboutWeDevelop'
+import TopEngineersModal from './components/TopEngineersModal'
 
 function Landing () {
+  const { availableDevs } = useAvailableDevs()
   const { pathname, push } = useRouter()
+  const contactPagePath = '/contact'
+  const [isTopEngineersModalOpen, setIsTopEngineersModalOpen] = useState(false)
 
-  const handleClose = useCallback(() => {
-    push('/', undefined, { scroll: false, shallow: true })
+  const handleClose = useCallback(async () => {
+    await push('/', undefined, { scroll: false, shallow: true })
   }, [push])
   const { reviews } = useReviews()
+
+  const handleTopEngineersModalOpen = useCallback(() => {
+    setIsTopEngineersModalOpen(true)
+  }, [])
+
+  const handleTopEngineersModalClose = useCallback(() => {
+    setIsTopEngineersModalOpen(false)
+  }, [])
 
   return (
     <>
@@ -34,16 +50,31 @@ function Landing () {
       />
       <Article>
         <Header />
-        <Services />
-        <AboutUs />
+        <StaffAugmentationService />
+        <OurPortfolio />
         <Testimonials
           reviews={reviews}
+          title='A word from our clients'
+          hideSubtitle
         />
-        <GetInTouch contactPagePath='/contact' />
+        <AboutWeDevelop ctaLink={contactPagePath} />
+        <AvailableDevs
+          heading='Top Engineers'
+          title='Get a look at our top IT talents'
+          description='Instant access to the best Latin American Talent Pool'
+          devs={availableDevs}
+          buttonText='Hire your new dev today'
+          ctaAction={handleTopEngineersModalOpen}
+        />
+        <GetInTouch contactPagePath={contactPagePath} />
         <PictureWall />
       </Article>
-      {pathname === '/contact' && <ContactModal isOpen onRequestClose={handleClose} />}
-      <Footer />
+      <TopEngineersModal
+        isOpen={isTopEngineersModalOpen}
+        onRequestClose={handleTopEngineersModalClose}
+      />
+      {pathname === contactPagePath && <ContactModal isOpen onRequestClose={handleClose} />}
+      <Footer contactPagePath={contactPagePath} hideContactButton={false} />
     </>
   )
 }

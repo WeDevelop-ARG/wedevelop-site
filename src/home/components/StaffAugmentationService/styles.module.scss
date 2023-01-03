@@ -1,0 +1,233 @@
+@import '/src/styles/media_queries.scss';
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-around;
+  overflow-x: clip;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+
+    @include for-desktop-up {
+      align-items: flex-start;
+      width: 50%;
+    }
+
+    .title {
+      display: inherit;
+      flex-direction: inherit;
+      align-items: inherit;
+      gap: 32px;
+
+      @include for-tablet-down {
+        margin-top: 32px;
+      }
+
+      .introTitle {
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 1em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        font-size: 10px;
+        margin: 0;
+
+        @include for-desktop-up {
+          font-size: 13px;
+        }
+      }
+
+      .text {
+        display: inherit;
+        flex-direction: inherit;
+        align-items: inherit;
+        gap: 24px;
+
+        & > * {
+          margin: 0;
+        }
+
+        & > h2 {
+          text-align: center;
+
+          @include for-desktop-up {
+            text-align: left;
+          }
+        }
+
+        .subtitle {
+          font-weight: 300;
+          line-height: 150%;
+          opacity: 0.5;
+          font-size: 16px;
+          text-align: center;
+
+          @include for-desktop-up {
+            text-align: left;
+            font-size: 20px;
+          }
+        }
+      }
+
+      .horizontalBar {
+        width: 100px;
+        height: 10px;
+        border: none;
+        margin: 0;
+        background: #FFC331;
+      }
+    }
+
+    .learnMore {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include for-desktop-up {
+        align-items: flex-start;
+      }
+
+      .text {
+        font-weight: 300;
+        line-height: 24px;
+        opacity: 0.75;
+        font-size: 16px;
+        text-align: center;
+
+        @include for-desktop-up {
+          font-size: 20px;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .staffAugmentationService {
+    width: 100%;
+
+    @include for-desktop-up {
+      width: 618px;
+      height: 507px;
+    }
+  }
+
+  %decoration {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .dotsPattern {
+    @extend %decoration;
+    transform: rotate(90deg);
+    width: 200px;
+    right: 0;
+
+    @include for-tablet-down {
+      top: 15%
+    }
+
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  .dottedSemiCircle {
+    @extend %decoration;
+    width: 140px;
+    left: 0;
+    top: 75%;
+
+    @include for-tablet-down {
+      top: 80%;
+      left: -10%;
+    }
+
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  .filledSemiCircle {
+    @extend %decoration;
+    width: 140px;
+    right: 0;
+    bottom: -300px;
+
+    @include for-tablet-down {
+      bottom: -425px;
+      right: 0;
+    }
+
+    @include for-phone-only {
+      display: none;
+    }
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .skillList {
+    width: 80%;
+  }
+
+  .tailorMadeSolutions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+
+    @include for-desktop-up {
+      flex-direction: row;
+    }
+
+    .text {
+      font-weight: 300;
+      line-height: 100%;
+      font-size: 16px;
+      text-align: center;
+
+      @include for-desktop-up {
+        font-size: 20px;
+        text-align: left;
+      }
+    }
+
+    .button {
+      &:hover, &:focus {
+        text-decoration: underline;
+        color: #363636;
+      }
+    }
+
+    .seeMoreButton {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+
+      .text {
+        margin: 0;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #363636;
+      }
+
+      .arrow {
+        filter: brightness(0);
+      }
+    }
+  }
+}

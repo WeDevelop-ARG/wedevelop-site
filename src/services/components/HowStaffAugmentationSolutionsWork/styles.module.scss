@@ -1,0 +1,108 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+.howStaffAugmentationSolutionsWork {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: calc(50px + var(--rootContentMinPadding));
+  padding-bottom: calc(50px + var(--rootContentMinPadding));
+  overflow: clip visible;
+}
+
+.sectionContent {
+  display: flex;
+  max-width: 915px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  @include for-tablet-down {
+    padding: 40px 0 40px 0;
+  }
+}
+
+.titleContainer {
+  margin-bottom: 0 !important;
+}
+
+.titleText {
+  font-weight: 600;
+  font-size: 60px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  @include for-tablet-down {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+}
+
+.colouredTitleText {
+  color: #8224E3;
+  font-weight: 600;
+  font-size: 60px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  @include for-tablet-down {
+    font-size: 30px;
+  }
+}
+
+.descriptionText {
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+
+  @include for-tablet-down {
+    font-size: 18px;
+  }
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 40px auto;
+  border: none;
+
+  @include for-tablet-down {
+    margin: 20px auto;
+  }
+}
+
+%dotsPattern {
+  position: absolute;
+  z-index: -1;
+}
+
+.topRightPattern {
+  @extend %dotsPattern;
+  top: -125px;
+  right: 5vw;
+
+  @media screen and (min-width: 1024px) and (max-width: 1400px) {
+    right: -5vw;
+  }
+
+  @include for-tablet-down {
+    display: none;
+  }
+}
+
+.leftPattern {
+  @extend %dotsPattern;
+  bottom: 85px;
+  left: 5vw;
+
+  @media screen and (min-width: 1024px) and (max-width: 1400px) {
+    left: -6vw;
+  }
+
+  @include for-tablet-down {
+    display: none;
+  }
+}

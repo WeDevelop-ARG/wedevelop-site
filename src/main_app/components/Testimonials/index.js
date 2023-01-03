@@ -1,19 +1,31 @@
 import { useMemo } from 'react'
-import { isUndefined, isEmpty } from 'lodash'
+import { isUndefined, isEmpty, isNil } from 'lodash'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
+import Button from '../Button'
 import DefaultDecoration from './DefaultDecoration'
+import InternalLink from '../InternalLink'
+import WrappedImage from '../WrappedImage'
 
 import QuotationMark from 'assets/home/quotation_mark.svg'
 
 import classes from './styles.module.scss'
-import WrappedImage from '../WrappedImage'
 
-function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
+function Testimonials ({
+  heading,
+  title,
+  description,
+  ctaText,
+  ctaLink,
+  reviews,
+  customDecorations,
+  hideHeader = false,
+  showCta = false,
+  hideSubtitle = false
+}) {
   const isAutoplay = useMemo(() => {
-    if (reviews.length === 1) return false
-    return true
+    return !(reviews.length === 1)
   }, [reviews])
   const decorations = useMemo(() => {
     if (isUndefined(customDecorations)) return <DefaultDecoration />
@@ -24,11 +36,14 @@ function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
     <section id='testimonials' className={classes.testimonials}>
       {!hideHeader &&
         <div className={classes.sectionHeader}>
-          <p className={classes.subheadingText}>Testimonials</p>
-          <h2 className={classes.titleText}>What our clients say</h2>
-          <p className={classes.descriptionText}>
-            Don’t take our word for it, see what our customers have to say.
-          </p>
+          <p className={classes.headingText}>{!isNil(heading) ? heading : 'Testimonials'}</p>
+          <h2 className={classes.titleText}>{!isNil(title) ? title : 'What our clients say'}</h2>
+          {!hideSubtitle && (
+            <p className={classes.descriptionText}>
+              {!isNil(description)
+                ? description
+                : 'Don\'t take our word for it, see what our customers have to say.'}
+            </p>)}
           <hr className={classes.horizontalBar} />
         </div>}
       <div>
@@ -69,6 +84,17 @@ function Testimonials ({ reviews, customDecorations, hideHeader = false }) {
           ))}
         </Slide>
       </div>
+      {showCta &&
+        <Button
+          as={InternalLink}
+          href={ctaLink}
+          isAnchor
+          variant='primary'
+          className={classes.ctaButton}
+          link={{ scroll: false, shallow: true }}
+        >
+          {ctaText}
+        </Button>}
       {decorations}
     </section>
   )
