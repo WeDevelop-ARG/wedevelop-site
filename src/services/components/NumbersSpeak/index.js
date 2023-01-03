@@ -47,7 +47,7 @@ export default function NumbersSpeak () {
             Latin American Talent
           </h3>
           <p className={classes.tabText}>
-            We have skilled developers are from top 5 locations:
+            We have skilled developers from top 5 locations:
             Argentina, Brazil, Colombia, Uruguay, and Costa
             Rica with matching timezone between
             <span className={classes.boldText}>
