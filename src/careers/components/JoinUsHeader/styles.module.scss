@@ -1,0 +1,43 @@
+@import '/src/styles/theme.scss';
+@import '/src/styles/media_queries.scss';
+
+$grayColor: #363636;
+
+.subheadingText {
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: rgba($color: $grayColor, $alpha: 0.5);
+  font-size: 13px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.titleText {
+  text-align: center;
+
+  @include for-desktop-up {
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.horizontalBar {
+  width: 100px;
+  height: 10px;
+  background: #FFC331;
+  margin: 32px 0px 40px;
+  border: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.description {
+  text-align: center;
+  opacity: 0.5;
+
+  @include for-tablet-down {
+    font-size: 12px;
+  }
+}

@@ -55,7 +55,7 @@ function StoryDetails ({ name }) {
           title={storyDetails.header.title}
           subtitle={storyDetails.header.subtitle}
           tags={storyDetails.header.tags}
-          description={storyDetails.header.description}
+          description={(storyDetails.header.showDescription ?? true) ? storyDetails.header.description : undefined}
           imageURL={storyDetails.header.imageURL}
           logoBackground={storyDetails.header.logoBackground}
         />

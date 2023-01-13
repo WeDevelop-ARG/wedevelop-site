@@ -6,6 +6,7 @@ import injobDetails from './injob_details'
 import monedaDetails from './moneda_details'
 import raftDetails from './raft_details'
 import trainWithDetails from './trainWith_details'
+import lekonsDetails from './lekons_details'
 
 // TODO: Recordar agregar la pagina nueva sobre /pages/about-us/success-stories en caso de agregar una nuevo story
 
@@ -17,5 +18,6 @@ export const stories = [
   trainWithDetails,
   injobDetails,
   monedaDetails,
-  drCannabisDetails
+  drCannabisDetails,
+  lekonsDetails
 ]
