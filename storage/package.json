@@ -6,6 +6,6 @@
     "deploy": "firebase deploy --project=$npm_config_project --only=storage:rules"
   },
   "devDependencies": {
-    "firebase-tools": "^9.5.0"
+    "firebase-tools": "^11.22.0"
   }
 }
