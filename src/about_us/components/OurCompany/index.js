@@ -28,7 +28,7 @@ function OurCompany () {
             We are WeDevelop, a cutting-edge IT Staff-augmentation and technology solution
             company committed to excellence. Since 2019,
             <span> we have assembled a diverse and top-talented team of engineers from Latin America. </span>
-            At WeDevelop excels at delivering Software Development Services and catering to
+            WeDevelop excels at delivering Software Development Services and catering to
             clients’ needs, expertly scaling their tech teams, and delivering innovative
             projects with an agile mindset.
           </p>
