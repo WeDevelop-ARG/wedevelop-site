@@ -27,5 +27,13 @@ module.exports = require('next-optimized-classnames')({
     })
 
     return config
+  },
+  async rewrites () {
+    return [
+      {
+        source: '/events-in-2023-research-form',
+        destination: '/events-in-2023-research-form.html'
+      }
+    ]
   }
 })
