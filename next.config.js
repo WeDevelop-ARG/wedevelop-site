@@ -29,6 +29,8 @@ module.exports = require('next-optimized-classnames')({
     return config
   },
   async rewrites () {
+    if (ENVIRONMENT !== 'production') return []
+
     return [
       {
         source: '/events-in-2023-research-form',
