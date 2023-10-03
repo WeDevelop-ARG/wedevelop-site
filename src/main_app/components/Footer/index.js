@@ -1,20 +1,20 @@
-import InternalLink from 'main_app/components/InternalLink'
 import ClutchWidget from 'main_app/components/ClutchWidget'
+import InternalLink from 'main_app/components/InternalLink'
 import Logo from '../Logo'
 import WrappedImage from '../WrappedImage'
 
-import classes from './styles.module.scss'
 import classnames from 'classnames'
+import classes from './styles.module.scss'
 
-import Pattern from 'assets/footer/pattern.svg'
 import Email from 'assets/footer/email.svg'
-import Phone from 'assets/footer/phone.svg'
 import Facebook from 'assets/footer/facebook.svg'
 import Instagram from 'assets/footer/instagram.svg'
 import LinkedIn from 'assets/footer/linked_in.svg'
+import Pattern from 'assets/footer/pattern.svg'
+import Phone from 'assets/footer/phone.svg'
 import Button from '../Button'
 
-function Footer ({ className, contactPagePath = '/contact', hideContactButton = true, email = 'info@wedevelop.me' }) {
+function Footer ({ className, contactPagePath = '/contact', hideContactButton = true, email = 'info@wedevelop.com' }) {
   className = classnames(
     classes.containerStyle,
     className
@@ -88,7 +88,7 @@ function Footer ({ className, contactPagePath = '/contact', hideContactButton = 
             </li>
             <hr className={classes.divider} />
             <li className={classes.contactContentContainer}>
-              <a href='https://blog.wedevelop.me' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
+              <a href='https://blog.wedevelop.com' target='_blank' rel='noopener noreferrer' className={classes.contactContent}>
                 Blog
               </a>
             </li>
@@ -121,7 +121,7 @@ function Footer ({ className, contactPagePath = '/contact', hideContactButton = 
                   </a>
                 </li>
                 <li>
-                  <a href='https://www.instagram.com/wedevelop.me' target='_blank' rel='noreferrer'>
+                  <a href='https://www.instagram.com/wedevelop.com' target='_blank' rel='noreferrer'>
                     <WrappedImage src={Instagram} title={'WeDevelop\'s Instagram'} className={classes.iconSocialNetworks} />
                   </a>
                 </li>

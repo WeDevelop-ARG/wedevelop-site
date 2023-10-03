@@ -1,5 +1,5 @@
-import WrappedImage from 'main_app/components/WrappedImage'
 import CheckSign from 'assets/staff_augmentation/check_sign.svg'
+import WrappedImage from 'main_app/components/WrappedImage'
 import classes from './styles.module.scss'
 
 function ConfirmationMessage ({ showModal, onModalClose }) {
@@ -15,7 +15,7 @@ function ConfirmationMessage ({ showModal, onModalClose }) {
       </div>
       <div className={classes.addSomething}>
         <p>Forgot to say something important?</p>
-        <p>Send us a new message or write us at <a href='mailto:staffing@wedevelop.me'>staffing@wedevelop.me</a></p>
+        <p>Send us a new message or write us at <a href='mailto:staffing@wedevelop.com'>staffing@wedevelop.com</a></p>
       </div>
     </div>
   )

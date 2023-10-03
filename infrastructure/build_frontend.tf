@@ -38,11 +38,11 @@ resource "google_cloudbuild_trigger" "deploy_frontend_from_github" {
   substitutions = {
     _ENVIRONMENT = local.environment
     _LOGS_BUCKET                   = google_storage_bucket.build_logs.url
-    _BASE_DOMAIN_NAME              = local.environment_domain_name
+    _BASE_DOMAIN_NAME              = local.environment_domain_name[0]
     _FRONTEND_CLOUD_RUN_SERVICE_ID = local.frontend_cloud_run_service_id
     _FRONTEND_CLOUD_RUN_REGION     = var.region
     _FIREBASE_API_KEY              = local.firebaseConfig.apiKey
-    _FIREBASE_AUTH_DOMAIN          = local.environment_domain_name
+    _FIREBASE_AUTH_DOMAIN          = local.environment_domain_name[0]
     _FIREBASE_DATABASE_URL         = local.firebaseConfig.databaseURL
     _FIREBASE_PROJECT_ID           = local.project_id
     _FIREBASE_STORAGE_BUCKET       = local.firebaseConfig.storageBucket
