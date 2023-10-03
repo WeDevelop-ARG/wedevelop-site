@@ -3,7 +3,7 @@ resource "google_dns_managed_zone" "default_dns_zone" {
   count = local.is_production ? 0 : length(local.environment_domain_name)
   project     = local.project_id
   visibility  = "public"
-  name        = local.default_dns_zone_name
+  name        = local.default_dns_zone_name[count.index]
   dns_name    = "${local.environment_domain_name[count.index]}."
   description = "DNS zone for the ${local.environment} environment"
 }
