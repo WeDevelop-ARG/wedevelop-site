@@ -51,7 +51,7 @@ locals {
   ]
   marketing_environment_domain_name = "%{if !local.is_production}${local.environment}.%{endif}${var.base_marketing_domain_name}"
   default_dns_zone_name         = [
-    for domain_name in var.base_domain_name : replace(domain_name, ".", "-")
+    for domain_name in local.environment_domain_name : replace(domain_name, ".", "-")
   ]
 
   default_marketing_dns_zone_name = replace(local.marketing_environment_domain_name, ".", "-")
