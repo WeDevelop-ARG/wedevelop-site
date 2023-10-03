@@ -1,5 +1,5 @@
-import { useMemo, useCallback, useState } from 'react'
 import classNames from 'classnames'
+import { useCallback, useMemo, useState } from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 import Button from 'main_app/components/Button'
@@ -13,8 +13,8 @@ import { forTabletDown } from 'styles/media_queries'
 import DropdownIcon from 'assets/nav_bar/dropdown_icon.svg'
 import DropdownIconWhite from 'assets/nav_bar/dropdown_icon_white.svg'
 
-import classes from './styles.module.scss'
 import InternalLink from 'main_app/components/InternalLink'
+import classes from './styles.module.scss'
 
 function MainMenu ({
   isOpen,
@@ -213,7 +213,7 @@ function MainMenu ({
         </Dropdown>
       </li>
       <li className={classNames(classes.navItem)}>
-        <a href='https://blog.wedevelop.me' target='_self' rel='noopener noreferrer'>
+        <a href='https://blog.wedevelop.com' target='_self' rel='noopener noreferrer'>
           Blog
         </a>
       </li>

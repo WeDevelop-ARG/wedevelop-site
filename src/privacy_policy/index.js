@@ -1,6 +1,6 @@
-import NavBar from 'main_app/components/NavBar'
 import Article from 'main_app/components/Article'
 import Footer from 'main_app/components/Footer'
+import NavBar from 'main_app/components/NavBar'
 
 import PageMetadata from 'utils/marketing/PageMetadata'
 
@@ -77,7 +77,7 @@ function PrivacyPolicy () {
             </li>
             <li>
               <strong>Website</strong> refers to Wedevelop, accessible from
-              www.wedevelop.me
+              www.wedevelop.com
             </li>
             <li>
               <strong>Service</strong> refers to the Website.
@@ -485,7 +485,7 @@ function PrivacyPolicy () {
           <ul>
             <li>
               By email:
-              <span>staffing@wedevelop.me</span>
+              <span>staffing@wedevelop.com</span>
             </li>
           </ul>
         </section>
