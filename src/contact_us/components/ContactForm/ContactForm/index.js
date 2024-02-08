@@ -30,7 +30,7 @@ function ContactForm ({ initialValues, ...props }) {
 
     const data = {
       personalizations: [{
-        to: [{ email: 'staffing@wedevelop.me' }],
+        to: [{ email: 'staffing@wedevelop.com' }],
         subject: 'New message from WeDevelop site'
       }],
       from: {
@@ -54,7 +54,7 @@ function ContactForm ({ initialValues, ...props }) {
       })
       window.alert('Message sent successfully')
     } catch (_) {
-      window.alert('An error occurred while sending your message.\n\nPlease contact us at staffing@wedevelop.me')
+      window.alert('An error occurred while sending your message.\n\nPlease contact us at staffing@wedevelop.com')
     }
   }, [])
 

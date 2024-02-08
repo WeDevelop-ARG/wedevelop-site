@@ -123,7 +123,7 @@ resource "google_dns_record_set" "marketing_dmarc_record" {
   name         = "_dmarc.${local.marketing_environment_domain_name}."
   type         = "TXT"
   rrdatas      = [
-    "\"v=DMARC1; p=none; rua=mailto:abel@wedevelop.me,mailto:nahuel@wedevelop.me; pct=100; adkim=s; aspf=s\""
+    "\"v=DMARC1; p=none; rua=mailto:abel@wedevelop.com,mailto:nahuel@wedevelop.com; pct=100; adkim=s; aspf=s\""
   ]
   ttl          = 60
 }

@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
 
 const SCRIPT_URL = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
@@ -69,7 +69,7 @@ export default function HubSpotCalendar ({ sourcePage, onFinish, hideText }) {
         className='meetings-iframe-container'
         data-src='https://meetings.hubspot.com/wedevelop/book-a-call?embed=true'
       />
-      {!hideText && <p>or email us at <a href='mailto:staffing@wedevelop.me'>staffing@wedevelop.me</a></p>}
+      {!hideText && <p>or email us at <a href='mailto:staffing@wedevelop.com'>staffing@wedevelop.com</a></p>}
     </>
   )
 }

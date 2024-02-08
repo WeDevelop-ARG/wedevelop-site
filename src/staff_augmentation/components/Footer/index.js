@@ -6,11 +6,11 @@ import Logo from 'main_app/components/Logo'
 import WrappedImage from 'main_app/components/WrappedImage'
 
 import EmailIcon from 'assets/footer/email.svg'
-import LocationIcon from 'assets/footer/location.svg'
-import PhoneIcon from 'assets/footer/phone.svg'
-import LinkedInIcon from 'assets/footer/linked_in.svg'
 import FacebookIcon from 'assets/footer/facebook.svg'
 import InstagramIcon from 'assets/footer/instagram.svg'
+import LinkedInIcon from 'assets/footer/linked_in.svg'
+import LocationIcon from 'assets/footer/location.svg'
+import PhoneIcon from 'assets/footer/phone.svg'
 
 import classes from './styles.module.scss'
 
@@ -30,10 +30,10 @@ function Footer ({ className }) {
           <li className={classes.contactContentContainer}>
             <WrappedImage src={EmailIcon} layout='fixed' width='15' className={classes.iconStyles} />
             <a
-              href='mailto:staffing@wedevelop.me'
+              href='mailto:staffing@wedevelop.com'
               className={classes.contactContent}
             >
-              staffing@wedevelop.me
+              staffing@wedevelop.com
             </a>
           </li>
           <li className={classes.contactContentContainer}>
