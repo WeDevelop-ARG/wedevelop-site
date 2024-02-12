@@ -78,11 +78,6 @@ function Footer ({ className, contactPagePath = '/contact', hideContactButton = 
             <li><p className={classes.titleContainer}>careers</p></li>
             <li className={classes.contactContentContainer}>
               <InternalLink href='/careers/work-culture' className={classes.contactContent}>
-                Work Culture
-              </InternalLink>
-            </li>
-            <li className={classes.contactContentContainer}>
-              <InternalLink href='/careers/job-openings' className={classes.contactContent}>
                 Careers &#129321;
               </InternalLink>
             </li>

@@ -171,46 +171,10 @@ function MainMenu ({
           </Dropdown.Menu>
         </Dropdown>
       </li>
-      <li
-        className={classNames(classes.navItem, {
-          [classes.active]: globalThis.window?.location.pathname.startsWith('/careers')
-        })}
-      >
-        <Dropdown show={isCareersDropdownOpen} onToggle={setIsCareersDropdownOpen}>
-          <Dropdown.Toggle
-            as={Button}
-            variant='link'
-            className={classNames(classes.servicesDropdownToggle, {
-              [classes.open]: isCareersDropdownOpen
-            })}
-            data-close-menu-on-click='false'
-            iconRight={
-              <Image
-                src={dropdownIconURL}
-                alt=''
-                className={classes.iconRight}
-              />
-            }
-          >
-            Careers
-          </Dropdown.Toggle>
-          <Dropdown.Menu className={classes.dropdownMenu}>
-            <Dropdown.Item
-              as={InternalLink}
-              href='/careers/work-culture'
-              className={classes.dropdownItem}
-            >
-              Work Culture
-            </Dropdown.Item>
-            <Dropdown.Item
-              as={InternalLink}
-              href='/careers/job-openings'
-              className={classes.dropdownItem}
-            >
-              Job Openings
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+      <li className={classNames(classes.navItem)}>
+        <InternalLink href='/careers/work-culture'>
+          Careers
+        </InternalLink>
       </li>
       <li className={classNames(classes.navItem)}>
         <a href='https://blog.wedevelop.com' target='_self' rel='noopener noreferrer'>
