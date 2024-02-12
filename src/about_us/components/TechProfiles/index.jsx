@@ -32,7 +32,7 @@ export default function TechProfiles () {
         <hr className={classes.horizontalBar} />
         <Button
           as={InternalLink}
-          href='/services/staff-augmentation'
+          href='/services/hiring-solutions'
           className={classes.hireNowButton}
         >
           Hire Now!

@@ -16,7 +16,7 @@ import BackgroundContainer from 'staff_augmentation/components/BackgroundContain
 
 function Benefits ({ service, className }) {
   const decoration = useMemo(() => {
-    if (service === 'staff-augmentation') return <DecorationStaff />
+    if (service === 'hiring-solutions') return <DecorationStaff />
     return <DecorationWebDev />
   }, [service])
 

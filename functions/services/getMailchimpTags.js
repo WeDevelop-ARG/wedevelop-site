@@ -1,6 +1,6 @@
 function getMailchimpTags (source) {
   switch (source) {
-    case 'staff-augmentation': return ['STAFF_AUGMENTATION']
+    case 'hiring-solutions': return ['STAFF_AUGMENTATION']
     case 'web-designers': return ['WEB_DESIGNERS']
     case 'web-developers': return ['WEB_DEVELOPERS']
     case 'hire-developers': return ['HIRE_DEVELOPERS']
