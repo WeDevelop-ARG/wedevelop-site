@@ -12,13 +12,12 @@ function WhyHireWeDevelop () {
         <LatamMap className={classes.map} viewBox='108.762 180.76 795.546 1016.28' preserveAspectRatio='xMinYMin meet' />
         <div className={classes.content}>
           <p className={classes.header}>Why us</p>
-          <p className={classes.title}>Why Hire WeDevelop IT Staff Augmentation Solutions?</p>
+          <p className={classes.title}>Why Hire WeDevelop Hiring Solutions?</p>
           <div className={classes.body}>
-            <p>WeDevelop is not just another IT staffing company.
-              <b> We are your strategic partners for staff augmentation services sourcing the most skilled professionals in Latin America.</b>
-            </p>
+            <p>We are your strategic partner for <b>hiring the most skilled professionals in Latin America.</b></p>
+            <br />
             <p>Our core goal is to help you build a proficient team customizing our top-quality solutions to your requirements. With a comprehensive and human-centered approach,
-              <b>we deliver end-to-end staffing solutions</b>
+              <b> we deliver end-to-end staffing solutions</b>
               , understanding that every business has unique needs.
             </p>
           </div>
