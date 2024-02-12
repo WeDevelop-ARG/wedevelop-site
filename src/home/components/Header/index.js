@@ -37,7 +37,7 @@ function Header (props, ref) {
         >
           Inquire
         </Button>
-        <InternalLink href='#staff-augmentation-service' className={classes.arrowMobile}>
+        <InternalLink href='#hiring-solutions-service' className={classes.arrowMobile}>
           <Image src={Arrow} layout='fixed' alt='' />
           <div className={classes.scrollTextMobile}>scroll down</div>
         </InternalLink>
@@ -51,7 +51,7 @@ function Header (props, ref) {
           />
         </div>
       </div>
-      <InternalLink href='#staff-augmentation-service' className={classes.arrowDesktop}>
+      <InternalLink href='#hiring-solutions-service' className={classes.arrowDesktop}>
         <Image src={Arrow} layout='fixed' alt='' />
         <div className={classes.scrollText}>scroll down</div>
       </InternalLink>

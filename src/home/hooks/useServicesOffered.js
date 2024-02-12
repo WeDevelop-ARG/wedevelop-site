@@ -1,5 +1,5 @@
 import webServices from 'assets/home/services/web-services.svg'
-import staffAugm from 'assets/home/services/staff-augmentation.svg'
+import staffAugm from 'assets/home/services/hiring-solutions.svg'
 
 const services = [{
   id: '1',
@@ -14,7 +14,7 @@ const services = [{
   title: 'Hiring Solutions',
   description: 'Expand your team with the right talent',
   photo: staffAugm,
-  path: '/services/staff-augmentation'
+  path: '/services/hiring-solutions'
 }
 ]
 

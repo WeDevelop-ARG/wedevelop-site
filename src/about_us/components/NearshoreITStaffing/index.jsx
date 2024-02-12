@@ -109,7 +109,7 @@ export default function NearshoreITStaffing () {
       />
       <Button
         as={InternalLink}
-        href='/services/staff-augmentation'
+        href='/services/hiring-solutions'
         className={classes.scaleYourTeamButton}
       >
         Scale your Team now

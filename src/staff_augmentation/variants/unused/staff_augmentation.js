@@ -6,7 +6,7 @@ import defaultContent from '../default_content'
 
 const staffAugmentation = {
   ...defaultContent,
-  pathName: 'staff-augmentation',
+  pathName: 'hiring-solutions',
   metadata: {
     title: 'Nearshore IT Staff Augmentation company',
     description: 'Add the right Talent for your time in no time. Get a free quote in the next hour!'
@@ -38,7 +38,7 @@ const staffAugmentation = {
       title: 'Sign Up to Get Rates & Available Staff Details',
       description: 'We look forward to learning how WeDevelop can help you and your business.'
     },
-    formOrigin: 'staff-augmentation',
+    formOrigin: 'hiring-solutions',
     formButtonText: 'Get a free quote'
   },
   backgrounds: {
