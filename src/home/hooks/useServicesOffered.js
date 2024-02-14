@@ -11,7 +11,7 @@ const services = [{
 },
 {
   id: '2',
-  title: 'Hiring Solutions',
+  title: 'IT Talent Solutions',
   description: 'Expand your team with the right talent',
   photo: staffAugm,
   path: '/services/hiring-solutions'

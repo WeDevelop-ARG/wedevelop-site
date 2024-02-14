@@ -12,7 +12,7 @@ function WhyHireWeDevelop () {
         <LatamMap className={classes.map} viewBox='108.762 180.76 795.546 1016.28' preserveAspectRatio='xMinYMin meet' />
         <div className={classes.content}>
           <p className={classes.header}>Why us</p>
-          <p className={classes.title}>Why Hire WeDevelop Hiring Solutions?</p>
+          <p className={classes.title}>Why Hire WeDevelop IT Talent Solutions?</p>
           <div className={classes.body}>
             <p>We are your strategic partner for <b>hiring the most skilled professionals in Latin America.</b></p>
             <br />

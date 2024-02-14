@@ -8,7 +8,7 @@ function HowStaffAugmentationSolutionsWork () {
       <DotsPattern className={classes.topRightPattern} viewBox='0 0 166 327' preserveAspectRatio='xMidYMid meet' />
       <div className={classes.sectionContent}>
         <h2 className={classes.titleContainer}>
-          <p className={classes.titleText}>How Our Hiring Solutions<b className={classes.colouredTitleText}> Work</b></p>
+          <p className={classes.titleText}>How Our IT Talent Solutions<b className={classes.colouredTitleText}> Work</b></p>
         </h2>
         <hr className={classes.horizontalBar} />
         <p className={classes.descriptionText}>

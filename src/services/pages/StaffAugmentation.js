@@ -44,7 +44,7 @@ function StaffAugmentation () {
   return (
     <>
       <PageMetadata
-        title='Hiring solutions'
+        title='IT Talent Solutions'
         description='A solid Nearshore Agency building up the most agile and efficient teams in the world.'
       />
       <NavBar
@@ -60,7 +60,7 @@ function StaffAugmentation () {
           icon={Icon}
           photo={Photo}
           background={Background}
-          title={<>Hiring<br />Solutions</>}
+          title={<>IT Talent<br />Solutions</>}
           description={<>Struggling to find talent? <br />Access a Top-Level talent pool of IT professionals.</>}
           ctaText='Start Today'
         />

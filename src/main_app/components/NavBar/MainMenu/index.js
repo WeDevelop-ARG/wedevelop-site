@@ -96,7 +96,7 @@ function MainMenu ({
               href='/services/hiring-solutions'
               className={classes.dropdownItem}
             >
-              Hiring Solutions
+              IT Talent Solutions
             </Dropdown.Item>
             <Dropdown.Item
               as={InternalLink}
