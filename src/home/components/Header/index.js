@@ -21,14 +21,13 @@ function Header (props, ref) {
   return (
     <section ref={ref} className={classes.headerContainer}>
       <div className={classes.content}>
-        <p className={classes.introTitle}>what we are</p>
         <h1 className={classes.title}>
           <p className={classes.firstLine}>
-            <b>Build World-Class IT Teams <br /></b>
+            <b>Hire Software Engineers in Your Timezone<br /></b>
           </p>
         </h1>
         <p className={classes.text}>
-          Access a Top-Level Talent Pool of IT Professionals
+          Your reliable route to top-tier nearshore developers
         </p>
         <hr className={classes.divider} />
         <Button
@@ -36,9 +35,9 @@ function Header (props, ref) {
           href='/contact'
           className={classes.letsTalkButton}
         >
-          Let's Talk
+          Inquire
         </Button>
-        <InternalLink href='#staff-augmentation-service' className={classes.arrowMobile}>
+        <InternalLink href='#hiring-solutions-service' className={classes.arrowMobile}>
           <Image src={Arrow} layout='fixed' alt='' />
           <div className={classes.scrollTextMobile}>scroll down</div>
         </InternalLink>
@@ -52,7 +51,7 @@ function Header (props, ref) {
           />
         </div>
       </div>
-      <InternalLink href='#staff-augmentation-service' className={classes.arrowDesktop}>
+      <InternalLink href='#hiring-solutions-service' className={classes.arrowDesktop}>
         <Image src={Arrow} layout='fixed' alt='' />
         <div className={classes.scrollText}>scroll down</div>
       </InternalLink>

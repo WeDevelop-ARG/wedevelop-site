@@ -97,7 +97,7 @@ function Footer ({ className }) {
         </li>
         <li>
           <a
-            href='https://www.instagram.com/wedevelop.me'
+            href='https://www.instagram.com/wedevelop.com'
             target='_blank'
             rel='noreferrer'
           >

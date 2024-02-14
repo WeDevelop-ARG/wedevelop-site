@@ -52,7 +52,7 @@ function OurCompany () {
           <Button
             as={InternalLink}
             variant='link'
-            href='/services/staff-augmentation'
+            href='/services/hiring-solutions'
             isAnchor
             iconRight={<Image src={BlueRightArrow} alt='' />}
             className={classes.goToStaffAugService}

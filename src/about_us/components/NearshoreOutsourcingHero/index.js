@@ -56,7 +56,7 @@ function NearshoreOutsourcingHero () {
         </div>
         <Button
           as={InternalLink}
-          href='/services/staff-augmentation'
+          href='/services/hiring-solutions'
           className={classes.discoverMoreButton}
         >
           Discover more about our Nearshore Outsourcing Services

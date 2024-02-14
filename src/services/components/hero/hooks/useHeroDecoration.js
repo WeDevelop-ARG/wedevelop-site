@@ -49,7 +49,7 @@ const useHeroDecoration = (service) => {
   switch (service) {
     case 'web-development':
       return WEB_DEV
-    case 'staff-augmentation':
+    case 'hiring-solutions':
       return STAFF
     default:
       break

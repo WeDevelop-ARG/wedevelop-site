@@ -36,8 +36,8 @@ function Footer ({ className, contactPagePath = '/contact', hideContactButton = 
               </InternalLink>
             </li>
             <li className={classes.contactContentContainer}>
-              <InternalLink href='/services/staff-augmentation' className={classes.contactContent}>
-                Staff Augmentation
+              <InternalLink href='/services/hiring-solutions' className={classes.contactContent}>
+                Hiring Solutions
               </InternalLink>
             </li>
             <li className={classes.contactContentContainer}>
@@ -78,11 +78,6 @@ function Footer ({ className, contactPagePath = '/contact', hideContactButton = 
             <li><p className={classes.titleContainer}>careers</p></li>
             <li className={classes.contactContentContainer}>
               <InternalLink href='/careers/work-culture' className={classes.contactContent}>
-                Work Culture
-              </InternalLink>
-            </li>
-            <li className={classes.contactContentContainer}>
-              <InternalLink href='/careers/job-openings' className={classes.contactContent}>
                 Careers &#129321;
               </InternalLink>
             </li>
@@ -121,7 +116,7 @@ function Footer ({ className, contactPagePath = '/contact', hideContactButton = 
                   </a>
                 </li>
                 <li>
-                  <a href='https://www.instagram.com/wedevelop.me' target='_blank' rel='noreferrer'>
+                  <a href='https://www.instagram.com/wedevelop.com' target='_blank' rel='noreferrer'>
                     <WrappedImage src={Instagram} title={'WeDevelop\'s Instagram'} className={classes.iconSocialNetworks} />
                   </a>
                 </li>
