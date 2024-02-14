@@ -17,18 +17,18 @@ import Schedule from '../components/schedule'
 import ScheduleFormModal from 'staff_augmentation/components/ScheduleFormModal'
 import WhyHireWeDevelop from 'services/components/WhyHireWeDevelop'
 
-import Photo from 'assets/services/photo-staff-augmentation.svg'
-import Icon from 'assets/services/icon-staff-augmentation.svg'
-import Background from 'assets/services/background-staff-augmentation.png'
+import Photo from 'assets/services/photo-hiring-solutions.svg'
+import Icon from 'assets/services/icon-hiring-solutions.svg'
+import Background from 'assets/services/background-hiring-solutions.png'
 
 import classes from './services.module.scss'
 
 function StaffAugmentation () {
-  const SERVICE_NAME = 'staff-augmentation'
-  const contactPagePath = '/services/staff-augmentation/contact'
+  const SERVICE_NAME = 'hiring-solutions'
+  const contactPagePath = '/services/hiring-solutions/contact'
   const { pathname, push } = useRouter()
   const handleClose = useCallback(async () => {
-    await push('/services/staff-augmentation', undefined, { shallow: true, scroll: false })
+    await push('/services/hiring-solutions', undefined, { shallow: true, scroll: false })
   }, [push])
 
   const [isFormModalOpen, setFormModalOpen] = useState(false)
@@ -44,8 +44,8 @@ function StaffAugmentation () {
   return (
     <>
       <PageMetadata
-        title='IT Staff Augmentation'
-        description='A solid IT Staffing Agency building up the most agile and efficient teams in the world. Get a free quote within the next hour.'
+        title='Hiring solutions'
+        description='A solid Nearshore Agency building up the most agile and efficient teams in the world.'
       />
       <NavBar
         variant={['solid', 'dark']}
@@ -60,7 +60,7 @@ function StaffAugmentation () {
           icon={Icon}
           photo={Photo}
           background={Background}
-          title={<>IT Staff <br />Augmentation</>}
+          title={<>Hiring<br />Solutions</>}
           description={<>Struggling to find talent? <br />Access a Top-Level talent pool of IT professionals.</>}
           ctaText='Start Today'
         />
@@ -83,7 +83,7 @@ function StaffAugmentation () {
         setModalOpen={setFormModalOpen}
         onScheduleMeetingClick={switchToCallModal}
         onSubmit={onSuccess}
-        formOrigin='services/staff-augmentation'
+        formOrigin='services/hiring-solutions'
       />
     </>
   )

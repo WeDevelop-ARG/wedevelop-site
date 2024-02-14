@@ -4,7 +4,7 @@ import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
 import Skills from '../Skills'
 
-import staffAugmentationService from 'assets/home/services/staff-augmentation.svg'
+import staffAugmentationService from 'assets/home/services/hiring-solutions.svg'
 import dotsPattern from 'assets/home/dots_pattern.svg'
 import rightArrow from 'assets/about_us/nearshore_outsourcing/right_arrow.svg'
 import dottedSemiCircle from 'assets/home/dotted-semi-circle.svg'
@@ -15,12 +15,12 @@ import classes from './styles.module.scss'
 export default function StaffAugmentationService () {
   return (
     <>
-      <section id='staff-augmentation-service' className={classes.section}>
+      <section id='hiring-solutions-service' className={classes.section}>
         <div className={classes.content}>
           <section className={classes.title}>
             <p className={classes.introTitle}>services</p>
             <div className={classes.text}>
-              <h2>Staff Augmentation Services</h2>
+              <h2>Hiring Solutions</h2>
               <p className={classes.subtitle}>
                 Boost your projects and access on-demand skilled
                 IT talent while reducing costs.
@@ -32,7 +32,7 @@ export default function StaffAugmentationService () {
             <p className={classes.text}>Learn more about how we build unique teams</p>
             <Button
               as={InternalLink}
-              href='/services/staff-augmentation'
+              href='/services/hiring-solutions'
             >
               Learn More
             </Button>
