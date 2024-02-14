@@ -25,7 +25,7 @@ variable "zone" {
 variable "base_domain_name" {
   type        = list(string)
   description = "Base domain name. Specific environments other than production will be a direct subdomain."
-  default     = ["wedevelop.com", "wedevelop.me"]
+  default     = "wedevelop.com"
 }
 
 variable "base_marketing_domain_name" {
