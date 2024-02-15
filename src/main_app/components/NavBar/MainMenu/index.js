@@ -83,7 +83,7 @@ function MainMenu ({
             Services
           </Dropdown.Toggle>
 
-          <Dropdown.Menu className={classes.dropdownMenu}>
+          <Dropdown.Menu className={classes.dropdownMenu} renderOnMount>
             <Dropdown.Item
               as={InternalLink}
               href='/services/web-development'
@@ -139,7 +139,7 @@ function MainMenu ({
             About Us
           </Dropdown.Toggle>
 
-          <Dropdown.Menu className={classes.dropdownMenu}>
+          <Dropdown.Menu className={classes.dropdownMenu} renderOnMount>
             <Dropdown.Item
               as={InternalLink}
               href='/about-us'
