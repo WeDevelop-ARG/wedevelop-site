@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import AccordionContext from 'react-bootstrap/AccordionContext'
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle'
+import { useAccordionButton } from 'react-bootstrap/AccordionButton'
 import BAccordion from 'react-bootstrap/Accordion'
 import classNames from 'classnames'
 import isEmpty from 'lodash/isEmpty'
@@ -12,7 +12,7 @@ import classes from './styles.module.scss'
 function Toggle ({ eventKey, children, onClick, hasItems }) {
   const currentEventKey = useContext(AccordionContext)
 
-  const decoratedOnClick = useAccordionToggle(
+  const decoratedOnClick = useAccordionButton(
     eventKey,
     () => onClick && onClick(eventKey)
   )
