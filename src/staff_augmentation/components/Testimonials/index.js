@@ -34,7 +34,7 @@ export default function Testimonials () {
               </p>
               <h3>
                 <b>{testimonial.project.type}</b>
-                <span>{' '}for {testimonial.project.company}</span>
+                <span>&nbsp;for {testimonial.project.company}</span>
               </h3>
               <Stars starsNumber={testimonial.stars} />
             </div>

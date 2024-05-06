@@ -1,7 +1,7 @@
 import WrappedImage from 'main_app/components/WrappedImage'
 
-import decoElements from 'assets/about_us/nearshore_outsourcing/deco-elements-2.svg'
 import dotsPattern from 'assets/about_us/dots_pattern.svg'
+import decoElements from 'assets/about_us/nearshore_outsourcing/deco-elements-2.svg'
 import menCodingBackground from 'assets/about_us/nearshore_outsourcing/men-coding-background.png'
 
 import classes from './styles.module.scss'
@@ -23,7 +23,7 @@ export default function OutsourceReasons () {
             <p>
               However, don't be dazzled by the economic advantages of offshoring.
               <span className={classes.boldText}>
-                The smartest choice comes from analyzing the core aspects of both IT talent sourcing methodologies.
+                &nbsp;The smartest choice comes from analyzing the core aspects of both IT talent sourcing methodologies.
               </span>
             </p>
             <p>
@@ -33,9 +33,9 @@ export default function OutsourceReasons () {
               Therefore, before embarking on the daunting task of hiring tech professionals for your next
               project or getting on board a permanent hire,
               <span className={classes.boldText}>
-                get the whole picture.
+                &nbsp;get the whole picture.
               </span>
-              As we mentioned, cutting
+              &nbsp;As we mentioned, cutting
               costs is one of the main reasons companies outsource IT project developments.
             </p>
             <p className={classes.violetGradientText}>

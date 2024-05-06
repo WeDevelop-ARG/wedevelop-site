@@ -3,9 +3,9 @@ import Image from 'main_app/components/Image'
 import InternalLink from 'main_app/components/InternalLink'
 import WrappedImage from 'main_app/components/WrappedImage'
 
+import DotsPattern from 'assets/about_us/dots_pattern.svg'
 import BlueRightArrow from 'assets/about_us/our_company/blue-right-arrow.svg'
 import DecoCircle from 'assets/about_us/our_company/deco-circle.svg'
-import DotsPattern from 'assets/about_us/dots_pattern.svg'
 import WeDevs from 'assets/about_us/our_company/wedevs.png'
 
 import classes from './styles.module.scss'
@@ -27,8 +27,8 @@ function OurCompany () {
           <p>
             We are WeDevelop, a cutting-edge IT Staff-augmentation and technology solution
             company committed to excellence. Since 2019,
-            <span> we have assembled a diverse and top-talented team of engineers from Latin America. </span>
-            WeDevelop excels at delivering Software Development Services and catering to
+            <span>&nbsp;we have assembled a diverse and top-talented team of engineers from Latin America.</span>
+            &nbsp;WeDevelop excels at delivering Software Development Services and catering to
             clients’ needs, expertly scaling their tech teams, and delivering innovative
             projects with an agile mindset.
           </p>
@@ -45,8 +45,8 @@ function OurCompany () {
         <div className={classes.lastTextBlock}>
           <p>
             However, we are not your average IT Staff-augmentation business. As a human-centered company,
-            <span> we care for client satisfaction while promoting staff well-being. Teamwork, transparency, and collaboration are our mottos. </span>
-            Resilience and flexibility, our leading values. Our indomitable spirits and curious minds
+            <span>&nbsp;we care for client satisfaction while promoting staff well-being. Teamwork, transparency, and collaboration are our mottos.</span>
+            &nbsp;Resilience and flexibility, our leading values. Our indomitable spirits and curious minds
             drive our team to always strive for excellence.
           </p>
           <Button

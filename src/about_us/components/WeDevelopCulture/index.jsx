@@ -17,9 +17,9 @@ export default function WeDevelopCulture () {
           creating an inviting and creative work environment.
           <span className={classes.boldText}>
             &nbsp;As team members feel appreciated and valued, WeDevelop is
-            the company everyone wants to work with. &nbsp;
+            the company everyone wants to work with.
           </span>
-          We are always one step ahead of the game, ready to drive
+          &nbsp;We are always one step ahead of the game, ready to drive
           change in the right direction and lead companies to
           their next big step in their digital journeys.
         </p>

@@ -1,10 +1,9 @@
-import Image from 'main_app/components/Image'
 import useProcessSteps from './ProcessSteps/process_steps'
 
 import stepDecoration from 'assets/about_us/areas_of_expertise/step-decoration.svg'
 
-import classes from './styles.module.scss'
 import WrappedImage from 'main_app/components/WrappedImage'
+import classes from './styles.module.scss'
 
 export default function ProcessAndMethodologies () {
   const { steps } = useProcessSteps()
@@ -18,9 +17,9 @@ export default function ProcessAndMethodologies () {
           <p className={classes.normalText}>
             At WeDevelop, we work only with top-notch talent.
             <span className={classes.boldText}>
-              &nbsp;We connect you with the best professionals across Latin America&nbsp;
+              &nbsp;We connect you with the best professionals across Latin America
             </span>
-            through an effective three-step process to ensure you get
+            &nbsp;through an effective three-step process to ensure you get
             the right hire for your requirements. Thanks to our streamlined hiring
             process, 75% of our clients hire the first match we make!
           </p>

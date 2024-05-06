@@ -1,20 +1,20 @@
-import { useCallback, useState } from 'react'
 import { Field } from 'formik'
 import isNil from 'lodash/isNil'
 import isUndefined from 'lodash/isUndefined'
 import Image from 'main_app/components/Image'
+import { useCallback, useState } from 'react'
 
 import { INITIAL_LANDING_FORM_PROCESSOR_URL } from 'main_app/constants'
 
-import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 import { logAnalyticsEvent } from 'utils/marketing/log_analytics_event'
+import useFieldWithErrorClassName from 'utils/use_field_with_error_class_name'
 
 import uploadFile from 'service_providers/firebase/uploadFile'
 
-import Button from 'main_app/components/Button'
-import ErrorUploadingFile from 'staff_augmentation/components/ErrorUploadingFile'
-import SubmitButton from 'main_app/components/SubmitButton'
 import FileInput from 'careers/components/JoinUsForm/FileInput'
+import Button from 'main_app/components/Button'
+import SubmitButton from 'main_app/components/SubmitButton'
+import ErrorUploadingFile from 'staff_augmentation/components/ErrorUploadingFile'
 import UploadingFile from 'staff_augmentation/components/UploadingFile'
 
 import ContactPopupModal from '../ContactPopupModal'
@@ -106,7 +106,7 @@ export default function ScheduleFormModal ({
         id='get-in-touch-form'
       >
         <label className={classes.labels}>
-          <span>*</span>{' '}Full Name
+          <span>*</span>&nbsp;Full Name
           <Field
             as={InputWithError}
             type='text'
@@ -116,7 +116,7 @@ export default function ScheduleFormModal ({
           />
         </label>
         <label className={classes.labels}>
-          <span>*</span>{' '}Email
+          <span>*</span>&nbsp;Email
           <Field
             as={InputWithError}
             type='email'
@@ -134,7 +134,7 @@ export default function ScheduleFormModal ({
           />
         </label>
         <label className={classes.labels}>
-          <span>*</span>{' '}What can we do for you?
+          <span>*</span>&nbsp;What can we do for you?
           <Field
             as={TextAreaWithError}
             type='text'

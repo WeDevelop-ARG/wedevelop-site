@@ -1,5 +1,5 @@
-import WrappedImage from 'main_app/components/WrappedImage'
 import DotsPattern from 'assets/about_us/dots_pattern.svg'
+import WrappedImage from 'main_app/components/WrappedImage'
 
 import classes from './styles.module.scss'
 
@@ -13,7 +13,7 @@ export default function KeyToSuccessfulSourcing () {
           <p>
             At WeDevelop,
             <span className={classes.boldText}>
-              we are your trusted source of tech
+              &nbsp;we are your trusted source of tech
               professionals in Latin America, offering the most
               competitive hiring conditions for developers and
               tailored solutions to companies.
@@ -25,7 +25,7 @@ export default function KeyToSuccessfulSourcing () {
             optimize their team's performance
             <br /><br />
             So, whether you have a one-time project or need a
-            permanent team of developers,
+            permanent team of developers,&nbsp;
             <span className={classes.boldText}>
               nearshore outsourcing is the go-to option for any smart and
               savvy business owner.

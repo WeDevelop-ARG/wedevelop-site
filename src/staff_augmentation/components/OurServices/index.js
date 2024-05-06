@@ -11,7 +11,7 @@ import Button from 'main_app/components/Button'
 
 import classes from './styles.module.scss'
 
-export default function OurServices({ onCTAClick }) {
+export default function OurServices ({ onCTAClick }) {
   return (
     <section className={classes.container} id='our-services'>
       <ul className={classes.cards}>

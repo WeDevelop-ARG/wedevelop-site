@@ -1,6 +1,6 @@
+import Image from 'main_app/components/Image'
 import TabContainer from 'main_app/components/TabContainer'
 import BackgroundContainer from 'staff_augmentation/components/BackgroundContainer'
-import Image from 'main_app/components/Image'
 
 import TabButtonImage from 'assets/about_us/nearshore_outsourcing/tab_button.svg'
 import NumbersSpeakBackground from 'assets/services/background-numbers-speak.png'
